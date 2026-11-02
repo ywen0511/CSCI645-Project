@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "pilot_defaults_not_frozen",
+  "platform": {"simulator": "Isaac Sim", "framework": "Isaac Lab", "physics_backend": "PhysX", "robot": "two Franka arms with two-finger parallel-jaw grippers"},
+  "task": {"physics_hz": 120, "control_hz": 20, "episode_horizon_s": 8.0, "success_hold_s": 2.0, "stable_contact_dwell_s": 0.15, "release_max_wait_s": 1.0, "nominal_release_s": 2.8, "reset_max_attempts": 3},
+  "policy": {"action_dim": 3, "residual_bound_m": 0.02, "hidden_dims": [128, 128], "algorithm": "PPO", "preferred_library": "rsl_rl", "phase_channels": 4},
+  "methods": [
+    {"id": "nominal", "geometry": false, "learned": false, "phase_input": false},
+    {"id": "geometry", "geometry": true, "learned": false, "phase_input": false},
+    {"id": "residual", "geometry": false, "learned": true, "phase_input": true},
+    {"id": "combined", "geometry": true, "learned": true, "phase_input": true},
+    {"id": "combined_no_phase", "geometry": true, "learned": true, "phase_input": false}
+  ],
+  "training": {
+    "seeds": [11, 22, 33],
+    "final_transitions_per_run": 10000000,
+    "validation_every_transitions": 2000000,
+    "validation_episodes": 100,
+    "checkpoint_interval_transitions": 1000000,
+    "pilot_total_transitions_cap": 15000000,
+    "checkpoint_selection": "highest validation success, then lowest validation drop rate, then earliest step",
+    "curriculum": [
+      {"fraction_start": 0.0, "fraction_end": 0.2, "position_bound_m": 0.0, "release_offset_bound_s": 0.0},
+      {"fraction_start": 0.2, "fraction_end": 0.5, "position_bound_m": 0.005, "release_offset_bound_s": 0.0},
+      {"fraction_start": 0.5, "fraction_end": 1.0, "position_bound_m": 0.01, "release_offset_bound_s": 0.15}
+    ]
+  },
+  "evaluation": {
+    "episodes_per_condition": 200,
+    "suite_seed": 6452026,
+    "validation_suite_seed": 6452027,
+    "development_suite_seed": 6452028,
+    "deterministic_policy": true,
+    "conditions": [
+      {"id": "clean", "position_bound_m": 0.0, "release_offset_s": 0.0, "distribution": "nominal"},
+      {"id": "position_in", "position_bound_m": 0.01, "release_offset_s": 0.0, "distribution": "in_range"},
+      {"id": "position_stress", "position_bound_m": 0.02, "release_offset_s": 0.0, "distribution": "stress"},
+      {"id": "timing_early_in", "position_bound_m": 0.0, "release_offset_s": -0.15, "distribution": "in_range"},
+      {"id": "timing_late_in", "position_bound_m": 0.0, "release_offset_s": 0.15, "distribution": "in_range"},
+      {"id": "joint_early_in", "position_bound_m": 0.01, "release_offset_s": -0.15, "distribution": "in_range"},
+      {"id": "joint_late_in", "position_bound_m": 0.01, "release_offset_s": 0.15, "distribution": "in_range"},
+      {"id": "joint_early_stress", "position_bound_m": 0.02, "release_offset_s": -0.30, "distribution": "stress"},
+      {"id": "joint_late_stress", "position_bound_m": 0.02, "release_offset_s": 0.30, "distribution": "stress"}
+    ]
+  }
+}
