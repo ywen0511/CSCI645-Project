@@ -1,0 +1,7 @@
+{
+  "description": "Original proposal copied without modification; text extracted with pdftotext -layout. Local source paths are intentionally omitted.",
+  "files": [
+    {"name": "CSCI645_Project_Proposal_YanWen.pdf", "sha256": "559c679f85b6e653a3e0cef4d6c3052e2f1ac90cd2c439b1251a619b5b555ad5"},
+    {"name": "proposal.txt", "sha256": "e44fd28f48fe96efa71cc5310c3461759b1584905ce4570ea1f6c138158a0948"}
+  ]
+}

@@ -1,0 +1,52 @@
+CSCI 645 Robot Manipulation                  Final Project Proposal                                    Yan Wen
+
+
+Geometric Coordination and Residual Reinforcement Learning for
+Robust Bimanual Handover
+Project goal. I plan to investigate geometric coordination and lightweight residual reinforcement learning for
+bimanual object handover in simulation. One arm holds a rigid object while another grasps it and takes over
+support. Spatial errors can leave the receiving gripper misaligned with the object; timing errors can cause
+release before a stable receiving grasp is established. I will test whether combining explicit coordination with
+learned position corrections improves handover success under these perturbations compared with either
+method alone.
+
+Prior work has studied reinforcement learning for dexterous object handover, including robustness to unseen
+objects and motion perturbations [1]. ManipTrans uses residual learning under interaction constraints to
+transfer human bimanual demonstrations to robotic hands [2]. These studies motivate my controlled
+comparison of coordination and residual learning using parallel-jaw grippers.
+
+Proposed approach. I will build a handover environment in Isaac Sim using Isaac Lab, with two parallel-
+jaw grippers and low-dimensional state observations. A scripted controller will provide nominal trajectories
+and gripper commands. A geometric coordination module will adjust relative gripper targets and use contact
+and motion observations to defer release until the receiving gripper has secured the object. This module will
+require no policy training.
+
+I will train a small residual policy using proximal policy optimization (PPO) to make bounded position
+corrections to the fixed nominal controller. The policy will use relative poses, motion information, and the
+contact phase. In the combined method, the geometric module will process these corrections and govern
+release timing through contact conditions. The residual policy will adjust positions, while orientation targets
+remain fixed.
+
+Evaluation. I will compare the nominal controller with geometric coordination, residual learning, both, or
+neither. Without geometric coordination, nominal release commands remain unchanged. An ablation will
+remove the combined policy's contact phase input. Experiments will perturb initial object pose and nominal
+release timing, separately and jointly, with physical parameters fixed. Under identical evaluation conditions
+and matched training budgets, I will report success and drop rates, learning curves, completion time, and
+collisions. Success requires independent holding by the receiving arm for two seconds after release. Failure
+analysis will distinguish misalignment, premature release, and conflicting motions during shared holding.
+
+Scope and expected outcome. I will focus on one simulated handover task, first establishing the baseline,
+then implementing the modules and conducting comparisons. Deliverables will include reproducible code,
+quantitative results, and demonstration videos documenting the benefits and limitations of combining the
+methods.
+
+Disclosures. I will work independently, with no collaborators inside or outside the class. This project will not
+be used for another course and is not part of my ongoing research. Work so far is limited to topic selection
+and proposal planning; no implementation or experiments have been completed.
+
+References
+[1] D. Frau-Alfaro, J. Castaño-Amoros, S. Puente, P. Gil, and R. Calandra. Learning Dexterous Object Handover. RO-
+    MAN, 2025.
+[2] K. Li, P. Li, T. Liu, Y. Li, and S. Huang. ManipTrans: Efficient Dexterous Bimanual Manipulation Transfer via
+    Residual Learning. CVPR, 2025.
+
