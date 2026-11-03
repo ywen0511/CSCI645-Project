@@ -17,7 +17,7 @@ for your machine. No credentials are needed except GitHub access for publishing.
 | RL library | RSL-RL `rsl-rl-lib==5.5.1` (PPO) |
 | PyTorch | 2.11.0+cu130, Warp 1.17.0, NumPy 2.5 |
 
-A pip freeze of the environment is in `configs/frozen/env/pip-freeze.txt`.
+A pip freeze of the environment is in `configs/frozen/pip-freeze.txt`.
 
 ## 1. Isaac Lab + Isaac Sim environment
 

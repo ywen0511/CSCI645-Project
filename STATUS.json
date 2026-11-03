@@ -1,15 +1,25 @@
 {
   "project": "CSCI645-Project",
-  "stage": "handoff_prepared",
-  "implementation_complete": false,
-  "simulation_verified": false,
-  "protocol_frozen": false,
+  "stage": "protocol_frozen_final_training",
+  "implementation_complete": true,
+  "simulation_verified": true,
+  "protocol_frozen": true,
   "final_experiments_complete": false,
   "release_verified": false,
   "experiment_source_commit": null,
   "release_url": null,
-  "completed": ["Self-contained English project specification and execution handoff"],
-  "next_actions": ["Inventory remote hardware and permissions", "Pin and verify compatible Isaac Sim and Isaac Lab versions", "Implement scripted two-arm handover"],
+  "completed": [
+    "Self-contained English project specification and execution handoff",
+    "Isaac Lab 3.0 / Isaac Sim 6.2 environment and external task implemented",
+    "Gate 1: clean nominal 100/100 (development), negative controls verified",
+    "Gate 2-3: geometry, residual PPO, ablation, checkpoint/resume/replay verified; pilot calibration",
+    "Protocol frozen (configs/frozen/protocol.json sha256 9727eae6...)"
+  ],
+  "next_actions": [
+    "Train 9 final runs (3 methods x seeds 11/22/33, 10,027,008 transitions each)",
+    "Validate candidates, select checkpoints, run the 19,800-episode final evaluation",
+    "Analysis, report, videos, release packaging and verification"
+  ],
   "blockers": [],
-  "notes": "No implementation, training, or experimental results are claimed by the initial handoff."
+  "notes": "Development/pilot numbers in docs/DECISIONS.md are calibration evidence, not held-out results."
 }

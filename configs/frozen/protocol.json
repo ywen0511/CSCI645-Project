@@ -1,0 +1,409 @@
+{
+  "config_hash": "b9eac03d5848617625efd453adf1eb02fa942693766b137bc631cd052ec52b8d",
+  "config_id": "b9eac03d58486176",
+  "env_overrides": {},
+  "evaluation": {
+    "conditions": [
+      {
+        "distribution": "nominal",
+        "id": "clean",
+        "position_bound_m": 0.0,
+        "release_offset_s": 0.0
+      },
+      {
+        "distribution": "in_range",
+        "id": "position_in",
+        "position_bound_m": 0.01,
+        "release_offset_s": 0.0
+      },
+      {
+        "distribution": "stress",
+        "id": "position_stress",
+        "position_bound_m": 0.02,
+        "release_offset_s": 0.0
+      },
+      {
+        "distribution": "in_range",
+        "id": "timing_early_in",
+        "position_bound_m": 0.0,
+        "release_offset_s": -0.15
+      },
+      {
+        "distribution": "in_range",
+        "id": "timing_late_in",
+        "position_bound_m": 0.0,
+        "release_offset_s": 0.15
+      },
+      {
+        "distribution": "in_range",
+        "id": "joint_early_in",
+        "position_bound_m": 0.01,
+        "release_offset_s": -0.15
+      },
+      {
+        "distribution": "in_range",
+        "id": "joint_late_in",
+        "position_bound_m": 0.01,
+        "release_offset_s": 0.15
+      },
+      {
+        "distribution": "stress",
+        "id": "joint_early_stress",
+        "position_bound_m": 0.02,
+        "release_offset_s": -0.3
+      },
+      {
+        "distribution": "stress",
+        "id": "joint_late_stress",
+        "position_bound_m": 0.02,
+        "release_offset_s": 0.3
+      }
+    ],
+    "deterministic_policy": true,
+    "development_suite_seed": 6452028,
+    "episodes_per_condition": 200,
+    "suite_seed": 6452026,
+    "validation_suite_seed": 6452027
+  },
+  "freeze_date": "2026-11-03",
+  "methods": [
+    {
+      "geometry": false,
+      "id": "nominal",
+      "learned": false,
+      "phase_input": false
+    },
+    {
+      "geometry": true,
+      "id": "geometry",
+      "learned": false,
+      "phase_input": false
+    },
+    {
+      "geometry": false,
+      "id": "residual",
+      "learned": true,
+      "phase_input": true
+    },
+    {
+      "geometry": true,
+      "id": "combined",
+      "learned": true,
+      "phase_input": true
+    },
+    {
+      "geometry": true,
+      "id": "combined_no_phase",
+      "learned": true,
+      "phase_input": false
+    }
+  ],
+  "methods_resolved": {
+    "combined": {
+      "geometry_enabled": true,
+      "phase_input": true,
+      "residual_enabled": true
+    },
+    "combined_no_phase": {
+      "geometry_enabled": true,
+      "phase_input": false,
+      "residual_enabled": true
+    },
+    "geometry": {
+      "geometry_enabled": true,
+      "phase_input": false,
+      "residual_enabled": false
+    },
+    "nominal": {
+      "geometry_enabled": false,
+      "phase_input": false,
+      "residual_enabled": false
+    },
+    "residual": {
+      "geometry_enabled": false,
+      "phase_input": true,
+      "residual_enabled": true
+    }
+  },
+  "platform": {
+    "framework": "Isaac Lab",
+    "isaac_lab": "v3.0.0",
+    "isaac_sim": "6.2.0.0",
+    "physics": "isaacsim_physx",
+    "physics_backend": "PhysX",
+    "rl_library": "rsl-rl-lib 5.5.1",
+    "robot": "two Franka arms with two-finger parallel-jaw grippers",
+    "simulator": "Isaac Sim"
+  },
+  "policy": {
+    "action_dim": 3,
+    "algorithm": "PPO",
+    "hidden_dims": [
+      128,
+      128
+    ],
+    "phase_channels": 4,
+    "preferred_library": "rsl_rl",
+    "residual_bound_m": 0.02
+  },
+  "ppo": {
+    "actor": {
+      "activation": "elu",
+      "class_name": "MLPModel",
+      "distribution_cfg": {
+        "class_name": "GaussianDistribution",
+        "init_std": 0.5,
+        "std_range": [
+          1e-06,
+          1000000.0
+        ],
+        "std_type": "scalar"
+      },
+      "hidden_dims": [
+        128,
+        128
+      ],
+      "init_noise_std": {},
+      "noise_std_type": "scalar",
+      "obs_normalization": true,
+      "state_dependent_std": false,
+      "stochastic": {}
+    },
+    "algorithm": {
+      "class_name": "PPO",
+      "clip_param": 0.2,
+      "desired_kl": 0.01,
+      "entropy_coef": 0.002,
+      "gamma": 0.99,
+      "lam": 0.95,
+      "learning_rate": 0.0003,
+      "max_grad_norm": 1.0,
+      "normalize_advantage_per_mini_batch": false,
+      "num_learning_epochs": 5,
+      "num_mini_batches": 4,
+      "optimizer": "adam",
+      "rnd_cfg": null,
+      "schedule": "adaptive",
+      "share_cnn_encoders": false,
+      "symmetry_cfg": null,
+      "use_clipped_value_loss": true,
+      "use_mixed_precision": false,
+      "value_loss_coef": 1.0
+    },
+    "check_for_nan": true,
+    "class_name": "OnPolicyRunner",
+    "clip_actions": null,
+    "critic": {
+      "activation": "elu",
+      "class_name": "MLPModel",
+      "distribution_cfg": null,
+      "hidden_dims": [
+        128,
+        128
+      ],
+      "init_noise_std": {},
+      "noise_std_type": "scalar",
+      "obs_normalization": true,
+      "state_dependent_std": false,
+      "stochastic": {}
+    },
+    "device": "cuda:0",
+    "empirical_normalization": {},
+    "experiment_name": "csci645_handover",
+    "init_at_random_ep_len": false,
+    "load_checkpoint": "model_.*.pt",
+    "load_run": ".*",
+    "logger": "tensorboard",
+    "max_iterations": 1000,
+    "neptune_project": "isaaclab",
+    "num_steps_per_env": 32,
+    "obs_groups": {
+      "actor": [
+        "policy"
+      ],
+      "critic": [
+        "policy"
+      ]
+    },
+    "policy": {},
+    "resume": false,
+    "run_name": "",
+    "save_interval": 1000000,
+    "seed": 42,
+    "torch_compile_mode": null,
+    "wandb_project": "isaaclab"
+  },
+  "schema_version": 1,
+  "status": "frozen",
+  "task": {
+    "control_hz": 20,
+    "episode_horizon_s": 8.0,
+    "nominal_release_s": 2.8,
+    "physics_hz": 120,
+    "release_max_wait_s": 1.0,
+    "reset_max_attempts": 3,
+    "stable_contact_dwell_s": 0.15,
+    "success_hold_s": 2.0
+  },
+  "task_resolved": {
+    "action_space": 3,
+    "align_gain": 1.0,
+    "align_max": 0.01,
+    "close_duration": 0.8,
+    "collision_force": 1.0,
+    "collision_terminal_s": 0.25,
+    "compute_final_obs": false,
+    "conflict_tol": 0.01,
+    "contact_force": 0.2,
+    "curriculum": [
+      {
+        "fraction_end": 0.2,
+        "fraction_start": 0.0,
+        "position_bound_m": 0.0,
+        "release_offset_bound_s": 0.0
+      },
+      {
+        "fraction_end": 0.5,
+        "fraction_start": 0.2,
+        "position_bound_m": 0.005,
+        "release_offset_bound_s": 0.0
+      },
+      {
+        "fraction_end": 1.0,
+        "fraction_start": 0.5,
+        "position_bound_m": 0.01,
+        "release_offset_bound_s": 0.15
+      }
+    ],
+    "decimation": 6,
+    "drift_tol": 0.02,
+    "drop_height": 0.35,
+    "episode_length_s": 11.2,
+    "finger_closed": 0.0,
+    "finger_open": 0.04,
+    "giver_open_width": 0.07,
+    "giver_seed_q": [
+      1.01,
+      -0.686,
+      -0.939,
+      -2.386,
+      -2.779,
+      2.648,
+      -0.082
+    ],
+    "grasp_insertion": 0.025,
+    "handover_center": [
+      0.0,
+      0.0,
+      0.5
+    ],
+    "horizon_s": 8.0,
+    "ik_joint_limit_gain": 0.0,
+    "is_finite_horizon": false,
+    "misalign_check_time": 2.4,
+    "misalign_tol": 0.01,
+    "negative_control": "",
+    "num_actions": null,
+    "num_observations": null,
+    "num_rerenders_on_reset": 0,
+    "num_states": null,
+    "object_size": [
+      0.18,
+      0.035,
+      0.035
+    ],
+    "observation_space": 46,
+    "physics_hz": 120,
+    "pregrasp_backoff": 0.06,
+    "receiver_seed_q": [
+      -0.513,
+      -1.115,
+      0.582,
+      -2.802,
+      2.551,
+      2.777,
+      -1.268
+    ],
+    "rel_speed_tol": 0.05,
+    "release_max_wait_s": 1.0,
+    "rerender_on_reset": false,
+    "reset_max_attempts": 3,
+    "reset_max_obj_speed": 0.05,
+    "reset_offset_tol": 0.008,
+    "residual_bound_m": 0.02,
+    "retreat_delay": 0.3,
+    "retreat_distance": 0.1,
+    "retreat_duration": 0.7,
+    "rew_action_rate": -0.5,
+    "rew_approach": 1.0,
+    "rew_approach_scale": 0.02,
+    "rew_collision": -5.0,
+    "rew_drop": -5.0,
+    "rew_hold": 2.0,
+    "rew_release_timeout": -2.0,
+    "rew_residual_l2": -0.5,
+    "rew_success": 10.0,
+    "sep_tol": 0.01,
+    "settle_close_s": 0.3,
+    "settle_free_s": 0.3,
+    "settle_pin_s": 0.3,
+    "sim_dt": 0.008333333333333333,
+    "stab_dwell_s": 0.15,
+    "stab_max_rel_ang_speed": 0.5,
+    "stab_max_rel_lin_speed": 0.03,
+    "stab_min_finger_force": 0.2,
+    "start_backoff": 0.16,
+    "state_space": 0,
+    "success_hold_s": 2.0,
+    "t_close_start": 2.0,
+    "t_grasp": 2.0,
+    "t_pregrasp": 1.0,
+    "t_release_nominal": 2.8,
+    "table_force": 0.2,
+    "table_size_override": null,
+    "tcp_offset": 0.1034,
+    "total_transitions": 10000000,
+    "wait_for_textures": true,
+    "workspace_radius": 0.6,
+    "xr": null
+  },
+  "training": {
+    "checkpoint_interval_transitions": 1000000,
+    "checkpoint_selection": "highest validation success, then lowest validation drop rate, then earliest step",
+    "curriculum": [
+      {
+        "fraction_end": 0.2,
+        "fraction_start": 0.0,
+        "position_bound_m": 0.0,
+        "release_offset_bound_s": 0.0
+      },
+      {
+        "fraction_end": 0.5,
+        "fraction_start": 0.2,
+        "position_bound_m": 0.005,
+        "release_offset_bound_s": 0.0
+      },
+      {
+        "fraction_end": 1.0,
+        "fraction_start": 0.5,
+        "position_bound_m": 0.01,
+        "release_offset_bound_s": 0.15
+      }
+    ],
+    "final_transitions_per_run": 10000000,
+    "iterations_per_run": 306,
+    "num_envs": 1024,
+    "pilot_total_transitions_cap": 15000000,
+    "realized_transitions_per_run": 10027008,
+    "rollout_batch_transitions": 32768,
+    "rollout_steps_per_env": 32,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "transition_definition": "vectorized environment steps x environments, including the scripted reset-settling steps (residual disabled)",
+    "validation_episodes": 100,
+    "validation_every_transitions": 2000000
+  }
+}

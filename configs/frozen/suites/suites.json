@@ -1,0 +1,46 @@
+{
+  "protocol": "protocol.json",
+  "config_id": "b9eac03d58486176",
+  "suites": {
+    "final": {
+      "file": "final.jsonl",
+      "cases": 1800,
+      "sha256": "880ac131487d88a3571e7ff308493359d93267281ce5617b0a18fe23d01d7b0d",
+      "per_condition": {
+        "clean": 200,
+        "position_in": 200,
+        "position_stress": 200,
+        "timing_early_in": 200,
+        "timing_late_in": 200,
+        "joint_early_in": 200,
+        "joint_late_in": 200,
+        "joint_early_stress": 200,
+        "joint_late_stress": 200
+      }
+    },
+    "validation": {
+      "file": "validation.jsonl",
+      "cases": 100,
+      "sha256": "328639febceabd254d0a6be7a2cf83d1d986ed07416bd6df468051373a0b6f47",
+      "per_condition": {
+        "train_dist": 100
+      }
+    },
+    "development": {
+      "file": "development.jsonl",
+      "cases": 450,
+      "sha256": "f75bd8c11517c2cf489ba15b387c1c059a2df3a59e10343f964b89d56ea903e1",
+      "per_condition": {
+        "clean": 50,
+        "position_in": 50,
+        "position_stress": 50,
+        "timing_early_in": 50,
+        "timing_late_in": 50,
+        "joint_early_in": 50,
+        "joint_late_in": 50,
+        "joint_early_stress": 50,
+        "joint_late_stress": 50
+      }
+    }
+  }
+}

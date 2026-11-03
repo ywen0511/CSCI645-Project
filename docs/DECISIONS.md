@@ -131,3 +131,28 @@ those archives.
 - Resume restores model, optimizer, iteration, transition counter, curriculum position and RNG states,
   and restarts episodes at a boundary (approximate continuation). Verified in `smoke_ppo1024`
   (train 3 iterations, resume to 5, evaluate the final checkpoint in a new process: 20/20 dev clean).
+
+### 2026-11-03 — PROTOCOL FREEZE v1
+
+- Frozen file: `configs/frozen/protocol.json`, SHA-256 `9727eae67fdab5ce2c908e7b467f510707a668d89531cad22acd6286d83f97fc`
+  (also in `configs/frozen/PROTOCOL_SHA256`). Task configuration hash
+  `b9eac03d5848617625efd453adf1eb02fa942693766b137bc631cd052ec52b8d` (task-level physics, control, reward,
+  observation, geometry and evaluator parameters; identical for every method apart from the method flags).
+- Suites (generated from the frozen protocol; content depends only on the protocol seeds and bounds):
+  final 1800 cases sha256 `880ac131487d88a3571e7ff308493359d93267281ce5617b0a18fe23d01d7b0d`;
+  validation 100 cases sha256 `328639febceabd254d0a6be7a2cf83d1d986ed07416bd6df468051373a0b6f47`;
+  development 450 cases sha256 `f75bd8c11517c2cf489ba15b387c1c059a2df3a59e10343f964b89d56ea903e1`.
+- Training: 1024 environments x 32 steps = 32,768 transitions per PPO iteration; 306 iterations =
+  **10,027,008 transitions per run** (10M rounded up to whole rollouts), seeds 11/22/33, methods residual,
+  combined, combined_no_phase. Checkpoints at the first iteration boundary at or after every 1M transitions
+  plus step 0 and final. Validation candidates: step 0 and the checkpoints at/after 2M, 4M, 6M, 8M, 10M
+  (and final), on the 100-case validation suite; selection = highest validation success, then lowest drop
+  rate, then earliest step. Final evaluation: selected checkpoint of every run + nominal + geometry on all
+  1,800 final cases (19,800 episodes).
+- Pilot budget used before freezing: 2 x 5,013,504 transitions (`pilot_combined_s101`, `pilot_residual_s101`)
+  plus smoke runs (~0.26M); total below the 15M pilot cap. Pilot seeds (101) are disjoint from final seeds.
+  Pilot development results (not held-out; for calibration only): nominal 79.3 %, geometry 98.0 %,
+  residual 83.1 % (5M), combined 97.1 % (5M) over the 450 development cases.
+- The experiment source is the commit tagged `experiment-v1`; final runs execute from a clean clone of
+  that tag. Any later change to physics, reset, reward, observations, action, geometry or evaluator would
+  require a new protocol version and reruns.
