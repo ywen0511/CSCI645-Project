@@ -49,12 +49,34 @@ def sha(path: Path) -> str:
     return h.hexdigest()
 
 
+REDACT: list[tuple[str, str]] = []
+TEXT_SUFFIXES = {".json", ".jsonl", ".log", ".txt", ".md", ".yaml", ".csv", ".sh"}
+_STAGE: list[Path] = []
+
+
+def redacted(src: Path) -> Path:
+    """Copy of a text file with machine-specific path prefixes replaced (binary files unchanged)."""
+    if not REDACT or src.suffix not in TEXT_SUFFIXES:
+        return src
+    text = src.read_text(errors="replace")
+    new = text
+    for old, tok in REDACT:
+        new = new.replace(old, tok)
+    if new == text:
+        return src
+    dst = _STAGE[0] / f"r{len(list(_STAGE[0].iterdir()))}_{src.name}"
+    dst.write_text(new)
+    return dst
+
+
 def make_tar(dest: Path, members: list[tuple[Path, str]], inventories: dict) -> None:
     inv = []
     with tarfile.open(dest, "w:gz", compresslevel=6) as tar:
         for src, arc in members:
             if not src.exists():
                 raise SystemExit(f"missing input for {dest.name}: {src}")
+            if src.is_file():
+                src = redacted(src)
             tar.add(src, arcname=arc, recursive=False)
             if src.is_file():
                 inv.append({"path": arc, "size_bytes": src.stat().st_size, "sha256": sha(src)})
@@ -86,12 +108,19 @@ def main():
     ap.add_argument("--experiment-commit", required=True)
     ap.add_argument("--analysis-commit", required=True)
     ap.add_argument("--output", required=True)
+    ap.add_argument("--redact", action="append", default=[], help="PREFIX=TOKEN replaced in text members")
     a = ap.parse_args()
+    for r in a.redact:
+        k, v = r.split("=", 1)
+        REDACT.append((k, v))
     runs, summ, rep, vids = Path(a.runs), Path(a.summary), Path(a.report), Path(a.videos)
     out = Path(a.output)
     out.mkdir(parents=True, exist_ok=False)
     tmp = out / ".staging"
     tmp.mkdir()
+    rdir = out / ".redacted"
+    rdir.mkdir()
+    _STAGE.append(rdir)
     proto_path = ROOT / "configs/frozen/protocol.json"
     protocol = json.loads(proto_path.read_text())
     sel_path = summ / "selection.json" if (summ / "selection.json").exists() else summ / "primary" / "selection.json"
@@ -188,7 +217,10 @@ def main():
     dest = out / "videos.tar.gz"
     make_tar(dest, tree(vids, "videos"), inventories)
     register(dest, "videos")
-    (out / "videos.json").write_text(json.dumps(vids_index, indent=2))
+    vtxt = json.dumps(vids_index, indent=2)
+    for k, v in REDACT:
+        vtxt = vtxt.replace(k, v)
+    (out / "videos.json").write_text(vtxt)
     register(out / "videos.json", "index")
     showcase = sorted(vids.glob("*showcase*.mp4"))
     for p in showcase[:1]:
@@ -203,7 +235,10 @@ def main():
     register(out / "REPRODUCE.md", "reproduction")
     (out / "checkpoints.json").write_text(json.dumps(ck_index, indent=2))
     register(out / "checkpoints.json", "index")
-    (out / "runs.json").write_text(json.dumps(run_index, indent=2, default=str))
+    rtxt = json.dumps(run_index, indent=2, default=str)
+    for k, v in REDACT:
+        rtxt = rtxt.replace(k, v)
+    (out / "runs.json").write_text(rtxt)
     register(out / "runs.json", "index")
     (out / "archive_inventories.json").write_text(json.dumps(inventories, indent=1))
     register(out / "archive_inventories.json", "index")
@@ -214,9 +249,10 @@ def main():
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2))
     lines = [f"{sha(out / 'manifest.json')}  manifest.json"] + [f"{x['sha256']}  {x['path']}" for x in artifacts]
     (out / "SHA256SUMS").write_text("\n".join(lines) + "\n")
-    for p in tmp.iterdir():
-        p.unlink()
-    tmp.rmdir()
+    for d in (tmp, rdir):
+        for p in d.iterdir():
+            p.unlink()
+        d.rmdir()
     total = sum(x["size_bytes"] for x in artifacts)
     print(f"packaged {len(artifacts)} artifacts, {total / 2**20:.1f} MiB -> {out}")
     for x in artifacts:
