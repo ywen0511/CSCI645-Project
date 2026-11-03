@@ -1,0 +1,36 @@
+{
+  "entry": {
+    "name": "nominal_clean100",
+    "method": "nominal",
+    "clean": 100,
+    "trace": 2
+  },
+  "info": {
+    "steps": 115,
+    "wall_s": 11.259437799453735,
+    "num_envs": 150,
+    "transitions": 17250,
+    "completed": 100,
+    "scheduled": 100
+  },
+  "summary": {
+    "clean": {
+      "n": 100,
+      "valid": 100,
+      "success": 1.0,
+      "drop": 0.0,
+      "reasons": {
+        "success": 100
+      },
+      "t_done": 4.85,
+      "flags": {
+        "mis": 0,
+        "pre": 0,
+        "con": 0
+      },
+      "coll_eps": 0,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    }
+  }
+}

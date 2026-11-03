@@ -1,0 +1,7 @@
+{"tag": "step_000000000", "path": "checkpoints/step_000000000.pt", "transitions": 0, "iterations_done": 0, "sha256": "61a7eb460e7ff4a78d9213d3b103a9d2da6cb07d02f401acefe530e26c029224", "utc": "2026-11-03T03:29:28Z"}
+{"tag": "step_001015808", "path": "checkpoints/step_001015808.pt", "transitions": 1015808, "iterations_done": 31, "sha256": "fa0fb1d19462e9255a1744a1247ecc69c259ee93508f4e7ecd08637d5502bdbd", "utc": "2026-11-03T03:31:03Z"}
+{"tag": "step_002031616", "path": "checkpoints/step_002031616.pt", "transitions": 2031616, "iterations_done": 62, "sha256": "7f1e63c028b8f353dc14221d106599525268598182831bd072270795e7d827d4", "utc": "2026-11-03T03:32:36Z"}
+{"tag": "step_003014656", "path": "checkpoints/step_003014656.pt", "transitions": 3014656, "iterations_done": 92, "sha256": "b25b6db4e899a204d4e6a9c63346c7ff9deefba42bd4073b52eabbe07d0b89d5", "utc": "2026-11-03T03:34:07Z"}
+{"tag": "step_004030464", "path": "checkpoints/step_004030464.pt", "transitions": 4030464, "iterations_done": 123, "sha256": "a4b7f7a13fd5db75b5f64f6291a46d3a63455871fcc00eb69b2719193ec02f59", "utc": "2026-11-03T03:35:45Z"}
+{"tag": "step_005013504", "path": "checkpoints/step_005013504.pt", "transitions": 5013504, "iterations_done": 153, "sha256": "15134c125d7099061e42be1839f044aba63a2d0217d056c3311621e2561d229d", "utc": "2026-11-03T03:37:22Z"}
+{"tag": "final", "path": "checkpoints/final.pt", "transitions": 5013504, "iterations_done": 153, "sha256": "83b4daa90da3be6a60f6d53ac24426b878a50e3939b35aec938cd96dee726f0a", "utc": "2026-11-03T03:37:22Z"}

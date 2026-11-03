@@ -1,0 +1,7 @@
+{"tag": "step_000000000", "path": "checkpoints/step_000000000.pt", "transitions": 0, "iterations_done": 0, "sha256": "c55b0f9e85fb94c37aed0854381c50befdf438dc5139f360526c1ede6459ffed", "utc": "2026-11-03T03:29:27Z"}
+{"tag": "step_001015808", "path": "checkpoints/step_001015808.pt", "transitions": 1015808, "iterations_done": 31, "sha256": "38f58b46fbb782fb2b027fe5bff744cb5c713b34afa6f5eaf135d099a0fa5927", "utc": "2026-11-03T03:30:55Z"}
+{"tag": "step_002031616", "path": "checkpoints/step_002031616.pt", "transitions": 2031616, "iterations_done": 62, "sha256": "4b645bd75cbf287e4ed889655ad01e3cbb7a8bc76e7aa4e2072542c0e7254706", "utc": "2026-11-03T03:32:25Z"}
+{"tag": "step_003014656", "path": "checkpoints/step_003014656.pt", "transitions": 3014656, "iterations_done": 92, "sha256": "bb0dffb9d2ceb820096a8c7d34063b2e03f30836f33c30ba735ddc50fa23d9ec", "utc": "2026-11-03T03:33:58Z"}
+{"tag": "step_004030464", "path": "checkpoints/step_004030464.pt", "transitions": 4030464, "iterations_done": 123, "sha256": "a7f838630cfc696c4c0c9e670d34e42540ca89057b0d856d7c1078c1a40b2a96", "utc": "2026-11-03T03:35:44Z"}
+{"tag": "step_005013504", "path": "checkpoints/step_005013504.pt", "transitions": 5013504, "iterations_done": 153, "sha256": "ef364dbc384b1b462ac61f4ccdd8ed9f0648e94e2a6dbaa192581c24136af3d6", "utc": "2026-11-03T03:37:29Z"}
+{"tag": "final", "path": "checkpoints/final.pt", "transitions": 5013504, "iterations_done": 153, "sha256": "a0102eaf1dcdb8e30e43c8137d4ee2a6bbb654f0fbc392779617fd4dddd9e44f", "utc": "2026-11-03T03:37:29Z"}

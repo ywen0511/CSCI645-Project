@@ -1,0 +1,13 @@
+{
+  "clean": {
+    "scheduled": 2,
+    "valid": 2,
+    "success_rate": 1.0,
+    "drop_rate": 0.0,
+    "collision_episode_rate": 0.0,
+    "terminal_reasons": {
+      "success": 2
+    },
+    "mean_completion_time_s": 4.90000057220459
+  }
+}

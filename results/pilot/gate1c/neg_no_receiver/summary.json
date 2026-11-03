@@ -1,0 +1,37 @@
+{
+  "entry": {
+    "name": "neg_no_receiver",
+    "method": "nominal",
+    "negative_control": "no_receiver",
+    "clean": 20,
+    "trace": 1
+  },
+  "info": {
+    "steps": 78,
+    "wall_s": 6.2690465450286865,
+    "num_envs": 150,
+    "transitions": 11700,
+    "completed": 20,
+    "scheduled": 20
+  },
+  "summary": {
+    "clean": {
+      "n": 20,
+      "valid": 20,
+      "success": 0.0,
+      "drop": 1.0,
+      "reasons": {
+        "drop": 20
+      },
+      "t_done": null,
+      "flags": {
+        "mis": 20,
+        "pre": 20,
+        "con": 0
+      },
+      "coll_eps": 0,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "entry": {
+    "name": "neg_giver_holds",
+    "method": "nominal",
+    "negative_control": "giver_holds",
+    "clean": 20,
+    "trace": 1
+  },
+  "info": {
+    "steps": 178,
+    "wall_s": 14.385319948196411,
+    "num_envs": 150,
+    "transitions": 26700,
+    "completed": 20,
+    "scheduled": 20
+  },
+  "summary": {
+    "clean": {
+      "n": 20,
+      "valid": 20,
+      "success": 0.0,
+      "drop": 0.0,
+      "reasons": {
+        "episode_timeout": 20
+      },
+      "t_done": null,
+      "flags": {
+        "mis": 0,
+        "pre": 0,
+        "con": 0
+      },
+      "coll_eps": 0,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    }
+  }
+}

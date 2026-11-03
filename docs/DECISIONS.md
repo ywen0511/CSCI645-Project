@@ -156,3 +156,15 @@ those archives.
 - The experiment source is the commit tagged `experiment-v1`; final runs execute from a clean clone of
   that tag. Any later change to physics, reset, reward, observations, action, geometry or evaluator would
   require a new protocol version and reruns.
+
+### 2026-11-03 04:03 UTC — Validation saturation; secondary analysis declared (post-freeze, before any final-test result)
+
+- Observation: for `combined_seed11` and `combined_no_phase_seed11` every validation candidate, including the
+  untrained step-0 policy, scored 100/100 on the validation suite (sampled from the final training
+  distribution, +/-1 cm and +/-0.15 s), because the geometry module alone already solves that distribution.
+  The frozen selection rule (highest success, then lowest drop rate, then earliest step) therefore selects
+  step 0 for those runs. The rule is applied unchanged to all nine runs; the primary results use the
+  selected checkpoints.
+- Declared now, before any final-suite result of a learned policy exists: a **secondary analysis** evaluates
+  the preserved *final* checkpoint of all nine runs on the same 1,800 final cases. It is reported separately,
+  labelled secondary, and is never used to choose among checkpoints. Records go to `eval_final_checkpoint/`.

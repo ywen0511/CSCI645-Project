@@ -1,0 +1,186 @@
+{
+  "entry": {
+    "name": "dev_nominal",
+    "method": "nominal",
+    "suite": "configs/pilot/suites/development.jsonl",
+    "trace": 0
+  },
+  "info": {
+    "steps": 354,
+    "wall_s": 26.965051651000977,
+    "num_envs": 150,
+    "transitions": 53100,
+    "completed": 450,
+    "scheduled": 450
+  },
+  "summary": {
+    "clean": {
+      "n": 50,
+      "valid": 50,
+      "success": 1.0,
+      "drop": 0.0,
+      "reasons": {
+        "success": 50
+      },
+      "t_done": 4.85,
+      "flags": {
+        "mis": 0,
+        "pre": 0,
+        "con": 0
+      },
+      "coll_eps": 0,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    },
+    "joint_early_in": {
+      "n": 50,
+      "valid": 50,
+      "success": 0.92,
+      "drop": 0.0,
+      "reasons": {
+        "prohibited_collision": 4,
+        "success": 46
+      },
+      "t_done": 4.7,
+      "flags": {
+        "mis": 35,
+        "pre": 41,
+        "con": 0
+      },
+      "coll_eps": 5,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    },
+    "joint_early_stress": {
+      "n": 50,
+      "valid": 50,
+      "success": 0.52,
+      "drop": 0.0,
+      "reasons": {
+        "prohibited_collision": 24,
+        "success": 26
+      },
+      "t_done": 4.58,
+      "flags": {
+        "mis": 48,
+        "pre": 26,
+        "con": 0
+      },
+      "coll_eps": 24,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    },
+    "joint_late_in": {
+      "n": 50,
+      "valid": 50,
+      "success": 0.92,
+      "drop": 0.0,
+      "reasons": {
+        "prohibited_collision": 4,
+        "success": 46
+      },
+      "t_done": 5.0,
+      "flags": {
+        "mis": 37,
+        "pre": 0,
+        "con": 0
+      },
+      "coll_eps": 4,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    },
+    "joint_late_stress": {
+      "n": 50,
+      "valid": 50,
+      "success": 0.62,
+      "drop": 0.0,
+      "reasons": {
+        "prohibited_collision": 19,
+        "success": 31
+      },
+      "t_done": 5.15,
+      "flags": {
+        "mis": 47,
+        "pre": 0,
+        "con": 0
+      },
+      "coll_eps": 19,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    },
+    "position_in": {
+      "n": 50,
+      "valid": 50,
+      "success": 0.9,
+      "drop": 0.0,
+      "reasons": {
+        "prohibited_collision": 5,
+        "success": 45
+      },
+      "t_done": 4.85,
+      "flags": {
+        "mis": 39,
+        "pre": 0,
+        "con": 0
+      },
+      "coll_eps": 5,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    },
+    "position_stress": {
+      "n": 50,
+      "valid": 50,
+      "success": 0.8,
+      "drop": 0.0,
+      "reasons": {
+        "prohibited_collision": 10,
+        "success": 40
+      },
+      "t_done": 4.85,
+      "flags": {
+        "mis": 49,
+        "pre": 0,
+        "con": 0
+      },
+      "coll_eps": 10,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    },
+    "timing_early_in": {
+      "n": 50,
+      "valid": 50,
+      "success": 1.0,
+      "drop": 0.0,
+      "reasons": {
+        "success": 50
+      },
+      "t_done": 4.7,
+      "flags": {
+        "mis": 0,
+        "pre": 50,
+        "con": 0
+      },
+      "coll_eps": 0,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    },
+    "timing_late_in": {
+      "n": 50,
+      "valid": 50,
+      "success": 1.0,
+      "drop": 0.0,
+      "reasons": {
+        "success": 50
+      },
+      "t_done": 5.0,
+      "flags": {
+        "mis": 0,
+        "pre": 0,
+        "con": 0
+      },
+      "coll_eps": 0,
+      "rel_delay": 0.0,
+      "align_sat": 0.0
+    }
+  }
+}
