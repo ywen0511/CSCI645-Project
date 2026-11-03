@@ -25,7 +25,7 @@ def main():
     ap.add_argument("--validation", required=True)
     ap.add_argument("--run-id", required=True)
     ap.add_argument("--output", required=True)
-    ap.add_argument("--expected-candidates", type=int, default=7)
+    ap.add_argument("--expected-candidates", type=int, default=6)
     a = ap.parse_args()
     files = sorted(Path(a.validation).glob(f"{a.run_id}__step_*.jsonl"))
     scored = [score_validation_file(f) for f in files]
