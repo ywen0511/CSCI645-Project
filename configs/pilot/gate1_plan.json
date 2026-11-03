@@ -1,0 +1,47 @@
+[
+ {
+  "name": "nominal_clean100",
+  "method": "nominal",
+  "clean": 100,
+  "trace": 2
+ },
+ {
+  "name": "geometry_clean100",
+  "method": "geometry",
+  "clean": 100,
+  "trace": 2
+ },
+ {
+  "name": "neg_no_receiver",
+  "method": "nominal",
+  "negative_control": "no_receiver",
+  "clean": 20,
+  "trace": 1
+ },
+ {
+  "name": "neg_giver_holds",
+  "method": "nominal",
+  "negative_control": "giver_holds",
+  "clean": 20,
+  "trace": 1
+ },
+ {
+  "name": "neg_table_support",
+  "method": "nominal",
+  "negative_control": "table_support",
+  "clean": 20,
+  "trace": 1
+ },
+ {
+  "name": "dev_nominal",
+  "method": "nominal",
+  "suite": "configs/pilot/suites/development.jsonl",
+  "trace": 6
+ },
+ {
+  "name": "dev_geometry",
+  "method": "geometry",
+  "suite": "configs/pilot/suites/development.jsonl",
+  "trace": 6
+ }
+]

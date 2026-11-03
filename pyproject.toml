@@ -1,0 +1,43 @@
+# Derived from the official Isaac Lab v3.0.0 external-project template
+# (tools/template/cli.py --non_interactive --task_type external --initial_content stubbed
+#  --workflow direct:single-agent --rl_library rsl_rl). The template's machine-specific
+# [tool.uv.sources] paths were removed; Isaac Lab/Isaac Sim are installed as documented in
+# docs/SETUP_REMOTE.md (Isaac Lab v3.0.0 source checkout + isaacsim[all,extscache]==6.2.0.0).
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csci645_handover"
+version = "0.1.0"
+description = "Two-Franka parallel-jaw handover: geometric coordination and bounded residual PPO (Isaac Lab 3.0)."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Yan Wen" }]
+requires-python = ">=3.12,<3.13"
+# Runtime dependencies come from the pinned Isaac Lab installation (isaaclab, isaaclab-physx,
+# isaaclab-rl with rsl-rl-lib==5.5.1, isaaclab-assets, torch==2.11.0, numpy>=2). Analysis-only
+# scripts additionally need matplotlib.
+dependencies = []
+
+[project.entry-points."isaaclab.tasks"]
+csci645_handover = "csci645_handover.tasks"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/__init__.py" = ["F401", "F403"]
+"scripts/**/*.py" = ["E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

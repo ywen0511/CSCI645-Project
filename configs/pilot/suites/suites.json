@@ -1,0 +1,23 @@
+{
+  "protocol": "protocol.json",
+  "config_id": "unfrozen",
+  "suites": {
+    "development": {
+      "file": "development.jsonl",
+      "cases": 450,
+      "sha256": "cc9b3e209802da62c888a7b41c507608de7d949ccfb9d36ba6ed7c51203774a9",
+      "per_condition": {
+        "clean": 50,
+        "position_in": 50,
+        "position_stress": 50,
+        "timing_early_in": 50,
+        "timing_late_in": 50,
+        "joint_early_in": 50,
+        "joint_late_in": 50,
+        "joint_early_stress": 50,
+        "joint_late_stress": 50
+      }
+    }
+  },
+  "note": "Development cases only (pilot calibration). Validation/final suites are generated from the frozen protocol."
+}
