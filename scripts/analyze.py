@@ -33,6 +33,7 @@ from csci645_handover.core.stats import paired_bootstrap_diff, wilson  # noqa: E
 METHOD_ORDER = ["nominal", "geometry", "residual", "combined", "combined_no_phase"]
 LEARNED = {"residual", "combined", "combined_no_phase"}
 PRIMARY = [("combined", "nominal"), ("combined", "geometry"), ("combined", "residual"), ("combined", "combined_no_phase")]
+DESCRIPTIVE = [("geometry", "nominal"), ("residual", "nominal")]  # reported, not among the four primary comparisons
 REASONS = ["success", "drop", "release_timeout", "prohibited_collision", "episode_timeout", "infrastructure_error",
            "invalid_reset"]
 
@@ -186,7 +187,7 @@ def main():
     import numpy as np
 
     comps = []
-    for x, y in PRIMARY:
+    for x, y in PRIMARY + DESCRIPTIVE:
         for c in conditions + ["ALL_IN_RANGE", "ALL_STRESS"]:
             sel = ([c] if c in conditions else [k for k in conditions if ("stress" in k) == (c == "ALL_STRESS")])
             ax, _ = matrix(x, sel)
@@ -196,7 +197,8 @@ def main():
             A, B = np.array(ax), np.array(bx)
             keep = ~(np.isnan(A).any(0) | np.isnan(B).any(0))  # drop cases invalid for either method
             res = paired_bootstrap_diff(A[:, keep], B[:, keep], n_boot=a.n_boot, seed=645)
-            comps.append({"a": x, "b": y, "condition": c, "excluded_cases": int((~keep).sum()), **res})
+            comps.append({"a": x, "b": y, "primary": (x, y) in PRIMARY, "condition": c,
+                          "excluded_cases": int((~keep).sum()), **res})
     write_csv(out / "comparisons.csv", comps)
 
     # ---------------- failure breakdown ----------------
@@ -341,7 +343,7 @@ def make_figures(out, per_run, per_method, curves, train_curves, fb, conditions)
     ax.set_xticks(x, conditions, rotation=25, ha="right")
     ax.set_ylabel("success rate (%)")
     ax.set_ylim(0, 105)
-    ax.legend(ncol=5, fontsize=8, loc="lower left")
+    ax.legend(ncol=5, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.28), frameon=False)
     ax.set_title("Held-out success by condition (bars: mean; dots: training seeds; whiskers: Wilson 95% CI)")
     fig.tight_layout()
     for ext in ("png", "pdf"):

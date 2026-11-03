@@ -94,7 +94,8 @@ def main():
     tmp.mkdir()
     proto_path = ROOT / "configs/frozen/protocol.json"
     protocol = json.loads(proto_path.read_text())
-    selection = json.loads((summ / "selection.json").read_text())
+    sel_path = summ / "selection.json" if (summ / "selection.json").exists() else summ / "primary" / "selection.json"
+    selection = json.loads(sel_path.read_text())
     inventories: dict = {}
     artifacts: list[dict] = []
 
@@ -147,6 +148,9 @@ def main():
 
     # ---- results ----
     res = tree(runs / "eval", "results/eval") + tree(runs / "validation", "results/validation")
+    if (runs / "eval_final_checkpoint").exists():  # declared secondary analysis
+        res += tree(runs / "eval_final_checkpoint", "results/eval_final_checkpoint")
+    res += tree(runs / "selection", "results/selection")
     res += tree(runs / "invariants", "results/invariants")
     for d in sorted((runs / "train").glob("*_seed*")):
         for f in ("train_log.jsonl", "checkpoints.jsonl", "run.json", "DONE.json"):
@@ -177,7 +181,8 @@ def main():
     register(dest, "configs")
 
     # ---- videos ----
-    vids_index = [json.loads(p.read_text()) for p in sorted(vids.glob("*.json"))]
+    vids_index = [d for d in (json.loads(p.read_text()) for p in sorted(vids.glob("*.json")))
+                  if isinstance(d, dict) and "video" in d]
     if not vids_index:
         raise SystemExit("no video sidecars found")
     dest = out / "videos.tar.gz"

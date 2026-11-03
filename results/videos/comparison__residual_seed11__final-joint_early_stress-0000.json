@@ -1,0 +1,58 @@
+{
+  "video": "comparison__residual_seed11__final-joint_early_stress-0000.mp4",
+  "category": "comparison",
+  "selection_rule": "all methods on the first joint_early_stress case where nominal fails",
+  "method": "residual",
+  "run_id": "residual_seed11",
+  "case_id": "final-joint_early_stress-0000",
+  "condition": "joint_early_stress",
+  "requested_offset_xyz_m": [
+    -0.005720539,
+    -0.005798144,
+    0.005421795
+  ],
+  "release_offset_s": -0.3,
+  "checkpoint": "step_000000000.pt",
+  "checkpoint_sha256": "7e9dc7db8088e9cd17a3ad9cced7389ebf24899dbbd66591048166d3105d65bc",
+  "checkpoint_transitions": 0,
+  "config_hash": "b9eac03d5848617625efd453adf1eb02fa942693766b137bc631cd052ec52b8d",
+  "suite_hash": "880ac131487d88a3571e7ff308493359d93267281ce5617b0a18fe23d01d7b0d",
+  "git": {
+    "commit": "94a2d268bed6a2129f82ad73ca8c2e32befc503c",
+    "dirty": false,
+    "dirty_files": []
+  },
+  "frames": 160,
+  "fps": 20,
+  "playback_speed": 1.0,
+  "renderer": "NewtonWarpRenderer (RGB, direct lighting)",
+  "resolution": [
+    960,
+    540
+  ],
+  "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+  ],
+  "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+  ],
+  "replay_outcome": {
+    "terminal_reason": "episode_timeout",
+    "success": false,
+    "completion_time_s": null,
+    "release_command_time_s": 2.5,
+    "independent_hold_s": 0.0
+  },
+  "utc": "2026-11-03T04:56:53Z",
+  "evaluation_outcome": {
+    "terminal_reason": "episode_timeout",
+    "success": false,
+    "completion_time_s": null
+  },
+  "evaluation_record_file": "residual_seed11__step_000000000.jsonl",
+  "replay_matches_evaluation": true
+}

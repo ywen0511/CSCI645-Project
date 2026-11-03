@@ -1,0 +1,803 @@
+{
+  "combined_no_phase_seed11": {
+    "selected": {
+      "run_id": "combined_no_phase_seed11",
+      "method": "combined_no_phase",
+      "training_seed": 11,
+      "checkpoint": "step_000000000",
+      "checkpoint_sha256": "9ec1711820d00c2293c236682af4d31df59b71fa97840b0ff2178a1560ffd775",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0,
+      "valid": 100,
+      "scheduled": 100
+    },
+    "candidates": [
+      {
+        "run_id": "combined_no_phase_seed11",
+        "method": "combined_no_phase",
+        "training_seed": 11,
+        "checkpoint": "step_000000000",
+        "checkpoint_sha256": "9ec1711820d00c2293c236682af4d31df59b71fa97840b0ff2178a1560ffd775",
+        "transitions": 0,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed11",
+        "method": "combined_no_phase",
+        "training_seed": 11,
+        "checkpoint": "step_002031616",
+        "checkpoint_sha256": "5197ea26b913affc12b938f8f99b2f0b6e9e34daa52ab41d27e4c72431f49ad2",
+        "transitions": 2031616,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed11",
+        "method": "combined_no_phase",
+        "training_seed": 11,
+        "checkpoint": "step_004030464",
+        "checkpoint_sha256": "f3bebeaba2f427b9d4eac71ca4ab914618f90f9cccdf535900551d1e2d05f1f2",
+        "transitions": 4030464,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed11",
+        "method": "combined_no_phase",
+        "training_seed": 11,
+        "checkpoint": "step_006029312",
+        "checkpoint_sha256": "e81fa84149222c368c3ae52240af54c21a3b41e5d3b886cf213fb758b73d007e",
+        "transitions": 6029312,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed11",
+        "method": "combined_no_phase",
+        "training_seed": 11,
+        "checkpoint": "step_008028160",
+        "checkpoint_sha256": "433348db639d9e2025fbdb9edb37c262113a55ba1f29ffa5d57b67ddbc3c9200",
+        "transitions": 8028160,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed11",
+        "method": "combined_no_phase",
+        "training_seed": 11,
+        "checkpoint": "step_010027008",
+        "checkpoint_sha256": "c306d1bdb31948a254aa69fd5207e0411c02265f2671d375b5c2ab910d3211c5",
+        "transitions": 10027008,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      }
+    ],
+    "rule": "highest validation success, then lowest validation drop rate, then earliest step"
+  },
+  "combined_no_phase_seed22": {
+    "selected": {
+      "run_id": "combined_no_phase_seed22",
+      "method": "combined_no_phase",
+      "training_seed": 22,
+      "checkpoint": "step_000000000",
+      "checkpoint_sha256": "7c25824adc51ce49fa9a7eef7cf01ce089a9ec744b0d9455682eaee6abdfa1aa",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0,
+      "valid": 100,
+      "scheduled": 100
+    },
+    "candidates": [
+      {
+        "run_id": "combined_no_phase_seed22",
+        "method": "combined_no_phase",
+        "training_seed": 22,
+        "checkpoint": "step_000000000",
+        "checkpoint_sha256": "7c25824adc51ce49fa9a7eef7cf01ce089a9ec744b0d9455682eaee6abdfa1aa",
+        "transitions": 0,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed22",
+        "method": "combined_no_phase",
+        "training_seed": 22,
+        "checkpoint": "step_002031616",
+        "checkpoint_sha256": "3926a081d9319b20d562fa2380f7bbde0b628de4b49caa168fb68a26a1187d21",
+        "transitions": 2031616,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed22",
+        "method": "combined_no_phase",
+        "training_seed": 22,
+        "checkpoint": "step_004030464",
+        "checkpoint_sha256": "25dafda45508ac9c6f332f734fbc7380449cc54dbc43c5557bdf17a1349906f2",
+        "transitions": 4030464,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed22",
+        "method": "combined_no_phase",
+        "training_seed": 22,
+        "checkpoint": "step_006029312",
+        "checkpoint_sha256": "e4032619f0e28fd9381b2c27fa2e70919a0c76e227dd318d417006c64d5176dd",
+        "transitions": 6029312,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed22",
+        "method": "combined_no_phase",
+        "training_seed": 22,
+        "checkpoint": "step_008028160",
+        "checkpoint_sha256": "bf055baa7704482085f7227637dbf3b42555cf4dd0e858fae460d52ddf38efe7",
+        "transitions": 8028160,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed22",
+        "method": "combined_no_phase",
+        "training_seed": 22,
+        "checkpoint": "step_010027008",
+        "checkpoint_sha256": "091261ff8bb118c09b5ef5f8a8e238836db51ac09c35369f60f0ba55c016ade7",
+        "transitions": 10027008,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      }
+    ],
+    "rule": "highest validation success, then lowest validation drop rate, then earliest step"
+  },
+  "combined_no_phase_seed33": {
+    "selected": {
+      "run_id": "combined_no_phase_seed33",
+      "method": "combined_no_phase",
+      "training_seed": 33,
+      "checkpoint": "step_000000000",
+      "checkpoint_sha256": "4801190f4642f98fce0b37f99f9b2ad573dbfe8a91a22fab8a77244b49082c62",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0,
+      "valid": 100,
+      "scheduled": 100
+    },
+    "candidates": [
+      {
+        "run_id": "combined_no_phase_seed33",
+        "method": "combined_no_phase",
+        "training_seed": 33,
+        "checkpoint": "step_000000000",
+        "checkpoint_sha256": "4801190f4642f98fce0b37f99f9b2ad573dbfe8a91a22fab8a77244b49082c62",
+        "transitions": 0,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed33",
+        "method": "combined_no_phase",
+        "training_seed": 33,
+        "checkpoint": "step_002031616",
+        "checkpoint_sha256": "64ec36da9bb211494818a375000dd4f746614313413609578e882d57127f5638",
+        "transitions": 2031616,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed33",
+        "method": "combined_no_phase",
+        "training_seed": 33,
+        "checkpoint": "step_004030464",
+        "checkpoint_sha256": "b5ecb2f18261f3f2fc035ab0abd146970c3d9ed283a9256ad61ed3f757d14371",
+        "transitions": 4030464,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed33",
+        "method": "combined_no_phase",
+        "training_seed": 33,
+        "checkpoint": "step_006029312",
+        "checkpoint_sha256": "e724e28365b6fe60b746bfe2592b12ba0fcfa66ab7f310a2488b729415187e4d",
+        "transitions": 6029312,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed33",
+        "method": "combined_no_phase",
+        "training_seed": 33,
+        "checkpoint": "step_008028160",
+        "checkpoint_sha256": "aadae0117b233284d4886e8b70d4e5d57f8d201809e4e65fa8992eaad5eaad7a",
+        "transitions": 8028160,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_no_phase_seed33",
+        "method": "combined_no_phase",
+        "training_seed": 33,
+        "checkpoint": "step_010027008",
+        "checkpoint_sha256": "9f861e086fb478b9db9458298044243ae9028789a5517786375aa0d82f2b8d31",
+        "transitions": 10027008,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      }
+    ],
+    "rule": "highest validation success, then lowest validation drop rate, then earliest step"
+  },
+  "combined_seed11": {
+    "selected": {
+      "run_id": "combined_seed11",
+      "method": "combined",
+      "training_seed": 11,
+      "checkpoint": "step_000000000",
+      "checkpoint_sha256": "9076edb4570236d4978d71b2995116e3aec54e9f7269359c27d790489f3830e4",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0,
+      "valid": 100,
+      "scheduled": 100
+    },
+    "candidates": [
+      {
+        "run_id": "combined_seed11",
+        "method": "combined",
+        "training_seed": 11,
+        "checkpoint": "step_000000000",
+        "checkpoint_sha256": "9076edb4570236d4978d71b2995116e3aec54e9f7269359c27d790489f3830e4",
+        "transitions": 0,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed11",
+        "method": "combined",
+        "training_seed": 11,
+        "checkpoint": "step_002031616",
+        "checkpoint_sha256": "3604a810c21fea510b676020042114f82fb62d90f94e5e18b9a70b5c0df6bd90",
+        "transitions": 2031616,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed11",
+        "method": "combined",
+        "training_seed": 11,
+        "checkpoint": "step_004030464",
+        "checkpoint_sha256": "902ae3ae7899d1ee751852bf00be36876148bd2f72cf61385587266ab19eb98f",
+        "transitions": 4030464,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed11",
+        "method": "combined",
+        "training_seed": 11,
+        "checkpoint": "step_006029312",
+        "checkpoint_sha256": "de0c7b2d9a48d797d19964e109a670ec655478b204b8ddad2cadcd57e9d38dc6",
+        "transitions": 6029312,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed11",
+        "method": "combined",
+        "training_seed": 11,
+        "checkpoint": "step_008028160",
+        "checkpoint_sha256": "48d8c61e39526f6bb549d163677176df7dc65956340d5811c5b1b7d70f4490ae",
+        "transitions": 8028160,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed11",
+        "method": "combined",
+        "training_seed": 11,
+        "checkpoint": "step_010027008",
+        "checkpoint_sha256": "8dab8c7a38a9bba8d4f7595ad575dc84656ce142be96db01a84875a3333b9937",
+        "transitions": 10027008,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      }
+    ],
+    "rule": "highest validation success, then lowest validation drop rate, then earliest step"
+  },
+  "combined_seed22": {
+    "selected": {
+      "run_id": "combined_seed22",
+      "method": "combined",
+      "training_seed": 22,
+      "checkpoint": "step_000000000",
+      "checkpoint_sha256": "999f2581711d522aa812854211c34aa40f1dd31bc67de1180ae1a2616c431c81",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0,
+      "valid": 100,
+      "scheduled": 100
+    },
+    "candidates": [
+      {
+        "run_id": "combined_seed22",
+        "method": "combined",
+        "training_seed": 22,
+        "checkpoint": "step_000000000",
+        "checkpoint_sha256": "999f2581711d522aa812854211c34aa40f1dd31bc67de1180ae1a2616c431c81",
+        "transitions": 0,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed22",
+        "method": "combined",
+        "training_seed": 22,
+        "checkpoint": "step_002031616",
+        "checkpoint_sha256": "80c56063e45d3433e05a9f62d267390118c73c05132db4baba990a4e43b2ae4e",
+        "transitions": 2031616,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed22",
+        "method": "combined",
+        "training_seed": 22,
+        "checkpoint": "step_004030464",
+        "checkpoint_sha256": "4036a1bd53410d5d65a5592aff6a180e76e176da9484170aa02cedaf762bf653",
+        "transitions": 4030464,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed22",
+        "method": "combined",
+        "training_seed": 22,
+        "checkpoint": "step_006029312",
+        "checkpoint_sha256": "027be72126bb0bddedfd0dd0c8d34e7e26633a7f3cfed3a86ea2eb4b8b8fe165",
+        "transitions": 6029312,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed22",
+        "method": "combined",
+        "training_seed": 22,
+        "checkpoint": "step_008028160",
+        "checkpoint_sha256": "2eb1121cfe9f7b8446846422f45bd112ffe396f2e555c844f46301582254d959",
+        "transitions": 8028160,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed22",
+        "method": "combined",
+        "training_seed": 22,
+        "checkpoint": "step_010027008",
+        "checkpoint_sha256": "90aea26debf6732895a26b1ca40ecfdd9d74dc3f3ba2eda8c4ba1aba8d004b3b",
+        "transitions": 10027008,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      }
+    ],
+    "rule": "highest validation success, then lowest validation drop rate, then earliest step"
+  },
+  "combined_seed33": {
+    "selected": {
+      "run_id": "combined_seed33",
+      "method": "combined",
+      "training_seed": 33,
+      "checkpoint": "step_000000000",
+      "checkpoint_sha256": "3a810d3acb7253d94eb4ff3c6c9a869d7975a5a23af91732cf96308f2778dc19",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0,
+      "valid": 100,
+      "scheduled": 100
+    },
+    "candidates": [
+      {
+        "run_id": "combined_seed33",
+        "method": "combined",
+        "training_seed": 33,
+        "checkpoint": "step_000000000",
+        "checkpoint_sha256": "3a810d3acb7253d94eb4ff3c6c9a869d7975a5a23af91732cf96308f2778dc19",
+        "transitions": 0,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed33",
+        "method": "combined",
+        "training_seed": 33,
+        "checkpoint": "step_002031616",
+        "checkpoint_sha256": "df5013b10b978633bf8944a810bf8756c07a892d68435e25bbf4cf4900edec46",
+        "transitions": 2031616,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed33",
+        "method": "combined",
+        "training_seed": 33,
+        "checkpoint": "step_004030464",
+        "checkpoint_sha256": "2162700a1925357e8d1cf24432f5e9669f2d908d82c8fecd94839e83d467029f",
+        "transitions": 4030464,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed33",
+        "method": "combined",
+        "training_seed": 33,
+        "checkpoint": "step_006029312",
+        "checkpoint_sha256": "937f1cf344589c63f4bd67c658d8367ea2ad4e6f4ef10d4ec4f663291d37dffc",
+        "transitions": 6029312,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed33",
+        "method": "combined",
+        "training_seed": 33,
+        "checkpoint": "step_008028160",
+        "checkpoint_sha256": "05464c4f8af592f38818f178f718d4838d7784c4d95df8a6145fba79a57d80cc",
+        "transitions": 8028160,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "combined_seed33",
+        "method": "combined",
+        "training_seed": 33,
+        "checkpoint": "step_010027008",
+        "checkpoint_sha256": "1509dcdbb1ccbc4f81ddb262cf234d65320f4e4f217698942fb199eaf6da749c",
+        "transitions": 10027008,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      }
+    ],
+    "rule": "highest validation success, then lowest validation drop rate, then earliest step"
+  },
+  "residual_seed11": {
+    "selected": {
+      "run_id": "residual_seed11",
+      "method": "residual",
+      "training_seed": 11,
+      "checkpoint": "step_000000000",
+      "checkpoint_sha256": "7e9dc7db8088e9cd17a3ad9cced7389ebf24899dbbd66591048166d3105d65bc",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0,
+      "valid": 100,
+      "scheduled": 100
+    },
+    "candidates": [
+      {
+        "run_id": "residual_seed11",
+        "method": "residual",
+        "training_seed": 11,
+        "checkpoint": "step_000000000",
+        "checkpoint_sha256": "7e9dc7db8088e9cd17a3ad9cced7389ebf24899dbbd66591048166d3105d65bc",
+        "transitions": 0,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed11",
+        "method": "residual",
+        "training_seed": 11,
+        "checkpoint": "step_002031616",
+        "checkpoint_sha256": "9677d31627adbe07dcd9bf31c61245a87dddb18e431d7989639473bc79ab2bba",
+        "transitions": 2031616,
+        "success_rate": 0.85,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed11",
+        "method": "residual",
+        "training_seed": 11,
+        "checkpoint": "step_004030464",
+        "checkpoint_sha256": "cb013c7c8e42f5ebc30a8a33dcb6fc387092001c8a89802d443ac510f286abf0",
+        "transitions": 4030464,
+        "success_rate": 0.88,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed11",
+        "method": "residual",
+        "training_seed": 11,
+        "checkpoint": "step_006029312",
+        "checkpoint_sha256": "693e8f99d34c0423ec65f8b576729a69e515cbce827beca2c781343bfd4b94cc",
+        "transitions": 6029312,
+        "success_rate": 0.9,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed11",
+        "method": "residual",
+        "training_seed": 11,
+        "checkpoint": "step_008028160",
+        "checkpoint_sha256": "41f2096c9afb7ca3dc3460ef037c884baf93ce372b72b42b11b6c3bc17b762e8",
+        "transitions": 8028160,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed11",
+        "method": "residual",
+        "training_seed": 11,
+        "checkpoint": "step_010027008",
+        "checkpoint_sha256": "a86a9c492a2111ff7664574f98524f4c07f9f9edf3a110ef5381d78de51d37ed",
+        "transitions": 10027008,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      }
+    ],
+    "rule": "highest validation success, then lowest validation drop rate, then earliest step"
+  },
+  "residual_seed22": {
+    "selected": {
+      "run_id": "residual_seed22",
+      "method": "residual",
+      "training_seed": 22,
+      "checkpoint": "step_000000000",
+      "checkpoint_sha256": "4f333385a6c0363581598b13fbedac06e68cb3681b1158ba30202cbfe7d7c35e",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0,
+      "valid": 100,
+      "scheduled": 100
+    },
+    "candidates": [
+      {
+        "run_id": "residual_seed22",
+        "method": "residual",
+        "training_seed": 22,
+        "checkpoint": "step_000000000",
+        "checkpoint_sha256": "4f333385a6c0363581598b13fbedac06e68cb3681b1158ba30202cbfe7d7c35e",
+        "transitions": 0,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed22",
+        "method": "residual",
+        "training_seed": 22,
+        "checkpoint": "step_002031616",
+        "checkpoint_sha256": "ae4796c67c69ec89e83318dd69378153a0409df4730f28f1af8da055e03778f2",
+        "transitions": 2031616,
+        "success_rate": 0.89,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed22",
+        "method": "residual",
+        "training_seed": 22,
+        "checkpoint": "step_004030464",
+        "checkpoint_sha256": "20ba584632aa35888baffec0373bb5c525c2ca9ecd2565d10b317d13d13d6653",
+        "transitions": 4030464,
+        "success_rate": 0.89,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed22",
+        "method": "residual",
+        "training_seed": 22,
+        "checkpoint": "step_006029312",
+        "checkpoint_sha256": "33c2506975bda2f93af01caadf8125bd5e914b3312519736554026d524c13332",
+        "transitions": 6029312,
+        "success_rate": 0.95,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed22",
+        "method": "residual",
+        "training_seed": 22,
+        "checkpoint": "step_008028160",
+        "checkpoint_sha256": "566cd5284d04dda43ffdac7dccb30f7f4840fd620c83be83cd57de2548a1fe27",
+        "transitions": 8028160,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed22",
+        "method": "residual",
+        "training_seed": 22,
+        "checkpoint": "step_010027008",
+        "checkpoint_sha256": "a8f9e4302b29fd283937f24361c2df5b13f8344a4611224efe896525f0aa64e4",
+        "transitions": 10027008,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      }
+    ],
+    "rule": "highest validation success, then lowest validation drop rate, then earliest step"
+  },
+  "residual_seed33": {
+    "selected": {
+      "run_id": "residual_seed33",
+      "method": "residual",
+      "training_seed": 33,
+      "checkpoint": "step_008028160",
+      "checkpoint_sha256": "43e5872777e7cc807d2f3a0e683c31189c4de52ed7fc68924786fa3c132e0d01",
+      "transitions": 8028160,
+      "success_rate": 1.0,
+      "drop_rate": 0.0,
+      "valid": 100,
+      "scheduled": 100
+    },
+    "candidates": [
+      {
+        "run_id": "residual_seed33",
+        "method": "residual",
+        "training_seed": 33,
+        "checkpoint": "step_000000000",
+        "checkpoint_sha256": "4cf51e08bc8ccfa020e4e4b6bb7676c67bb65a6b5ce8b0e2c87eede039893908",
+        "transitions": 0,
+        "success_rate": 0.88,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed33",
+        "method": "residual",
+        "training_seed": 33,
+        "checkpoint": "step_002031616",
+        "checkpoint_sha256": "ffa5bcf9cdf9cf351950d58277cb608f90548a13781e1df5f067a7dfec35594d",
+        "transitions": 2031616,
+        "success_rate": 0.87,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed33",
+        "method": "residual",
+        "training_seed": 33,
+        "checkpoint": "step_004030464",
+        "checkpoint_sha256": "fb3411a6377426474420ed6c34f8611d3af10c081ac29c5f732b50060cfb19cd",
+        "transitions": 4030464,
+        "success_rate": 0.88,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed33",
+        "method": "residual",
+        "training_seed": 33,
+        "checkpoint": "step_006029312",
+        "checkpoint_sha256": "9d695d2e4365cd18a5284023bec4ec96973980af4c66cd95e349a8ae1a5af490",
+        "transitions": 6029312,
+        "success_rate": 0.95,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed33",
+        "method": "residual",
+        "training_seed": 33,
+        "checkpoint": "step_008028160",
+        "checkpoint_sha256": "43e5872777e7cc807d2f3a0e683c31189c4de52ed7fc68924786fa3c132e0d01",
+        "transitions": 8028160,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      },
+      {
+        "run_id": "residual_seed33",
+        "method": "residual",
+        "training_seed": 33,
+        "checkpoint": "step_010027008",
+        "checkpoint_sha256": "14bdeb4de94a064903de6880b180613c291e395f1b826a77007407c0de28a8fa",
+        "transitions": 10027008,
+        "success_rate": 1.0,
+        "drop_rate": 0.0,
+        "valid": 100,
+        "scheduled": 100
+      }
+    ],
+    "rule": "highest validation success, then lowest validation drop rate, then earliest step"
+  }
+}

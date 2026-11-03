@@ -1,0 +1,33 @@
+{
+  "phase_ablation": {
+    "max_abs_masked_phase_channel": 0.0,
+    "max_abs_difference_outside_phase_channels": 0.0,
+    "pass": true
+  },
+  "residual_bound": {
+    "max_abs_residual_m": 0.019999999552965164,
+    "pass": true
+  },
+  "no_accumulation": {
+    "max_abs_error_m": 0.0,
+    "pass": true
+  },
+  "zero_residual_equivalence": {
+    "zero_residual_vs_nominal": {
+      "cases": 450,
+      "same_terminal_reason": 450,
+      "max_completion_time_difference_s": 0.0
+    },
+    "zero_combined_vs_geometry": {
+      "cases": 450,
+      "same_terminal_reason": 450,
+      "max_completion_time_difference_s": 0.0
+    }
+  },
+  "git": {
+    "commit": "94a2d268bed6a2129f82ad73ca8c2e32befc503c",
+    "dirty": false,
+    "dirty_files": []
+  },
+  "config_hash": "b9eac03d5848617625efd453adf1eb02fa942693766b137bc631cd052ec52b8d"
+}

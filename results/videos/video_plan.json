@@ -1,0 +1,102 @@
+[
+  {
+    "category": "clean_baseline",
+    "rule": "nominal on final-clean-0000",
+    "method": "nominal",
+    "run_id": "nominal",
+    "case_id": "final-clean-0000",
+    "checkpoint": null,
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/nominal.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/clean_baseline__nominal__final-clean-0000.mp4"
+  },
+  {
+    "category": "comparison",
+    "rule": "all methods on the first joint_early_stress case where nominal fails",
+    "method": "nominal",
+    "run_id": "nominal",
+    "case_id": "final-joint_early_stress-0000",
+    "checkpoint": null,
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/nominal.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/comparison__nominal__final-joint_early_stress-0000.mp4"
+  },
+  {
+    "category": "comparison",
+    "rule": "all methods on the first joint_early_stress case where nominal fails",
+    "method": "geometry",
+    "run_id": "geometry",
+    "case_id": "final-joint_early_stress-0000",
+    "checkpoint": null,
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/geometry.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/comparison__geometry__final-joint_early_stress-0000.mp4"
+  },
+  {
+    "category": "comparison",
+    "rule": "all methods on the first joint_early_stress case where nominal fails",
+    "method": "residual",
+    "run_id": "residual_seed11",
+    "case_id": "final-joint_early_stress-0000",
+    "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/train/residual_seed11/checkpoints/step_000000000.pt",
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/residual_seed11__step_000000000.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/comparison__residual_seed11__final-joint_early_stress-0000.mp4"
+  },
+  {
+    "category": "comparison",
+    "rule": "all methods on the first joint_early_stress case where nominal fails",
+    "method": "combined",
+    "run_id": "combined_seed11",
+    "case_id": "final-joint_early_stress-0000",
+    "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/train/combined_seed11/checkpoints/step_000000000.pt",
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/combined_seed11__step_000000000.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/comparison__combined_seed11__final-joint_early_stress-0000.mp4"
+  },
+  {
+    "category": "comparison",
+    "rule": "all methods on the first joint_early_stress case where nominal fails",
+    "method": "combined_no_phase",
+    "run_id": "combined_no_phase_seed11",
+    "case_id": "final-joint_early_stress-0000",
+    "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/train/combined_no_phase_seed11/checkpoints/step_000000000.pt",
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/combined_no_phase_seed11__step_000000000.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/comparison__combined_no_phase_seed11__final-joint_early_stress-0000.mp4"
+  },
+  {
+    "category": "position_failure",
+    "rule": "nominal: first position_stress failure with misalignment flag",
+    "method": "nominal",
+    "run_id": "nominal",
+    "case_id": "final-position_stress-0015",
+    "checkpoint": null,
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/nominal.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/position_failure__nominal__final-position_stress-0015.mp4"
+  },
+  {
+    "category": "premature_release",
+    "rule": "nominal: first drop with premature-release flag",
+    "method": "nominal",
+    "run_id": "nominal",
+    "case_id": "final-joint_early_stress-0003",
+    "checkpoint": null,
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/nominal.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/premature_release__nominal__final-joint_early_stress-0003.mp4"
+  },
+  {
+    "category": "conflicting_motion",
+    "rule": "first failed record with conflicting-motion flag (any run)",
+    "method": "nominal",
+    "run_id": "nominal",
+    "case_id": "final-joint_late_stress-0064",
+    "checkpoint": null,
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/nominal.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/conflicting_motion__nominal__final-joint_late_stress-0064.mp4"
+  },
+  {
+    "category": "learned_failure",
+    "rule": "combined seed 11: first failure by case ID",
+    "method": "combined",
+    "run_id": "combined_seed11",
+    "case_id": "final-joint_early_stress-0028",
+    "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/train/combined_seed11/checkpoints/step_000000000.pt",
+    "eval_records": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/eval/combined_seed11__step_000000000.jsonl",
+    "output": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/final/videos/learned_failure__combined_seed11__final-joint_early_stress-0028.mp4"
+  }
+]

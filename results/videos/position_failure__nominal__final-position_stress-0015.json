@@ -1,0 +1,58 @@
+{
+  "video": "position_failure__nominal__final-position_stress-0015.mp4",
+  "category": "position_failure",
+  "selection_rule": "nominal: first position_stress failure with misalignment flag",
+  "method": "nominal",
+  "run_id": "nominal",
+  "case_id": "final-position_stress-0015",
+  "condition": "position_stress",
+  "requested_offset_xyz_m": [
+    -0.018380186,
+    0.01022954,
+    0.018059362
+  ],
+  "release_offset_s": 0.0,
+  "checkpoint": null,
+  "checkpoint_sha256": null,
+  "checkpoint_transitions": null,
+  "config_hash": "b9eac03d5848617625efd453adf1eb02fa942693766b137bc631cd052ec52b8d",
+  "suite_hash": "880ac131487d88a3571e7ff308493359d93267281ce5617b0a18fe23d01d7b0d",
+  "git": {
+    "commit": "94a2d268bed6a2129f82ad73ca8c2e32befc503c",
+    "dirty": false,
+    "dirty_files": []
+  },
+  "frames": 160,
+  "fps": 20,
+  "playback_speed": 1.0,
+  "renderer": "NewtonWarpRenderer (RGB, direct lighting)",
+  "resolution": [
+    960,
+    540
+  ],
+  "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+  ],
+  "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+  ],
+  "replay_outcome": {
+    "terminal_reason": "episode_timeout",
+    "success": false,
+    "completion_time_s": null,
+    "release_command_time_s": 2.799999952316284,
+    "independent_hold_s": 1.0000001192092896
+  },
+  "utc": "2026-11-03T04:57:24Z",
+  "evaluation_outcome": {
+    "terminal_reason": "episode_timeout",
+    "success": false,
+    "completion_time_s": null
+  },
+  "evaluation_record_file": "nominal.jsonl",
+  "replay_matches_evaluation": true
+}

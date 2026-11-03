@@ -15,9 +15,36 @@ All code documentation, logs intended for delivery, reports, release notes, and 
 
 ## Current status
 
-This repository initially contains a complete execution specification and handoff utilities. **The simulator environment, controllers, trained policies, and experimental results have not yet been implemented or validated.** A remote execution agent is expected to implement, run, evaluate, document, and publish the project described here. Do not interpret proposed parameters as measured results.
+**Completed (November 2026).** The project was implemented, run and published end to end:
 
-Everything needed to understand the assignment is in this repository. No local computer files, previous conversation, or private notes are required. Running the work does require an appropriate remote GPU environment, access to the official simulator assets, and GitHub write access. Missing external access must be reported honestly.
+| Deliverable | Location |
+|---|---|
+| Final release (checkpoints, raw results, logs, configs, videos, report, checksums) | [v1.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v1.0.0) |
+| Experiment source (all final runs) | tag [`experiment-v1`](https://github.com/ywen0511/CSCI645-Project/tree/experiment-v1) |
+| Final report | [report/report.md](report/report.md) · [report/report.pdf](report/report.pdf) |
+| Result summaries (tables, CSVs, figures) | [results/summary/primary](results/summary/primary/tables.md) · [secondary](results/summary/secondary/tables.md) |
+| Checkpoint index / video index | release assets `checkpoints.json`, `videos.json`; [results/videos](results/videos) |
+| Setup / reproduction / decisions | [docs/SETUP_REMOTE.md](docs/SETUP_REMOTE.md) · [docs/REPRODUCE.md](docs/REPRODUCE.md) · [docs/DECISIONS.md](docs/DECISIONS.md) |
+| Release verification record | [docs/RELEASE_VERIFICATION.md](docs/RELEASE_VERIFICATION.md) |
+
+Platform: Isaac Lab v3.0.0 + Isaac Sim 6.2.0.0 (PhysX backend), RSL-RL 5.5.1 PPO, NVIDIA A100-40GB.
+Nine PPO runs (3 methods x seeds 11/22/33, 10,027,008 transitions each) and 19,800 final-evaluation
+episodes (0 invalid resets, 0 infrastructure errors).
+
+**Main findings (held-out final suite; success rate, mean over seeds).**
+
+| | nominal | geometry | residual | combined | combined_no_phase |
+|---|---|---|---|---|---|
+| in-range conditions (1,400 cases) | 95.5 % | 100.0 % | 99.9 % | 100.0 % | 100.0 % |
+| stress conditions (400 cases) | 47.8 % | 93.3 % | 52.9 % | 94.5 % | 95.2 % |
+
+* The training-free geometry module is decisive (+45.5 points on stress cases, all drops removed).
+* combined vs geometry: +1.2 points [-4.3, +5.4] (no detectable gain); trained final checkpoints
+  (secondary analysis): -3.4 [-6.3, -1.1]. The phase-label ablation has no detectable effect.
+* Validation (drawn from the training distribution) was saturated by geometry, so the frozen selection rule
+  chose the untrained step-0 policy for 8 of 9 runs; see report Section 7 and docs/DECISIONS.md.
+
+The original execution brief follows unchanged below.
 
 ## Objective
 

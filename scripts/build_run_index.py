@@ -32,6 +32,8 @@ def main():
     ap.add_argument("--output", required=True)
     ap.add_argument("--protocol", default=None)
     ap.add_argument("--suites", default=None)
+    ap.add_argument("--eval-dir", default="eval", help="Folder (under --runs) with learned-run final records.")
+    ap.add_argument("--scripted-eval-dir", default="eval", help="Folder with the nominal/geometry final records.")
     a = ap.parse_args()
     root = Path(a.runs).resolve()
     out = Path(a.output).resolve()
@@ -47,7 +49,9 @@ def main():
     idx = {"protocol": rel(proto), "suites": {"final": rel(suites / "final.jsonl"),
                                               "validation": rel(suites / "validation.jsonl")},
            "final_eval": [], "validation": [], "training": []}
-    for f in sorted((root / "eval").glob("*.jsonl")):
+    eval_files = [f for f in sorted((root / a.eval_dir).glob("*.jsonl")) if "_seed" in f.stem]
+    eval_files += [f for f in sorted((root / a.scripted_eval_dir).glob("*.jsonl")) if "_seed" not in f.stem]
+    for f in eval_files:
         if f.name.startswith("eval_runs"):
             continue
         rid = f.stem.split("__")[0]

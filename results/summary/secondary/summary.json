@@ -1,0 +1,62 @@
+{
+  "errors": [],
+  "n_final_runs": 11,
+  "final_records": 19800,
+  "expected_final_records": 19800,
+  "selection": {
+    "combined_no_phase_seed11": {
+      "checkpoint": "step_000000000",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0
+    },
+    "combined_no_phase_seed22": {
+      "checkpoint": "step_000000000",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0
+    },
+    "combined_no_phase_seed33": {
+      "checkpoint": "step_000000000",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0
+    },
+    "combined_seed11": {
+      "checkpoint": "step_000000000",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0
+    },
+    "combined_seed22": {
+      "checkpoint": "step_000000000",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0
+    },
+    "combined_seed33": {
+      "checkpoint": "step_000000000",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0
+    },
+    "residual_seed11": {
+      "checkpoint": "step_000000000",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0
+    },
+    "residual_seed22": {
+      "checkpoint": "step_000000000",
+      "transitions": 0,
+      "success_rate": 1.0,
+      "drop_rate": 0.0
+    },
+    "residual_seed33": {
+      "checkpoint": "step_008028160",
+      "transitions": 8028160,
+      "success_rate": 1.0,
+      "drop_rate": 0.0
+    }
+  }
+}
