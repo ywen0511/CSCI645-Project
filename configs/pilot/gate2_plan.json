@@ -1,0 +1,14 @@
+[
+ {
+  "name": "dev_geometry_cap10",
+  "method": "geometry",
+  "suite": "configs/pilot/suites/development.jsonl",
+  "trace": 0
+ },
+ {
+  "name": "dev_nominal_v2",
+  "method": "nominal",
+  "suite": "configs/pilot/suites/development.jsonl",
+  "trace": 0
+ }
+]

@@ -28,6 +28,7 @@ parser.add_argument("--episodes", type=int, default=20, help="Clean cases when -
 parser.add_argument("--suite", default=None, help="JSONL case file.")
 parser.add_argument("--conditions", default=None, help="Comma-separated condition filter.")
 parser.add_argument("--limit", type=int, default=None, help="Use only the first N matching cases.")
+parser.add_argument("--case-ids", default=None, help="Comma-separated case IDs to run.")
 parser.add_argument("--overrides", default=None, help="JSON file of env cfg overrides (pilot calibration).")
 parser.add_argument("--set", action="append", default=[], help="Env cfg override key=json_value (repeatable).")
 parser.add_argument("--trace", type=int, default=2, help="Record per-step traces for the first N cases.")
@@ -54,6 +55,9 @@ def main():
         cases = [{"case_id": f"adhoc-clean-{i:04d}", "suite": "adhoc", "condition": "clean",
                   "requested_offset_xyz_m": [0.0, 0.0, 0.0], "release_offset_s": 0.0} for i in range(args.episodes)]
         s_hash = None
+    if args.case_ids:
+        keep_ids = set(args.case_ids.split(","))
+        cases = [c for c in cases if c["case_id"] in keep_ids]
     if args.limit:
         cases = cases[: args.limit]
     device = args.device if getattr(args, "device", None) else "cuda:0"

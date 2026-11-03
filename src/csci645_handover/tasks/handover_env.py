@@ -55,6 +55,7 @@ class HandoverEnv(DirectRLEnv):
         self.giver, self.recv, self.obj = sc["giver"], sc["receiver"], sc["object"]
         self.table = sc["table"]
         self.table_half_height = float(sc.cfg.table.spawn.size[2]) / 2
+        self.table_default_local = torch.tensor(sc.cfg.table.init_state.pos, dtype=torch.float32, device=self.device)
         self.s_glf, self.s_grf = sc.sensors["giver_lf"], sc.sensors["giver_rf"]
         self.s_rlf, self.s_rrf = sc.sensors["recv_lf"], sc.sensors["recv_rf"]
         self.s_obj = sc.sensors["object_contact"]
@@ -118,6 +119,7 @@ class HandoverEnv(DirectRLEnv):
         self.settle_t = z(n)
         self.attempt = torch.zeros(n, dtype=torch.long, device=dev)
         self.t = z(n)
+        self.k_scored = torch.zeros(n, dtype=torch.long, device=dev)
         self.offset = z(n, 3)
         self.release_offset = z(n)
         self.realized_offset = z(n, 3)
@@ -144,6 +146,8 @@ class HandoverEnv(DirectRLEnv):
         self.exec_minus_cand_sum = z(n)
         self.ended_reason = torch.zeros(n, dtype=torch.long, device=dev)
         self.newly_ended = zb()
+        self.reset_fail_bits = torch.zeros(n, dtype=torch.long, device=dev)
+        self.reset_offset_err = z(n)
         self.release_request_time = nan()
         self.ep_reward = z(n)
         self.m: dict[str, torch.Tensor] = {}
@@ -250,6 +254,7 @@ class HandoverEnv(DirectRLEnv):
             self.case_index[env_ids] = -1
             self.mode[env_ids] = SETTLE
         self.attempt[env_ids] = 0
+        self.reset_fail_bits[env_ids] = 0
         self._begin_settle(env_ids)
         self.raw_action[env_ids] = 0.0
         self.residual[env_ids] = 0.0
@@ -277,6 +282,7 @@ class HandoverEnv(DirectRLEnv):
         self.obj.write_root_velocity_to_sim_index(root_velocity=torch.zeros(n, 6, device=dev), env_ids=env_ids)
         self.settle_t[env_ids] = 0.0
         self.t[env_ids] = 0.0
+        self.k_scored[env_ids] = 0
         self._fd_valid[env_ids] = False
         self.released[env_ids] = False
         self.release_cmd_time[env_ids] = float("inf")
@@ -286,13 +292,17 @@ class HandoverEnv(DirectRLEnv):
         self.release_request_time[env_ids] = self.cfg.t_release_nominal + self.release_offset[env_ids]
         if self.cfg.negative_control == "giver_holds":
             self.release_request_time[env_ids] = float("inf")
+        # table pose: default, or (negative control) raised under the object and shifted to -x so that it
+        # supports the bar while staying clear of the receiver's fingers; the giver is absent in that control
+        tpose = torch.zeros(n, 7, device=dev)
+        tpose[:, :3] = origins + self.table_default_local
+        tpose[:, 6] = 1.0
         if self.cfg.negative_control == "table_support":
-            tpose = torch.zeros(n, 7, device=dev)
+            # (run with a narrow table, cfg.table_size_override, that fits between the two grippers' fingertips)
             top = self.obj_nominal_local[2] + self.offset[env_ids, 2] - self.cfg.object_size[2] / 2
-            tpose[:, :2] = origins[:, :2]
+            tpose[:, 0] = origins[:, 0] + self.obj_nominal_local[0] + self.offset[env_ids, 0]
             tpose[:, 2] = origins[:, 2] + top - self.table_half_height
-            tpose[:, 6] = 1.0
-            self.table.write_root_pose_to_sim_index(root_pose=tpose, env_ids=env_ids)
+        self.table.write_root_pose_to_sim_index(root_pose=tpose, env_ids=env_ids)
         self.realized_offset[env_ids] = 0.0
         for name in ("align_sat_steps", "shared_sat_steps", "scored_steps", "residual_abs_sum",
                      "residual_abs_max", "exec_minus_cand_sum"):
@@ -355,7 +365,7 @@ class HandoverEnv(DirectRLEnv):
 
         # fingers
         st = self.settle_t
-        g_settle = torch.where(st < c.settle_pin_s - 1e-6, torch.full_like(st, c.finger_open), torch.full_like(st, c.finger_closed))
+        g_settle = torch.where(st < c.settle_pin_s - 1e-4, torch.full_like(st, c.finger_open), torch.full_like(st, c.finger_closed))
         g_scored = torch.where(self.released, torch.full_like(t, c.finger_open), torch.full_like(t, c.finger_closed))
         self.finger_target_g = torch.where(scored, g_scored, torch.where(settle, g_settle, torch.full_like(t, c.finger_closed)))
         r_sched = receiver_finger_target(t, c.finger_open, c.finger_closed, self.sched)
@@ -474,22 +484,27 @@ class HandoverEnv(DirectRLEnv):
 
         # ---- settling progress and validity ----
         self.settle_t = torch.where(settle, self.settle_t + dt, self.settle_t)
-        done_settle = settle & (self.settle_t >= self.settle_total - 1e-6)
+        done_settle = settle & (self.settle_t >= self.settle_total - 1e-4)
         if done_settle.any():
             realized = m["obj_pos"] - self.obj_nominal_local
-            valid = (
-                (m["giver_force_l"] > c.contact_force) & (m["giver_force_r"] > c.contact_force)
-                & ((m["table_force"] <= c.table_force) | (c.negative_control == "table_support"))
-                & (m["obj_pos"][:, 2] > c.drop_height)
-                & (m["obj_speed_fd"] < c.reset_max_obj_speed)
-                & (m["collision_force"] <= c.collision_force)
-                & ((realized - self.offset).norm(dim=-1) < c.reset_offset_tol)
-                & m["finite"]
-            )
+            checks = torch.stack([
+                (m["giver_force_l"] > c.contact_force) & (m["giver_force_r"] > c.contact_force),
+                (m["table_force"] <= c.table_force) | (c.negative_control == "table_support"),
+                m["obj_pos"][:, 2] > c.drop_height,
+                m["obj_speed_fd"] < c.reset_max_obj_speed,
+                m["collision_force"] <= c.collision_force,
+                (realized - self.offset).norm(dim=-1) < c.reset_offset_tol,
+                m["finite"],
+            ], dim=-1)
+            valid = checks.all(-1)
+            fail_bits = ((~checks).long() * (2 ** torch.arange(checks.shape[-1], device=self.device))).sum(-1)
+            self.reset_fail_bits = torch.where(done_settle & ~valid, self.reset_fail_bits | fail_bits, self.reset_fail_bits)
+            self.reset_offset_err = torch.where(done_settle, (realized - self.offset).norm(dim=-1), self.reset_offset_err)
             ok = done_settle & valid
             self.realized_offset = torch.where(ok.unsqueeze(-1), realized, self.realized_offset)
             self.mode = torch.where(ok, torch.full_like(self.mode, SCORED), self.mode)
             self.t = torch.where(ok, torch.zeros_like(self.t), self.t)
+            self.k_scored = torch.where(ok, torch.zeros_like(self.k_scored), self.k_scored)
             bad = done_settle & ~valid
             if bad.any():
                 self.attempt = torch.where(bad, self.attempt + 1, self.attempt)
@@ -501,14 +516,16 @@ class HandoverEnv(DirectRLEnv):
                 new_reason = torch.where(give_up, torch.full_like(new_reason, oc.INVALID_RESET), new_reason)
 
         # ---- scored phase: stability proxy, evaluator ----
-        self.t = torch.where(scored, self.t + dt, self.t)
+        # exact episode clock from an integer step counter (float accumulation drifted by ~1e-6 s)
+        self.k_scored = torch.where(scored, self.k_scored + 1, self.k_scored)
+        self.t = torch.where(scored, self.k_scored.to(self.t.dtype) * dt, self.t)
         raw = self.stab.raw(m["recv_force_l"], m["recv_force_r"], m["obj_rel_speed"], m["obj_rel_angspeed"])
         self.stable = self.stab.update(raw & scored, self.t, dt)
         sig = dict(m)
         sig.update(t=self.t, released=self.released, release_timeout=self.release_timeout,
                    recv_stable_at_release=self.stable_at_release, handover_center=self.center_local)
         sig["giver_width"] = m["giver_width"]
-        reason = self.evaluator.update(sig, scored, dt, c.t_grasp, c.horizon_s)
+        reason = self.evaluator.update(sig, scored, dt, c.misalign_check_time, c.horizon_s)
         new_reason = torch.where(scored & (reason != oc.RUNNING), reason, new_reason)
         self.newly_ended = new_reason != oc.RUNNING
         self.ended_reason = torch.where(self.newly_ended, new_reason, self.ended_reason)
@@ -623,7 +640,10 @@ class HandoverEnv(DirectRLEnv):
             "a_sat": cpu(self.align_sat_steps), "s_sat": cpu(self.shared_sat_steps), "steps": cpu(self.scored_steps),
             "res_sum": cpu(self.residual_abs_sum), "res_max": cpu(self.residual_abs_max),
             "exc_sum": cpu(self.exec_minus_cand_sum), "ep_rew": cpu(self.ep_reward),
+            "rfail": cpu(self.reset_fail_bits), "roff": cpu(self.reset_offset_err),
         }
+        check_names = ("giver_contact", "table_support", "height", "object_speed", "prohibited_contact",
+                       "offset_tolerance", "finite")
         f = lambda v: None if (v is None or not math.isfinite(float(v))) else float(v)  # noqa: E731
         for i in ids:
             ci = int(fields["case_index"][i])
@@ -663,6 +683,8 @@ class HandoverEnv(DirectRLEnv):
                 "residual_abs_max_m": float(fields["res_max"][i]),
                 "exec_minus_candidate_mean_m": float(fields["exc_sum"][i]) / steps,
                 "episode_return": float(fields["ep_rew"][i]),
+                "reset_failed_checks": [nm for b, nm in enumerate(check_names) if int(fields["rfail"][i]) >> b & 1],
+                "reset_offset_error_m": float(fields["roff"][i]),
             }
             if rec["release_command_time_s"] is not None and rec["release_request_time_s"] is not None:
                 rec["release_delay_s"] = rec["release_command_time_s"] - rec["release_request_time_s"]

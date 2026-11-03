@@ -1,0 +1,9 @@
+[
+ {
+  "name": "neg_table_support",
+  "method": "nominal",
+  "negative_control": "table_support",
+  "clean": 20,
+  "trace": 2
+ }
+]

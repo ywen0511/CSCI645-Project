@@ -46,12 +46,10 @@ def main():
     import numpy as np
     import torch
 
-    from rsl_rl.runners import OnPolicyRunner
-
     from isaaclab_rl.rsl_rl import RslRlVecEnvWrapper
 
     from csci645_handover import runtime as rt
-    from csci645_handover.agents.ppo_cfg import HandoverPPORunnerCfg
+    from csci645_handover.agents.ppo_cfg import HandoverPPORunnerCfg, apply_ppo_overrides, make_runner
 
     protocol = json.loads(Path(args.protocol).read_text())
     tr = protocol["training"]
@@ -64,10 +62,7 @@ def main():
     overrides["total_transitions"] = budget
     cfg = rt.build_env_cfg(args.method, num_envs, device, args.seed, overrides)
 
-    agent = HandoverPPORunnerCfg()
-    for k, v in protocol.get("ppo_overrides", {}).items():
-        target = agent.algorithm if hasattr(agent.algorithm, k) else agent
-        setattr(target, k, v)
+    agent = apply_ppo_overrides(HandoverPPORunnerCfg(), protocol.get("ppo_overrides", {}))
     agent.seed = args.seed
     agent.device = device
     batch = num_envs * agent.num_steps_per_env
@@ -84,8 +79,8 @@ def main():
 
         env_raw = HandoverEnv(cfg)
         env = RslRlVecEnvWrapper(env_raw, clip_actions=None)
-        train_cfg = agent.to_dict()
-        runner = OnPolicyRunner(env, train_cfg, log_dir=str(out / "tensorboard"), device=device)
+        runner, agent = make_runner(env, agent, log_dir=str(out / "tensorboard"))
+        train_cfg = runner.cfg
 
         meta = {
             "run_id": out.name, "method": args.method, "seed": args.seed, "run_type": args.run_type,
@@ -102,12 +97,12 @@ def main():
             start_iter = int(infos["iterations_done"])
             rng = infos.get("rng", {})
             if rng:
-                torch.set_rng_state(rng["torch_cpu"].cpu() if hasattr(rng["torch_cpu"], "cpu") else rng["torch_cpu"])
+                torch.set_rng_state(rng["torch_cpu"].cpu())
                 if torch.cuda.is_available() and rng.get("torch_cuda") is not None:
                     torch.cuda.set_rng_state(rng["torch_cuda"].cpu())
                 np.random.set_state(rng["numpy"])
                 random.setstate(rng["python"])
-                env_raw.rng.set_state(rng["env"].to(env_raw.rng.device) if env_raw.rng.device.type != "cpu" else rng["env"])
+                env_raw.rng.set_state(rng["env"].cpu())  # generator states are CPU ByteTensors, also for CUDA
             meta["resumed_from"] = args.resume
             meta["resumed_transitions"] = transitions
             print(f"[train] resumed at iteration {start_iter}, transitions {transitions}")
@@ -186,7 +181,7 @@ def main():
                 "iteration": it + 1, "transitions": transitions, "collect_s": collect, "learn_s": learn,
                 "fps": batch / max(1e-6, collect + learn), "mean_step_reward": sum(ep_rew) / len(ep_rew),
                 "lr": float(runner.alg.learning_rate),
-                "action_std": runner.alg.get_policy().output_std.detach().cpu().tolist(),
+                "action_std": runner.alg.get_policy().output_std.detach().reshape(-1, 3)[0].cpu().tolist(),
                 "episodes": d["episodes"], **{f"train_{k}": v for k, v in d.items() if k != "episodes"},
                 **{f"loss_{k}": float(v) for k, v in loss.items()},
                 "wall_s": time.time() - t_start, "utc": rt.utc_now(),

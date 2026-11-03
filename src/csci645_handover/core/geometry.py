@@ -71,7 +71,7 @@ class StabilityTracker:
     def update(self, raw: torch.Tensor, t: torch.Tensor, dt: float) -> torch.Tensor:
         """Advance the dwell timer; returns the debounced stable flag."""
         self.dwell = torch.where(raw, self.dwell + dt, torch.zeros_like(self.dwell))
-        stable = self.dwell >= self.cfg.dwell_s - 1e-6
+        stable = self.dwell >= self.cfg.dwell_s - 1e-4
         newly = stable & torch.isnan(self.first_stable_time)
         self.first_stable_time = torch.where(newly, t, self.first_stable_time)
         return stable
@@ -92,11 +92,11 @@ def release_decision(
     timeout is declared once ``t - t_request > max_wait`` without release. Release never precedes the
     request.
     """
-    requested = (t >= t_request - 1e-6) & ~released
+    requested = (t >= t_request - 1e-4) & ~released
     if not geometry_on:
         return requested, torch.zeros_like(requested)
     release_now = requested & stable
-    timeout_now = requested & ~stable & (t - t_request > max_wait + 1e-6)
+    timeout_now = requested & ~stable & (t - t_request > max_wait + 1e-4)
     return release_now, timeout_now
 
 

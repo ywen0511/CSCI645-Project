@@ -8,7 +8,7 @@ Frames and conventions
 * The giver base sits at ``-x`` and faces ``+x``; the receiver base sits at ``+x`` rotated 180 deg about z.
 * The object is a rigid bar whose long axis is world x. The giver grasps its ``-x`` end and the receiver
   approaches its ``+x`` end along ``-x``. Both hands point along the bar axis, and both grippers close
-  along world z (top/bottom faces), so the two hands never share space.
+  along world y (side faces; friction carries the weight), so the two hands never share space.
 * TCP = ``panda_hand`` origin + ``R_hand @ (0, 0, tcp_offset)``, the center of the finger pads (verified
   against finger geometry by ``scripts/inspect_scene.py``).
 """
@@ -205,13 +205,15 @@ class HandoverEnvCfg(DirectRLEnvCfg):
     ik_joint_limit_gain: float = 0.0
     """Null-space joint-limit avoidance gain of the shared differential-IK controller (all methods).
     0 = exact tracking; good joint seeds keep the arms >= 0.1 rad from their limits (scripts/inspect_scene.py)."""
-    giver_seed_q: list | None = [1.01, -0.686, -0.939, -2.386, -2.779, 2.648, 1.488]
+    giver_seed_q: list | None = [1.01, -0.686, -0.939, -2.386, -2.779, 2.648, -0.082]
     """Arm joint configuration written at reset for the giver (IK solution of the nominal hold pose)."""
-    receiver_seed_q: list | None = [0.513, -1.115, -0.582, -2.802, -2.551, 2.777, 1.268]
+    receiver_seed_q: list | None = [-0.513, -1.115, 0.582, -2.802, 2.551, 2.777, -1.268]
     """Arm joint configuration written at reset for the receiver (IK solution of the start pose)."""
 
     # ---- negative controls (Gate 1 checks only; empty for every experiment) ----
     negative_control: str = ""
+    table_size_override: list | None = None
+    """Negative-control runs only: replace the table size, e.g. [0.06, 0.30, 0.20] for the table-support check."""
     """"" | "no_receiver" (receiver never approaches) | "giver_holds" (no release request) |
     "table_support" (table raised under the object so it rests on the table after release)."""
 
@@ -220,7 +222,8 @@ class HandoverEnvCfg(DirectRLEnvCfg):
 
     # ---- geometry module ----
     align_gain: float = 1.0
-    align_max: float = 0.015
+    align_max: float = 0.010
+    """Per-axis alignment bound = the in-range perturbation envelope (pilot: 0.015 removed ~all stress error)."""
     sep_tol: float = 0.01
     release_max_wait_s: float = 1.0
     stab_min_finger_force: float = 0.2
@@ -240,8 +243,10 @@ class HandoverEnvCfg(DirectRLEnvCfg):
     collision_force: float = 1.0
     collision_terminal_s: float = 0.25
     misalign_tol: float = 0.01
+    misalign_check_time: float = 2.4
+    """Episode time of the grasp-misalignment diagnostic (just before receiver finger contact in clean runs)."""
     conflict_tol: float = 0.01
-    reset_offset_tol: float = 0.005
+    reset_offset_tol: float = 0.008
     """Maximum |realized - requested| start displacement for a valid reset [m]."""
     reset_max_obj_speed: float = 0.05
 
@@ -285,6 +290,8 @@ class HandoverEnvCfg(DirectRLEnvCfg):
         self.sim.render_interval = self.decimation
         settle = self.settle_pin_s + self.settle_close_s + self.settle_free_s
         self.episode_length_s = self.reset_max_attempts * settle + self.horizon_s + 0.5
+        if self.table_size_override is not None:
+            self.scene.table.spawn.size = tuple(self.table_size_override)
 
 
 METHODS = {
@@ -306,13 +313,17 @@ def apply_method(cfg: HandoverEnvCfg, method: str) -> HandoverEnvCfg:
 
 
 def fixed_hand_quat(approach_sign: float) -> tuple[float, float, float, float]:
-    """Hand orientation (xyzw) whose z axis points along ``approach_sign * x`` and y axis along world +z."""
+    """Hand orientation (xyzw): z axis (approach) along ``approach_sign * x``, y axis (finger travel) along world +y.
+
+    Fingers close horizontally across the bar's 35 mm width, so only friction carries the bar's weight and a
+    release before the receiver has a grip drops it (vertical closing let the lower finger catch the bar).
+    """
     import torch
 
     from isaaclab.utils.math import quat_from_matrix
 
     z = torch.tensor([approach_sign, 0.0, 0.0])
-    y = torch.tensor([0.0, 0.0, 1.0])
+    y = torch.tensor([0.0, 1.0, 0.0])
     x = torch.linalg.cross(y, z)
     rot = torch.stack([x, y, z], dim=-1)
     q = quat_from_matrix(rot.unsqueeze(0))[0]

@@ -41,3 +41,20 @@ class HandoverPPORunnerCfg(RslRlOnPolicyRunnerCfg):
         desired_kl=0.01,
         max_grad_norm=1.0,
     )
+
+
+def make_runner(wrapped_env, agent: HandoverPPORunnerCfg, log_dir: str | None):
+    """Create the RSL-RL OnPolicyRunner exactly as Isaac Lab's unified train entrypoint does."""
+    from isaaclab_rl.rsl_rl import check_rsl_rl_version, create_rsl_rl_runner, handle_deprecated_rsl_rl_cfg
+
+    agent = handle_deprecated_rsl_rl_cfg(agent, check_rsl_rl_version())
+    return create_rsl_rl_runner(wrapped_env, agent, log_dir=log_dir), agent
+
+
+def apply_ppo_overrides(agent: HandoverPPORunnerCfg, overrides: dict) -> HandoverPPORunnerCfg:
+    for k, v in (overrides or {}).items():
+        target = agent.algorithm if hasattr(agent.algorithm, k) else agent
+        if not hasattr(target, k):
+            raise KeyError(f"Unknown PPO setting {k}")
+        setattr(target, k, v)
+    return agent

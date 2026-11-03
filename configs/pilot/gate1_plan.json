@@ -26,22 +26,15 @@
   "trace": 1
  },
  {
-  "name": "neg_table_support",
-  "method": "nominal",
-  "negative_control": "table_support",
-  "clean": 20,
-  "trace": 1
- },
- {
   "name": "dev_nominal",
   "method": "nominal",
   "suite": "configs/pilot/suites/development.jsonl",
-  "trace": 6
+  "trace": 0
  },
  {
   "name": "dev_geometry",
   "method": "geometry",
   "suite": "configs/pilot/suites/development.jsonl",
-  "trace": 6
+  "trace": 0
  }
 ]

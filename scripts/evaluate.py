@@ -78,18 +78,14 @@ def main():
         git = rt.git_state()
         runner = None
         if learned:
-            from rsl_rl.runners import OnPolicyRunner
-
             from isaaclab_rl.rsl_rl import RslRlVecEnvWrapper
 
-            from csci645_handover.agents.ppo_cfg import HandoverPPORunnerCfg
+            from csci645_handover.agents.ppo_cfg import HandoverPPORunnerCfg, apply_ppo_overrides, make_runner
 
-            agent = HandoverPPORunnerCfg()
-            for k, v in protocol.get("ppo_overrides", {}).items():
-                setattr(agent.algorithm if hasattr(agent.algorithm, k) else agent, k, v)
+            agent = apply_ppo_overrides(HandoverPPORunnerCfg(), protocol.get("ppo_overrides", {}))
             agent.device = device
             wrapped = RslRlVecEnvWrapper(env, clip_actions=None)
-            runner = OnPolicyRunner(wrapped, agent.to_dict(), log_dir=None, device=device)
+            runner, agent = make_runner(wrapped, agent, log_dir=None)
 
         targets = args.checkpoint if learned else [None]
         for ckpt in targets:

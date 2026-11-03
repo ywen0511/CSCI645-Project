@@ -137,7 +137,7 @@ class OutcomeEvaluator:
         drift = torch.linalg.norm(s["obj_rel_in_recv"] - self.ref_rel_pos, dim=-1)
 
         # diagnostics
-        check = active & ~self.misalign_checked & (t >= t_grasp - 1e-6)
+        check = active & ~self.misalign_checked & (t >= t_grasp - 1e-4)
         self.grasp_error_at_grasp = torch.where(check, s["grasp_error"], self.grasp_error_at_grasp)
         self.flag_misaligned = self.flag_misaligned | (check & (s["grasp_error"] > c.misalign_tol))
         self.misalign_checked = self.misalign_checked | check
@@ -169,10 +169,10 @@ class OutcomeEvaluator:
         # terminal events
         horiz = torch.linalg.norm(s["obj_pos"][:, :2] - s["handover_center"][:2], dim=-1)
         infra = ~s["finite"]
-        collision_term = coll & (self.collision_timer >= c.collision_terminal_s - 1e-6)
+        collision_term = coll & (self.collision_timer >= c.collision_terminal_s - 1e-4)
         drop = (~z_ok) | (horiz > c.workspace_radius)
-        timeout = t >= horizon - 1e-6
-        success = self.hold_timer >= c.success_hold_s - 1e-6
+        timeout = t >= horizon - 1e-4
+        success = self.hold_timer >= c.success_hold_s - 1e-4
 
         reason = torch.zeros_like(self.reason)
         # assign lowest precedence first so higher precedence overwrites
