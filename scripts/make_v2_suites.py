@@ -3,6 +3,7 @@
 
     python3 scripts/make_v2_suites.py development            # configs/v2/suites/development.jsonl
     python3 scripts/make_v2_suites.py feasibility        # configs/v2/suites/development_feasibility.jsonl
+    python3 scripts/make_v2_suites.py valproxy           # configs/v2/suites/development_valproxy.jsonl
     python3 scripts/make_v2_suites.py heldout --protocol configs/v2/protocol.json   # validation + final
 
 Case IDs carry a v2 suite prefix (``v2dev``, ``v2val``, ``v2final``), so they can never collide with v1 IDs
@@ -48,6 +49,29 @@ FEASIBILITY = {
 }
 
 
+VALIDATION_STRATA = [
+    {"id": "clean", "position_bound_m": 0.0, "release_offset_range_s": [0.0, 0.0], "cases": 20,
+     "relation": "in_training_distribution (clean, deterministic repeats)"},
+    {"id": "in_range", "position_bound_m": 0.01, "release_offset_range_s": [-0.15, 0.15], "cases": 80,
+     "relation": "in_training_distribution"},
+    {"id": "train_full", "position_bound_m": 0.02, "release_offset_range_s": [-0.30, 0.30], "cases": 100,
+     "relation": "in_training_distribution (final curriculum stage)"},
+    {"id": "train_edge", "position_abs_range_m": [0.015, 0.02], "release_offset_range_s": [-0.30, 0.30], "cases": 100,
+     "relation": "in_training_distribution (edge: every axis |offset| >= 1.5 cm)"},
+    {"id": "harder", "position_bound_m": 0.025, "release_offset_range_s": [-0.375, 0.375], "cases": 100,
+     "relation": "beyond training distribution, inside the +-3 cm extrapolation range"},
+]
+
+
+def valproxy() -> dict:
+    """Development-seed proxy of the validation strata, used only to quantify saturation before freeze."""
+    spec = {"seed": 6453028, "prefix": "v2devval", "stratum_index_offset": 200, "strata": VALIDATION_STRATA}
+    cases = validation_cases(spec)
+    h = write_suite(OUT / "development_valproxy.jsonl", cases)
+    return {"development_valproxy": {"path": "configs/v2/suites/development_valproxy.jsonl", "cases": len(cases),
+                                     "seed": 6453028, "sha256": h}}
+
+
 def feasibility() -> dict:
     """Development-only feasibility cases (+-3 cm extrapolation, candidate training distributions)."""
     cases = validation_cases(FEASIBILITY)
@@ -64,8 +88,12 @@ def validation_cases(spec: dict) -> list[dict]:
     for si, st in enumerate(spec["strata"]):
         for i in range(st["cases"]):
             rng = _case_rng(spec["seed"], si + off0, i)
-            b = float(st["position_bound_m"])
-            off = rng.uniform(-b, b, size=3) if b > 0 else [0.0, 0.0, 0.0]
+            if "position_abs_range_m" in st:  # edge stratum: per-axis |offset| in [lo, hi], random sign
+                lo_p, hi_p = st["position_abs_range_m"]
+                off = rng.uniform(lo_p, hi_p, size=3) * rng.choice([-1.0, 1.0], size=3)
+            else:
+                b = float(st["position_bound_m"])
+                off = rng.uniform(-b, b, size=3) if b > 0 else [0.0, 0.0, 0.0]
             lo, hi = st["release_offset_range_s"]
             rel = float(rng.uniform(lo, hi)) if hi > lo else float(lo)
             cases.append({
@@ -95,12 +123,12 @@ def heldout(protocol_path: str) -> dict:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("which", choices=["development", "feasibility", "heldout"])
+    ap.add_argument("which", choices=["development", "feasibility", "valproxy", "heldout"])
     ap.add_argument("--protocol", default="configs/v2/protocol.json")
     a = ap.parse_args()
     manifest_path = OUT / "SUITES.json"
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
-    fn = {"development": development, "feasibility": feasibility}.get(a.which)
+    fn = {"development": development, "feasibility": feasibility, "valproxy": valproxy}.get(a.which)
     manifest.update(fn() if fn else heldout(str(ROOT / a.protocol)))
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")

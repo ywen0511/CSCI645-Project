@@ -69,5 +69,11 @@
         ]
       }
     ]
+  },
+  "development_valproxy": {
+    "cases": 400,
+    "path": "configs/v2/suites/development_valproxy.jsonl",
+    "seed": 6453028,
+    "sha256": "356f6afd6124233b4b470a4b4c221fb9032b965d76173e43277817aec985f9d8"
   }
 }

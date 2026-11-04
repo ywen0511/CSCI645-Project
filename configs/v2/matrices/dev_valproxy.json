@@ -1,0 +1,79 @@
+{
+ "name": "dev_valproxy",
+ "suite": "configs/v2/suites/development_valproxy.jsonl",
+ "num_envs": 400,
+ "protocol": "configs/frozen/protocol.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "nominal",
+   "method": "nominal"
+  },
+  {
+   "id": "geometry_1cm",
+   "method": "geometry"
+  },
+  {
+   "id": "geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   }
+  },
+  {
+   "id": "geometry_2cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.02
+   }
+  },
+  {
+   "id": "v1_combined_final_s11",
+   "method": "combined",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "checkpoint": "combined_seed11/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_combined_final_s22",
+   "method": "combined",
+   "training_seed": 22,
+   "run_id": "combined_seed22",
+   "checkpoint": "combined_seed22/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_combined_final_s33",
+   "method": "combined",
+   "training_seed": 33,
+   "run_id": "combined_seed33",
+   "checkpoint": "combined_seed33/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_residual_final_s11",
+   "method": "residual",
+   "training_seed": 11,
+   "run_id": "residual_seed11",
+   "checkpoint": "residual_seed11/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_residual_final_s22",
+   "method": "residual",
+   "training_seed": 22,
+   "run_id": "residual_seed22",
+   "checkpoint": "residual_seed22/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_residual_final_s33",
+   "method": "residual",
+   "training_seed": 33,
+   "run_id": "residual_seed33",
+   "checkpoint": "residual_seed33/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  }
+ ]
+}

@@ -81,6 +81,18 @@ def main():
         env = RslRlVecEnvWrapper(env_raw, clip_actions=None)
         runner, agent = make_runner(env, agent, log_dir=str(out / "tensorboard"))
         train_cfg = runner.cfg
+        actor_init = tr.get("actor_init", "default")
+        if actor_init == "zero_mean_output" and not args.resume:
+            # v2 option: zero the actor's output layer so the deterministic residual mean is exactly 0 at step 0
+            # (exploration noise std is unchanged; the stochastic training actions are NOT zero).
+            import torch.nn as nn
+
+            last = [mod for mod in runner.alg.get_policy().mlp.modules() if isinstance(mod, nn.Linear)][-1]
+            with torch.no_grad():
+                last.weight.zero_()
+                last.bias.zero_()
+        elif actor_init not in ("default", "zero_mean_output"):
+            raise ValueError(f"unknown actor_init {actor_init}")
 
         meta = {
             "run_id": out.name, "method": args.method, "seed": args.seed, "run_type": args.run_type,
@@ -89,6 +101,7 @@ def main():
             "num_envs": num_envs, "rollout_batch_transitions": batch, "requested_transitions": budget,
             "realized_transitions": total_iters * batch, "total_iterations": total_iters,
             "checkpoint_interval_transitions": ckpt_every, "git": rt.git_state(), "hardware": rt.hardware_info(),
+            "actor_init": actor_init,
         }
         start_iter, transitions = 0, 0
         if args.resume:
@@ -124,6 +137,7 @@ def main():
                 "config_hash": meta["config_hash"], "protocol_sha256": meta["protocol_sha256"],
                 "source_commit": meta["git"]["commit"], "source_dirty": meta["git"]["dirty"],
                 "curriculum_stage": stage, "phase_input": cfg.phase_input, "obs_dim": cfg.observation_space,
+                "actor_init": actor_init, "protocol_id": protocol.get("protocol_id", "v1"),
                 "rng": {
                     "torch_cpu": torch.get_rng_state(),
                     "torch_cuda": torch.cuda.get_rng_state() if torch.cuda.is_available() else None,

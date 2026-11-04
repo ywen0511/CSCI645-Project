@@ -1,0 +1,17 @@
+{
+ "geometry_1cm": {
+  "x_m": 0.003,
+  "entry": "const_geometry_1cm_x+003mm",
+  "rule": "highest success rate on all 450 development cases; then fewer collision episodes; then smaller |x|; then ascending signed x"
+ },
+ "nominal": {
+  "x_m": 0.004,
+  "entry": "const_nominal_x+004mm",
+  "rule": "highest success rate on all 450 development cases; then fewer collision episodes; then smaller |x|; then ascending signed x"
+ },
+ "geometry_1p5cm": {
+  "x_m": 0.0,
+  "entry": "geom_bound_0p015",
+  "rule": "highest success rate on all 450 development cases; then fewer collision episodes; then smaller |x|; then ascending signed x"
+ }
+}
