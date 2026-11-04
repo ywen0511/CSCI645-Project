@@ -111,7 +111,8 @@ def heldout(protocol_path: str) -> dict:
     val = validation_cases(ev["validation"])
     final = []
     for ci, cond in enumerate(ev["final_conditions"]):
-        final += make_condition_cases("v2final", ev["final_suite_seed"], ci, cond, cond.get("cases", 200), "v2")
+        c = {**cond, "distribution": cond.get("relation_to_training", "")}
+        final += make_condition_cases("v2final", ev["final_suite_seed"], ci, c, cond.get("cases", 200), "v2")
     out = {
         "validation": {"path": "configs/v2/suites/validation.jsonl", "seed": ev["validation"]["seed"],
                        "cases": len(val), "sha256": write_suite(OUT / "validation.jsonl", val)},

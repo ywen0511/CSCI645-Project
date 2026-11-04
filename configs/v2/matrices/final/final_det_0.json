@@ -1,0 +1,93 @@
+{
+ "name": "final_det_0",
+ "suite": "configs/v2/suites/final.jsonl",
+ "num_envs": 900,
+ "protocol": "configs/v2/frozen/protocol.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "const_geometry_1cm",
+   "group": "diagnostic (original geometry setting)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "constant_residual_m": [
+     0.007,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "geometry_1cm",
+   "group": "historical v1 controller",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01
+   }
+  },
+  {
+   "id": "ablation_1cm_A",
+   "group": "component ablation (1 cm, as in development)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": false
+   }
+  },
+  {
+   "id": "ablation_1cm_G",
+   "group": "component ablation (1 cm, as in development)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": true
+   }
+  },
+  {
+   "id": "ablation_1cm_none",
+   "group": "component ablation (1 cm, as in development)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": false
+   }
+  },
+  {
+   "id": "ablation_1p5cm_AH",
+   "group": "exploratory component ablation (1.5 cm)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": true,
+    "geom_anchor": true,
+    "geom_gate": false
+   }
+  },
+  {
+   "id": "ablation_1p5cm_HG",
+   "group": "exploratory component ablation (1.5 cm)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": false,
+    "geom_anchor": true,
+    "geom_gate": true
+   }
+  },
+  {
+   "id": "bound_0p020",
+   "group": "alignment-bound sweep",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.02
+   }
+  }
+ ]
+}

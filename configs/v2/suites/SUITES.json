@@ -75,5 +75,17 @@
     "path": "configs/v2/suites/development_valproxy.jsonl",
     "seed": 6453028,
     "sha256": "356f6afd6124233b4b470a4b4c221fb9032b965d76173e43277817aec985f9d8"
+  },
+  "final": {
+    "cases": 2400,
+    "path": "configs/v2/suites/final.jsonl",
+    "seed": 6453026,
+    "sha256": "041ca5cfab39dceba4e143e3116f1d0e850af3976929c96be71e57a4ea0ce1b4"
+  },
+  "validation": {
+    "cases": 400,
+    "path": "configs/v2/suites/validation.jsonl",
+    "seed": 6453027,
+    "sha256": "c611b99afcc3d717eb44cb49c49ad3896c89d749cd5e563444620268f9cf92ca"
   }
 }

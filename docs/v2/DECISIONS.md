@@ -78,7 +78,7 @@ Evidence: `results/v2/diagnostics/tables.md`, `summary.json`; raw records in the
   checkpoints at >= 2M transitions is more than 1.0 pp below P1's on those cases; otherwise P1.
   Tie or near-tie favours P2 because it makes the step-0 control identical to geometry + zero.
 
-### 2026-11-04 06:33 UTC — v2 constant search on 750 development cases; expanded grid
+### 2026-11-04 06:29 UTC — v2 constant search on 750 development cases; expanded grid
 
 - On the union of `development` (450) and `development_feasibility` (300) the frozen grid selects
   x = +5 mm for all three bases (nominal 516/750, geometry 1 cm 722/750, geometry 1.5 cm 741/750), i.e. the
@@ -92,3 +92,29 @@ Evidence: `results/v2/diagnostics/tables.md`, `summary.json`; raw records in the
   (394/400 overall); geometry 1 cm 92.0% overall; nominal 61.8%. The planned validation set is therefore
   near-saturated for the stronger comparator; the harder stratum is the only one that separates
   controllers. Kept as planned and disclosed.
+
+### 2026-11-04 06:36 UTC — v2 constants selected (750 development cases, grid -5..+10 mm)
+
+- Evidence: `results/v2/diagnostics/constants_v2.json` (`scripts/v2_select_constants.py`).
+- Selected: **nominal +9 mm** (528/750), **geometry 1 cm +7 mm** (724/750), **geometry 1.5 cm +10 mm**
+  (746/750, 0 collision episodes). The 1.5 cm selection is again at the edge of the (extended) grid, but the
+  curve is flat there (+8 / +9 / +10 mm: 745 / 745 / 746 of 750). Stopping rule (decided after seeing this
+  result): no further extension when the edge improves on its inner neighbour by <= 1 of 750 cases. The
+  residual bound (2 cm) is not reached by any constant.
+- Interpretation: a positive x offset shortens the receiver's insertion (it approaches from +x), which avoids
+  the palm-bar-end contacts that dominate failures; the learned v1 combined policies drifted the other way.
+
+### 2026-11-04 06:45 UTC — Pilot results and decision (`results/v2/pilot/`)
+
+- Realized pilot transitions: smoke 196,608 + combined P1 5,013,504 + combined P2 5,013,504 + residual P2
+  4,521,984 = **14,745,600** (cap 15M). All pilot checkpoints evaluated on the 1,150 development cases.
+- Combined P1 (default init): step 0 97.5%, checkpoints >= 2M 97.6-97.7%; mean signed residual x -1.4 to
+  -2.5 mm. Combined P2 (zero-mean init): step 0 98.1% (exactly 1.5 cm geometry), 1M-2M checkpoints dip to
+  94-95%, 4-5M back to 97.9-98.0%; residual x drifts to about -2.6 mm. Neither combined pilot improves on its
+  zero-residual comparator on development cases.
+- Residual P2: 62.1% at step 0 (= nominal) -> 90.4% at 4.5M on the 1,150 development cases, with a high
+  collision-episode rate (35%).
+- Rule (declared 06:17 UTC): P2 unless its mean success over checkpoints >= 2M is more than 1.0 pp below
+  P1's. P1 97.63%, P2 96.85% (-0.78 pp) -> **P2 zero-mean actor initialization** for all final runs. Both
+  pilot configurations are used up; no reward change is made. The negative-x drift of combined policies is
+  reported, not tuned away.

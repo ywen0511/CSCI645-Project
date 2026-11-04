@@ -1,0 +1,26 @@
+{
+ "version": "v2-video-rule-1",
+ "records": "final-evaluation records of the frozen v2 suite (configs/v2/suites/final.jsonl); learned policies: seed-11 runs",
+ "ordering": "case ID ascending (string order); first match wins",
+ "renderer": "Newton Warp ray-traced RGB camera (A100 has no RT cores); physics PhysX unchanged; single-environment replay",
+ "categories": [
+  {"id": "matched_comparison", "videos": ["nominal", "geometry_1p5cm", "combined_seed11__selected"],
+   "rule": "first joint_early_2cm_030 case on which nominal fails",
+   "fallback": "first case (any condition) on which nominal fails"},
+  {"id": "release_gate_rescue", "videos": ["ablation_1cm_A", "ablation_1cm_AG"],
+   "rule": "first case in timing_early_015, joint_early_1cm_015 or joint_early_2cm_030 where ablation_1cm_A (alignment, no release gate) ends in a drop and ablation_1cm_AG succeeds",
+   "fallback": "first case (any condition) where ablation_1cm_A fails and ablation_1cm_AG succeeds; if none, first drop of ablation_1cm_A"},
+  {"id": "alignment_bound", "videos": ["geometry_1cm", "geometry_1p5cm"],
+   "rule": "first case where geometry_1cm fails and geometry_1p5cm succeeds",
+   "fallback": "first case where bound_0p005 fails and geometry_1cm succeeds"},
+  {"id": "trained_success", "videos": ["combined_seed11__selected"],
+   "rule": "first extrapolation case where combined_seed11 (selected) succeeds and geometry_1p5cm fails",
+   "fallback": "first case where combined_seed11 (selected) succeeds and const_geometry_1p5cm fails; then first extrapolation success of combined_seed11 (selected)"},
+  {"id": "trained_failure", "videos": ["combined_seed11__selected"],
+   "rule": "first case where combined_seed11 (selected) fails",
+   "fallback": "first case where combined_seed11 (final) fails; if none, the category is reported empty and the first case where residual_seed11 (selected) fails is shown instead"},
+  {"id": "residual_policy", "videos": ["residual_seed11__selected"],
+   "rule": "first case where residual_seed11 (selected) succeeds and nominal fails",
+   "fallback": "first case where residual_seed11 (selected) fails"}
+ ]
+}

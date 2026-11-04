@@ -1,0 +1,43 @@
+{
+ "cases": 2400,
+ "expected_episodes": {
+  "ablation_1cm_A": 2400,
+  "ablation_1cm_AG": 2400,
+  "ablation_1cm_AH": 2400,
+  "ablation_1cm_G": 2400,
+  "ablation_1cm_H": 2400,
+  "ablation_1cm_HG": 2400,
+  "ablation_1cm_none": 2400,
+  "ablation_1p5cm_A": 2400,
+  "ablation_1p5cm_AG": 2400,
+  "ablation_1p5cm_AH": 2400,
+  "ablation_1p5cm_G": 2400,
+  "ablation_1p5cm_H": 2400,
+  "ablation_1p5cm_HG": 2400,
+  "ablation_1p5cm_none": 2400,
+  "bound_0p005": 2400,
+  "bound_0p020": 2400,
+  "const_geometry_1cm": 2400,
+  "const_geometry_1p5cm": 2400,
+  "const_nominal": 2400,
+  "geometry_1cm": 2400,
+  "geometry_1p5cm": 2400,
+  "nominal": 2400
+ },
+ "expected_total": 52800,
+ "learned_runs": [],
+ "matrices": [
+  "final_det_0",
+  "final_det_1",
+  "final_det_2"
+ ],
+ "note": "deterministic part only (written at freeze); learned entries are added after selection",
+ "reuse": {
+  "ablation_1cm_AHG": "geometry_1cm",
+  "ablation_1p5cm_AHG": "geometry_1p5cm",
+  "bound_0p010": "geometry_1cm",
+  "bound_0p015": "geometry_1p5cm"
+ },
+ "reuse_rule": "identical normalized controller configuration (method flags, alignment bound, component flags, constant)",
+ "suite": "configs/v2/suites/final.jsonl"
+}
