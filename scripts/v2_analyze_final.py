@@ -170,6 +170,23 @@ def main():
                 c["p_holm"] = adj[c["comparison"]]
     va.write_csv(O / "comparisons.csv", comps)
 
+    # ---------------- residual behaviour of learned entries (signed means, state dependence, failure location)
+    beh = []
+    for eid, rows in sorted(rec.items()):
+        if not rows or not rows[0].get("checkpoint_sha256") or "__" not in eid:
+            continue
+        v = [r for r in rows if r["reset_valid"]]
+        res = np.array([r["residual_mean_xyz_m"] for r in v]) * 1000
+        off = np.array([r["requested_offset_xyz_m"] for r in v]) * 1000
+        fx = [r["requested_offset_xyz_m"][0] * 1000 for r in v if not r["success"]]
+        beh.append({"entry": eid, "mean_signed_residual_xyz_mm": [float(x) for x in res.mean(0)],
+                    "across_case_std_xyz_mm": [float(x) for x in res.std(0)],
+                    "slope_res_x_vs_offset_x": float(np.polyfit(off[:, 0], res[:, 0], 1)[0]) if res[:, 0].std() > 0 else 0.0,
+                    "corr_res_x_vs_offset_x": float(np.corrcoef(off[:, 0], res[:, 0])[0, 1]) if res[:, 0].std() > 0 else 0.0,
+                    "rms_residual_mm": 1000 * float(np.sqrt(np.mean([r["residual_sq_norm_mean_m2"] for r in v]))),
+                    "failures": len(fx), "failures_with_object_x_offset_above_20mm": sum(x > 20 for x in fx)})
+    va.write_csv(O / "residual_behaviour.csv", beh)
+
     # ---------------- failure breakdown
     fb = []
     for eid, rows in sorted(rec.items()):
@@ -224,16 +241,16 @@ def main():
     sel_dir = Path(a.selection)
     selection = {p.stem: json.loads(p.read_text()) for p in sorted(sel_dir.glob("*_seed*.json"))} if sel_dir.exists() else {}
 
-    S = {"reconciliation": {k: v for k, v in recon.items() if k != "entries"}, "per_entry": per_entry,
+    S = {"reconciliation": {k: v for k, v in recon.items() if k != "entries"}, "per_entry": per_entry, "residual_behaviour": beh,
          "comparisons": comps, "ablation": abl, "selection": {k: v["selected"] for k, v in selection.items()}}
     (O / "summary.json").write_text(json.dumps(S, indent=1, sort_keys=True, default=float) + "\n")
-    tables(O, recon, per_entry, method_rows, comps, abl, selection, rec)
+    tables(O, recon, per_entry, method_rows, comps, abl, selection, rec, beh)
     if not a.no_figures:
         figures(O, per_entry, method_rows, lc, abl)
     print((O / "tables.md").read_text()[:3000])
 
 
-def tables(O, recon, per_entry, method_rows, comps, abl, selection, rec):
+def tables(O, recon, per_entry, method_rows, comps, abl, selection, rec, beh=()):
     L = ["# v2 final results — generated tables", "",
          f"Final suite `configs/v2/suites/final.jsonl`: {len(CONDS)} conditions x 200 cases. Success in % of valid resets. "
          f"Groups: inner = {', '.join(G['inner'])}; outer = {', '.join(G['outer'])}; extrapolation = {', '.join(G['extrapolation'])}.", "",
@@ -307,6 +324,16 @@ def tables(O, recon, per_entry, method_rows, comps, abl, selection, rec):
         e = per_entry.get(b)
         if e:
             L.append(f"| {b[6:].replace('p', '.')} m | " + " | ".join(va.pct(e[g]["success_rate_valid"]) for g in GROUP_ORDER) + " |")
+    if beh:
+        L += ["", "## Residual behaviour of learned policies (held-out, episode means over scored steps)", "",
+              "| entry | mean signed residual x/y/z [mm] | across-case std x/y/z [mm] | slope x vs object x | corr | RMS [mm] | failures (object x > +20 mm) |",
+              "|---|---|---|---|---|---|---|"]
+        for b in beh:
+            if b["entry"].endswith("__untrained"):
+                continue
+            L.append(f"| {b['entry']} | {' / '.join(f'{v:+.2f}' for v in b['mean_signed_residual_xyz_mm'])} | "
+                     f"{' / '.join(f'{v:.2f}' for v in b['across_case_std_xyz_mm'])} | {b['slope_res_x_vs_offset_x']:+.3f} | "
+                     f"{b['corr_res_x_vs_offset_x']:+.2f} | {b['rms_residual_mm']:.2f} | {b['failures']} ({b['failures_with_object_x_offset_above_20mm']}) |")
     if selection:
         L += ["", "## Checkpoint selection (validation, 400 cases)", "",
               "| run | candidates (success % / collision % / RMS residual mm) | selected | tied on success |", "|---|---|---|---|"]
@@ -344,14 +371,24 @@ def figures(O, per_entry, method_rows, lc, abl):
     fig.tight_layout(); fig.savefig(F / "success_by_condition.png", dpi=150); plt.close(fig)
     if lc:
         fig, axs = plt.subplots(1, 2, figsize=(10, 3.4))
+        win = 10  # iterations (~2 episode lengths); all environments start together, so per-iteration values burst
+        colors = {"residual": "tab:red", "combined": "tab:purple", "combined_no_phase": "tab:green"}
+        styles = {11: "-", 22: "--", 33: ":"}
         for run in sorted({r["run"] for r in lc}):
             pts = [r for r in lc if r["run"] == run]
-            axs[0].plot([p["transitions"] / 1e6 for p in pts], [p["mean_step_reward"] for p in pts], lw=0.8, label=run)
-            sr = [(p["transitions"] / 1e6, (p["train_success"] or 0) / p["episodes"]) for p in pts if p["episodes"]]
-            if sr:
-                axs[1].plot(*zip(*sr), lw=0.8, label=run)
-        axs[0].set_xlabel("transitions [M]"); axs[0].set_ylabel("mean step reward")
-        axs[1].set_xlabel("transitions [M]"); axs[1].set_ylabel("training episode success")
+            m, sd = pts[0]["method"], pts[0]["seed"]
+            xs, rew, suc = [], [], []
+            for i in range(0, len(pts) - win + 1, win):
+                w = pts[i:i + win]
+                xs.append(w[-1]["transitions"] / 1e6)
+                rew.append(float(np.mean([p["mean_step_reward"] for p in w])))
+                ep = sum(p["episodes"] for p in w)
+                suc.append(sum((p["train_success"] or 0) for p in w) / ep if ep else np.nan)
+            kw = dict(color=colors.get(m), ls=styles.get(sd, "-"), lw=1.0, label=run)
+            axs[0].plot(xs, rew, **kw)
+            axs[1].plot(xs, suc, **kw)
+        axs[0].set_xlabel("transitions [M]"); axs[0].set_ylabel(f"mean step reward ({win}-iteration windows)")
+        axs[1].set_xlabel("transitions [M]"); axs[1].set_ylabel("training-episode success (stochastic policy)")
         for x in axs:
             x.grid(alpha=0.3)
             for f in (0.1, 0.3, 0.5):

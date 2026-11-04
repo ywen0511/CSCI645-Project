@@ -11,7 +11,7 @@
    "method": "combined",
    "training_seed": 33,
    "run_id": "combined_seed33",
-   "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/v2/final/train/combined_seed33/checkpoints/step_000000000.pt",
+   "checkpoint": "combined_seed33/checkpoints/step_000000000.pt",
    "role": "untrained",
    "checkpoint_tag": "step_000000000"
   },
@@ -21,7 +21,7 @@
    "method": "combined",
    "training_seed": 33,
    "run_id": "combined_seed33",
-   "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/v2/final/train/combined_seed33/checkpoints/step_010027008.pt",
+   "checkpoint": "combined_seed33/checkpoints/step_010027008.pt",
    "role": "selected",
    "checkpoint_tag": "step_010027008"
   },
@@ -31,7 +31,7 @@
    "method": "combined",
    "training_seed": 33,
    "run_id": "combined_seed33",
-   "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/v2/final/train/combined_seed33/checkpoints/final.pt",
+   "checkpoint": "combined_seed33/checkpoints/final.pt",
    "role": "final",
    "checkpoint_tag": "final"
   }

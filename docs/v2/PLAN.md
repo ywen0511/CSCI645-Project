@@ -55,5 +55,5 @@ uses the CPU queue. No paid resources.
 ## Output locations
 
 - Git: source, configs, suites, small summaries and figures, docs, report sources.
-- Cluster filer (private working area): `kztrgg/runs/csci645-project/v2/{v1_download,stage0,audit,dev,pilot,final,videos,release_assets}`.
+- Cluster filer (private working area): `<work root>/runs/csci645-project/v2/{v1_download,stage0,audit,dev,pilot,final,videos,release_assets}`.
 - Public: GitHub Release `v2.0.0` (raw records, logs, all checkpoints, videos, report, deck, indices).

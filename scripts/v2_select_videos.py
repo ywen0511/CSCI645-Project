@@ -35,6 +35,8 @@ def main():
         rec[dup] = rec[src]
     entries = {}
     for f in Path(a.matrices).glob("final_*.json"):
+        if "manifest" in f.name:
+            continue
         for e in json.loads(f.read_text())["entries"]:
             entries[e["id"]] = e
     for dup, src in man["reuse"].items():

@@ -11,7 +11,7 @@
    "method": "combined_no_phase",
    "training_seed": 11,
    "run_id": "combined_no_phase_seed11",
-   "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/v2/final/train/combined_no_phase_seed11/checkpoints/step_000000000.pt",
+   "checkpoint": "combined_no_phase_seed11/checkpoints/step_000000000.pt",
    "role": "untrained",
    "checkpoint_tag": "step_000000000"
   },
@@ -21,7 +21,7 @@
    "method": "combined_no_phase",
    "training_seed": 11,
    "run_id": "combined_no_phase_seed11",
-   "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/v2/final/train/combined_no_phase_seed11/checkpoints/step_008028160.pt",
+   "checkpoint": "combined_no_phase_seed11/checkpoints/step_008028160.pt",
    "role": "selected",
    "checkpoint_tag": "step_008028160"
   },
@@ -31,7 +31,7 @@
    "method": "combined_no_phase",
    "training_seed": 11,
    "run_id": "combined_no_phase_seed11",
-   "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/v2/final/train/combined_no_phase_seed11/checkpoints/final.pt",
+   "checkpoint": "combined_no_phase_seed11/checkpoints/final.pt",
    "role": "final",
    "checkpoint_tag": "final"
   }

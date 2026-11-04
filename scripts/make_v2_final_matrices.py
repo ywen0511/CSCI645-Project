@@ -43,6 +43,8 @@ def main():
     ap.add_argument("--train-root", default=None)
     ap.add_argument("--selection", default=None)
     ap.add_argument("--det-only", action="store_true", help="Only the deterministic matrices (written at freeze time).")
+    ap.add_argument("--relative", action="store_true",
+                    help="Write checkpoint paths relative to the training root (pass it to eval_matrix.py --checkpoint-root).")
     ap.add_argument("--suite", default="configs/v2/suites/final.jsonl")
     ap.add_argument("--matrix-protocol", default="configs/v2/frozen/protocol.json",
                     help="Protocol file referenced by the matrices (env/PPO overrides at evaluation time).")
@@ -80,7 +82,8 @@ def main():
             rd = Path(a.train_root) / rid
             tags = {"untrained": "step_000000000", "selected": sel[rid]["selected"], "final": "final"}
             entries = [{"id": f"{rid}__{role}", "group": role, "method": m, "training_seed": s, "run_id": rid,
-                        "checkpoint": str(rd / "checkpoints" / f"{tag}.pt"), "role": role, "checkpoint_tag": tag}
+                        "checkpoint": (f"{rid}/checkpoints/{tag}.pt" if a.relative else str(rd / "checkpoints" / f"{tag}.pt")),
+                        "role": role, "checkpoint_tag": tag}
                        for role, tag in tags.items()]
             mats[f"final_{rid}"] = {"name": f"final_{rid}", **common, "entries": entries}
             learned_runs.append(rid)

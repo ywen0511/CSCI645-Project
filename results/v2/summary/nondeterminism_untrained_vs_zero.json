@@ -1,0 +1,80 @@
+{
+ "combined_seed11_untrained_vs_geometry_1p5cm": {
+  "cases": 2400,
+  "terminal_reason_differs": 2,
+  "examples": [
+   "v2final-joint_late_3cm_045-0067",
+   "v2final-joint_late_3cm_045-0184"
+  ]
+ },
+ "combined_seed22_untrained_vs_geometry_1p5cm": {
+  "cases": 2400,
+  "terminal_reason_differs": 2,
+  "examples": [
+   "v2final-joint_late_3cm_045-0067",
+   "v2final-joint_late_3cm_045-0184"
+  ]
+ },
+ "combined_seed33_untrained_vs_geometry_1p5cm": {
+  "cases": 2400,
+  "terminal_reason_differs": 2,
+  "examples": [
+   "v2final-joint_late_3cm_045-0067",
+   "v2final-joint_late_3cm_045-0184"
+  ]
+ },
+ "combined_no_phase_seed11_untrained_vs_geometry_1p5cm": {
+  "cases": 2400,
+  "terminal_reason_differs": 2,
+  "examples": [
+   "v2final-joint_late_3cm_045-0067",
+   "v2final-joint_late_3cm_045-0184"
+  ]
+ },
+ "combined_no_phase_seed22_untrained_vs_geometry_1p5cm": {
+  "cases": 2400,
+  "terminal_reason_differs": 2,
+  "examples": [
+   "v2final-joint_late_3cm_045-0067",
+   "v2final-joint_late_3cm_045-0184"
+  ]
+ },
+ "combined_no_phase_seed33_untrained_vs_geometry_1p5cm": {
+  "cases": 2400,
+  "terminal_reason_differs": 2,
+  "examples": [
+   "v2final-joint_late_3cm_045-0067",
+   "v2final-joint_late_3cm_045-0184"
+  ]
+ },
+ "residual_seed11_untrained_vs_nominal": {
+  "cases": 2400,
+  "terminal_reason_differs": 10,
+  "examples": [
+   "v2final-joint_early_3cm_045-0027",
+   "v2final-joint_late_1cm_015-0024",
+   "v2final-joint_late_1cm_015-0039",
+   "v2final-joint_late_1cm_015-0083"
+  ]
+ },
+ "residual_seed22_untrained_vs_nominal": {
+  "cases": 2400,
+  "terminal_reason_differs": 10,
+  "examples": [
+   "v2final-joint_early_3cm_045-0027",
+   "v2final-joint_late_1cm_015-0024",
+   "v2final-joint_late_1cm_015-0039",
+   "v2final-joint_late_1cm_015-0083"
+  ]
+ },
+ "residual_seed33_untrained_vs_nominal": {
+  "cases": 2400,
+  "terminal_reason_differs": 10,
+  "examples": [
+   "v2final-joint_early_3cm_045-0027",
+   "v2final-joint_late_1cm_015-0024",
+   "v2final-joint_late_1cm_015-0039",
+   "v2final-joint_late_1cm_015-0083"
+  ]
+ }
+}

@@ -35,7 +35,7 @@
     "artifact_locations": {
       "plan": "docs/v2/PLAN.md",
       "decisions": "docs/v2/DECISIONS.md",
-      "cluster_run_root": "<filer>/kztrgg/runs/csci645-project/v2 (not public; published through the release)"
+      "cluster_run_root": "<work root>/runs/csci645-project/v2 (not public; published through the release)"
     },
     "complete": false
   }

@@ -1,0 +1,543 @@
+{
+ "entries": {
+  "ablation_1cm_A": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1cm_AG": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1cm_AH": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1cm_AHG": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "reused_from": "geometry_1cm",
+   "scheduled": 2400
+  },
+  "ablation_1cm_G": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1cm_H": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1cm_HG": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1cm_none": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1p5cm_A": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1p5cm_AG": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1p5cm_AH": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1p5cm_AHG": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "reused_from": "geometry_1p5cm",
+   "scheduled": 2400
+  },
+  "ablation_1p5cm_G": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1p5cm_H": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1p5cm_HG": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "ablation_1p5cm_none": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "bound_0p005": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "bound_0p010": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "reused_from": "geometry_1cm",
+   "scheduled": 2400
+  },
+  "bound_0p015": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "reused_from": "geometry_1p5cm",
+   "scheduled": 2400
+  },
+  "bound_0p020": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_no_phase_seed11__final": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_no_phase_seed11__selected": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_no_phase_seed11__untrained": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_no_phase_seed22__final": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_no_phase_seed22__selected": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_no_phase_seed22__untrained": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_no_phase_seed33__final": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_no_phase_seed33__selected": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_no_phase_seed33__untrained": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_seed11__final": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_seed11__selected": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_seed11__untrained": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_seed22__final": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_seed22__selected": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_seed22__untrained": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_seed33__final": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_seed33__selected": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "combined_seed33__untrained": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "const_geometry_1cm": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "const_geometry_1p5cm": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "const_nominal": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "geometry_1cm": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "geometry_1p5cm": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "nominal": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "residual_seed11__final": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "residual_seed11__selected": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "residual_seed11__untrained": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "residual_seed22__final": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "residual_seed22__selected": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "residual_seed22__untrained": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "residual_seed33__final": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "residual_seed33__selected": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  },
+  "residual_seed33__untrained": {
+   "duplicates": 0,
+   "infrastructure_errors": 0,
+   "invalid_resets": 0,
+   "max_reset_attempts": 1,
+   "missing": 0,
+   "recorded": 2400,
+   "retried_resets": 0,
+   "scheduled": 2400
+  }
+ },
+ "expected_total": 117600,
+ "infrastructure_errors_total": 0,
+ "invalid_resets_total": 0,
+ "problems": [],
+ "recorded_total": 117600
+}
