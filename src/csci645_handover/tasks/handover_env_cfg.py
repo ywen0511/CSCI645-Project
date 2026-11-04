@@ -226,6 +226,16 @@ class HandoverEnvCfg(DirectRLEnvCfg):
     """Per-axis alignment bound = the in-range perturbation envelope (pilot: 0.015 removed ~all stress error)."""
     sep_tol: float = 0.01
     release_max_wait_s: float = 1.0
+    # ---- v2 controller options (defaults reproduce v1 exactly; omitted from the config hash at default) ----
+    geom_align: bool = True
+    """Geometry component A (alignment). Only used when ``geometry_enabled``."""
+    geom_anchor: bool = True
+    """Geometry component H (shared-holding anchor). Only used when ``geometry_enabled``."""
+    geom_gate: bool = True
+    """Geometry component G (contact-gated release with cap). Only used when ``geometry_enabled``."""
+    constant_residual_m: list | None = None
+    """Constant-offset control: a fixed Cartesian residual [m] used in place of a policy action, composed
+    exactly like the learned residual (scored steps only, clipped to +-residual_bound_m per axis)."""
     stab_min_finger_force: float = 0.2
     stab_max_rel_lin_speed: float = 0.03
     stab_max_rel_ang_speed: float = 0.5

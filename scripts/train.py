@@ -149,6 +149,8 @@ def main():
         runner.logger.init_logging_writer()
         t_start = time.time()
         last_stats = dict(env_raw.stats)
+        last_scored = env_raw.scored_transitions_total
+        scored_cum = 0
         for it in range(start_iter, total_iters):
             t0 = time.time()
             ep_rew = []
@@ -177,11 +179,15 @@ def main():
             transitions += batch
             d = {k: env_raw.stats[k] - last_stats[k] for k in env_raw.stats}
             last_stats = dict(env_raw.stats)
+            scored_it = env_raw.scored_transitions_total - last_scored
+            last_scored = env_raw.scored_transitions_total
+            scored_cum += scored_it
             row = {
                 "iteration": it + 1, "transitions": transitions, "collect_s": collect, "learn_s": learn,
                 "fps": batch / max(1e-6, collect + learn), "mean_step_reward": sum(ep_rew) / len(ep_rew),
                 "lr": float(runner.alg.learning_rate),
                 "action_std": runner.alg.get_policy().output_std.detach().reshape(-1, 3)[0].cpu().tolist(),
+                "scored_transitions": scored_it, "scored_transitions_this_process": scored_cum,
                 "episodes": d["episodes"], **{f"train_{k}": v for k, v in d.items() if k != "episodes"},
                 **{f"loss_{k}": float(v) for k, v in loss.items()},
                 "wall_s": time.time() - t_start, "utc": rt.utc_now(),
@@ -199,6 +205,7 @@ def main():
         save_ckpt("final", total_iters, transitions)
         runner.logger.stop_logging_writer()
         done = {"completed_utc": rt.utc_now(), "transitions": transitions, "iterations": total_iters,
+                "scored_transitions_this_process": scored_cum,
                 "wall_s": time.time() - t_start}
         (out / "DONE.json").write_text(json.dumps(done, indent=2))
         print(f"[train] done: {done}")

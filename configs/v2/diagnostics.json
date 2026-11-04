@@ -1,0 +1,63 @@
+{
+  "version": "v2-diagnostics-1",
+  "frozen_utc": "2026-11-04",
+  "purpose": "Stage 2 residual diagnostics and Stage 3 geometry ablations on the v2 development suite (development evidence only; not held-out test evidence).",
+  "suite": {
+    "path": "configs/v2/suites/development.jsonl",
+    "seed": 6453028,
+    "per_condition": 50,
+    "cases": 450,
+    "sha256": "4118cb5e5eae5b5f299edc715186407b0d8513fddcbaf4b23d63d1472050c3bf"
+  },
+  "physics_and_task": "v1 frozen protocol configs/frozen/protocol.json (task config hash b9eac03d...) unless an entry overrides a runtime-safe controller field",
+  "num_envs": 450,
+  "policy_inference": "deterministic actor mean, observation normalization frozen from the checkpoint",
+  "v1_checkpoints": {
+    "source": "release v1.0.0 assets checkpoints-<method>-seed<seed>.tar.gz, hashes checked against SHA256SUMS and archive_inventories.json",
+    "untrained": "step_000000000.pt",
+    "trained": "final.pt",
+    "seeds": [11, 22, 33]
+  },
+  "controls": {
+    "nominal": {"method": "nominal"},
+    "geometry_zero": {"method": "geometry", "note": "full geometry (A+H+G, 1 cm bound), explicit zero residual"},
+    "combined_init": {"method": "combined", "checkpoint": "step_000000000", "seeds": [11, 22, 33]},
+    "combined_final": {"method": "combined", "checkpoint": "final", "seeds": [11, 22, 33]},
+    "combined_no_phase_final": {"method": "combined_no_phase", "checkpoint": "final", "seeds": [11, 22, 33], "label": "exploratory"},
+    "residual_init": {"method": "residual", "checkpoint": "step_000000000", "seeds": [11, 22, 33]},
+    "residual_final": {"method": "residual", "checkpoint": "final", "seeds": [11, 22, 33]}
+  },
+  "constant_offset_search": {
+    "grid_x_m": [-0.005, -0.004, -0.003, -0.002, -0.001, 0.0, 0.001, 0.002, 0.003, 0.004, 0.005],
+    "y_m": 0.0,
+    "z_m": 0.0,
+    "composition": "constant_residual_m replaces the policy residual: p_candidate = p_nominal + clip(c, +-0.02 m), scored steps only, same 20 Hz control and target composition as the learned residual",
+    "bases": {
+      "geometry_1cm": {"method": "geometry", "overrides": {}},
+      "nominal": {"method": "nominal", "overrides": {}},
+      "geometry_1p5cm": {"method": "geometry", "overrides": {"align_max": 0.015}, "stage": "4 (stronger comparator, default 1.5 cm)"}
+    },
+    "zero_offset_reuse": "x = 0 is not re-run; it reuses the base controller's zero-residual records (nominal, geometry_zero, geom_bound_0p015)",
+    "selection_rule": "highest success rate on all 450 development cases; then fewer collision episodes; then smaller |x|; then ascending signed x",
+    "used_for": "constants are selected on development only and frozen; never tuned on validation or final cases"
+  },
+  "geometry_ablation": {
+    "flags": {"A": "geom_align", "H": "geom_anchor", "G": "geom_gate"},
+    "combinations": ["none", "A", "H", "G", "AH", "AG", "HG", "AHG"],
+    "definitions": {
+      "A_off": "alignment correction exactly zero",
+      "H_off": "never anchor; executed target is the (aligned) candidate",
+      "G_off": "release follows the scheduled request (no contact gate, no release timeout)"
+    },
+    "reproduction_checks": ["AHG must equal geometry_zero (v1 geometry)", "none must equal nominal"],
+    "alignment_bounds_m": [0.005, 0.010, 0.015, 0.020],
+    "other_parameters": "fixed at v1 values (gain 1.0, sep_tol 0.01 m, max release wait 1.0 s)"
+  },
+  "trace_cases": [
+    "v2dev-clean-0000", "v2dev-position_in-0000", "v2dev-position_stress-0000", "v2dev-timing_early_in-0000",
+    "v2dev-timing_late_in-0000", "v2dev-joint_early_in-0000", "v2dev-joint_late_in-0000",
+    "v2dev-joint_early_stress-0000", "v2dev-joint_late_stress-0000"
+  ],
+  "trace_entries": "nominal, geometry_zero, constant-selected entries, all learned-checkpoint entries, ablation entries",
+  "reported_metrics": "per-condition success / drop / collision-episode / timeout / release-timeout / invalid-reset counts; policy-minus-zero and policy-minus-constant paired differences (seed x case bootstrap); signed residual means; executed-minus-candidate and workspace-clip magnitudes"
+}

@@ -62,7 +62,25 @@ def config_hash(cfg) -> str:
     for k in ("method", "geometry_enabled", "residual_enabled", "phase_input", "seed", "num_envs", "log_dir",
               "total_transitions", "curriculum"):
         d.pop(k, None)
+    # v2 controller options are part of the hash only when they differ from their v1-equivalent default,
+    # so v1 configurations (and the checkpoints trained with them) keep their original hash.
+    for k, default in V2_CONTROLLER_DEFAULTS.items():
+        if d.get(k, default) == default:
+            d.pop(k, None)
     return sha256_json(d)
+
+
+V2_CONTROLLER_DEFAULTS = {"geom_align": True, "geom_anchor": True, "geom_gate": True, "constant_residual_m": None}
+# Task fields that can be changed on a live environment (read every step or rebuilt by
+# HandoverEnv.refresh_task_parameters). Everything else needs a new process.
+RUNTIME_FIELDS = {"method", "geometry_enabled", "residual_enabled", "phase_input", "geom_align", "geom_anchor",
+                  "geom_gate", "constant_residual_m", "align_max", "align_gain", "sep_tol", "release_max_wait_s"}
+
+
+def controller_hash(cfg) -> str:
+    """Hash of the full controller definition (task config hash + method flags)."""
+    return sha256_json({"config_hash": config_hash(cfg), "geometry_enabled": cfg.geometry_enabled,
+                        "residual_enabled": cfg.residual_enabled, "phase_input": cfg.phase_input})
 
 
 def hardware_info() -> dict:

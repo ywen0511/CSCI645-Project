@@ -1,0 +1,20 @@
+{
+  "development": {
+    "cases": 450,
+    "conditions": [
+      "clean",
+      "position_in",
+      "position_stress",
+      "timing_early_in",
+      "timing_late_in",
+      "joint_early_in",
+      "joint_late_in",
+      "joint_early_stress",
+      "joint_late_stress"
+    ],
+    "path": "configs/v2/suites/development.jsonl",
+    "per_condition": 50,
+    "seed": 6453028,
+    "sha256": "4118cb5e5eae5b5f299edc715186407b0d8513fddcbaf4b23d63d1472050c3bf"
+  }
+}
