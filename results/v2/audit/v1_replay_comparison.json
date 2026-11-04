@@ -1,0 +1,134 @@
+{
+ "replays": {
+  "replay_b23": {
+   "matched_records": 460,
+   "unmatched_replay_records": 0,
+   "terminal_reason_agreement": 456,
+   "success_agreement": 456,
+   "disagreement_rate": 0.008695652173912993,
+   "completion_time_abs_diff_s": {
+    "max": 0.0,
+    "mean": 0.0,
+    "n_exact": 306
+   },
+   "disagreements": [
+    {
+     "run": "combined_no_phase_seed11",
+     "checkpoint": "final",
+     "case_id": "final-joint_early_stress-0032",
+     "archived": "success",
+     "replay": "prohibited_collision",
+     "agree": false,
+     "completion_dt_s": null,
+     "release_cmd_dt_s": null,
+     "archived_hold_s": 1.9999991655349731,
+     "replay_hold_s": 0.0
+    },
+    {
+     "run": "combined_no_phase_seed33",
+     "checkpoint": "final",
+     "case_id": "final-joint_late_stress-0000",
+     "archived": "prohibited_collision",
+     "replay": "success",
+     "agree": false,
+     "completion_dt_s": null,
+     "release_cmd_dt_s": null,
+     "archived_hold_s": 0.0,
+     "replay_hold_s": 1.9999991655349731
+    },
+    {
+     "run": "residual_seed33",
+     "checkpoint": "step_008028160",
+     "case_id": "final-position_stress-0034",
+     "archived": "success",
+     "replay": "prohibited_collision",
+     "agree": false,
+     "completion_dt_s": null,
+     "release_cmd_dt_s": null,
+     "archived_hold_s": 1.9999991655349731,
+     "replay_hold_s": 0.0
+    },
+    {
+     "run": "residual_seed33",
+     "checkpoint": "final",
+     "case_id": "final-position_stress-0018",
+     "archived": "episode_timeout",
+     "replay": "success",
+     "agree": false,
+     "completion_dt_s": null,
+     "release_cmd_dt_s": 0.0,
+     "archived_hold_s": 1.4499996900558472,
+     "replay_hold_s": 1.9999991655349731
+    }
+   ]
+  },
+  "replay_b1": {
+   "matched_records": 460,
+   "unmatched_replay_records": 0,
+   "terminal_reason_agreement": 457,
+   "success_agreement": 457,
+   "disagreement_rate": 0.006521739130434745,
+   "completion_time_abs_diff_s": {
+    "max": 0.0,
+    "mean": 0.0,
+    "n_exact": 306
+   },
+   "disagreements": [
+    {
+     "run": "combined_no_phase_seed11",
+     "checkpoint": "final",
+     "case_id": "final-joint_early_stress-0032",
+     "archived": "success",
+     "replay": "prohibited_collision",
+     "agree": false,
+     "completion_dt_s": null,
+     "release_cmd_dt_s": null,
+     "archived_hold_s": 1.9999991655349731,
+     "replay_hold_s": 0.0
+    },
+    {
+     "run": "residual_seed11",
+     "checkpoint": "final",
+     "case_id": "final-position_stress-0034",
+     "archived": "success",
+     "replay": "prohibited_collision",
+     "agree": false,
+     "completion_dt_s": null,
+     "release_cmd_dt_s": null,
+     "archived_hold_s": 1.9999991655349731,
+     "replay_hold_s": 0.0
+    },
+    {
+     "run": "residual_seed33",
+     "checkpoint": "final",
+     "case_id": "final-position_stress-0018",
+     "archived": "episode_timeout",
+     "replay": "success",
+     "agree": false,
+     "completion_dt_s": null,
+     "release_cmd_dt_s": 0.0,
+     "archived_hold_s": 1.4499996900558472,
+     "replay_hold_s": 1.9999991655349731
+    }
+   ]
+  }
+ },
+ "trace_agreement": {
+  "between": [
+   "replay_b23",
+   "replay_b1"
+  ],
+  "files": 20,
+  "cases": 460,
+  "max_abs_hold_timer_diff_s": 1.699999451637268,
+  "max_abs_recv_force_diff_N": 3.4374842643737793,
+  "max_abs_obj_pos_diff_m": 0.020856738090515137,
+  "identical_cases": 0,
+  "per_case_max_obj_pos_diff_m_percentiles": {
+   "p50": 3.723613917827606e-05,
+   "p90": 0.0004072113137226552,
+   "p99": 0.008979827594011976
+  },
+  "cases_obj_pos_within_1mm": 437
+ }
+}

@@ -86,7 +86,7 @@ def main():
     if len(a.replay) >= 2:
         t1, t2 = load_traces(Path(a.replay[0])), load_traces(Path(a.replay[1]))
         stats = {"files": 0, "cases": 0, "max_abs_hold_timer_diff_s": 0.0, "max_abs_recv_force_diff_N": 0.0,
-                 "max_abs_obj_pos_diff_m": 0.0, "identical_cases": 0}
+                 "max_abs_obj_pos_diff_m": 0.0, "identical_cases": 0, "per_case_max_obj_pos_diff_m": []}
         for name in sorted(set(t1) & set(t2)):
             stats["files"] += 1
             for cid in sorted(set(t1[name]) & set(t2[name])):
@@ -102,6 +102,11 @@ def main():
                 stats["max_abs_recv_force_diff_N"] = max(stats["max_abs_recv_force_diff_N"], f)
                 stats["max_abs_obj_pos_diff_m"] = max(stats["max_abs_obj_pos_diff_m"], p)
                 stats["identical_cases"] += int(h == 0 and f == 0 and p == 0 and len(a1) == len(a2))
+                stats["per_case_max_obj_pos_diff_m"].append(p)
+        d = np.array(stats.pop("per_case_max_obj_pos_diff_m"))
+        if len(d):
+            stats["per_case_max_obj_pos_diff_m_percentiles"] = {q: float(np.percentile(d, int(q[1:]))) for q in ("p50", "p90", "p99")}
+            stats["cases_obj_pos_within_1mm"] = int((d < 1e-3).sum())
         res["trace_agreement"] = {"between": [Path(x).name for x in a.replay[:2]], **stats}
     Path(a.output).parent.mkdir(parents=True, exist_ok=True)
     Path(a.output).write_text(json.dumps(res, indent=1) + "\n")
