@@ -39,7 +39,9 @@ def main():
         cands = validation_candidates_v2(rd / "checkpoints.jsonl")
         scored = []
         for c in cands:
-            f = Path(a.validation) / f"{rd.name}__{c['tag']}.jsonl"
+            f = Path(a.validation) / rd.name / f"{rd.name}__{c['tag']}.jsonl"
+            if not f.exists():
+                f = Path(a.validation) / f"{rd.name}__{c['tag']}.jsonl"
             rows = [json.loads(x) for x in f.read_text().splitlines() if x.strip()] if f.exists() else []
             ids = {r["case_id"] for r in rows}
             if ids != suite_ids or len(rows) != len(suite_ids):

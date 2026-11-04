@@ -118,3 +118,16 @@ Evidence: `results/v2/diagnostics/tables.md`, `summary.json`; raw records in the
   P1's. P1 97.63%, P2 96.85% (-0.78 pp) -> **P2 zero-mean actor initialization** for all final runs. Both
   pilot configurations are used up; no reward change is made. The negative-x drift of combined policies is
   reported, not tuned away.
+
+### 2026-11-04 06:48 UTC — PROTOCOL FREEZE v2
+
+- Frozen file: `configs/v2/frozen/protocol.json`, SHA-256 `bd79ae5140db002aaeb532a41ebc01a698fdd015078288dcd518f4c4f7779f10`
+  (`configs/v2/frozen/PROTOCOL_SHA256`); resolved in the Isaac Lab environment by `scripts/freeze_v2.py` from
+  `configs/v2/protocol.json` (source commit c9705d4). Task configuration hash for all v2 learned methods
+  `d3bec7da0586891a4c60deac4fb970315add5856a2f3d36f95e2789618989278` (identical to the P2 pilot runs).
+- Suites: validation `c611b99a...` (400 cases, seed 6453027), final `041ca5cf...` (2,400 cases, seed 6453026);
+  `configs/v2/frozen/SUITES_SHA256`; disjointness check `results/v2/suites_check.json` (no shared case IDs or
+  sampled offsets across v1/v2 suites).
+- Environment lock `configs/v2/frozen/pip-freeze.txt` is byte-identical to the v1 lock.
+- Realized budget per final run 10,027,008 transitions (306 x 32,768). Final runs use a separate clean clone
+  at tag `experiment-v2`; any later behaviour change requires a new protocol version.

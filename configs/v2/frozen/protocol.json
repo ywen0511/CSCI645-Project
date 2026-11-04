@@ -1,0 +1,1012 @@
+{
+  "analysis": {
+    "exploratory": [
+      "geometry component ablations (1 cm and 1.5 cm) and factorial effects",
+      "alignment-bound sweep",
+      "untrained step-0 vs zero residual",
+      "geometry_1cm and const_geometry_1cm",
+      "per-condition differences"
+    ],
+    "metric": "episode success over valid resets; also scheduled-case success, drop, collision-episode, timeout and release-timeout rates",
+    "multiplicity": "five primary comparisons; Holm-adjusted bootstrap sign p-values reported alongside unadjusted CIs",
+    "primary_comparisons": [
+      "combined (selected) - geometry_1p5cm",
+      "combined (selected) - const_geometry_1p5cm",
+      "residual (selected) - nominal",
+      "residual (selected) - const_nominal",
+      "combined (selected) - combined_no_phase (selected)"
+    ],
+    "secondary_declared": "the same five comparisons with final checkpoints",
+    "summaries": "per seed, per condition, per group (inner / outer / extrapolation / all) and equal-condition means",
+    "uncertainty": "paired two-level bootstrap (10,000 replicates; training seeds within method x shared case IDs), 95% percentile CI; Wilson intervals for single-controller rates"
+  },
+  "changes_from_v1": [
+    "training distribution reaches +-2 cm per axis and +-0.30 s (curriculum below)",
+    "combined and combined_no_phase use full geometry with a 1.5 cm alignment bound (env_overrides.align_max)",
+    "actor initialization: zero_mean_output",
+    "checkpoint selection excludes step 0; new tie-breaks (collision rate, residual squared norm, latest)",
+    "constant-offset controls and geometry component ablations added as deterministic controllers",
+    "records include the full episode return (terminal-step reward added; v1 erratum E2)",
+    "12 final conditions (9 v1 structures with fresh draws + 3 extrapolation conditions at +-3 cm)"
+  ],
+  "config_hash": "d3bec7da0586891a4c60deac4fb970315add5856a2f3d36f95e2789618989278",
+  "config_id": "d3bec7da0586891a",
+  "constants": {
+    "evidence": "results/v2/diagnostics/constants_v2.json",
+    "geometry_1cm_x_m": 0.007,
+    "geometry_1p5cm_x_m": 0.01,
+    "nominal_x_m": 0.009,
+    "selected_on": "750 development cases (development + development_feasibility), grid -5..+10 mm in x, y=z=0"
+  },
+  "controller_hashes": {
+    "ablation_1cm_A": {
+      "config_hash": "d9353d47606eaaece4fbd549822ec3013b8f58910b785ee9ffd50883efd54ef9",
+      "controller_hash": "5abb6f9fec6ac678499feed35f12f93088b0efca07b4ec6e7d5d8e6559eb3b1b"
+    },
+    "ablation_1cm_AG": {
+      "config_hash": "eb4954be416a788b05d0fe4d70ae05765b9a9d5b56b22209572a02ce450bf535",
+      "controller_hash": "470ab145209a3ab07cfd8ef371de6b50285b5adb252dd78d5d06d336a9857ed1"
+    },
+    "ablation_1cm_AH": {
+      "config_hash": "15baa1083db3e5c64ade3e06ff048602b342333376dd787dd59ba6d6557aeff7",
+      "controller_hash": "05d484d439a31aeeb21166408283e98c4fa667d1c333228d0ad912f7f989f770"
+    },
+    "ablation_1cm_AHG": {
+      "config_hash": "b9eac03d5848617625efd453adf1eb02fa942693766b137bc631cd052ec52b8d",
+      "controller_hash": "ad49f9ac0fa1dd017167460dbc013efebdce441b51e72e26805fe2398da406b9"
+    },
+    "ablation_1cm_G": {
+      "config_hash": "273d40776cb2eb0cf684582bbaf1bee3e632904612b93fc82130e2786d35b923",
+      "controller_hash": "0b8eff126329b875d607d418e71d142fe560c2902b239307cf4b8ca7a0591438"
+    },
+    "ablation_1cm_H": {
+      "config_hash": "a0b6a9df86134e1cda348e6cff8611319aa13dd34097ff998b9594037285e32f",
+      "controller_hash": "3f1c1b844fbd3438798477e92d4563b35e1fe5fdee7c9151bfd74fe336aab3e4"
+    },
+    "ablation_1cm_HG": {
+      "config_hash": "2b68fd2b54e90bb6f07a4e518c7853d83ab5580ba45492f2f498fde356487ce9",
+      "controller_hash": "e57819e3dbe5a363608b5893e17377cfa5429e0b29a22288b63253f7f93f6d8f"
+    },
+    "ablation_1cm_none": {
+      "config_hash": "5a72dc750dfba8d896cd69280c1fafa161fce1ad3275d5bd3233e1ead485305d",
+      "controller_hash": "bb6313fe28e01b160779e893c6e0ec3f85803e50d8b086e28154e3578cf97363"
+    },
+    "ablation_1p5cm_A": {
+      "config_hash": "289cf84eafc9d77d34a2fb3a1d38f73279b9921ac7ef18aa06232c1827af0d35",
+      "controller_hash": "65cc282d34ccd850ace8783b864c6068c9a9ce10298ca6ef781d5df514619621"
+    },
+    "ablation_1p5cm_AG": {
+      "config_hash": "14fe2df0223a873857c2ee5fc611fb57d1233b90cd295bad9c216d14f0ea3948",
+      "controller_hash": "a6ddf9b021f2304881bd31fbc78ee2a1460bf6e262c725e88c580e6af5d9ba69"
+    },
+    "ablation_1p5cm_AH": {
+      "config_hash": "9e3ab9057e520ae00101ca1ce0ead822c3a0cf17f8dd826609ae159da6cf564d",
+      "controller_hash": "4ce5557f36ddb899fbe030e8ac7c9a87cbc0e900a386c5b02e041572b5b7e877"
+    },
+    "ablation_1p5cm_AHG": {
+      "config_hash": "d3bec7da0586891a4c60deac4fb970315add5856a2f3d36f95e2789618989278",
+      "controller_hash": "b320e4cacca618b01839ecb41bdce417b2b12df38eeba2a06b03264b5431fc7b"
+    },
+    "ablation_1p5cm_G": {
+      "config_hash": "d78a03d2d8719770d0477e8839c7d328692abb89574f1e33979ab999748754ff",
+      "controller_hash": "115128cb7479bff2fb0cb5ded1002cd2479151cf9c695c15f1996937e9f99274"
+    },
+    "ablation_1p5cm_H": {
+      "config_hash": "b7a070fe2534c0527a3ebc5f3d36f5304d5be1f8357a8f48f9c9fd61c66d306d",
+      "controller_hash": "086df8771e806dba858bde871adf17a0de9e91164affd5500635033cd67d804f"
+    },
+    "ablation_1p5cm_HG": {
+      "config_hash": "1a2f251ad51ce8a4040371afcdfdeb353b74ae8c24ef7793e9d90cc09a7dada6",
+      "controller_hash": "3f177663ee7e38772d498faaa117e74019a4cc69a0592f4bb854f8c2eadbbe3e"
+    },
+    "ablation_1p5cm_none": {
+      "config_hash": "834086938b886a2bb514049ee232f3ad71d3005b7f400133d550b7317752fb5e",
+      "controller_hash": "67df49fd9b037a2c312d832f3f50c75e5337178b25d9e77ed291f619f6f592ce"
+    },
+    "bound_0p005": {
+      "config_hash": "4cfebfe2ea991bda449d8c4659aa7f34ba041fa5ef5d1cc737ec264e619b84b1",
+      "controller_hash": "def198040363488620c5e0c33bf62269cf51fa991294a963621b8f1d225899d8"
+    },
+    "bound_0p010": {
+      "config_hash": "b9eac03d5848617625efd453adf1eb02fa942693766b137bc631cd052ec52b8d",
+      "controller_hash": "ad49f9ac0fa1dd017167460dbc013efebdce441b51e72e26805fe2398da406b9"
+    },
+    "bound_0p015": {
+      "config_hash": "d3bec7da0586891a4c60deac4fb970315add5856a2f3d36f95e2789618989278",
+      "controller_hash": "b320e4cacca618b01839ecb41bdce417b2b12df38eeba2a06b03264b5431fc7b"
+    },
+    "bound_0p020": {
+      "config_hash": "fc36870085160ccf8ac128f1b27b2f4c979ca1cf20556883e1676bdfc85e6061",
+      "controller_hash": "6146e53d7d193bf0d0485d2306181da0fd9904f45a11148c3e1550eb0cb87e48"
+    },
+    "const_geometry_1cm": {
+      "config_hash": "b62cc618ee6a92a160f228c01dfefe652fc26077b172f87ec979c638ec9d995e",
+      "controller_hash": "96b8c1358f4d21fea34dd3a0caed3f03487460daa097ba2f15064e5a5dfbb8cf"
+    },
+    "const_geometry_1p5cm": {
+      "config_hash": "7fb8adc1793dd02b014b1cd7c4b9e115b4ca6915fffbd7a48dcba39e53fccffc",
+      "controller_hash": "6d365b600e532205bb6337879c1d1dd418faa2cd84b8dccb349b4299c43fe998"
+    },
+    "const_nominal": {
+      "config_hash": "54f9b75f4160d9b044b17c831d0980ebd27d3f1a5560821f50f70c86255b65ad",
+      "controller_hash": "061902a0f9971b24ea81513f0ac596b4332e09d19b874c92a48b52971a5be313"
+    },
+    "geometry_1cm": {
+      "config_hash": "b9eac03d5848617625efd453adf1eb02fa942693766b137bc631cd052ec52b8d",
+      "controller_hash": "ad49f9ac0fa1dd017167460dbc013efebdce441b51e72e26805fe2398da406b9"
+    },
+    "geometry_1p5cm": {
+      "config_hash": "d3bec7da0586891a4c60deac4fb970315add5856a2f3d36f95e2789618989278",
+      "controller_hash": "b320e4cacca618b01839ecb41bdce417b2b12df38eeba2a06b03264b5431fc7b"
+    },
+    "nominal": {
+      "config_hash": "d3bec7da0586891a4c60deac4fb970315add5856a2f3d36f95e2789618989278",
+      "controller_hash": "8f59fe3bb6be58775b048da01ca379f936dc4cf4c3381411dc77bad35928abab"
+    }
+  },
+  "deterministic_controllers": {
+    "ablation_1cm_A": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01,
+        "geom_align": true,
+        "geom_anchor": false,
+        "geom_gate": false
+      },
+      "role": "component ablation (1 cm, as in development)"
+    },
+    "ablation_1cm_AG": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01,
+        "geom_align": true,
+        "geom_anchor": false,
+        "geom_gate": true
+      },
+      "role": "component ablation (1 cm, as in development)"
+    },
+    "ablation_1cm_AH": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01,
+        "geom_align": true,
+        "geom_anchor": true,
+        "geom_gate": false
+      },
+      "role": "component ablation (1 cm, as in development)"
+    },
+    "ablation_1cm_AHG": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01,
+        "geom_align": true,
+        "geom_anchor": true,
+        "geom_gate": true
+      },
+      "role": "component ablation (1 cm, as in development)"
+    },
+    "ablation_1cm_G": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01,
+        "geom_align": false,
+        "geom_anchor": false,
+        "geom_gate": true
+      },
+      "role": "component ablation (1 cm, as in development)"
+    },
+    "ablation_1cm_H": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01,
+        "geom_align": false,
+        "geom_anchor": true,
+        "geom_gate": false
+      },
+      "role": "component ablation (1 cm, as in development)"
+    },
+    "ablation_1cm_HG": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01,
+        "geom_align": false,
+        "geom_anchor": true,
+        "geom_gate": true
+      },
+      "role": "component ablation (1 cm, as in development)"
+    },
+    "ablation_1cm_none": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01,
+        "geom_align": false,
+        "geom_anchor": false,
+        "geom_gate": false
+      },
+      "role": "component ablation (1 cm, as in development)"
+    },
+    "ablation_1p5cm_A": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015,
+        "geom_align": true,
+        "geom_anchor": false,
+        "geom_gate": false
+      },
+      "role": "exploratory component ablation (1.5 cm)"
+    },
+    "ablation_1p5cm_AG": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015,
+        "geom_align": true,
+        "geom_anchor": false,
+        "geom_gate": true
+      },
+      "role": "exploratory component ablation (1.5 cm)"
+    },
+    "ablation_1p5cm_AH": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015,
+        "geom_align": true,
+        "geom_anchor": true,
+        "geom_gate": false
+      },
+      "role": "exploratory component ablation (1.5 cm)"
+    },
+    "ablation_1p5cm_AHG": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015,
+        "geom_align": true,
+        "geom_anchor": true,
+        "geom_gate": true
+      },
+      "role": "exploratory component ablation (1.5 cm)"
+    },
+    "ablation_1p5cm_G": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015,
+        "geom_align": false,
+        "geom_anchor": false,
+        "geom_gate": true
+      },
+      "role": "exploratory component ablation (1.5 cm)"
+    },
+    "ablation_1p5cm_H": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015,
+        "geom_align": false,
+        "geom_anchor": true,
+        "geom_gate": false
+      },
+      "role": "exploratory component ablation (1.5 cm)"
+    },
+    "ablation_1p5cm_HG": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015,
+        "geom_align": false,
+        "geom_anchor": true,
+        "geom_gate": true
+      },
+      "role": "exploratory component ablation (1.5 cm)"
+    },
+    "ablation_1p5cm_none": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015,
+        "geom_align": false,
+        "geom_anchor": false,
+        "geom_gate": false
+      },
+      "role": "exploratory component ablation (1.5 cm)"
+    },
+    "bound_0p005": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.005
+      },
+      "role": "alignment-bound sweep"
+    },
+    "bound_0p010": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01
+      },
+      "role": "alignment-bound sweep"
+    },
+    "bound_0p015": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015
+      },
+      "role": "alignment-bound sweep"
+    },
+    "bound_0p020": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.02
+      },
+      "role": "alignment-bound sweep"
+    },
+    "const_geometry_1cm": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01,
+        "constant_residual_m": [
+          0.007,
+          0.0,
+          0.0
+        ]
+      },
+      "role": "diagnostic (original geometry setting)"
+    },
+    "const_geometry_1p5cm": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015,
+        "constant_residual_m": [
+          0.01,
+          0.0,
+          0.0
+        ]
+      },
+      "role": "primary constant control for combined"
+    },
+    "const_nominal": {
+      "method": "nominal",
+      "overrides": {
+        "constant_residual_m": [
+          0.009,
+          0.0,
+          0.0
+        ]
+      },
+      "role": "constant control for residual"
+    },
+    "geometry_1cm": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.01
+      },
+      "role": "historical v1 controller"
+    },
+    "geometry_1p5cm": {
+      "method": "geometry",
+      "overrides": {
+        "align_max": 0.015
+      },
+      "role": "stronger comparator (matches combined)"
+    },
+    "nominal": {
+      "method": "nominal",
+      "overrides": {}
+    }
+  },
+  "env_overrides": {
+    "align_max": 0.015
+  },
+  "evaluation": {
+    "deterministic_policy": true,
+    "development_suite_seed": 6453028,
+    "final_conditions": [
+      {
+        "cases": 200,
+        "id": "clean",
+        "position_bound_m": 0.0,
+        "relation_to_training": "in_training (clean; deterministic repeats)",
+        "release_offset_s": 0.0,
+        "v1_structure": "clean"
+      },
+      {
+        "cases": 200,
+        "id": "position_1cm",
+        "position_bound_m": 0.01,
+        "relation_to_training": "in_training",
+        "release_offset_s": 0.0,
+        "v1_structure": "position_in"
+      },
+      {
+        "cases": 200,
+        "id": "position_2cm",
+        "position_bound_m": 0.02,
+        "relation_to_training": "in_training (full final-stage range)",
+        "release_offset_s": 0.0,
+        "v1_structure": "position_stress"
+      },
+      {
+        "cases": 200,
+        "id": "timing_early_015",
+        "position_bound_m": 0.0,
+        "relation_to_training": "in_training",
+        "release_offset_s": -0.15,
+        "v1_structure": "timing_early_in"
+      },
+      {
+        "cases": 200,
+        "id": "timing_late_015",
+        "position_bound_m": 0.0,
+        "relation_to_training": "in_training",
+        "release_offset_s": 0.15,
+        "v1_structure": "timing_late_in"
+      },
+      {
+        "cases": 200,
+        "id": "joint_early_1cm_015",
+        "position_bound_m": 0.01,
+        "relation_to_training": "in_training",
+        "release_offset_s": -0.15,
+        "v1_structure": "joint_early_in"
+      },
+      {
+        "cases": 200,
+        "id": "joint_late_1cm_015",
+        "position_bound_m": 0.01,
+        "relation_to_training": "in_training",
+        "release_offset_s": 0.15,
+        "v1_structure": "joint_late_in"
+      },
+      {
+        "cases": 200,
+        "id": "joint_early_2cm_030",
+        "position_bound_m": 0.02,
+        "relation_to_training": "in_training (corner of the final-stage range)",
+        "release_offset_s": -0.3,
+        "v1_structure": "joint_early_stress"
+      },
+      {
+        "cases": 200,
+        "id": "joint_late_2cm_030",
+        "position_bound_m": 0.02,
+        "relation_to_training": "in_training (corner of the final-stage range)",
+        "release_offset_s": 0.3,
+        "v1_structure": "joint_late_stress"
+      },
+      {
+        "cases": 200,
+        "id": "position_3cm",
+        "position_bound_m": 0.03,
+        "relation_to_training": "extrapolation (beyond training and validation ranges)",
+        "release_offset_s": 0.0,
+        "v1_structure": null
+      },
+      {
+        "cases": 200,
+        "id": "joint_early_3cm_045",
+        "position_bound_m": 0.03,
+        "relation_to_training": "extrapolation (beyond training and validation ranges)",
+        "release_offset_s": -0.45,
+        "v1_structure": null
+      },
+      {
+        "cases": 200,
+        "id": "joint_late_3cm_045",
+        "position_bound_m": 0.03,
+        "relation_to_training": "extrapolation (beyond training and validation ranges)",
+        "release_offset_s": 0.45,
+        "v1_structure": null
+      }
+    ],
+    "final_suite_seed": 6453026,
+    "groups": {
+      "extrapolation": [
+        "position_3cm",
+        "joint_early_3cm_045",
+        "joint_late_3cm_045"
+      ],
+      "inner": [
+        "clean",
+        "position_1cm",
+        "timing_early_015",
+        "timing_late_015",
+        "joint_early_1cm_015",
+        "joint_late_1cm_015"
+      ],
+      "outer": [
+        "position_2cm",
+        "joint_early_2cm_030",
+        "joint_late_2cm_030"
+      ]
+    },
+    "learned_entries": [
+      "selected checkpoint",
+      "final checkpoint",
+      "step-0 (untrained) checkpoint"
+    ],
+    "num_envs": 900,
+    "validation": {
+      "prefix": "v2val",
+      "seed": 6453027,
+      "strata": [
+        {
+          "cases": 20,
+          "id": "clean",
+          "position_bound_m": 0.0,
+          "relation": "in_training_distribution (clean, deterministic repeats)",
+          "release_offset_range_s": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "cases": 80,
+          "id": "in_range",
+          "position_bound_m": 0.01,
+          "relation": "in_training_distribution",
+          "release_offset_range_s": [
+            -0.15,
+            0.15
+          ]
+        },
+        {
+          "cases": 100,
+          "id": "train_full",
+          "position_bound_m": 0.02,
+          "relation": "in_training_distribution (final curriculum stage)",
+          "release_offset_range_s": [
+            -0.3,
+            0.3
+          ]
+        },
+        {
+          "cases": 100,
+          "id": "train_edge",
+          "position_abs_range_m": [
+            0.015,
+            0.02
+          ],
+          "relation": "in_training_distribution (edge: every axis |offset| >= 1.5 cm)",
+          "release_offset_range_s": [
+            -0.3,
+            0.3
+          ]
+        },
+        {
+          "cases": 100,
+          "id": "harder",
+          "position_bound_m": 0.025,
+          "relation": "beyond training distribution, inside the +-3 cm extrapolation range",
+          "release_offset_range_s": [
+            -0.375,
+            0.375
+          ]
+        }
+      ]
+    }
+  },
+  "freeze_utc": "2026-11-04T06:46:38Z",
+  "informed_by_v1": "v2 is designed after seeing v1 results and v2 development diagnostics; new held-out cases address case reuse only",
+  "learned_method_hashes": {
+    "combined": {
+      "config_hash": "d3bec7da0586891a4c60deac4fb970315add5856a2f3d36f95e2789618989278",
+      "controller_hash": "ccbd2b0adb30c797cff1494999fd1d8801c5484528fbebc3d97c49d859e22731"
+    },
+    "combined_no_phase": {
+      "config_hash": "d3bec7da0586891a4c60deac4fb970315add5856a2f3d36f95e2789618989278",
+      "controller_hash": "c2f52a15a332b583fb43e2f845f6b8f11c70dacd462ecfca77f11a54599a3779"
+    },
+    "residual": {
+      "config_hash": "d3bec7da0586891a4c60deac4fb970315add5856a2f3d36f95e2789618989278",
+      "controller_hash": "ab76ac2eb7718df717653eb5f7ca203919549e0b65052eedac3dbc46c6ced5f1"
+    }
+  },
+  "methods_resolved": {
+    "combined": {
+      "geometry_enabled": true,
+      "phase_input": true,
+      "residual_enabled": true
+    },
+    "combined_no_phase": {
+      "geometry_enabled": true,
+      "phase_input": false,
+      "residual_enabled": true
+    },
+    "geometry": {
+      "geometry_enabled": true,
+      "phase_input": false,
+      "residual_enabled": false
+    },
+    "nominal": {
+      "geometry_enabled": false,
+      "phase_input": false,
+      "residual_enabled": false
+    },
+    "residual": {
+      "geometry_enabled": false,
+      "phase_input": true,
+      "residual_enabled": true
+    }
+  },
+  "platform": {
+    "framework": "Isaac Lab",
+    "isaac_lab": "v3.0.0",
+    "isaac_sim": "6.2.0.0",
+    "physics": "isaacsim_physx",
+    "physics_backend": "PhysX",
+    "rl_library": "rsl-rl-lib 5.5.1",
+    "robot": "two Franka arms with two-finger parallel-jaw grippers",
+    "simulator": "Isaac Sim"
+  },
+  "policy": {
+    "action_dim": 3,
+    "algorithm": "PPO",
+    "hidden_dims": [
+      128,
+      128
+    ],
+    "phase_channels": 4,
+    "preferred_library": "rsl_rl",
+    "residual_bound_m": 0.02
+  },
+  "ppo": {
+    "actor": {
+      "activation": "elu",
+      "class_name": "MLPModel",
+      "distribution_cfg": {
+        "class_name": "GaussianDistribution",
+        "init_std": 0.5,
+        "std_range": [
+          1e-06,
+          1000000.0
+        ],
+        "std_type": "scalar"
+      },
+      "hidden_dims": [
+        128,
+        128
+      ],
+      "init_noise_std": {},
+      "noise_std_type": "scalar",
+      "obs_normalization": true,
+      "state_dependent_std": false,
+      "stochastic": {}
+    },
+    "algorithm": {
+      "class_name": "PPO",
+      "clip_param": 0.2,
+      "desired_kl": 0.01,
+      "entropy_coef": 0.002,
+      "gamma": 0.99,
+      "lam": 0.95,
+      "learning_rate": 0.0003,
+      "max_grad_norm": 1.0,
+      "normalize_advantage_per_mini_batch": false,
+      "num_learning_epochs": 5,
+      "num_mini_batches": 4,
+      "optimizer": "adam",
+      "rnd_cfg": null,
+      "schedule": "adaptive",
+      "share_cnn_encoders": false,
+      "symmetry_cfg": null,
+      "use_clipped_value_loss": true,
+      "use_mixed_precision": false,
+      "value_loss_coef": 1.0
+    },
+    "check_for_nan": true,
+    "class_name": "OnPolicyRunner",
+    "clip_actions": null,
+    "critic": {
+      "activation": "elu",
+      "class_name": "MLPModel",
+      "distribution_cfg": null,
+      "hidden_dims": [
+        128,
+        128
+      ],
+      "init_noise_std": {},
+      "noise_std_type": "scalar",
+      "obs_normalization": true,
+      "state_dependent_std": false,
+      "stochastic": {}
+    },
+    "device": "cuda:0",
+    "empirical_normalization": {},
+    "experiment_name": "csci645_handover",
+    "init_at_random_ep_len": false,
+    "load_checkpoint": "model_.*.pt",
+    "load_run": ".*",
+    "logger": "tensorboard",
+    "max_iterations": 1000,
+    "neptune_project": "isaaclab",
+    "num_steps_per_env": 32,
+    "obs_groups": {
+      "actor": [
+        "policy"
+      ],
+      "critic": [
+        "policy"
+      ]
+    },
+    "policy": {},
+    "resume": false,
+    "run_name": "",
+    "save_interval": 1000000,
+    "seed": 42,
+    "torch_compile_mode": null,
+    "wandb_project": "isaaclab"
+  },
+  "ppo_overrides": {},
+  "protocol_id": "v2.0",
+  "selection": {
+    "both_selected_and_final_evaluated": true,
+    "candidates": "first periodic checkpoint at or after 2M, 4M, 6M, 8M and 10M transitions; step 0 excluded (kept as a named untrained control)",
+    "rule": [
+      "highest validation success rate (valid resets)",
+      "lowest collision-episode rate",
+      "lowest mean bounded residual squared norm over scored steps",
+      "latest transition count"
+    ],
+    "validation_suite": "configs/v2/suites/validation.jsonl"
+  },
+  "status": "frozen",
+  "suites": {
+    "development": {
+      "cases": 450,
+      "conditions": [
+        "clean",
+        "position_in",
+        "position_stress",
+        "timing_early_in",
+        "timing_late_in",
+        "joint_early_in",
+        "joint_late_in",
+        "joint_early_stress",
+        "joint_late_stress"
+      ],
+      "path": "configs/v2/suites/development.jsonl",
+      "per_condition": 50,
+      "seed": 6453028,
+      "sha256": "4118cb5e5eae5b5f299edc715186407b0d8513fddcbaf4b23d63d1472050c3bf"
+    },
+    "development_feasibility": {
+      "cases": 300,
+      "path": "configs/v2/suites/development_feasibility.jsonl",
+      "seed": 6453028,
+      "sha256": "25cc6ac72bdd30eb6c3c07f3d55ad0c763d0ebfd1e23923758e4bd270d53b4b6",
+      "strata": [
+        {
+          "cases": 50,
+          "id": "position_x3",
+          "position_bound_m": 0.03,
+          "release_offset_range_s": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "cases": 50,
+          "id": "joint_early_x3",
+          "position_bound_m": 0.03,
+          "release_offset_range_s": [
+            -0.45,
+            -0.45
+          ]
+        },
+        {
+          "cases": 50,
+          "id": "joint_late_x3",
+          "position_bound_m": 0.03,
+          "release_offset_range_s": [
+            0.45,
+            0.45
+          ]
+        },
+        {
+          "cases": 100,
+          "id": "train_dist_2cm",
+          "position_bound_m": 0.02,
+          "release_offset_range_s": [
+            -0.3,
+            0.3
+          ]
+        },
+        {
+          "cases": 50,
+          "id": "train_dist_1p5cm",
+          "position_bound_m": 0.015,
+          "release_offset_range_s": [
+            -0.3,
+            0.3
+          ]
+        }
+      ]
+    },
+    "development_valproxy": {
+      "cases": 400,
+      "path": "configs/v2/suites/development_valproxy.jsonl",
+      "seed": 6453028,
+      "sha256": "356f6afd6124233b4b470a4b4c221fb9032b965d76173e43277817aec985f9d8"
+    },
+    "final": {
+      "cases": 2400,
+      "path": "configs/v2/suites/final.jsonl",
+      "seed": 6453026,
+      "sha256": "041ca5cfab39dceba4e143e3116f1d0e850af3976929c96be71e57a4ea0ce1b4"
+    },
+    "validation": {
+      "cases": 400,
+      "path": "configs/v2/suites/validation.jsonl",
+      "seed": 6453027,
+      "sha256": "c611b99afcc3d717eb44cb49c49ad3896c89d749cd5e563444620268f9cf92ca"
+    }
+  },
+  "task_resolved": {
+    "action_space": 3,
+    "align_gain": 1.0,
+    "align_max": 0.015,
+    "close_duration": 0.8,
+    "collision_force": 1.0,
+    "collision_terminal_s": 0.25,
+    "compute_final_obs": false,
+    "conflict_tol": 0.01,
+    "constant_residual_m": null,
+    "contact_force": 0.2,
+    "curriculum": [
+      {
+        "fraction_end": 0.2,
+        "fraction_start": 0.0,
+        "position_bound_m": 0.0,
+        "release_offset_bound_s": 0.0
+      },
+      {
+        "fraction_end": 0.5,
+        "fraction_start": 0.2,
+        "position_bound_m": 0.005,
+        "release_offset_bound_s": 0.0
+      },
+      {
+        "fraction_end": 1.0,
+        "fraction_start": 0.5,
+        "position_bound_m": 0.01,
+        "release_offset_bound_s": 0.15
+      }
+    ],
+    "decimation": 6,
+    "drift_tol": 0.02,
+    "drop_height": 0.35,
+    "episode_length_s": 11.2,
+    "finger_closed": 0.0,
+    "finger_open": 0.04,
+    "geom_align": true,
+    "geom_anchor": true,
+    "geom_gate": true,
+    "giver_open_width": 0.07,
+    "giver_seed_q": [
+      1.01,
+      -0.686,
+      -0.939,
+      -2.386,
+      -2.779,
+      2.648,
+      -0.082
+    ],
+    "grasp_insertion": 0.025,
+    "handover_center": [
+      0.0,
+      0.0,
+      0.5
+    ],
+    "horizon_s": 8.0,
+    "ik_joint_limit_gain": 0.0,
+    "is_finite_horizon": false,
+    "misalign_check_time": 2.4,
+    "misalign_tol": 0.01,
+    "negative_control": "",
+    "num_actions": null,
+    "num_observations": null,
+    "num_rerenders_on_reset": 0,
+    "num_states": null,
+    "object_size": [
+      0.18,
+      0.035,
+      0.035
+    ],
+    "observation_space": 46,
+    "physics_hz": 120,
+    "pregrasp_backoff": 0.06,
+    "receiver_seed_q": [
+      -0.513,
+      -1.115,
+      0.582,
+      -2.802,
+      2.551,
+      2.777,
+      -1.268
+    ],
+    "rel_speed_tol": 0.05,
+    "release_max_wait_s": 1.0,
+    "rerender_on_reset": false,
+    "reset_max_attempts": 3,
+    "reset_max_obj_speed": 0.05,
+    "reset_offset_tol": 0.008,
+    "residual_bound_m": 0.02,
+    "retreat_delay": 0.3,
+    "retreat_distance": 0.1,
+    "retreat_duration": 0.7,
+    "rew_action_rate": -0.5,
+    "rew_approach": 1.0,
+    "rew_approach_scale": 0.02,
+    "rew_collision": -5.0,
+    "rew_drop": -5.0,
+    "rew_hold": 2.0,
+    "rew_release_timeout": -2.0,
+    "rew_residual_l2": -0.5,
+    "rew_success": 10.0,
+    "sep_tol": 0.01,
+    "settle_close_s": 0.3,
+    "settle_free_s": 0.3,
+    "settle_pin_s": 0.3,
+    "sim_dt": 0.008333333333333333,
+    "stab_dwell_s": 0.15,
+    "stab_max_rel_ang_speed": 0.5,
+    "stab_max_rel_lin_speed": 0.03,
+    "stab_min_finger_force": 0.2,
+    "start_backoff": 0.16,
+    "state_space": 0,
+    "success_hold_s": 2.0,
+    "t_close_start": 2.0,
+    "t_grasp": 2.0,
+    "t_pregrasp": 1.0,
+    "t_release_nominal": 2.8,
+    "table_force": 0.2,
+    "table_size_override": null,
+    "tcp_offset": 0.1034,
+    "total_transitions": 10000000,
+    "wait_for_textures": true,
+    "workspace_radius": 0.6,
+    "xr": null
+  },
+  "training": {
+    "actor_init": "zero_mean_output",
+    "checkpoint_interval_transitions": 1000000,
+    "curriculum": [
+      {
+        "fraction_end": 0.1,
+        "fraction_start": 0.0,
+        "position_bound_m": 0.0,
+        "release_offset_bound_s": 0.0
+      },
+      {
+        "fraction_end": 0.3,
+        "fraction_start": 0.1,
+        "position_bound_m": 0.01,
+        "release_offset_bound_s": 0.15
+      },
+      {
+        "fraction_end": 0.5,
+        "fraction_start": 0.3,
+        "position_bound_m": 0.015,
+        "release_offset_bound_s": 0.225
+      },
+      {
+        "fraction_end": 1.0,
+        "fraction_start": 0.5,
+        "position_bound_m": 0.02,
+        "release_offset_bound_s": 0.3
+      }
+    ],
+    "final_transitions_per_run": 10000000,
+    "iterations_per_run": 306,
+    "methods": [
+      "residual",
+      "combined",
+      "combined_no_phase"
+    ],
+    "num_envs": 1024,
+    "realized_transitions_per_run": 10027008,
+    "rollout_batch_transitions": 32768,
+    "rollout_steps_per_env": 32,
+    "scored_transitions": "also logged per iteration (environment steps in the SCORED phase, residual active)",
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "transition_definition": "vectorized environment steps x environments, including the scripted reset-settling steps (residual disabled)"
+  },
+  "video_rule": "configs/v2/video_rule.json"
+}
