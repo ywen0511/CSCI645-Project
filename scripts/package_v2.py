@@ -143,9 +143,13 @@ def main():
             members.append((mp, f"{rid}/checkpoint_metadata.json"))
             asset = f"checkpoints-{m}-seed{s}.tar.gz"
             make_tar(out / asset, members, inv)
-            for row in ledger:
-                ckpt_index.append({"run_id": rid, "run_type": "final", "tag": row["tag"], "transitions": row["transitions"],
-                                   "asset": asset, "member": f"{rid}/{row['path']}", "ledger_sha256": row["sha256"]})
+            last = {r["tag"]: i for i, r in enumerate(ledger)}
+            for i, row in enumerate(ledger):
+                e = {"run_id": rid, "run_type": "final", "tag": row["tag"], "transitions": row["transitions"],
+                     "asset": asset, "member": f"{rid}/{row['path']}", "ledger_sha256": row["sha256"]}
+                if last[row["tag"]] != i:
+                    e["superseded"] = "file overwritten by a later save with the same tag (resume); hash kept for provenance"
+                ckpt_index.append(e)
             for role, fname in meta["roles"].items():
                 ckpt_index.append({"run_id": rid, "run_type": "final", "role": role, "asset": asset,
                                    "member": f"{rid}/checkpoints/{fname}", "sha256": meta["member_sha256"][fname]})
@@ -166,9 +170,13 @@ def main():
                            "protocol": run["protocol"], "actor_init": run.get("actor_init"),
                            "realized_transitions": max(r["transitions"] for r in led), "status": "completed",
                            "checkpoint_asset": "checkpoints-pilot.tar.gz", "resumed": (rd / "run_resume.json").exists()})
-        for row in led:
-            ckpt_index.append({"run_id": rd.name, "run_type": run.get("run_type"), "tag": row["tag"], "transitions": row["transitions"],
-                               "asset": "checkpoints-pilot.tar.gz", "member": f"pilot/{rd.name}/{row['path']}", "ledger_sha256": row["sha256"]})
+        last = {r["tag"]: i for i, r in enumerate(led)}
+        for i, row in enumerate(led):
+            e = {"run_id": rd.name, "run_type": run.get("run_type"), "tag": row["tag"], "transitions": row["transitions"],
+                 "asset": "checkpoints-pilot.tar.gz", "member": f"pilot/{rd.name}/{row['path']}", "ledger_sha256": row["sha256"]}
+            if last[row["tag"]] != i:  # same tag saved again later (resume test): this file was overwritten
+                e["superseded"] = "file overwritten by a later save with the same tag (resume); hash kept for provenance"
+            ckpt_index.append(e)
     make_tar(out / "checkpoints-pilot.tar.gz", pm, inv)
 
     # ---- raw records
