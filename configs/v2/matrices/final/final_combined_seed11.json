@@ -1,0 +1,39 @@
+{
+ "name": "final_combined_seed11",
+ "suite": "configs/v2/suites/final.jsonl",
+ "num_envs": 900,
+ "protocol": "configs/v2/frozen/protocol.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_seed11__untrained",
+   "group": "untrained",
+   "method": "combined",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/v2/final/train/combined_seed11/checkpoints/step_000000000.pt",
+   "role": "untrained",
+   "checkpoint_tag": "step_000000000"
+  },
+  {
+   "id": "combined_seed11__selected",
+   "group": "selected",
+   "method": "combined",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/v2/final/train/combined_seed11/checkpoints/step_008028160.pt",
+   "role": "selected",
+   "checkpoint_tag": "step_008028160"
+  },
+  {
+   "id": "combined_seed11__final",
+   "group": "final",
+   "method": "combined",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "checkpoint": "/data/rtxw01/nbak/robot_intel/kztrgg/runs/csci645-project/v2/final/train/combined_seed11/checkpoints/final.pt",
+   "role": "final",
+   "checkpoint_tag": "final"
+  }
+ ]
+}

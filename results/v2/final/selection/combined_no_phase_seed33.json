@@ -1,0 +1,97 @@
+{
+ "run_id": "combined_no_phase_seed33",
+ "rule": "max success; min collision-episode rate; min mean residual squared norm; latest",
+ "candidates": [
+  {
+   "checkpoint": "step_002031616",
+   "checkpoint_sha256": "dcde0cee69adcec173a3d97bf3a98d42a924932c959fa3ab6dbd3bfb41f7efba",
+   "transitions": 2031616,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.9825,
+   "collision_rate": 0.0175,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 2.3888219523218267e-05,
+   "tag": "step_002031616",
+   "file": "combined_no_phase_seed33__step_002031616.jsonl",
+   "ledger_transitions": 2031616
+  },
+  {
+   "checkpoint": "step_004030464",
+   "checkpoint_sha256": "89951bd782e15c6ef7b11108a55a4ca31c1683e882ff460e904c92f559ee4d80",
+   "transitions": 4030464,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.98,
+   "collision_rate": 0.02,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 7.900393057877618e-06,
+   "tag": "step_004030464",
+   "file": "combined_no_phase_seed33__step_004030464.jsonl",
+   "ledger_transitions": 4030464
+  },
+  {
+   "checkpoint": "step_006029312",
+   "checkpoint_sha256": "d6c378d4ad4955fc967ee7bb3ce8bb8a810c7cafdf585f8cdedca55b8714fdf8",
+   "transitions": 6029312,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.975,
+   "collision_rate": 0.0325,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 1.3750487085992346e-05,
+   "tag": "step_006029312",
+   "file": "combined_no_phase_seed33__step_006029312.jsonl",
+   "ledger_transitions": 6029312
+  },
+  {
+   "checkpoint": "step_008028160",
+   "checkpoint_sha256": "c2f96c4636240d32caab4e07de1da3667f7e1e095945fa5b32bc787805035769",
+   "transitions": 8028160,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.98,
+   "collision_rate": 0.02,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 8.459082011651554e-06,
+   "tag": "step_008028160",
+   "file": "combined_no_phase_seed33__step_008028160.jsonl",
+   "ledger_transitions": 8028160
+  },
+  {
+   "checkpoint": "step_010027008",
+   "checkpoint_sha256": "2c6cce6940e599894166becd753f8a961c1eef39bfcaad72bb101d87d015f3cb",
+   "transitions": 10027008,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.98,
+   "collision_rate": 0.02,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 8.837373342208618e-06,
+   "tag": "step_010027008",
+   "file": "combined_no_phase_seed33__step_010027008.jsonl",
+   "ledger_transitions": 10027008
+  }
+ ],
+ "selected": {
+  "checkpoint": "step_002031616",
+  "checkpoint_sha256": "dcde0cee69adcec173a3d97bf3a98d42a924932c959fa3ab6dbd3bfb41f7efba",
+  "transitions": 2031616,
+  "scheduled": 400,
+  "valid": 400,
+  "success_rate": 0.9825,
+  "collision_rate": 0.0175,
+  "drop_rate": 0.0,
+  "residual_sq_norm_mean_m2": 2.3888219523218267e-05,
+  "tag": "step_002031616",
+  "file": "combined_no_phase_seed33__step_002031616.jsonl",
+  "ledger_transitions": 2031616
+ },
+ "ties_on_success": [
+  "step_002031616"
+ ],
+ "ties_on_success_and_collision": [
+  "step_002031616"
+ ],
+ "selected_is_last_candidate": false
+}
