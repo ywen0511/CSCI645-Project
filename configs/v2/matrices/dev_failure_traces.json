@@ -1,0 +1,67 @@
+{
+ "name": "dev_failure_traces",
+ "suite": "configs/v2/suites/development.jsonl",
+ "num_envs": 450,
+ "protocol": "configs/frozen/protocol.json",
+ "trace_rule": "first failing development case ID per controller and terminal reason (geometry_zero collision; combined_final_s11 collision; nominal timeout, collision; residual_final_s22 drop) from the Stage 2 records",
+ "trace_cases": [
+  "v2dev-joint_early_stress-0035",
+  "v2dev-joint_early_stress-0017",
+  "v2dev-joint_early_stress-0000",
+  "v2dev-joint_early_stress-0001",
+  "v2dev-joint_early_stress-0003",
+  "v2dev-joint_early_in-0030"
+ ],
+ "entries": [
+  {
+   "id": "nominal",
+   "method": "nominal",
+   "trace": true
+  },
+  {
+   "id": "geometry_zero",
+   "method": "geometry",
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x+003mm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.003,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x+004mm",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.004,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "combined_final_s11",
+   "method": "combined",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "checkpoint": "combined_seed11/checkpoints/final.pt",
+   "trace": true
+  },
+  {
+   "id": "residual_final_s22",
+   "method": "residual",
+   "training_seed": 22,
+   "run_id": "residual_seed22",
+   "checkpoint": "residual_seed22/checkpoints/final.pt",
+   "trace": true
+  }
+ ]
+}
