@@ -160,3 +160,12 @@ Evidence: `results/v2/diagnostics/tables.md`, `summary.json`; raw records in the
 - Run-to-run nondeterminism measured on the final records: zero-residual untrained policies differ from the
   identical deterministic controller in 2/2,400 (geometry) and 10/2,400 (nominal) outcomes
   (`results/v2/summary/nondeterminism_untrained_vs_zero.json`).
+
+### 2026-11-04 08:08 UTC — Release v2.0.0 published and verified
+
+- Draft with 31 assets validated locally (`verify_v2_release.py`, leak scan), then published 07:55 UTC
+  (tag `v2.0.0` → `86b193a`). Verified from a fresh anonymous download; record in
+  [RELEASE_VERIFICATION.md](RELEASE_VERIFICATION.md). Added after the tag: `scripts/v2_nondeterminism.py` (scripted
+  form of the inline check that produced the committed JSON; output identical), entry-ID keys in
+  `v2_compare_replay.py`, verification records and documentation.
+- No GPU job of this study is running; all work ran on dgx047 only.

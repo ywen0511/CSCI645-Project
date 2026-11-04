@@ -86,7 +86,7 @@ for m in dev_controls dev_learned dev_geometry dev_feasibility dev_feas_constant
 done
 # output folder names used by the analysis: controls, learned, geometry, feasibility, feas_constants, valproxy,
 # constants_ext, feas_constants_ext, failure_traces
-python3 scripts/v2_analyze_dev.py --dev <dev> --output results/v2/diagnostics
+python3 scripts/v2_analyze_dev.py --dev <dev> --output results/v2/diagnostics --n-boot 4000   # committed tables used 4,000 replicates
 python3 scripts/v2_select_constants.py --dev <dev> --output results/v2/diagnostics/constants_v2.json
 python3 scripts/v2_plot_traces.py --case v2dev-joint_early_stress-0017 --trace <dev>/failure_traces/traces/geometry_zero.json \
     --trace <dev>/failure_traces/traces/combined_final_s11.json --output fig.png
@@ -128,6 +128,7 @@ python3 scripts/make_v2_final_matrices.py --protocol configs/v2/protocol.json --
 for f in configs/v2/matrices/final/final_*.json; do case $f in *manifest*) continue;; esac
   n=$(basename $f .json); python scripts/eval_matrix.py --matrix $f --output <final>/eval/${n#final_}; done
 python3 scripts/v2_analyze_final.py --final <final>/eval --train <final>/train --output results/v2/summary
+python3 scripts/v2_nondeterminism.py --final <final>/eval > results/v2/summary/nondeterminism_untrained_vs_zero.json
 ```
 
 With the release assets, `<final>` is the extracted `raw-final-eval.tar.gz` (`final/eval`) and the
@@ -155,3 +156,20 @@ skips only case IDs whose existing records carry the same suite/config/controlle
 aborts on any mismatch; `freeze_v2.py` never overwrites a frozen protocol with different content; final runs
 must come from a clean checkout at `experiment-v2` (the job wrappers check `git describe --exact-match` and
 a clean tree). No command depends on a personal desktop path.
+
+## 10. Verify the published release
+
+```bash
+git clone https://github.com/ywen0511/CSCI645-Project.git clone && git -C clone checkout v2.0.0
+python3 -I clone/scripts/download_release.py --tag v2.0.0 --output dl && (cd dl && sha256sum -c SHA256SUMS)
+python3 -I clone/scripts/verify_archives.py --bundle dl --extract x
+python3 -I clone/scripts/verify_v2_release.py --bundle dl
+python3 clone/scripts/v2_select.py --train-root x --validation x/final/validation --suite clone/configs/v2/suites/validation.jsonl --output regen/selection
+python3 clone/scripts/v2_analyze_final.py --final x/final/eval --manifest clone/configs/v2/matrices/final/final_manifest.json \
+    --selection regen/selection --train x --output regen/summary      # compare with clone/results/v2/summary (cmp)
+# GPU replay of downloaded checkpoints: scripts/cluster_v2/verify_job.sh (matrix rule in docs/v2/RELEASE_VERIFICATION.md)
+python3 clone/scripts/v2_compare_replay.py --archived x/final/eval --replay <replay out> --output replay_comparison.json
+```
+
+Byte-identical regeneration was observed with NumPy 2.4.4; other NumPy builds can change the last digit of
+`np.polyfit` slopes in `residual_behaviour.csv` / `summary.json`.

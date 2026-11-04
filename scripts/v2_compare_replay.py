@@ -22,7 +22,7 @@ import numpy as np
 
 def load(d: Path) -> dict:
     out = {}
-    for f in sorted(d.glob("*.jsonl")):
+    for f in sorted(d.rglob("*.jsonl")):
         if f.name == "eval_runs.jsonl":
             continue
         for x in f.read_text().splitlines():
@@ -30,7 +30,10 @@ def load(d: Path) -> dict:
                 r = json.loads(x)
                 if "case_id" not in r:
                     continue
-                key = (r.get("run_id") if r.get("checkpoint_sha256") else r.get("method"), r.get("checkpoint_sha256"), r["case_id"])
+                if r.get("entry_id"):  # v2 records: entry IDs distinguish controllers that share a method
+                    key = (r["entry_id"], r.get("checkpoint_sha256"), r["case_id"])
+                else:
+                    key = (r.get("run_id") if r.get("checkpoint_sha256") else r.get("method"), r.get("checkpoint_sha256"), r["case_id"])
                 out[key] = r
     return out
 
