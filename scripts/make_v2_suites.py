@@ -2,6 +2,7 @@
 """Generate the v2 case suites with fixed seeds and record their hashes.
 
     python3 scripts/make_v2_suites.py development            # configs/v2/suites/development.jsonl
+    python3 scripts/make_v2_suites.py feasibility        # configs/v2/suites/development_feasibility.jsonl
     python3 scripts/make_v2_suites.py heldout --protocol configs/v2/protocol.json   # validation + final
 
 Case IDs carry a v2 suite prefix (``v2dev``, ``v2val``, ``v2final``), so they can never collide with v1 IDs
@@ -35,18 +36,40 @@ def development(seed: int = 6453028, per_condition: int = 50) -> dict:
                             "sha256": h}}
 
 
+FEASIBILITY = {
+    "seed": 6453028, "prefix": "v2devfeas", "stratum_index_offset": 100,
+    "strata": [
+        {"id": "position_x3", "position_bound_m": 0.03, "release_offset_range_s": [0.0, 0.0], "cases": 50},
+        {"id": "joint_early_x3", "position_bound_m": 0.03, "release_offset_range_s": [-0.45, -0.45], "cases": 50},
+        {"id": "joint_late_x3", "position_bound_m": 0.03, "release_offset_range_s": [0.45, 0.45], "cases": 50},
+        {"id": "train_dist_2cm", "position_bound_m": 0.02, "release_offset_range_s": [-0.30, 0.30], "cases": 100},
+        {"id": "train_dist_1p5cm", "position_bound_m": 0.015, "release_offset_range_s": [-0.30, 0.30], "cases": 50},
+    ],
+}
+
+
+def feasibility() -> dict:
+    """Development-only feasibility cases (+-3 cm extrapolation, candidate training distributions)."""
+    cases = validation_cases(FEASIBILITY)
+    h = write_suite(OUT / "development_feasibility.jsonl", cases)
+    return {"development_feasibility": {"path": "configs/v2/suites/development_feasibility.jsonl", "cases": len(cases),
+                                        "seed": FEASIBILITY["seed"], "strata": FEASIBILITY["strata"], "sha256": h}}
+
+
 def validation_cases(spec: dict) -> list[dict]:
-    """Validation strata: each stratum has its own uniform position bound and release-offset range."""
+    """Strata cases: each stratum has its own uniform position bound and release-offset range."""
     cases = []
+    prefix = spec.get("prefix", "v2val")
+    off0 = spec.get("stratum_index_offset", 0)
     for si, st in enumerate(spec["strata"]):
         for i in range(st["cases"]):
-            rng = _case_rng(spec["seed"], si, i)
+            rng = _case_rng(spec["seed"], si + off0, i)
             b = float(st["position_bound_m"])
             off = rng.uniform(-b, b, size=3) if b > 0 else [0.0, 0.0, 0.0]
             lo, hi = st["release_offset_range_s"]
             rel = float(rng.uniform(lo, hi)) if hi > lo else float(lo)
             cases.append({
-                "case_id": f"v2val-{st['id']}-{i:04d}", "suite": "v2val", "condition": st["id"],
+                "case_id": f"{prefix}-{st['id']}-{i:04d}", "suite": prefix, "condition": st["id"],
                 "distribution": st.get("relation", ""),
                 "requested_offset_xyz_m": [round(float(v), 9) for v in off], "release_offset_s": round(rel, 9),
                 "init_seed": int(rng.integers(0, 2**31 - 1)), "config_id": "v2", "suite_version": 2,
@@ -72,12 +95,13 @@ def heldout(protocol_path: str) -> dict:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("which", choices=["development", "heldout"])
+    ap.add_argument("which", choices=["development", "feasibility", "heldout"])
     ap.add_argument("--protocol", default="configs/v2/protocol.json")
     a = ap.parse_args()
     manifest_path = OUT / "SUITES.json"
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
-    manifest.update(development() if a.which == "development" else heldout(str(ROOT / a.protocol)))
+    fn = {"development": development, "feasibility": feasibility}.get(a.which)
+    manifest.update(fn() if fn else heldout(str(ROOT / a.protocol)))
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     print(json.dumps(manifest, indent=2, sort_keys=True))

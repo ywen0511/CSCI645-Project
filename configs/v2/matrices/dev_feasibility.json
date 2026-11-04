@@ -1,0 +1,94 @@
+{
+ "name": "dev_feasibility",
+ "suite": "configs/v2/suites/development_feasibility.jsonl",
+ "num_envs": 300,
+ "protocol": "configs/frozen/protocol.json",
+ "trace_cases": [
+  "v2devfeas-position_x3-0000",
+  "v2devfeas-position_x3-0001",
+  "v2devfeas-joint_early_x3-0000",
+  "v2devfeas-joint_early_x3-0001",
+  "v2devfeas-joint_late_x3-0000",
+  "v2devfeas-joint_late_x3-0001",
+  "v2devfeas-train_dist_2cm-0000",
+  "v2devfeas-train_dist_2cm-0001",
+  "v2devfeas-train_dist_1p5cm-0000",
+  "v2devfeas-train_dist_1p5cm-0001"
+ ],
+ "entries": [
+  {
+   "id": "nominal",
+   "method": "nominal",
+   "trace": true
+  },
+  {
+   "id": "geometry_1cm",
+   "method": "geometry",
+   "trace": true
+  },
+  {
+   "id": "geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "trace": true
+  },
+  {
+   "id": "geometry_2cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.02
+   },
+   "trace": true
+  },
+  {
+   "id": "v1_combined_final_s11",
+   "method": "combined",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "checkpoint": "combined_seed11/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_combined_final_s22",
+   "method": "combined",
+   "training_seed": 22,
+   "run_id": "combined_seed22",
+   "checkpoint": "combined_seed22/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_combined_final_s33",
+   "method": "combined",
+   "training_seed": 33,
+   "run_id": "combined_seed33",
+   "checkpoint": "combined_seed33/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_residual_final_s11",
+   "method": "residual",
+   "training_seed": 11,
+   "run_id": "residual_seed11",
+   "checkpoint": "residual_seed11/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_residual_final_s22",
+   "method": "residual",
+   "training_seed": 22,
+   "run_id": "residual_seed22",
+   "checkpoint": "residual_seed22/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  },
+  {
+   "id": "v1_residual_final_s33",
+   "method": "residual",
+   "training_seed": 33,
+   "run_id": "residual_seed33",
+   "checkpoint": "residual_seed33/checkpoints/final.pt",
+   "label": "reference (v1 checkpoint)"
+  }
+ ]
+}

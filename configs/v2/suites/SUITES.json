@@ -16,5 +16,58 @@
     "per_condition": 50,
     "seed": 6453028,
     "sha256": "4118cb5e5eae5b5f299edc715186407b0d8513fddcbaf4b23d63d1472050c3bf"
+  },
+  "development_feasibility": {
+    "cases": 300,
+    "path": "configs/v2/suites/development_feasibility.jsonl",
+    "seed": 6453028,
+    "sha256": "25cc6ac72bdd30eb6c3c07f3d55ad0c763d0ebfd1e23923758e4bd270d53b4b6",
+    "strata": [
+      {
+        "cases": 50,
+        "id": "position_x3",
+        "position_bound_m": 0.03,
+        "release_offset_range_s": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "cases": 50,
+        "id": "joint_early_x3",
+        "position_bound_m": 0.03,
+        "release_offset_range_s": [
+          -0.45,
+          -0.45
+        ]
+      },
+      {
+        "cases": 50,
+        "id": "joint_late_x3",
+        "position_bound_m": 0.03,
+        "release_offset_range_s": [
+          0.45,
+          0.45
+        ]
+      },
+      {
+        "cases": 100,
+        "id": "train_dist_2cm",
+        "position_bound_m": 0.02,
+        "release_offset_range_s": [
+          -0.3,
+          0.3
+        ]
+      },
+      {
+        "cases": 50,
+        "id": "train_dist_1p5cm",
+        "position_bound_m": 0.015,
+        "release_offset_range_s": [
+          -0.3,
+          0.3
+        ]
+      }
+    ]
   }
 }
