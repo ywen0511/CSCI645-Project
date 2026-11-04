@@ -1,3 +1,5 @@
+> Archived copy of the follow-up assignment (README of commit `a3bb983`). Text unchanged; relative links were rewritten to resolve from `docs/v2/`.
+
 # Robust Bimanual Handover — Execute the Follow-up Study
 
 **Geometric Coordination and Residual Reinforcement Learning for Robust Bimanual Handover**  
@@ -20,7 +22,7 @@ The owner authorizes routine project implementation/debugging, isolated dependen
 
 Start from the latest `impl/handover` branch and create a follow-up work branch, preferably `study/v2-diagnostics`; resume that branch if it already contains this assignment's work. Inspect existing changes before proceeding and preserve other contributors' work. Push meaningful milestones and leave the final README pointing to the final source branch, immutable source tag, and release. Opening a PR to the default branch is authorized; merging is not needed for delivery. The final source must be reachable remotely, not only in an unmerged local checkout.
 
-This README is the owner's updated scientific assignment. Where older execution prompts describe v1 budgets, selection rules, completion status, or output locations, the follow-up requirements here take precedence. Preserve the old documents as historical context and clearly distinguish the v2 addendum. Read [AGENTS.md](AGENTS.md), [PROJECT_SPEC](docs/PROJECT_SPEC.md), [EXPERIMENTS](docs/EXPERIMENTS.md), [IMPLEMENTATION](docs/IMPLEMENTATION.md), [RUNBOOK](docs/RUNBOOK.md), and [RELEASE](docs/RELEASE.md); retain their applicable integrity and implementation requirements. Read the archived [original execution brief](https://github.com/ywen0511/CSCI645-Project/blob/4314a0fa6aac360b10300ad3cff8739822c128f0/README.md) if needed. No local proposal access is required: the submitted proposal is in [proposal/](proposal/).
+This README is the owner's updated scientific assignment. Where older execution prompts describe v1 budgets, selection rules, completion status, or output locations, the follow-up requirements here take precedence. Preserve the old documents as historical context and clearly distinguish the v2 addendum. Read [AGENTS.md](../../AGENTS.md), [PROJECT_SPEC](../../docs/PROJECT_SPEC.md), [EXPERIMENTS](../../docs/EXPERIMENTS.md), [IMPLEMENTATION](../../docs/IMPLEMENTATION.md), [RUNBOOK](../../docs/RUNBOOK.md), and [RELEASE](../../docs/RELEASE.md); retain their applicable integrity and implementation requirements. Read the archived [original execution brief](https://github.com/ywen0511/CSCI645-Project/blob/4314a0fa6aac360b10300ad3cff8739822c128f0/README.md) if needed. No local proposal access is required: the submitted proposal is in [proposal/](../../proposal/).
 
 **Keep the research scope:** two Franka Panda arms, two-finger parallel-jaw grippers, one rigid bar, simulated handover, Isaac Sim **through Isaac Lab**, PhysX physics, and a bounded three-dimensional receiver position residual trained with PPO. Keep orientations fixed. Do not switch to dexterous hands, another simulator, vision, real hardware, or a new task. A different renderer for videos is acceptable only if physics remains unchanged and this is documented.
 
@@ -30,10 +32,10 @@ This README is the owner's updated scientific assignment. Where older execution 
 |---|---|
 | Immutable v1 release, including raw results and checkpoints | [v1.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v1.0.0) |
 | Exact v1 experiment source | [experiment-v1](https://github.com/ywen0511/CSCI645-Project/tree/experiment-v1), commit `7a64505a08fbaa8f0308cc87bcff46ad2c35cb96` |
-| v1 report and results | [report/report.md](report/report.md), [primary](results/summary/primary/), [secondary](results/summary/secondary/) |
-| Setup and reproduction | [SETUP_REMOTE](docs/SETUP_REMOTE.md), [REPRODUCE](docs/REPRODUCE.md), [ENVIRONMENT](docs/ENVIRONMENT.md) |
-| Calibration and release evidence | [DECISIONS](docs/DECISIONS.md), [RELEASE_VERIFICATION](docs/RELEASE_VERIFICATION.md) |
-| Frozen v1 protocol | [configs/frozen/protocol.json](configs/frozen/protocol.json) |
+| v1 report and results | [report/report.md](../../report/report.md), [primary](../../results/summary/primary/), [secondary](../../results/summary/secondary/) |
+| Setup and reproduction | [SETUP_REMOTE](../../docs/SETUP_REMOTE.md), [REPRODUCE](../../docs/REPRODUCE.md), [ENVIRONMENT](../../docs/ENVIRONMENT.md) |
+| Calibration and release evidence | [DECISIONS](../../docs/DECISIONS.md), [RELEASE_VERIFICATION](../../docs/RELEASE_VERIFICATION.md) |
+| Frozen v1 protocol | [configs/frozen/protocol.json](../../configs/frozen/protocol.json) |
 
 The reported v1 platform is Isaac Lab v3.0.0 / Isaac Sim 6.2.0.0 / RSL-RL 5.5.1 on A100-40GB. Verify actual availability and compatibility from installed packages and official documentation before running; do not silently upgrade the experiment environment. Nine PPO runs completed 10,027,008 transitions each. Primary evaluation contains 19,800 episodes: 1,800 shared cases for two deterministic controllers and nine learned-policy runs. These are archived claims to verify, not newly executed results.
 
