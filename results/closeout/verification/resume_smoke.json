@@ -1,0 +1,135 @@
+{
+ "stage": "resume_smoke",
+ "utc": "2026-11-06T04:42:06Z",
+ "host": "<cluster-node>",
+ "tools": {
+  "commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+  "dirty": false,
+  "tags": [
+   "v2.1.1"
+  ]
+ },
+ "experiment": {
+  "commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+  "dirty": false,
+  "tags": [
+   "experiment-v2"
+  ]
+ },
+ "source_checkpoint": "$WORK/inputs/v2.1.1/x/combined_seed11/checkpoints/latest.pt",
+ "sha256_before": "9482ccf2d959b180cfda5658103263649a81c6c3b6c1e623aad764d2a8217d82",
+ "sha256_after": "9482ccf2d959b180cfda5658103263649a81c6c3b6c1e623aad764d2a8217d82",
+ "source_unchanged": true,
+ "train": {
+  "cmd": [
+   "bash",
+   "<VERIFY>/repo/scripts/cluster/isaac_run.sh",
+   "<WORK>/envs/csci645proj/bin/python",
+   "scripts/train.py",
+   "--method",
+   "combined",
+   "--seed",
+   "11",
+   "--protocol",
+   "<VERIFY>/repo/configs/v2/frozen/protocol.json",
+   "--run-type",
+   "smoke",
+   "--resume",
+   "<VERIFY>/work/inputs/v2.1.1/x/combined_seed11/checkpoints/latest.pt",
+   "--transitions",
+   "10092544",
+   "--output",
+   "<VERIFY>/work/sim/resume_smoke/combined_seed11"
+  ],
+  "cwd": "$WORK/src/experiment-v2",
+  "rc": 0,
+  "start": "2026-11-06T04:41:07.782277+00:00",
+  "wall_s": 55.464212,
+  "log": "$WORK/logs/resume_smoke.log"
+ },
+ "inspect": {
+  "cmd": [
+   "bash",
+   "<VERIFY>/repo/scripts/cluster/isaac_run.sh",
+   "<WORK>/envs/csci645proj/bin/python",
+   "<VERIFY>/repo/scripts/closeout_inspect_ckpt.py",
+   "--before",
+   "<VERIFY>/work/inputs/v2.1.1/x/combined_seed11/checkpoints/latest.pt",
+   "--after",
+   "<VERIFY>/work/sim/resume_smoke/combined_seed11/checkpoints/final.pt",
+   "--expect-iterations",
+   "308",
+   "--expect-transitions",
+   "10092544",
+   "--output",
+   "<VERIFY>/work/sim/resume_smoke/combined_seed11_inspect.json"
+  ],
+  "cwd": "$WORK/src/experiment-v2",
+  "rc": 0,
+  "start": "2026-11-06T04:42:03.246735+00:00",
+  "wall_s": 2.927341,
+  "log": "$WORK/logs/resume_smoke.log"
+ },
+ "output": "$WORK/sim/resume_smoke/combined_seed11",
+ "budget_transitions": 10092544,
+ "inspection": {
+  "before": {
+   "file": "latest.pt",
+   "sha256": "9482ccf2d959b180cfda5658103263649a81c6c3b6c1e623aad764d2a8217d82",
+   "iterations_done": 306,
+   "transitions": 10027008,
+   "keys": [
+    "actor_state_dict",
+    "critic_state_dict",
+    "infos",
+    "iter",
+    "optimizer_state_dict"
+   ]
+  },
+  "after": {
+   "file": "final.pt",
+   "sha256": "454aca8784c858ef8e60683f509017717cd76284c356c3c1b3f1962e3295a557",
+   "iterations_done": 308,
+   "transitions": 10092544,
+   "keys": [
+    "actor_state_dict",
+    "critic_state_dict",
+    "infos",
+    "iter",
+    "optimizer_state_dict"
+   ]
+  },
+  "expected_after": {
+   "iterations_done": 308,
+   "transitions": 10092544
+  },
+  "optimizer_state_present": {
+   "before": true,
+   "after": true
+  },
+  "optimizer_step_counts": {
+   "before": 6120.0,
+   "after": 6160.0
+  },
+  "normalizer_tensors": {
+   "before": 8,
+   "after": 8,
+   "changed_by_2_iterations": 8
+  },
+  "model_tensors": 11,
+  "model_tensors_changed_by_2_iterations": 11,
+  "rng_state_present": {
+   "before": true,
+   "after": true
+  },
+  "reload_identical": true,
+  "checks": {
+   "counters_restored_and_advanced": true,
+   "optimizer_state_saved": true,
+   "normalizer_present": true,
+   "parameters_updated": true,
+   "reload_identical": true
+  },
+  "ok": true
+ }
+}

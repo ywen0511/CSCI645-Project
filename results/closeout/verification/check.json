@@ -1,0 +1,106 @@
+{
+ "stage": "check",
+ "utc": "2026-11-06T04:37:56Z",
+ "host": "USMCDLNCN228G2D",
+ "tools": {
+  "commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+  "dirty": false,
+  "tags": [
+   "v2.1.1"
+  ]
+ },
+ "experiment": {
+  "commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+  "dirty": false,
+  "tags": [
+   "experiment-v2"
+  ]
+ },
+ "scripts": {
+  "experiment": {
+   "checkout": {
+    "commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "dirty": false,
+    "tags": [
+     "experiment-v2"
+    ]
+   },
+   "required": [
+    "scripts/eval_matrix.py",
+    "scripts/evaluate.py",
+    "scripts/train.py",
+    "scripts/run_scripted.py",
+    "scripts/record_video.py",
+    "scripts/make_ckpt_matrix.py"
+   ],
+   "missing": []
+  },
+  "tools": {
+   "checkout": {
+    "commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "dirty": false,
+    "tags": [
+     "v2.1.1"
+    ]
+   },
+   "required": [
+    "scripts/closeout.py",
+    "scripts/closeout_make_configs.py",
+    "scripts/closeout_repeatability.py",
+    "scripts/closeout_regen_compare.py",
+    "scripts/closeout_package.py",
+    "scripts/closeout_verify.py",
+    "scripts/closeout_check_numbers.py",
+    "scripts/closeout_inspect_ckpt.py",
+    "scripts/download_release.py",
+    "scripts/verify_archives.py",
+    "scripts/verify_v2_release.py",
+    "scripts/v2_select.py",
+    "scripts/v2_analyze_final.py",
+    "scripts/v2_analyze_dev.py",
+    "scripts/v2_select_constants.py",
+    "scripts/v2_analyze_pilots.py",
+    "scripts/v2_nondeterminism.py",
+    "scripts/v2_compare_replay.py",
+    "scripts/build_report_v2.py",
+    "scripts/build_deck_v2.py",
+    "scripts/cluster/isaac_run.sh",
+    "scripts/cluster/lsf_submit.sh"
+   ],
+   "missing": []
+  }
+ },
+ "doc_commands": [],
+ "links": [],
+ "asset_names": [],
+ "simulator_source": {
+  "identical": true,
+  "differences": []
+ },
+ "help_rc": {
+  "scripts/closeout.py": 0,
+  "scripts/closeout_make_configs.py": 0,
+  "scripts/closeout_repeatability.py": 0,
+  "scripts/closeout_regen_compare.py": 0,
+  "scripts/closeout_package.py": 0,
+  "scripts/closeout_verify.py": 0,
+  "scripts/closeout_check_numbers.py": 0,
+  "scripts/closeout_inspect_ckpt.py": 0,
+  "scripts/download_release.py": 0,
+  "scripts/verify_archives.py": 0,
+  "scripts/verify_v2_release.py": 0,
+  "scripts/v2_select.py": 0,
+  "scripts/v2_analyze_final.py": 0,
+  "scripts/v2_analyze_dev.py": 0,
+  "scripts/v2_select_constants.py": 0,
+  "scripts/v2_analyze_pilots.py": 0,
+  "scripts/v2_nondeterminism.py": 0,
+  "scripts/v2_compare_replay.py": 0,
+  "scripts/build_report_v2.py": 0,
+  "scripts/build_deck_v2.py": 0
+ },
+ "asset_lists": [
+  "$WORK/inputs/v2.1.1/SHA256SUMS"
+ ],
+ "ok": true
+}

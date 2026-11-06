@@ -1,5 +1,5 @@
 {
- "release": "v2.1.0",
+ "release": "v2.1.1",
  "status_values": [
   "planned",
   "produced",
@@ -11,101 +11,407 @@
    "id": "source_tags",
    "content": "immutable tags: experiment-v2, closeout supplementary-evaluation tag, v2.1.0 release tag",
    "asset": "git",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> package",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "source-v2.1.1.tar.gz",
+     "sha256": "eed7c228f99405fac1936ed86f77e487e90843c1eb1d9237513c046e64336a2a"
+    }
+   ],
+   "index": null,
+   "stage_record": "package.json in closeout records"
   },
   {
    "id": "environment_locks",
    "content": "configs/v2/frozen/pip-freeze.txt (simulator), configs/closeout/requirements-analysis.txt (CPU)",
    "asset": "configs-and-docs",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> package",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "configs-and-docs.tar.gz",
+     "member": "configs/v2/frozen/pip-freeze.txt",
+     "sha256": "125031006ea89f26aaee660f404cb3ea871be588977838051789ac5db92a35e4"
+    },
+    {
+     "asset": "configs-and-docs.tar.gz",
+     "member": "configs/closeout/requirements-analysis.txt",
+     "sha256": "827fd9b5dbc9a02cff0263e1a703df62869c692b5ee6a21db9c7e35d6f36c4f7"
+    }
+   ],
+   "index": null,
+   "stage_record": "package.json in closeout records"
   },
   {
    "id": "protocols_suites",
    "content": "configs/v2/frozen/protocol.json, configs/v2/suites/*, configs/closeout/*",
    "asset": "configs-and-docs",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> package",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "configs-and-docs.tar.gz",
+     "member": "configs/v2/frozen/protocol.json",
+     "sha256": "bd79ae5140db002aaeb532a41ebc01a698fdd015078288dcd518f4c4f7779f10"
+    },
+    {
+     "asset": "configs-and-docs.tar.gz",
+     "member": "configs/v2/suites/final.jsonl",
+     "sha256": "041ca5cfab39dceba4e143e3116f1d0e850af3976929c96be71e57a4ea0ce1b4"
+    },
+    {
+     "asset": "configs-and-docs.tar.gz",
+     "member": "configs/closeout/repeatability.json",
+     "sha256": "9ba5035e1d138119511d7f04763a31b44da761ee77a2311b18f31d12329a5b8a"
+    },
+    {
+     "asset": "configs-and-docs.tar.gz",
+     "member": "configs/closeout/verification_replay.json",
+     "sha256": "d3613f208f01ae19b904426e8d339bec969b256615b0df5dd3f103e70974e1be"
+    }
+   ],
+   "index": null,
+   "stage_record": "package.json in closeout records"
   },
   {
    "id": "checkpoints_v2",
    "content": "all 9 runs: step-0, periodic, selected, final, latest (resume) + pilot/smoke; superseded smoke final.pt recorded",
    "asset": "checkpoints-*.tar.gz (copied unchanged from v2.0.0)",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> download --tag v2.0.0",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "checkpoints-combined-seed11.tar.gz",
+     "sha256": "45e9f978df0c5aff3beffd41d0e004a9e529e17519b6dcd1cabc22a67a9e6545"
+    },
+    {
+     "asset": "checkpoints-combined-seed22.tar.gz",
+     "sha256": "7368ca7cbd0d21549c940cb1c9e46e7e7b66216b0b52e12d7ea11aa0e2e1ccb0"
+    },
+    {
+     "asset": "checkpoints-combined-seed33.tar.gz",
+     "sha256": "d99da2dbc59b880288e3e1e3d8582f6cc47e5fb3d1bfe261ab45116b29707df8"
+    },
+    {
+     "asset": "checkpoints-combined_no_phase-seed11.tar.gz",
+     "sha256": "797f709f0870479901597f3874c5bba60a16499525ef474c703a5dc2255ff634"
+    },
+    {
+     "asset": "checkpoints-combined_no_phase-seed22.tar.gz",
+     "sha256": "8e1766ef6b7a8bb989d6173bd5953f7d667f8a0e0c189cc5c8566afa6e45db14"
+    },
+    {
+     "asset": "checkpoints-combined_no_phase-seed33.tar.gz",
+     "sha256": "0e0cfde8b64b49e62eb8a9df156be79ba9fb1e2ddbb40ac296e4df93be6a610a"
+    },
+    {
+     "asset": "checkpoints-pilot.tar.gz",
+     "sha256": "7a2b6db198bade49ae2e53b92b42b76c59784ae1dd38cfea8d175ba467cf5fce"
+    },
+    {
+     "asset": "checkpoints-residual-seed11.tar.gz",
+     "sha256": "1133ae361705319f3f444a105ee94edb7f78601badd396a8495226f83a316c6f"
+    },
+    {
+     "asset": "checkpoints-residual-seed22.tar.gz",
+     "sha256": "a38eea102cd1b7d524a079835daeca5afee0eb324621e64e7bf19faec43ea58f"
+    },
+    {
+     "asset": "checkpoints-residual-seed33.tar.gz",
+     "sha256": "46f913700b27af1612b6b6a8c964caf15bdfcbef47aa2b184362a20cbe28bae7"
+    }
+   ],
+   "index": "checkpoints.json",
+   "stage_record": "download_v2.0.0.json in closeout records",
+   "provenance": "copied unchanged from release v2.0.0 (same bytes; hashes in manifest.json copied_unchanged_from_v2.0.0)"
   },
   {
    "id": "raw_v2",
    "content": "development, pilot, validation, final, audit, negative-control, trace and training records/logs",
    "asset": "raw-*.tar.gz, logs.tar.gz (copied unchanged)",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> download --tag v2.0.0",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "raw-final-eval.tar.gz",
+     "sha256": "84d533d476b40cd4b6cf8b1d4c9604431864f638b750a79b76909e183326500a"
+    },
+    {
+     "asset": "raw-validation.tar.gz",
+     "sha256": "e5c42865eb3e03767b58f90e3f6197c98f30aa7d3f3e37e01b13b555930667f1"
+    },
+    {
+     "asset": "raw-development.tar.gz",
+     "sha256": "fb2064e166bc33cea28937b0714daa0d9a182d5c1f3e651092034552cacea1e6"
+    },
+    {
+     "asset": "raw-pilot-eval.tar.gz",
+     "sha256": "b6ee3140d3491ec542f719988f06185bdc0e0806ad745928a998c3c00ec86d48"
+    },
+    {
+     "asset": "raw-audit.tar.gz",
+     "sha256": "1d7a1402941b0380ef82dbc5690ab91ab81aee3b2075e51c2d11da3782ec3b22"
+    },
+    {
+     "asset": "logs.tar.gz",
+     "sha256": "1ee2cda6e3e6382f1bc16c284c0a55cd7c19df2a79bbee865e2a258ef2908d49"
+    }
+   ],
+   "index": null,
+   "stage_record": "download_v2.0.0.json in closeout records",
+   "provenance": "copied unchanged from release v2.0.0 (same bytes; hashes in manifest.json copied_unchanged_from_v2.0.0)"
   },
   {
    "id": "raw_closeout",
    "content": "Stage 4 raw records, process/batch metadata, attempts, job logs; Stage 2 negative controls; Stage 7 replay + resume smoke",
    "asset": "closeout-*.tar.gz",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> repeatability",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "closeout-repeatability.tar.gz",
+     "sha256": "821aadc210ec846911951563b94d18d3ec2f96a98641081322f1ac1c47d30791"
+    },
+    {
+     "asset": "closeout-negative-controls.tar.gz",
+     "sha256": "57b00c01e238d826c09ea6717eafd62254d3306100ceae6d07fae9e2785fedf4"
+    }
+   ],
+   "index": "runs.json",
+   "stage_record": "repeatability.json in closeout records"
   },
   {
    "id": "analysis",
    "content": "scripts, CSV/JSON tables, figures, selection histories, regeneration comparison, repeatability analysis, decision logs",
    "asset": "results-closeout.tar.gz + source tag",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> analyze",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "closeout-results.tar.gz",
+     "sha256": "3d7be2eccba764249178235602c8e456e974b71a062e5d862fda3bf4e87ac2ef"
+    },
+    {
+     "asset": "configs-and-docs.tar.gz",
+     "sha256": "2be88400163455cdc14e6a7f5e4af51779a8a5c1c116fac20aed1e40633277a9"
+    }
+   ],
+   "index": null,
+   "stage_record": null
   },
   {
    "id": "documents",
    "content": "report.md/pdf, corrected v1 report, deck.pptx/pdf, ERRATA, REPRODUCE, VERIFICATION",
    "asset": "individual assets",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> render",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "report.md",
+     "sha256": "a997c75661e187491cc2f8b1a220129211cece246ab59206d56dd8e04910c297"
+    },
+    {
+     "asset": "report.pdf",
+     "sha256": "92b7eeed40643919400167f49c3583c3ffb4c611956492ae1da9d1cf540082e2"
+    },
+    {
+     "asset": "report-v1-corrected.pdf",
+     "sha256": "21eb1c4ed3c9e9f4103b9de7bbffa0eaed49c8b8d5c1cfac79f2b6766440e935"
+    },
+    {
+     "asset": "deck.pptx",
+     "sha256": "5cbb0942583c5ec195f6c09021a6c9a817000a7878668f2bbf807f6980b916e6"
+    },
+    {
+     "asset": "deck.pdf",
+     "sha256": "7031e397a33c2fc2d9d8371c166e61101afed9cf90cb5f91c35f2af6db2a5b74"
+    },
+    {
+     "asset": "repeatability.md",
+     "sha256": "5361dc3c12f0617100f07b7238e9b6609f4f19c77f17a0efbec91500ac40084f"
+    },
+    {
+     "asset": "ERRATA.md",
+     "sha256": "66cfb2f10694cb9d92560623b298464e3994b69d1476ae405af551425af25815"
+    },
+    {
+     "asset": "REPRODUCE.md",
+     "sha256": "5acb425f9a29f7ffbf9aa33a8f193ab6a3179c0a8cbdbadd972173c2a0c8031f"
+    },
+    {
+     "asset": "VERIFICATION.md",
+     "sha256": "406c33f8f0b303ecd64b213f6afaed26fc76e1130f0c412451dae3bd7efe7277"
+    }
+   ],
+   "index": null,
+   "stage_record": "render.json in closeout records"
   },
   {
    "id": "videos",
    "content": "10 MP4 + sidecars + replay outcomes",
    "asset": "videos.tar.gz, videos.json",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> download --tag v2.0.0",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "videos.tar.gz",
+     "sha256": "bf360c1008bfd7cd28e4405f09f3f4ecab20dfc64fe7ec7b8a3a7d127ad9dd32"
+    },
+    {
+     "asset": "videos.json",
+     "sha256": "df67d9697c6bddeca5453c37193600ad6552ae55a566f3b484421a532fc06d49"
+    }
+   ],
+   "index": "videos.json",
+   "stage_record": "download_v2.0.0.json in closeout records",
+   "provenance": "copied unchanged from release v2.0.0 (same bytes; hashes in manifest.json copied_unchanged_from_v2.0.0)"
   },
   {
    "id": "indices",
    "content": "runs.json, checkpoints.json, videos.json, manifest.json, archive_inventories.json, SHA256SUMS",
    "asset": "individual assets",
-   "status": "planned",
-   "source_revision": null,
-   "command": null,
-   "inputs": [],
-   "outputs": []
+   "status": "verified",
+   "source_revision": {
+    "release_source_commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+    "experiment_commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+    "supplementary_evaluation_commit": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af"
+   },
+   "command": "python3 scripts/closeout.py --work <work> package",
+   "inputs": [
+    {
+     "release": "v2.0.0",
+     "SHA256SUMS": "2132f8677c84eb895f3904d944dd2329dacc16b5341b01e17cf2424b12274cab"
+    }
+   ],
+   "outputs": [
+    {
+     "asset": "runs.json",
+     "sha256": "678283adecf3a5614d9138596914ddce9f762159eede1bdbed16851767678484"
+    },
+    {
+     "asset": "checkpoints.json",
+     "sha256": "3fddc4f850234df0a508d61194a8edd2cabd9cf45106c86f4bb349070b73ae51"
+    },
+    {
+     "asset": "videos.json",
+     "sha256": "df67d9697c6bddeca5453c37193600ad6552ae55a566f3b484421a532fc06d49"
+    },
+    {
+     "asset": "manifest.json",
+     "sha256": "110587cce6fc55b0c924667b4400c51066cd1b154d177572e90db12535e1e522"
+    },
+    {
+     "asset": "archive_inventories.json",
+     "sha256": "410dc181321e9202b3729bd3e14904c58f5ed07550f9477046b76a3614eeac29"
+    },
+    {
+     "asset": "SHA256SUMS",
+     "sha256": "(SHA256SUMS itself)"
+    }
+   ],
+   "index": null,
+   "stage_record": "package.json in closeout records"
   }
- ]
+ ],
+ "verification": "docs/closeout/VERIFICATION.md section B; results/closeout/verification/"
 }

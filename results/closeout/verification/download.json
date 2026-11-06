@@ -1,0 +1,40 @@
+{
+ "stage": "download_v2.1.1",
+ "utc": "2026-11-06T04:37:54Z",
+ "host": "USMCDLNCN228G2D",
+ "tools": {
+  "commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+  "dirty": false,
+  "tags": [
+   "v2.1.1"
+  ]
+ },
+ "experiment": null,
+ "tag": "v2.1.1",
+ "assets": 39,
+ "checksums_ok": 37,
+ "sha256sums": "05fd0265fceee8c0485c299e485bba4742196e55f670d0c6df8cecb4973c4eb7",
+ "commands": [
+  {
+   "cmd": "download_release.py --tag v2.1.1",
+   "rc": 0
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "-I",
+    "<FRESH>/CSCI645-Project/scripts/verify_archives.py",
+    "--bundle",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1",
+    "--extract",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:37:48.942945+00:00",
+   "wall_s": 5.594229,
+   "log": "$WORK/logs/download_v2.1.1.log"
+  }
+ ],
+ "extract": "$WORK/inputs/v2.1.1/x"
+}

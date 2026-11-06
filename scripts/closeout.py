@@ -706,7 +706,7 @@ def st_package(c: Ctx):
 
 
 def st_verify(c: Ctx):
-    bundle = Path(c.a.bundle) if c.a.bundle else c.inputs / c.a.tag
+    bundle = Path(c.a.bundle).resolve() if c.a.bundle else c.inputs / c.a.tag  # caller-relative path
     # the same member check the download stage uses, so a local draft is validated exactly like a download
     va = c.run([sys.executable, "-I", c.tools / "scripts/verify_archives.py", "--bundle", bundle], cwd=c.work,
                log=c.work / "logs/verify.log")

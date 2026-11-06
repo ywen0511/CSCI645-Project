@@ -103,3 +103,13 @@ UTC timestamps from `date -u`. Evidence paths are repository-relative unless mar
   rows without a hash. The driver's `verify` stage also runs `verify_archives.py`, so a draft is checked
   exactly like a download. Documents, driver defaults and report links now name v2.1.1. v2.1.0 stays
   published unchanged; its release notes point to v2.1.1 (ERRATA C9).
+
+### 2026-11-06 04:48 UTC — v2.1.1 verified; closeout complete
+
+- v2.1.1 passed every Section B check of [VERIFICATION.md](VERIFICATION.md) from a fresh clone and an
+  anonymous download (laptop CPU and cluster GPU). The predeclared replay agreed with the archived records in
+  1,309/1,320 terminal reasons and 1,312/1,320 success flags. All 10 disagreements of learned policies are
+  residual-only policies; combined and combined_no_phase agree 720/720.
+- After tagging, the `verify --bundle` relative-path issue was found. It is fixed on the branch only; the tag
+  is not moved because the documented commands are unaffected.
+- `STATUS.json` → `delivery_closeout.complete = true`; deliverable manifest marked verified.

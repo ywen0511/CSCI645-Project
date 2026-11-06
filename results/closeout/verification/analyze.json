@@ -1,0 +1,52 @@
+{
+ "stage": "analyze",
+ "utc": "2026-11-06T04:39:59Z",
+ "host": "USMCDLNCN228G2D",
+ "tools": {
+  "commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+  "dirty": false,
+  "tags": [
+   "v2.1.1"
+  ]
+ },
+ "experiment": {
+  "commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+  "dirty": false,
+  "tags": [
+   "experiment-v2"
+  ]
+ },
+ "command": {
+  "cmd": [
+   "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+   "<FRESH>/CSCI645-Project/scripts/closeout_repeatability.py",
+   "analyze",
+   "--sim",
+   "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/closeout/sim",
+   "--archived",
+   "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/final/eval",
+   "--ledger",
+   "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/closeout/ledger",
+   "--output",
+   "<FRESH>/CSCI645-Project/closeout_work/analysis/repeatability"
+  ],
+  "cwd": "$WORK/.",
+  "rc": 0,
+  "start": "2026-11-06T04:39:34.912392+00:00",
+  "wall_s": 24.845058,
+  "log": "$WORK/logs/analyze.log"
+ },
+ "inputs": {
+  "sim": "$WORK/inputs/v2.1.1/x/closeout/sim",
+  "ledger": "$WORK/inputs/v2.1.1/x/closeout/ledger",
+  "archived": "$WORK/inputs/v2.1.1/x/final/eval"
+ },
+ "output": "$WORK/analysis/repeatability",
+ "comparison_with_committed": {
+  "agreement_pairs.csv": "identical",
+  "archived_reference.csv": "identical",
+  "comparisons.csv": "identical",
+  "per_task.csv": "identical",
+  "summary.json": "identical"
+ }
+}

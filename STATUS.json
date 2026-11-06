@@ -58,35 +58,48 @@
     "id": "delivery-closeout",
     "assignment": "docs/closeout/ASSIGNMENT.md",
     "branch": "study/v2-diagnostics",
-    "stage": "Stage 6: packaging release v2.1.0 (Stages 1-5 done)",
-    "complete": false,
-    "final_delivery_verified": false,
+    "stage": "completed: release v2.1.1 published and verified from a fresh clone and anonymous download",
+    "complete": true,
+    "final_delivery_verified": true,
     "completed_items": [
       "Stage 1: inventory; v2.0.0 anonymous download 30/30 checksums, 19 archives re-hashed; assignment archived; plan/decisions/status/manifest/ledger",
       "Stage 2: driver scripts/closeout.py (two checkouts, resumable, hash-checked); check stage passes; 51/51 v2 files regenerated (30 byte-identical, 21 figures); unit tests 32/32 with locked env; negative controls pass",
       "Stage 3: wording/provenance corrections C1-C8 (docs/closeout/ERRATA.md)",
       "Stage 4: 48/48 tasks, 115,200/115,200 episodes; combined - geometry negative in every repeat and layout (stable under tested settings)",
-      "Stage 5: report and deck rebuilt and inspected page by page; 188 report numbers checked against summaries"
+      "Stage 5: report and deck rebuilt and inspected page by page; 188 report numbers checked against summaries",
+      "Stage 6: v2.1.0 published 04:26 UTC (failed post-publication download check) -> patch release v2.1.1 published 04:35 UTC, 38 assets",
+      "Stage 7: v2.1.1 verified from scratch: quickstart all rc=0, integrity, indices, regeneration (v2 + supplementary byte-identical), driver error/resume paths, predeclared replay 1,309/1,320 terminal and 1,312/1,320 success agreement, 2-iteration resume smoke, 10/10 videos, documents"
     ],
     "active_jobs": [],
     "blockers": [],
-    "next_actions": [
-      "package, validate and publish v2.1.0",
-      "Stage 7 verification from a fresh clone and anonymous download",
-      "post-release verification commit"
-    ],
+    "next_actions": [],
     "source_commits": {
       "experiment": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf (tag experiment-v2)",
       "v2_release": "86b193a439539dd88a98a0283c06293c0a1ac8aa (tag v2.0.0)",
       "delivery_snapshot_before": "3a8fe0a9d071fa5cae61939652611cbf349fd790",
       "assignment_commit": "ace2b7ffacb004c06cf3986dc307bfc70d485489",
-      "supplementary_evaluation": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af (tag closeout-eval-v1)"
+      "supplementary_evaluation": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af (tag closeout-eval-v1)",
+      "release_v2.1.1": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2 (tag v2.1.1)",
+      "release_v2.1.0_superseded": "46fd6773d8443903c18da41bfd533f328cf4a75b (tag v2.1.0)"
     },
     "release_tag_planned": "v2.1.0",
     "plan": "docs/closeout/PLAN.md",
     "decisions": "docs/closeout/DECISIONS.md",
     "deliverables": "results/closeout/deliverables.json",
     "run_ledger": "results/closeout/run_ledger.jsonl",
-    "findings_supplementary": "combined - geometry 1.5 cm: selected -0.44..-0.40 pp, final -0.39..-0.35 pp over 3 processes x batch 900/23, all repeat-averaged CIs exclude 0 -> stable small disadvantage under the tested settings; combined - (geometry + 10 mm) -3.15..-3.06 pp"
+    "findings_supplementary": "combined - geometry 1.5 cm: selected -0.44..-0.40 pp, final -0.39..-0.35 pp over 3 processes x batch 900/23, all repeat-averaged CIs exclude 0 -> stable small disadvantage under the tested settings; combined - (geometry + 10 mm) -3.15..-3.06 pp",
+    "release_tag": "v2.1.1",
+    "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.1",
+    "superseded_release": {
+      "tag": "v2.1.0",
+      "reason": "source-archive inventory without member SHA-256 broke the documented download stage (ERRATA C9); unchanged, notes point to v2.1.1"
+    },
+    "verification": "docs/closeout/VERIFICATION.md (section B) and results/closeout/verification/",
+    "remaining_limitations": [
+      "simulation only, privileged state, translation-only perturbations, one reward design",
+      "three training seeds; repeatability check re-uses the v2 final suite and one GPU type/driver",
+      "verify --bundle with a relative path mis-resolves in the v2.1.1 driver (fixed on the branch after the tag)",
+      "historical private-path exposures documented in docs/closeout/ERRATA.md, history not rewritten"
+    ]
   }
 }
