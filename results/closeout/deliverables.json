@@ -1,0 +1,111 @@
+{
+ "release": "v2.1.0",
+ "status_values": [
+  "planned",
+  "produced",
+  "uploaded",
+  "verified"
+ ],
+ "deliverables": [
+  {
+   "id": "source_tags",
+   "content": "immutable tags: experiment-v2, closeout supplementary-evaluation tag, v2.1.0 release tag",
+   "asset": "git",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  },
+  {
+   "id": "environment_locks",
+   "content": "configs/v2/frozen/pip-freeze.txt (simulator), configs/closeout/requirements-analysis.txt (CPU)",
+   "asset": "configs-and-docs",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  },
+  {
+   "id": "protocols_suites",
+   "content": "configs/v2/frozen/protocol.json, configs/v2/suites/*, configs/closeout/*",
+   "asset": "configs-and-docs",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  },
+  {
+   "id": "checkpoints_v2",
+   "content": "all 9 runs: step-0, periodic, selected, final, latest (resume) + pilot/smoke; superseded smoke final.pt recorded",
+   "asset": "checkpoints-*.tar.gz (copied unchanged from v2.0.0)",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  },
+  {
+   "id": "raw_v2",
+   "content": "development, pilot, validation, final, audit, negative-control, trace and training records/logs",
+   "asset": "raw-*.tar.gz, logs.tar.gz (copied unchanged)",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  },
+  {
+   "id": "raw_closeout",
+   "content": "Stage 4 raw records, process/batch metadata, attempts, job logs; Stage 2 negative controls; Stage 7 replay + resume smoke",
+   "asset": "closeout-*.tar.gz",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  },
+  {
+   "id": "analysis",
+   "content": "scripts, CSV/JSON tables, figures, selection histories, regeneration comparison, repeatability analysis, decision logs",
+   "asset": "results-closeout.tar.gz + source tag",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  },
+  {
+   "id": "documents",
+   "content": "report.md/pdf, corrected v1 report, deck.pptx/pdf, ERRATA, REPRODUCE, VERIFICATION",
+   "asset": "individual assets",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  },
+  {
+   "id": "videos",
+   "content": "10 MP4 + sidecars + replay outcomes",
+   "asset": "videos.tar.gz, videos.json",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  },
+  {
+   "id": "indices",
+   "content": "runs.json, checkpoints.json, videos.json, manifest.json, archive_inventories.json, SHA256SUMS",
+   "asset": "individual assets",
+   "status": "planned",
+   "source_revision": null,
+   "command": null,
+   "inputs": [],
+   "outputs": []
+  }
+ ]
+}

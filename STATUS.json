@@ -53,5 +53,39 @@
       "1.5 cm constant at the edge of the extended grid (flat)",
       "history contains absolute filer paths in commit 38a12ec and v1 commit 11e3118 (not rewritten)"
     ]
+  },
+  "delivery_closeout": {
+    "id": "delivery-closeout",
+    "assignment": "docs/closeout/ASSIGNMENT.md",
+    "branch": "study/v2-diagnostics",
+    "stage": "stage 4 design frozen; stage 2 driver in progress",
+    "complete": false,
+    "final_delivery_verified": false,
+    "completed_items": [
+      "Stage 1: inventory; v2.0.0 anonymous download 30/30 checksums, 19 archives re-hashed; assignment archived; plan/decisions/status/manifest/ledger created",
+      "Stage 4 design, run manifest and analysis plan committed before collection"
+    ],
+    "active_jobs": [],
+    "blockers": [],
+    "next_actions": [
+      "throughput check, then the 48 repeatability tasks",
+      "CPU regeneration from downloaded raw records",
+      "negative controls",
+      "wording corrections",
+      "report/deck rebuild",
+      "release v2.1.0",
+      "fresh-download verification"
+    ],
+    "source_commits": {
+      "experiment": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf (tag experiment-v2)",
+      "v2_release": "86b193a439539dd88a98a0283c06293c0a1ac8aa (tag v2.0.0)",
+      "delivery_snapshot_before": "3a8fe0a9d071fa5cae61939652611cbf349fd790",
+      "assignment_commit": "ace2b7ffacb004c06cf3986dc307bfc70d485489"
+    },
+    "release_tag_planned": "v2.1.0",
+    "plan": "docs/closeout/PLAN.md",
+    "decisions": "docs/closeout/DECISIONS.md",
+    "deliverables": "results/closeout/deliverables.json",
+    "run_ledger": "results/closeout/run_ledger.jsonl"
   }
 }
