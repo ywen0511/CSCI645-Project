@@ -99,10 +99,19 @@ def main():
 
         env = HandoverEnv(cfg)
         runner = None
+        base_runtime = {k: getattr(env.cfg, k) for k in rt.RUNTIME_FIELDS}
         for e in plan:
+            for k, v in base_runtime.items():
+                setattr(env.cfg, k, v)
             env.cfg.method = e["method"]
             for k, v in METHODS[e["method"]].items():
                 setattr(env.cfg, k, v)
+            bad = set(e.get("overrides", {})) - rt.RUNTIME_FIELDS
+            if bad:
+                raise SystemExit(f"overrides {sorted(bad)} are not runtime-safe")
+            for k, v in e.get("overrides", {}).items():
+                setattr(env.cfg, k, v)
+            env.refresh_task_parameters()
             policy, ck_sha, infos = None, None, {}
             if e.get("checkpoint"):
                 if runner is None:
@@ -150,6 +159,10 @@ def main():
             sidecar = {
                 "video": out.name, "category": e.get("category"), "selection_rule": e.get("rule"),
                 "method": e["method"], "run_id": e["run_id"], "case_id": e["case_id"],
+                "entry_id": e.get("entry_id"), "overrides": e.get("overrides", {}),
+                "protocol": args.protocol, "protocol_sha256": rt.sha256_file(args.protocol) if Path(args.protocol).exists() else None,
+                "controller_hash": rt.controller_hash(env.cfg),
+                "replay_command": e.get("replay_command"),
                 "condition": case["condition"], "requested_offset_xyz_m": case["requested_offset_xyz_m"],
                 "release_offset_s": case["release_offset_s"],
                 "checkpoint": e.get("checkpoint") and Path(e["checkpoint"]).name,
@@ -166,6 +179,8 @@ def main():
                 for r in rt.read_jsonl(e["eval_records"]):
                     if r["case_id"] == e["case_id"]:
                         sidecar["evaluation_outcome"] = {k: r[k] for k in ("terminal_reason", "success", "completion_time_s")}
+                        sidecar["evaluation_controller_hash"] = r.get("controller_hash")
+                        sidecar["evaluation_checkpoint_sha256"] = r.get("checkpoint_sha256")
                         sidecar["evaluation_record_file"] = Path(e["eval_records"]).name
                 if "evaluation_outcome" in sidecar and sidecar["replay_outcome"]:
                     sidecar["replay_matches_evaluation"] = (

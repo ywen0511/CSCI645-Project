@@ -1,0 +1,100 @@
+{
+ "run_id": "combined_no_phase_seed11",
+ "rule": "max success; min collision-episode rate; min mean residual squared norm; latest",
+ "candidates": [
+  {
+   "checkpoint": "step_002031616",
+   "checkpoint_sha256": "1daf2358bb765bf17cda9e844f16670ad8576c0eefced7e1484aa7ae1753bb87",
+   "transitions": 2031616,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.98,
+   "collision_rate": 0.02,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 2.268486360493964e-05,
+   "tag": "step_002031616",
+   "file": "combined_no_phase_seed11__step_002031616.jsonl",
+   "ledger_transitions": 2031616
+  },
+  {
+   "checkpoint": "step_004030464",
+   "checkpoint_sha256": "d0f4769c7c579cef8cc9c23092829809ed4c339ae70cca54989bbfa6192394ae",
+   "transitions": 4030464,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.97,
+   "collision_rate": 0.0325,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 1.7054094204285194e-05,
+   "tag": "step_004030464",
+   "file": "combined_no_phase_seed11__step_004030464.jsonl",
+   "ledger_transitions": 4030464
+  },
+  {
+   "checkpoint": "step_006029312",
+   "checkpoint_sha256": "f9e7fc322550adadea3b37c5700090b889dfa87e038ae360f28717df4f9e2807",
+   "transitions": 6029312,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.9775,
+   "collision_rate": 0.025,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 1.1509800274225493e-05,
+   "tag": "step_006029312",
+   "file": "combined_no_phase_seed11__step_006029312.jsonl",
+   "ledger_transitions": 6029312
+  },
+  {
+   "checkpoint": "step_008028160",
+   "checkpoint_sha256": "13747ac4670cd546e827dbe30b4fe43ddf97ba238455dd1962e3d5ff8b0c6dca",
+   "transitions": 8028160,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.98,
+   "collision_rate": 0.02,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 1.1244290123730407e-05,
+   "tag": "step_008028160",
+   "file": "combined_no_phase_seed11__step_008028160.jsonl",
+   "ledger_transitions": 8028160
+  },
+  {
+   "checkpoint": "step_010027008",
+   "checkpoint_sha256": "dceb99dfa85dae73649d6f052652b73dc9826f28774dc66471b9356bbe8df988",
+   "transitions": 10027008,
+   "scheduled": 400,
+   "valid": 400,
+   "success_rate": 0.98,
+   "collision_rate": 0.0225,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 9.438006636781299e-06,
+   "tag": "step_010027008",
+   "file": "combined_no_phase_seed11__step_010027008.jsonl",
+   "ledger_transitions": 10027008
+  }
+ ],
+ "selected": {
+  "checkpoint": "step_008028160",
+  "checkpoint_sha256": "13747ac4670cd546e827dbe30b4fe43ddf97ba238455dd1962e3d5ff8b0c6dca",
+  "transitions": 8028160,
+  "scheduled": 400,
+  "valid": 400,
+  "success_rate": 0.98,
+  "collision_rate": 0.02,
+  "drop_rate": 0.0,
+  "residual_sq_norm_mean_m2": 1.1244290123730407e-05,
+  "tag": "step_008028160",
+  "file": "combined_no_phase_seed11__step_008028160.jsonl",
+  "ledger_transitions": 8028160
+ },
+ "ties_on_success": [
+  "step_002031616",
+  "step_008028160",
+  "step_010027008"
+ ],
+ "ties_on_success_and_collision": [
+  "step_002031616",
+  "step_008028160"
+ ],
+ "selected_is_last_candidate": false
+}

@@ -1,0 +1,39 @@
+{
+ "name": "final_combined_no_phase_seed22",
+ "suite": "configs/v2/suites/final.jsonl",
+ "num_envs": 900,
+ "protocol": "configs/v2/frozen/protocol.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_no_phase_seed22__untrained",
+   "group": "untrained",
+   "method": "combined_no_phase",
+   "training_seed": 22,
+   "run_id": "combined_no_phase_seed22",
+   "checkpoint": "combined_no_phase_seed22/checkpoints/step_000000000.pt",
+   "role": "untrained",
+   "checkpoint_tag": "step_000000000"
+  },
+  {
+   "id": "combined_no_phase_seed22__selected",
+   "group": "selected",
+   "method": "combined_no_phase",
+   "training_seed": 22,
+   "run_id": "combined_no_phase_seed22",
+   "checkpoint": "combined_no_phase_seed22/checkpoints/step_002031616.pt",
+   "role": "selected",
+   "checkpoint_tag": "step_002031616"
+  },
+  {
+   "id": "combined_no_phase_seed22__final",
+   "group": "final",
+   "method": "combined_no_phase",
+   "training_seed": 22,
+   "run_id": "combined_no_phase_seed22",
+   "checkpoint": "combined_no_phase_seed22/checkpoints/final.pt",
+   "role": "final",
+   "checkpoint_tag": "final"
+  }
+ ]
+}

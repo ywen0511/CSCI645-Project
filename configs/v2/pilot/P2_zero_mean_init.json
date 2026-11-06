@@ -1,0 +1,70 @@
+{
+ "base": "configs/frozen/protocol.json (v1) with the v2 changes below",
+ "env_overrides": {
+  "align_max": 0.015
+ },
+ "platform": {
+  "framework": "Isaac Lab",
+  "isaac_lab": "v3.0.0",
+  "isaac_sim": "6.2.0.0",
+  "physics": "isaacsim_physx",
+  "physics_backend": "PhysX",
+  "rl_library": "rsl-rl-lib 5.5.1",
+  "robot": "two Franka arms with two-finger parallel-jaw grippers",
+  "simulator": "Isaac Sim"
+ },
+ "policy": {
+  "action_dim": 3,
+  "algorithm": "PPO",
+  "hidden_dims": [
+   128,
+   128
+  ],
+  "phase_channels": 4,
+  "preferred_library": "rsl_rl",
+  "residual_bound_m": 0.02
+ },
+ "ppo_overrides": {},
+ "protocol_id": "v2-pilot-P2_zero_mean_init",
+ "status": "pilot (not frozen)",
+ "training": {
+  "actor_init": "zero_mean_output",
+  "checkpoint_interval_transitions": 1000000,
+  "checkpoint_selection": "pilot: not used",
+  "curriculum": [
+   {
+    "fraction_end": 0.1,
+    "fraction_start": 0.0,
+    "position_bound_m": 0.0,
+    "release_offset_bound_s": 0.0
+   },
+   {
+    "fraction_end": 0.3,
+    "fraction_start": 0.1,
+    "position_bound_m": 0.01,
+    "release_offset_bound_s": 0.15
+   },
+   {
+    "fraction_end": 0.5,
+    "fraction_start": 0.3,
+    "position_bound_m": 0.015,
+    "release_offset_bound_s": 0.225
+   },
+   {
+    "fraction_end": 1.0,
+    "fraction_start": 0.5,
+    "position_bound_m": 0.02,
+    "release_offset_bound_s": 0.3
+   }
+  ],
+  "final_transitions_per_run": 5000000,
+  "num_envs": 1024,
+  "pilot_total_transitions_cap": 15000000,
+  "rollout_batch_transitions": 32768,
+  "rollout_steps_per_env": 32,
+  "seeds": [
+   101
+  ],
+  "transition_definition": "vectorized environment steps x environments, including the scripted reset-settling steps (residual disabled)"
+ }
+}

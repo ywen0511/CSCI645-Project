@@ -144,6 +144,15 @@ class HandoverEnv(DirectRLEnv):
         self.residual_abs_sum = z(n)
         self.residual_abs_max = z(n)
         self.exec_minus_cand_sum = z(n)
+        self.residual_sq_sum = z(n)
+        self.residual_sum_xyz = z(n, 3)
+        self.workspace_clip_sum = z(n)
+        self.align_corr_sum_xyz = z(n, 3)
+        self.p_cand = z(n, 3)
+        self.p_pre_clip = z(n, 3)
+        self.scored_transitions_total = 0
+        self._pending_records: list[tuple[dict, int]] = []
+        self._last_rew: dict[str, torch.Tensor] = {}
         self.ended_reason = torch.zeros(n, dtype=torch.long, device=dev)
         self.newly_ended = zb()
         self.reset_fail_bits = torch.zeros(n, dtype=torch.long, device=dev)
@@ -187,7 +196,18 @@ class HandoverEnv(DirectRLEnv):
             StabilityCfg(c.stab_min_finger_force, c.stab_max_rel_lin_speed, c.stab_max_rel_ang_speed, c.stab_dwell_s),
             n, dev,
         )
-        self.geom = GeometryCoordinator(GeometryCfg(c.align_gain, c.align_max, c.sep_tol, c.release_max_wait_s), n, dev)
+        self.geom = GeometryCoordinator(
+            GeometryCfg(c.align_gain, c.align_max, c.sep_tol, c.release_max_wait_s,
+                        align_enabled=bool(c.geom_align), anchor_enabled=bool(c.geom_anchor)),
+            n, dev,
+        )
+        if c.constant_residual_m is not None:
+            if c.residual_enabled:
+                raise ValueError("constant_residual_m replaces the policy residual; use a non-learned method")
+            b = c.residual_bound_m
+            self._const_residual = torch.tensor(c.constant_residual_m, dtype=torch.float32, device=dev).clamp(-b, b)
+        else:
+            self._const_residual = None
         self.evaluator = oc.OutcomeEvaluator(
             oc.OutcomeCfg(
                 success_hold_s=c.success_hold_s, contact_force=c.contact_force, table_force=c.table_force,
@@ -305,7 +325,8 @@ class HandoverEnv(DirectRLEnv):
         self.table.write_root_pose_to_sim_index(root_pose=tpose, env_ids=env_ids)
         self.realized_offset[env_ids] = 0.0
         for name in ("align_sat_steps", "shared_sat_steps", "scored_steps", "residual_abs_sum",
-                     "residual_abs_max", "exec_minus_cand_sum"):
+                     "residual_abs_max", "exec_minus_cand_sum", "residual_sq_sum", "residual_sum_xyz",
+                     "workspace_clip_sum", "align_corr_sum_xyz"):
             getattr(self, name)[env_ids] = 0.0
         self.stab.reset(env_ids)
         self.geom.reset(env_ids)
@@ -324,9 +345,14 @@ class HandoverEnv(DirectRLEnv):
         # residual (bounded, relative to the current nominal target; never accumulated)
         self.prev_residual = self.residual.clone()
         self.raw_action = actions.clone()
-        enabled = scored & (c.residual_enabled)
-        res = residual_from_action(actions, c.residual_bound_m)
+        if self._const_residual is not None:
+            enabled = scored
+            res = self._const_residual.expand(self.num_envs, 3)
+        else:
+            enabled = scored & (c.residual_enabled)
+            res = residual_from_action(actions, c.residual_bound_m)
         self.residual = torch.where(enabled.unsqueeze(-1), res, torch.zeros_like(res))
+        self.scored_transitions_total += int(scored.sum())
 
         p_nom = receiver_nominal_target(t, self.recv_start, self.recv_pregrasp, self.recv_grasp_nominal, self.sched)
         if c.negative_control == "no_receiver":
@@ -342,16 +368,25 @@ class HandoverEnv(DirectRLEnv):
             p_exec = p_cand
             self.align_corr.zero_()
         p_exec = torch.where(settle.unsqueeze(-1) | (self.mode == IDLE).unsqueeze(-1), self.recv_start.expand_as(p_exec), p_exec)
+        p_pre_clip = p_exec
         p_exec = torch.maximum(torch.minimum(p_exec, self.recv_box_hi), self.recv_box_lo)  # common workspace limit
-        self.exec_minus_cand_sum += torch.where(scored, (p_exec - p_cand).norm(dim=-1), torch.zeros_like(t))
+        zero = torch.zeros_like(t)
+        self.exec_minus_cand_sum += torch.where(scored, (p_exec - p_cand).norm(dim=-1), zero)
+        self.workspace_clip_sum += torch.where(scored, (p_exec - p_pre_clip).norm(dim=-1), zero)
+        self.residual_sq_sum += torch.where(scored, (self.residual ** 2).sum(-1), zero)
+        self.residual_sum_xyz += torch.where(scored.unsqueeze(-1), self.residual, torch.zeros_like(self.residual))
+        self.align_corr_sum_xyz += torch.where(scored.unsqueeze(-1), self.align_corr, torch.zeros_like(self.align_corr))
+        self.p_cand = p_cand
+        self.p_pre_clip = p_pre_clip
         self.residual_abs_sum += torch.where(scored, self.residual.abs().max(-1).values, torch.zeros_like(t))
         self.residual_abs_max = torch.maximum(self.residual_abs_max, self.residual.abs().max(-1).values)
         self.scored_steps += scored.float()
         self.p_nom, self.p_exec = p_nom, p_exec
 
         # release decision (geometry-off: fixed schedule; geometry-on: contact-gated with cap)
+        gate_on = bool(c.geometry_enabled and c.geom_gate)
         rel_now, to_now = release_decision(
-            t, self.release_request_time, self.released, self.stable, c.geometry_enabled, c.release_max_wait_s
+            t, self.release_request_time, self.released, self.stable, gate_on, c.release_max_wait_s
         )
         rel_now = rel_now & scored
         self.release_cmd_time = torch.where(rel_now, t, self.release_cmd_time)
@@ -567,6 +602,20 @@ class HandoverEnv(DirectRLEnv):
             r_rate = torch.zeros_like(r_app)
         total = r_app + r_hold + r_term + r_res + r_rate
         self.ep_reward += total
+        # Records of episodes that ended in this step were written in _get_dones (before this reward was
+        # computed). Add the terminal-step reward so episode_return is the full return (v2 audit fix).
+        for rec, i in self._pending_records:
+            rec["episode_return_excl_terminal_step"] = rec["episode_return"]
+            rec["terminal_step_reward"] = float(total[i])
+            rec["episode_return"] = rec["episode_return"] + float(total[i])
+        self._pending_records = []
+        self._last_rew = {"approach": r_app, "hold": r_hold, "terminal": r_term, "residual_l2": r_res,
+                          "action_rate": r_rate, "total": total}
+        if self.trace_env_ids:
+            for i in self.trace_env_ids:
+                rows = self.traces.get(i)
+                if rows:
+                    rows[-1]["reward"] = {k: float(v[i]) for k, v in self._last_rew.items()}
         log = self.extras.setdefault("log", {})
         log["Reward/approach"] = r_app.mean()
         log["Reward/hold"] = r_hold.mean()
@@ -640,6 +689,8 @@ class HandoverEnv(DirectRLEnv):
             "a_sat": cpu(self.align_sat_steps), "s_sat": cpu(self.shared_sat_steps), "steps": cpu(self.scored_steps),
             "res_sum": cpu(self.residual_abs_sum), "res_max": cpu(self.residual_abs_max),
             "exc_sum": cpu(self.exec_minus_cand_sum), "ep_rew": cpu(self.ep_reward),
+            "res_sq": cpu(self.residual_sq_sum), "res_xyz": cpu(self.residual_sum_xyz),
+            "clip_sum": cpu(self.workspace_clip_sum), "align_xyz": cpu(self.align_corr_sum_xyz),
             "rfail": cpu(self.reset_fail_bits), "roff": cpu(self.reset_offset_err),
         }
         check_names = ("giver_contact", "table_support", "height", "object_speed", "prohibited_contact",
@@ -682,6 +733,11 @@ class HandoverEnv(DirectRLEnv):
                 "residual_abs_mean_m": float(fields["res_sum"][i]) / steps,
                 "residual_abs_max_m": float(fields["res_max"][i]),
                 "exec_minus_candidate_mean_m": float(fields["exc_sum"][i]) / steps,
+                "residual_sq_norm_mean_m2": float(fields["res_sq"][i]) / steps,
+                "residual_mean_xyz_m": [float(v) / steps for v in fields["res_xyz"][i]],
+                "workspace_clip_mean_m": float(fields["clip_sum"][i]) / steps,
+                "align_correction_mean_xyz_m": [float(v) / steps for v in fields["align_xyz"][i]],
+                "scored_steps": int(fields["steps"][i]),
                 "episode_return": float(fields["ep_rew"][i]),
                 "reset_failed_checks": [nm for b, nm in enumerate(check_names) if int(fields["rfail"][i]) >> b & 1],
                 "reset_offset_error_m": float(fields["roff"][i]),
@@ -691,6 +747,7 @@ class HandoverEnv(DirectRLEnv):
             else:
                 rec["release_delay_s"] = None
             self.completed_records.append(rec)
+            self._pending_records.append((rec, int(i)))
 
     def _collect_traces(self) -> None:
         m = self.m
@@ -701,6 +758,11 @@ class HandoverEnv(DirectRLEnv):
                 "obj_pos": m["obj_pos"][i].tolist(), "recv_tcp": m["recv_tcp"][i].tolist(),
                 "giver_tcp": m["giver_tcp"][i].tolist(), "p_nom": self.p_nom[i].tolist(),
                 "p_exec": self.p_exec[i].tolist(), "residual": self.residual[i].tolist(),
+                "p_cand": self.p_cand[i].tolist(), "p_pre_clip": self.p_pre_clip[i].tolist(),
+                "grasp_from_obj": m["grasp_from_obj"][i].tolist(), "obj_rel_in_recv": m["obj_rel_in_recv"][i].tolist(),
+                "release_requested": bool(float(self.t[i]) >= float(self.release_request_time[i]) - 1e-4),
+                "release_timeout": bool(self.release_timeout[i]), "stable_at_release": bool(self.stable_at_release[i]),
+                "mode_scored": int(self.mode[i]) == SCORED,
                 "raw_action": self.raw_action[i].tolist(), "align_corr": self.align_corr[i].tolist(),
                 "giver_force": [float(m["giver_force_l"][i]), float(m["giver_force_r"][i])],
                 "recv_force": [float(m["recv_force_l"][i]), float(m["recv_force_r"][i])],

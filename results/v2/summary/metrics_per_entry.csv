@@ -1,0 +1,902 @@
+entry,condition_or_group,scheduled,valid,n_success,n_drop,n_collision,n_episode_timeout,n_release_timeout,n_invalid_reset,success_rate_valid,success_rate_scheduled,success_wilson_low,success_wilson_high,terminal_reasons,success_equal_condition_mean
+ablation_1cm_A,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_A,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_A,joint_early_2cm_030,200,200,140,0,17,46,0,0,0.7,0.7,0.6332093162728074,0.7592525531762859,"{""prohibited_collision"": 14, ""success"": 140, ""episode_timeout"": 46}",
+ablation_1cm_A,joint_early_3cm_045,200,200,0,168,41,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 32, ""drop"": 168}",
+ablation_1cm_A,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_A,joint_late_2cm_030,200,200,183,0,19,0,0,0,0.915,0.915,0.8681041292843443,0.9462542498225244,"{""prohibited_collision"": 17, ""success"": 183}",
+ablation_1cm_A,joint_late_3cm_045,200,200,150,4,42,4,0,0,0.75,0.75,0.6856590168795417,0.8049183199318249,"{""prohibited_collision"": 42, ""drop"": 4, ""success"": 150, ""episode_timeout"": 4}",
+ablation_1cm_A,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_A,position_2cm,200,200,189,0,11,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+ablation_1cm_A,position_3cm,200,200,144,5,47,5,0,0,0.72,0.72,0.6540769541334929,0.7776311022605097,"{""prohibited_collision"": 46, ""drop"": 5, ""success"": 144, ""episode_timeout"": 5}",
+ablation_1cm_A,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_A,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_A,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+ablation_1cm_A,outer,600,600,512,0,47,46,0,0,0.8533333333333334,0.8533333333333334,0.8227790872103292,0.8793919774066558,"{""prohibited_collision"": 42, ""success"": 512, ""episode_timeout"": 46}",0.8533333333333334
+ablation_1cm_A,in_training,1800,1800,1712,0,47,46,0,0,0.9511111111111111,0.9511111111111111,0.9401530938486855,0.9601477569044234,"{""success"": 1712, ""prohibited_collision"": 42, ""episode_timeout"": 46}",0.951111111111111
+ablation_1cm_A,extrapolation,600,600,294,177,130,9,0,0,0.49,0.49,0.4501914070080844,0.5299358270121897,"{""prohibited_collision"": 120, ""drop"": 177, ""success"": 294, ""episode_timeout"": 9}",0.49
+ablation_1cm_A,all,2400,2400,2006,177,177,55,0,0,0.8358333333333333,0.8358333333333333,0.8204788950310854,0.8501144147252221,"{""success"": 2006, ""prohibited_collision"": 162, ""episode_timeout"": 55, ""drop"": 177}",0.8358333333333333
+ablation_1cm_AG,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AG,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AG,joint_early_2cm_030,200,200,189,0,12,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+ablation_1cm_AG,joint_early_3cm_045,200,200,152,0,44,3,3,0,0.76,0.76,0.6962665902079583,0.8139338400758631,"{""prohibited_collision"": 42, ""release_timeout"": 3, ""success"": 152, ""episode_timeout"": 3}",
+ablation_1cm_AG,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AG,joint_late_2cm_030,200,200,182,0,19,0,0,0,0.91,0.91,0.8622342812328346,0.9423125511378069,"{""prohibited_collision"": 18, ""success"": 182}",
+ablation_1cm_AG,joint_late_3cm_045,200,200,150,0,42,4,4,0,0.75,0.75,0.6856590168795417,0.8049183199318249,"{""prohibited_collision"": 42, ""release_timeout"": 4, ""success"": 150, ""episode_timeout"": 4}",
+ablation_1cm_AG,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AG,position_2cm,200,200,189,0,11,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+ablation_1cm_AG,position_3cm,200,200,145,0,47,5,5,0,0.725,0.725,0.6593166064233035,0.7822029967069265,"{""prohibited_collision"": 45, ""release_timeout"": 5, ""success"": 145, ""episode_timeout"": 5}",
+ablation_1cm_AG,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AG,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AG,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+ablation_1cm_AG,outer,600,600,560,0,42,0,0,0,0.9333333333333333,0.9333333333333333,0.9104908108641832,0.9506623815906097,"{""prohibited_collision"": 40, ""success"": 560}",0.9333333333333332
+ablation_1cm_AG,in_training,1800,1800,1760,0,42,0,0,0,0.9777777777777777,0.9777777777777777,0.969882220005171,0.9836383854722596,"{""success"": 1760, ""prohibited_collision"": 40}",0.9777777777777776
+ablation_1cm_AG,extrapolation,600,600,447,0,133,12,12,0,0.745,0.745,0.7086420522775276,0.778240714225759,"{""prohibited_collision"": 129, ""release_timeout"": 12, ""success"": 447, ""episode_timeout"": 12}",0.745
+ablation_1cm_AG,all,2400,2400,2207,0,175,12,12,0,0.9195833333333333,0.9195833333333333,0.9080213026898301,0.9298043336930504,"{""success"": 2207, ""prohibited_collision"": 169, ""release_timeout"": 12, ""episode_timeout"": 12}",0.9195833333333332
+ablation_1cm_AH,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AH,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AH,joint_early_2cm_030,200,200,139,0,17,46,0,0,0.695,0.695,0.6280144790202163,0.7546358436926496,"{""prohibited_collision"": 15, ""success"": 139, ""episode_timeout"": 46}",
+ablation_1cm_AH,joint_early_3cm_045,200,200,0,168,41,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 32, ""drop"": 168}",
+ablation_1cm_AH,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AH,joint_late_2cm_030,200,200,183,0,19,0,0,0,0.915,0.915,0.8681041292843443,0.9462542498225244,"{""prohibited_collision"": 17, ""success"": 183}",
+ablation_1cm_AH,joint_late_3cm_045,200,200,150,4,42,4,0,0,0.75,0.75,0.6856590168795417,0.8049183199318249,"{""prohibited_collision"": 42, ""drop"": 4, ""success"": 150, ""episode_timeout"": 4}",
+ablation_1cm_AH,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AH,position_2cm,200,200,189,0,11,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+ablation_1cm_AH,position_3cm,200,200,145,5,47,5,0,0,0.725,0.725,0.6593166064233035,0.7822029967069265,"{""prohibited_collision"": 45, ""drop"": 5, ""success"": 145, ""episode_timeout"": 5}",
+ablation_1cm_AH,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AH,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AH,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+ablation_1cm_AH,outer,600,600,511,0,47,46,0,0,0.8516666666666667,0.8516666666666667,0.8209921289550214,0.8778668079986759,"{""prohibited_collision"": 43, ""success"": 511, ""episode_timeout"": 46}",0.8516666666666666
+ablation_1cm_AH,in_training,1800,1800,1711,0,47,46,0,0,0.9505555555555556,0.9505555555555556,0.9395456232295799,0.9596464826334391,"{""success"": 1711, ""prohibited_collision"": 43, ""episode_timeout"": 46}",0.9505555555555555
+ablation_1cm_AH,extrapolation,600,600,295,177,130,9,0,0,0.49166666666666664,0.49166666666666664,0.4518450488167035,0.5315943128668582,"{""prohibited_collision"": 119, ""drop"": 177, ""success"": 295, ""episode_timeout"": 9}",0.4916666666666667
+ablation_1cm_AH,all,2400,2400,2006,177,177,55,0,0,0.8358333333333333,0.8358333333333333,0.8204788950310854,0.8501144147252221,"{""success"": 2006, ""prohibited_collision"": 162, ""episode_timeout"": 55, ""drop"": 177}",0.8358333333333333
+ablation_1cm_AHG,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AHG,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AHG,joint_early_2cm_030,200,200,189,0,12,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+ablation_1cm_AHG,joint_early_3cm_045,200,200,150,0,44,4,3,0,0.75,0.75,0.6856590168795417,0.8049183199318249,"{""prohibited_collision"": 43, ""release_timeout"": 3, ""success"": 150, ""episode_timeout"": 4}",
+ablation_1cm_AHG,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AHG,joint_late_2cm_030,200,200,182,0,19,0,0,0,0.91,0.91,0.8622342812328346,0.9423125511378069,"{""prohibited_collision"": 18, ""success"": 182}",
+ablation_1cm_AHG,joint_late_3cm_045,200,200,151,0,42,4,4,0,0.755,0.755,0.6909575644379659,0.8094313191096282,"{""prohibited_collision"": 41, ""release_timeout"": 4, ""success"": 151, ""episode_timeout"": 4}",
+ablation_1cm_AHG,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AHG,position_2cm,200,200,189,0,11,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+ablation_1cm_AHG,position_3cm,200,200,145,0,47,5,5,0,0.725,0.725,0.6593166064233035,0.7822029967069265,"{""prohibited_collision"": 45, ""release_timeout"": 5, ""success"": 145, ""episode_timeout"": 5}",
+ablation_1cm_AHG,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AHG,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_AHG,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+ablation_1cm_AHG,outer,600,600,560,0,42,0,0,0,0.9333333333333333,0.9333333333333333,0.9104908108641832,0.9506623815906097,"{""prohibited_collision"": 40, ""success"": 560}",0.9333333333333332
+ablation_1cm_AHG,in_training,1800,1800,1760,0,42,0,0,0,0.9777777777777777,0.9777777777777777,0.969882220005171,0.9836383854722596,"{""success"": 1760, ""prohibited_collision"": 40}",0.9777777777777776
+ablation_1cm_AHG,extrapolation,600,600,446,0,133,13,12,0,0.7433333333333333,0.7433333333333333,0.7069121461356086,0.7766584927043904,"{""prohibited_collision"": 129, ""release_timeout"": 12, ""success"": 446, ""episode_timeout"": 13}",0.7433333333333333
+ablation_1cm_AHG,all,2400,2400,2206,0,175,13,12,0,0.9191666666666667,0.9191666666666667,0.9075797343155174,0.9294139004423554,"{""success"": 2206, ""prohibited_collision"": 169, ""release_timeout"": 12, ""episode_timeout"": 13}",0.9191666666666666
+ablation_1cm_G,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_G,joint_early_1cm_015,200,200,184,0,19,0,0,0,0.92,0.92,0.874010511732856,0.9501594141102401,"{""prohibited_collision"": 16, ""success"": 184}",
+ablation_1cm_G,joint_early_2cm_030,200,200,139,1,54,6,0,0,0.695,0.695,0.6280144790202163,0.7546358436926496,"{""prohibited_collision"": 54, ""drop"": 1, ""success"": 139, ""episode_timeout"": 6}",
+ablation_1cm_G,joint_early_3cm_045,200,200,61,3,88,8,41,0,0.305,0.305,0.24536415630735034,0.37198552097978366,"{""prohibited_collision"": 87, ""release_timeout"": 41, ""success"": 61, ""drop"": 3, ""episode_timeout"": 8}",
+ablation_1cm_G,joint_late_1cm_015,200,200,181,0,21,0,0,0,0.905,0.905,0.8563983883518006,0.9383368972826135,"{""prohibited_collision"": 19, ""success"": 181}",
+ablation_1cm_G,joint_late_2cm_030,200,200,130,1,62,7,0,0,0.65,0.65,0.5816346433604008,0.7127117587264192,"{""prohibited_collision"": 62, ""drop"": 1, ""success"": 130, ""episode_timeout"": 7}",
+ablation_1cm_G,joint_late_3cm_045,200,200,56,8,87,12,37,0,0.28,0.28,0.22236889773949026,0.3459230458665071,"{""prohibited_collision"": 87, ""drop"": 8, ""release_timeout"": 37, ""success"": 56, ""episode_timeout"": 12}",
+ablation_1cm_G,position_1cm,200,200,187,0,16,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+ablation_1cm_G,position_2cm,200,200,143,1,47,10,0,0,0.715,0.715,0.6488465397039482,0.7730499699538271,"{""prohibited_collision"": 46, ""drop"": 1, ""success"": 143, ""episode_timeout"": 10}",
+ablation_1cm_G,position_3cm,200,200,59,3,94,8,40,0,0.295,0.295,0.23613943856849148,0.36158714524618774,"{""prohibited_collision"": 90, ""drop"": 3, ""release_timeout"": 40, ""success"": 59, ""episode_timeout"": 8}",
+ablation_1cm_G,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_G,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_G,inner,1200,1200,1152,0,56,0,0,0,0.96,0.96,0.9473657151858288,0.969698564259655,"{""success"": 1152, ""prohibited_collision"": 48}",0.9600000000000001
+ablation_1cm_G,outer,600,600,412,3,163,23,0,0,0.6866666666666666,0.6866666666666666,0.648463402309181,0.7224948959790375,"{""prohibited_collision"": 162, ""drop"": 3, ""success"": 412, ""episode_timeout"": 23}",0.6866666666666666
+ablation_1cm_G,in_training,1800,1800,1564,3,219,23,0,0,0.8688888888888889,0.8688888888888889,0.85250769013484,0.8836989168849437,"{""success"": 1564, ""prohibited_collision"": 210, ""drop"": 3, ""episode_timeout"": 23}",0.8688888888888889
+ablation_1cm_G,extrapolation,600,600,176,14,269,28,118,0,0.29333333333333333,0.29333333333333333,0.2583102463852376,0.3309859233670921,"{""prohibited_collision"": 264, ""drop"": 14, ""release_timeout"": 118, ""success"": 176, ""episode_timeout"": 28}",0.29333333333333333
+ablation_1cm_G,all,2400,2400,1740,17,488,51,118,0,0.725,0.725,0.7067871337032244,0.7424937438010014,"{""success"": 1740, ""prohibited_collision"": 474, ""drop"": 17, ""episode_timeout"": 51, ""release_timeout"": 118}",0.725
+ablation_1cm_H,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_H,joint_early_1cm_015,200,200,185,0,19,0,0,0,0.925,0.925,0.8799563897637055,0.954025082815618,"{""prohibited_collision"": 15, ""success"": 185}",
+ablation_1cm_H,joint_early_2cm_030,200,200,27,28,66,85,0,0,0.135,0.135,0.09446570454787906,0.18929138370752552,"{""prohibited_collision"": 60, ""drop"": 28, ""success"": 27, ""episode_timeout"": 85}",
+ablation_1cm_H,joint_early_3cm_045,200,200,0,122,84,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 78, ""drop"": 122}",
+ablation_1cm_H,joint_late_1cm_015,200,200,183,0,20,0,0,0,0.915,0.915,0.8681041292843443,0.9462542498225244,"{""prohibited_collision"": 17, ""success"": 183}",
+ablation_1cm_H,joint_late_2cm_030,200,200,131,2,62,7,0,0,0.655,0.655,0.5867558925905368,0.7174020562325106,"{""prohibited_collision"": 60, ""drop"": 2, ""success"": 131, ""episode_timeout"": 7}",
+ablation_1cm_H,joint_late_3cm_045,200,200,55,45,87,13,0,0,0.275,0.275,0.21779700329307355,0.34068339357669647,"{""prohibited_collision"": 87, ""drop"": 45, ""success"": 55, ""episode_timeout"": 13}",
+ablation_1cm_H,position_1cm,200,200,187,0,17,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+ablation_1cm_H,position_2cm,200,200,144,2,47,8,0,0,0.72,0.72,0.6540769541334929,0.7776311022605097,"{""prohibited_collision"": 46, ""drop"": 2, ""success"": 144, ""episode_timeout"": 8}",
+ablation_1cm_H,position_3cm,200,200,53,42,95,12,0,0,0.265,0.265,0.2086815414710911,0.3301757619262242,"{""prohibited_collision"": 93, ""drop"": 42, ""success"": 53, ""episode_timeout"": 12}",
+ablation_1cm_H,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_H,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_H,inner,1200,1200,1155,0,56,0,0,0,0.9625,0.9625,0.9501911905534889,0.9718571338889813,"{""success"": 1155, ""prohibited_collision"": 45}",0.9625
+ablation_1cm_H,outer,600,600,302,32,175,100,0,0,0.5033333333333333,0.5033333333333333,0.46343287218454526,0.54319138314203,"{""prohibited_collision"": 166, ""drop"": 32, ""success"": 302, ""episode_timeout"": 100}",0.5033333333333333
+ablation_1cm_H,in_training,1800,1800,1457,32,231,100,0,0,0.8094444444444444,0.8094444444444444,0.7906495092333283,0.8269213945468215,"{""success"": 1457, ""prohibited_collision"": 211, ""drop"": 32, ""episode_timeout"": 100}",0.8094444444444445
+ablation_1cm_H,extrapolation,600,600,108,209,266,25,0,0,0.18,0.18,0.1513253010749538,0.2127461875738147,"{""prohibited_collision"": 258, ""drop"": 209, ""success"": 108, ""episode_timeout"": 25}",0.18000000000000002
+ablation_1cm_H,all,2400,2400,1565,241,497,125,0,0,0.6520833333333333,0.6520833333333333,0.6327979825630023,0.670882610564854,"{""success"": 1565, ""prohibited_collision"": 469, ""drop"": 241, ""episode_timeout"": 125}",0.6520833333333335
+ablation_1cm_HG,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_HG,joint_early_1cm_015,200,200,184,0,19,0,0,0,0.92,0.92,0.874010511732856,0.9501594141102401,"{""prohibited_collision"": 16, ""success"": 184}",
+ablation_1cm_HG,joint_early_2cm_030,200,200,140,1,54,5,0,0,0.7,0.7,0.6332093162728074,0.7592525531762859,"{""prohibited_collision"": 54, ""drop"": 1, ""success"": 140, ""episode_timeout"": 5}",
+ablation_1cm_HG,joint_early_3cm_045,200,200,62,3,88,7,42,0,0.31,0.31,0.2499894483607809,0.37717177566258037,"{""prohibited_collision"": 86, ""release_timeout"": 42, ""success"": 62, ""drop"": 3, ""episode_timeout"": 7}",
+ablation_1cm_HG,joint_late_1cm_015,200,200,182,0,20,0,0,0,0.91,0.91,0.8622342812328346,0.9423125511378069,"{""prohibited_collision"": 18, ""success"": 182}",
+ablation_1cm_HG,joint_late_2cm_030,200,200,131,2,62,7,0,0,0.655,0.655,0.5867558925905368,0.7174020562325106,"{""prohibited_collision"": 60, ""drop"": 2, ""success"": 131, ""episode_timeout"": 7}",
+ablation_1cm_HG,joint_late_3cm_045,200,200,56,8,87,11,38,0,0.28,0.28,0.22236889773949026,0.3459230458665071,"{""prohibited_collision"": 87, ""drop"": 8, ""release_timeout"": 38, ""success"": 56, ""episode_timeout"": 11}",
+ablation_1cm_HG,position_1cm,200,200,187,0,17,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+ablation_1cm_HG,position_2cm,200,200,144,2,47,8,0,0,0.72,0.72,0.6540769541334929,0.7776311022605097,"{""prohibited_collision"": 46, ""drop"": 2, ""success"": 144, ""episode_timeout"": 8}",
+ablation_1cm_HG,position_3cm,200,200,56,3,95,11,38,0,0.28,0.28,0.22236889773949026,0.3459230458665071,"{""prohibited_collision"": 92, ""drop"": 3, ""release_timeout"": 38, ""success"": 56, ""episode_timeout"": 11}",
+ablation_1cm_HG,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_HG,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_HG,inner,1200,1200,1153,0,56,0,0,0,0.9608333333333333,0.9608333333333333,0.9483062230574887,0.970419404720324,"{""success"": 1153, ""prohibited_collision"": 47}",0.9608333333333334
+ablation_1cm_HG,outer,600,600,415,5,163,20,0,0,0.6916666666666667,0.6916666666666667,0.6535934690094297,0.7273012122686516,"{""prohibited_collision"": 160, ""drop"": 5, ""success"": 415, ""episode_timeout"": 20}",0.6916666666666668
+ablation_1cm_HG,in_training,1800,1800,1568,5,219,20,0,0,0.8711111111111111,0.8711111111111111,0.854837621544481,0.8858039650356627,"{""success"": 1568, ""prohibited_collision"": 207, ""drop"": 5, ""episode_timeout"": 20}",0.8711111111111112
+ablation_1cm_HG,extrapolation,600,600,174,14,270,29,118,0,0.29,0.29,0.2551191238284465,0.3275527905973079,"{""prohibited_collision"": 265, ""drop"": 14, ""release_timeout"": 118, ""success"": 174, ""episode_timeout"": 29}",0.29000000000000004
+ablation_1cm_HG,all,2400,2400,1742,19,489,49,118,0,0.7258333333333333,0.7258333333333333,0.7076359305699833,0.7433089501842582,"{""success"": 1742, ""prohibited_collision"": 472, ""drop"": 19, ""episode_timeout"": 49, ""release_timeout"": 118}",0.7258333333333334
+ablation_1cm_none,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_none,joint_early_1cm_015,200,200,185,0,19,0,0,0,0.925,0.925,0.8799563897637055,0.954025082815618,"{""prohibited_collision"": 15, ""success"": 185}",
+ablation_1cm_none,joint_early_2cm_030,200,200,27,27,66,84,0,0,0.135,0.135,0.09446570454787906,0.18929138370752552,"{""prohibited_collision"": 62, ""drop"": 27, ""success"": 27, ""episode_timeout"": 84}",
+ablation_1cm_none,joint_early_3cm_045,200,200,0,121,84,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 79, ""drop"": 121}",
+ablation_1cm_none,joint_late_1cm_015,200,200,182,0,21,0,0,0,0.91,0.91,0.8622342812328346,0.9423125511378069,"{""prohibited_collision"": 18, ""success"": 182}",
+ablation_1cm_none,joint_late_2cm_030,200,200,130,2,62,7,0,0,0.65,0.65,0.5816346433604008,0.7127117587264192,"{""prohibited_collision"": 61, ""drop"": 2, ""success"": 130, ""episode_timeout"": 7}",
+ablation_1cm_none,joint_late_3cm_045,200,200,54,46,87,13,0,0,0.27,0.27,0.21323449814685846,0.33543435198668425,"{""prohibited_collision"": 87, ""drop"": 46, ""success"": 54, ""episode_timeout"": 13}",
+ablation_1cm_none,position_1cm,200,200,187,0,17,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+ablation_1cm_none,position_2cm,200,200,143,1,47,10,0,0,0.715,0.715,0.6488465397039482,0.7730499699538271,"{""prohibited_collision"": 46, ""drop"": 1, ""success"": 143, ""episode_timeout"": 10}",
+ablation_1cm_none,position_3cm,200,200,57,43,95,9,0,0,0.285,0.285,0.22695003004617292,0.3511534602960517,"{""prohibited_collision"": 91, ""drop"": 43, ""success"": 57, ""episode_timeout"": 9}",
+ablation_1cm_none,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_none,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1cm_none,inner,1200,1200,1154,0,57,0,0,0,0.9616666666666667,0.9616666666666667,0.9492480348033656,0.9711389413067757,"{""success"": 1154, ""prohibited_collision"": 46}",0.9616666666666668
+ablation_1cm_none,outer,600,600,300,30,175,101,0,0,0.5,0.5,0.4601198639241893,0.5398801360758106,"{""prohibited_collision"": 169, ""drop"": 30, ""success"": 300, ""episode_timeout"": 101}",0.5
+ablation_1cm_none,in_training,1800,1800,1454,30,232,101,0,0,0.8077777777777778,0.8077777777777778,0.7889262229654878,0.825318446144392,"{""success"": 1454, ""prohibited_collision"": 215, ""drop"": 30, ""episode_timeout"": 101}",0.8077777777777778
+ablation_1cm_none,extrapolation,600,600,111,210,266,22,0,0,0.185,0.185,0.15596845243160834,0.21803941920702313,"{""prohibited_collision"": 257, ""drop"": 210, ""success"": 111, ""episode_timeout"": 22}",0.18499999999999997
+ablation_1cm_none,all,2400,2400,1565,240,498,123,0,0,0.6520833333333333,0.6520833333333333,0.6327979825630023,0.670882610564854,"{""success"": 1565, ""prohibited_collision"": 472, ""drop"": 240, ""episode_timeout"": 123}",0.6520833333333332
+ablation_1p5cm_A,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_A,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_A,joint_early_2cm_030,200,200,194,0,0,6,0,0,0.97,0.97,0.9361057075454807,0.9861796856598887,"{""success"": 194, ""episode_timeout"": 6}",
+ablation_1p5cm_A,joint_early_3cm_045,200,200,0,181,27,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 19, ""drop"": 181}",
+ablation_1p5cm_A,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_A,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_A,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+ablation_1p5cm_A,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_A,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_A,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+ablation_1p5cm_A,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_A,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_A,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+ablation_1p5cm_A,outer,600,600,594,0,0,6,0,0,0.99,0.99,0.9783564551842772,0.9954090778222962,"{""success"": 594, ""episode_timeout"": 6}",0.9899999999999999
+ablation_1p5cm_A,in_training,1800,1800,1794,0,0,6,0,0,0.9966666666666667,0.9966666666666667,0.992746496337174,0.9984714354033178,"{""success"": 1794, ""episode_timeout"": 6}",0.9966666666666666
+ablation_1p5cm_A,extrapolation,600,600,345,181,83,2,0,0,0.575,0.575,0.5350910535977134,0.6139546912502314,"{""prohibited_collision"": 72, ""success"": 345, ""drop"": 181, ""episode_timeout"": 2}",0.5750000000000001
+ablation_1p5cm_A,all,2400,2400,2139,181,83,8,0,0,0.89125,0.89125,0.8781636466281626,0.9030858792541858,"{""success"": 2139, ""episode_timeout"": 8, ""prohibited_collision"": 72, ""drop"": 181}",0.8912499999999999
+ablation_1p5cm_AG,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AG,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AG,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AG,joint_early_3cm_045,200,200,173,0,28,0,0,0,0.865,0.865,0.8107086162924745,0.9055342954521209,"{""prohibited_collision"": 27, ""success"": 173}",
+ablation_1p5cm_AG,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AG,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AG,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+ablation_1p5cm_AG,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AG,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AG,position_3cm,200,200,175,0,28,0,0,0,0.875,0.875,0.8219857499741765,0.9138802552428735,"{""prohibited_collision"": 25, ""success"": 175}",
+ablation_1p5cm_AG,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AG,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AG,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+ablation_1p5cm_AG,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+ablation_1p5cm_AG,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+ablation_1p5cm_AG,extrapolation,600,600,519,0,84,2,0,0,0.865,0.865,0.8353232826996672,0.8900326755603313,"{""prohibited_collision"": 79, ""success"": 519, ""episode_timeout"": 2}",0.8649999999999999
+ablation_1p5cm_AG,all,2400,2400,2319,0,84,2,0,0,0.96625,0.96625,0.9582475633493563,0.9727622550344008,"{""success"": 2319, ""prohibited_collision"": 79, ""episode_timeout"": 2}",0.96625
+ablation_1p5cm_AH,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AH,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AH,joint_early_2cm_030,200,200,194,0,0,6,0,0,0.97,0.97,0.9361057075454807,0.9861796856598887,"{""success"": 194, ""episode_timeout"": 6}",
+ablation_1p5cm_AH,joint_early_3cm_045,200,200,0,181,27,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 19, ""drop"": 181}",
+ablation_1p5cm_AH,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AH,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AH,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+ablation_1p5cm_AH,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AH,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AH,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+ablation_1p5cm_AH,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AH,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AH,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+ablation_1p5cm_AH,outer,600,600,594,0,0,6,0,0,0.99,0.99,0.9783564551842772,0.9954090778222962,"{""success"": 594, ""episode_timeout"": 6}",0.9899999999999999
+ablation_1p5cm_AH,in_training,1800,1800,1794,0,0,6,0,0,0.9966666666666667,0.9966666666666667,0.992746496337174,0.9984714354033178,"{""success"": 1794, ""episode_timeout"": 6}",0.9966666666666666
+ablation_1p5cm_AH,extrapolation,600,600,345,181,83,2,0,0,0.575,0.575,0.5350910535977134,0.6139546912502314,"{""prohibited_collision"": 72, ""success"": 345, ""drop"": 181, ""episode_timeout"": 2}",0.5750000000000001
+ablation_1p5cm_AH,all,2400,2400,2139,181,83,8,0,0,0.89125,0.89125,0.8781636466281626,0.9030858792541858,"{""success"": 2139, ""episode_timeout"": 8, ""prohibited_collision"": 72, ""drop"": 181}",0.8912499999999999
+ablation_1p5cm_AHG,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AHG,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AHG,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AHG,joint_early_3cm_045,200,200,172,0,28,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+ablation_1p5cm_AHG,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AHG,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AHG,joint_late_3cm_045,200,200,171,0,28,1,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 28, ""success"": 171, ""episode_timeout"": 1}",
+ablation_1p5cm_AHG,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AHG,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AHG,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+ablation_1p5cm_AHG,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AHG,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_AHG,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+ablation_1p5cm_AHG,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+ablation_1p5cm_AHG,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+ablation_1p5cm_AHG,extrapolation,600,600,517,0,84,1,0,0,0.8616666666666667,0.8616666666666667,0.8317327039799384,0.8869989989534849,"{""prohibited_collision"": 82, ""success"": 517, ""episode_timeout"": 1}",0.8616666666666667
+ablation_1p5cm_AHG,all,2400,2400,2317,0,84,1,0,0,0.9654166666666667,0.9654166666666667,0.9573307148275895,0.972015100306152,"{""success"": 2317, ""prohibited_collision"": 82, ""episode_timeout"": 1}",0.9654166666666666
+ablation_1p5cm_G,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_G,joint_early_1cm_015,200,200,185,0,18,0,0,0,0.925,0.925,0.8799563897637055,0.954025082815618,"{""prohibited_collision"": 15, ""success"": 185}",
+ablation_1p5cm_G,joint_early_2cm_030,200,200,139,1,54,6,0,0,0.695,0.695,0.6280144790202163,0.7546358436926496,"{""prohibited_collision"": 54, ""drop"": 1, ""success"": 139, ""episode_timeout"": 6}",
+ablation_1p5cm_G,joint_early_3cm_045,200,200,61,4,88,7,41,0,0.305,0.305,0.24536415630735034,0.37198552097978366,"{""prohibited_collision"": 87, ""release_timeout"": 41, ""success"": 61, ""drop"": 4, ""episode_timeout"": 7}",
+ablation_1p5cm_G,joint_late_1cm_015,200,200,182,0,21,0,0,0,0.91,0.91,0.8622342812328346,0.9423125511378069,"{""prohibited_collision"": 18, ""success"": 182}",
+ablation_1p5cm_G,joint_late_2cm_030,200,200,130,2,62,7,0,0,0.65,0.65,0.5816346433604008,0.7127117587264192,"{""prohibited_collision"": 61, ""drop"": 2, ""success"": 130, ""episode_timeout"": 7}",
+ablation_1p5cm_G,joint_late_3cm_045,200,200,56,7,87,13,37,0,0.28,0.28,0.22236889773949026,0.3459230458665071,"{""prohibited_collision"": 87, ""drop"": 7, ""release_timeout"": 37, ""success"": 56, ""episode_timeout"": 13}",
+ablation_1p5cm_G,position_1cm,200,200,187,0,16,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+ablation_1p5cm_G,position_2cm,200,200,143,1,47,10,0,0,0.715,0.715,0.6488465397039482,0.7730499699538271,"{""prohibited_collision"": 46, ""drop"": 1, ""success"": 143, ""episode_timeout"": 10}",
+ablation_1p5cm_G,position_3cm,200,200,59,3,95,8,39,0,0.295,0.295,0.23613943856849148,0.36158714524618774,"{""prohibited_collision"": 91, ""drop"": 3, ""release_timeout"": 39, ""success"": 59, ""episode_timeout"": 8}",
+ablation_1p5cm_G,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_G,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_G,inner,1200,1200,1154,0,55,0,0,0,0.9616666666666667,0.9616666666666667,0.9492480348033656,0.9711389413067757,"{""success"": 1154, ""prohibited_collision"": 46}",0.9616666666666668
+ablation_1p5cm_G,outer,600,600,412,4,163,23,0,0,0.6866666666666666,0.6866666666666666,0.648463402309181,0.7224948959790375,"{""prohibited_collision"": 161, ""drop"": 4, ""success"": 412, ""episode_timeout"": 23}",0.6866666666666666
+ablation_1p5cm_G,in_training,1800,1800,1566,4,218,23,0,0,0.87,0.87,0.8536724697229633,0.8847516270770003,"{""success"": 1566, ""prohibited_collision"": 207, ""drop"": 4, ""episode_timeout"": 23}",0.87
+ablation_1p5cm_G,extrapolation,600,600,176,14,270,28,117,0,0.29333333333333333,0.29333333333333333,0.2583102463852376,0.3309859233670921,"{""prohibited_collision"": 265, ""drop"": 14, ""release_timeout"": 117, ""success"": 176, ""episode_timeout"": 28}",0.29333333333333333
+ablation_1p5cm_G,all,2400,2400,1742,18,488,51,117,0,0.7258333333333333,0.7258333333333333,0.7076359305699833,0.7433089501842582,"{""success"": 1742, ""prohibited_collision"": 472, ""drop"": 18, ""episode_timeout"": 51, ""release_timeout"": 117}",0.7258333333333332
+ablation_1p5cm_H,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_H,joint_early_1cm_015,200,200,185,0,18,0,0,0,0.925,0.925,0.8799563897637055,0.954025082815618,"{""prohibited_collision"": 15, ""success"": 185}",
+ablation_1p5cm_H,joint_early_2cm_030,200,200,27,27,65,85,0,0,0.135,0.135,0.09446570454787906,0.18929138370752552,"{""prohibited_collision"": 61, ""drop"": 27, ""success"": 27, ""episode_timeout"": 85}",
+ablation_1p5cm_H,joint_early_3cm_045,200,200,0,122,84,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 78, ""drop"": 122}",
+ablation_1p5cm_H,joint_late_1cm_015,200,200,183,0,21,0,0,0,0.915,0.915,0.8681041292843443,0.9462542498225244,"{""prohibited_collision"": 17, ""success"": 183}",
+ablation_1p5cm_H,joint_late_2cm_030,200,200,131,2,62,7,0,0,0.655,0.655,0.5867558925905368,0.7174020562325106,"{""prohibited_collision"": 60, ""drop"": 2, ""success"": 131, ""episode_timeout"": 7}",
+ablation_1p5cm_H,joint_late_3cm_045,200,200,55,45,87,13,0,0,0.275,0.275,0.21779700329307355,0.34068339357669647,"{""prohibited_collision"": 87, ""drop"": 45, ""success"": 55, ""episode_timeout"": 13}",
+ablation_1p5cm_H,position_1cm,200,200,187,0,17,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+ablation_1p5cm_H,position_2cm,200,200,144,2,47,8,0,0,0.72,0.72,0.6540769541334929,0.7776311022605097,"{""prohibited_collision"": 46, ""drop"": 2, ""success"": 144, ""episode_timeout"": 8}",
+ablation_1p5cm_H,position_3cm,200,200,53,42,95,12,0,0,0.265,0.265,0.2086815414710911,0.3301757619262242,"{""prohibited_collision"": 93, ""drop"": 42, ""success"": 53, ""episode_timeout"": 12}",
+ablation_1p5cm_H,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_H,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_H,inner,1200,1200,1155,0,56,0,0,0,0.9625,0.9625,0.9501911905534889,0.9718571338889813,"{""success"": 1155, ""prohibited_collision"": 45}",0.9625
+ablation_1p5cm_H,outer,600,600,302,31,174,100,0,0,0.5033333333333333,0.5033333333333333,0.46343287218454526,0.54319138314203,"{""prohibited_collision"": 167, ""drop"": 31, ""success"": 302, ""episode_timeout"": 100}",0.5033333333333333
+ablation_1p5cm_H,in_training,1800,1800,1457,31,230,100,0,0,0.8094444444444444,0.8094444444444444,0.7906495092333283,0.8269213945468215,"{""success"": 1457, ""prohibited_collision"": 212, ""drop"": 31, ""episode_timeout"": 100}",0.8094444444444445
+ablation_1p5cm_H,extrapolation,600,600,108,209,266,25,0,0,0.18,0.18,0.1513253010749538,0.2127461875738147,"{""prohibited_collision"": 258, ""drop"": 209, ""success"": 108, ""episode_timeout"": 25}",0.18000000000000002
+ablation_1p5cm_H,all,2400,2400,1565,240,496,125,0,0,0.6520833333333333,0.6520833333333333,0.6327979825630023,0.670882610564854,"{""success"": 1565, ""prohibited_collision"": 470, ""drop"": 240, ""episode_timeout"": 125}",0.6520833333333335
+ablation_1p5cm_HG,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_HG,joint_early_1cm_015,200,200,184,0,19,0,0,0,0.92,0.92,0.874010511732856,0.9501594141102401,"{""prohibited_collision"": 16, ""success"": 184}",
+ablation_1p5cm_HG,joint_early_2cm_030,200,200,140,1,54,5,0,0,0.7,0.7,0.6332093162728074,0.7592525531762859,"{""prohibited_collision"": 54, ""drop"": 1, ""success"": 140, ""episode_timeout"": 5}",
+ablation_1p5cm_HG,joint_early_3cm_045,200,200,61,2,88,9,41,0,0.305,0.305,0.24536415630735034,0.37198552097978366,"{""prohibited_collision"": 87, ""release_timeout"": 41, ""success"": 61, ""drop"": 2, ""episode_timeout"": 9}",
+ablation_1p5cm_HG,joint_late_1cm_015,200,200,181,0,21,0,0,0,0.905,0.905,0.8563983883518006,0.9383368972826135,"{""prohibited_collision"": 19, ""success"": 181}",
+ablation_1p5cm_HG,joint_late_2cm_030,200,200,131,2,62,7,0,0,0.655,0.655,0.5867558925905368,0.7174020562325106,"{""prohibited_collision"": 60, ""drop"": 2, ""success"": 131, ""episode_timeout"": 7}",
+ablation_1p5cm_HG,joint_late_3cm_045,200,200,53,8,87,14,38,0,0.265,0.265,0.2086815414710911,0.3301757619262242,"{""prohibited_collision"": 87, ""drop"": 8, ""release_timeout"": 38, ""success"": 53, ""episode_timeout"": 14}",
+ablation_1p5cm_HG,position_1cm,200,200,187,0,16,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+ablation_1p5cm_HG,position_2cm,200,200,144,2,47,8,0,0,0.72,0.72,0.6540769541334929,0.7776311022605097,"{""prohibited_collision"": 46, ""drop"": 2, ""success"": 144, ""episode_timeout"": 8}",
+ablation_1p5cm_HG,position_3cm,200,200,53,3,95,12,39,0,0.265,0.265,0.2086815414710911,0.3301757619262242,"{""prohibited_collision"": 93, ""drop"": 3, ""release_timeout"": 39, ""success"": 53, ""episode_timeout"": 12}",
+ablation_1p5cm_HG,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_HG,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_HG,inner,1200,1200,1152,0,56,0,0,0,0.96,0.96,0.9473657151858288,0.969698564259655,"{""success"": 1152, ""prohibited_collision"": 48}",0.9600000000000001
+ablation_1p5cm_HG,outer,600,600,415,5,163,20,0,0,0.6916666666666667,0.6916666666666667,0.6535934690094297,0.7273012122686516,"{""prohibited_collision"": 160, ""drop"": 5, ""success"": 415, ""episode_timeout"": 20}",0.6916666666666668
+ablation_1p5cm_HG,in_training,1800,1800,1567,5,219,20,0,0,0.8705555555555555,0.8705555555555555,0.8542549988513726,0.8852778428386812,"{""success"": 1567, ""prohibited_collision"": 208, ""drop"": 5, ""episode_timeout"": 20}",0.8705555555555555
+ablation_1p5cm_HG,extrapolation,600,600,167,13,270,35,118,0,0.2783333333333333,0.2783333333333333,0.24396887405645667,0.31551814672628403,"{""prohibited_collision"": 267, ""drop"": 13, ""release_timeout"": 118, ""success"": 167, ""episode_timeout"": 35}",0.2783333333333334
+ablation_1p5cm_HG,all,2400,2400,1734,18,489,55,118,0,0.7225,0.7225,0.7042412089560748,0.7400476587981042,"{""success"": 1734, ""prohibited_collision"": 475, ""drop"": 18, ""episode_timeout"": 55, ""release_timeout"": 118}",0.7225
+ablation_1p5cm_none,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_none,joint_early_1cm_015,200,200,185,0,19,0,0,0,0.925,0.925,0.8799563897637055,0.954025082815618,"{""prohibited_collision"": 15, ""success"": 185}",
+ablation_1p5cm_none,joint_early_2cm_030,200,200,27,27,66,84,0,0,0.135,0.135,0.09446570454787906,0.18929138370752552,"{""prohibited_collision"": 62, ""drop"": 27, ""success"": 27, ""episode_timeout"": 84}",
+ablation_1p5cm_none,joint_early_3cm_045,200,200,0,121,84,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 79, ""drop"": 121}",
+ablation_1p5cm_none,joint_late_1cm_015,200,200,183,0,21,0,0,0,0.915,0.915,0.8681041292843443,0.9462542498225244,"{""prohibited_collision"": 17, ""success"": 183}",
+ablation_1p5cm_none,joint_late_2cm_030,200,200,130,2,62,7,0,0,0.65,0.65,0.5816346433604008,0.7127117587264192,"{""prohibited_collision"": 61, ""drop"": 2, ""success"": 130, ""episode_timeout"": 7}",
+ablation_1p5cm_none,joint_late_3cm_045,200,200,54,46,88,13,0,0,0.27,0.27,0.21323449814685846,0.33543435198668425,"{""prohibited_collision"": 87, ""drop"": 46, ""success"": 54, ""episode_timeout"": 13}",
+ablation_1p5cm_none,position_1cm,200,200,187,0,16,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+ablation_1p5cm_none,position_2cm,200,200,143,1,47,10,0,0,0.715,0.715,0.6488465397039482,0.7730499699538271,"{""prohibited_collision"": 46, ""drop"": 1, ""success"": 143, ""episode_timeout"": 10}",
+ablation_1p5cm_none,position_3cm,200,200,58,43,95,8,0,0,0.29,0.29,0.23154025607067882,0.3563747810077731,"{""prohibited_collision"": 91, ""drop"": 43, ""success"": 58, ""episode_timeout"": 8}",
+ablation_1p5cm_none,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_none,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+ablation_1p5cm_none,inner,1200,1200,1155,0,56,0,0,0,0.9625,0.9625,0.9501911905534889,0.9718571338889813,"{""success"": 1155, ""prohibited_collision"": 45}",0.9625
+ablation_1p5cm_none,outer,600,600,300,30,175,101,0,0,0.5,0.5,0.4601198639241893,0.5398801360758106,"{""prohibited_collision"": 169, ""drop"": 30, ""success"": 300, ""episode_timeout"": 101}",0.5
+ablation_1p5cm_none,in_training,1800,1800,1455,30,231,101,0,0,0.8083333333333333,0.8083333333333333,0.7895005935054046,0.8258528204945651,"{""success"": 1455, ""prohibited_collision"": 214, ""drop"": 30, ""episode_timeout"": 101}",0.8083333333333333
+ablation_1p5cm_none,extrapolation,600,600,112,210,267,21,0,0,0.18666666666666668,0.18666666666666668,0.15751805107031233,0.2198019482316068,"{""prohibited_collision"": 257, ""drop"": 210, ""success"": 112, ""episode_timeout"": 21}",0.18666666666666668
+ablation_1p5cm_none,all,2400,2400,1567,240,498,122,0,0,0.6529166666666667,0.6529166666666667,0.6336406350836737,0.6717039612941983,"{""success"": 1567, ""prohibited_collision"": 471, ""drop"": 240, ""episode_timeout"": 122}",0.6529166666666667
+bound_0p005,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p005,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p005,joint_early_2cm_030,200,200,174,0,27,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+bound_0p005,joint_early_3cm_045,200,200,100,4,71,13,13,0,0.5,0.5,0.43136085960389187,0.5686391403961082,"{""prohibited_collision"": 70, ""drop"": 4, ""release_timeout"": 13, ""success"": 100, ""episode_timeout"": 13}",
+bound_0p005,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p005,joint_late_2cm_030,200,200,165,0,38,0,0,0,0.825,0.825,0.7663556885175099,0.8713948493372666,"{""prohibited_collision"": 35, ""success"": 165}",
+bound_0p005,joint_late_3cm_045,200,200,97,4,67,15,18,0,0.485,0.485,0.41667385171877513,0.5538915080725428,"{""prohibited_collision"": 66, ""drop"": 4, ""release_timeout"": 18, ""success"": 97, ""episode_timeout"": 15}",
+bound_0p005,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p005,position_2cm,200,200,176,0,24,1,0,0,0.88,0.88,0.8276574790170326,0.9180200729362449,"{""prohibited_collision"": 23, ""success"": 176, ""episode_timeout"": 1}",
+bound_0p005,position_3cm,200,200,105,3,68,9,16,0,0.525,0.525,0.4559739601468475,0.5930837735342891,"{""prohibited_collision"": 67, ""drop"": 3, ""release_timeout"": 16, ""success"": 105, ""episode_timeout"": 9}",
+bound_0p005,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p005,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p005,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+bound_0p005,outer,600,600,515,0,89,1,0,0,0.8583333333333333,0.8583333333333333,0.8281474200087048,0.8839600275981431,"{""prohibited_collision"": 84, ""success"": 515, ""episode_timeout"": 1}",0.8583333333333334
+bound_0p005,in_training,1800,1800,1715,0,89,1,0,0,0.9527777777777777,0.9527777777777777,0.941977625442527,0.9616494599808518,"{""success"": 1715, ""prohibited_collision"": 84, ""episode_timeout"": 1}",0.9527777777777777
+bound_0p005,extrapolation,600,600,302,11,206,37,47,0,0.5033333333333333,0.5033333333333333,0.46343287218454526,0.54319138314203,"{""prohibited_collision"": 203, ""drop"": 11, ""release_timeout"": 47, ""success"": 302, ""episode_timeout"": 37}",0.5033333333333333
+bound_0p005,all,2400,2400,2017,11,295,38,47,0,0.8404166666666667,0.8404166666666667,0.8252227218509716,0.854522605780422,"{""success"": 2017, ""prohibited_collision"": 287, ""episode_timeout"": 38, ""drop"": 11, ""release_timeout"": 47}",0.8404166666666666
+bound_0p010,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p010,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p010,joint_early_2cm_030,200,200,189,0,12,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+bound_0p010,joint_early_3cm_045,200,200,150,0,44,4,3,0,0.75,0.75,0.6856590168795417,0.8049183199318249,"{""prohibited_collision"": 43, ""release_timeout"": 3, ""success"": 150, ""episode_timeout"": 4}",
+bound_0p010,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p010,joint_late_2cm_030,200,200,182,0,19,0,0,0,0.91,0.91,0.8622342812328346,0.9423125511378069,"{""prohibited_collision"": 18, ""success"": 182}",
+bound_0p010,joint_late_3cm_045,200,200,151,0,42,4,4,0,0.755,0.755,0.6909575644379659,0.8094313191096282,"{""prohibited_collision"": 41, ""release_timeout"": 4, ""success"": 151, ""episode_timeout"": 4}",
+bound_0p010,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p010,position_2cm,200,200,189,0,11,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+bound_0p010,position_3cm,200,200,145,0,47,5,5,0,0.725,0.725,0.6593166064233035,0.7822029967069265,"{""prohibited_collision"": 45, ""release_timeout"": 5, ""success"": 145, ""episode_timeout"": 5}",
+bound_0p010,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p010,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p010,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+bound_0p010,outer,600,600,560,0,42,0,0,0,0.9333333333333333,0.9333333333333333,0.9104908108641832,0.9506623815906097,"{""prohibited_collision"": 40, ""success"": 560}",0.9333333333333332
+bound_0p010,in_training,1800,1800,1760,0,42,0,0,0,0.9777777777777777,0.9777777777777777,0.969882220005171,0.9836383854722596,"{""success"": 1760, ""prohibited_collision"": 40}",0.9777777777777776
+bound_0p010,extrapolation,600,600,446,0,133,13,12,0,0.7433333333333333,0.7433333333333333,0.7069121461356086,0.7766584927043904,"{""prohibited_collision"": 129, ""release_timeout"": 12, ""success"": 446, ""episode_timeout"": 13}",0.7433333333333333
+bound_0p010,all,2400,2400,2206,0,175,13,12,0,0.9191666666666667,0.9191666666666667,0.9075797343155174,0.9294139004423554,"{""success"": 2206, ""prohibited_collision"": 169, ""release_timeout"": 12, ""episode_timeout"": 13}",0.9191666666666666
+bound_0p015,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p015,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p015,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p015,joint_early_3cm_045,200,200,172,0,28,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+bound_0p015,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p015,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p015,joint_late_3cm_045,200,200,171,0,28,1,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 28, ""success"": 171, ""episode_timeout"": 1}",
+bound_0p015,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p015,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p015,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+bound_0p015,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p015,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p015,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+bound_0p015,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+bound_0p015,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+bound_0p015,extrapolation,600,600,517,0,84,1,0,0,0.8616666666666667,0.8616666666666667,0.8317327039799384,0.8869989989534849,"{""prohibited_collision"": 82, ""success"": 517, ""episode_timeout"": 1}",0.8616666666666667
+bound_0p015,all,2400,2400,2317,0,84,1,0,0,0.9654166666666667,0.9654166666666667,0.9573307148275895,0.972015100306152,"{""success"": 2317, ""prohibited_collision"": 82, ""episode_timeout"": 1}",0.9654166666666666
+bound_0p020,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p020,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p020,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p020,joint_early_3cm_045,200,200,186,0,15,0,0,0,0.93,0.93,0.8859451911438936,0.9578478281716571,"{""prohibited_collision"": 14, ""success"": 186}",
+bound_0p020,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p020,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p020,joint_late_3cm_045,200,200,183,0,18,0,0,0,0.915,0.915,0.8681041292843443,0.9462542498225244,"{""prohibited_collision"": 17, ""success"": 183}",
+bound_0p020,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p020,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p020,position_3cm,200,200,190,0,12,0,0,0,0.95,0.95,0.9104218518612239,0.972617354399236,"{""prohibited_collision"": 10, ""success"": 190}",
+bound_0p020,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p020,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+bound_0p020,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+bound_0p020,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+bound_0p020,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+bound_0p020,extrapolation,600,600,559,0,45,0,0,0,0.9316666666666666,0.9316666666666666,0.9086091592291136,0.9492319055623916,"{""prohibited_collision"": 41, ""success"": 559}",0.9316666666666666
+bound_0p020,all,2400,2400,2359,0,45,0,0,0,0.9829166666666667,0.9829166666666667,0.9769076518627232,0.9873822315213469,"{""success"": 2359, ""prohibited_collision"": 41}",0.9829166666666665
+combined_no_phase_seed11__final,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__final,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__final,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__final,joint_early_3cm_045,200,200,172,0,32,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+combined_no_phase_seed11__final,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__final,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__final,joint_late_3cm_045,200,200,170,0,32,0,0,0,0.85,0.85,0.7939442071583334,0.89286406437758,"{""prohibited_collision"": 30, ""success"": 170}",
+combined_no_phase_seed11__final,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__final,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__final,position_3cm,200,200,167,0,36,0,0,0,0.835,0.835,0.7773421846094045,0.8800314467178268,"{""prohibited_collision"": 33, ""success"": 167}",
+combined_no_phase_seed11__final,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__final,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__final,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_no_phase_seed11__final,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_no_phase_seed11__final,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_no_phase_seed11__final,extrapolation,600,600,509,0,100,0,0,0,0.8483333333333334,0.8483333333333334,0.8174218391587927,0.8748128424683291,"{""prohibited_collision"": 91, ""success"": 509}",0.8483333333333333
+combined_no_phase_seed11__final,all,2400,2400,2309,0,100,0,0,0,0.9620833333333333,0.9620833333333333,0.9536741425175133,0.9690156596161654,"{""success"": 2309, ""prohibited_collision"": 91}",0.9620833333333333
+combined_no_phase_seed11__selected,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__selected,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__selected,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__selected,joint_early_3cm_045,200,200,171,0,32,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_no_phase_seed11__selected,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__selected,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__selected,joint_late_3cm_045,200,200,169,0,32,0,0,0,0.845,0.845,0.7883930940765792,0.8886036307231068,"{""prohibited_collision"": 31, ""success"": 169}",
+combined_no_phase_seed11__selected,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__selected,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__selected,position_3cm,200,200,167,0,36,0,0,0,0.835,0.835,0.7773421846094045,0.8800314467178268,"{""prohibited_collision"": 33, ""success"": 167}",
+combined_no_phase_seed11__selected,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__selected,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__selected,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_no_phase_seed11__selected,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_no_phase_seed11__selected,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_no_phase_seed11__selected,extrapolation,600,600,507,0,100,0,0,0,0.845,0.845,0.813856277425705,0.8717541488748415,"{""prohibited_collision"": 93, ""success"": 507}",0.8450000000000001
+combined_no_phase_seed11__selected,all,2400,2400,2307,0,100,0,0,0,0.96125,0.96125,0.9527625328421196,0.9682632660415436,"{""success"": 2307, ""prohibited_collision"": 93}",0.9612500000000002
+combined_no_phase_seed11__untrained,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__untrained,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__untrained,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__untrained,joint_early_3cm_045,200,200,172,0,28,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+combined_no_phase_seed11__untrained,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__untrained,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__untrained,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+combined_no_phase_seed11__untrained,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__untrained,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__untrained,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+combined_no_phase_seed11__untrained,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__untrained,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed11__untrained,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_no_phase_seed11__untrained,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_no_phase_seed11__untrained,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_no_phase_seed11__untrained,extrapolation,600,600,517,0,84,2,0,0,0.8616666666666667,0.8616666666666667,0.8317327039799384,0.8869989989534849,"{""prohibited_collision"": 81, ""success"": 517, ""episode_timeout"": 2}",0.8616666666666667
+combined_no_phase_seed11__untrained,all,2400,2400,2317,0,84,2,0,0,0.9654166666666667,0.9654166666666667,0.9573307148275895,0.972015100306152,"{""success"": 2317, ""prohibited_collision"": 81, ""episode_timeout"": 2}",0.9654166666666666
+combined_no_phase_seed22__final,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__final,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__final,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__final,joint_early_3cm_045,200,200,172,0,30,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+combined_no_phase_seed22__final,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__final,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__final,joint_late_3cm_045,200,200,171,0,29,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_no_phase_seed22__final,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__final,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__final,position_3cm,200,200,170,0,36,0,0,0,0.85,0.85,0.7939442071583334,0.89286406437758,"{""prohibited_collision"": 30, ""success"": 170}",
+combined_no_phase_seed22__final,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__final,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__final,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_no_phase_seed22__final,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_no_phase_seed22__final,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_no_phase_seed22__final,extrapolation,600,600,513,0,95,0,0,0,0.855,0.855,0.8245672767842441,0.8809159154960283,"{""prohibited_collision"": 87, ""success"": 513}",0.855
+combined_no_phase_seed22__final,all,2400,2400,2313,0,95,0,0,0,0.96375,0.96375,0.9555003360508425,0.9705174725828676,"{""success"": 2313, ""prohibited_collision"": 87}",0.96375
+combined_no_phase_seed22__selected,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__selected,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__selected,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__selected,joint_early_3cm_045,200,200,169,0,28,1,3,0,0.845,0.845,0.7883930940765792,0.8886036307231068,"{""prohibited_collision"": 27, ""release_timeout"": 3, ""success"": 169, ""episode_timeout"": 1}",
+combined_no_phase_seed22__selected,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__selected,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__selected,joint_late_3cm_045,200,200,165,0,28,4,4,0,0.825,0.825,0.7663556885175099,0.8713948493372666,"{""prohibited_collision"": 27, ""release_timeout"": 4, ""success"": 165, ""episode_timeout"": 4}",
+combined_no_phase_seed22__selected,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__selected,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__selected,position_3cm,200,200,173,1,28,1,2,0,0.865,0.865,0.8107086162924745,0.9055342954521209,"{""prohibited_collision"": 23, ""drop"": 1, ""release_timeout"": 2, ""success"": 173, ""episode_timeout"": 1}",
+combined_no_phase_seed22__selected,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__selected,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__selected,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_no_phase_seed22__selected,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_no_phase_seed22__selected,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_no_phase_seed22__selected,extrapolation,600,600,507,1,84,6,9,0,0.845,0.845,0.813856277425705,0.8717541488748415,"{""prohibited_collision"": 77, ""drop"": 1, ""release_timeout"": 9, ""success"": 507, ""episode_timeout"": 6}",0.8450000000000001
+combined_no_phase_seed22__selected,all,2400,2400,2307,1,84,6,9,0,0.96125,0.96125,0.9527625328421196,0.9682632660415436,"{""success"": 2307, ""prohibited_collision"": 77, ""drop"": 1, ""release_timeout"": 9, ""episode_timeout"": 6}",0.96125
+combined_no_phase_seed22__untrained,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__untrained,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__untrained,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__untrained,joint_early_3cm_045,200,200,172,0,28,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+combined_no_phase_seed22__untrained,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__untrained,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__untrained,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+combined_no_phase_seed22__untrained,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__untrained,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__untrained,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+combined_no_phase_seed22__untrained,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__untrained,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed22__untrained,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_no_phase_seed22__untrained,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_no_phase_seed22__untrained,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_no_phase_seed22__untrained,extrapolation,600,600,517,0,84,2,0,0,0.8616666666666667,0.8616666666666667,0.8317327039799384,0.8869989989534849,"{""prohibited_collision"": 81, ""success"": 517, ""episode_timeout"": 2}",0.8616666666666667
+combined_no_phase_seed22__untrained,all,2400,2400,2317,0,84,2,0,0,0.9654166666666667,0.9654166666666667,0.9573307148275895,0.972015100306152,"{""success"": 2317, ""prohibited_collision"": 81, ""episode_timeout"": 2}",0.9654166666666666
+combined_no_phase_seed33__final,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__final,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__final,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__final,joint_early_3cm_045,200,200,171,0,30,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_no_phase_seed33__final,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__final,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__final,joint_late_3cm_045,200,200,170,0,30,0,0,0,0.85,0.85,0.7939442071583334,0.89286406437758,"{""prohibited_collision"": 30, ""success"": 170}",
+combined_no_phase_seed33__final,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__final,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__final,position_3cm,200,200,166,0,37,0,0,0,0.83,0.83,0.7718411637168737,0.8757209208741302,"{""prohibited_collision"": 34, ""success"": 166}",
+combined_no_phase_seed33__final,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__final,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__final,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_no_phase_seed33__final,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_no_phase_seed33__final,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_no_phase_seed33__final,extrapolation,600,600,507,0,97,0,0,0,0.845,0.845,0.813856277425705,0.8717541488748415,"{""prohibited_collision"": 93, ""success"": 507}",0.8450000000000001
+combined_no_phase_seed33__final,all,2400,2400,2307,0,97,0,0,0,0.96125,0.96125,0.9527625328421196,0.9682632660415436,"{""success"": 2307, ""prohibited_collision"": 93}",0.96125
+combined_no_phase_seed33__selected,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__selected,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__selected,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__selected,joint_early_3cm_045,200,200,173,0,27,0,0,0,0.865,0.865,0.8107086162924745,0.9055342954521209,"{""prohibited_collision"": 27, ""success"": 173}",
+combined_no_phase_seed33__selected,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__selected,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__selected,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+combined_no_phase_seed33__selected,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__selected,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__selected,position_3cm,200,200,175,0,26,0,0,0,0.875,0.875,0.8219857499741765,0.9138802552428735,"{""prohibited_collision"": 25, ""success"": 175}",
+combined_no_phase_seed33__selected,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__selected,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__selected,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_no_phase_seed33__selected,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_no_phase_seed33__selected,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_no_phase_seed33__selected,extrapolation,600,600,519,0,81,2,0,0,0.865,0.865,0.8353232826996672,0.8900326755603313,"{""prohibited_collision"": 79, ""success"": 519, ""episode_timeout"": 2}",0.8649999999999999
+combined_no_phase_seed33__selected,all,2400,2400,2319,0,81,2,0,0,0.96625,0.96625,0.9582475633493563,0.9727622550344008,"{""success"": 2319, ""prohibited_collision"": 79, ""episode_timeout"": 2}",0.96625
+combined_no_phase_seed33__untrained,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__untrained,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__untrained,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__untrained,joint_early_3cm_045,200,200,172,0,28,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+combined_no_phase_seed33__untrained,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__untrained,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__untrained,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+combined_no_phase_seed33__untrained,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__untrained,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__untrained,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+combined_no_phase_seed33__untrained,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__untrained,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_no_phase_seed33__untrained,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_no_phase_seed33__untrained,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_no_phase_seed33__untrained,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_no_phase_seed33__untrained,extrapolation,600,600,517,0,84,2,0,0,0.8616666666666667,0.8616666666666667,0.8317327039799384,0.8869989989534849,"{""prohibited_collision"": 81, ""success"": 517, ""episode_timeout"": 2}",0.8616666666666667
+combined_no_phase_seed33__untrained,all,2400,2400,2317,0,84,2,0,0,0.9654166666666667,0.9654166666666667,0.9573307148275895,0.972015100306152,"{""success"": 2317, ""prohibited_collision"": 81, ""episode_timeout"": 2}",0.9654166666666666
+combined_seed11__final,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__final,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__final,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__final,joint_early_3cm_045,200,200,171,0,31,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_seed11__final,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__final,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__final,joint_late_3cm_045,200,200,171,0,32,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_seed11__final,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__final,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__final,position_3cm,200,200,166,0,38,0,0,0,0.83,0.83,0.7718411637168737,0.8757209208741302,"{""prohibited_collision"": 34, ""success"": 166}",
+combined_seed11__final,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__final,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__final,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_seed11__final,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_seed11__final,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_seed11__final,extrapolation,600,600,508,0,101,0,0,0,0.8466666666666667,0.8466666666666667,0.8156384751338387,0.8732840788299955,"{""prohibited_collision"": 92, ""success"": 508}",0.8466666666666667
+combined_seed11__final,all,2400,2400,2308,0,101,0,0,0,0.9616666666666667,0.9616666666666667,0.9532182169790434,0.9686395835296274,"{""success"": 2308, ""prohibited_collision"": 92}",0.9616666666666668
+combined_seed11__selected,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__selected,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__selected,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__selected,joint_early_3cm_045,200,200,171,0,33,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_seed11__selected,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__selected,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__selected,joint_late_3cm_045,200,200,168,0,32,0,0,0,0.84,0.84,0.7828592983793289,0.8843258796841297,"{""prohibited_collision"": 32, ""success"": 168}",
+combined_seed11__selected,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__selected,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__selected,position_3cm,200,200,164,0,37,0,0,0,0.82,0.82,0.7608852497127511,0.8670537414057983,"{""prohibited_collision"": 36, ""success"": 164}",
+combined_seed11__selected,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__selected,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__selected,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_seed11__selected,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_seed11__selected,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_seed11__selected,extrapolation,600,600,503,0,102,0,0,0,0.8383333333333334,0.8383333333333334,0.8067388520396397,0.8656230636077562,"{""prohibited_collision"": 97, ""success"": 503}",0.8383333333333333
+combined_seed11__selected,all,2400,2400,2303,0,102,0,0,0,0.9595833333333333,0.9595833333333333,0.9509421379468252,0.9667556544368066,"{""success"": 2303, ""prohibited_collision"": 97}",0.9595833333333333
+combined_seed11__untrained,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__untrained,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__untrained,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__untrained,joint_early_3cm_045,200,200,172,0,28,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+combined_seed11__untrained,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__untrained,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__untrained,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+combined_seed11__untrained,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__untrained,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__untrained,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+combined_seed11__untrained,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__untrained,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed11__untrained,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_seed11__untrained,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_seed11__untrained,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_seed11__untrained,extrapolation,600,600,517,0,84,2,0,0,0.8616666666666667,0.8616666666666667,0.8317327039799384,0.8869989989534849,"{""prohibited_collision"": 81, ""success"": 517, ""episode_timeout"": 2}",0.8616666666666667
+combined_seed11__untrained,all,2400,2400,2317,0,84,2,0,0,0.9654166666666667,0.9654166666666667,0.9573307148275895,0.972015100306152,"{""success"": 2317, ""prohibited_collision"": 81, ""episode_timeout"": 2}",0.9654166666666666
+combined_seed22__final,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__final,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__final,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__final,joint_early_3cm_045,200,200,171,0,30,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_seed22__final,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__final,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__final,joint_late_3cm_045,200,200,170,0,30,0,0,0,0.85,0.85,0.7939442071583334,0.89286406437758,"{""prohibited_collision"": 30, ""success"": 170}",
+combined_seed22__final,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__final,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__final,position_3cm,200,200,168,0,34,0,0,0,0.84,0.84,0.7828592983793289,0.8843258796841297,"{""prohibited_collision"": 32, ""success"": 168}",
+combined_seed22__final,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__final,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__final,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_seed22__final,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_seed22__final,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_seed22__final,extrapolation,600,600,509,0,94,0,0,0,0.8483333333333334,0.8483333333333334,0.8174218391587927,0.8748128424683291,"{""prohibited_collision"": 91, ""success"": 509}",0.8483333333333333
+combined_seed22__final,all,2400,2400,2309,0,94,0,0,0,0.9620833333333333,0.9620833333333333,0.9536741425175133,0.9690156596161654,"{""success"": 2309, ""prohibited_collision"": 91}",0.9620833333333333
+combined_seed22__selected,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__selected,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__selected,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__selected,joint_early_3cm_045,200,200,171,0,30,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_seed22__selected,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__selected,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__selected,joint_late_3cm_045,200,200,170,0,30,0,0,0,0.85,0.85,0.7939442071583334,0.89286406437758,"{""prohibited_collision"": 30, ""success"": 170}",
+combined_seed22__selected,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__selected,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__selected,position_3cm,200,200,167,0,35,0,0,0,0.835,0.835,0.7773421846094045,0.8800314467178268,"{""prohibited_collision"": 33, ""success"": 167}",
+combined_seed22__selected,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__selected,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__selected,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_seed22__selected,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_seed22__selected,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_seed22__selected,extrapolation,600,600,508,0,95,0,0,0,0.8466666666666667,0.8466666666666667,0.8156384751338387,0.8732840788299955,"{""prohibited_collision"": 92, ""success"": 508}",0.8466666666666667
+combined_seed22__selected,all,2400,2400,2308,0,95,0,0,0,0.9616666666666667,0.9616666666666667,0.9532182169790434,0.9686395835296274,"{""success"": 2308, ""prohibited_collision"": 92}",0.9616666666666668
+combined_seed22__untrained,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__untrained,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__untrained,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__untrained,joint_early_3cm_045,200,200,172,0,28,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+combined_seed22__untrained,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__untrained,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__untrained,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+combined_seed22__untrained,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__untrained,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__untrained,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+combined_seed22__untrained,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__untrained,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed22__untrained,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_seed22__untrained,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_seed22__untrained,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_seed22__untrained,extrapolation,600,600,517,0,84,2,0,0,0.8616666666666667,0.8616666666666667,0.8317327039799384,0.8869989989534849,"{""prohibited_collision"": 81, ""success"": 517, ""episode_timeout"": 2}",0.8616666666666667
+combined_seed22__untrained,all,2400,2400,2317,0,84,2,0,0,0.9654166666666667,0.9654166666666667,0.9573307148275895,0.972015100306152,"{""success"": 2317, ""prohibited_collision"": 81, ""episode_timeout"": 2}",0.9654166666666666
+combined_seed33__final,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__final,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__final,joint_early_2cm_030,200,200,200,0,1,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__final,joint_early_3cm_045,200,200,171,0,32,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_seed33__final,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__final,joint_late_2cm_030,200,200,200,0,1,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__final,joint_late_3cm_045,200,200,171,0,33,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_seed33__final,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__final,position_2cm,200,200,200,0,1,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__final,position_3cm,200,200,166,0,36,0,0,0,0.83,0.83,0.7718411637168737,0.8757209208741302,"{""prohibited_collision"": 34, ""success"": 166}",
+combined_seed33__final,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__final,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__final,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_seed33__final,outer,600,600,600,0,3,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_seed33__final,in_training,1800,1800,1800,0,3,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_seed33__final,extrapolation,600,600,508,0,101,0,0,0,0.8466666666666667,0.8466666666666667,0.8156384751338387,0.8732840788299955,"{""prohibited_collision"": 92, ""success"": 508}",0.8466666666666667
+combined_seed33__final,all,2400,2400,2308,0,104,0,0,0,0.9616666666666667,0.9616666666666667,0.9532182169790434,0.9686395835296274,"{""success"": 2308, ""prohibited_collision"": 92}",0.9616666666666668
+combined_seed33__selected,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__selected,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__selected,joint_early_2cm_030,200,200,200,0,1,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__selected,joint_early_3cm_045,200,200,171,0,32,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_seed33__selected,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__selected,joint_late_2cm_030,200,200,200,0,1,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__selected,joint_late_3cm_045,200,200,171,0,33,0,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 29, ""success"": 171}",
+combined_seed33__selected,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__selected,position_2cm,200,200,200,0,1,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__selected,position_3cm,200,200,166,0,36,0,0,0,0.83,0.83,0.7718411637168737,0.8757209208741302,"{""prohibited_collision"": 34, ""success"": 166}",
+combined_seed33__selected,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__selected,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__selected,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_seed33__selected,outer,600,600,600,0,3,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_seed33__selected,in_training,1800,1800,1800,0,3,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_seed33__selected,extrapolation,600,600,508,0,101,0,0,0,0.8466666666666667,0.8466666666666667,0.8156384751338387,0.8732840788299955,"{""prohibited_collision"": 92, ""success"": 508}",0.8466666666666667
+combined_seed33__selected,all,2400,2400,2308,0,104,0,0,0,0.9616666666666667,0.9616666666666667,0.9532182169790434,0.9686395835296274,"{""success"": 2308, ""prohibited_collision"": 92}",0.9616666666666668
+combined_seed33__untrained,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__untrained,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__untrained,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__untrained,joint_early_3cm_045,200,200,172,0,28,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+combined_seed33__untrained,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__untrained,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__untrained,joint_late_3cm_045,200,200,171,0,28,2,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 27, ""success"": 171, ""episode_timeout"": 2}",
+combined_seed33__untrained,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__untrained,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__untrained,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+combined_seed33__untrained,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__untrained,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+combined_seed33__untrained,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+combined_seed33__untrained,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+combined_seed33__untrained,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+combined_seed33__untrained,extrapolation,600,600,517,0,84,2,0,0,0.8616666666666667,0.8616666666666667,0.8317327039799384,0.8869989989534849,"{""prohibited_collision"": 81, ""success"": 517, ""episode_timeout"": 2}",0.8616666666666667
+combined_seed33__untrained,all,2400,2400,2317,0,84,2,0,0,0.9654166666666667,0.9654166666666667,0.9573307148275895,0.972015100306152,"{""success"": 2317, ""prohibited_collision"": 81, ""episode_timeout"": 2}",0.9654166666666666
+const_geometry_1cm,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1cm,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1cm,joint_early_2cm_030,200,200,199,0,0,1,0,0,0.995,0.995,0.9722262956021069,0.9991168312843989,"{""success"": 199, ""episode_timeout"": 1}",
+const_geometry_1cm,joint_early_3cm_045,200,200,159,1,24,13,4,0,0.795,0.795,0.7337430194757748,0.8451382379616379,"{""prohibited_collision"": 23, ""drop"": 1, ""release_timeout"": 4, ""success"": 159, ""episode_timeout"": 13}",
+const_geometry_1cm,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1cm,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1cm,joint_late_3cm_045,200,200,163,3,24,8,4,0,0.815,0.815,0.7554293723884824,0.8626980719938395,"{""prohibited_collision"": 22, ""drop"": 3, ""release_timeout"": 4, ""success"": 163, ""episode_timeout"": 8}",
+const_geometry_1cm,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1cm,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1cm,position_3cm,200,200,162,1,20,10,7,0,0.81,0.81,0.7499876129240015,0.8583282847220932,"{""prohibited_collision"": 20, ""drop"": 1, ""release_timeout"": 7, ""success"": 162, ""episode_timeout"": 10}",
+const_geometry_1cm,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1cm,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1cm,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+const_geometry_1cm,outer,600,600,599,0,0,1,0,0,0.9983333333333333,0.9983333333333333,0.9906204395238613,0.9997057317991506,"{""success"": 599, ""episode_timeout"": 1}",0.9983333333333334
+const_geometry_1cm,in_training,1800,1800,1799,0,0,1,0,0,0.9994444444444445,0.9994444444444445,0.9968597321206145,0.9999019240703273,"{""success"": 1799, ""episode_timeout"": 1}",0.9994444444444446
+const_geometry_1cm,extrapolation,600,600,484,5,68,31,15,0,0.8066666666666666,0.8066666666666666,0.7731570899317954,0.8362744001131348,"{""prohibited_collision"": 65, ""drop"": 5, ""release_timeout"": 15, ""success"": 484, ""episode_timeout"": 31}",0.8066666666666666
+const_geometry_1cm,all,2400,2400,2283,5,68,32,15,0,0.95125,0.95125,0.9418901829624581,0.9591675769210172,"{""success"": 2283, ""episode_timeout"": 32, ""prohibited_collision"": 65, ""drop"": 5, ""release_timeout"": 15}",0.95125
+const_geometry_1p5cm,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1p5cm,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1p5cm,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1p5cm,joint_early_3cm_045,200,200,194,0,0,6,0,0,0.97,0.97,0.9361057075454807,0.9861796856598887,"{""success"": 194, ""episode_timeout"": 6}",
+const_geometry_1p5cm,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1p5cm,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1p5cm,joint_late_3cm_045,200,200,195,0,0,5,0,0,0.975,0.975,0.942821659593358,0.9892752803482386,"{""success"": 195, ""episode_timeout"": 5}",
+const_geometry_1p5cm,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1p5cm,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1p5cm,position_3cm,200,200,193,0,0,7,0,0,0.965,0.965,0.9295293884777092,0.9829444579914328,"{""success"": 193, ""episode_timeout"": 7}",
+const_geometry_1p5cm,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1p5cm,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_geometry_1p5cm,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+const_geometry_1p5cm,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+const_geometry_1p5cm,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+const_geometry_1p5cm,extrapolation,600,600,582,0,0,18,0,0,0.97,0.97,0.9530792576730233,0.9809407433740981,"{""success"": 582, ""episode_timeout"": 18}",0.9700000000000001
+const_geometry_1p5cm,all,2400,2400,2382,0,0,18,0,0,0.9925,0.9925,0.9881753176642515,0.9952506030949987,"{""success"": 2382, ""episode_timeout"": 18}",0.9925
+const_nominal,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_nominal,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_nominal,joint_early_2cm_030,200,200,20,53,23,105,0,0,0.1,0.1,0.06567044866909588,0.1494058124327174,"{""prohibited_collision"": 22, ""drop"": 53, ""success"": 20, ""episode_timeout"": 105}",
+const_nominal,joint_early_3cm_045,200,200,0,154,57,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 46, ""drop"": 154}",
+const_nominal,joint_late_1cm_015,200,200,199,0,0,1,0,0,0.995,0.995,0.9722262956021069,0.9991168312843989,"{""success"": 199, ""episode_timeout"": 1}",
+const_nominal,joint_late_2cm_030,200,200,162,7,20,12,0,0,0.81,0.81,0.7499876129240015,0.8583282847220932,"{""prohibited_collision"": 19, ""drop"": 7, ""success"": 162, ""episode_timeout"": 12}",
+const_nominal,joint_late_3cm_045,200,200,60,72,63,8,0,0,0.3,0.3,0.24074744682371402,0.36679068372719265,"{""prohibited_collision"": 60, ""drop"": 72, ""success"": 60, ""episode_timeout"": 8}",
+const_nominal,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_nominal,position_2cm,200,200,160,6,12,23,0,0,0.8,0.8,0.7391448134346212,0.8495479907390189,"{""prohibited_collision"": 11, ""drop"": 6, ""success"": 160, ""episode_timeout"": 23}",
+const_nominal,position_3cm,200,200,62,71,64,6,0,0,0.31,0.31,0.2499894483607809,0.37717177566258037,"{""prohibited_collision"": 61, ""drop"": 71, ""success"": 62, ""episode_timeout"": 6}",
+const_nominal,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_nominal,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+const_nominal,inner,1200,1200,1199,0,0,1,0,0,0.9991666666666666,0.9991666666666666,0.9952947700098665,0.9998528810550694,"{""success"": 1199, ""episode_timeout"": 1}",0.9991666666666666
+const_nominal,outer,600,600,342,66,55,140,0,0,0.57,0.57,0.5300647932673496,0.6090445685907323,"{""prohibited_collision"": 52, ""drop"": 66, ""success"": 342, ""episode_timeout"": 140}",0.57
+const_nominal,in_training,1800,1800,1541,66,55,141,0,0,0.8561111111111112,0.8561111111111112,0.8391382526753053,0.8715672218724075,"{""success"": 1541, ""episode_timeout"": 141, ""prohibited_collision"": 52, ""drop"": 66}",0.8561111111111112
+const_nominal,extrapolation,600,600,122,297,184,14,0,0,0.20333333333333334,0.20333333333333334,0.17306341797818775,0.23737785795660804,"{""prohibited_collision"": 167, ""drop"": 297, ""success"": 122, ""episode_timeout"": 14}",0.20333333333333334
+const_nominal,all,2400,2400,1663,363,239,155,0,0,0.6929166666666666,0.6929166666666666,0.6741656765654958,0.7110510758131274,"{""success"": 1663, ""prohibited_collision"": 219, ""drop"": 363, ""episode_timeout"": 155}",0.6929166666666667
+geometry_1cm,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1cm,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1cm,joint_early_2cm_030,200,200,189,0,12,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+geometry_1cm,joint_early_3cm_045,200,200,150,0,44,4,3,0,0.75,0.75,0.6856590168795417,0.8049183199318249,"{""prohibited_collision"": 43, ""release_timeout"": 3, ""success"": 150, ""episode_timeout"": 4}",
+geometry_1cm,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1cm,joint_late_2cm_030,200,200,182,0,19,0,0,0,0.91,0.91,0.8622342812328346,0.9423125511378069,"{""prohibited_collision"": 18, ""success"": 182}",
+geometry_1cm,joint_late_3cm_045,200,200,151,0,42,4,4,0,0.755,0.755,0.6909575644379659,0.8094313191096282,"{""prohibited_collision"": 41, ""release_timeout"": 4, ""success"": 151, ""episode_timeout"": 4}",
+geometry_1cm,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1cm,position_2cm,200,200,189,0,11,0,0,0,0.945,0.945,0.9042130012276914,0.9690146582965411,"{""prohibited_collision"": 11, ""success"": 189}",
+geometry_1cm,position_3cm,200,200,145,0,47,5,5,0,0.725,0.725,0.6593166064233035,0.7822029967069265,"{""prohibited_collision"": 45, ""release_timeout"": 5, ""success"": 145, ""episode_timeout"": 5}",
+geometry_1cm,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1cm,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1cm,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+geometry_1cm,outer,600,600,560,0,42,0,0,0,0.9333333333333333,0.9333333333333333,0.9104908108641832,0.9506623815906097,"{""prohibited_collision"": 40, ""success"": 560}",0.9333333333333332
+geometry_1cm,in_training,1800,1800,1760,0,42,0,0,0,0.9777777777777777,0.9777777777777777,0.969882220005171,0.9836383854722596,"{""success"": 1760, ""prohibited_collision"": 40}",0.9777777777777776
+geometry_1cm,extrapolation,600,600,446,0,133,13,12,0,0.7433333333333333,0.7433333333333333,0.7069121461356086,0.7766584927043904,"{""prohibited_collision"": 129, ""release_timeout"": 12, ""success"": 446, ""episode_timeout"": 13}",0.7433333333333333
+geometry_1cm,all,2400,2400,2206,0,175,13,12,0,0.9191666666666667,0.9191666666666667,0.9075797343155174,0.9294139004423554,"{""success"": 2206, ""prohibited_collision"": 169, ""release_timeout"": 12, ""episode_timeout"": 13}",0.9191666666666666
+geometry_1p5cm,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1p5cm,joint_early_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1p5cm,joint_early_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1p5cm,joint_early_3cm_045,200,200,172,0,28,0,0,0,0.86,0.86,0.8051011913429243,0.9013301736654437,"{""prohibited_collision"": 28, ""success"": 172}",
+geometry_1p5cm,joint_late_1cm_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1p5cm,joint_late_2cm_030,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1p5cm,joint_late_3cm_045,200,200,171,0,28,1,0,0,0.855,0.855,0.7995133246921847,0.8971064935799559,"{""prohibited_collision"": 28, ""success"": 171, ""episode_timeout"": 1}",
+geometry_1p5cm,position_1cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1p5cm,position_2cm,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1p5cm,position_3cm,200,200,174,0,28,0,0,0,0.87,0.87,0.8163364812775159,0.9097179772033067,"{""prohibited_collision"": 26, ""success"": 174}",
+geometry_1p5cm,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1p5cm,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+geometry_1p5cm,inner,1200,1200,1200,0,0,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+geometry_1p5cm,outer,600,600,600,0,0,0,0,0,1.0,1.0,0.9936382989862994,1.0,"{""success"": 600}",1.0
+geometry_1p5cm,in_training,1800,1800,1800,0,0,0,0,0,1.0,1.0,0.997870401081032,1.0,"{""success"": 1800}",1.0
+geometry_1p5cm,extrapolation,600,600,517,0,84,1,0,0,0.8616666666666667,0.8616666666666667,0.8317327039799384,0.8869989989534849,"{""prohibited_collision"": 82, ""success"": 517, ""episode_timeout"": 1}",0.8616666666666667
+geometry_1p5cm,all,2400,2400,2317,0,84,1,0,0,0.9654166666666667,0.9654166666666667,0.9573307148275895,0.972015100306152,"{""success"": 2317, ""prohibited_collision"": 82, ""episode_timeout"": 1}",0.9654166666666666
+nominal,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+nominal,joint_early_1cm_015,200,200,185,0,18,0,0,0,0.925,0.925,0.8799563897637055,0.954025082815618,"{""prohibited_collision"": 15, ""success"": 185}",
+nominal,joint_early_2cm_030,200,200,27,28,66,84,0,0,0.135,0.135,0.09446570454787906,0.18929138370752552,"{""prohibited_collision"": 61, ""drop"": 28, ""success"": 27, ""episode_timeout"": 84}",
+nominal,joint_early_3cm_045,200,200,0,123,84,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 77, ""drop"": 123}",
+nominal,joint_late_1cm_015,200,200,180,0,21,0,0,0,0.9,0.9,0.8505941875672826,0.9343295513309041,"{""prohibited_collision"": 20, ""success"": 180}",
+nominal,joint_late_2cm_030,200,200,130,2,62,7,0,0,0.65,0.65,0.5816346433604008,0.7127117587264192,"{""prohibited_collision"": 61, ""drop"": 2, ""success"": 130, ""episode_timeout"": 7}",
+nominal,joint_late_3cm_045,200,200,55,46,87,12,0,0,0.275,0.275,0.21779700329307355,0.34068339357669647,"{""prohibited_collision"": 87, ""drop"": 46, ""success"": 55, ""episode_timeout"": 12}",
+nominal,position_1cm,200,200,187,0,16,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+nominal,position_2cm,200,200,143,1,47,10,0,0,0.715,0.715,0.6488465397039482,0.7730499699538271,"{""prohibited_collision"": 46, ""drop"": 1, ""success"": 143, ""episode_timeout"": 10}",
+nominal,position_3cm,200,200,58,43,95,8,0,0,0.29,0.29,0.23154025607067882,0.3563747810077731,"{""prohibited_collision"": 91, ""drop"": 43, ""success"": 58, ""episode_timeout"": 8}",
+nominal,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+nominal,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+nominal,inner,1200,1200,1152,0,55,0,0,0,0.96,0.96,0.9473657151858288,0.969698564259655,"{""success"": 1152, ""prohibited_collision"": 48}",0.9600000000000001
+nominal,outer,600,600,300,31,175,101,0,0,0.5,0.5,0.4601198639241893,0.5398801360758106,"{""prohibited_collision"": 168, ""drop"": 31, ""success"": 300, ""episode_timeout"": 101}",0.5
+nominal,in_training,1800,1800,1452,31,230,101,0,0,0.8066666666666666,0.8066666666666666,0.787777655576121,0.8242495237535786,"{""success"": 1452, ""prohibited_collision"": 216, ""drop"": 31, ""episode_timeout"": 101}",0.8066666666666668
+nominal,extrapolation,600,600,113,212,266,20,0,0,0.18833333333333332,0.18833333333333332,0.15906857437151636,0.2215635525936904,"{""prohibited_collision"": 255, ""drop"": 212, ""success"": 113, ""episode_timeout"": 20}",0.18833333333333332
+nominal,all,2400,2400,1565,243,496,121,0,0,0.6520833333333333,0.6520833333333333,0.6327979825630023,0.670882610564854,"{""success"": 1565, ""prohibited_collision"": 471, ""drop"": 243, ""episode_timeout"": 121}",0.6520833333333333
+residual_seed11__final,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__final,joint_early_1cm_015,200,200,200,0,9,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__final,joint_early_2cm_030,200,200,103,2,28,76,0,0,0.515,0.515,0.44610849192745716,0.5833261482812249,"{""drop"": 2, ""prohibited_collision"": 19, ""success"": 103, ""episode_timeout"": 76}",
+residual_seed11__final,joint_early_3cm_045,200,200,0,159,69,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 41, ""drop"": 159}",
+residual_seed11__final,joint_late_1cm_015,200,200,200,0,6,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__final,joint_late_2cm_030,200,200,198,0,35,0,0,0,0.99,0.99,0.9642782382838231,0.9972533418664555,"{""prohibited_collision"": 2, ""success"": 198}",
+residual_seed11__final,joint_late_3cm_045,200,200,134,14,69,10,0,0,0.67,0.67,0.602166847737769,0.7314257412939605,"{""prohibited_collision"": 42, ""drop"": 14, ""success"": 134, ""episode_timeout"": 10}",
+residual_seed11__final,position_1cm,200,200,200,0,11,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__final,position_2cm,200,200,200,0,22,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__final,position_3cm,200,200,142,14,70,3,0,0,0.71,0.71,0.6436252189922268,0.7684597439293211,"{""prohibited_collision"": 41, ""drop"": 14, ""success"": 142, ""episode_timeout"": 3}",
+residual_seed11__final,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__final,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__final,inner,1200,1200,1200,0,26,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+residual_seed11__final,outer,600,600,501,2,85,76,0,0,0.835,0.835,0.8031867607910453,0.8625508995297752,"{""success"": 501, ""drop"": 2, ""prohibited_collision"": 21, ""episode_timeout"": 76}",0.835
+residual_seed11__final,in_training,1800,1800,1701,2,111,76,0,0,0.945,0.945,0.9334889963779218,0.9546156605841964,"{""success"": 1701, ""drop"": 2, ""prohibited_collision"": 21, ""episode_timeout"": 76}",0.9450000000000001
+residual_seed11__final,extrapolation,600,600,276,187,208,13,0,0,0.46,0.46,0.4205013387827536,0.5000075972983427,"{""prohibited_collision"": 124, ""drop"": 187, ""success"": 276, ""episode_timeout"": 13}",0.45999999999999996
+residual_seed11__final,all,2400,2400,1977,189,319,89,0,0,0.82375,0.82375,0.8079918289608705,0.83847343367021,"{""success"": 1977, ""drop"": 189, ""prohibited_collision"": 145, ""episode_timeout"": 89}",0.82375
+residual_seed11__selected,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__selected,joint_early_1cm_015,200,200,200,0,12,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__selected,joint_early_2cm_030,200,200,103,2,32,75,0,0,0.515,0.515,0.44610849192745716,0.5833261482812249,"{""drop"": 2, ""prohibited_collision"": 20, ""success"": 103, ""episode_timeout"": 75}",
+residual_seed11__selected,joint_early_3cm_045,200,200,0,160,69,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 40, ""drop"": 160}",
+residual_seed11__selected,joint_late_1cm_015,200,200,200,0,6,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__selected,joint_late_2cm_030,200,200,198,0,34,0,0,0,0.99,0.99,0.9642782382838231,0.9972533418664555,"{""prohibited_collision"": 2, ""success"": 198}",
+residual_seed11__selected,joint_late_3cm_045,200,200,131,13,68,9,0,0,0.655,0.655,0.5867558925905368,0.7174020562325106,"{""prohibited_collision"": 47, ""drop"": 13, ""success"": 131, ""episode_timeout"": 9}",
+residual_seed11__selected,position_1cm,200,200,200,0,8,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__selected,position_2cm,200,200,200,0,23,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__selected,position_3cm,200,200,141,14,70,3,0,0,0.705,0.705,0.6384128547538122,0.7638605614315084,"{""prohibited_collision"": 42, ""drop"": 14, ""success"": 141, ""episode_timeout"": 3}",
+residual_seed11__selected,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__selected,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__selected,inner,1200,1200,1200,0,26,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+residual_seed11__selected,outer,600,600,501,2,89,75,0,0,0.835,0.835,0.8031867607910453,0.8625508995297752,"{""success"": 501, ""drop"": 2, ""prohibited_collision"": 22, ""episode_timeout"": 75}",0.835
+residual_seed11__selected,in_training,1800,1800,1701,2,115,75,0,0,0.945,0.945,0.9334889963779218,0.9546156605841964,"{""success"": 1701, ""drop"": 2, ""prohibited_collision"": 22, ""episode_timeout"": 75}",0.9450000000000001
+residual_seed11__selected,extrapolation,600,600,272,187,207,12,0,0,0.4533333333333333,0.4533333333333333,0.41392304686578707,0.4933373785621584,"{""prohibited_collision"": 129, ""drop"": 187, ""success"": 272, ""episode_timeout"": 12}",0.4533333333333333
+residual_seed11__selected,all,2400,2400,1973,189,322,87,0,0,0.8220833333333334,0.8220833333333334,0.8062715881288266,0.8368656680022227,"{""success"": 1973, ""drop"": 189, ""prohibited_collision"": 151, ""episode_timeout"": 87}",0.8220833333333334
+residual_seed11__untrained,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__untrained,joint_early_1cm_015,200,200,185,0,19,0,0,0,0.925,0.925,0.8799563897637055,0.954025082815618,"{""prohibited_collision"": 15, ""success"": 185}",
+residual_seed11__untrained,joint_early_2cm_030,200,200,27,28,66,84,0,0,0.135,0.135,0.09446570454787906,0.18929138370752552,"{""prohibited_collision"": 61, ""drop"": 28, ""success"": 27, ""episode_timeout"": 84}",
+residual_seed11__untrained,joint_early_3cm_045,200,200,0,122,83,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 78, ""drop"": 122}",
+residual_seed11__untrained,joint_late_1cm_015,200,200,183,0,21,0,0,0,0.915,0.915,0.8681041292843443,0.9462542498225244,"{""prohibited_collision"": 17, ""success"": 183}",
+residual_seed11__untrained,joint_late_2cm_030,200,200,130,2,62,7,0,0,0.65,0.65,0.5816346433604008,0.7127117587264192,"{""prohibited_collision"": 61, ""drop"": 2, ""success"": 130, ""episode_timeout"": 7}",
+residual_seed11__untrained,joint_late_3cm_045,200,200,55,45,87,13,0,0,0.275,0.275,0.21779700329307355,0.34068339357669647,"{""prohibited_collision"": 87, ""drop"": 45, ""success"": 55, ""episode_timeout"": 13}",
+residual_seed11__untrained,position_1cm,200,200,187,0,17,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+residual_seed11__untrained,position_2cm,200,200,143,1,47,10,0,0,0.715,0.715,0.6488465397039482,0.7730499699538271,"{""prohibited_collision"": 46, ""drop"": 1, ""success"": 143, ""episode_timeout"": 10}",
+residual_seed11__untrained,position_3cm,200,200,57,44,94,9,0,0,0.285,0.285,0.22695003004617292,0.3511534602960517,"{""prohibited_collision"": 90, ""drop"": 44, ""success"": 57, ""episode_timeout"": 9}",
+residual_seed11__untrained,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__untrained,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed11__untrained,inner,1200,1200,1155,0,57,0,0,0,0.9625,0.9625,0.9501911905534889,0.9718571338889813,"{""success"": 1155, ""prohibited_collision"": 45}",0.9625
+residual_seed11__untrained,outer,600,600,300,31,175,101,0,0,0.5,0.5,0.4601198639241893,0.5398801360758106,"{""prohibited_collision"": 168, ""drop"": 31, ""success"": 300, ""episode_timeout"": 101}",0.5
+residual_seed11__untrained,in_training,1800,1800,1455,31,232,101,0,0,0.8083333333333333,0.8083333333333333,0.7895005935054046,0.8258528204945651,"{""success"": 1455, ""prohibited_collision"": 213, ""drop"": 31, ""episode_timeout"": 101}",0.8083333333333333
+residual_seed11__untrained,extrapolation,600,600,112,211,264,22,0,0,0.18666666666666668,0.18666666666666668,0.15751805107031233,0.2198019482316068,"{""prohibited_collision"": 255, ""drop"": 211, ""success"": 112, ""episode_timeout"": 22}",0.18666666666666668
+residual_seed11__untrained,all,2400,2400,1567,242,496,123,0,0,0.6529166666666667,0.6529166666666667,0.6336406350836737,0.6717039612941983,"{""success"": 1567, ""prohibited_collision"": 468, ""drop"": 242, ""episode_timeout"": 123}",0.6529166666666667
+residual_seed22__final,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__final,joint_early_1cm_015,200,200,200,0,38,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__final,joint_early_2cm_030,200,200,117,0,53,73,0,0,0.585,0.585,0.5157391490134403,0.6510571455024242,"{""prohibited_collision"": 10, ""success"": 117, ""episode_timeout"": 73}",
+residual_seed22__final,joint_early_3cm_045,200,200,0,162,75,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 38, ""drop"": 162}",
+residual_seed22__final,joint_late_1cm_015,200,200,200,0,40,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__final,joint_late_2cm_030,200,200,200,0,64,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__final,joint_late_3cm_045,200,200,137,5,74,14,0,0,0.685,0.685,0.6176504391426966,0.745376790097715,"{""prohibited_collision"": 44, ""drop"": 5, ""success"": 137, ""episode_timeout"": 14}",
+residual_seed22__final,position_1cm,200,200,200,0,36,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__final,position_2cm,200,200,199,0,50,0,0,0,0.995,0.995,0.9722262956021069,0.9991168312843989,"{""prohibited_collision"": 1, ""success"": 199}",
+residual_seed22__final,position_3cm,200,200,136,6,84,11,0,0,0.68,0.68,0.6124810156588646,0.7407346668453195,"{""prohibited_collision"": 47, ""drop"": 6, ""success"": 136, ""episode_timeout"": 11}",
+residual_seed22__final,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__final,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__final,inner,1200,1200,1200,0,114,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+residual_seed22__final,outer,600,600,516,0,167,73,0,0,0.86,0.86,0.8299394099868245,0.8854801652833111,"{""prohibited_collision"": 11, ""success"": 516, ""episode_timeout"": 73}",0.86
+residual_seed22__final,in_training,1800,1800,1716,0,281,73,0,0,0.9533333333333334,0.9533333333333334,0.9425865286527889,0.9621493016606802,"{""success"": 1716, ""prohibited_collision"": 11, ""episode_timeout"": 73}",0.9533333333333334
+residual_seed22__final,extrapolation,600,600,273,173,233,25,0,0,0.455,0.455,0.41556695173850283,0.49500560135273036,"{""prohibited_collision"": 129, ""drop"": 173, ""success"": 273, ""episode_timeout"": 25}",0.45500000000000007
+residual_seed22__final,all,2400,2400,1989,173,514,98,0,0,0.82875,0.82875,0.8131555750701763,0.8432937070609982,"{""success"": 1989, ""prohibited_collision"": 140, ""episode_timeout"": 98, ""drop"": 173}",0.82875
+residual_seed22__selected,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__selected,joint_early_1cm_015,200,200,200,0,38,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__selected,joint_early_2cm_030,200,200,117,0,53,73,0,0,0.585,0.585,0.5157391490134403,0.6510571455024242,"{""prohibited_collision"": 10, ""success"": 117, ""episode_timeout"": 73}",
+residual_seed22__selected,joint_early_3cm_045,200,200,0,164,76,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 36, ""drop"": 164}",
+residual_seed22__selected,joint_late_1cm_015,200,200,200,0,40,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__selected,joint_late_2cm_030,200,200,199,0,63,0,0,0,0.995,0.995,0.9722262956021069,0.9991168312843989,"{""prohibited_collision"": 1, ""success"": 199}",
+residual_seed22__selected,joint_late_3cm_045,200,200,134,5,73,15,0,0,0.67,0.67,0.602166847737769,0.7314257412939605,"{""prohibited_collision"": 46, ""drop"": 5, ""success"": 134, ""episode_timeout"": 15}",
+residual_seed22__selected,position_1cm,200,200,200,0,36,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__selected,position_2cm,200,200,200,0,50,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__selected,position_3cm,200,200,136,7,84,9,0,0,0.68,0.68,0.6124810156588646,0.7407346668453195,"{""prohibited_collision"": 48, ""drop"": 7, ""success"": 136, ""episode_timeout"": 9}",
+residual_seed22__selected,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__selected,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__selected,inner,1200,1200,1200,0,114,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+residual_seed22__selected,outer,600,600,516,0,166,73,0,0,0.86,0.86,0.8299394099868245,0.8854801652833111,"{""success"": 516, ""prohibited_collision"": 11, ""episode_timeout"": 73}",0.86
+residual_seed22__selected,in_training,1800,1800,1716,0,280,73,0,0,0.9533333333333334,0.9533333333333334,0.9425865286527889,0.9621493016606802,"{""success"": 1716, ""prohibited_collision"": 11, ""episode_timeout"": 73}",0.9533333333333334
+residual_seed22__selected,extrapolation,600,600,270,176,233,24,0,0,0.45,0.45,0.410636575767514,0.4899995943338562,"{""prohibited_collision"": 130, ""drop"": 176, ""success"": 270, ""episode_timeout"": 24}",0.45
+residual_seed22__selected,all,2400,2400,1986,176,513,97,0,0,0.8275,0.8275,0.8118642081328631,0.8420890691232881,"{""success"": 1986, ""prohibited_collision"": 141, ""episode_timeout"": 97, ""drop"": 176}",0.8275
+residual_seed22__untrained,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__untrained,joint_early_1cm_015,200,200,185,0,19,0,0,0,0.925,0.925,0.8799563897637055,0.954025082815618,"{""prohibited_collision"": 15, ""success"": 185}",
+residual_seed22__untrained,joint_early_2cm_030,200,200,27,28,66,84,0,0,0.135,0.135,0.09446570454787906,0.18929138370752552,"{""prohibited_collision"": 61, ""drop"": 28, ""success"": 27, ""episode_timeout"": 84}",
+residual_seed22__untrained,joint_early_3cm_045,200,200,0,122,83,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 78, ""drop"": 122}",
+residual_seed22__untrained,joint_late_1cm_015,200,200,183,0,21,0,0,0,0.915,0.915,0.8681041292843443,0.9462542498225244,"{""prohibited_collision"": 17, ""success"": 183}",
+residual_seed22__untrained,joint_late_2cm_030,200,200,130,2,62,7,0,0,0.65,0.65,0.5816346433604008,0.7127117587264192,"{""prohibited_collision"": 61, ""drop"": 2, ""success"": 130, ""episode_timeout"": 7}",
+residual_seed22__untrained,joint_late_3cm_045,200,200,55,45,87,13,0,0,0.275,0.275,0.21779700329307355,0.34068339357669647,"{""prohibited_collision"": 87, ""drop"": 45, ""success"": 55, ""episode_timeout"": 13}",
+residual_seed22__untrained,position_1cm,200,200,187,0,17,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+residual_seed22__untrained,position_2cm,200,200,143,1,47,10,0,0,0.715,0.715,0.6488465397039482,0.7730499699538271,"{""prohibited_collision"": 46, ""drop"": 1, ""success"": 143, ""episode_timeout"": 10}",
+residual_seed22__untrained,position_3cm,200,200,57,44,94,9,0,0,0.285,0.285,0.22695003004617292,0.3511534602960517,"{""prohibited_collision"": 90, ""drop"": 44, ""success"": 57, ""episode_timeout"": 9}",
+residual_seed22__untrained,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__untrained,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed22__untrained,inner,1200,1200,1155,0,57,0,0,0,0.9625,0.9625,0.9501911905534889,0.9718571338889813,"{""success"": 1155, ""prohibited_collision"": 45}",0.9625
+residual_seed22__untrained,outer,600,600,300,31,175,101,0,0,0.5,0.5,0.4601198639241893,0.5398801360758106,"{""prohibited_collision"": 168, ""drop"": 31, ""success"": 300, ""episode_timeout"": 101}",0.5
+residual_seed22__untrained,in_training,1800,1800,1455,31,232,101,0,0,0.8083333333333333,0.8083333333333333,0.7895005935054046,0.8258528204945651,"{""success"": 1455, ""prohibited_collision"": 213, ""drop"": 31, ""episode_timeout"": 101}",0.8083333333333333
+residual_seed22__untrained,extrapolation,600,600,112,211,264,22,0,0,0.18666666666666668,0.18666666666666668,0.15751805107031233,0.2198019482316068,"{""prohibited_collision"": 255, ""drop"": 211, ""success"": 112, ""episode_timeout"": 22}",0.18666666666666668
+residual_seed22__untrained,all,2400,2400,1567,242,496,123,0,0,0.6529166666666667,0.6529166666666667,0.6336406350836737,0.6717039612941983,"{""success"": 1567, ""prohibited_collision"": 468, ""drop"": 242, ""episode_timeout"": 123}",0.6529166666666667
+residual_seed33__final,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__final,joint_early_1cm_015,200,200,200,0,46,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__final,joint_early_2cm_030,200,200,124,0,58,62,0,0,0.62,0.62,0.5510671801561923,0.6844099415132637,"{""prohibited_collision"": 14, ""success"": 124, ""episode_timeout"": 62}",
+residual_seed33__final,joint_early_3cm_045,200,200,0,164,76,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 36, ""drop"": 164}",
+residual_seed33__final,joint_late_1cm_015,200,200,200,0,38,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__final,joint_late_2cm_030,200,200,200,0,68,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__final,joint_late_3cm_045,200,200,137,6,76,13,0,0,0.685,0.685,0.6176504391426966,0.745376790097715,"{""prohibited_collision"": 44, ""drop"": 6, ""success"": 137, ""episode_timeout"": 13}",
+residual_seed33__final,position_1cm,200,200,200,0,37,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__final,position_2cm,200,200,200,0,49,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__final,position_3cm,200,200,140,7,89,6,0,0,0.7,0.7,0.6332093162728074,0.7592525531762859,"{""prohibited_collision"": 47, ""drop"": 7, ""success"": 140, ""episode_timeout"": 6}",
+residual_seed33__final,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__final,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__final,inner,1200,1200,1200,0,121,0,0,0,1.0,1.0,0.9968089993972651,1.0,"{""success"": 1200}",1.0
+residual_seed33__final,outer,600,600,524,0,175,62,0,0,0.8733333333333333,0.8733333333333333,0.8443239915633483,0.8975926050130885,"{""success"": 524, ""prohibited_collision"": 14, ""episode_timeout"": 62}",0.8733333333333334
+residual_seed33__final,in_training,1800,1800,1724,0,296,62,0,0,0.9577777777777777,0.9577777777777777,0.9474717465770592,0.9661340428571299,"{""success"": 1724, ""prohibited_collision"": 14, ""episode_timeout"": 62}",0.9577777777777778
+residual_seed33__final,extrapolation,600,600,277,177,241,19,0,0,0.46166666666666667,0.46166666666666667,0.42214702401068854,0.5016740397336954,"{""prohibited_collision"": 127, ""drop"": 177, ""success"": 277, ""episode_timeout"": 19}",0.46166666666666667
+residual_seed33__final,all,2400,2400,2001,177,537,81,0,0,0.83375,0.83375,0.8183239791707394,0.8481093224605291,"{""success"": 2001, ""prohibited_collision"": 141, ""episode_timeout"": 81, ""drop"": 177}",0.8337500000000001
+residual_seed33__selected,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__selected,joint_early_1cm_015,200,200,199,0,43,0,0,0,0.995,0.995,0.9722262956021069,0.9991168312843989,"{""prohibited_collision"": 1, ""success"": 199}",
+residual_seed33__selected,joint_early_2cm_030,200,200,122,0,55,69,0,0,0.61,0.61,0.5409374595716976,0.6749165686253038,"{""prohibited_collision"": 9, ""success"": 122, ""episode_timeout"": 69}",
+residual_seed33__selected,joint_early_3cm_045,200,200,0,164,65,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 36, ""drop"": 164}",
+residual_seed33__selected,joint_late_1cm_015,200,200,198,0,45,0,0,0,0.99,0.99,0.9642782382838231,0.9972533418664555,"{""prohibited_collision"": 2, ""success"": 198}",
+residual_seed33__selected,joint_late_2cm_030,200,200,200,0,66,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__selected,joint_late_3cm_045,200,200,134,5,73,15,0,0,0.67,0.67,0.602166847737769,0.7314257412939605,"{""prohibited_collision"": 46, ""drop"": 5, ""success"": 134, ""episode_timeout"": 15}",
+residual_seed33__selected,position_1cm,200,200,199,0,40,0,0,0,0.995,0.995,0.9722262956021069,0.9991168312843989,"{""prohibited_collision"": 1, ""success"": 199}",
+residual_seed33__selected,position_2cm,200,200,200,0,44,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__selected,position_3cm,200,200,138,12,81,7,0,0,0.69,0.69,0.6228282243374195,0.750010551639219,"{""prohibited_collision"": 43, ""drop"": 12, ""success"": 138, ""episode_timeout"": 7}",
+residual_seed33__selected,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__selected,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__selected,inner,1200,1200,1196,0,128,0,0,0,0.9966666666666667,0.9966666666666667,0.9914606145760569,0.998702991491893,"{""success"": 1196, ""prohibited_collision"": 4}",0.9966666666666667
+residual_seed33__selected,outer,600,600,522,0,165,69,0,0,0.87,0.87,0.8407194386030814,0.8945729026467801,"{""success"": 522, ""prohibited_collision"": 9, ""episode_timeout"": 69}",0.87
+residual_seed33__selected,in_training,1800,1800,1718,0,293,69,0,0,0.9544444444444444,0.9544444444444444,0.9438054608727874,0.9631478592208617,"{""success"": 1718, ""prohibited_collision"": 13, ""episode_timeout"": 69}",0.9544444444444444
+residual_seed33__selected,extrapolation,600,600,272,181,219,22,0,0,0.4533333333333333,0.4533333333333333,0.41392304686578707,0.4933373785621584,"{""prohibited_collision"": 125, ""drop"": 181, ""success"": 272, ""episode_timeout"": 22}",0.4533333333333333
+residual_seed33__selected,all,2400,2400,1990,181,512,91,0,0,0.8291666666666667,0.8291666666666667,0.813586095272795,0.8436951884833873,"{""success"": 1990, ""prohibited_collision"": 138, ""episode_timeout"": 91, ""drop"": 181}",0.8291666666666666
+residual_seed33__untrained,clean,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__untrained,joint_early_1cm_015,200,200,185,0,19,0,0,0,0.925,0.925,0.8799563897637055,0.954025082815618,"{""prohibited_collision"": 15, ""success"": 185}",
+residual_seed33__untrained,joint_early_2cm_030,200,200,27,28,66,84,0,0,0.135,0.135,0.09446570454787906,0.18929138370752552,"{""prohibited_collision"": 61, ""drop"": 28, ""success"": 27, ""episode_timeout"": 84}",
+residual_seed33__untrained,joint_early_3cm_045,200,200,0,122,83,0,0,0,0.0,0.0,1.734723475976807e-18,0.018845326377266575,"{""prohibited_collision"": 78, ""drop"": 122}",
+residual_seed33__untrained,joint_late_1cm_015,200,200,183,0,21,0,0,0,0.915,0.915,0.8681041292843443,0.9462542498225244,"{""prohibited_collision"": 17, ""success"": 183}",
+residual_seed33__untrained,joint_late_2cm_030,200,200,130,2,62,7,0,0,0.65,0.65,0.5816346433604008,0.7127117587264192,"{""prohibited_collision"": 61, ""drop"": 2, ""success"": 130, ""episode_timeout"": 7}",
+residual_seed33__untrained,joint_late_3cm_045,200,200,55,45,87,13,0,0,0.275,0.275,0.21779700329307355,0.34068339357669647,"{""prohibited_collision"": 87, ""drop"": 45, ""success"": 55, ""episode_timeout"": 13}",
+residual_seed33__untrained,position_1cm,200,200,187,0,17,0,0,0,0.935,0.935,0.8919809207009312,0.961623645350847,"{""prohibited_collision"": 13, ""success"": 187}",
+residual_seed33__untrained,position_2cm,200,200,143,1,47,10,0,0,0.715,0.715,0.6488465397039482,0.7730499699538271,"{""prohibited_collision"": 46, ""drop"": 1, ""success"": 143, ""episode_timeout"": 10}",
+residual_seed33__untrained,position_3cm,200,200,57,44,94,9,0,0,0.285,0.285,0.22695003004617292,0.3511534602960517,"{""prohibited_collision"": 90, ""drop"": 44, ""success"": 57, ""episode_timeout"": 9}",
+residual_seed33__untrained,timing_early_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__untrained,timing_late_015,200,200,200,0,0,0,0,0,1.0,1.0,0.9811546736227335,1.0,"{""success"": 200}",
+residual_seed33__untrained,inner,1200,1200,1155,0,57,0,0,0,0.9625,0.9625,0.9501911905534889,0.9718571338889813,"{""success"": 1155, ""prohibited_collision"": 45}",0.9625
+residual_seed33__untrained,outer,600,600,300,31,175,101,0,0,0.5,0.5,0.4601198639241893,0.5398801360758106,"{""prohibited_collision"": 168, ""drop"": 31, ""success"": 300, ""episode_timeout"": 101}",0.5
+residual_seed33__untrained,in_training,1800,1800,1455,31,232,101,0,0,0.8083333333333333,0.8083333333333333,0.7895005935054046,0.8258528204945651,"{""success"": 1455, ""prohibited_collision"": 213, ""drop"": 31, ""episode_timeout"": 101}",0.8083333333333333
+residual_seed33__untrained,extrapolation,600,600,112,211,264,22,0,0,0.18666666666666668,0.18666666666666668,0.15751805107031233,0.2198019482316068,"{""prohibited_collision"": 255, ""drop"": 211, ""success"": 112, ""episode_timeout"": 22}",0.18666666666666668
+residual_seed33__untrained,all,2400,2400,1567,242,496,123,0,0,0.6529166666666667,0.6529166666666667,0.6336406350836737,0.6717039612941983,"{""success"": 1567, ""prohibited_collision"": 468, ""drop"": 242, ""episode_timeout"": 123}",0.6529166666666667

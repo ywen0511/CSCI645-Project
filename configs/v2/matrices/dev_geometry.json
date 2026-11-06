@@ -1,0 +1,283 @@
+{
+ "name": "dev_geometry",
+ "suite": "configs/v2/suites/development.jsonl",
+ "num_envs": 450,
+ "protocol": "configs/frozen/protocol.json",
+ "trace_cases": [
+  "v2dev-clean-0000",
+  "v2dev-position_in-0000",
+  "v2dev-position_stress-0000",
+  "v2dev-timing_early_in-0000",
+  "v2dev-timing_late_in-0000",
+  "v2dev-joint_early_in-0000",
+  "v2dev-joint_late_in-0000",
+  "v2dev-joint_early_stress-0000",
+  "v2dev-joint_late_stress-0000"
+ ],
+ "entries": [
+  {
+   "id": "geom_none",
+   "group": "ablation",
+   "method": "geometry",
+   "overrides": {
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": false
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_A",
+   "group": "ablation",
+   "method": "geometry",
+   "overrides": {
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": false
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_H",
+   "group": "ablation",
+   "method": "geometry",
+   "overrides": {
+    "geom_align": false,
+    "geom_anchor": true,
+    "geom_gate": false
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_G",
+   "group": "ablation",
+   "method": "geometry",
+   "overrides": {
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": true
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_AH",
+   "group": "ablation",
+   "method": "geometry",
+   "overrides": {
+    "geom_align": true,
+    "geom_anchor": true,
+    "geom_gate": false
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_AG",
+   "group": "ablation",
+   "method": "geometry",
+   "overrides": {
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": true
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_HG",
+   "group": "ablation",
+   "method": "geometry",
+   "overrides": {
+    "geom_align": false,
+    "geom_anchor": true,
+    "geom_gate": true
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_AHG",
+   "group": "ablation",
+   "method": "geometry",
+   "overrides": {
+    "geom_align": true,
+    "geom_anchor": true,
+    "geom_gate": true
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_bound_0p005",
+   "group": "bound",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.005
+   },
+   "trace": false
+  },
+  {
+   "id": "geom_bound_0p010",
+   "group": "bound",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_bound_0p015",
+   "group": "bound",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "trace": true
+  },
+  {
+   "id": "geom_bound_0p020",
+   "group": "bound",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.02
+   },
+   "trace": false
+  },
+  {
+   "id": "const_geometry_1p5cm_x-005mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     -0.005,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1p5cm_x-004mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     -0.004,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1p5cm_x-003mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     -0.003,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1p5cm_x-002mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     -0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1p5cm_x-001mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     -0.001,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1p5cm_x+001mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.001,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1p5cm_x+002mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1p5cm_x+003mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.003,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1p5cm_x+004mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.004,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1p5cm_x+005mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.005,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  }
+ ]
+}

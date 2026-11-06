@@ -1,0 +1,291 @@
+{
+ "name": "dev_controls",
+ "suite": "configs/v2/suites/development.jsonl",
+ "num_envs": 450,
+ "protocol": "configs/frozen/protocol.json",
+ "trace_cases": [
+  "v2dev-clean-0000",
+  "v2dev-position_in-0000",
+  "v2dev-position_stress-0000",
+  "v2dev-timing_early_in-0000",
+  "v2dev-timing_late_in-0000",
+  "v2dev-joint_early_in-0000",
+  "v2dev-joint_late_in-0000",
+  "v2dev-joint_early_stress-0000",
+  "v2dev-joint_late_stress-0000"
+ ],
+ "entries": [
+  {
+   "id": "nominal",
+   "group": "baseline",
+   "method": "nominal",
+   "trace": true
+  },
+  {
+   "id": "geometry_zero",
+   "group": "baseline",
+   "method": "geometry",
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x-005mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     -0.005,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x-004mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     -0.004,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x-003mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     -0.003,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x-002mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     -0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x-001mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     -0.001,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x+001mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.001,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x+002mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x+003mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.003,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x+004mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.004,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_geometry_1cm_x+005mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.005,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x-005mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     -0.005,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x-004mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     -0.004,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x-003mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     -0.003,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x-002mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     -0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x-001mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     -0.001,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x+001mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.001,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x+002mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x+003mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.003,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x+004mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.004,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "const_nominal_x+005mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.005,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  }
+ ]
+}

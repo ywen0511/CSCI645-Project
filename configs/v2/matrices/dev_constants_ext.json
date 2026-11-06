@@ -1,0 +1,194 @@
+{
+ "name": "dev_constants_ext",
+ "suite": "configs/v2/suites/development.jsonl",
+ "num_envs": 450,
+ "protocol": "configs/frozen/protocol.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "const_nominal_x+006mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.006,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_nominal_x+007mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.007,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_nominal_x+008mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.008,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_nominal_x+009mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.009,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_nominal_x+010mm",
+   "group": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1cm_x+006mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.006,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1cm_x+007mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.007,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1cm_x+008mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.008,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1cm_x+009mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.009,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1cm_x+010mm",
+   "group": "const_geometry_1cm",
+   "method": "geometry",
+   "overrides": {
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1p5cm_x+006mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.006,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1p5cm_x+007mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.007,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1p5cm_x+008mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.008,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1p5cm_x+009mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.009,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_geometry_1p5cm_x+010mm",
+   "group": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     0.0
+    ]
+   }
+  }
+ ]
+}

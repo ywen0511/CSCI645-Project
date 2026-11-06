@@ -11,6 +11,10 @@ Three responsibilities (PROJECT_SPEC.md Section 7):
 3. Release gate: release only after the request *and* receiver stability; wait at most ``max_wait``
    seconds beyond the request, then declare ``release_timeout``.
 
+v2 component ablations switch (1) and (2) off independently through ``align_enabled`` / ``anchor_enabled``
+and (3) through the ``gate_on`` argument of :func:`release_decision`. Disabled alignment adds zero
+correction; disabled anchoring keeps the candidate target; a disabled gate follows the scheduled request.
+
 The release decision for geometry-off methods is the fixed schedule (see :func:`release_decision`).
 """
 
@@ -45,6 +49,10 @@ class GeometryCfg:
     """Per-axis bound on deviations from the shared-holding anchor [m]."""
     max_wait: float = 1.0
     """Maximum release delay beyond the request [s]."""
+    align_enabled: bool = True
+    """v2 ablation flag A. False: the alignment correction is exactly zero."""
+    anchor_enabled: bool = True
+    """v2 ablation flag H. False: never anchor; the executed target stays the (aligned) candidate."""
 
 
 class StabilityTracker:
@@ -137,6 +145,8 @@ class GeometryCoordinator:
             stable: (N,) debounced receiver-stability flag.
         """
         c = self.cfg
+        if not c.anchor_enabled:
+            stable = torch.zeros_like(stable)
         newly = stable & ~self.anchored
         self.anchor_pos = torch.where(newly.unsqueeze(-1), receiver_tcp, self.anchor_pos)
         self.anchor_time = torch.where(newly, t, self.anchor_time)
@@ -144,6 +154,9 @@ class GeometryCoordinator:
 
         raw_align = c.align_gain * (grasp_from_object - grasp_nominal)
         align = raw_align.clamp(-c.align_max, c.align_max)
+        if not c.align_enabled:
+            raw_align = torch.zeros_like(raw_align)
+            align = torch.zeros_like(align)
         approach_target = p_cand + align
 
         deviation = p_cand - p_nom

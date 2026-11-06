@@ -249,7 +249,7 @@ infrastructure errors</strong>; every scheduled case is in the success denominat
 <td>95.5 (5.6)</td>
 </tr>
 <tr>
-<td><strong>all in-range (1,400 cases)</strong></td>
+<td><strong>all non-stress incl. clean (1,200 cases)</strong> †</td>
 <td>95.5</td>
 <td>100.0</td>
 <td>99.9 (0.1)</td>
@@ -257,7 +257,7 @@ infrastructure errors</strong>; every scheduled case is in the success denominat
 <td>100.0 (0.0)</td>
 </tr>
 <tr>
-<td><strong>all stress (400 cases)</strong></td>
+<td><strong>all stress (600 cases)</strong> †</td>
 <td>47.8</td>
 <td>93.3</td>
 <td>52.9 (4.4)</td>
@@ -266,6 +266,7 @@ infrastructure errors</strong>; every scheduled case is in the success denominat
 </tr>
 </tbody>
 </table>
+<p>† Correction (2026-11-04, v2 audit, erratum E1): the published v1.0.0 report labelled these rows "in-range (1,400 cases)" and "stress (400 cases)". The analysis pools 1,200 non-stress cases (clean and the five in-range conditions) and 600 stress cases; the percentages are unchanged. See docs/v2/V1_ERRATA.md.</p>
 <p>Per-seed stress success: residual 50.5 / 50.2 / 58.0 %, combined 97.0 / 98.0 / 88.5 %, combined_no_phase
 98.3 / 98.7 / 88.5 % (seeds 11 / 22 / 33).</p>
 <p><img alt="Figure 1" src="figures/success_by_condition.png" /></p>

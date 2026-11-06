@@ -1,0 +1,169 @@
+{
+ "name": "dev_learned",
+ "suite": "configs/v2/suites/development.jsonl",
+ "num_envs": 450,
+ "protocol": "configs/frozen/protocol.json",
+ "trace_cases": [
+  "v2dev-clean-0000",
+  "v2dev-position_in-0000",
+  "v2dev-position_stress-0000",
+  "v2dev-timing_early_in-0000",
+  "v2dev-timing_late_in-0000",
+  "v2dev-joint_early_in-0000",
+  "v2dev-joint_late_in-0000",
+  "v2dev-joint_early_stress-0000",
+  "v2dev-joint_late_stress-0000"
+ ],
+ "entries": [
+  {
+   "id": "combined_init_s11",
+   "group": "combined_init",
+   "method": "combined",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "checkpoint": "combined_seed11/checkpoints/step_000000000.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "combined_init_s22",
+   "group": "combined_init",
+   "method": "combined",
+   "training_seed": 22,
+   "run_id": "combined_seed22",
+   "checkpoint": "combined_seed22/checkpoints/step_000000000.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "combined_init_s33",
+   "group": "combined_init",
+   "method": "combined",
+   "training_seed": 33,
+   "run_id": "combined_seed33",
+   "checkpoint": "combined_seed33/checkpoints/step_000000000.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "combined_final_s11",
+   "group": "combined_final",
+   "method": "combined",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "checkpoint": "combined_seed11/checkpoints/final.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "combined_final_s22",
+   "group": "combined_final",
+   "method": "combined",
+   "training_seed": 22,
+   "run_id": "combined_seed22",
+   "checkpoint": "combined_seed22/checkpoints/final.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "combined_final_s33",
+   "group": "combined_final",
+   "method": "combined",
+   "training_seed": 33,
+   "run_id": "combined_seed33",
+   "checkpoint": "combined_seed33/checkpoints/final.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "residual_init_s11",
+   "group": "residual_init",
+   "method": "residual",
+   "training_seed": 11,
+   "run_id": "residual_seed11",
+   "checkpoint": "residual_seed11/checkpoints/step_000000000.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "residual_init_s22",
+   "group": "residual_init",
+   "method": "residual",
+   "training_seed": 22,
+   "run_id": "residual_seed22",
+   "checkpoint": "residual_seed22/checkpoints/step_000000000.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "residual_init_s33",
+   "group": "residual_init",
+   "method": "residual",
+   "training_seed": 33,
+   "run_id": "residual_seed33",
+   "checkpoint": "residual_seed33/checkpoints/step_000000000.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "residual_final_s11",
+   "group": "residual_final",
+   "method": "residual",
+   "training_seed": 11,
+   "run_id": "residual_seed11",
+   "checkpoint": "residual_seed11/checkpoints/final.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "residual_final_s22",
+   "group": "residual_final",
+   "method": "residual",
+   "training_seed": 22,
+   "run_id": "residual_seed22",
+   "checkpoint": "residual_seed22/checkpoints/final.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "residual_final_s33",
+   "group": "residual_final",
+   "method": "residual",
+   "training_seed": 33,
+   "run_id": "residual_seed33",
+   "checkpoint": "residual_seed33/checkpoints/final.pt",
+   "trace": true,
+   "label": "required"
+  },
+  {
+   "id": "combined_no_phase_final_s11",
+   "group": "combined_no_phase_final",
+   "method": "combined_no_phase",
+   "training_seed": 11,
+   "run_id": "combined_no_phase_seed11",
+   "checkpoint": "combined_no_phase_seed11/checkpoints/final.pt",
+   "trace": true,
+   "label": "exploratory"
+  },
+  {
+   "id": "combined_no_phase_final_s22",
+   "group": "combined_no_phase_final",
+   "method": "combined_no_phase",
+   "training_seed": 22,
+   "run_id": "combined_no_phase_seed22",
+   "checkpoint": "combined_no_phase_seed22/checkpoints/final.pt",
+   "trace": true,
+   "label": "exploratory"
+  },
+  {
+   "id": "combined_no_phase_final_s33",
+   "group": "combined_no_phase_final",
+   "method": "combined_no_phase",
+   "training_seed": 33,
+   "run_id": "combined_no_phase_seed33",
+   "checkpoint": "combined_no_phase_seed33/checkpoints/final.pt",
+   "trace": true,
+   "label": "exploratory"
+  }
+ ]
+}

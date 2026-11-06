@@ -1,0 +1,39 @@
+{
+ "name": "final_residual_seed33",
+ "suite": "configs/v2/suites/final.jsonl",
+ "num_envs": 900,
+ "protocol": "configs/v2/frozen/protocol.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_seed33__untrained",
+   "group": "untrained",
+   "method": "residual",
+   "training_seed": 33,
+   "run_id": "residual_seed33",
+   "checkpoint": "residual_seed33/checkpoints/step_000000000.pt",
+   "role": "untrained",
+   "checkpoint_tag": "step_000000000"
+  },
+  {
+   "id": "residual_seed33__selected",
+   "group": "selected",
+   "method": "residual",
+   "training_seed": 33,
+   "run_id": "residual_seed33",
+   "checkpoint": "residual_seed33/checkpoints/step_008028160.pt",
+   "role": "selected",
+   "checkpoint_tag": "step_008028160"
+  },
+  {
+   "id": "residual_seed33__final",
+   "group": "final",
+   "method": "residual",
+   "training_seed": 33,
+   "run_id": "residual_seed33",
+   "checkpoint": "residual_seed33/checkpoints/final.pt",
+   "role": "final",
+   "checkpoint_tag": "final"
+  }
+ ]
+}

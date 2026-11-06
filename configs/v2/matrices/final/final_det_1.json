@@ -1,0 +1,85 @@
+{
+ "name": "final_det_1",
+ "suite": "configs/v2/suites/final.jsonl",
+ "num_envs": 900,
+ "protocol": "configs/v2/frozen/protocol.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "const_geometry_1p5cm",
+   "group": "primary constant control for combined",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "geometry_1p5cm",
+   "group": "stronger comparator (matches combined)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   }
+  },
+  {
+   "id": "ablation_1cm_AG",
+   "group": "component ablation (1 cm, as in development)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": true
+   }
+  },
+  {
+   "id": "ablation_1cm_H",
+   "group": "component ablation (1 cm, as in development)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": false,
+    "geom_anchor": true,
+    "geom_gate": false
+   }
+  },
+  {
+   "id": "ablation_1p5cm_A",
+   "group": "exploratory component ablation (1.5 cm)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": false
+   }
+  },
+  {
+   "id": "ablation_1p5cm_G",
+   "group": "exploratory component ablation (1.5 cm)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": true
+   }
+  },
+  {
+   "id": "ablation_1p5cm_none",
+   "group": "exploratory component ablation (1.5 cm)",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": false
+   }
+  }
+ ]
+}

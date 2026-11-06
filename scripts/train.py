@@ -81,6 +81,18 @@ def main():
         env = RslRlVecEnvWrapper(env_raw, clip_actions=None)
         runner, agent = make_runner(env, agent, log_dir=str(out / "tensorboard"))
         train_cfg = runner.cfg
+        actor_init = tr.get("actor_init", "default")
+        if actor_init == "zero_mean_output" and not args.resume:
+            # v2 option: zero the actor's output layer so the deterministic residual mean is exactly 0 at step 0
+            # (exploration noise std is unchanged; the stochastic training actions are NOT zero).
+            import torch.nn as nn
+
+            last = [mod for mod in runner.alg.get_policy().mlp.modules() if isinstance(mod, nn.Linear)][-1]
+            with torch.no_grad():
+                last.weight.zero_()
+                last.bias.zero_()
+        elif actor_init not in ("default", "zero_mean_output"):
+            raise ValueError(f"unknown actor_init {actor_init}")
 
         meta = {
             "run_id": out.name, "method": args.method, "seed": args.seed, "run_type": args.run_type,
@@ -89,6 +101,7 @@ def main():
             "num_envs": num_envs, "rollout_batch_transitions": batch, "requested_transitions": budget,
             "realized_transitions": total_iters * batch, "total_iterations": total_iters,
             "checkpoint_interval_transitions": ckpt_every, "git": rt.git_state(), "hardware": rt.hardware_info(),
+            "actor_init": actor_init,
         }
         start_iter, transitions = 0, 0
         if args.resume:
@@ -124,6 +137,7 @@ def main():
                 "config_hash": meta["config_hash"], "protocol_sha256": meta["protocol_sha256"],
                 "source_commit": meta["git"]["commit"], "source_dirty": meta["git"]["dirty"],
                 "curriculum_stage": stage, "phase_input": cfg.phase_input, "obs_dim": cfg.observation_space,
+                "actor_init": actor_init, "protocol_id": protocol.get("protocol_id", "v1"),
                 "rng": {
                     "torch_cpu": torch.get_rng_state(),
                     "torch_cuda": torch.cuda.get_rng_state() if torch.cuda.is_available() else None,
@@ -149,6 +163,8 @@ def main():
         runner.logger.init_logging_writer()
         t_start = time.time()
         last_stats = dict(env_raw.stats)
+        last_scored = env_raw.scored_transitions_total
+        scored_cum = 0
         for it in range(start_iter, total_iters):
             t0 = time.time()
             ep_rew = []
@@ -177,11 +193,15 @@ def main():
             transitions += batch
             d = {k: env_raw.stats[k] - last_stats[k] for k in env_raw.stats}
             last_stats = dict(env_raw.stats)
+            scored_it = env_raw.scored_transitions_total - last_scored
+            last_scored = env_raw.scored_transitions_total
+            scored_cum += scored_it
             row = {
                 "iteration": it + 1, "transitions": transitions, "collect_s": collect, "learn_s": learn,
                 "fps": batch / max(1e-6, collect + learn), "mean_step_reward": sum(ep_rew) / len(ep_rew),
                 "lr": float(runner.alg.learning_rate),
                 "action_std": runner.alg.get_policy().output_std.detach().reshape(-1, 3)[0].cpu().tolist(),
+                "scored_transitions": scored_it, "scored_transitions_this_process": scored_cum,
                 "episodes": d["episodes"], **{f"train_{k}": v for k, v in d.items() if k != "episodes"},
                 **{f"loss_{k}": float(v) for k, v in loss.items()},
                 "wall_s": time.time() - t_start, "utc": rt.utc_now(),
@@ -199,6 +219,7 @@ def main():
         save_ckpt("final", total_iters, transitions)
         runner.logger.stop_logging_writer()
         done = {"completed_utc": rt.utc_now(), "transitions": transitions, "iterations": total_iters,
+                "scored_transitions_this_process": scored_cum,
                 "wall_s": time.time() - t_start}
         (out / "DONE.json").write_text(json.dumps(done, indent=2))
         print(f"[train] done: {done}")

@@ -1,0 +1,556 @@
+{
+ "analysis": {
+  "exploratory": [
+   "geometry component ablations (1 cm and 1.5 cm) and factorial effects",
+   "alignment-bound sweep",
+   "untrained step-0 vs zero residual",
+   "geometry_1cm and const_geometry_1cm",
+   "per-condition differences"
+  ],
+  "metric": "episode success over valid resets; also scheduled-case success, drop, collision-episode, timeout and release-timeout rates",
+  "multiplicity": "five primary comparisons; Holm-adjusted bootstrap sign p-values reported alongside unadjusted CIs",
+  "primary_comparisons": [
+   "combined (selected) - geometry_1p5cm",
+   "combined (selected) - const_geometry_1p5cm",
+   "residual (selected) - nominal",
+   "residual (selected) - const_nominal",
+   "combined (selected) - combined_no_phase (selected)"
+  ],
+  "secondary_declared": "the same five comparisons with final checkpoints",
+  "summaries": "per seed, per condition, per group (inner / outer / extrapolation / all) and equal-condition means",
+  "uncertainty": "paired two-level bootstrap (10,000 replicates; training seeds within method x shared case IDs), 95% percentile CI; Wilson intervals for single-controller rates"
+ },
+ "changes_from_v1": [
+  "training distribution reaches +-2 cm per axis and +-0.30 s (curriculum below)",
+  "combined and combined_no_phase use full geometry with a 1.5 cm alignment bound (env_overrides.align_max)",
+  "actor initialization: zero_mean_output",
+  "checkpoint selection excludes step 0; new tie-breaks (collision rate, residual squared norm, latest)",
+  "constant-offset controls and geometry component ablations added as deterministic controllers",
+  "records include the full episode return (terminal-step reward added; v1 erratum E2)",
+  "12 final conditions (9 v1 structures with fresh draws + 3 extrapolation conditions at +-3 cm)"
+ ],
+ "constants": {
+  "evidence": "results/v2/diagnostics/constants_v2.json",
+  "geometry_1cm_x_m": 0.007,
+  "geometry_1p5cm_x_m": 0.01,
+  "nominal_x_m": 0.009,
+  "selected_on": "750 development cases (development + development_feasibility), grid -5..+10 mm in x, y=z=0"
+ },
+ "deterministic_controllers": {
+  "ablation_1cm_A": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": false
+   },
+   "role": "component ablation (1 cm, as in development)"
+  },
+  "ablation_1cm_AG": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": true
+   },
+   "role": "component ablation (1 cm, as in development)"
+  },
+  "ablation_1cm_AH": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": true,
+    "geom_anchor": true,
+    "geom_gate": false
+   },
+   "role": "component ablation (1 cm, as in development)"
+  },
+  "ablation_1cm_AHG": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": true,
+    "geom_anchor": true,
+    "geom_gate": true
+   },
+   "role": "component ablation (1 cm, as in development)"
+  },
+  "ablation_1cm_G": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": true
+   },
+   "role": "component ablation (1 cm, as in development)"
+  },
+  "ablation_1cm_H": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": false,
+    "geom_anchor": true,
+    "geom_gate": false
+   },
+   "role": "component ablation (1 cm, as in development)"
+  },
+  "ablation_1cm_HG": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": false,
+    "geom_anchor": true,
+    "geom_gate": true
+   },
+   "role": "component ablation (1 cm, as in development)"
+  },
+  "ablation_1cm_none": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": false
+   },
+   "role": "component ablation (1 cm, as in development)"
+  },
+  "ablation_1p5cm_A": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": false
+   },
+   "role": "exploratory component ablation (1.5 cm)"
+  },
+  "ablation_1p5cm_AG": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": true
+   },
+   "role": "exploratory component ablation (1.5 cm)"
+  },
+  "ablation_1p5cm_AH": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": true,
+    "geom_anchor": true,
+    "geom_gate": false
+   },
+   "role": "exploratory component ablation (1.5 cm)"
+  },
+  "ablation_1p5cm_AHG": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": true,
+    "geom_anchor": true,
+    "geom_gate": true
+   },
+   "role": "exploratory component ablation (1.5 cm)"
+  },
+  "ablation_1p5cm_G": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": true
+   },
+   "role": "exploratory component ablation (1.5 cm)"
+  },
+  "ablation_1p5cm_H": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": false,
+    "geom_anchor": true,
+    "geom_gate": false
+   },
+   "role": "exploratory component ablation (1.5 cm)"
+  },
+  "ablation_1p5cm_HG": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": false,
+    "geom_anchor": true,
+    "geom_gate": true
+   },
+   "role": "exploratory component ablation (1.5 cm)"
+  },
+  "ablation_1p5cm_none": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "geom_align": false,
+    "geom_anchor": false,
+    "geom_gate": false
+   },
+   "role": "exploratory component ablation (1.5 cm)"
+  },
+  "bound_0p005": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.005
+   },
+   "role": "alignment-bound sweep"
+  },
+  "bound_0p010": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01
+   },
+   "role": "alignment-bound sweep"
+  },
+  "bound_0p015": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "role": "alignment-bound sweep"
+  },
+  "bound_0p020": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.02
+   },
+   "role": "alignment-bound sweep"
+  },
+  "const_geometry_1cm": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01,
+    "constant_residual_m": [
+     0.007,
+     0.0,
+     0.0
+    ]
+   },
+   "role": "diagnostic (original geometry setting)"
+  },
+  "const_geometry_1p5cm": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     0.0
+    ]
+   },
+   "role": "primary constant control for combined"
+  },
+  "const_nominal": {
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.009,
+     0.0,
+     0.0
+    ]
+   },
+   "role": "constant control for residual"
+  },
+  "geometry_1cm": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.01
+   },
+   "role": "historical v1 controller"
+  },
+  "geometry_1p5cm": {
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "role": "stronger comparator (matches combined)"
+  },
+  "nominal": {
+   "method": "nominal",
+   "overrides": {}
+  }
+ },
+ "env_overrides": {
+  "align_max": 0.015
+ },
+ "evaluation": {
+  "deterministic_policy": true,
+  "development_suite_seed": 6453028,
+  "final_conditions": [
+   {
+    "cases": 200,
+    "id": "clean",
+    "position_bound_m": 0.0,
+    "relation_to_training": "in_training (clean; deterministic repeats)",
+    "release_offset_s": 0.0,
+    "v1_structure": "clean"
+   },
+   {
+    "cases": 200,
+    "id": "position_1cm",
+    "position_bound_m": 0.01,
+    "relation_to_training": "in_training",
+    "release_offset_s": 0.0,
+    "v1_structure": "position_in"
+   },
+   {
+    "cases": 200,
+    "id": "position_2cm",
+    "position_bound_m": 0.02,
+    "relation_to_training": "in_training (full final-stage range)",
+    "release_offset_s": 0.0,
+    "v1_structure": "position_stress"
+   },
+   {
+    "cases": 200,
+    "id": "timing_early_015",
+    "position_bound_m": 0.0,
+    "relation_to_training": "in_training",
+    "release_offset_s": -0.15,
+    "v1_structure": "timing_early_in"
+   },
+   {
+    "cases": 200,
+    "id": "timing_late_015",
+    "position_bound_m": 0.0,
+    "relation_to_training": "in_training",
+    "release_offset_s": 0.15,
+    "v1_structure": "timing_late_in"
+   },
+   {
+    "cases": 200,
+    "id": "joint_early_1cm_015",
+    "position_bound_m": 0.01,
+    "relation_to_training": "in_training",
+    "release_offset_s": -0.15,
+    "v1_structure": "joint_early_in"
+   },
+   {
+    "cases": 200,
+    "id": "joint_late_1cm_015",
+    "position_bound_m": 0.01,
+    "relation_to_training": "in_training",
+    "release_offset_s": 0.15,
+    "v1_structure": "joint_late_in"
+   },
+   {
+    "cases": 200,
+    "id": "joint_early_2cm_030",
+    "position_bound_m": 0.02,
+    "relation_to_training": "in_training (corner of the final-stage range)",
+    "release_offset_s": -0.3,
+    "v1_structure": "joint_early_stress"
+   },
+   {
+    "cases": 200,
+    "id": "joint_late_2cm_030",
+    "position_bound_m": 0.02,
+    "relation_to_training": "in_training (corner of the final-stage range)",
+    "release_offset_s": 0.3,
+    "v1_structure": "joint_late_stress"
+   },
+   {
+    "cases": 200,
+    "id": "position_3cm",
+    "position_bound_m": 0.03,
+    "relation_to_training": "extrapolation (beyond training and validation ranges)",
+    "release_offset_s": 0.0,
+    "v1_structure": null
+   },
+   {
+    "cases": 200,
+    "id": "joint_early_3cm_045",
+    "position_bound_m": 0.03,
+    "relation_to_training": "extrapolation (beyond training and validation ranges)",
+    "release_offset_s": -0.45,
+    "v1_structure": null
+   },
+   {
+    "cases": 200,
+    "id": "joint_late_3cm_045",
+    "position_bound_m": 0.03,
+    "relation_to_training": "extrapolation (beyond training and validation ranges)",
+    "release_offset_s": 0.45,
+    "v1_structure": null
+   }
+  ],
+  "final_suite_seed": 6453026,
+  "groups": {
+   "extrapolation": [
+    "position_3cm",
+    "joint_early_3cm_045",
+    "joint_late_3cm_045"
+   ],
+   "inner": [
+    "clean",
+    "position_1cm",
+    "timing_early_015",
+    "timing_late_015",
+    "joint_early_1cm_015",
+    "joint_late_1cm_015"
+   ],
+   "outer": [
+    "position_2cm",
+    "joint_early_2cm_030",
+    "joint_late_2cm_030"
+   ]
+  },
+  "learned_entries": [
+   "selected checkpoint",
+   "final checkpoint",
+   "step-0 (untrained) checkpoint"
+  ],
+  "num_envs": 900,
+  "validation": {
+   "prefix": "v2val",
+   "seed": 6453027,
+   "strata": [
+    {
+     "cases": 20,
+     "id": "clean",
+     "position_bound_m": 0.0,
+     "relation": "in_training_distribution (clean, deterministic repeats)",
+     "release_offset_range_s": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "cases": 80,
+     "id": "in_range",
+     "position_bound_m": 0.01,
+     "relation": "in_training_distribution",
+     "release_offset_range_s": [
+      -0.15,
+      0.15
+     ]
+    },
+    {
+     "cases": 100,
+     "id": "train_full",
+     "position_bound_m": 0.02,
+     "relation": "in_training_distribution (final curriculum stage)",
+     "release_offset_range_s": [
+      -0.3,
+      0.3
+     ]
+    },
+    {
+     "cases": 100,
+     "id": "train_edge",
+     "position_abs_range_m": [
+      0.015,
+      0.02
+     ],
+     "relation": "in_training_distribution (edge: every axis |offset| >= 1.5 cm)",
+     "release_offset_range_s": [
+      -0.3,
+      0.3
+     ]
+    },
+    {
+     "cases": 100,
+     "id": "harder",
+     "position_bound_m": 0.025,
+     "relation": "beyond training distribution, inside the +-3 cm extrapolation range",
+     "release_offset_range_s": [
+      -0.375,
+      0.375
+     ]
+    }
+   ]
+  }
+ },
+ "informed_by_v1": "v2 is designed after seeing v1 results and v2 development diagnostics; new held-out cases address case reuse only",
+ "platform": {
+  "framework": "Isaac Lab",
+  "isaac_lab": "v3.0.0",
+  "isaac_sim": "6.2.0.0",
+  "physics": "isaacsim_physx",
+  "physics_backend": "PhysX",
+  "rl_library": "rsl-rl-lib 5.5.1",
+  "robot": "two Franka arms with two-finger parallel-jaw grippers",
+  "simulator": "Isaac Sim"
+ },
+ "policy": {
+  "action_dim": 3,
+  "algorithm": "PPO",
+  "hidden_dims": [
+   128,
+   128
+  ],
+  "phase_channels": 4,
+  "preferred_library": "rsl_rl",
+  "residual_bound_m": 0.02
+ },
+ "ppo_overrides": {},
+ "protocol_id": "v2.0",
+ "selection": {
+  "both_selected_and_final_evaluated": true,
+  "candidates": "first periodic checkpoint at or after 2M, 4M, 6M, 8M and 10M transitions; step 0 excluded (kept as a named untrained control)",
+  "rule": [
+   "highest validation success rate (valid resets)",
+   "lowest collision-episode rate",
+   "lowest mean bounded residual squared norm over scored steps",
+   "latest transition count"
+  ],
+  "validation_suite": "configs/v2/suites/validation.jsonl"
+ },
+ "status": "frozen at tag experiment-v2",
+ "training": {
+  "actor_init": "zero_mean_output",
+  "checkpoint_interval_transitions": 1000000,
+  "curriculum": [
+   {
+    "fraction_end": 0.1,
+    "fraction_start": 0.0,
+    "position_bound_m": 0.0,
+    "release_offset_bound_s": 0.0
+   },
+   {
+    "fraction_end": 0.3,
+    "fraction_start": 0.1,
+    "position_bound_m": 0.01,
+    "release_offset_bound_s": 0.15
+   },
+   {
+    "fraction_end": 0.5,
+    "fraction_start": 0.3,
+    "position_bound_m": 0.015,
+    "release_offset_bound_s": 0.225
+   },
+   {
+    "fraction_end": 1.0,
+    "fraction_start": 0.5,
+    "position_bound_m": 0.02,
+    "release_offset_bound_s": 0.3
+   }
+  ],
+  "final_transitions_per_run": 10000000,
+  "methods": [
+   "residual",
+   "combined",
+   "combined_no_phase"
+  ],
+  "num_envs": 1024,
+  "rollout_batch_transitions": 32768,
+  "rollout_steps_per_env": 32,
+  "scored_transitions": "also logged per iteration (environment steps in the SCORED phase, residual active)",
+  "seeds": [
+   11,
+   22,
+   33
+  ],
+  "transition_definition": "vectorized environment steps x environments, including the scripted reset-settling steps (residual disabled)"
+ },
+ "video_rule": "configs/v2/video_rule.json"
+}

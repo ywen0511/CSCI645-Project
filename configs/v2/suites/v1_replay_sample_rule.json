@@ -1,0 +1,29 @@
+{
+ "rule": "first 12 (by case ID) stress cases whose success differs across the 3 v1 combined final checkpoints; first 4 position_stress cases whose success differs across the 3 v1 residual final checkpoints; first 2 cases of position_in, joint_early_in, joint_late_in; final-clean-0000",
+ "case_ids": [
+  "final-clean-0000",
+  "final-joint_early_in-0000",
+  "final-joint_early_in-0001",
+  "final-joint_early_stress-0001",
+  "final-joint_early_stress-0015",
+  "final-joint_early_stress-0031",
+  "final-joint_early_stress-0032",
+  "final-joint_early_stress-0037",
+  "final-joint_early_stress-0070",
+  "final-joint_early_stress-0091",
+  "final-joint_early_stress-0114",
+  "final-joint_early_stress-0136",
+  "final-joint_early_stress-0185",
+  "final-joint_late_in-0000",
+  "final-joint_late_in-0001",
+  "final-joint_late_stress-0000",
+  "final-joint_late_stress-0025",
+  "final-position_in-0000",
+  "final-position_in-0001",
+  "final-position_stress-0018",
+  "final-position_stress-0034",
+  "final-position_stress-0038",
+  "final-position_stress-0052"
+ ],
+ "source": "v1.0.0 results/eval_final_checkpoint"
+}

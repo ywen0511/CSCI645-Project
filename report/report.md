@@ -200,8 +200,10 @@ Table 1 gives held-out success rates (Figure 1). Learned methods show the mean o
 | joint_late_in | 91.0 | 100.0 | 99.8 (0.3) | 100.0 (0.0) | 100.0 (0.0) |
 | joint_early_stress | 11.5 | 94.5 | 15.2 (6.0) | 95.3 (5.1) | 96.0 (5.6) |
 | joint_late_stress | 66.0 | 93.5 | 73.5 (4.4) | 94.7 (5.8) | 95.5 (5.6) |
-| **all in-range (1,400 cases)** | 95.5 | 100.0 | 99.9 (0.1) | 100.0 (0.0) | 100.0 (0.0) |
-| **all stress (400 cases)** | 47.8 | 93.3 | 52.9 (4.4) | 94.5 (5.2) | 95.2 (5.8) |
+| **all non-stress incl. clean (1,200 cases)** † | 95.5 | 100.0 | 99.9 (0.1) | 100.0 (0.0) | 100.0 (0.0) |
+| **all stress (600 cases)** † | 47.8 | 93.3 | 52.9 (4.4) | 94.5 (5.2) | 95.2 (5.8) |
+
+† Correction (2026-11-04, v2 audit, erratum E1): the published v1.0.0 report labelled these rows "in-range (1,400 cases)" and "stress (400 cases)". The analysis pools 1,200 non-stress cases (clean and the five in-range conditions) and 600 stress cases; the percentages are unchanged. See docs/v2/V1_ERRATA.md.
 
 Per-seed stress success: residual 50.5 / 50.2 / 58.0 %, combined 97.0 / 98.0 / 88.5 %, combined_no_phase
 98.3 / 98.7 / 88.5 % (seeds 11 / 22 / 33).

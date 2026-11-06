@@ -1,0 +1,8 @@
+{
+ "rule": "use P2 unless the mean success of P2 checkpoints >= 2M transitions is > 1.0 pp below P1's on the 1,150 development cases",
+ "combined_P1_mean_success_ge2M": 0.9763043478260869,
+ "n_ckpts_P1": 4,
+ "combined_P2_mean_success_ge2M": 0.9684782608695652,
+ "n_ckpts_P2": 4,
+ "decision": "P2_zero_mean_init"
+}

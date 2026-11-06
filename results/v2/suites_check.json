@@ -1,0 +1,24 @@
+{
+ "duplicate_case_ids": [],
+ "duplicate_init_seeds": 0,
+ "nonzero_offsets_shared_between_suites": {},
+ "ok": true,
+ "suites": {
+  "development": 450,
+  "development_feasibility": 300,
+  "development_valproxy": 400,
+  "final": 2400,
+  "v1_development": 450,
+  "v1_final": 1800,
+  "v1_validation": 100,
+  "validation": 400
+ },
+ "zero_offset_cases_per_suite": {
+  "development": 150,
+  "development_valproxy": 20,
+  "final": 600,
+  "v1_development": 150,
+  "v1_final": 600,
+  "validation": 20
+ }
+}
