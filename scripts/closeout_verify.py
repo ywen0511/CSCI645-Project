@@ -198,7 +198,8 @@ def main():
     hits = []
     copied = {c["name"] for c in man.get("copied_unchanged_from_v2.0.0", [])} | {"v2.0.0-originals.tar.gz"}
     for (f, m), _ in member_sha.items():
-        if f in copied or not m.endswith((".json", ".jsonl", ".log", ".txt", ".md", ".csv", ".sh", ".py")):
+        if f in copied or not m.endswith((".json", ".jsonl", ".log", ".txt", ".md", ".csv", ".sh", ".py")) \
+                or m.endswith("scripts/closeout_verify.py"):  # the scanner's own pattern list
             continue
         t = (X / m).read_text(errors="replace")
         for p in pats:

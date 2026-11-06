@@ -21,7 +21,12 @@ v1.0.0 and v2.0.0 are not modified: the v2.0.0 documents are kept byte-identical
 The v2 commit `38a12ec` (configs/v2/matrices with absolute checkpoint paths) and the v1 commit `11e3118`
 contain absolute paths of the private cluster work folder. Shared history is not rewritten. Release
 archives created for v2.1.0 are redacted (`<WORK>`, `<cluster-node>`) and leak-scanned
-([VERIFICATION.md](VERIFICATION.md)).
+([VERIFICATION.md](VERIFICATION.md)). Two further exposures were found by that scan and are documented, not
+rewritten. (1) The v2.0.0 `report.pdf` (also inside `v2.0.0-originals.tar.gz`) contains 7 `file://` link
+targets with the build machine's home path, because Chrome printed relative links as local file URIs. The
+v2.1.0 report builder rewrites relative links to GitHub URLs. (2) Commit `3b7374e` committed
+`results/closeout/repeatability/per_task.csv` with internal cluster node names in its `hosts` column; the
+next commit replaces them with `<cluster-node>`.
 
 ## Closeout process notes
 

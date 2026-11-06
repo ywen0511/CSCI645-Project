@@ -143,7 +143,7 @@ def cmd_analyze(a):
                          "agree_terminal_reason": g["terminal_reason_equal"], "agree_success": g["success_equal"],
                          "compared_with_archived": g["compared"], "attempts": len(att),
                          "attempt_return_codes": ";".join(str(x["rc"]) for x in att),
-                         "hosts": ";".join(sorted({x.get("host", "") for x in att})),
+                         "hosts": ";".join(sorted({"<cluster-node>" if x.get("host") else "" for x in att})),  # names withheld
                          "gpus": ";".join(sorted({(x.get("gpu") or ["", ""])[1] if len(x.get("gpu") or []) > 1 else "" for x in att}))})
     arch_c = {e: counts(arch[e], case_ids) for e in entries}
 
