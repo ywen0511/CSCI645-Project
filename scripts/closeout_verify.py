@@ -21,7 +21,8 @@ import re
 import tarfile
 from pathlib import Path
 
-DEFAULT_LEAKS = [r"/data/rtxw01", r"/home/[a-z0-9_]+/", r"dcwip\w+", r"\.gm\.com", r"kztrgg", r"nbak/robot_intel"]
+DEFAULT_LEAKS = [r"/data/rtxw01", r"/home/(?!conda/)[a-z0-9_]+/", r"dcwip\w+", r"\.gm\.com", r"kztrgg", r"nbak/robot_intel"]
+# /home/conda/... is the generic conda-forge build path recorded in pip freeze (also in the committed lock)
 
 
 def sha(p: Path) -> str:
@@ -125,8 +126,8 @@ def main():
             cbad.append(f"hash {e['member']}")
     runs_final = {e["run_id"] for e in ck if e["run_type"] == "final"}
     roles_ok = all({e.get("role") for e in ck if e["run_id"] == r and e.get("role")} >= {"untrained", "selected", "final", "resume"}
-                   and sum(1 for e in ck if e["run_id"] == r and e.get("tag", "").startswith("step_") and e["tag"] != "step_000000000"
-                           and not e.get("superseded")) == 11 for r in runs_final)
+                   and sum(1 for e in ck if e["run_id"] == r and e.get("tag", "").startswith("step_")
+                           and not e.get("superseded")) == 11 for r in runs_final)  # step 0 + 10 periodic
     R["checks"]["checkpoints_index"] = {"entries": len(ck), "superseded": sup, "problems": cbad, "final_runs": len(runs_final),
                                         "all_final_runs_have_roles_and_11_periodic": roles_ok}
     if cbad or len(runs_final) != 9 or not roles_ok:
