@@ -37,3 +37,21 @@ UTC timestamps from `date -u`. Evidence paths are repository-relative unless mar
 - Predeclared Stage 7 replay sample frozen at the same time: first five case IDs of each condition (60 cases),
   22 entries (nominal, geometry 1.5 cm, both constants, selected + final of all 9 runs).
 - Analysis plan: [REPEATABILITY_PLAN.md](REPEATABILITY_PLAN.md).
+
+### 2026-11-06 02:40 UTC — Throughput check and freeze of the supplementary-evaluation source
+
+- Throughput check (not part of the results; `$WORK/sim/throughput`): `combined_seed11__final` on the 200 clean
+  cases, process seed 6454101, one A100-40GB: batch 900 → 11 s simulation, ~79 s per process including start-up;
+  batch 23 → 79 s simulation (9 chunks), ~98 s per process. Estimate for the full matrix: 24 batch-23 tasks ×
+  ~16 min + 24 batch-900 tasks × ~2 min ≈ 7 GPU-hours, ≈ 2 h on 4 GPUs. Jobs: 4 self-terminating 1-GPU LSF jobs
+  (`--shard i/4`), wall limit 4 h each; no other retries beyond the frozen policy.
+- CPU regeneration from the downloaded v2.0.0 raw records with the pinned analysis environment
+  (`configs/closeout/requirements-analysis.txt`, NumPy 2.4.4): 51/51 archived files of `results/v2/{final/selection,
+  summary,diagnostics,pilot}` regenerated; 30/30 tables/JSON byte-identical, 21/21 figures regenerated with
+  identical image sizes (PNG bytes depend on the library build). The 12 trace figures needed the
+  `v2_plot_traces.py` commands of the v2 study, which were not in any guide; they are now in the driver's
+  `regen` stage.
+- Supplementary-evaluation source: tag `closeout-eval-v1`. Simulator code (`src/`, eval/train/scripted/video
+  scripts), frozen protocol, final suite and final matrices have identical git object IDs at `experiment-v2` and
+  at the tag (`results/closeout/supplementary_source_identity.json`); there are no behavioural or
+  non-behavioural changes. Simulation still runs from the clean `experiment-v2` checkout.

@@ -1,0 +1,23 @@
+# CPU analysis/rendering environment for the delivery closeout (pinned; Python 3.13.9).
+# python3.13 -m venv venv-analysis && venv-analysis/bin/pip install -r configs/closeout/requirements-analysis.txt
+# Rendering also needs Google Chrome/Chromium (report PDF) and LibreOffice (deck PDF); versions are recorded in
+# results/closeout/render_environment.json.
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.68.0
+ImageIO==2.38.1
+imageio-ffmpeg==0.8.1
+kiwisolver==1.5.1
+lxml==6.1.3
+Markdown==3.11.2
+matplotlib==3.11.2
+numpy==2.4.4
+packaging==26.3
+pillow==13.0.0
+pyparsing==3.3.3
+pypdf==6.21.4
+python-dateutil==4.0.0
+python-pptx==1.0.2
+typing_extensions==4.16.0
+tzdata==2026.6
+xlsxwriter==3.3.1

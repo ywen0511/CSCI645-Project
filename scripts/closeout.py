@@ -411,6 +411,27 @@ def st_regen(c: Ctx):
         ([py, T / "scripts/v2_select_constants.py", "--dev", x / "dev", "--output", out / "diagnostics/constants_v2.json"]),
         ([py, T / "scripts/v2_analyze_pilots.py", "--pilot", x / "pilot", "--output", out / "pilot"]),
     ]
+    # trace figures of results/v2/diagnostics/figures (same commands as the v2 study)
+    F, D, TT = out / "diagnostics/figures", x / "dev", x / "dev/failure_traces/traces"
+    pt = [py, T / "scripts/v2_plot_traces.py"]
+    for case in ("v2dev-position_stress-0000", "v2dev-joint_early_stress-0000", "v2dev-joint_late_stress-0000",
+                 "v2dev-position_in-0000"):
+        cmds.append(pt + ["--case", case, "--trace", D / "controls/traces/geometry_zero.json",
+                          "--trace", D / "controls/traces/const_geometry_1cm_x+003mm.json",
+                          "--trace", D / "learned/traces/combined_final_s11.json",
+                          "--trace", D / "learned/traces/combined_init_s33.json", "--output", F / f"trace_geometry_{case}.png"])
+        cmds.append(pt + ["--case", case, "--trace", D / "controls/traces/nominal.json",
+                          "--trace", D / "controls/traces/const_nominal_x+004mm.json",
+                          "--trace", D / "learned/traces/residual_final_s22.json", "--output", F / f"trace_nominal_{case}.png"])
+    for name, case, trs in [
+            ("residual_drop", "v2dev-joint_early_stress-0003", ["nominal", "residual_final_s22"]),
+            ("geometry_deep_insertion", "v2dev-joint_early_stress-0035",
+             ["geometry_zero", "const_geometry_1cm_x+003mm", "combined_final_s11"]),
+            ("combined_bias", "v2dev-joint_early_stress-0017", ["geometry_zero", "const_geometry_1cm_x+003mm", "combined_final_s11"]),
+            ("nominal_timeout", "v2dev-joint_early_stress-0000", ["nominal", "const_nominal_x+004mm", "residual_final_s22"])]:
+        cmds.append(pt + ["--case", case] + [a for t in trs for a in ("--trace", TT / f"{t}.json")]
+                    + ["--output", F / f"failtrace_{name}_{case}.png"])
+    (F).mkdir(parents=True, exist_ok=True)
     recs = [c.run(cmd, cwd=c.work, log=log) for cmd in cmds]
     nd = out / "summary/nondeterminism_untrained_vs_zero.json"
     with open(nd, "w") as f:
