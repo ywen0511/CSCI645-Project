@@ -55,3 +55,14 @@ UTC timestamps from `date -u`. Evidence paths are repository-relative unless mar
   scripts), frozen protocol, final suite and final matrices have identical git object IDs at `experiment-v2` and
   at the tag (`results/closeout/supplementary_source_identity.json`); there are no behavioural or
   non-behavioural changes. Simulation still runs from the clean `experiment-v2` checkout.
+
+### 2026-11-06 02:48 UTC — Correction to the 02:40 entry
+
+- The 02:40 entry (inside tag `closeout-eval-v1`) says the final matrices have identical object IDs at
+  `experiment-v2`. That is wrong for one folder: `configs/v2/matrices/final` gained the 9 learned-run matrices and
+  `final_manifest.json` in `38a12ec`, after `experiment-v2`, because they encode the frozen checkpoint selection.
+  The deterministic matrices (`final_det_*`, `final_manifest_det.json`), `src/`, all simulator scripts, the frozen
+  protocol and the final suite are identical. The record at the tag already showed `"all_identical": false` with
+  the `git diff --stat`; it now also classifies each path. The tag is not moved.
+- Stage 4 launched: 4 shards (LSF jobs 8048991, 8048995–8048997), tools checkout at `closeout-eval-v1`,
+  experiment checkout at `experiment-v2`. Negative controls queued (job 8048999).

@@ -6,58 +6,69 @@
    "path": "src",
    "experiment-v2": "50f8f959269118bf2a88f8a21b28510d359b2d09",
    "HEAD": "50f8f959269118bf2a88f8a21b28510d359b2d09",
-   "identical": true
+   "identical": true,
+   "category": "simulator code / frozen inputs"
   },
   {
    "path": "scripts/eval_matrix.py",
    "experiment-v2": "583c4b417329bc9107524c414449d14902c0d044",
    "HEAD": "583c4b417329bc9107524c414449d14902c0d044",
-   "identical": true
+   "identical": true,
+   "category": "simulator code / frozen inputs"
   },
   {
    "path": "scripts/evaluate.py",
    "experiment-v2": "16587d43c5fd4da91a5c0c7341c9da5ab3985f08",
    "HEAD": "16587d43c5fd4da91a5c0c7341c9da5ab3985f08",
-   "identical": true
+   "identical": true,
+   "category": "simulator code / frozen inputs"
   },
   {
    "path": "scripts/train.py",
    "experiment-v2": "3f76710e77ed185b4289700d25ddb82252cea4fb",
    "HEAD": "3f76710e77ed185b4289700d25ddb82252cea4fb",
-   "identical": true
+   "identical": true,
+   "category": "simulator code / frozen inputs"
   },
   {
    "path": "scripts/run_scripted.py",
    "experiment-v2": "e691779afc34a5de5120fc933585b8283a53cf1a",
    "HEAD": "e691779afc34a5de5120fc933585b8283a53cf1a",
-   "identical": true
+   "identical": true,
+   "category": "simulator code / frozen inputs"
   },
   {
    "path": "scripts/record_video.py",
    "experiment-v2": "d61967fe346f59125d90c797bf96ff70ab08185f",
    "HEAD": "d61967fe346f59125d90c797bf96ff70ab08185f",
-   "identical": true
+   "identical": true,
+   "category": "simulator code / frozen inputs"
   },
   {
    "path": "configs/v2/frozen",
    "experiment-v2": "e550d971e90d2e1b1f0ec5888ffcc562527bdeae",
    "HEAD": "e550d971e90d2e1b1f0ec5888ffcc562527bdeae",
-   "identical": true
+   "identical": true,
+   "category": "simulator code / frozen inputs"
   },
   {
    "path": "configs/v2/suites/final.jsonl",
    "experiment-v2": "a6164dca05129000a28c61a9e182dd6ef53c56db",
    "HEAD": "a6164dca05129000a28c61a9e182dd6ef53c56db",
-   "identical": true
+   "identical": true,
+   "category": "simulator code / frozen inputs"
   },
   {
    "path": "configs/v2/matrices/final",
    "experiment-v2": "4b80cd921faecab00b0e79ab45cea1e27b4dda4b",
    "HEAD": "3cc173960e15153d9d127e6fcd3ca64191a36825",
-   "identical": false
+   "identical": false,
+   "category": "post-selection evaluation matrices"
   }
  ],
  "all_identical": false,
  "git_diff_stat": " .../final/final_combined_no_phase_seed11.json      | 39 ++++++++++\n .../final/final_combined_no_phase_seed22.json      | 39 ++++++++++\n .../final/final_combined_no_phase_seed33.json      | 39 ++++++++++\n .../v2/matrices/final/final_combined_seed11.json   | 39 ++++++++++\n .../v2/matrices/final/final_combined_seed22.json   | 39 ++++++++++\n .../v2/matrices/final/final_combined_seed33.json   | 39 ++++++++++\n configs/v2/matrices/final/final_manifest.json      | 88 ++++++++++++++++++++++\n .../v2/matrices/final/final_residual_seed11.json   | 39 ++++++++++\n .../v2/matrices/final/final_residual_seed22.json   | 39 ++++++++++\n .../v2/matrices/final/final_residual_seed33.json   | 39 ++++++++++\n 10 files changed, 439 insertions(+)\n",
- "note": "git object IDs (blob/tree SHA-1) of each path at both revisions; identical IDs mean identical bytes. The simulator runs from a clean experiment-v2 checkout; the closeout tag only supplies configs/matrices and the driver."
+ "note": "git object IDs (blob/tree SHA-1) of each path at both revisions; identical IDs mean identical bytes. The simulator runs from a clean experiment-v2 checkout; the closeout tag only supplies configs/matrices and the driver.",
+ "simulator_code_and_frozen_inputs_identical": true,
+ "matrices_note": "configs/v2/matrices/final differs only by the 9 learned-run matrices and final_manifest.json, added in commit 38a12ec after experiment-v2 by the frozen checkpoint-selection rule (as the v2 protocol prescribes); final_det_*.json and final_manifest_det.json are identical. The closeout repeatability entries are copied from these post-selection matrices."
 }
