@@ -38,7 +38,7 @@ UTC timestamps from `date -u`. Evidence paths are repository-relative unless mar
   22 entries (nominal, geometry 1.5 cm, both constants, selected + final of all 9 runs).
 - Analysis plan: [REPEATABILITY_PLAN.md](REPEATABILITY_PLAN.md).
 
-### 2026-11-06 02:40 UTC — Throughput check and freeze of the supplementary-evaluation source
+### 2026-11-06 02:28 UTC — Throughput check and freeze of the supplementary-evaluation source
 
 - Throughput check (not part of the results; `$WORK/sim/throughput`): `combined_seed11__final` on the 200 clean
   cases, process seed 6454101, one A100-40GB: batch 900 → 11 s simulation, ~79 s per process including start-up;
@@ -56,9 +56,9 @@ UTC timestamps from `date -u`. Evidence paths are repository-relative unless mar
   at the tag (`results/closeout/supplementary_source_identity.json`); there are no behavioural or
   non-behavioural changes. Simulation still runs from the clean `experiment-v2` checkout.
 
-### 2026-11-06 02:48 UTC — Correction to the 02:40 entry
+### 2026-11-06 02:29 UTC — Correction to the 02:28 entry
 
-- The 02:40 entry (inside tag `closeout-eval-v1`) says the final matrices have identical object IDs at
+- The 02:28 entry (inside tag `closeout-eval-v1`, where its heading was mistyped as 02:40) says the final matrices have identical object IDs at
   `experiment-v2`. That is wrong for one folder: `configs/v2/matrices/final` gained the 9 learned-run matrices and
   `final_manifest.json` in `38a12ec`, after `experiment-v2`, because they encode the frozen checkpoint selection.
   The deterministic matrices (`final_det_*`, `final_manifest_det.json`), `src/`, all simulator scripts, the frozen
@@ -66,3 +66,9 @@ UTC timestamps from `date -u`. Evidence paths are repository-relative unless mar
   the `git diff --stat`; it now also classifies each path. The tag is not moved.
 - Stage 4 launched: 4 shards (LSF jobs 8048991, 8048995–8048997), tools checkout at `closeout-eval-v1`,
   experiment checkout at `experiment-v2`. Negative controls queued (job 8048999).
+
+### 2026-11-06 02:31 UTC — Timestamp correction
+
+- The two previous headings were first written as 02:40 and 02:48 UTC without reading the clock; the commit
+  times (`6bf80bb` 02:28:19Z, `2cdb32d` 02:29:28Z) are the correct times and the headings now use them. From here
+  on every heading is taken from `date -u` at writing time.

@@ -23,6 +23,7 @@ Stages (run in this order; ``all-cpu`` runs the CPU ones):
   repeatability  simulator: Stage 4 tasks from results/closeout/repeatability/run_manifest.json (GPU)
                  --shard I/N runs every N-th task; --throughput runs the short throughput check only
   analyze        Stage 4 analysis (scripts/closeout_repeatability.py) (CPU)
+  video-replay   simulator: re-render the committed video plan (configs/closeout/video_plan.json) (GPU)
   resume-smoke   simulator: resume a downloaded latest.pt for <= 2 PPO iterations into a disposable dir (GPU)
   render         build report PDF/HTML and deck PPTX/PDF (CPU; needs Chrome/Chromium and LibreOffice)
   package        assemble the release directory (CPU)
@@ -120,8 +121,10 @@ class Ctx:
         for d in ("records", "ledger", "logs"):
             (self.work / d).mkdir(parents=True, exist_ok=True)
 
-    def x(self, tag: str = "v2.0.0") -> Path:
-        return self.inputs / tag / "x"
+    def x(self, tag: str | None = None) -> Path:
+        """Extracted archives of the input release (--inputs-tag). v2.1.0 contains byte-identical copies of the
+        v2.0.0 checkpoint/raw archives, so either release yields the same layout."""
+        return self.inputs / (tag or self.a.inputs_tag) / "x"
 
     def record(self, stage: str, body: dict) -> Path:
         body = {"stage": stage, "utc": utc(), "host": "<redacted>" if self.a.redact_host else socket.gethostname(),
@@ -241,6 +244,7 @@ REQUIRED_SCRIPTS = {
                    "scripts/record_video.py", "scripts/make_ckpt_matrix.py"],
     "tools": ["scripts/closeout.py", "scripts/closeout_make_configs.py", "scripts/closeout_repeatability.py",
               "scripts/closeout_regen_compare.py", "scripts/closeout_package.py", "scripts/closeout_verify.py",
+              "scripts/closeout_check_numbers.py", "scripts/closeout_inspect_ckpt.py",
               "scripts/download_release.py", "scripts/verify_archives.py", "scripts/verify_v2_release.py",
               "scripts/v2_select.py", "scripts/v2_analyze_final.py", "scripts/v2_analyze_dev.py",
               "scripts/v2_select_constants.py", "scripts/v2_analyze_pilots.py", "scripts/v2_nondeterminism.py",
@@ -286,7 +290,9 @@ def md_links(root: Path, files: list[Path]) -> list[dict]:
             t = m.group(1).split("#")[0]
             if not t or re.match(r"^[a-z]+:", t):
                 continue
-            if not (f.parent / t).exists():
+            # verbatim archives of README-based assignments keep the README's repository-root-relative links
+            base = root if f.name == "ASSIGNMENT.md" and f.parent.name in ("closeout",) else f.parent
+            if not (base / t).exists():
                 bad.append({"file": f.relative_to(root).as_posix(), "target": m.group(1)})
     return bad
 
@@ -330,20 +336,17 @@ def st_check(c: Ctx):
     ok &= not res["links"]
     # archive/asset names mentioned in current docs must exist in a release asset list we ship
     known = set()
-    for tag in ("v2.0.0",):
-        s = c.inputs / tag / "SHA256SUMS"
-        if s.exists():
-            known |= {l.split()[1] for l in s.read_text().splitlines() if l.strip()}
-    newm = c.tools / "results/closeout/release_assets.json"
-    if newm.exists():
-        known |= set(json.loads(newm.read_text()).get("assets", []))
+    for sums in sorted(c.inputs.glob("*/SHA256SUMS")):  # every downloaded release's asset list
+        known |= {l.split()[1] for l in sums.read_text().splitlines() if l.strip()}
+    res["asset_lists"] = [c.rel(p) for p in sorted(c.inputs.glob("*/SHA256SUMS"))]
     if known:
         for d in ["report/v2/diagnostics.md", "report/v2/report.md", "docs/closeout/REPRODUCE.md",
                   "docs/v2/REPRODUCE.md", "README.md"]:
             p = c.tools / d
             if p.exists():
                 for n in sorted(set(re.findall(r"`([\w.-]+\.(?:tar\.gz|zip|pptx|pdf|json|md))`", p.read_text()))):
-                    if n.startswith(("raw-", "checkpoints-", "videos", "logs", "results", "configs-")) and n not in known:
+                    if n.startswith(("raw-", "checkpoints-", "videos", "logs", "results", "configs-", "closeout-", "source-",
+                                     "v2.0.0-")) and n not in known:
                         res["asset_names"].append({"doc": d, "name": n})
                         ok = False
     if c.exp.exists():
@@ -396,7 +399,7 @@ def st_download(c: Ctx):
 def st_regen(c: Ctx):
     x = c.x()
     if not x.exists():
-        raise StageError("run 'download --tag v2.0.0' first")
+        raise StageError(f"run 'download --tag {c.a.inputs_tag}' first")
     out = c.work / "regen"
     log = c.work / "logs" / "regen.log"
     py = sys.executable
@@ -612,11 +615,21 @@ def st_repeatability(c: Ctx):
 
 
 def st_analyze(c: Ctx):
+    """Stage 4 analysis. Default inputs: this work folder's sim/ and ledger/; with --from-release the records come
+    from the extracted closeout-repeatability archive of the input release (x/closeout/{sim,ledger})."""
+    x = c.x()
+    sim, led = (x / "closeout/sim", x / "closeout/ledger") if c.a.from_release else (c.work / "sim", c.work / "ledger")
     out = c.work / "analysis/repeatability"
-    rec = c.run([sys.executable, c.tools / "scripts/closeout_repeatability.py", "analyze", "--sim", c.work / "sim",
-                 "--archived", c.x() / "final/eval", "--ledger", c.work / "ledger", "--output", out],
+    rec = c.run([sys.executable, c.tools / "scripts/closeout_repeatability.py", "analyze", "--sim", sim,
+                 "--archived", x / "final/eval", "--ledger", led, "--output", out],
                 cwd=c.work, log=c.work / "logs/analyze.log")
-    c.record("analyze", {"command": rec, "output": c.rel(out)})
+    cmp = {}
+    ref = c.tools / "results/closeout/repeatability"
+    for f in sorted(out.glob("*.csv")) + sorted(out.glob("*.json")):
+        g = ref / f.name
+        cmp[f.name] = "identical" if g.exists() and g.read_bytes() == f.read_bytes() else ("differs" if g.exists() else "no committed copy")
+    c.record("analyze", {"command": rec, "inputs": {"sim": c.rel(sim), "ledger": c.rel(led), "archived": c.rel(x / "final/eval")},
+                         "output": c.rel(out), "comparison_with_committed": cmp})
 
 
 def st_resume_smoke(c: Ctx):
@@ -652,17 +665,39 @@ def st_resume_smoke(c: Ctx):
 
 def st_render(c: Ctx):
     T = c.tools
+    vers = {}
+    for name, exe in (("chrome", c.a.chrome), ("libreoffice", c.a.soffice)):
+        try:
+            vers[name] = subprocess.run([exe, "--version"], capture_output=True, text=True, timeout=120).stdout.strip()
+        except Exception as e:
+            vers[name] = f"unavailable: {e}"
+    try:
+        import markdown, pptx  # noqa: F401
+        vers["python-markdown"], vers["python-pptx"] = markdown.__version__, pptx.__version__
+    except Exception:
+        pass
+    vers["python"] = sys.version.split()[0]
+    (T / "results/closeout/render_environment.json").write_text(json.dumps(vers, indent=1) + "\n")
     recs = [c.run([sys.executable, T / "scripts/build_report_v2.py", "--chrome", c.a.chrome], cwd=T,
                   log=c.work / "logs/render.log"),
             c.run([sys.executable, T / "scripts/build_deck_v2.py", "--soffice", c.a.soffice], cwd=T,
                   log=c.work / "logs/render.log")]
-    c.record("render", {"commands": recs})
+    c.record("render", {"commands": recs, "versions": vers})
 
 
 def st_package(c: Ctx):
-    rec = c.run([sys.executable, c.tools / "scripts/closeout_package.py", "--work", c.work, "--tag", c.a.release_tag,
-                 "--output", c.work / "release" / c.a.release_tag], cwd=c.tools, log=c.work / "logs/package.log")
-    c.record("package", {"command": rec})
+    head = git_state(c.tools)
+    if head["dirty"]:
+        raise StageError("package needs a clean delivery-tools checkout")
+    cmd = [sys.executable, c.tools / "scripts/closeout_package.py", "--work", c.work, "--tag", c.a.release_tag,
+           "--source-commit", head["commit"], "--output", c.work / "release" / c.a.release_tag]
+    for r in c.a.redact:
+        cmd += ["--redact", r]
+    for r in c.a.redact_regex:
+        cmd += ["--redact-regex", r]
+    rec = c.run(cmd, cwd=c.tools, log=c.work / "logs/package.log")
+    rec["cmd"] = [x if not any(x.startswith(r.split("=")[0]) for r in c.a.redact) else "<redaction rule>" for x in rec["cmd"]]
+    c.record("package", {"command": rec, "source_commit": head["commit"]})
 
 
 def st_verify(c: Ctx):
@@ -673,9 +708,46 @@ def st_verify(c: Ctx):
     c.record(f"verify_{bundle.name}", {"command": rec})
 
 
+def st_video_replay(c: Ctx):
+    """Re-render the committed video plan from the downloaded checkpoints (single environment, experiment checkout)
+    and compare each replay outcome with the archived evaluation record and the v2.0.0 sidecar."""
+    c.require_exp()
+    env_snapshot(c, "video_replay")
+    plan = json.loads((c.tools / "configs/closeout/video_plan.json").read_text())
+    only = set(c.a.only.split(",")) if c.a.only else None
+    out = c.work / "sim/video_replay"
+    out.mkdir(parents=True, exist_ok=True)
+    resolved = []
+    for v in plan["videos"]:
+        if only and v["video"] not in only:
+            continue
+        resolved.append({**v, "checkpoint": str(c.x() / v["checkpoint"]) if v["checkpoint"] else None,
+                         "eval_records": str(c.x() / v["eval_records"]), "output": str(out / v["video"])})
+    rp = out / "resolved_video_plan.json"
+    rp.write_text(json.dumps(resolved, indent=1))
+    r = c.sim(["scripts/record_video.py", "--plan", str(rp), "--suite", plan["suite"], "--protocol", plan["protocol"]],
+              c.work / "logs/video_replay.log")
+    old = {v["video"]: v for v in json.loads((c.inputs / c.a.inputs_tag / "videos.json").read_text())}
+    rows = []
+    for v in resolved:
+        side = Path(v["output"]).with_suffix(".json")
+        sc = json.loads(side.read_text()) if side.exists() else {}
+        ro, eo = sc.get("replay_outcome") or {}, old[v["video"]]["evaluation_outcome"]
+        rows.append({"video": v["video"], "rendered": Path(v["output"]).exists(),
+                     "replay_terminal_reason": ro.get("terminal_reason"), "evaluation_terminal_reason": eo["terminal_reason"],
+                     "replay_matches_evaluation": ro.get("terminal_reason") == eo["terminal_reason"]
+                     and ro.get("success") == eo["success"],
+                     "v2.0.0_replay_terminal_reason": old[v["video"]]["replay_outcome"]["terminal_reason"]})
+    c.record("video_replay", {"command": r, "videos": rows,
+                              "all_match": all(x["replay_matches_evaluation"] for x in rows) and bool(rows)})
+    if r["rc"]:
+        raise StageError("video replay failed")
+
+
 STAGES = {"checkout": st_checkout, "check": st_check, "download": st_download, "regen": st_regen,
           "negative": st_negative, "replay": st_replay, "repeatability": st_repeatability, "analyze": st_analyze,
-          "resume-smoke": st_resume_smoke, "render": st_render, "package": st_package, "verify": st_verify}
+          "resume-smoke": st_resume_smoke, "render": st_render, "package": st_package, "verify": st_verify,
+          "video-replay": st_video_replay}
 
 
 def main(argv=None):
@@ -686,17 +758,22 @@ def main(argv=None):
     ap.add_argument("--exp", default=None, help="experiment checkout (default <work>/src/experiment-v2)")
     ap.add_argument("--repo", default="ywen0511/CSCI645-Project", help="GitHub repository for downloads")
     ap.add_argument("--repo-url", default=REPO_URL)
-    ap.add_argument("--tag", default="v2.0.0", help="release to download/verify")
+    ap.add_argument("--tag", default="v2.1.0", help="release to download/verify")
+    ap.add_argument("--inputs-tag", default="v2.1.0", help="downloaded release whose archives feed regen/sim stages")
+    ap.add_argument("--from-release", action="store_true", help="analyze: read Stage 4 records from the input release")
     ap.add_argument("--isaac-python", default=None)
     ap.add_argument("--shard", default="0/1", help="repeatability: I/N")
     ap.add_argument("--throughput", action="store_true", help="repeatability: throughput check only")
     ap.add_argument("--max-attempts", type=int, default=3, help="simulator task attempts in total (1 + resumes)")
     ap.add_argument("--resume-run", default="combined_seed11")
+    ap.add_argument("--only", default="", help="video-replay: comma-separated video file names")
     ap.add_argument("--chrome", default=os.environ.get("CLOSEOUT_CHROME", "google-chrome"))
     ap.add_argument("--soffice", default=os.environ.get("CLOSEOUT_SOFFICE", "libreoffice"))
     ap.add_argument("--release-tag", default="v2.1.0")
     ap.add_argument("--bundle", default=None, help="verify: release directory (default: <work>/inputs/<tag>)")
     ap.add_argument("--redact-host", action="store_true", help="write <redacted> instead of the host name")
+    ap.add_argument("--redact", action="append", default=[], help="package: OLD=TOKEN path redaction")
+    ap.add_argument("--redact-regex", action="append", default=[], help="package: REGEX=TOKEN redaction")
     a = ap.parse_args(argv)
     c = Ctx(a)
     stages = ["download", "check", "regen"] if a.stage == "all-cpu" else [a.stage]

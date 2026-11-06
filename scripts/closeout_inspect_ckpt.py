@@ -31,8 +31,6 @@ def tensors(d, prefix=""):
 
 
 def main():
-    import torch
-
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--before", required=True)
     ap.add_argument("--after", required=True)
@@ -40,6 +38,8 @@ def main():
     ap.add_argument("--expect-transitions", type=int, required=True)
     ap.add_argument("--output", required=True)
     a = ap.parse_args()
+    import torch
+
     b = torch.load(a.before, map_location="cpu", weights_only=False)
     f = torch.load(a.after, map_location="cpu", weights_only=False)
     f2 = torch.load(a.after, map_location="cpu", weights_only=False)  # second, independent reload

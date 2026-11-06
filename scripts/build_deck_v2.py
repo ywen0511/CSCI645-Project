@@ -92,12 +92,14 @@ def main():
     F = ROOT / "results/v2"
 
     s = prs.slides.add_slide(blank)
-    add_title(s, "Robust Bimanual Handover — v2 Follow-up Study",
+    add_title(s, "Robust Bimanual Handover — v2 Study, Final Delivery (v2.1.0)",
               "Geometric coordination vs residual RL · Isaac Lab 3.0 / Isaac Sim 6.2 (PhysX) · CSCI 645, Fall 2026 · Yan Wen")
     bullets(s, ["Two Franka Panda arms, parallel-jaw grippers, one rigid bar; success = 2 s receiver-only hold",
                 "v1: geometry module decisive, but the selector picked untrained policies (8/9 runs)",
                 "v2: audit v1 → diagnose residuals → ablate geometry → preregistered harder experiment",
-                "Answer: strong geometry suffices; learned residuals on top add nothing and lose to a tuned constant"],
+                "Answer (this task and training setup): strong geometry sufficed; learned residuals on top",
+                "  added no robust value and lost to a tuned constant",
+                "Closeout: corrected reproduction, scoped wording, supplementary repeatability check"],
             y=1.8, size=20)
     pic(s, OUT / "frames/geometry_success.png", 7.6, 4.3, w=5.2)
 
@@ -122,8 +124,9 @@ def main():
                 "E1: aggregate labels '1,400 in-range / 400 stress' → 1,200 non-stress / 600 stress (numbers unchanged)",
                 "E2: recorded episode_return omits the terminal-step reward (records written before rewards) — logging only",
                 "E3: 'untrained' step-0 policies output a seed-specific constant (+1.4 / +1.0 / −2.5 mm), not zero",
-                "Replay of 23 predeclared cases × 20 policies in new processes: 456/460 and 457/460 outcomes agree",
-                "  all disagreements are failure-boundary cases; GPU physics is not bitwise reproducible across batch layouts",
+                "Replay of a predeclared, boundary-enriched sample (23 cases × 20 policies, new processes):",
+                "  terminal reasons 456/460 (batch 23) and 457/460 (batch 1); disagreements only at boundaries",
+                "  (rates of that selected sample; GPU physics is not bitwise reproducible across batch layouts)",
                 "Negative controls physical: table support → receiver grips 17 N, giver open, table 1.3–1.6 N → 0/20 success"],
             size=16)
 
@@ -173,7 +176,7 @@ def main():
                 "Differences appear only in extrapolation"], x=7.3, y=4.3, w=5.8, size=15)
 
     s = prs.slides.add_slide(blank)
-    add_title(s, "Primary comparisons", "paired seed × case bootstrap, pp [95% CI], all 2,400 cases")
+    add_title(s, "Primary comparisons (original v2 results)", "paired seed × case bootstrap, pp [95% CI], all 2,400 cases")
     table(s, [["comparison", "selected", "final checkpoints"],
               ["combined − geometry 1.5 cm", cmp("combined - geometry_1p5cm"), cmp("combined - geometry_1p5cm", role="final")],
               ["combined − (geometry + 10 mm)", cmp("combined - const_geometry_1p5cm"), cmp("combined - const_geometry_1p5cm", role="final")],
@@ -184,7 +187,9 @@ def main():
     bullets(s, [f"Extrapolation: combined − geometry {cmp('combined - geometry_1p5cm', 'extrapolation')}; − (geometry + const) {cmp('combined - const_geometry_1p5cm', 'extrapolation')}",
                 "Trained combined is 0.4 pp below its own untrained (= geometry) version",
                 "Residual RL without geometry learns a state-dependent correction a constant cannot match (+13 pp)",
-                "Explicit contact-phase input: no effect"], y=4.8, size=16)
+                "Explicit contact-phase label: no clear effect detected (this task, observation set, budget)",
+                "CIs resample seeds and cases only, not evaluation processes / batch layouts (see closeout check)"],
+            y=4.8, size=16)
 
     s = prs.slides.add_slide(blank)
     add_title(s, "Why combined does not help", "same mechanism in v1 and v2")
@@ -208,14 +213,60 @@ def main():
     bullets(s, ["Matched comparison, release-gate rescue, alignment-bound example, trained success/failure, residual policy",
                 "Selected by a rule frozen before final outcomes (videos.json lists rule, hashes, replay outcome)"], y=4.9, size=15)
 
+    # ---- closeout: supplementary repeatability (numbers from results/closeout/repeatability)
+    R = json.loads((ROOT / "results/closeout/repeatability/summary.json").read_text())
+    import csv as _csv
+    C = list(_csv.DictReader(open(ROOT / "results/closeout/repeatability/comparisons.csv")))
+
+    def rc(batch, rep_, role, name):
+        r = next(r for r in C if r["batch_size"] == str(batch) and r["repeat"] == str(rep_) and r["role"] == role
+                 and r["comparison"] == name)
+        return f"{float(r['diff_pp']):+.2f} [{float(r['ci_low_pp']):+.2f}, {float(r['ci_high_pp']):+.2f}]"
+
+    s = prs.slides.add_slide(blank)
+    add_title(s, "Closeout — repeatability of the small difference (supplementary)",
+              "retrospective robustness check on the already-used v2 final suite; nothing selected from it")
+    G, K = "combined - geometry_1p5cm", "combined - const_geometry_1p5cm"
+    rows = [["layout / process", "comb − geometry (sel.)", "(final)", "comb − geom+10 mm (sel.)"]]
+    rows.append(["v2.0.0 archived (900, seed 0)", rc("archived (900, seed 0)", "v2.0.0", "selected", G),
+                 rc("archived (900, seed 0)", "v2.0.0", "final", G), rc("archived (900, seed 0)", "v2.0.0", "selected", K)])
+    for b in (900, 23):
+        for r_ in (1, 2, 3):
+            rows.append([f"batch {b}, repeat {r_}", rc(b, r_, "selected", G), rc(b, r_, "final", G), rc(b, r_, "selected", K)])
+        rows.append([f"batch {b}, mean of 3 repeats", rc(b, "mean of repeats", "selected", G),
+                     rc(b, "mean of repeats", "final", G), rc(b, "mean of repeats", "selected", K)])
+    table(s, rows, 0.4, 1.4, 8.4, 4.6, size=11)
+    rec = R["reconciliation"]
+    v = R["verdict"]
+    bullets(s, [f"{rec['recorded']:,} / {rec['scheduled']:,} episodes recorded; {rec['missing']} missing, "
+                f"{rec['invalid_reset']} invalid resets",
+                "8 controllers × 2,400 cases × 3 processes × batch 900 / 23",
+                f"combined − geometry: {v['selected: ' + G]['classification']} (selected), "
+                f"{v['final: ' + G]['classification']} (final)",
+                f"combined − geometry + const: {v['selected: ' + K]['classification']}",
+                "Repeats are not new seeds or cases: cases are averaged over repeats before resampling"],
+            x=8.9, y=1.4, w=4.2, size=13)
+
+    s = prs.slides.add_slide(blank)
+    add_title(s, "Closeout — corrections (docs/closeout/ERRATA.md)", "v2 numbers unchanged; wording and reproduction fixed")
+    bullets(s, ["Phase ablation: 'no effect' → no clear effect detected under this task, observations and budget",
+                "Residual RL value: scoped to this task, controller, reward, PPO setup and training distribution",
+                "Boundary replay 487/506 (terminal) and 492/506 (success): observed on a selected sample, not an upper bound",
+                "Whole-suite 2/2,400 and 10/2,400 terminal-reason differences: not a universal noise floor",
+                "Seed × case CIs omit process / batch-layout variability → supplementary check (previous slide)",
+                "Reproduction: experiment checkout (experiment-v2) + delivery-tools checkout; one driver, scripts/closeout.py",
+                "Asset name raw-development.tar.gz; video replay commands concrete; superseded smoke checkpoint disclosed"],
+            y=1.5, size=16)
+
     s = prs.slides.add_slide(blank)
     add_title(s, "Conclusions and limitations")
-    bullets(s, ["Strong geometry is sufficient for this handover; alignment does most of the work, gating the rest",
-                "Residual RL on top of geometry adds no robust value and loses to a development-tuned constant offset",
+    bullets(s, ["Strong geometry was sufficient for this handover; alignment does most of the work, gating the rest",
+                "Residual RL on top of geometry added no robust value here and lost to a development-tuned constant",
+                "  (scope: this task, reward, PPO configuration and training distribution — not a general impossibility)",
                 "Residual RL alone helps a lot over nominal (+17 pp) but stays far below geometry",
                 "Limitations: simulation only, privileged state, translation-only perturbations, 3 seeds,",
                 "  v2 designed after v1 diagnostics, saturated training range / validation, one reward design",
-                "Everything public: tags experiment-v2 + release v2.0.0 (records, checkpoints, logs, videos, report)"],
+                "Everything public: tags experiment-v2, closeout-eval-v1, v2.1.0 + self-contained release v2.1.0"],
             y=1.5, size=19)
 
     OUT.mkdir(parents=True, exist_ok=True)

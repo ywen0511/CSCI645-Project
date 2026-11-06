@@ -1,0 +1,165 @@
+{
+ "source": "the v2 video plan produced by scripts/v2_select_videos.py (frozen rule configs/v2/video_rule.json), with private path prefixes removed",
+ "paths": "checkpoint: relative to the extracted v2 release (--checkpoint-root); eval_records: relative to the same root",
+ "suite": "configs/v2/suites/final.jsonl",
+ "protocol": "configs/v2/frozen/protocol.json",
+ "replay": "python3 scripts/closeout.py --work <work> video-replay [--only <video>]  (runs scripts/record_video.py --plan <resolved plan> in the experiment checkout)",
+ "videos": [
+  {
+   "video": "matched_comparison__nominal__v2final-joint_early_2cm_030-0000.mp4",
+   "category": "matched_comparison",
+   "rule": "first joint_early_2cm_030 case on which nominal fails",
+   "rule_used": "rule",
+   "entry_id": "nominal",
+   "method": "nominal",
+   "checkpoint": null,
+   "overrides": {},
+   "run_id": "nominal",
+   "case_id": "v2final-joint_early_2cm_030-0000",
+   "eval_records": "final/eval/det_2/nominal.jsonl",
+   "evaluation_outcome": "episode_timeout"
+  },
+  {
+   "video": "matched_comparison__geometry_1p5cm__v2final-joint_early_2cm_030-0000.mp4",
+   "category": "matched_comparison",
+   "rule": "first joint_early_2cm_030 case on which nominal fails",
+   "rule_used": "rule",
+   "entry_id": "geometry_1p5cm",
+   "method": "geometry",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.015
+   },
+   "run_id": "geometry_1p5cm",
+   "case_id": "v2final-joint_early_2cm_030-0000",
+   "eval_records": "final/eval/det_1/geometry_1p5cm.jsonl",
+   "evaluation_outcome": "success"
+  },
+  {
+   "video": "matched_comparison__combined_seed11__selected__v2final-joint_early_2cm_030-0000.mp4",
+   "category": "matched_comparison",
+   "rule": "first joint_early_2cm_030 case on which nominal fails",
+   "rule_used": "rule",
+   "entry_id": "combined_seed11__selected",
+   "method": "combined",
+   "checkpoint": "combined_seed11/checkpoints/step_008028160.pt",
+   "overrides": {},
+   "run_id": "combined_seed11",
+   "case_id": "v2final-joint_early_2cm_030-0000",
+   "eval_records": "final/eval/combined_seed11/combined_seed11__selected.jsonl",
+   "evaluation_outcome": "success"
+  },
+  {
+   "video": "release_gate_rescue__ablation_1cm_A__v2final-joint_early_2cm_030-0006.mp4",
+   "category": "release_gate_rescue",
+   "rule": "first case (any condition) where ablation_1cm_A fails and ablation_1cm_AG succeeds; if none, first drop of ablation_1cm_A",
+   "rule_used": "fallback",
+   "entry_id": "ablation_1cm_A",
+   "method": "geometry",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": false
+   },
+   "run_id": "ablation_1cm_A",
+   "case_id": "v2final-joint_early_2cm_030-0006",
+   "eval_records": "final/eval/det_0/ablation_1cm_A.jsonl",
+   "evaluation_outcome": "episode_timeout"
+  },
+  {
+   "video": "release_gate_rescue__ablation_1cm_AG__v2final-joint_early_2cm_030-0006.mp4",
+   "category": "release_gate_rescue",
+   "rule": "first case (any condition) where ablation_1cm_A fails and ablation_1cm_AG succeeds; if none, first drop of ablation_1cm_A",
+   "rule_used": "fallback",
+   "entry_id": "ablation_1cm_AG",
+   "method": "geometry",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.01,
+    "geom_align": true,
+    "geom_anchor": false,
+    "geom_gate": true
+   },
+   "run_id": "ablation_1cm_AG",
+   "case_id": "v2final-joint_early_2cm_030-0006",
+   "eval_records": "final/eval/det_1/ablation_1cm_AG.jsonl",
+   "evaluation_outcome": "success"
+  },
+  {
+   "video": "alignment_bound__geometry_1cm__v2final-joint_early_2cm_030-0018.mp4",
+   "category": "alignment_bound",
+   "rule": "first case where geometry_1cm fails and geometry_1p5cm succeeds",
+   "rule_used": "rule",
+   "entry_id": "geometry_1cm",
+   "method": "geometry",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.01
+   },
+   "run_id": "geometry_1cm",
+   "case_id": "v2final-joint_early_2cm_030-0018",
+   "eval_records": "final/eval/det_0/geometry_1cm.jsonl",
+   "evaluation_outcome": "prohibited_collision"
+  },
+  {
+   "video": "alignment_bound__geometry_1p5cm__v2final-joint_early_2cm_030-0018.mp4",
+   "category": "alignment_bound",
+   "rule": "first case where geometry_1cm fails and geometry_1p5cm succeeds",
+   "rule_used": "rule",
+   "entry_id": "geometry_1p5cm",
+   "method": "geometry",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.015
+   },
+   "run_id": "geometry_1p5cm",
+   "case_id": "v2final-joint_early_2cm_030-0018",
+   "eval_records": "final/eval/det_1/geometry_1p5cm.jsonl",
+   "evaluation_outcome": "success"
+  },
+  {
+   "video": "trained_success__combined_seed11__selected__v2final-joint_late_3cm_045-0029.mp4",
+   "category": "trained_success",
+   "rule": "first extrapolation case where combined_seed11 (selected) succeeds and geometry_1p5cm fails",
+   "rule_used": "rule",
+   "entry_id": "combined_seed11__selected",
+   "method": "combined",
+   "checkpoint": "combined_seed11/checkpoints/step_008028160.pt",
+   "overrides": {},
+   "run_id": "combined_seed11",
+   "case_id": "v2final-joint_late_3cm_045-0029",
+   "eval_records": "final/eval/combined_seed11/combined_seed11__selected.jsonl",
+   "evaluation_outcome": "success"
+  },
+  {
+   "video": "trained_failure__combined_seed11__selected__v2final-joint_early_3cm_045-0001.mp4",
+   "category": "trained_failure",
+   "rule": "first case where combined_seed11 (selected) fails",
+   "rule_used": "rule",
+   "entry_id": "combined_seed11__selected",
+   "method": "combined",
+   "checkpoint": "combined_seed11/checkpoints/step_008028160.pt",
+   "overrides": {},
+   "run_id": "combined_seed11",
+   "case_id": "v2final-joint_early_3cm_045-0001",
+   "eval_records": "final/eval/combined_seed11/combined_seed11__selected.jsonl",
+   "evaluation_outcome": "prohibited_collision"
+  },
+  {
+   "video": "residual_policy__residual_seed11__selected__v2final-joint_early_1cm_015-0006.mp4",
+   "category": "residual_policy",
+   "rule": "first case where residual_seed11 (selected) succeeds and nominal fails",
+   "rule_used": "rule",
+   "entry_id": "residual_seed11__selected",
+   "method": "residual",
+   "checkpoint": "residual_seed11/checkpoints/step_010027008.pt",
+   "overrides": {},
+   "run_id": "residual_seed11",
+   "case_id": "v2final-joint_early_1cm_015-0006",
+   "eval_records": "final/eval/residual_seed11/residual_seed11__selected.jsonl",
+   "evaluation_outcome": "success"
+  }
+ ]
+}
