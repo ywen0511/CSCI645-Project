@@ -19,6 +19,8 @@ LibreOffice 7.3.
 | Stage 4 repeatability | `closeout.py repeatability --shard i/4` (4 jobs) + `analyze` | 48/48 tasks, 115,200/115,200 episodes, 0 missing / duplicates / invalid resets, 1 attempt each (`results/closeout/repeatability/`) |
 | Report numbers | `scripts/closeout_check_numbers.py` | 188 numbers in report §5.1, §5.2, §5.5 and the summary match the machine-readable summaries (`results/closeout/number_check.json`) |
 | Report and deck rendering | `closeout.py render`; every page rasterised and inspected | report PDF 11 pages, deck 13 slides; one clipped slide title and one overlap on the title slide found and fixed; no missing figures |
+| Draft release validated locally | `closeout.py package` then `scripts/closeout_verify.py` on the draft folder | 38 assets (229.9 MB); SHA256SUMS covers all 37 others; manifest consistent; 18 assets byte-identical to v2.0.0; 23 archives, 1,795 members re-hashed, 0 problems; 170 checkpoint entries resolve (1 superseded, disclosed), 9 final runs with untrained/selected/final/resume roles and 11 step checkpoints; 64 run entries resolve; 10 videos + sidecars resolve, decode fully, and have the indexed frame counts; 115,200 repeatability records; PDFs 11/13/12 pages, PPTX 13 slides |
+| Leak scan | same verifier, text members of new archives + loose JSON/Markdown | first pass found the build machine's user name in node-local cache paths, cluster node names in `per_task.csv`, and `file://` home paths in the report PDF; redaction and builders fixed; final draft 0 hits (generic `/home/conda/...` conda-forge build path in pip freeze excluded); historical exposures documented in [ERRATA.md](ERRATA.md) |
 
 ## B. Published release (fresh clone, anonymous download)
 
