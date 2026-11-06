@@ -48,7 +48,11 @@ ablates the geometry module, and runs a new, harder and preregistered v2 experim
 - **No clear effect of the explicit contact-phase label was detected** under this task, observation set and
   training budget (combined − combined_no_phase −0.2 pp [−0.6, +0.2]). The ablation zeroes only the
   four-channel phase label; the raw contact and timing observations remain available to both policies.
-- **Supplementary repeatability (closeout):** SUPP_SUMMARY
+- **Supplementary repeatability (closeout):** a retrospective re-evaluation of the existing checkpoints on the
+  same 2,400 cases, in 3 fresh processes × 2 batch layouts (115,200 episodes, nothing selected from it). It
+  reproduces combined − geometry 1.5 cm in every run (−0.44 to −0.40 pp selected, −0.39 to −0.35 pp final;
+  every interval excludes 0) and combined − (geometry + 10 mm) at −3.1 pp. The small disadvantage is
+  stable under these tested settings only (Section 5.5).
 
 Evidence types are kept separate below: original v1 results, the corrected v1 presentation, development
 diagnostics (450–1,150 development cases), v2 pilots, v2 selected checkpoints, v2 final checkpoints and
@@ -260,7 +264,55 @@ alignment + gate (release-gate rescue, rule fallback because no in-training drop
 geometry (alignment-bound example, palm collision vs success); a combined success and a combined failure in
 extrapolation; a residual success where nominal fails. Index: `videos.json` in the release.
 
-SECTION_5_5
+### 5.5 Supplementary repeatability check (closeout; retrospective, not held-out evidence)
+
+This check was added in the closeout. It is a **retrospective robustness check on the already-used v2 final
+suite**. It re-evaluates existing checkpoints and selects nothing. The numbers above (5.1–5.4) are the original
+v2 results; this section's numbers are supplementary. Design and analysis plan were committed before
+collection ([configs/closeout/repeatability.json](../../configs/closeout/repeatability.json),
+[REPEATABILITY_PLAN.md](../../docs/closeout/REPEATABILITY_PLAN.md)). Full tables:
+[report/closeout/repeatability.md](../closeout/repeatability.md).
+
+Design: 8 controllers (geometry 1.5 cm; geometry 1.5 cm + 10 mm; combined selected and final checkpoints of
+seeds 11/22/33) × 2,400 final cases × 3 fresh processes (seeds 6454101–3) × batch sizes 900 and 23, one
+controller per process: 115,200 of 115,200 episodes recorded,
+0 missing, 0 duplicates, 0 invalid resets, every task in one attempt.
+
+| layout / process | combined − geometry 1.5 cm (selected) | (final) | combined − geometry + 10 mm (selected) | (final) |
+|---|---|---|---|---|
+| v2.0.0 archived (900, seed 0) | −0.44 [−0.76, −0.17] | −0.36 [−0.62, −0.11] | −3.15 [−4.03, −2.29] | −3.07 [−3.92, −2.24] |
+| batch 900, repeat 1 | −0.44 [−0.78, −0.14] | −0.39 [−0.69, −0.11] | −3.15 [−4.01, −2.29] | −3.10 [−3.94, −2.25] |
+| batch 900, repeat 2 | −0.44 [−0.78, −0.14] | −0.39 [−0.69, −0.11] | −3.15 [−4.01, −2.29] | −3.10 [−3.94, −2.25] |
+| batch 900, repeat 3 | −0.44 [−0.78, −0.14] | −0.39 [−0.69, −0.11] | −3.15 [−4.01, −2.29] | −3.10 [−3.94, −2.25] |
+| batch 900, mean of 3 repeats | −0.44 [−0.78, −0.14] | −0.39 [−0.69, −0.11] | −3.15 [−4.01, −2.29] | −3.10 [−3.94, −2.25] |
+| batch 23, repeat 1 | −0.40 [−0.72, −0.11] | −0.35 [−0.64, −0.08] | −3.11 [−3.97, −2.25] | −3.06 [−3.92, −2.21] |
+| batch 23, repeat 2 | −0.40 [−0.72, −0.11] | −0.35 [−0.64, −0.08] | −3.11 [−3.97, −2.25] | −3.06 [−3.92, −2.21] |
+| batch 23, repeat 3 | −0.40 [−0.72, −0.11] | −0.35 [−0.64, −0.08] | −3.11 [−3.97, −2.25] | −3.06 [−3.92, −2.21] |
+| batch 23, mean of 3 repeats | −0.40 [−0.72, −0.11] | −0.35 [−0.64, −0.08] | −3.11 [−3.97, −2.25] | −3.06 [−3.92, −2.21] |
+
+Paired seed × case bootstrap per row; "mean of 3 repeats" averages each case over the repeats within each
+training seed before resampling, so repeats are not counted as new cases or seeds. The layouts are analysed
+separately.
+
+- **combined − geometry 1.5 cm** stays negative in every repeat and both layouts (selected −0.44 to −0.40 pp,
+  final −0.39 to −0.35 pp), and no repeat-averaged interval includes 0. Under the frozen rule it is a
+  **stable small disadvantage under the tested settings**: this suite, these checkpoints, two batch layouts,
+  three processes, one GPU type. It is not evidence about other settings, and the three training seeds
+  remain the only source of training variability.
+- **combined − (geometry + 10 mm)** is −3.15 to −3.11 pp (selected) and −3.10 to −3.06 pp (final) in every
+  repeat and layout. It is a separate, larger
+  comparison.
+- Processes with different seeds gave **identical** terminal reasons for every controller and case at a given
+  batch size. Batch 900 vs 23 changed 0–2 of 2,400 terminal reasons per controller. Fresh-process results
+  differ from the archived records in 0–3 cases per controller.
+- *Exploratory observation (outside the frozen plan):* fresh-process geometry matches the archived *untrained*
+  combined records in all 2,400 cases, while the archived geometry record differs from both in the two cases
+  reported in 5.2. The archived geometry ran second in a multi-controller process, and each untrained policy ran
+  first in its process. The whole-suite "2/2,400" difference is therefore consistent with an
+  evaluation-context effect (what ran earlier in the same process), not with random variation. The mechanism
+  was not isolated.
+
+![repeatability](../../results/closeout/repeatability/figures/repeatability_differences.png)
 
 ## 6. Answers
 

@@ -23,6 +23,7 @@ ACC = RGBColor(0x2E, 0x6F, 0xB7)
 
 def add_title(slide, text, sub=None):
     tb = slide.shapes.add_textbox(Inches(0.5), Inches(0.3), Inches(12.3), Inches(0.9))
+    tb.text_frame.word_wrap = True
     p = tb.text_frame.paragraphs[0]
     p.text = text
     p.font.size, p.font.bold, p.font.color.rgb = Pt(28), True, DARK
@@ -92,15 +93,15 @@ def main():
     F = ROOT / "results/v2"
 
     s = prs.slides.add_slide(blank)
-    add_title(s, "Robust Bimanual Handover — v2 Study, Final Delivery (v2.1.0)",
-              "Geometric coordination vs residual RL · Isaac Lab 3.0 / Isaac Sim 6.2 (PhysX) · CSCI 645, Fall 2026 · Yan Wen")
+    add_title(s, "Robust Bimanual Handover — Final Delivery v2.1.0",
+              "Geometry vs residual RL · Isaac Lab 3.0 / Isaac Sim 6.2 (PhysX) · CSCI 645, Fall 2026 · Yan Wen")
     bullets(s, ["Two Franka Panda arms, parallel-jaw grippers, one rigid bar; success = 2 s receiver-only hold",
                 "v1: geometry module decisive, but the selector picked untrained policies (8/9 runs)",
                 "v2: audit v1 → diagnose residuals → ablate geometry → preregistered harder experiment",
                 "Answer (this task and training setup): strong geometry sufficed; learned residuals on top",
                 "  added no robust value and lost to a tuned constant",
                 "Closeout: corrected reproduction, scoped wording, supplementary repeatability check"],
-            y=1.8, size=20)
+            y=1.8, w=7.0, size=18)
     pic(s, OUT / "frames/geometry_success.png", 7.6, 4.3, w=5.2)
 
     s = prs.slides.add_slide(blank)
@@ -224,7 +225,7 @@ def main():
         return f"{float(r['diff_pp']):+.2f} [{float(r['ci_low_pp']):+.2f}, {float(r['ci_high_pp']):+.2f}]"
 
     s = prs.slides.add_slide(blank)
-    add_title(s, "Closeout — repeatability of the small difference (supplementary)",
+    add_title(s, "Closeout — repeatability check (supplementary)",
               "retrospective robustness check on the already-used v2 final suite; nothing selected from it")
     G, K = "combined - geometry_1p5cm", "combined - const_geometry_1p5cm"
     rows = [["layout / process", "comb − geometry (sel.)", "(final)", "comb − geom+10 mm (sel.)"]]
@@ -238,7 +239,7 @@ def main():
     table(s, rows, 0.4, 1.4, 8.4, 4.6, size=11)
     rec = R["reconciliation"]
     v = R["verdict"]
-    bullets(s, [f"{rec['recorded']:,} / {rec['scheduled']:,} episodes recorded; {rec['missing']} missing, "
+    bullets(s, [f"{rec['recorded']:,} / {rec['scheduled']:,} episodes recorded; {rec['missing']:,} missing, "
                 f"{rec['invalid_reset']} invalid resets",
                 "8 controllers × 2,400 cases × 3 processes × batch 900 / 23",
                 f"combined − geometry: {v['selected: ' + G]['classification']} (selected), "

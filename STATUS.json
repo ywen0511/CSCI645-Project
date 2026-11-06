@@ -44,7 +44,7 @@
     "complete": true,
     "experiment_commit": "1d9d0e2 (tag experiment-v2)",
     "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.0.0",
-    "findings": "Combined (1.5 cm geometry + PPO residual) 96.1% vs geometry 96.5% (-0.4 pp [-0.8,-0.2]) vs geometry + 10 mm constant 99.2% (-3.2 pp [-4.0,-2.3]); residual 82.6% vs nominal 65.2% (+17.4) and nominal + constant 69.3% (+13.3); phase input no effect; learned combined residual is a near-constant bias.",
+    "findings": "Combined (1.5 cm geometry + PPO residual) 96.1% vs geometry 96.5% (-0.4 pp [-0.8,-0.2]) vs geometry + 10 mm constant 99.2% (-3.2 pp [-4.0,-2.3]); residual 82.6% vs nominal 65.2% (+17.4) and nominal + constant 69.3% (+13.3); no clear effect of the explicit phase label detected (scoped wording: docs/closeout/ERRATA.md C1); learned combined residual is a near-constant bias.",
     "remaining_limitations": [
       "simulation only, privileged state, translation-only perturbations",
       "3 seeds",
@@ -58,34 +58,35 @@
     "id": "delivery-closeout",
     "assignment": "docs/closeout/ASSIGNMENT.md",
     "branch": "study/v2-diagnostics",
-    "stage": "stage 4 design frozen; stage 2 driver in progress",
+    "stage": "Stage 6: packaging release v2.1.0 (Stages 1-5 done)",
     "complete": false,
     "final_delivery_verified": false,
     "completed_items": [
-      "Stage 1: inventory; v2.0.0 anonymous download 30/30 checksums, 19 archives re-hashed; assignment archived; plan/decisions/status/manifest/ledger created",
-      "Stage 4 design, run manifest and analysis plan committed before collection"
+      "Stage 1: inventory; v2.0.0 anonymous download 30/30 checksums, 19 archives re-hashed; assignment archived; plan/decisions/status/manifest/ledger",
+      "Stage 2: driver scripts/closeout.py (two checkouts, resumable, hash-checked); check stage passes; 51/51 v2 files regenerated (30 byte-identical, 21 figures); unit tests 32/32 with locked env; negative controls pass",
+      "Stage 3: wording/provenance corrections C1-C8 (docs/closeout/ERRATA.md)",
+      "Stage 4: 48/48 tasks, 115,200/115,200 episodes; combined - geometry negative in every repeat and layout (stable under tested settings)",
+      "Stage 5: report and deck rebuilt and inspected page by page; 188 report numbers checked against summaries"
     ],
     "active_jobs": [],
     "blockers": [],
     "next_actions": [
-      "throughput check, then the 48 repeatability tasks",
-      "CPU regeneration from downloaded raw records",
-      "negative controls",
-      "wording corrections",
-      "report/deck rebuild",
-      "release v2.1.0",
-      "fresh-download verification"
+      "package, validate and publish v2.1.0",
+      "Stage 7 verification from a fresh clone and anonymous download",
+      "post-release verification commit"
     ],
     "source_commits": {
       "experiment": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf (tag experiment-v2)",
       "v2_release": "86b193a439539dd88a98a0283c06293c0a1ac8aa (tag v2.0.0)",
       "delivery_snapshot_before": "3a8fe0a9d071fa5cae61939652611cbf349fd790",
-      "assignment_commit": "ace2b7ffacb004c06cf3986dc307bfc70d485489"
+      "assignment_commit": "ace2b7ffacb004c06cf3986dc307bfc70d485489",
+      "supplementary_evaluation": "6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af (tag closeout-eval-v1)"
     },
     "release_tag_planned": "v2.1.0",
     "plan": "docs/closeout/PLAN.md",
     "decisions": "docs/closeout/DECISIONS.md",
     "deliverables": "results/closeout/deliverables.json",
-    "run_ledger": "results/closeout/run_ledger.jsonl"
+    "run_ledger": "results/closeout/run_ledger.jsonl",
+    "findings_supplementary": "combined - geometry 1.5 cm: selected -0.44..-0.40 pp, final -0.39..-0.35 pp over 3 processes x batch 900/23, all repeat-averaged CIs exclude 0 -> stable small disadvantage under the tested settings; combined - (geometry + 10 mm) -3.15..-3.06 pp"
   }
 }

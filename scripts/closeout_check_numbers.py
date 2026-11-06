@@ -119,9 +119,11 @@ def main():
                 b, rp = m.group(1), (m.group(3) or "mean of repeats")
             else:
                 continue
+            name = None
             for col, cell in zip(hdr[1:], r[1:]):
                 role = "final" if "final" in col else "selected"
-                name = "combined - const_geometry_1p5cm" if "const" in col or "10 mm" in col else "combined - geometry_1p5cm"
+                if "geometry" in col or "const" in col:  # a bare "(final)" column inherits the comparison to its left
+                    name = "combined - const_geometry_1p5cm" if "const" in col or "10 mm" in col else "combined - geometry_1p5cm"
                 row = next(x for x in C if x["batch_size"] == b and x["repeat"] == rp and x["role"] == role
                            and x["comparison"] == name)
                 nums = NUM.findall(cell.replace("*", ""))

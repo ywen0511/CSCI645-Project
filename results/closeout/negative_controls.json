@@ -1,0 +1,54 @@
+{
+ "what": "Stage 2 simulator smoke + negative controls (experiment-v2 checkout, real Isaac Sim/PhysX runs, not mocked)",
+ "runs": [
+  {
+   "name": "nominal_clean",
+   "command": "scripts/run_scripted.py --method nominal --num-envs 1 --episodes 1 --output $WORK/sim/negative/nominal_clean",
+   "rc": 0,
+   "outcomes": {
+    "success|success=True": 1
+   }
+  },
+  {
+   "name": "geometry_clean",
+   "command": "scripts/run_scripted.py --method geometry --num-envs 1 --episodes 1 --set align_max=0.015 --output $WORK/sim/negative/geometry_clean",
+   "rc": 0,
+   "outcomes": {
+    "success|success=True": 1
+   }
+  },
+  {
+   "name": "neg_no_receiver",
+   "command": "scripts/run_scripted.py --method nominal --num-envs 20 --episodes 20 --set negative_control=\"no_receiver\" --output $WORK/sim/negative/neg_no_receiver",
+   "rc": 0,
+   "outcomes": {
+    "drop|success=False": 20
+   }
+  },
+  {
+   "name": "neg_giver_holds",
+   "command": "scripts/run_scripted.py --method nominal --num-envs 20 --episodes 20 --set negative_control=\"giver_holds\" --output $WORK/sim/negative/neg_giver_holds",
+   "rc": 0,
+   "outcomes": {
+    "episode_timeout|success=False": 20
+   }
+  },
+  {
+   "name": "neg_table_support",
+   "command": "scripts/run_scripted.py --method nominal --num-envs 20 --episodes 20 --set negative_control=\"table_support\" --set table_size_override=[0.06,0.30,0.20] --output $WORK/sim/negative/neg_table_support",
+   "rc": 0,
+   "outcomes": {
+    "episode_timeout|success=False": 20
+   }
+  }
+ ],
+ "expected": {
+  "nominal_clean": "success",
+  "geometry_clean": "success",
+  "neg_no_receiver": "no success (drop)",
+  "neg_giver_holds": "no success (giver never releases)",
+  "neg_table_support": "no success (table carries load, hold timer never starts)"
+ },
+ "ok": true,
+ "raw": "closeout-negative-controls.tar.gz"
+}

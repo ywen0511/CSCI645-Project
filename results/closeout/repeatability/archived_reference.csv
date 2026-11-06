@@ -1,0 +1,9 @@
+entry,scheduled,recorded,duplicates,missing,unexpected,invalid_reset,n_success,n_drop,n_prohibited_collision,n_episode_timeout,n_release_timeout,n_other_terminal,n_success_flag,n_collision_flag,n_drop_flag,success_rate_scheduled
+geometry_1p5cm,2400,2400,0,0,0,0,2317,0,82,1,0,0,2317,84,0,0.965417
+const_geometry_1p5cm,2400,2400,0,0,0,0,2382,0,0,18,0,0,2382,0,0,0.992500
+combined_seed11__selected,2400,2400,0,0,0,0,2303,0,97,0,0,0,2303,102,0,0.959583
+combined_seed22__selected,2400,2400,0,0,0,0,2308,0,92,0,0,0,2308,95,0,0.961667
+combined_seed33__selected,2400,2400,0,0,0,0,2308,0,92,0,0,0,2308,104,0,0.961667
+combined_seed11__final,2400,2400,0,0,0,0,2308,0,92,0,0,0,2308,101,0,0.961667
+combined_seed22__final,2400,2400,0,0,0,0,2309,0,91,0,0,0,2309,94,0,0.962083
+combined_seed33__final,2400,2400,0,0,0,0,2308,0,92,0,0,0,2308,104,0,0.961667
