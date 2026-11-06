@@ -97,7 +97,9 @@ def main():
                 r = rows.get(m.name)
                 if r is None:
                     mism.append(f"{f}: unlisted {m.name}")
-                elif ("sha256" in r and r["sha256"] != h) or r["size_bytes"] != len(data):
+                elif "sha256" not in r:
+                    mism.append(f"{f}: inventory row without sha256 {m.name}")
+                elif r["sha256"] != h or r["size_bytes"] != len(data):
                     mism.append(f"{f}: hash/size {m.name}")
                 dest = X / m.name
                 dest.parent.mkdir(parents=True, exist_ok=True)

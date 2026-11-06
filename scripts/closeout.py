@@ -122,7 +122,7 @@ class Ctx:
             (self.work / d).mkdir(parents=True, exist_ok=True)
 
     def x(self, tag: str | None = None) -> Path:
-        """Extracted archives of the input release (--inputs-tag). v2.1.0 contains byte-identical copies of the
+        """Extracted archives of the input release (--inputs-tag). v2.1.1 contains byte-identical copies of the
         v2.0.0 checkpoint/raw archives, so either release yields the same layout."""
         return self.inputs / (tag or self.a.inputs_tag) / "x"
 
@@ -707,10 +707,14 @@ def st_package(c: Ctx):
 
 def st_verify(c: Ctx):
     bundle = Path(c.a.bundle) if c.a.bundle else c.inputs / c.a.tag
+    # the same member check the download stage uses, so a local draft is validated exactly like a download
+    va = c.run([sys.executable, "-I", c.tools / "scripts/verify_archives.py", "--bundle", bundle], cwd=c.work,
+               log=c.work / "logs/verify.log")
     rec = c.run([sys.executable, "-I", c.tools / "scripts/closeout_verify.py", "--bundle", bundle,
                  "--extract", c.work / "verify" / bundle.name / "x", "--output", c.work / "verify" / f"{bundle.name}.json"],
                 cwd=c.work, log=c.work / "logs/verify.log")
-    c.record(f"verify_{bundle.name}", {"command": rec})
+    c.record(f"verify_{bundle.name}", {"verify_archives": va, "command": rec,
+                                      "result": json.loads((c.work / "verify" / f"{bundle.name}.json").read_text())})
 
 
 def st_video_replay(c: Ctx):
@@ -763,8 +767,8 @@ def main(argv=None):
     ap.add_argument("--exp", default=None, help="experiment checkout (default <work>/src/experiment-v2)")
     ap.add_argument("--repo", default="ywen0511/CSCI645-Project", help="GitHub repository for downloads")
     ap.add_argument("--repo-url", default=REPO_URL)
-    ap.add_argument("--tag", default="v2.1.0", help="release to download/verify")
-    ap.add_argument("--inputs-tag", default="v2.1.0", help="downloaded release whose archives feed regen/sim stages")
+    ap.add_argument("--tag", default="v2.1.1", help="release to download/verify")
+    ap.add_argument("--inputs-tag", default="v2.1.1", help="downloaded release whose archives feed regen/sim stages")
     ap.add_argument("--from-release", action="store_true", help="analyze: read Stage 4 records from the input release")
     ap.add_argument("--isaac-python", default=None)
     ap.add_argument("--shard", default="0/1", help="repeatability: I/N")
@@ -774,7 +778,7 @@ def main(argv=None):
     ap.add_argument("--only", default="", help="video-replay: comma-separated video file names")
     ap.add_argument("--chrome", default=os.environ.get("CLOSEOUT_CHROME", "google-chrome"))
     ap.add_argument("--soffice", default=os.environ.get("CLOSEOUT_SOFFICE", "libreoffice"))
-    ap.add_argument("--release-tag", default="v2.1.0")
+    ap.add_argument("--release-tag", default="v2.1.1")
     ap.add_argument("--bundle", default=None, help="verify: release directory (default: <work>/inputs/<tag>)")
     ap.add_argument("--redact-host", action="store_true", help="write <redacted> instead of the host name")
     ap.add_argument("--redact", action="append", default=[], help="package: OLD=TOKEN path redaction")

@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 GITHUB = "https://github.com/ywen0511/CSCI645-Project"
-REF = "v2.1.0"  # release tag of this report
+REF = "v2.1.1"  # release tag of this report
 CSS = """
 body { font-family: 'DejaVu Serif', Georgia, serif; font-size: 10pt; line-height: 1.36; max-width: 7.0in; margin: 0 auto; color: #111; }
 h1 { font-size: 16pt; margin-bottom: 0.1em; } h2 { font-size: 12.5pt; margin-top: 1.1em; border-bottom: 1px solid #bbb; }

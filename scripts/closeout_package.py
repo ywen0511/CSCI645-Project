@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Assemble the closeout release directory (CPU; standard library).
 
-    python3 scripts/closeout_package.py --work <closeout work> --tag v2.1.0 --source-commit <sha to be tagged> \
+    python3 scripts/closeout_package.py --work <closeout work> --tag v2.1.1 --source-commit <sha to be tagged> \
         --output <release dir> --redact /private/prefix=<WORK> --redact-regex 'host[0-9]+=<cluster-node>'
 
 Inputs (all must exist; a missing input aborts):
@@ -112,7 +112,7 @@ def main():
     global STAGE
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--work", required=True)
-    ap.add_argument("--tag", default="v2.1.0")
+    ap.add_argument("--tag", default="v2.1.1")
     ap.add_argument("--source-commit", required=True, help="commit the release tag will point to (clean)")
     ap.add_argument("--output", required=True)
     ap.add_argument("--redact", action="append", default=[], help="OLD=TOKEN")
@@ -178,8 +178,10 @@ def main():
     subprocess.run(["git", "-C", str(ROOT), "archive", "--format=tar.gz", f"--prefix=CSCI645-Project-{a.tag}/",
                     "-o", str(srcp), src_commit], check=True)
     shutil.copy2(srcp, out / f"source-{a.tag}.tar.gz")
-    with tarfile.open(srcp) as t:
-        inv[f"source-{a.tag}.tar.gz"] = [{"path": m.name, "size_bytes": m.size} for m in t.getmembers() if m.isfile()]
+    with tarfile.open(srcp) as t:  # every inventory row carries size and SHA-256 (verify_archives.py requires both)
+        inv[f"source-{a.tag}.tar.gz"] = [{"path": m.name, "size_bytes": m.size,
+                                         "sha256": hashlib.sha256(t.extractfile(m).read()).hexdigest()}
+                                        for m in t.getmembers() if m.isfile()]
     # ---- 4. documents
     docs = [(ROOT / "report/v2/report.md", "report.md"), (ROOT / "report/v2/report.pdf", "report.pdf"),
             (ROOT / "report/v2/deck/deck.pptx", "deck.pptx"), (ROOT / "report/v2/deck/deck.pdf", "deck.pdf"),

@@ -93,7 +93,7 @@ def main():
     F = ROOT / "results/v2"
 
     s = prs.slides.add_slide(blank)
-    add_title(s, "Robust Bimanual Handover — Final Delivery v2.1.0",
+    add_title(s, "Robust Bimanual Handover — Final Delivery v2.1.1",
               "Geometry vs residual RL · Isaac Lab 3.0 / Isaac Sim 6.2 (PhysX) · CSCI 645, Fall 2026 · Yan Wen")
     bullets(s, ["Two Franka Panda arms, parallel-jaw grippers, one rigid bar; success = 2 s receiver-only hold",
                 "v1: geometry module decisive, but the selector picked untrained policies (8/9 runs)",
@@ -267,7 +267,7 @@ def main():
                 "Residual RL alone helps a lot over nominal (+17 pp) but stays far below geometry",
                 "Limitations: simulation only, privileged state, translation-only perturbations, 3 seeds,",
                 "  v2 designed after v1 diagnostics, saturated training range / validation, one reward design",
-                "Everything public: tags experiment-v2, closeout-eval-v1, v2.1.0 + self-contained release v2.1.0"],
+                "Everything public: tags experiment-v2, closeout-eval-v1, v2.1.1 + self-contained release v2.1.1"],
             y=1.5, size=19)
 
     OUT.mkdir(parents=True, exist_ok=True)

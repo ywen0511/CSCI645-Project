@@ -2,16 +2,19 @@
 
 **CSCI 645 Robot Manipulation, Fall 2026 · Yan Wen** · Isaac Lab v3.0.0 / Isaac Sim 6.2.0.0 (PhysX) · RSL-RL 5.5.1
 
-## Final delivery (v2.1.0): reproducibility and repeatability closeout
+## Final delivery (v2.1.1): reproducibility and repeatability closeout
 
-The **delivery branch is `study/v2-diagnostics`** (the default branch `main` is historical). This closeout
-preserves every v1/v2 result and adds a corrected, executable reproduction workflow, scoped wording, and a
+The **delivery branch is `study/v2-diagnostics`** (the default branch `main` is historical). The first
+closeout release, v2.1.0, stays published but is superseded by v2.1.1: its source-archive inventory lacked
+member hashes, so the documented `download` stage failed in the post-publication check
+([ERRATA C9](docs/closeout/ERRATA.md)). This closeout preserves every v1/v2 result and adds a corrected,
+executable reproduction workflow, scoped wording, and a
 supplementary repeatability check of the existing v2 checkpoints. Nothing was retrained.
 
 | | Link |
 |---|---|
-| Release (self-contained: copies of all v2.0.0 checkpoints/raw records/logs/videos + closeout evidence) | [v2.1.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.0) |
-| Source tags | [`experiment-v2`](https://github.com/ywen0511/CSCI645-Project/tree/experiment-v2) (simulator code, frozen protocol) · [`closeout-eval-v1`](https://github.com/ywen0511/CSCI645-Project/tree/closeout-eval-v1) (Stage 4 configs/driver) · [`v2.1.0`](https://github.com/ywen0511/CSCI645-Project/tree/v2.1.0) (delivery tools, report/deck sources) |
+| Release (self-contained: copies of all v2.0.0 checkpoints/raw records/logs/videos + closeout evidence) | [v2.1.1](https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.1) |
+| Source tags | [`experiment-v2`](https://github.com/ywen0511/CSCI645-Project/tree/experiment-v2) (simulator code, frozen protocol) · [`closeout-eval-v1`](https://github.com/ywen0511/CSCI645-Project/tree/closeout-eval-v1) (Stage 4 configs/driver) · [`v2.1.1`](https://github.com/ywen0511/CSCI645-Project/tree/v2.1.1) (delivery tools, report/deck sources) |
 | Report (Markdown; PDF in the release) | [report/v2/report.md](report/v2/report.md) · supplementary [report/closeout/repeatability.md](report/closeout/repeatability.md) |
 | Presentation | [report/v2/deck/deck.pptx](report/v2/deck/deck.pptx) · [deck.pdf](report/v2/deck/deck.pdf) |
 | Tables | [results/v2/summary/tables.md](results/v2/summary/tables.md) · [results/closeout/repeatability/](results/closeout/repeatability/) |

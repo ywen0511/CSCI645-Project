@@ -6,7 +6,7 @@ Python 3.12.16 (`pip freeze` identical to `configs/v2/frozen/pip-freeze.txt` in 
 "Laptop" = Ubuntu, Python 3.13.9 with `configs/closeout/requirements-analysis.txt` (NumPy 2.4.4), Chrome 155,
 LibreOffice 7.3.
 
-## A. Before publication (part of release v2.1.0)
+## A. Before publication (part of release v2.1.1)
 
 | Check | How | Result |
 |---|---|---|
@@ -24,5 +24,10 @@ LibreOffice 7.3.
 
 ## B. Published release (fresh clone, anonymous download)
 
-Recorded after publication in a later commit on `study/v2-diagnostics` (the tag `v2.1.0` is not moved).
+Recorded after publication in a later commit on `study/v2-diagnostics` (the tag `v2.1.1` is not moved).
 Pending at the time this file was packaged into the release.
+
+Superseded attempt: v2.1.0 (published 04:26 UTC) failed this section at its first step. On both the laptop and
+the cluster, `closeout.py download --tag v2.1.0` downloaded 38/38 assets anonymously, but `verify_archives.py`
+stopped with `KeyError: 'sha256'` on the `source-v2.1.0.tar.gz` inventory rows (ERRATA C9). No later step
+of that attempt is counted as verification.

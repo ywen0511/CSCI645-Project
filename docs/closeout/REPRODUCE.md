@@ -11,7 +11,7 @@ result.
 | Role | Revision | What runs from it |
 |---|---|---|
 | **Experiment checkout** | tag `experiment-v2` = `1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf` | every simulator command: `eval_matrix.py`, `run_scripted.py`, `train.py`, `record_video.py` (created by the `checkout` stage under `<work>/src/experiment-v2`) |
-| **Delivery-tools checkout** | tag `v2.1.0` (release) — Stage 4 itself ran with tag `closeout-eval-v1` = `6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af` | the driver, download/integrity, CPU regeneration, analysis, rendering, packaging, verification, and the closeout configs/matrices passed to the experiment checkout |
+| **Delivery-tools checkout** | tag `v2.1.1` (release) — Stage 4 itself ran with tag `closeout-eval-v1` = `6bf80bb38ffc38821ae8a6b4bbcdc99fa89574af` | the driver, download/integrity, CPU regeneration, analysis, rendering, packaging, verification, and the closeout configs/matrices passed to the experiment checkout |
 
 The simulator code (`src/`, the four simulator scripts), the frozen protocol and the final suite are
 byte-identical in both checkouts ([`results/closeout/supplementary_source_identity.json`](../../results/closeout/supplementary_source_identity.json));
@@ -37,22 +37,22 @@ the driver re-checks this before every simulator stage and refuses a dirty or wr
 ```bash
 git clone https://github.com/ywen0511/CSCI645-Project.git CSCI645-Project
 cd CSCI645-Project
-git checkout v2.1.0
+git checkout v2.1.1
 python3.13 -m venv .venv-analysis
 .venv-analysis/bin/pip install -r configs/closeout/requirements-analysis.txt
 PY=$PWD/.venv-analysis/bin/python
 W=$PWD/closeout_work
-$PY scripts/closeout.py --work "$W" download --tag v2.1.0      # anonymous; sha256 + member re-hash + extract
+$PY scripts/closeout.py --work "$W" download --tag v2.1.1      # anonymous; sha256 + member re-hash + extract
 $PY scripts/closeout.py --work "$W" checkout                    # clean experiment-v2 checkout under $W/src
 $PY scripts/closeout.py --work "$W" check                       # scripts, CLI flags, links, asset names, sim-code identity
 $PY scripts/closeout.py --work "$W" regen                       # v2 tables/figures from downloaded raw records
 $PY scripts/closeout.py --work "$W" analyze --from-release      # Stage 4 tables/figures from downloaded raw records
-$PY scripts/closeout.py --work "$W" verify --tag v2.1.0         # re-verify the downloaded release
+$PY scripts/closeout.py --work "$W" verify --tag v2.1.1         # re-verify the downloaded release
 ```
 
 Outputs: `$W/regen/comparison.json` (each archived v2 file: identical / float-only / figure / substantive),
 `$W/analysis/repeatability/` (compared with the committed `results/closeout/repeatability/` in
-`$W/records/analyze.json`), `$W/verify/v2.1.0.json`, and one record per stage in `$W/records/`.
+`$W/records/analyze.json`), `$W/verify/v2.1.1.json`, and one record per stage in `$W/records/`.
 
 ## Simulator stages (GPU)
 
@@ -86,11 +86,11 @@ not clean at `experiment-v2`. `package` refuses an existing output folder and a 
 ## Original v2 experiment (replay of training/evaluation; not needed to verify the results)
 
 Run from the experiment checkout (`cd "$W/src/experiment-v2"`) with the Isaac Lab Python. These are the
-commands of the v2 study (paths relative to that checkout; `$X` = `$W/inputs/v2.1.0/x`, the extracted
+commands of the v2 study (paths relative to that checkout; `$X` = `$W/inputs/v2.1.1/x`, the extracted
 release):
 
 ```bash
-X=$W/inputs/v2.1.0/x
+X=$W/inputs/v2.1.1/x
 cd "$W/src/experiment-v2"
 $ISAAC scripts/train.py --method combined --seed 11 --protocol configs/v2/frozen/protocol.json --run-type final \
     --output "$W/retrain/combined_seed11"                      # 10,027,008 transitions; resume: --resume <dir>/checkpoints/latest.pt
@@ -106,5 +106,5 @@ after `experiment-v2`) live in the delivery-tools checkout. Pass them by absolut
 
 ```bash
 $PY scripts/closeout.py --work "$W" render --chrome google-chrome --soffice libreoffice
-$PY scripts/closeout.py --work "$W" package --release-tag v2.1.0       # needs $W/inputs/v2.0.0 (download --tag v2.0.0)
+$PY scripts/closeout.py --work "$W" package --release-tag v2.1.1       # needs $W/inputs/v2.0.0 (download --tag v2.0.0)
 ```

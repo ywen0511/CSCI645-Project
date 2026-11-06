@@ -28,7 +28,7 @@ checkouts before any simulator stage (`scripts/closeout.py check`).
 | 3 | Wording and provenance corrections in README, report, deck, diagnostics, reproduction notes, release notes | `docs/closeout/ERRATA.md` |
 | 4 | Repeatability: 8 controllers × 2,400 final cases × 3 process repeats × batch sizes 900 and 23 (115,200 episodes); config, run manifest and analysis plan committed before collection | `configs/closeout/repeatability.json`, `docs/closeout/REPEATABILITY_PLAN.md`, `report/closeout/repeatability.md`, `results/closeout/repeatability/` |
 | 5 | Revised report (Markdown + PDF), deck (PPTX + PDF), ten videos verified, every page rendered and inspected | `report/v2/`, `docs/closeout/VERIFICATION.md` |
-| 6 | Release `v2.1.0` with copies of all v2.0.0 assets + new artifacts, indices, inventories, SHA256SUMS | GitHub release |
+| 6 | Release `v2.1.1` with copies of all v2.0.0 assets + new artifacts, indices, inventories, SHA256SUMS | GitHub release |
 | 7 | Fresh clone + anonymous download; checksums, inventories, indices; driver error/resume paths; regeneration; predeclared replay (first five cases of each of the 12 conditions); resume smoke (≤ 2 PPO iterations); media and document checks | `docs/closeout/VERIFICATION.md` |
 
 ## Compute

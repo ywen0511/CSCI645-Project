@@ -90,3 +90,16 @@ UTC timestamps from `date -u`. Evidence paths are repository-relative unless mar
   and the IDs of cases whose terminal reason differs from the archive. An exact 0.0 difference is treated as
   a sign different from a negative one (conservative reading of "sign differs").
 - `download` resume now re-hashes every asset against `SHA256SUMS` before re-using a verified download.
+
+### 2026-11-06 04:33 UTC — v2.1.0 failed post-publication verification; patch release v2.1.1
+
+- v2.1.0 was published at 04:26 UTC after local draft validation. The first Stage 7 step (fresh clone, empty
+  folder, anonymous `closeout.py download --tag v2.1.0`) downloaded 38/38 assets, then failed on both the
+  laptop and the cluster: `archive_inventories.json` listed the `source-v2.1.0.tar.gz` members without
+  SHA-256, and `verify_archives.py` requires it. The local validation had used `closeout_verify.py`, which
+  tolerated rows without a hash, so it missed this.
+- Per the assignment, a defect in a published release is repaired by a new patch release, not by moving the
+  tag or replacing assets. The packager now hashes every source member. The verifier now rejects inventory
+  rows without a hash. The driver's `verify` stage also runs `verify_archives.py`, so a draft is checked
+  exactly like a download. Documents, driver defaults and report links now name v2.1.1. v2.1.0 stays
+  published unchanged; its release notes point to v2.1.1 (ERRATA C9).
