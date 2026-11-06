@@ -368,7 +368,12 @@ def st_download(c: Ctx):
     if marker.exists() and (d / "SHA256SUMS").exists():
         m = json.loads(marker.read_text())
         if m.get("sha256sums") == sha_file(d / "SHA256SUMS") and (d / "x").exists():
-            print(f"[closeout] download {tag}: already verified, skipping", flush=True)
+            sums = dict(reversed(l.split(None, 1)) for l in (d / "SHA256SUMS").read_text().splitlines() if l.strip())
+            bad = [n for n, h in sums.items() if not (d / n).exists() or sha_file(d / n) != h]
+            if bad:
+                raise StageError(f"download {tag}: verified earlier, but now {bad} differ from SHA256SUMS; "
+                                 f"refusing to continue (delete {d} to download again)")
+            print(f"[closeout] download {tag}: already verified ({len(sums)} assets re-hashed), skipping", flush=True)
             return
     cmds = []
     env = {k: v for k, v in os.environ.items() if k not in ("GH_TOKEN", "GITHUB_TOKEN")}

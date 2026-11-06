@@ -72,3 +72,21 @@ UTC timestamps from `date -u`. Evidence paths are repository-relative unless mar
 - The two previous headings were first written as 02:40 and 02:48 UTC without reading the clock; the commit
   times (`6bf80bb` 02:28:19Z, `2cdb32d` 02:29:28Z) are the correct times and the headings now use them. From here
   on every heading is taken from `date -u` at writing time.
+
+### 2026-11-06 02:42 UTC — Unit tests, batch-900 observations, driver hardening
+
+- CPU unit tests with the locked Isaac Lab Python on a CPU node: 32/32 pass, 0 skipped, in both the
+  `experiment-v2` and the delivery-tools checkout (`results/closeout/tests/`). In the CPU analysis environment
+  (no torch) 23 of 32 are skipped; that environment is for analysis only.
+- All 24 batch-900 tasks completed in one attempt each. The three process repeats (seeds 6454101–3) give
+  identical terminal reasons for every controller and case. Fresh-process `geometry_1p5cm` differs from the
+  archived v2 record in exactly the two cases (`joint_late_3cm_045-0067`, `-0184`) where the archived untrained
+  combined policies differed from archived geometry, and matches the archived untrained records in 2,400/2,400.
+  In the archived evaluation, geometry was the second entry of its process and each untrained policy the
+  first. The v2 "2/2,400" difference is therefore consistent with an evaluation-context effect (earlier
+  entries in the same process) rather than random variation. This is an exploratory observation outside the
+  frozen plan and is reported as such.
+- Analysis additions (not changing the frozen comparisons): agreement between repeats and between layouts,
+  and the IDs of cases whose terminal reason differs from the archive. An exact 0.0 difference is treated as
+  a sign different from a negative one (conservative reading of "sign differs").
+- `download` resume now re-hashes every asset against `SHA256SUMS` before re-using a verified download.

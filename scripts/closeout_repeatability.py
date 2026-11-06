@@ -203,6 +203,25 @@ def cmd_analyze(a):
            "attempts_total": sum(p["attempts"] for p in per_task),
            "tasks_with_resume": sum(p["attempts"] > 1 for p in per_task)}
 
+    # ---- agreement between repeats and between layouts (same controller, same cases) -------------------------
+    pair_rows = []
+    for e in entries:
+        for b in batches:
+            for r1 in repeats:
+                for r2 in repeats:
+                    if r1 < r2:
+                        g = agree(data[(b, r1, e)], data[(b, r2, e)], case_ids)
+                        pair_rows.append({"entry": e, "pair": f"b{b} r{r1} vs b{b} r{r2}", "kind": "between repeats", **g})
+        for rp in repeats:
+            g = agree(data[(batches[0], rp, e)], data[(batches[1], rp, e)], case_ids)
+            pair_rows.append({"entry": e, "pair": f"b{batches[0]} r{rp} vs b{batches[1]} r{rp}", "kind": "between layouts", **g})
+    diff_cases = {}
+    for t in man["tasks"]:
+        A = {r["case_id"]: r for r in arch[t["entry"]]}
+        dc = sorted(r["case_id"] for r in data[(t["batch_size"], t["repeat"], t["entry"])]
+                    if r["case_id"] in A and A[r["case_id"]]["terminal_reason"] != r["terminal_reason"])
+        diff_cases[t["task"]] = dc
+    write_csv(out / "agreement_pairs.csv", pair_rows)
     write_csv(out / "per_task.csv", per_task)
     write_csv(out / "comparisons.csv", comps)
     write_csv(out / "archived_reference.csv", [{"entry": e, **arch_c[e]} for e in entries])
@@ -211,6 +230,12 @@ def cmd_analyze(a):
                "success_rate_by_entry": {e: {"archived": arch_c[e]["success_rate_scheduled"],
                                              **{f"b{b}_r{rp}": counts(data[(b, rp, e)], case_ids)["success_rate_scheduled"]
                                                 for b in batches for rp in repeats}} for e in entries},
+               "zero_difference_rule": "an exactly zero difference counts as a different sign from a negative one "
+                                       "(conservative reading of the frozen rule)",
+               "between_repeats_identical_outcomes": {f"b{b}": all(r["terminal_reason_disagree"] == 0 for r in pair_rows
+                                                                   if r["kind"] == "between repeats" and r["pair"].startswith(f"b{b} "))
+                                                      for b in batches},
+               "terminal_reason_differs_from_archived_cases": diff_cases,
                "agreement_with_archived": {f"b{p['batch_size']}_r{p['repeat']}_{p['entry']}":
                                            [p["agree_terminal_reason"], p["agree_success"], p["compared_with_archived"]]
                                            for p in per_task}}
@@ -284,6 +309,109 @@ def figures(d: Path, comps, per_task, entries, batches, repeats, arch_c):
     plt.close(fig)
 
 
+def cmd_report(a):
+    """Write report/closeout/repeatability.md from the analysis outputs (every number generated)."""
+    R = Path(a.results)
+    S = json.loads((R / "summary.json").read_text())
+    T = list(csv.DictReader(open(R / "per_task.csv")))
+    C = list(csv.DictReader(open(R / "comparisons.csv")))
+    P = list(csv.DictReader(open(R / "agreement_pairs.csv")))
+    A = {r["entry"]: r for r in csv.DictReader(open(R / "archived_reference.csv"))}
+    cfg = json.loads((ROOT / "configs/closeout/repeatability.json").read_text())
+    rec = S["reconciliation"]
+    ents = [e["id"] for e in cfg["entries"]]
+    lab = {"geometry_1p5cm": "geometry 1.5 cm", "const_geometry_1p5cm": "geometry 1.5 cm + 10 mm"}
+    lab.update({f"combined_seed{s}__{r}": f"combined s{s} {r}" for s in (11, 22, 33) for r in ("selected", "final")})
+
+    def cell(b, rp, role, name):
+        r = next(r for r in C if r["batch_size"] == str(b) and r["repeat"] == str(rp) and r["role"] == role
+                 and r["comparison"] == name)
+        return f"{float(r['diff_pp']):+.2f} [{float(r['ci_low_pp']):+.2f}, {float(r['ci_high_pp']):+.2f}]"
+
+    G, K = "combined - geometry_1p5cm", "combined - const_geometry_1p5cm"
+    L = ["# Supplementary repeatability evaluation (closeout)", "",
+         "**Retrospective robustness check on the already-used v2 final suite.** This is not a new held-out or",
+         "confirmatory experiment: the 2,400 cases are the v2 final cases, and the checkpoints and the +10 mm constant",
+         "were chosen before this check. Nothing (checkpoint, constant, threshold, subset) is selected from these",
+         "replays. The original v2 numbers are unchanged and appear only as the reference row.",
+         "Design, frozen before collection: [`configs/closeout/repeatability.json`](../../configs/closeout/repeatability.json),",
+         "[analysis plan](../../docs/closeout/REPEATABILITY_PLAN.md). Analysis: `scripts/closeout_repeatability.py`;",
+         "machine-readable outputs: [`results/closeout/repeatability/`](../../results/closeout/repeatability/).", "",
+         "## Design", "",
+         f"- {len(ents)} controllers: geometry 1.5 cm, geometry 1.5 cm + 10 mm x constant, and the selected and final",
+         "  combined checkpoints of training seeds 11/22/33 (downloaded v2.0.0 files, SHA-256 checked in every record).",
+         f"- {cfg['cases']:,} final cases in suite order; process seeds {', '.join(map(str, cfg['process_seeds']))}; batch sizes "
+         f"{' and '.join(map(str, cfg['batch_sizes']))}.",
+         "- One fresh simulator process per (batch size, repeat, controller); deterministic actor; frozen normalisation.",
+         "- Simulator source: clean `experiment-v2` checkout; configs/driver: tag `closeout-eval-v1`.", "",
+         "## Reconciliation", "",
+         "| scheduled | recorded | missing | duplicates | invalid resets | tasks complete | attempts | resumed tasks |",
+         "|---|---|---|---|---|---|---|---|",
+         f"| {rec['scheduled']:,} | {rec['recorded']:,} | {rec['missing']:,} | {rec['duplicates']} | {rec['invalid_reset']} | "
+         f"{rec['tasks_complete']}/{rec['tasks']} | {rec['attempts_total']} | {rec['tasks_with_resume']} |", "",
+         "## Success per controller (successes of 2,400 scheduled cases)", "",
+         "| controller | v2.0.0 archived | b900 r1 | r2 | r3 | b23 r1 | r2 | r3 |", "|---|---|---|---|---|---|---|---|"]
+    for e in ents:
+        row = [lab[e], A[e]["n_success_flag"]]
+        for b in (900, 23):
+            for rp in (1, 2, 3):
+                t = next(t for t in T if t["entry"] == e and t["batch_size"] == str(b) and t["repeat"] == str(rp))
+                row.append(t["n_success_flag"])
+        L.append("| " + " | ".join(map(str, row)) + " |")
+    L += ["", "Failure counts per task (drop, prohibited collision, episode timeout, release timeout, invalid reset) are",
+          "in `per_task.csv`.", "",
+          "## Paired differences (percentage points, 95% CI; training seeds × shared cases bootstrap, 10,000 replicates)", "",
+          "Each row is one batch layout and one process repeat; \"mean of 3 repeats\" averages each case over the three",
+          "repeats within each training seed before resampling, so repeats are never counted as cases or seeds.", "",
+          "| layout / process | combined − geometry (selected) | (final) | combined − geometry + 10 mm (selected) | (final) |",
+          "|---|---|---|---|---|"]
+    rows = [("v2.0.0 archived (900, seed 0)", "archived (900, seed 0)", "v2.0.0")]
+    for b in (900, 23):
+        rows += [(f"batch {b}, repeat {rp}", b, rp) for rp in (1, 2, 3)] + [(f"batch {b}, mean of 3 repeats", b, "mean of repeats")]
+    for name, b, rp in rows:
+        L.append(f"| {name} | {cell(b, rp, 'selected', G)} | {cell(b, rp, 'final', G)} | {cell(b, rp, 'selected', K)} | "
+                 f"{cell(b, rp, 'final', K)} |")
+    L += ["", "![differences](../../results/closeout/repeatability/figures/repeatability_differences.png)", "",
+          "## Interpretation (rule fixed in the analysis plan)", ""]
+    for k, v in S["verdict"].items():
+        lo, hi = v["range_pp_over_repeats_and_layouts"]
+        lay = "; ".join(f"batch {b}: {x[0]:+.2f} [{x[1]:+.2f}, {x[2]:+.2f}]" for b, x in v["per_layout_repeat_averaged"].items())
+        nice = k.replace(" - ", " − ").replace("const_geometry_1p5cm", "geometry 1.5 cm + 10 mm").replace("geometry_1p5cm", "geometry 1.5 cm")
+        L.append(f"- **{nice}**: "
+                 f"range over repeats and layouts {lo:+.2f} to {hi:+.2f} pp; repeat-averaged {lay}. "
+                 f"Classification: **{v['classification']}**.")
+    L += ["", f"Rule detail: {S['zero_difference_rule']}.", "",
+          "## Agreement with the archived v2.0.0 records and between processes", "",
+          "Terminal reason equal / success flag equal, out of 2,400 cases per controller and task (two different statistics).", "",
+          "| controller | b900 r1 | b900 r2 | b900 r3 | b23 r1 | b23 r2 | b23 r3 |", "|---|---|---|---|---|---|---|"]
+    for e in ents:
+        row = [lab[e]]
+        for b in (900, 23):
+            for rp in (1, 2, 3):
+                t = next(t for t in T if t["entry"] == e and t["batch_size"] == str(b) and t["repeat"] == str(rp))
+                row.append(f"{t['agree_terminal_reason']} / {t['agree_success']}")
+        L.append("| " + " | ".join(row) + " |")
+    br = S["between_repeats_identical_outcomes"]
+    lay = [r for r in P if r["kind"] == "between layouts"]
+    L += ["", f"Between process repeats (same layout, different process seeds): identical terminal reasons for every controller "
+          f"and case — batch 900: {'yes' if br['b900'] else 'no'}, batch 23: {'yes' if br['b23'] else 'no'}.",
+          f"Between layouts (batch 900 vs 23, same repeat): terminal reasons equal in "
+          f"{min(int(r['terminal_reason_equal']) for r in lay)}–{max(int(r['terminal_reason_equal']) for r in lay)} of 2,400 "
+          "cases per controller (`agreement_pairs.csv`).", "",
+          "## Limitations", "",
+          "- Same suite, same checkpoints and the same constant as the original v2 evaluation: this check speaks to",
+          "  evaluation repeatability, not to generalisation.",
+          "- Three trained seeds only; process repeats and batch layouts are not new training seeds.",
+          "- Two batch layouts and one GPU type/driver (A100-40GB, 580.159.03) were tested; other hardware or software",
+          "  versions were not.",
+          "- Each controller ran as the only entry of a fresh process. The archived v2 evaluation ran several",
+          "  controllers per process; differences to the archive therefore mix layout-independent context effects",
+          "  with ordinary boundary sensitivity (see the exploratory note in the report, Section 5.5)."]
+    Path(a.output).parent.mkdir(parents=True, exist_ok=True)
+    Path(a.output).write_text("\n".join(L) + "\n")
+    print("wrote", a.output)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -296,8 +424,11 @@ def main():
     q.add_argument("--archived", required=True)
     q.add_argument("--replay", required=True)
     q.add_argument("--output", required=True)
+    r = sub.add_parser("report")
+    r.add_argument("--results", required=True)
+    r.add_argument("--output", required=True)
     a = ap.parse_args()
-    {"analyze": cmd_analyze, "agreement": cmd_agreement}[a.cmd](a)
+    {"analyze": cmd_analyze, "agreement": cmd_agreement, "report": cmd_report}[a.cmd](a)
 
 
 if __name__ == "__main__":
