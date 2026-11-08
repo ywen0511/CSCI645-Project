@@ -1,0 +1,35 @@
+{
+ "name": "v3_intervention_permuted_residual_robust_history_s55",
+ "suite": "$DELIVERY/configs/v3/suites/final_subset65.jsonl",
+ "num_envs": 65,
+ "protocol": "configs/v3/frozen/training/residual_robust_history.json",
+ "base_overrides": {
+  "observation_history_permutation": [
+   4,
+   2,
+   0,
+   3,
+   1
+  ]
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s55__selected__permuted",
+   "method": "residual",
+   "training_seed": 55,
+   "role": "intervention_permuted",
+   "allow_config_mismatch": true,
+   "intervention": {
+    "observation_history_permutation": [
+     4,
+     2,
+     0,
+     3,
+     1
+    ]
+   },
+   "checkpoint": "residual_robust_history_s55/checkpoints/step_002031616.pt"
+  }
+ ]
+}

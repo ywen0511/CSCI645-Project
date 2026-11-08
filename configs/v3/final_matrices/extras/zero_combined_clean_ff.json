@@ -1,0 +1,16 @@
+{
+ "name": "v3_zero_combined_clean_ff",
+ "suite": "$DELIVERY/configs/v3/suites/final_subset65.jsonl",
+ "num_envs": 65,
+ "protocol": "configs/v3/frozen/training/combined_clean_ff.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_clean_ff_s11__step0",
+   "method": "combined",
+   "training_seed": 11,
+   "role": "untrained_control",
+   "checkpoint": "combined_clean_ff_s11/checkpoints/step_000000000.pt"
+  }
+ ]
+}

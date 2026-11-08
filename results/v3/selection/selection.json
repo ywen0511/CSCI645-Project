@@ -1,0 +1,140 @@
+{
+ "combined_clean_ff_s11": {
+  "checkpoint_sha256": "9b27e9a30d696c3b1c416f9f4e9699b1b77dd9689f5f127d22649692e90346b6",
+  "collision_rate": 0.0,
+  "selected": "step_008028160",
+  "success_rate": 1.0
+ },
+ "combined_clean_ff_s22": {
+  "checkpoint_sha256": "6800efb0a8a033f6725b8d6d24f32dd97bcabee64c62dcb78773131dc962301b",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "combined_clean_ff_s33": {
+  "checkpoint_sha256": "4aa5ccfb8217e4fccc4383d01eb95e713036fb37128b0433b664a1ecc0d7dbcd",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "combined_clean_ff_s44": {
+  "checkpoint_sha256": "babd6537efe58660dc8980f1f74b806aa81157935e44834d8fe33000c9b21262",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "combined_clean_ff_s55": {
+  "checkpoint_sha256": "a26e85ebb57feca52e0a98c54e7bfb6537bd636a1ae37695fbfb0098b186fe51",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "combined_robust_ff_s11": {
+  "checkpoint_sha256": "c7b46f4e6b2ae40862c7ed19d89630c34f969029c9426709809ef1294eee14dc",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "combined_robust_ff_s22": {
+  "checkpoint_sha256": "b084149bf4d0c54d40cf44f00c6a859d46acfab09f4a62e8aae9e4522e1a0a9d",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "combined_robust_ff_s33": {
+  "checkpoint_sha256": "3964331727e3d2323c8491fb9cf03b429a597d0b78331decda582b7b88744416",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "combined_robust_ff_s44": {
+  "checkpoint_sha256": "8b803f07639ac2a7b1944151023624e1d4c758bf7f301407e7f627823f783443",
+  "collision_rate": 0.0,
+  "selected": "step_006029312",
+  "success_rate": 1.0
+ },
+ "combined_robust_ff_s55": {
+  "checkpoint_sha256": "37bbfd1e2268f69b579c8c0be46bb929504d0a02869305bc703d85d011582009",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "combined_robust_history_s11": {
+  "checkpoint_sha256": "a47c8fc8e4c4cc41964685d2826fbe6ee32b18d492ca2fbaa5a3b7d041d34ed1",
+  "collision_rate": 0.0,
+  "selected": "step_002031616",
+  "success_rate": 1.0
+ },
+ "combined_robust_history_s22": {
+  "checkpoint_sha256": "07668b372ebdf3733f61d561496d1daa1b1e97ad70c76ad03c8f115a16015c33",
+  "collision_rate": 0.0,
+  "selected": "step_002031616",
+  "success_rate": 1.0
+ },
+ "combined_robust_history_s33": {
+  "checkpoint_sha256": "a36e7e802a71d79897ff8ea431ad963a3dfafb15b9b10f853936dc79a31b048a",
+  "collision_rate": 0.0,
+  "selected": "step_004030464",
+  "success_rate": 1.0
+ },
+ "combined_robust_history_s44": {
+  "checkpoint_sha256": "277fb4c452d782535f2035f2a8dd0bb4905ea0f1386f159f037e46393d5fca85",
+  "collision_rate": 0.0,
+  "selected": "step_008028160",
+  "success_rate": 1.0
+ },
+ "combined_robust_history_s55": {
+  "checkpoint_sha256": "1b5329ed61d6499e59ff71e398fa80325854ebf3cd291be7c38694d03c8d9323",
+  "collision_rate": 0.0,
+  "selected": "step_002031616",
+  "success_rate": 1.0
+ },
+ "combined_robust_repeat_s11": {
+  "checkpoint_sha256": "8942928aa9cb573ef95c8a71d4fe99ff4796e812ab7585605019b2a3dce39116",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "combined_robust_repeat_s22": {
+  "checkpoint_sha256": "2d4a3baad0beac733e318a7471c446828aecff355fbd32bb482d41b0b477d006",
+  "collision_rate": 0.0,
+  "selected": "step_008028160",
+  "success_rate": 1.0
+ },
+ "combined_robust_repeat_s33": {
+  "checkpoint_sha256": "24ee6acde49936db922b1ddf1044a5f241fa85615792b85f0e56dd8ab02a5e7a",
+  "collision_rate": 0.0,
+  "selected": "step_010027008",
+  "success_rate": 1.0
+ },
+ "residual_robust_history_s11": {
+  "checkpoint_sha256": "21a832f05607345382e5cf39aaf6d3eee5e6083a74689779bc32e74fa3033d6e",
+  "collision_rate": 0.16666666666666666,
+  "selected": "step_010027008",
+  "success_rate": 0.8083333333333333
+ },
+ "residual_robust_history_s22": {
+  "checkpoint_sha256": "57d9e8532b8d0b03bd1a7872ecb05b7bfedc57bfed0c924e50655666721c037b",
+  "collision_rate": 0.1875,
+  "selected": "step_002031616",
+  "success_rate": 0.7708333333333334
+ },
+ "residual_robust_history_s33": {
+  "checkpoint_sha256": "1ca26269b935eb507c9e9d5969bfe4fe2789eb4152adb66b855db1826a5a335f",
+  "collision_rate": 0.14583333333333334,
+  "selected": "step_008028160",
+  "success_rate": 0.8333333333333334
+ },
+ "residual_robust_history_s44": {
+  "checkpoint_sha256": "21ac07703122cd2ac4038f38f5ffa76180944b1953e4e378ae0af4859ddf79e9",
+  "collision_rate": 0.16666666666666666,
+  "selected": "step_002031616",
+  "success_rate": 0.8458333333333333
+ },
+ "residual_robust_history_s55": {
+  "checkpoint_sha256": "9a0f36b2aa5bdbc20293a030ecac881c6e21f8c06b0e082e94bd4a3dc34e8462",
+  "collision_rate": 0.16666666666666666,
+  "selected": "step_002031616",
+  "success_rate": 0.8333333333333334
+ }
+}

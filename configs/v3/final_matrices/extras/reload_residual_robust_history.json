@@ -1,0 +1,16 @@
+{
+ "name": "v3_reload_residual_robust_history",
+ "suite": "$DELIVERY/configs/v3/suites/final_reload13.jsonl",
+ "num_envs": 13,
+ "protocol": "configs/v3/frozen/training/residual_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s11__selected",
+   "method": "residual",
+   "training_seed": 11,
+   "role": "selected",
+   "checkpoint": "residual_robust_history_s11/checkpoints/step_010027008.pt"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "name": "v3_reload_combined_robust_ff",
+ "suite": "$DELIVERY/configs/v3/suites/final_reload13.jsonl",
+ "num_envs": 13,
+ "protocol": "configs/v3/frozen/training/combined_robust_ff.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_robust_ff_s11__selected",
+   "method": "combined",
+   "training_seed": 11,
+   "role": "selected",
+   "checkpoint": "combined_robust_ff_s11/checkpoints/step_010027008.pt"
+  }
+ ]
+}
