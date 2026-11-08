@@ -39,9 +39,13 @@ def sha(p: Path) -> str | None:
     return h.hexdigest()
 
 
-def git_state() -> dict:
-    c = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
-    d = subprocess.run(["git", "-C", str(ROOT), "status", "--porcelain", "--untracked-files=no"],
+EXEC = ROOT  # checkout whose code runs the tasks (--repo); manifests/matrices may come from this delivery checkout
+
+
+def git_state(repo: Path | None = None) -> dict:
+    repo = repo or EXEC
+    c = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
+    d = subprocess.run(["git", "-C", str(repo), "status", "--porcelain", "--untracked-files=no"],
                        capture_output=True, text=True).stdout.strip()
     return {"commit": c, "dirty": bool(d)}
 
@@ -51,7 +55,7 @@ def utc() -> str:
 
 
 def resolve(s: str, runs: Path) -> str:
-    return s.replace("$RUNS", str(runs)).replace("$PY", os.environ.get("V3_ISAAC_PYTHON", sys.executable))
+    return s.replace("$RUNS", str(runs)).replace("$DELIVERY", str(ROOT)).replace("$PY", os.environ.get("V3_ISAAC_PYTHON", sys.executable))
 
 
 SHUTDOWN_MARK = "SimulationContext cleared"
@@ -68,8 +72,8 @@ def supervise(cmd, log, outs, timeout_s: float):
     t0 = time.time()
     seen = None
     with open(log, "w") as f:
-        p = subprocess.Popen(cmd, cwd=ROOT, stdout=f, stderr=subprocess.STDOUT, start_new_session=True,
-                             env={**os.environ, "REPO": str(ROOT)})
+        p = subprocess.Popen(cmd, cwd=EXEC, stdout=f, stderr=subprocess.STDOUT, start_new_session=True,
+                             env={**os.environ, "REPO": str(EXEC)})
         while True:
             try:
                 rc = p.wait(timeout=5)
@@ -91,6 +95,8 @@ def supervise(cmd, log, outs, timeout_s: float):
 
 
 def run(a):
+    global EXEC
+    EXEC = Path(a.repo).resolve() if a.repo else ROOT
     man = json.loads(Path(a.manifest).read_text())
     runs = Path(a.runs_root).resolve()
     led_dir = runs / "ledger"
@@ -107,7 +113,8 @@ def run(a):
     failed = []
     for t in tasks:
         argv = [resolve(x, runs) for x in t["argv"]]
-        inputs = {p: sha(ROOT / resolve(p, runs)) for p in t.get("inputs", [])}
+        inputs = {p: sha((EXEC / resolve(p, runs)) if (EXEC / resolve(p, runs)).exists() else (ROOT / resolve(p, runs)))
+                  for p in t.get("inputs", [])}
         outs = [Path(resolve(p, runs)) for p in t.get("outputs", [])]
         lp = led_dir / f"{t['id']}.jsonl"
         hist = [json.loads(l) for l in lp.read_text().splitlines()] if lp.exists() else []
@@ -125,7 +132,7 @@ def run(a):
         log.parent.mkdir(parents=True, exist_ok=True)
         kind = t.get("kind", "isaac")
         if kind == "isaac":
-            cmd = ["bash", str(ROOT / "scripts/cluster/isaac_run.sh"), a.isaac_python, *argv]
+            cmd = ["bash", str(EXEC / "scripts/cluster/isaac_run.sh"), a.isaac_python, *argv]
         elif kind == "cpu":
             cmd = [a.isaac_python, *argv]
         else:
@@ -134,6 +141,7 @@ def run(a):
         print(f"[v3_jobs] run {t['id']}: {' '.join(argv)}", flush=True)
         rc, watchdog = supervise(cmd, log, outs, a.task_timeout_s)
         rec = {"task": t["id"], "manifest": man["name"], "attempt": attempts + 1, "argv": t["argv"], "kind": kind,
+               "exec_repo": "experiment" if EXEC != ROOT else "delivery", "delivery_commit": git_state(ROOT)["commit"],
                "start_utc": t0, "end_utc": utc(), "rc": rc, "source_commit": g["commit"], "source_dirty": g["dirty"],
                "inputs": inputs, "outputs": {str(o): sha(o) if o.is_file() else ("dir" if o.is_dir() else None) for o in outs},
                "outputs_exist": all(o.exists() for o in outs), "log": str(log), "host": socket.gethostname(),
@@ -172,6 +180,7 @@ def main():
     r.add_argument("--manifest", required=True)
     r.add_argument("--shard", default="0/1")
     r.add_argument("--only", default="")
+    r.add_argument("--repo", default=None, help="execution checkout (clean experiment tag); default: this checkout")
     r.add_argument("--isaac-python", default=os.environ.get("CLOSEOUT_ISAAC_PYTHON", sys.executable))
     r.add_argument("--runs-root", default=str(ROOT / "runs/v3"))
     r.add_argument("--max-attempts", type=int, default=3)
