@@ -115,3 +115,28 @@ Append remote decisions with the evidence split, source SHA and affected runs.
   (no credentials). Shared history is not rewritten (no force-push); `v3_jobs.py merge` now redacts cluster
   run/checkout paths to `$RUNS`/`$REPO`, merges the candidate and formal runs roots, and refuses to write if any
   leak pattern remains. The corrected ledger replaces the file in the next commit.
+
+### 2026-11-08 22:24 UTC — final evaluation, extras, analysis and documents (split: final)
+
+- Final matrix (50 executed entries, one fresh process each, batch 256, seed 6455501): every file holds 2,600
+  records; 135,200 logical / 130,000 executed episodes; 0 invalid resets, 0 infrastructure errors. Extras: 5
+  zero-policy controls, 20 intervention runs and 42 repeatability runs (2,730 episodes), all rc 0.
+- Main finding recorded as observed: `geometry_common` succeeds on all 2,600 cases and every selected combined
+  policy does too, so both primary contrasts are exactly 0 pp with zero-width intervals (a ceiling). No condition,
+  checkpoint or metric was changed after seeing this; the final checkpoints are reported as the declared
+  secondary analysis (three of five history runs lose ≥ 22 pp; seed 55 collapses).
+- Traces: the frozen runtime only traces cases that occupy an environment slot at start-up, so the batch-256
+  matrix traced only `clean-0000`. A supplementary trace stage (`results/v3/jobs/traces6.json`) re-ran the six
+  predeclared trace cases for every executed entry in batches of six, with records kept separate (`traces6/`).
+  298 of 300 outcomes match the batch-256 records; the two differences (history seed 11 final checkpoint) are
+  reported.
+- Analysis correction before any write-up: the summary's `drop`/`collision` fields are per-episode flags that can
+  co-occur (a success can carry a collision flag), so the failure table and figure now use exclusive terminal
+  reasons (`terminal_mean`); the flags stay in the summary. Paired effects are unchanged.
+- Videos: the frozen rule yields 8 clips on 5 cases; neither main-comparison method fails in `mixed_id` or
+  `mixed_ood`, so no failure clip exists and none was substituted. All replays match their evaluation outcomes.
+  Two sidecars recorded the protocol file by its absolute cluster path; the repo copies replace that prefix with
+  `$DELIVERY/`, and the packager redacts the same prefix in the archived sidecars.
+- The simulator environment used for v3 is byte-identical (pip freeze) to `configs/v2/frozen/pip-freeze.txt`.
+- Compute (all attempts, `results/v3/compute.json`): 18.05 GPU-hours over 493 task attempts; formal training
+  7.6 GPU-hours.

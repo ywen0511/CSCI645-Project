@@ -3,29 +3,26 @@
   "branch": "study/v3-observation-robustness",
   "base_commit": "4204da23b17f920d955a0bc90f94a8df271c524f",
   "assignment": "V3_EXECUTION.md",
-  "stage": "formal training running (23 runs, experiment-v3)",
+  "stage": "packaging release v3.0.0 (all experiments, analysis and documents done)",
   "complete": false,
   "gpu_work_run_by_preparation_agent": false,
   "remote_acceptance_complete": true,
   "protocol_frozen": true,
   "formal_runs_planned": 23,
-  "formal_runs_completed": 0,
+  "formal_runs_completed": 23,
   "formal_training_transitions_requested": 230000000,
   "pilot_transition_cap": 24000000,
   "main_final_episodes_scheduled": 135200,
-  "main_final_episodes_completed": 0,
+  "main_final_episodes_completed": 135200,
   "release_published": false,
   "fresh_download_verified": false,
   "release_url": null,
-  "active_jobs": [
-    "LSF c645co_train0..7: 23 formal runs, runs root <work>/v3/formal (not public until packaged)"
-  ],
+  "active_jobs": [],
   "next_actions": [
-    "validation of 5 candidates + step 0 per run, checkpoint selection",
-    "final matrix 135,200 episodes",
-    "zero-policy, interventions, repeatability",
-    "analysis, report, slides, videos",
-    "release v3.0.0 and fresh verification"
+    "package and verify the release candidate",
+    "tag v3.0.0 and publish the release",
+    "fresh-download verification (CPU + GPU replay/reload/resume)",
+    "final status"
   ],
   "experiment_tag": "experiment-v3",
   "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
@@ -34,5 +31,19 @@
   "baseline_selection": "configs/v3/baseline_selection.json (geometry_common = EMA 1.0 + giver reference, 1.5 cm; aliases geometry_best_constant, geometry_giver)",
   "pilots": "results/v3/pilot/ (8 x 2,752,512 transitions; smoke 1,966,080; total 23,986,176 <= 24M)",
   "physical_transfer": "not_performed (spawn geometry/mass/friction are module constants; see docs/v3/DECISIONS.md)",
-  "blockers": []
+  "blockers": [],
+  "main_final_episodes_executed": 130000,
+  "validation_complete": true,
+  "selection": "results/v3/selection/selection.json",
+  "extras": {
+    "zero_policy": "5 x 65 (results/v3/zero_policy)",
+    "interventions": "20 x 65 (results/v3/interventions)",
+    "repeatability": "2,730 episodes (results/v3/repeatability)",
+    "traces6": "50 x 6 (results/v3/traces6)"
+  },
+  "videos": "8 clips + montage (results/v3/videos/video_index.json)",
+  "report": "report/v3/report.md + report.pdf",
+  "slides": "report/v3/slides.pptx + slides.pdf + speaker_notes.md",
+  "number_audit": "results/v3/number_audit.json",
+  "run_index": "results/v3/run_index.json"
 }

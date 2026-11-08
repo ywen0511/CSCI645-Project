@@ -1,0 +1,1295 @@
+{
+ "runs": [
+  {
+   "run": "combined_clean_ff_s11",
+   "type": "formal",
+   "family": "combined_clean_ff",
+   "seed": 11,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "d96c7e41594f5b66e30854a68f2cc185d08fc9161c85a4a284b339b2a98ab3d9",
+   "config_hash": "10f5255a11ba1080fae6ba23e48e67dde35b3a6a129e3254606268ee5d990585",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_008028160",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_clean_ff_s11/combined_clean_ff_s11__step0/combined_clean_ff_s11__step0.jsonl",
+    "validation/combined_clean_ff_s11/combined_clean_ff_s11__step_002031616/combined_clean_ff_s11__step_002031616.jsonl",
+    "validation/combined_clean_ff_s11/combined_clean_ff_s11__step_004030464/combined_clean_ff_s11__step_004030464.jsonl",
+    "validation/combined_clean_ff_s11/combined_clean_ff_s11__step_006029312/combined_clean_ff_s11__step_006029312.jsonl",
+    "validation/combined_clean_ff_s11/combined_clean_ff_s11__step_008028160/combined_clean_ff_s11__step_008028160.jsonl",
+    "validation/combined_clean_ff_s11/combined_clean_ff_s11__step_010027008/combined_clean_ff_s11__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_clean_ff_s11/selected/combined_clean_ff_s11__selected.jsonl",
+    "final": "final/combined_clean_ff_s11/final/combined_clean_ff_s11__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_clean_ff_s11.json"
+  },
+  {
+   "run": "combined_clean_ff_s22",
+   "type": "formal",
+   "family": "combined_clean_ff",
+   "seed": 22,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "d96c7e41594f5b66e30854a68f2cc185d08fc9161c85a4a284b339b2a98ab3d9",
+   "config_hash": "10f5255a11ba1080fae6ba23e48e67dde35b3a6a129e3254606268ee5d990585",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_clean_ff_s22/combined_clean_ff_s22__step0/combined_clean_ff_s22__step0.jsonl",
+    "validation/combined_clean_ff_s22/combined_clean_ff_s22__step_002031616/combined_clean_ff_s22__step_002031616.jsonl",
+    "validation/combined_clean_ff_s22/combined_clean_ff_s22__step_004030464/combined_clean_ff_s22__step_004030464.jsonl",
+    "validation/combined_clean_ff_s22/combined_clean_ff_s22__step_006029312/combined_clean_ff_s22__step_006029312.jsonl",
+    "validation/combined_clean_ff_s22/combined_clean_ff_s22__step_008028160/combined_clean_ff_s22__step_008028160.jsonl",
+    "validation/combined_clean_ff_s22/combined_clean_ff_s22__step_010027008/combined_clean_ff_s22__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_clean_ff_s22/selected/combined_clean_ff_s22__selected.jsonl",
+    "final": "final/combined_clean_ff_s22/final/combined_clean_ff_s22__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_clean_ff_s22.json"
+  },
+  {
+   "run": "combined_clean_ff_s33",
+   "type": "formal",
+   "family": "combined_clean_ff",
+   "seed": 33,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "d96c7e41594f5b66e30854a68f2cc185d08fc9161c85a4a284b339b2a98ab3d9",
+   "config_hash": "10f5255a11ba1080fae6ba23e48e67dde35b3a6a129e3254606268ee5d990585",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_clean_ff_s33/combined_clean_ff_s33__step0/combined_clean_ff_s33__step0.jsonl",
+    "validation/combined_clean_ff_s33/combined_clean_ff_s33__step_002031616/combined_clean_ff_s33__step_002031616.jsonl",
+    "validation/combined_clean_ff_s33/combined_clean_ff_s33__step_004030464/combined_clean_ff_s33__step_004030464.jsonl",
+    "validation/combined_clean_ff_s33/combined_clean_ff_s33__step_006029312/combined_clean_ff_s33__step_006029312.jsonl",
+    "validation/combined_clean_ff_s33/combined_clean_ff_s33__step_008028160/combined_clean_ff_s33__step_008028160.jsonl",
+    "validation/combined_clean_ff_s33/combined_clean_ff_s33__step_010027008/combined_clean_ff_s33__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_clean_ff_s33/selected/combined_clean_ff_s33__selected.jsonl",
+    "final": "final/combined_clean_ff_s33/final/combined_clean_ff_s33__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_clean_ff_s33.json"
+  },
+  {
+   "run": "combined_clean_ff_s44",
+   "type": "formal",
+   "family": "combined_clean_ff",
+   "seed": 44,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "d96c7e41594f5b66e30854a68f2cc185d08fc9161c85a4a284b339b2a98ab3d9",
+   "config_hash": "10f5255a11ba1080fae6ba23e48e67dde35b3a6a129e3254606268ee5d990585",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_clean_ff_s44/combined_clean_ff_s44__step0/combined_clean_ff_s44__step0.jsonl",
+    "validation/combined_clean_ff_s44/combined_clean_ff_s44__step_002031616/combined_clean_ff_s44__step_002031616.jsonl",
+    "validation/combined_clean_ff_s44/combined_clean_ff_s44__step_004030464/combined_clean_ff_s44__step_004030464.jsonl",
+    "validation/combined_clean_ff_s44/combined_clean_ff_s44__step_006029312/combined_clean_ff_s44__step_006029312.jsonl",
+    "validation/combined_clean_ff_s44/combined_clean_ff_s44__step_008028160/combined_clean_ff_s44__step_008028160.jsonl",
+    "validation/combined_clean_ff_s44/combined_clean_ff_s44__step_010027008/combined_clean_ff_s44__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_clean_ff_s44/selected/combined_clean_ff_s44__selected.jsonl",
+    "final": "final/combined_clean_ff_s44/final/combined_clean_ff_s44__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_clean_ff_s44.json"
+  },
+  {
+   "run": "combined_clean_ff_s55",
+   "type": "formal",
+   "family": "combined_clean_ff",
+   "seed": 55,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "d96c7e41594f5b66e30854a68f2cc185d08fc9161c85a4a284b339b2a98ab3d9",
+   "config_hash": "10f5255a11ba1080fae6ba23e48e67dde35b3a6a129e3254606268ee5d990585",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_clean_ff_s55/combined_clean_ff_s55__step0/combined_clean_ff_s55__step0.jsonl",
+    "validation/combined_clean_ff_s55/combined_clean_ff_s55__step_002031616/combined_clean_ff_s55__step_002031616.jsonl",
+    "validation/combined_clean_ff_s55/combined_clean_ff_s55__step_004030464/combined_clean_ff_s55__step_004030464.jsonl",
+    "validation/combined_clean_ff_s55/combined_clean_ff_s55__step_006029312/combined_clean_ff_s55__step_006029312.jsonl",
+    "validation/combined_clean_ff_s55/combined_clean_ff_s55__step_008028160/combined_clean_ff_s55__step_008028160.jsonl",
+    "validation/combined_clean_ff_s55/combined_clean_ff_s55__step_010027008/combined_clean_ff_s55__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_clean_ff_s55/selected/combined_clean_ff_s55__selected.jsonl",
+    "final": "final/combined_clean_ff_s55/final/combined_clean_ff_s55__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_clean_ff_s55.json"
+  },
+  {
+   "run": "combined_robust_ff_s11",
+   "type": "formal",
+   "family": "combined_robust_ff",
+   "seed": 11,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "0bf98e5fd200c60a0eee5e8f0483d33fe8d14540b9875651b3f73147e85d22c3",
+   "config_hash": "306106871b540443399c9074995bbe11969ed433f8195e655acea92f678f941d",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_ff_s11/combined_robust_ff_s11__step0/combined_robust_ff_s11__step0.jsonl",
+    "validation/combined_robust_ff_s11/combined_robust_ff_s11__step_002031616/combined_robust_ff_s11__step_002031616.jsonl",
+    "validation/combined_robust_ff_s11/combined_robust_ff_s11__step_004030464/combined_robust_ff_s11__step_004030464.jsonl",
+    "validation/combined_robust_ff_s11/combined_robust_ff_s11__step_006029312/combined_robust_ff_s11__step_006029312.jsonl",
+    "validation/combined_robust_ff_s11/combined_robust_ff_s11__step_008028160/combined_robust_ff_s11__step_008028160.jsonl",
+    "validation/combined_robust_ff_s11/combined_robust_ff_s11__step_010027008/combined_robust_ff_s11__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_ff_s11/selected/combined_robust_ff_s11__selected.jsonl",
+    "final": "final/combined_robust_ff_s11/final/combined_robust_ff_s11__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_ff_s11.json"
+  },
+  {
+   "run": "combined_robust_ff_s22",
+   "type": "formal",
+   "family": "combined_robust_ff",
+   "seed": 22,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "0bf98e5fd200c60a0eee5e8f0483d33fe8d14540b9875651b3f73147e85d22c3",
+   "config_hash": "306106871b540443399c9074995bbe11969ed433f8195e655acea92f678f941d",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_ff_s22/combined_robust_ff_s22__step0/combined_robust_ff_s22__step0.jsonl",
+    "validation/combined_robust_ff_s22/combined_robust_ff_s22__step_002031616/combined_robust_ff_s22__step_002031616.jsonl",
+    "validation/combined_robust_ff_s22/combined_robust_ff_s22__step_004030464/combined_robust_ff_s22__step_004030464.jsonl",
+    "validation/combined_robust_ff_s22/combined_robust_ff_s22__step_006029312/combined_robust_ff_s22__step_006029312.jsonl",
+    "validation/combined_robust_ff_s22/combined_robust_ff_s22__step_008028160/combined_robust_ff_s22__step_008028160.jsonl",
+    "validation/combined_robust_ff_s22/combined_robust_ff_s22__step_010027008/combined_robust_ff_s22__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_ff_s22/selected/combined_robust_ff_s22__selected.jsonl",
+    "final": "final/combined_robust_ff_s22/final/combined_robust_ff_s22__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_ff_s22.json"
+  },
+  {
+   "run": "combined_robust_ff_s33",
+   "type": "formal",
+   "family": "combined_robust_ff",
+   "seed": 33,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "0bf98e5fd200c60a0eee5e8f0483d33fe8d14540b9875651b3f73147e85d22c3",
+   "config_hash": "306106871b540443399c9074995bbe11969ed433f8195e655acea92f678f941d",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_ff_s33/combined_robust_ff_s33__step0/combined_robust_ff_s33__step0.jsonl",
+    "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_002031616/combined_robust_ff_s33__step_002031616.jsonl",
+    "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_004030464/combined_robust_ff_s33__step_004030464.jsonl",
+    "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_006029312/combined_robust_ff_s33__step_006029312.jsonl",
+    "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_008028160/combined_robust_ff_s33__step_008028160.jsonl",
+    "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_010027008/combined_robust_ff_s33__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_ff_s33/selected/combined_robust_ff_s33__selected.jsonl",
+    "final": "final/combined_robust_ff_s33/final/combined_robust_ff_s33__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_ff_s33.json"
+  },
+  {
+   "run": "combined_robust_ff_s44",
+   "type": "formal",
+   "family": "combined_robust_ff",
+   "seed": 44,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "0bf98e5fd200c60a0eee5e8f0483d33fe8d14540b9875651b3f73147e85d22c3",
+   "config_hash": "306106871b540443399c9074995bbe11969ed433f8195e655acea92f678f941d",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_006029312",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_ff_s44/combined_robust_ff_s44__step0/combined_robust_ff_s44__step0.jsonl",
+    "validation/combined_robust_ff_s44/combined_robust_ff_s44__step_002031616/combined_robust_ff_s44__step_002031616.jsonl",
+    "validation/combined_robust_ff_s44/combined_robust_ff_s44__step_004030464/combined_robust_ff_s44__step_004030464.jsonl",
+    "validation/combined_robust_ff_s44/combined_robust_ff_s44__step_006029312/combined_robust_ff_s44__step_006029312.jsonl",
+    "validation/combined_robust_ff_s44/combined_robust_ff_s44__step_008028160/combined_robust_ff_s44__step_008028160.jsonl",
+    "validation/combined_robust_ff_s44/combined_robust_ff_s44__step_010027008/combined_robust_ff_s44__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_ff_s44/selected/combined_robust_ff_s44__selected.jsonl",
+    "final": "final/combined_robust_ff_s44/final/combined_robust_ff_s44__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_ff_s44.json"
+  },
+  {
+   "run": "combined_robust_ff_s55",
+   "type": "formal",
+   "family": "combined_robust_ff",
+   "seed": 55,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "0bf98e5fd200c60a0eee5e8f0483d33fe8d14540b9875651b3f73147e85d22c3",
+   "config_hash": "306106871b540443399c9074995bbe11969ed433f8195e655acea92f678f941d",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_ff_s55/combined_robust_ff_s55__step0/combined_robust_ff_s55__step0.jsonl",
+    "validation/combined_robust_ff_s55/combined_robust_ff_s55__step_002031616/combined_robust_ff_s55__step_002031616.jsonl",
+    "validation/combined_robust_ff_s55/combined_robust_ff_s55__step_004030464/combined_robust_ff_s55__step_004030464.jsonl",
+    "validation/combined_robust_ff_s55/combined_robust_ff_s55__step_006029312/combined_robust_ff_s55__step_006029312.jsonl",
+    "validation/combined_robust_ff_s55/combined_robust_ff_s55__step_008028160/combined_robust_ff_s55__step_008028160.jsonl",
+    "validation/combined_robust_ff_s55/combined_robust_ff_s55__step_010027008/combined_robust_ff_s55__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_ff_s55/selected/combined_robust_ff_s55__selected.jsonl",
+    "final": "final/combined_robust_ff_s55/final/combined_robust_ff_s55__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_ff_s55.json"
+  },
+  {
+   "run": "combined_robust_history_s11",
+   "type": "formal",
+   "family": "combined_robust_history",
+   "seed": 11,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "65b779d99b493b4a3030d64ec1ee207ed24239fd8cb2059313d6919dc9e632ed",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_002031616",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_history_s11/combined_robust_history_s11__step0/combined_robust_history_s11__step0.jsonl",
+    "validation/combined_robust_history_s11/combined_robust_history_s11__step_002031616/combined_robust_history_s11__step_002031616.jsonl",
+    "validation/combined_robust_history_s11/combined_robust_history_s11__step_004030464/combined_robust_history_s11__step_004030464.jsonl",
+    "validation/combined_robust_history_s11/combined_robust_history_s11__step_006029312/combined_robust_history_s11__step_006029312.jsonl",
+    "validation/combined_robust_history_s11/combined_robust_history_s11__step_008028160/combined_robust_history_s11__step_008028160.jsonl",
+    "validation/combined_robust_history_s11/combined_robust_history_s11__step_010027008/combined_robust_history_s11__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_history_s11/selected/combined_robust_history_s11__selected.jsonl",
+    "final": "final/combined_robust_history_s11/final/combined_robust_history_s11__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_history_s11.json"
+  },
+  {
+   "run": "combined_robust_history_s22",
+   "type": "formal",
+   "family": "combined_robust_history",
+   "seed": 22,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "65b779d99b493b4a3030d64ec1ee207ed24239fd8cb2059313d6919dc9e632ed",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_002031616",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_history_s22/combined_robust_history_s22__step0/combined_robust_history_s22__step0.jsonl",
+    "validation/combined_robust_history_s22/combined_robust_history_s22__step_002031616/combined_robust_history_s22__step_002031616.jsonl",
+    "validation/combined_robust_history_s22/combined_robust_history_s22__step_004030464/combined_robust_history_s22__step_004030464.jsonl",
+    "validation/combined_robust_history_s22/combined_robust_history_s22__step_006029312/combined_robust_history_s22__step_006029312.jsonl",
+    "validation/combined_robust_history_s22/combined_robust_history_s22__step_008028160/combined_robust_history_s22__step_008028160.jsonl",
+    "validation/combined_robust_history_s22/combined_robust_history_s22__step_010027008/combined_robust_history_s22__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_history_s22/selected/combined_robust_history_s22__selected.jsonl",
+    "final": "final/combined_robust_history_s22/final/combined_robust_history_s22__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_history_s22.json"
+  },
+  {
+   "run": "combined_robust_history_s33",
+   "type": "formal",
+   "family": "combined_robust_history",
+   "seed": 33,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "65b779d99b493b4a3030d64ec1ee207ed24239fd8cb2059313d6919dc9e632ed",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_004030464",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_history_s33/combined_robust_history_s33__step0/combined_robust_history_s33__step0.jsonl",
+    "validation/combined_robust_history_s33/combined_robust_history_s33__step_002031616/combined_robust_history_s33__step_002031616.jsonl",
+    "validation/combined_robust_history_s33/combined_robust_history_s33__step_004030464/combined_robust_history_s33__step_004030464.jsonl",
+    "validation/combined_robust_history_s33/combined_robust_history_s33__step_006029312/combined_robust_history_s33__step_006029312.jsonl",
+    "validation/combined_robust_history_s33/combined_robust_history_s33__step_008028160/combined_robust_history_s33__step_008028160.jsonl",
+    "validation/combined_robust_history_s33/combined_robust_history_s33__step_010027008/combined_robust_history_s33__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_history_s33/selected/combined_robust_history_s33__selected.jsonl",
+    "final": "final/combined_robust_history_s33/final/combined_robust_history_s33__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_history_s33.json"
+  },
+  {
+   "run": "combined_robust_history_s44",
+   "type": "formal",
+   "family": "combined_robust_history",
+   "seed": 44,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "65b779d99b493b4a3030d64ec1ee207ed24239fd8cb2059313d6919dc9e632ed",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_008028160",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_history_s44/combined_robust_history_s44__step0/combined_robust_history_s44__step0.jsonl",
+    "validation/combined_robust_history_s44/combined_robust_history_s44__step_002031616/combined_robust_history_s44__step_002031616.jsonl",
+    "validation/combined_robust_history_s44/combined_robust_history_s44__step_004030464/combined_robust_history_s44__step_004030464.jsonl",
+    "validation/combined_robust_history_s44/combined_robust_history_s44__step_006029312/combined_robust_history_s44__step_006029312.jsonl",
+    "validation/combined_robust_history_s44/combined_robust_history_s44__step_008028160/combined_robust_history_s44__step_008028160.jsonl",
+    "validation/combined_robust_history_s44/combined_robust_history_s44__step_010027008/combined_robust_history_s44__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_history_s44/selected/combined_robust_history_s44__selected.jsonl",
+    "final": "final/combined_robust_history_s44/final/combined_robust_history_s44__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_history_s44.json"
+  },
+  {
+   "run": "combined_robust_history_s55",
+   "type": "formal",
+   "family": "combined_robust_history",
+   "seed": 55,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "65b779d99b493b4a3030d64ec1ee207ed24239fd8cb2059313d6919dc9e632ed",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_002031616",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_history_s55/combined_robust_history_s55__step0/combined_robust_history_s55__step0.jsonl",
+    "validation/combined_robust_history_s55/combined_robust_history_s55__step_002031616/combined_robust_history_s55__step_002031616.jsonl",
+    "validation/combined_robust_history_s55/combined_robust_history_s55__step_004030464/combined_robust_history_s55__step_004030464.jsonl",
+    "validation/combined_robust_history_s55/combined_robust_history_s55__step_006029312/combined_robust_history_s55__step_006029312.jsonl",
+    "validation/combined_robust_history_s55/combined_robust_history_s55__step_008028160/combined_robust_history_s55__step_008028160.jsonl",
+    "validation/combined_robust_history_s55/combined_robust_history_s55__step_010027008/combined_robust_history_s55__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_history_s55/selected/combined_robust_history_s55__selected.jsonl",
+    "final": "final/combined_robust_history_s55/final/combined_robust_history_s55__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_history_s55.json"
+  },
+  {
+   "run": "combined_robust_repeat_s11",
+   "type": "formal",
+   "family": "combined_robust_repeat",
+   "seed": 11,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "69aae8bb42c9bd2789597aa79e732b8282e04c301eb427d53c15b0edda60d403",
+   "config_hash": "32caaf503c859827ef1a1ff54091e7855d500db34751ffd478f6c7058e58fafe",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_repeat_s11/combined_robust_repeat_s11__step0/combined_robust_repeat_s11__step0.jsonl",
+    "validation/combined_robust_repeat_s11/combined_robust_repeat_s11__step_002031616/combined_robust_repeat_s11__step_002031616.jsonl",
+    "validation/combined_robust_repeat_s11/combined_robust_repeat_s11__step_004030464/combined_robust_repeat_s11__step_004030464.jsonl",
+    "validation/combined_robust_repeat_s11/combined_robust_repeat_s11__step_006029312/combined_robust_repeat_s11__step_006029312.jsonl",
+    "validation/combined_robust_repeat_s11/combined_robust_repeat_s11__step_008028160/combined_robust_repeat_s11__step_008028160.jsonl",
+    "validation/combined_robust_repeat_s11/combined_robust_repeat_s11__step_010027008/combined_robust_repeat_s11__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_repeat_s11/selected/combined_robust_repeat_s11__selected.jsonl",
+    "final": "final/combined_robust_repeat_s11/final/combined_robust_repeat_s11__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_repeat_s11.json"
+  },
+  {
+   "run": "combined_robust_repeat_s22",
+   "type": "formal",
+   "family": "combined_robust_repeat",
+   "seed": 22,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "69aae8bb42c9bd2789597aa79e732b8282e04c301eb427d53c15b0edda60d403",
+   "config_hash": "32caaf503c859827ef1a1ff54091e7855d500db34751ffd478f6c7058e58fafe",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_008028160",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step0/combined_robust_repeat_s22__step0.jsonl",
+    "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_002031616/combined_robust_repeat_s22__step_002031616.jsonl",
+    "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_004030464/combined_robust_repeat_s22__step_004030464.jsonl",
+    "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_006029312/combined_robust_repeat_s22__step_006029312.jsonl",
+    "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_008028160/combined_robust_repeat_s22__step_008028160.jsonl",
+    "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_010027008/combined_robust_repeat_s22__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_repeat_s22/selected/combined_robust_repeat_s22__selected.jsonl",
+    "final": "final/combined_robust_repeat_s22/final/combined_robust_repeat_s22__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_repeat_s22.json"
+  },
+  {
+   "run": "combined_robust_repeat_s33",
+   "type": "formal",
+   "family": "combined_robust_repeat",
+   "seed": 33,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "69aae8bb42c9bd2789597aa79e732b8282e04c301eb427d53c15b0edda60d403",
+   "config_hash": "32caaf503c859827ef1a1ff54091e7855d500db34751ffd478f6c7058e58fafe",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 1.0,
+   "validation_records": [
+    "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step0/combined_robust_repeat_s33__step0.jsonl",
+    "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_002031616/combined_robust_repeat_s33__step_002031616.jsonl",
+    "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_004030464/combined_robust_repeat_s33__step_004030464.jsonl",
+    "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_006029312/combined_robust_repeat_s33__step_006029312.jsonl",
+    "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_008028160/combined_robust_repeat_s33__step_008028160.jsonl",
+    "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_010027008/combined_robust_repeat_s33__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/combined_robust_repeat_s33/selected/combined_robust_repeat_s33__selected.jsonl",
+    "final": "final/combined_robust_repeat_s33/final/combined_robust_repeat_s33__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/combined_robust_repeat_s33.json"
+  },
+  {
+   "run": "residual_robust_history_s11",
+   "type": "formal",
+   "family": "residual_robust_history",
+   "seed": 11,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "320bfc4f2ca2b40a75d0bf871136b8c721d25d707a29943431a08c08c2d1b8c5",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_010027008",
+   "selected_validation_success": 0.8083333333333333,
+   "validation_records": [
+    "validation/residual_robust_history_s11/residual_robust_history_s11__step0/residual_robust_history_s11__step0.jsonl",
+    "validation/residual_robust_history_s11/residual_robust_history_s11__step_002031616/residual_robust_history_s11__step_002031616.jsonl",
+    "validation/residual_robust_history_s11/residual_robust_history_s11__step_004030464/residual_robust_history_s11__step_004030464.jsonl",
+    "validation/residual_robust_history_s11/residual_robust_history_s11__step_006029312/residual_robust_history_s11__step_006029312.jsonl",
+    "validation/residual_robust_history_s11/residual_robust_history_s11__step_008028160/residual_robust_history_s11__step_008028160.jsonl",
+    "validation/residual_robust_history_s11/residual_robust_history_s11__step_010027008/residual_robust_history_s11__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/residual_robust_history_s11/selected/residual_robust_history_s11__selected.jsonl",
+    "final": "final/residual_robust_history_s11/final/residual_robust_history_s11__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/residual_robust_history_s11.json"
+  },
+  {
+   "run": "residual_robust_history_s22",
+   "type": "formal",
+   "family": "residual_robust_history",
+   "seed": 22,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "320bfc4f2ca2b40a75d0bf871136b8c721d25d707a29943431a08c08c2d1b8c5",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_002031616",
+   "selected_validation_success": 0.7708333333333334,
+   "validation_records": [
+    "validation/residual_robust_history_s22/residual_robust_history_s22__step0/residual_robust_history_s22__step0.jsonl",
+    "validation/residual_robust_history_s22/residual_robust_history_s22__step_002031616/residual_robust_history_s22__step_002031616.jsonl",
+    "validation/residual_robust_history_s22/residual_robust_history_s22__step_004030464/residual_robust_history_s22__step_004030464.jsonl",
+    "validation/residual_robust_history_s22/residual_robust_history_s22__step_006029312/residual_robust_history_s22__step_006029312.jsonl",
+    "validation/residual_robust_history_s22/residual_robust_history_s22__step_008028160/residual_robust_history_s22__step_008028160.jsonl",
+    "validation/residual_robust_history_s22/residual_robust_history_s22__step_010027008/residual_robust_history_s22__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/residual_robust_history_s22/selected/residual_robust_history_s22__selected.jsonl",
+    "final": "final/residual_robust_history_s22/final/residual_robust_history_s22__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/residual_robust_history_s22.json"
+  },
+  {
+   "run": "residual_robust_history_s33",
+   "type": "formal",
+   "family": "residual_robust_history",
+   "seed": 33,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "320bfc4f2ca2b40a75d0bf871136b8c721d25d707a29943431a08c08c2d1b8c5",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_008028160",
+   "selected_validation_success": 0.8333333333333334,
+   "validation_records": [
+    "validation/residual_robust_history_s33/residual_robust_history_s33__step0/residual_robust_history_s33__step0.jsonl",
+    "validation/residual_robust_history_s33/residual_robust_history_s33__step_002031616/residual_robust_history_s33__step_002031616.jsonl",
+    "validation/residual_robust_history_s33/residual_robust_history_s33__step_004030464/residual_robust_history_s33__step_004030464.jsonl",
+    "validation/residual_robust_history_s33/residual_robust_history_s33__step_006029312/residual_robust_history_s33__step_006029312.jsonl",
+    "validation/residual_robust_history_s33/residual_robust_history_s33__step_008028160/residual_robust_history_s33__step_008028160.jsonl",
+    "validation/residual_robust_history_s33/residual_robust_history_s33__step_010027008/residual_robust_history_s33__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/residual_robust_history_s33/selected/residual_robust_history_s33__selected.jsonl",
+    "final": "final/residual_robust_history_s33/final/residual_robust_history_s33__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/residual_robust_history_s33.json"
+  },
+  {
+   "run": "residual_robust_history_s44",
+   "type": "formal",
+   "family": "residual_robust_history",
+   "seed": 44,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "320bfc4f2ca2b40a75d0bf871136b8c721d25d707a29943431a08c08c2d1b8c5",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_002031616",
+   "selected_validation_success": 0.8458333333333333,
+   "validation_records": [
+    "validation/residual_robust_history_s44/residual_robust_history_s44__step0/residual_robust_history_s44__step0.jsonl",
+    "validation/residual_robust_history_s44/residual_robust_history_s44__step_002031616/residual_robust_history_s44__step_002031616.jsonl",
+    "validation/residual_robust_history_s44/residual_robust_history_s44__step_004030464/residual_robust_history_s44__step_004030464.jsonl",
+    "validation/residual_robust_history_s44/residual_robust_history_s44__step_006029312/residual_robust_history_s44__step_006029312.jsonl",
+    "validation/residual_robust_history_s44/residual_robust_history_s44__step_008028160/residual_robust_history_s44__step_008028160.jsonl",
+    "validation/residual_robust_history_s44/residual_robust_history_s44__step_010027008/residual_robust_history_s44__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/residual_robust_history_s44/selected/residual_robust_history_s44__selected.jsonl",
+    "final": "final/residual_robust_history_s44/final/residual_robust_history_s44__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/residual_robust_history_s44.json"
+  },
+  {
+   "run": "residual_robust_history_s55",
+   "type": "formal",
+   "family": "residual_robust_history",
+   "seed": 55,
+   "status": "completed",
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "protocol_sha256": "320bfc4f2ca2b40a75d0bf871136b8c721d25d707a29943431a08c08c2d1b8c5",
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "realized_transitions": 10027008,
+   "iterations": 306,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_003014656.pt",
+    "step_004030464.pt",
+    "step_005013504.pt",
+    "step_006029312.pt",
+    "step_007012352.pt",
+    "step_008028160.pt",
+    "step_009011200.pt",
+    "step_010027008.pt"
+   ],
+   "selected": "step_002031616",
+   "selected_validation_success": 0.8333333333333334,
+   "validation_records": [
+    "validation/residual_robust_history_s55/residual_robust_history_s55__step0/residual_robust_history_s55__step0.jsonl",
+    "validation/residual_robust_history_s55/residual_robust_history_s55__step_002031616/residual_robust_history_s55__step_002031616.jsonl",
+    "validation/residual_robust_history_s55/residual_robust_history_s55__step_004030464/residual_robust_history_s55__step_004030464.jsonl",
+    "validation/residual_robust_history_s55/residual_robust_history_s55__step_006029312/residual_robust_history_s55__step_006029312.jsonl",
+    "validation/residual_robust_history_s55/residual_robust_history_s55__step_008028160/residual_robust_history_s55__step_008028160.jsonl",
+    "validation/residual_robust_history_s55/residual_robust_history_s55__step_010027008/residual_robust_history_s55__step_010027008.jsonl"
+   ],
+   "final_records": {
+    "selected": "final/residual_robust_history_s55/selected/residual_robust_history_s55__selected.jsonl",
+    "final": "final/residual_robust_history_s55/final/residual_robust_history_s55__final.jsonl"
+   },
+   "selection_rationale": "results/v3/selection/residual_robust_history_s55.json"
+  },
+  {
+   "run": "combined_clean_ff_s101",
+   "type": "pilot",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_002752512.pt"
+   ]
+  },
+  {
+   "run": "combined_robust_ff_s101",
+   "type": "pilot",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_002752512.pt"
+   ]
+  },
+  {
+   "run": "combined_robust_ff_s102",
+   "type": "pilot",
+   "seed": 102,
+   "status": "completed",
+   "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_002752512.pt"
+   ]
+  },
+  {
+   "run": "combined_robust_history_s101",
+   "type": "pilot",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_002752512.pt"
+   ]
+  },
+  {
+   "run": "combined_robust_history_s102",
+   "type": "pilot",
+   "seed": 102,
+   "status": "completed",
+   "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_002752512.pt"
+   ]
+  },
+  {
+   "run": "combined_robust_repeat_s101",
+   "type": "pilot",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_002752512.pt"
+   ]
+  },
+  {
+   "run": "residual_robust_history_s101",
+   "type": "pilot",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_002752512.pt"
+   ]
+  },
+  {
+   "run": "residual_robust_history_s102",
+   "type": "pilot",
+   "seed": 102,
+   "status": "completed",
+   "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_001015808.pt",
+    "step_002031616.pt",
+    "step_002752512.pt"
+   ]
+  },
+  {
+   "run": "smoke_combined_clean_ff_s101",
+   "type": "smoke",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt"
+   ]
+  },
+  {
+   "run": "smoke_combined_clean_ff_s101_resume",
+   "type": "smoke_resume",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt",
+    "step_000196608.pt"
+   ]
+  },
+  {
+   "run": "smoke_combined_robust_ff_s101",
+   "type": "smoke",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt"
+   ]
+  },
+  {
+   "run": "smoke_combined_robust_ff_s101_resume",
+   "type": "smoke_resume",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt",
+    "step_000196608.pt"
+   ]
+  },
+  {
+   "run": "smoke_combined_robust_history_s101",
+   "type": "smoke",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt"
+   ]
+  },
+  {
+   "run": "smoke_combined_robust_history_s101_resume",
+   "type": "smoke_resume",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt",
+    "step_000196608.pt"
+   ]
+  },
+  {
+   "run": "smoke_combined_robust_repeat_s101",
+   "type": "smoke",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt"
+   ]
+  },
+  {
+   "run": "smoke_combined_robust_repeat_s101_resume",
+   "type": "smoke_resume",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt",
+    "step_000196608.pt"
+   ]
+  },
+  {
+   "run": "smoke_residual_robust_history_s101",
+   "type": "smoke",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt"
+   ]
+  },
+  {
+   "run": "smoke_residual_robust_history_s101_resume",
+   "type": "smoke_resume",
+   "seed": 101,
+   "status": "completed",
+   "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+   "source_dirty": false,
+   "checkpoints": [
+    "final.pt",
+    "latest.pt",
+    "step_000000000.pt",
+    "step_000065536.pt",
+    "step_000131072.pt",
+    "step_000196608.pt"
+   ]
+  }
+ ],
+ "formal": 23,
+ "superseded_attempts": [
+  "superseded/candidate_913cda1/acceptance/a1_b1",
+  "superseded/candidate_913cda1/acceptance/a1_b8",
+  "superseded/candidate_913cda1/acceptance/a2_combined_robust_ff",
+  "superseded/candidate_913cda1/acceptance/a2_combined_robust_history",
+  "superseded/candidate_913cda1/development/ema0p2_giver0",
+  "superseded/candidate_913cda1/smoke/smoke_combined_clean_ff_s101",
+  "superseded/candidate_913cda1/smoke/smoke_combined_clean_ff_s101_resume",
+  "superseded/candidate_913cda1/smoke/smoke_combined_robust_ff_s101",
+  "superseded/candidate_913cda1/smoke/smoke_combined_robust_ff_s101_resume",
+  "superseded/candidate_913cda1/smoke/smoke_combined_robust_history_s101",
+  "superseded/candidate_913cda1/smoke/smoke_combined_robust_history_s101_resume",
+  "superseded/candidate_913cda1/smoke/smoke_combined_robust_repeat_s101",
+  "superseded/candidate_913cda1/smoke/smoke_combined_robust_repeat_s101_resume",
+  "superseded/candidate_913cda1/smoke/smoke_residual_robust_history_s101",
+  "superseded/candidate_913cda1/smoke/smoke_residual_robust_history_s101_resume"
+ ],
+ "note": "superseded/: the first acceptance/development attempt at an earlier candidate commit (Kit shutdown hang); kept and published, not used for any result (docs/v3/DECISIONS.md)"
+}
