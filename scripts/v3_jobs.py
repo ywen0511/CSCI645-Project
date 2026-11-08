@@ -113,15 +113,17 @@ def run(a):
     failed = []
     for t in tasks:
         argv = [resolve(x, runs) for x in t["argv"]]
-        if "--matrix" in argv:  # matrices from the delivery checkout may reference $DELIVERY/$RUNS paths
-            k = argv.index("--matrix") + 1
-            mp = Path(argv[k]) if Path(argv[k]).is_absolute() else (EXEC / argv[k] if (EXEC / argv[k]).exists() else ROOT / argv[k])
-            text = mp.read_text()
-            if "$DELIVERY" in text or "$RUNS" in text:
-                rp = runs / "_resolved" / f"{mp.stem}.json"
-                rp.parent.mkdir(parents=True, exist_ok=True)
-                rp.write_text(resolve(text, runs))
-                argv[k] = str(rp)
+        for k, x in enumerate(argv):  # JSON inputs from the delivery checkout may reference $DELIVERY/$RUNS paths
+            if not x.endswith(".json") or (k and argv[k - 1] == "--output"):
+                continue
+            mp = Path(x) if Path(x).is_absolute() else (EXEC / x if (EXEC / x).exists() else ROOT / x)
+            if mp.exists():
+                text = mp.read_text()
+                if "$DELIVERY" in text or "$RUNS" in text:
+                    rp = runs / "_resolved" / f"{t['id']}__{mp.name}"
+                    rp.parent.mkdir(parents=True, exist_ok=True)
+                    rp.write_text(resolve(text, runs))
+                    argv[k] = str(rp)
         inputs = {p: sha((EXEC / resolve(p, runs)) if (EXEC / resolve(p, runs)).exists() else (ROOT / resolve(p, runs)))
                   for p in t.get("inputs", [])}
         outs = [Path(resolve(p, runs)) for p in t.get("outputs", [])]
