@@ -144,6 +144,183 @@ def pilots():
     write("pilots", tasks)
 
 
+# ------------------------------------------------------------------------------ formal stages
+FROZEN = ROOT / "configs/v3/frozen/training"
+CANDIDATE_TAGS = ["step_002031616", "step_004030464", "step_006029312", "step_008028160", "step_010027008"]
+FINAL_BATCH = 256
+TRACE_FINAL = ["v3-final-mixed_id-0000", "v3-final-mixed_id-0001", "v3-final-mixed_ood-0000", "v3-final-mixed_ood-0001",
+               "v3-final-noise_4mm-0000", "v3-final-clean-0000"]
+
+
+def runs():
+    out = []
+    for prof, method in PROFILES.items():
+        prot = json.loads((FROZEN / f"{prof}.json").read_text())
+        for seed in prot["training"]["seeds"]:
+            out.append((prof, method, seed))
+    return out
+
+
+def train():
+    tasks = []
+    for prof, method, seed in runs():
+        d = f"$RUNS/train/{prof}_s{seed}"
+        tasks.append({"id": f"train_{prof}_s{seed}", "kind": "isaac",
+                      "argv": ["scripts/train.py", "--method", method, "--seed", str(seed), "--protocol",
+                               f"configs/v3/frozen/training/{prof}.json", "--run-type", "final", "--output", d],
+                      "inputs": [f"configs/v3/frozen/training/{prof}.json"], "outputs": [f"{d}/checkpoints/final.pt", f"{d}/DONE.json"]})
+    write("train", tasks)
+
+
+def validation_matrices():
+    """Committed before freeze: candidate tags are fixed by the rollout size (first save at/after 2,4,6,8,10M)."""
+    d = ROOT / "configs/v3/frozen/matrices/validation"
+    d.mkdir(parents=True, exist_ok=True)
+    for prof, method, seed in runs():
+        ents = [{"id": f"{prof}_s{seed}__step0", "method": method, "training_seed": seed, "role": "untrained_control",
+                 "checkpoint": f"{prof}_s{seed}/checkpoints/step_000000000.pt"}]
+        ents += [{"id": f"{prof}_s{seed}__{t}", "method": method, "training_seed": seed, "role": "candidate",
+                  "checkpoint": f"{prof}_s{seed}/checkpoints/{t}.pt"} for t in CANDIDATE_TAGS]
+        (d / f"{prof}_s{seed}.json").write_text(json.dumps({"name": f"v3_validation_{prof}_s{seed}",
+            "suite": "configs/v3/suites/validation.jsonl", "num_envs": 240, "protocol": f"configs/v3/frozen/training/{prof}.json",
+            "trace_cases": [], "entries": ents}, indent=1) + "\n")
+
+
+def validation():
+    tasks = []
+    for prof, method, seed in runs():
+        mp = f"configs/v3/frozen/matrices/validation/{prof}_s{seed}.json"
+        for e in json.loads((ROOT / mp).read_text())["entries"]:
+            tasks.append({"id": f"val_{e['id']}", "kind": "isaac",
+                          "argv": ["scripts/eval_matrix.py", "--matrix", mp, "--only", e["id"], "--checkpoint-root", "$RUNS/train",
+                                   "--output", f"$RUNS/validation/{prof}_s{seed}/{e['id']}", "--seed", str(SEED_EVAL)],
+                          "inputs": [mp], "outputs": [f"$RUNS/validation/{prof}_s{seed}/{e['id']}/{e['id']}.jsonl"]})
+    write("validation", tasks)
+
+
+def baseline_entries():
+    sel = json.loads((ROOT / "configs/v3/baseline_selection.json").read_text())["roles"]
+    draft = json.loads((ROOT / "configs/v3/protocol.draft.json").read_text())["sensor"]
+    out = {}
+    for role, s in sel.items():
+        if role == "nominal":
+            base, ent = {"observation_sensor": {**draft, "ema_alpha": 1.0}, "observation_giver_reference": False}, \
+                {"id": role, "method": "nominal", "trace": True}
+        else:
+            base = {"observation_sensor": {**draft, "ema_alpha": s["ema_alpha"]}, "observation_giver_reference": bool(s["giver_reference"])}
+            ov = {"align_max": s["align_max_m"]}
+            if s["constant_x_m"]:
+                ov["constant_residual_m"] = [s["constant_x_m"], 0.0, 0.0]
+            ent = {"id": role, "method": "geometry", "overrides": ov, "trace": True}
+        out[role] = (base, ent)
+    return out
+
+
+def final():
+    """After checkpoint selection (results/v3/selection/selection.json)."""
+    selp = ROOT / "results/v3/selection/selection.json"
+    sel = json.loads(selp.read_text())
+    d = ROOT / "configs/v3/final_matrices"
+    d.mkdir(parents=True, exist_ok=True)
+    tasks = []
+    for role, (base, ent) in baseline_entries().items():
+        mp = d / f"baseline_{role}.json"
+        mp.write_text(json.dumps({"name": f"v3_final_{role}", "suite": "configs/v3/suites/final.jsonl", "num_envs": FINAL_BATCH,
+                                  "protocol": "configs/v2/protocol.json", "base_overrides": base, "trace_cases": TRACE_FINAL,
+                                  "entries": [ent]}, indent=1) + "\n")
+        tasks.append({"id": f"final_{role}", "kind": "isaac", "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)),
+                      "--only", role, "--output", f"$RUNS/final/{role}", "--seed", str(SEED_EVAL)],
+                      "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/final/{role}/{role}.jsonl"]})
+    for prof, method, seed in runs():
+        run = f"{prof}_s{seed}"
+        ents = [{"id": f"{run}__selected", "method": method, "training_seed": seed, "role": "selected", "trace": True,
+                 "checkpoint": f"{run}/checkpoints/{sel[run]['selected']}.pt"},
+                {"id": f"{run}__final", "method": method, "training_seed": seed, "role": "final", "trace": True,
+                 "checkpoint": f"{run}/checkpoints/final.pt"}]
+        mp = d / f"{run}.json"
+        mp.write_text(json.dumps({"name": f"v3_final_{run}", "suite": "configs/v3/suites/final.jsonl", "num_envs": FINAL_BATCH,
+                                  "protocol": f"configs/v3/frozen/training/{prof}.json", "trace_cases": TRACE_FINAL,
+                                  "entries": ents}, indent=1) + "\n")
+        for e in ents:
+            tasks.append({"id": f"final_{e['id']}", "kind": "isaac",
+                          "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)), "--only", e["id"],
+                                   "--checkpoint-root", "$RUNS/train", "--output", f"$RUNS/final/{run}/{e['role']}", "--seed", str(SEED_EVAL)],
+                          "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/final/{run}/{e['role']}/{e['id']}.jsonl"]})
+    write("final", tasks)
+
+
+def subset65():
+    rows = [json.loads(l) for l in (ROOT / "configs/v3/suites/final.jsonl").read_text().splitlines() if l.strip()]
+    by = {}
+    for r in rows:
+        by.setdefault(r["condition"], []).append(r)
+    sub = [r for c in sorted(by) for r in sorted(by[c], key=lambda r: r["case_id"])[:5]]
+    p = ROOT / "configs/v3/suites/final_subset65.jsonl"
+    p.write_text("".join(json.dumps(r, sort_keys=True) + "\n" for r in sub))
+    return "configs/v3/suites/final_subset65.jsonl"
+
+
+def extras():
+    """Zero-policy controls, inference-time history interventions and repeatability (after selection)."""
+    suite = subset65()
+    sel = json.loads((ROOT / "results/v3/selection/selection.json").read_text())
+    d = ROOT / "configs/v3/final_matrices/extras"
+    d.mkdir(parents=True, exist_ok=True)
+    tasks = []
+    for prof, method in PROFILES.items():  # zero-policy (step 0) control per distinct profile, seed 11
+        run = f"{prof}_s11"
+        mp = d / f"zero_{prof}.json"
+        mp.write_text(json.dumps({"name": f"v3_zero_{prof}", "suite": suite, "num_envs": 65,
+                                  "protocol": f"configs/v3/frozen/training/{prof}.json", "trace_cases": [],
+                                  "entries": [{"id": f"{run}__step0", "method": method, "training_seed": 11, "role": "untrained_control",
+                                               "checkpoint": f"{run}/checkpoints/step_000000000.pt"}]}, indent=1) + "\n")
+        tasks.append({"id": f"zero_{prof}", "kind": "isaac", "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)),
+                      "--checkpoint-root", "$RUNS/train", "--output", f"$RUNS/zero_policy/{prof}", "--seed", str(SEED_EVAL)],
+                      "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/zero_policy/{prof}/{run}__step0.jsonl"]})
+    hist = [(p, s) for p, m, s in runs() if p in ("combined_robust_history", "residual_robust_history")]
+    for name, base in (("permuted", {"observation_history_permutation": [4, 2, 0, 3, 1]}),
+                       ("current_only", {"observation_history_mode": "repeat_current"})):
+        for prof, seed in hist:
+            run = f"{prof}_s{seed}"
+            mp = d / f"intervention_{name}_{run}.json"
+            mp.write_text(json.dumps({"name": f"v3_intervention_{name}_{run}", "suite": suite, "num_envs": 65,
+                                      "protocol": f"configs/v3/frozen/training/{prof}.json", "base_overrides": base, "trace_cases": [],
+                                      "entries": [{"id": f"{run}__selected__{name}", "method": PROFILES[prof], "training_seed": seed,
+                                                   "role": f"intervention_{name}", "allow_config_mismatch": True,
+                                                   "intervention": base, "checkpoint": f"{run}/checkpoints/{sel[run]['selected']}.pt"}]},
+                                     indent=1) + "\n")
+            tasks.append({"id": f"int_{name}_{run}", "kind": "isaac", "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)),
+                          "--checkpoint-root", "$RUNS/train", "--output", f"$RUNS/interventions/{name}/{run}", "--seed", str(SEED_EVAL)],
+                          "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/interventions/{name}/{run}/{run}__selected__{name}.jsonl"]})
+    rep = []
+    for role in ("geometry_common", "geometry_best_constant"):
+        base, ent = baseline_entries()[role]
+        mp = d / f"repeat_{role}.json"
+        mp.write_text(json.dumps({"name": f"v3_repeat_{role}", "suite": suite, "num_envs": 23, "protocol": "configs/v2/protocol.json",
+                                  "base_overrides": base, "trace_cases": [], "entries": [ent]}, indent=1) + "\n")
+        rep.append((role, mp, None))
+    for p, m, s in runs():
+        if p == "combined_robust_history":
+            run = f"{p}_s{s}"
+            mp = d / f"repeat_{run}.json"
+            mp.write_text(json.dumps({"name": f"v3_repeat_{run}", "suite": suite, "num_envs": 23,
+                                      "protocol": f"configs/v3/frozen/training/{p}.json", "trace_cases": [],
+                                      "entries": [{"id": f"{run}__selected", "method": m, "training_seed": s, "role": "selected",
+                                                   "checkpoint": f"{run}/checkpoints/{sel[run]['selected']}.pt"}]}, indent=1) + "\n")
+            rep.append((f"{run}__selected", mp, "$RUNS/train"))
+    for eid, mp, ck in rep:
+        for ps in (6455601, 6455602, 6455603):
+            for b in (1, 23):
+                tasks.append({"id": f"rep_{eid}_p{ps}_b{b}", "kind": "isaac",
+                              "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)), "--num-envs", str(b),
+                                       "--output", f"$RUNS/repeatability/b{b}/p{ps}/{eid}", "--seed", str(ps)]
+                                      + (["--checkpoint-root", ck] if ck else []),
+                              "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/repeatability/b{b}/p{ps}/{eid}/{eid}.jsonl"]})
+    write("extras", tasks)
+
+
 if __name__ == "__main__":
     for stage in sys.argv[1:]:
-        {"acceptance": acceptance, "development": development, "cache": cache, "pilots": pilots}[stage]()
+        {"acceptance": acceptance, "development": development, "cache": cache, "pilots": pilots,
+         "train": train, "validation_matrices": validation_matrices, "validation": validation, "final": final,
+         "extras": extras}[stage]()
