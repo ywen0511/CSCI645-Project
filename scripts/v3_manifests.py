@@ -103,6 +103,47 @@ def development():
     write("development", tasks)
 
 
+def cache():
+    A = "$RUNS/acceptance"
+    write("acceptance_cache", [{"id": "acc_cache_test", "kind": "cpu",
+        "argv": ["scripts/v3_cache_test.py", "--isaac-python", "$PY", "--matrix", "configs/v3/acceptance/a1_b8.json", "--entry", "geometry_1p5cm",
+                 "--ckpt-matrix", "configs/v3/acceptance/a2_combined_robust_ff.json", "--ckpt-entry", "combined_robust_ff_step0",
+                 "--checkpoint-root", "$RUNS/smoke", "--work", f"{A}/cache_test", "--output", f"{A}/cache_test.json"],
+        "inputs": ["scripts/v3_cache_test.py"], "outputs": [f"{A}/cache_test.json"]}])
+
+
+PILOTS = [("combined_robust_ff", 101), ("combined_robust_ff", 102), ("combined_robust_history", 101),
+          ("combined_robust_history", 102), ("residual_robust_history", 101), ("residual_robust_history", 102),
+          ("combined_robust_repeat", 101), ("combined_clean_ff", 101)]
+PILOT_TRANSITIONS = 2752512  # 84 PPO iterations of 32,768; 8 x 2.75M + 1.97M smoke <= 24M cap
+
+
+def pilots():
+    tasks = []
+    dev_strata = ["clean", "physical_only", "bias_5mm", "noise_2mm", "delay_2step", "mixed_id"]
+    for prof, seed in PILOTS:
+        d = f"$RUNS/pilot/{prof}_s{seed}"
+        tasks.append({"id": f"pilot_{prof}_s{seed}", "kind": "isaac",
+                      "argv": ["scripts/train.py", "--method", PROFILES[prof], "--seed", str(seed), "--protocol",
+                               f"configs/v3/pilot/{prof}.json", "--run-type", "pilot", "--transitions", str(PILOT_TRANSITIONS),
+                               "--checkpoint-every", "1000000", "--output", d],
+                      "inputs": [f"configs/v3/pilot/{prof}.json"], "outputs": [f"{d}/checkpoints/final.pt", f"{d}/DONE.json"]})
+        mx = {"name": f"v3_pilot_{prof}_s{seed}", "suite": "configs/v3/suites/development.jsonl", "num_envs": 144,
+              "protocol": f"configs/v3/pilot/{prof}.json", "trace_cases": ["v3-development-mixed_id-0000"],
+              "entries": [{"id": f"{prof}_s{seed}_final", "method": PROFILES[prof], "training_seed": seed, "trace": True,
+                           "checkpoint": f"{prof}_s{seed}/checkpoints/final.pt", "conditions": dev_strata}]}
+        mp = ROOT / f"configs/v3/pilot/matrices/{prof}_s{seed}.json"
+        mp.parent.mkdir(parents=True, exist_ok=True)
+        mp.write_text(json.dumps(mx, indent=1) + "\n")
+        e = mx["entries"][0]["id"]
+        tasks.append({"id": f"pilot_eval_{prof}_s{seed}", "kind": "isaac",
+                      "argv": ["scripts/eval_matrix.py", "--matrix", f"configs/v3/pilot/matrices/{prof}_s{seed}.json",
+                               "--checkpoint-root", "$RUNS/pilot", "--output", f"$RUNS/pilot_eval/{prof}_s{seed}", "--seed", str(SEED_EVAL)],
+                      "inputs": [f"configs/v3/pilot/matrices/{prof}_s{seed}.json"],
+                      "outputs": [f"$RUNS/pilot_eval/{prof}_s{seed}/{e}.jsonl"]})
+    write("pilots", tasks)
+
+
 if __name__ == "__main__":
     for stage in sys.argv[1:]:
-        {"acceptance": acceptance, "development": development}[stage]()
+        {"acceptance": acceptance, "development": development, "cache": cache, "pilots": pilots}[stage]()

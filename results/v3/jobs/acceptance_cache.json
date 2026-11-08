@@ -1,0 +1,34 @@
+{
+ "name": "acceptance_cache",
+ "tasks": [
+  {
+   "id": "acc_cache_test",
+   "kind": "cpu",
+   "argv": [
+    "scripts/v3_cache_test.py",
+    "--isaac-python",
+    "$PY",
+    "--matrix",
+    "configs/v3/acceptance/a1_b8.json",
+    "--entry",
+    "geometry_1p5cm",
+    "--ckpt-matrix",
+    "configs/v3/acceptance/a2_combined_robust_ff.json",
+    "--ckpt-entry",
+    "combined_robust_ff_step0",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--work",
+    "$RUNS/acceptance/cache_test",
+    "--output",
+    "$RUNS/acceptance/cache_test.json"
+   ],
+   "inputs": [
+    "scripts/v3_cache_test.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/cache_test.json"
+   ]
+  }
+ ]
+}

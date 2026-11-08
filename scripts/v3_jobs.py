@@ -51,7 +51,7 @@ def utc() -> str:
 
 
 def resolve(s: str, runs: Path) -> str:
-    return s.replace("$RUNS", str(runs))
+    return s.replace("$RUNS", str(runs)).replace("$PY", os.environ.get("V3_ISAAC_PYTHON", sys.executable))
 
 
 SHUTDOWN_MARK = "SimulationContext cleared"
@@ -100,6 +100,7 @@ def run(a):
     if a.only:
         keep = set(a.only.split(","))
         tasks = [t for t in tasks if t["id"] in keep]
+    os.environ["V3_ISAAC_PYTHON"] = a.isaac_python
     g = git_state()
     if g["dirty"] and not a.allow_dirty:
         raise SystemExit("v3 jobs require a clean committed source tree")

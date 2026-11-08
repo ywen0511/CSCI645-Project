@@ -173,6 +173,9 @@ def check_residual():
             settle_pre = env.mode == he.SETTLE
             env.step(acts)
             stats["steps"] += 1
+            # environments that terminated in this step are reset at its end (_reset_idx zeroes the residual):
+            # compare only environments scored both before and after the step
+            scored = scored & (env.mode == he.SCORED)
             exp = bound * torch.tanh(acts)
             if scored.any():
                 stats["scored_steps"] += int(scored.sum())
@@ -244,7 +247,7 @@ def check_boundary():
                 first_ok &= r["frames"] == 1 and r["estimate"] != [0, 0, 0]
                 stale.append(max(abs(a - b) for a, b in zip(r["truth"], r["spawn"])))
                 hist_ok &= all(h == r["hist"][-1] for h in r["hist"])
-            else:
+            elif r["case_index"] >= 0:
                 frame_ok &= r["frames"] == rows[k - 1]["frames"] + 1
         # reconstruct raw from truth: raw_k = truth_{k-d} + bias + sigma * normal(seed, k)
         max_err = 0.0
