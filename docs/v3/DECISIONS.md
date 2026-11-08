@@ -88,3 +88,16 @@ Append remote decisions with the evidence split, source SHA and affected runs.
   validated on separate development starts before the freeze. The mandatory uncertainty study is prioritized;
   nothing about transfer is claimed.
 - Video selection rule frozen in `configs/v3/video_rule.json` before any final outcome is opened.
+
+### 2026-11-08 16:59 UTC — pilots and protocol freeze (split: development)
+
+- Pilots (`results/v3/pilot/`): 8 × 2,752,512 transitions with the `geometry_common` estimator. All losses finite,
+  ~9.5k transitions/s on one A100-40GB, valid resets throughout. Combined profiles solve 144/144 development
+  strata cases; residual-only history 120/144 and 110/144 (nominal 117/144). Residual magnitudes 2–6 mm mean,
+  ≤ 13.7 mm max (bound 20 mm), no workspace clipping; geometry alignment saturates in ~30% of scored steps.
+  No concrete failure was found, so the inherited PPO settings, reward and action bounds are kept unchanged
+  (`ppo_overrides` empty) for every profile.
+- Freeze: `scripts/v3_make_protocols.py frozen` → `configs/v3/frozen/training/*.json` (protocol IDs
+  `v3-final-*`, geometry_common estimator: EMA 1.0 + giver reference, 1.5 cm; 1,024 envs × 32 steps; 10,000,000
+  requested → 10,027,008 realized transitions per run; seeds 11,22,33,44,55 and 11,22,33 for the repeated-current
+  control). Validation matrices for the five fixed candidate steps are committed with the freeze.
