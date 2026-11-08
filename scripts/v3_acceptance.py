@@ -169,9 +169,10 @@ def check_residual():
                  "accumulation_changes": 0, "release_vs_request_s": []}
         prev = None
         while len(env.completed_records) < len(cases) and stats["steps"] < 3000:
+            scored = env.mode == he.SCORED  # the residual of this step is computed from the PRE-step mode
+            settle_pre = env.mode == he.SETTLE
             env.step(acts)
             stats["steps"] += 1
-            scored = env.mode == he.SCORED
             exp = bound * torch.tanh(acts)
             if scored.any():
                 stats["scored_steps"] += int(scored.sum())
@@ -181,7 +182,7 @@ def check_residual():
                 if prev is not None:
                     both = scored & prev[1]
                     stats["accumulation_changes"] += int(((env.residual - prev[0]).abs().max(-1).values > 1e-9)[both].sum())
-            stats["settle_nonzero"] += int((env.residual[env.mode == he.SETTLE].abs() > 0).sum())
+            stats["settle_nonzero"] += int((env.residual[settle_pre].abs() > 0).sum())
             prev = (env.residual.clone(), scored.clone())
         for r in env.completed_records:
             if r.get("release_command_time_s") is not None and r.get("release_request_time_s") is not None:
@@ -235,7 +236,8 @@ def check_boundary():
         from csci645_handover.core.observation import normal_at
 
         frame_ok, first_ok, stale, future_ok, hist_ok, reset_rows = True, True, [], True, True, []
-        ep_start = [k for k in range(len(rows)) if k == 0 or rows[k]["case_index"] != rows[k - 1]["case_index"]]
+        ep_start = [k for k in range(len(rows)) if (k == 0 or rows[k]["case_index"] != rows[k - 1]["case_index"])
+                    and rows[k]["case_index"] >= 0]  # the final reset to IDLE (case_index -1) is not an episode
         for k, r in enumerate(rows):
             if k in ep_start:
                 reset_rows.append(k)

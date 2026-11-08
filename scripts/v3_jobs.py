@@ -54,6 +54,42 @@ def resolve(s: str, runs: Path) -> str:
     return s.replace("$RUNS", str(runs))
 
 
+SHUTDOWN_MARK = "SimulationContext cleared"
+
+
+def supervise(cmd, log, outs, timeout_s: float):
+    """Run cmd in its own process group. Isaac Sim sometimes hangs during Kit shutdown after all work is
+    written ("SimulationContext cleared" printed, process never exits). If that happens and every declared
+    output exists, the group is killed after a grace period and the task counts as complete; the event is
+    recorded. A task that exceeds timeout_s is killed and fails (rc 124)."""
+    import signal
+    import time
+
+    t0 = time.time()
+    seen = None
+    with open(log, "w") as f:
+        p = subprocess.Popen(cmd, cwd=ROOT, stdout=f, stderr=subprocess.STDOUT, start_new_session=True,
+                             env={**os.environ, "REPO": str(ROOT)})
+        while True:
+            try:
+                rc = p.wait(timeout=5)
+                return rc, None
+            except subprocess.TimeoutExpired:
+                pass
+            if seen is None and SHUTDOWN_MARK in Path(log).read_text(errors="replace")[-4000:]:
+                seen = time.time()
+            if seen is not None and time.time() - seen > 90:
+                os.killpg(p.pid, signal.SIGKILL)
+                p.wait()
+                ok = all(o.exists() for o in outs)
+                return (0 if ok else 1), {"event": "killed after Kit shutdown hang", "seconds_after_shutdown_mark": 90,
+                                          "outputs_complete": ok}
+            if time.time() - t0 > timeout_s:
+                os.killpg(p.pid, signal.SIGKILL)
+                p.wait()
+                return 124, {"event": "task timeout", "timeout_s": timeout_s}
+
+
 def run(a):
     man = json.loads(Path(a.manifest).read_text())
     runs = Path(a.runs_root).resolve()
@@ -95,13 +131,12 @@ def run(a):
             cmd = ["bash", "-c", " ".join(argv)]
         t0 = utc()
         print(f"[v3_jobs] run {t['id']}: {' '.join(argv)}", flush=True)
-        with open(log, "w") as f:
-            rc = subprocess.run(cmd, cwd=ROOT, stdout=f, stderr=subprocess.STDOUT,
-                                env={**os.environ, "REPO": str(ROOT)}).returncode
+        rc, watchdog = supervise(cmd, log, outs, a.task_timeout_s)
         rec = {"task": t["id"], "manifest": man["name"], "attempt": attempts + 1, "argv": t["argv"], "kind": kind,
                "start_utc": t0, "end_utc": utc(), "rc": rc, "source_commit": g["commit"], "source_dirty": g["dirty"],
                "inputs": inputs, "outputs": {str(o): sha(o) if o.is_file() else ("dir" if o.is_dir() else None) for o in outs},
                "outputs_exist": all(o.exists() for o in outs), "log": str(log), "host": socket.gethostname(),
+               "watchdog": watchdog,
                "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES")}
         with open(lp, "a") as f:
             f.write(json.dumps(rec) + "\n")
@@ -140,6 +175,7 @@ def main():
     r.add_argument("--runs-root", default=str(ROOT / "runs/v3"))
     r.add_argument("--max-attempts", type=int, default=3)
     r.add_argument("--allow-dirty", action="store_true")
+    r.add_argument("--task-timeout-s", type=float, default=5400.0)
     m = sub.add_parser("merge")
     m.add_argument("--runs-root", default=str(ROOT / "runs/v3"))
     a = ap.parse_args()
