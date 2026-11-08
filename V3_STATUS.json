@@ -3,11 +3,11 @@
   "branch": "study/v3-observation-robustness",
   "base_commit": "4204da23b17f920d955a0bc90f94a8df271c524f",
   "assignment": "V3_EXECUTION.md",
-  "stage": "CPU preparation; remote GPU acceptance pending",
+  "stage": "formal training running (23 runs, experiment-v3)",
   "complete": false,
   "gpu_work_run_by_preparation_agent": false,
-  "remote_acceptance_complete": false,
-  "protocol_frozen": false,
+  "remote_acceptance_complete": true,
+  "protocol_frozen": true,
   "formal_runs_planned": 23,
   "formal_runs_completed": 0,
   "formal_training_transitions_requested": 230000000,
@@ -17,11 +17,22 @@
   "release_published": false,
   "fresh_download_verified": false,
   "release_url": null,
-  "active_jobs": [],
+  "active_jobs": [
+    "LSF c645co_train0..7: 23 formal runs, runs root <work>/v3/formal (not public until packaged)"
+  ],
   "next_actions": [
-    "Read V3_EXECUTION.md and inventory remote runtime/GPU/storage/GitHub access",
-    "Run simulator and PPO acceptance checks; correct integration if required",
-    "Execute development baselines and bounded pilots; freeze the protocol",
-    "Train, select, evaluate, analyze, render, publish and verify all required deliverables"
-  ]
+    "validation of 5 candidates + step 0 per run, checkpoint selection",
+    "final matrix 135,200 episodes",
+    "zero-policy, interventions, repeatability",
+    "analysis, report, slides, videos",
+    "release v3.0.0 and fresh verification"
+  ],
+  "experiment_tag": "experiment-v3",
+  "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+  "tested_candidate_commit": "415cf8348728ccedbc2314a28adf9aaf7deddedf",
+  "acceptance": "results/v3/acceptance.json (10/10 checks pass)",
+  "baseline_selection": "configs/v3/baseline_selection.json (geometry_common = EMA 1.0 + giver reference, 1.5 cm; aliases geometry_best_constant, geometry_giver)",
+  "pilots": "results/v3/pilot/ (8 x 2,752,512 transitions; smoke 1,966,080; total 23,986,176 <= 24M)",
+  "physical_transfer": "not_performed (spawn geometry/mass/friction are module constants; see docs/v3/DECISIONS.md)",
+  "blockers": []
 }
