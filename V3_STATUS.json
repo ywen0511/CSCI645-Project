@@ -1,0 +1,27 @@
+{
+  "study": "v3-observation-robustness",
+  "branch": "study/v3-observation-robustness",
+  "base_commit": "4204da23b17f920d955a0bc90f94a8df271c524f",
+  "assignment": "V3_EXECUTION.md",
+  "stage": "CPU preparation; remote GPU acceptance pending",
+  "complete": false,
+  "gpu_work_run_by_preparation_agent": false,
+  "remote_acceptance_complete": false,
+  "protocol_frozen": false,
+  "formal_runs_planned": 23,
+  "formal_runs_completed": 0,
+  "formal_training_transitions_requested": 230000000,
+  "pilot_transition_cap": 24000000,
+  "main_final_episodes_scheduled": 135200,
+  "main_final_episodes_completed": 0,
+  "release_published": false,
+  "fresh_download_verified": false,
+  "release_url": null,
+  "active_jobs": [],
+  "next_actions": [
+    "Read V3_EXECUTION.md and inventory remote runtime/GPU/storage/GitHub access",
+    "Run simulator and PPO acceptance checks; correct integration if required",
+    "Execute development baselines and bounded pilots; freeze the protocol",
+    "Train, select, evaluate, analyze, render, publish and verify all required deliverables"
+  ]
+}

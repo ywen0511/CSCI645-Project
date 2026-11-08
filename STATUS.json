@@ -101,5 +101,12 @@
       "verify --bundle with a relative path mis-resolves in the v2.1.1 driver (fixed on the branch after the tag)",
       "historical private-path exposures documented in docs/closeout/ERRATA.md, history not rewritten"
     ]
+  },
+  "active_study": "v3-observation-robustness",
+  "v3": {
+    "status_file": "V3_STATUS.json",
+    "assignment": "V3_EXECUTION.md",
+    "complete": false,
+    "stage": "CPU preparation; remote GPU acceptance pending"
   }
 }

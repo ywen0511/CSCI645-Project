@@ -1,73 +1,58 @@
-# Robust Bimanual Handover — Geometric Coordination and Residual RL
+# CSCI 645 — V3 observation robustness in bimanual handover
 
-**CSCI 645 Robot Manipulation, Fall 2026 · Yan Wen** · Isaac Lab v3.0.0 / Isaac Sim 6.2.0.0 (PhysX) · RSL-RL 5.5.1
+**Remote execution agent: [read and execute V3_EXECUTION.md](V3_EXECUTION.md).**
+It is the complete assignment: validate the prepared implementation on the remote
+GPU, freeze the protocol, train/evaluate all required methods, analyze the findings,
+create the report/slides/videos, publish every result and saved checkpoint in a
+new GitHub Release, and verify a fresh download. No local files or prior chat are
+needed. Do not stop at a plan, CPU tests, or launching training.
 
-## Final delivery (v2.1.1): reproducibility and repeatability closeout
+**Current status: CPU preparation complete; remote simulation/training is NOT done.**
+No GPU or simulator workload was run during preparation. See
+[preparation evidence](docs/v3/PREPARATION.md) and [V3 status](V3_STATUS.json).
+The prepared simulator integration requires the remote acceptance checks before
+formal experiments. New scientific results must not be inferred from CPU tests.
 
-The **delivery branch is `study/v2-diagnostics`** (the default branch `main` is historical). The first
-closeout release, v2.1.0, stays published but is superseded by v2.1.1: its source-archive inventory lacked
-member hashes, so the documented `download` stage failed in the post-publication check
-([ERRATA C9](docs/closeout/ERRATA.md)). This closeout preserves every v1/v2 result and adds a corrected,
-executable reproduction workflow, scoped wording, and a
-supplementary repeatability check of the existing v2 checkpoints. Nothing was retrained.
+This extends the existing Isaac Sim + Isaac Lab two-Franka, two-finger-gripper
+handover project. V3 asks when geometric coordination and bounded PPO residuals
+remain effective with translation-estimation bias, noise and delay, and whether
+short history helps beyond filtering, a giver-grasp kinematic baseline, and a
+matched-input-size control. Existing v1/v2 results are preserved.
 
-| | Link |
-|---|---|
-| Release (self-contained: copies of all v2.0.0 checkpoints/raw records/logs/videos + closeout evidence) | [v2.1.1](https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.1) |
-| Source tags | [`experiment-v2`](https://github.com/ywen0511/CSCI645-Project/tree/experiment-v2) (simulator code, frozen protocol) · [`closeout-eval-v1`](https://github.com/ywen0511/CSCI645-Project/tree/closeout-eval-v1) (Stage 4 configs/driver) · [`v2.1.1`](https://github.com/ywen0511/CSCI645-Project/tree/v2.1.1) (delivery tools, report/deck sources) |
-| Report (Markdown; PDF in the release) | [report/v2/report.md](report/v2/report.md) · supplementary [report/closeout/repeatability.md](report/closeout/repeatability.md) |
-| Presentation | [report/v2/deck/deck.pptx](report/v2/deck/deck.pptx) · [deck.pdf](report/v2/deck/deck.pdf) |
-| Tables | [results/v2/summary/tables.md](results/v2/summary/tables.md) · [results/closeout/repeatability/](results/closeout/repeatability/) |
-| Checkpoint / video / run indices | `checkpoints.json`, `videos.json`, `runs.json`, `manifest.json` in the release |
-| Reproduction | [docs/closeout/REPRODUCE.md](docs/closeout/REPRODUCE.md) (driver [`scripts/closeout.py`](scripts/closeout.py)) |
-| Verification record | [docs/closeout/VERIFICATION.md](docs/closeout/VERIFICATION.md) |
-| Corrections | [docs/closeout/ERRATA.md](docs/closeout/ERRATA.md) · decisions [docs/closeout/DECISIONS.md](docs/closeout/DECISIONS.md) · status [STATUS.json](STATUS.json) |
-
-### Findings (v2 held-out final suite, 2,400 cases; unchanged from v2.0.0)
-
-Success %, learned methods = mean of 3 training seeds (selected checkpoints):
-nominal 65.2 · nominal + 9 mm constant 69.3 · residual (PPO) 82.6 · geometry 1.5 cm 96.5 · combined
-(geometry 1.5 cm + PPO residual) 96.1 · combined_no_phase 96.3 · **geometry 1.5 cm + 10 mm constant 99.2**.
-
-- In this task and training setup, residual RL on top of strong geometry added no robust value: combined −
-  geometry −0.4 pp [−0.8, −0.2], and it lost to geometry plus a development-tuned constant (−3.2 pp
-  [−4.0, −2.3]). This is scoped to the evaluated task, controller, reward, PPO configuration and training
-  distribution. It is not a general impossibility result.
-- Without geometry, residual RL learned state-dependent corrections: +17.4 pp over nominal, +13.3 pp over
-  nominal + constant.
-- No clear effect of the explicit contact-phase label was detected under this task, observation set and
-  training budget (−0.2 pp [−0.6, +0.2]). Raw contact and timing observations remain in both policies.
-
-### Supplementary repeatability (closeout; retrospective, not held-out evidence)
-
-The 8 relevant controllers × 2,400 cases × 3 fresh processes × batch sizes 900 and 23 gave 115,200 episodes,
-all recorded. combined − geometry 1.5 cm was negative in every run (selected −0.44 to −0.40 pp, final −0.39
-to −0.35 pp), and no repeat-averaged interval included 0. The small disadvantage is therefore **stable under
-the tested settings**, and only those. combined − (geometry + 10 mm) was −3.1 pp throughout. Processes with
-different seeds gave identical outcomes at a given batch size; changing the batch size changed 0–2 of 2,400
-terminal reasons per controller.
-
-Limitations: simulation only, privileged state, translation-only perturbations, three training seeds, v2
-designed after v1 diagnostics, training range saturated by the stronger geometry, one reward design; the
-repeatability check re-uses the v2 suite. See report Section 7.
-
-## Earlier deliveries (historical, unchanged)
-
-| | v1 | v2 |
+| Component | Prepared here | Remote work |
 |---|---|---|
-| Source | [`experiment-v1`](https://github.com/ywen0511/CSCI645-Project/tree/experiment-v1) | [`experiment-v2`](https://github.com/ywen0511/CSCI645-Project/tree/experiment-v2), [`v2.0.0`](https://github.com/ywen0511/CSCI645-Project/tree/v2.0.0) |
-| Release | [v1.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v1.0.0) | [v2.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.0.0) |
-| Report | [report/report.md](report/report.md) (erratum E1) | archived v2.0.0 report in the v2.0.0 release |
-| Verification | [docs/RELEASE_VERIFICATION.md](docs/RELEASE_VERIFICATION.md) | [docs/v2/RELEASE_VERIFICATION.md](docs/v2/RELEASE_VERIFICATION.md) |
+| Sensors/controllers | Corruption, EMA, giver reference, history, intervention hooks, CPU tests | Simulator timing/contact/zero-residual acceptance and any fixes |
+| Experiment design | Split generator, development/validation cases, five training profiles, baseline matrices | Development baselines/pilots, freeze, final suite, 23 training runs |
+| Evaluation/analysis | Provenance checks, count reconciliation, paired clustered bootstrap | Full matrix, checkpoint selection, mechanism and repeatability studies |
+| Delivery | Complete assignment and acceptance/publication contract | Report, slides, videos, all raw results/checkpoints, release and fresh verification |
 
-## Documents
+## Start
 
-- Closeout: [ASSIGNMENT](docs/closeout/ASSIGNMENT.md) (this assignment, verbatim) · [PLAN](docs/closeout/PLAN.md) ·
-  [DECISIONS](docs/closeout/DECISIONS.md) · [REPEATABILITY_PLAN](docs/closeout/REPEATABILITY_PLAN.md) ·
-  [ERRATA](docs/closeout/ERRATA.md) · [REPRODUCE](docs/closeout/REPRODUCE.md) · [VERIFICATION](docs/closeout/VERIFICATION.md)
-- v2: [ASSIGNMENT](docs/v2/ASSIGNMENT.md) · [PLAN](docs/v2/PLAN.md) · [DECISIONS](docs/v2/DECISIONS.md) ·
-  [AUDIT](docs/v2/AUDIT.md) · [V1_ERRATA](docs/v2/V1_ERRATA.md) · [PROTOCOL](docs/v2/PROTOCOL.md) ·
-  [REPRODUCE (historical)](docs/v2/REPRODUCE.md) · [diagnostics](report/v2/diagnostics.md) · [geometry ablation](report/v2/geometry_ablation.md)
-- v1: [PROJECT_SPEC](docs/PROJECT_SPEC.md) · [EXPERIMENTS](docs/EXPERIMENTS.md) · [IMPLEMENTATION](docs/IMPLEMENTATION.md) ·
-  [RUNBOOK](docs/RUNBOOK.md) · [DECISIONS](docs/DECISIONS.md) · [SETUP_REMOTE](docs/SETUP_REMOTE.md) · proposal in [proposal/](proposal/)
-- Agent working rules: [AGENTS.md](AGENTS.md). Software reuse and AI-assistance disclosure: report, final section.
+```bash
+git clone --branch study/v3-observation-robustness https://github.com/ywen0511/CSCI645-Project.git
+cd CSCI645-Project
+cat V3_EXECUTION.md
+```
+
+For CPU-only checks in an isolated environment with torch, numpy and pytest:
+
+```bash
+CUDA_VISIBLE_DEVICES='' python -m pytest -q
+python scripts/v3_prepare.py
+```
+
+`v3_prepare.py` creates development inputs, not results. Read the execution document
+before installing the simulator or starting any remote job. No external training
+dataset is required; data come from simulator interaction.
+
+## Prior completed work
+
+- [V2 final release](https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.1)
+- [V2 report](report/v2/report.md) and [verification](docs/closeout/VERIFICATION.md)
+- [Historical V2 README](README_V2_CLOSEOUT.md); its completion flags and commands
+  concern the archived study, not V3.
+- [Original proposal](proposal/proposal.txt), preserved as submitted.
+
+V3 work stays on `study/v3-observation-robustness`. The execution agent must publish
+an immutable `experiment-v3` tag and a verified `v3.0.0` release (or a new version
+if those names are already in use), without rewriting old history or releases.

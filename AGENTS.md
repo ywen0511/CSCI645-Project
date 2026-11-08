@@ -1,5 +1,18 @@
 # Agent instructions
 
+## Active V3 assignment (takes precedence over historical v1/v2 runbooks)
+
+On `study/v3-observation-robustness`, execute the self-contained `V3_EXECUTION.md`.
+It extends the original scope with controlled translation-observation uncertainty,
+history/filtering/kinematic baselines and optional declared physical transfer.
+The fixed-physics constraint in the original PROJECT_SPEC still governs the main
+comparison; the explicitly labeled transfer extension is the only exception.
+V3 completeness is defined by V3_EXECUTION.md and V3_STATUS.json, not historical
+v2 completion flags. Preserve the original proposal and all earlier results.
+The preparation agent runs CPU checks only; the remote execution agent validates
+and runs the simulator/GPU experiments on already available resources. All public
+content must be English. Do not treat prepared code as GPU-validated evidence.
+
 ## Mission and authorization
 
 The owner, GitHub user `ywen0511`, explicitly requested a self-contained repository that a remote agent can read and use to complete the entire project, including implementation, training, evaluation, checkpoints, reports, videos, and GitHub Releases. All repository content and deliverables must be in English.
