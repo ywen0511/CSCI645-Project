@@ -18,8 +18,8 @@ CSS = """
 body { font-family: 'DejaVu Serif', Georgia, serif; font-size: 10pt; line-height: 1.36; max-width: 7.0in; margin: 0 auto; color: #111; }
 h1 { font-size: 16pt; margin-bottom: 0.1em; } h2 { font-size: 12.5pt; margin-top: 1.1em; border-bottom: 1px solid #bbb; }
 h3 { font-size: 11pt; } .meta { color: #444; margin-bottom: 1.1em; }
-table { border-collapse: collapse; font-size: 8.4pt; margin: 0.5em 0; page-break-inside: avoid; }
-th, td { border: 1px solid #aaa; padding: 2px 5px; } th { background: #eee; }
+table { border-collapse: collapse; font-size: 7.4pt; margin: 0.5em 0; page-break-inside: auto; } tr { page-break-inside: avoid; }
+th, td { border: 1px solid #aaa; padding: 1px 3px; } th { background: #eee; }
 img { max-width: 100%; page-break-inside: avoid; } code { font-size: 8.5pt; } p, li { text-align: justify; }
 @page { size: letter; margin: 0.7in; }
 """

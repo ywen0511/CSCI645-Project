@@ -163,7 +163,7 @@ def main():
     pk.tar("raw-validation", tree(F / "validation", "validation"))
     pk.tar("raw-final", tree(F / "final", "final"))
     pk.tar("raw-extras", tree(F / "zero_policy", "zero_policy") + tree(F / "interventions", "interventions")
-           + tree(F / "repeatability", "repeatability") + tree(F / "_resolved", "resolved_matrices"))
+           + tree(F / "repeatability", "repeatability") + tree(F / "traces6", "traces6") + tree(F / "_resolved", "resolved_matrices"))
     pk.tar("raw-acceptance", tree(C / "acceptance", "acceptance") + tree(C / "pilot_eval", "pilot_eval")
            + tree(R / "preflight", "preflight"))
     logs = []
@@ -175,11 +175,18 @@ def main():
     pk.tar("analysis", an)
     vd = Path(a.videos)
     pk.tar("videos", tree(vd, "videos"))
+    vix = json.loads((vd / "video_index.json").read_text())
+    vlist = [{"video": c["video"], "member": f"videos/{c['video']}", "sidecar": f"videos/{c['sidecar']}", "frames": c["decoded_frames"],
+              "sha256": c["sha256"], "category": c["category"], "run_id": c["run_id"], "case_id": c["case_id"],
+              "evaluation_outcome": c["evaluation_outcome"], "replay_outcome": c["replay_outcome"]} for c in vix["clips"]]
+    vlist.append({"video": "montage.mp4", "member": "videos/montage.mp4", "frames": vix["montage"]["frames"],
+                  "sha256": vix["montage"]["sha256"], "category": "montage"})
+    (STAGE / "videos.json").write_text(json.dumps(vlist, indent=1) + "\n")
     docs = [(ROOT / "report/v3/report.md", "report.md"), (ROOT / "report/v3/report.pdf", "report.pdf"),
             (ROOT / "report/v3/slides.pptx", "slides.pptx"), (ROOT / "report/v3/slides.pdf", "slides.pdf"),
             (ROOT / "report/v3/speaker_notes.md", "speaker_notes.md"), (ROOT / "docs/v3/REPRODUCE.md", "REPRODUCE.md"),
             (ROOT / "docs/v3/VERIFICATION.md", "VERIFICATION.md"), (ROOT / "docs/v3/RELEASE_NOTES.md", "RELEASE_NOTES.md"),
-            (vd / "videos.json", "videos.json")]
+            (STAGE / "videos.json", "videos.json")]
     for s, n in docs:
         if not s.exists():
             raise SystemExit(f"missing {s}")
@@ -232,12 +239,38 @@ def main():
                              "source_commit": meta["git"]["commit"], "status": "completed" if (d / "DONE.json").exists() else "incomplete",
                              "checkpoints": sum(1 for c in ck if c["run"] == d.name)})
     (out / "run_index.json").write_text(json.dumps(runs, indent=1) + "\n")
+    # every final-matrix logical entry and validation evaluation -> asset/member/sha256 + lineage
+    member_of = {m: (asset, m) for asset, rows in pk.inv.items() for m in (r["path"] for r in rows)}
+    inv_sha = {(asset, r["path"]): (r["sha256"], r["size_bytes"]) for asset, rows in pk.inv.items() for r in rows}
+    arts = []
+    idx = json.loads((ROOT / "configs/v3/final_matrix_index.json").read_text())
+    for e in idx["entries"]:
+        asset, m = member_of[e["records"]]
+        h, size = inv_sha[(asset, m)]
+        arts.append({"artifact": f"final/{e['family']}/{e['role']}/{e['seed']}", "kind": "final_records", "asset": asset, "member": m,
+                     "sha256": h, "size_bytes": size, "alias_of": e.get("alias_of"), "status": "complete (2,600 records)",
+                     "lineage": e["expected"]})
+    for v in sorted((F / "validation").rglob("*__*.jsonl")):
+        mem = f"validation/{v.relative_to(F / 'validation').as_posix()}"
+        asset, m = member_of[mem]
+        h, size = inv_sha[(asset, m)]
+        first = json.loads(v.read_text().splitlines()[0])
+        arts.append({"artifact": f"validation/{v.stem}", "kind": "validation_records", "asset": asset, "member": m, "sha256": h,
+                     "size_bytes": size, "status": "complete (240 records)",
+                     "lineage": {k: first.get(k) for k in ("suite_hash", "config_hash", "controller_hash", "checkpoint_sha256",
+                                                           "source_commit", "source_dirty")}})
     (out / "archive_inventories.json").write_text(json.dumps({k: pk.inv[k] for k in sorted(pk.inv)}, indent=1) + "\n")
     assets = [{"name": f.name, "size_bytes": f.stat().st_size, "sha256": sha(f)} for f in sorted(out.iterdir())
               if f.name not in ("release_manifest.json", "SHA256SUMS")]
     man = {"tag": a.tag, "created_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "delivery_commit": head,
            "experiment_tag": "experiment-v3", "experiment_commit": exp, "assets": assets,
-           "logical_runs": {r["run"]: {"type": r["type"], "checkpoints": r.get("checkpoints")} for r in runs},
+           "logical_runs": {r["run"]: {"type": r["type"], "status": r.get("status", "completed"), "checkpoints": r.get("checkpoints"),
+                                       "source_commit": r.get("source_commit"), "config_hash": r.get("config_hash"),
+                                       "protocol_sha256": r.get("protocol_sha256"), "selected": r.get("selected"),
+                                       "checkpoint_members": [{"tag": c["tag"], "asset": c["asset"], "member": c["member"], "sha256": c["sha256"],
+                                                               "size_bytes": c["size_bytes"], "roles": c["roles"]} for c in ck if c["run"] == r["run"]]}
+                            for r in runs},
+           "artifacts": arts,
            "coverage": "SHA256SUMS covers every asset except itself; release_manifest.json is covered by SHA256SUMS and "
                        "lists every other asset; archive_inventories.json lists every member (size, SHA-256), including "
                        "the source archives",

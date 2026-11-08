@@ -88,7 +88,9 @@ def main():
         w.writeheader()
         for r in fits:
             w.writerow({k: (f"{v:.6g}" if isinstance(v, float) else v) for k, v in r.items()})
+    gsat = float(np.mean([r["geometry_align_saturation_frac"] for r in G.values() if r["condition"] != "clean"]))
     (out / "mechanisms.json").write_text(json.dumps({"per_seed": summary, "fits": fits,
+                                                     "geometry_common_align_saturation_frac": gsat,
                                                      "method": "OLS of episode-mean residual on [1, true offset, sensor bias] per axis"},
                                                     indent=1, default=float) + "\n")
     print(json.dumps({f: [round(s["residual_abs_mean_mm"], 2) for s in v] for f, v in summary.items()}))

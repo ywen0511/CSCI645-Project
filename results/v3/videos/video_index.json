@@ -1,0 +1,437 @@
+{
+ "rule": "configs/v3/video_rule.json",
+ "selection": "configs/v3/video/selection.json",
+ "clips": [
+  {
+   "video": "main_comparison__combined_robust_history_s11_selected__v3-final-mixed_id-0000.mp4",
+   "category": "main_comparison",
+   "method": "combined",
+   "run_id": "combined_robust_history_s11__selected",
+   "case_id": "v3-final-mixed_id-0000",
+   "checkpoint": "step_002031616.pt",
+   "overrides": {},
+   "recording_process": "plan_common",
+   "bytes": 588825,
+   "sha256": "f956f3e38e768926068059ee077fdf60c45b922c8561f65e3dc570aa63a8842f",
+   "sidecar": "main_comparison__combined_robust_history_s11_selected__v3-final-mixed_id-0000.json",
+   "sidecar_sha256": "844c6a6198207669fa98690ab8caf08e72bb285c7035e15e14a00425678292d4",
+   "decoded_frames": 94,
+   "resolution": [
+    960,
+    544
+   ],
+   "fps": 20,
+   "playback_speed": 1.0,
+   "mean_abs_frame_diff": 0.663,
+   "evaluation_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295
+   },
+   "replay_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295,
+    "release_command_time_s": 2.6500000953674316,
+    "independent_hold_s": 1.9999991655349731
+   },
+   "replay_matches_evaluation": true,
+   "checkpoint_sha256": "a47c8fc8e4c4cc41964685d2826fbe6ee32b18d492ca2fbaa5a3b7d041d34ed1",
+   "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+   ],
+   "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+   ],
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "controller_hash": "0236e8562afe1325444ad44393b9e965359118572fb6cd519d399111b57e48a0",
+   "suite_hash": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+  },
+  {
+   "video": "main_comparison__geometry_best_constant__v3-final-mixed_id-0000.mp4",
+   "category": "main_comparison",
+   "method": "geometry",
+   "run_id": "geometry_best_constant",
+   "case_id": "v3-final-mixed_id-0000",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.015
+   },
+   "recording_process": "plan_common",
+   "bytes": 516723,
+   "sha256": "4bebbad34fb483ff5ab2b50d94b8acfd8f1440d3b2119c33daad5cddab69f78d",
+   "sidecar": "main_comparison__geometry_best_constant__v3-final-mixed_id-0000.json",
+   "sidecar_sha256": "6049e10bf5e24b510d96cf0930c71fe2316600b789e7a59debdcd4b4ab97636d",
+   "decoded_frames": 94,
+   "resolution": [
+    960,
+    544
+   ],
+   "fps": 20,
+   "playback_speed": 1.0,
+   "mean_abs_frame_diff": 0.615,
+   "evaluation_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295
+   },
+   "replay_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295,
+    "release_command_time_s": 2.6500000953674316,
+    "independent_hold_s": 1.9999991655349731
+   },
+   "replay_matches_evaluation": true,
+   "checkpoint_sha256": null,
+   "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+   ],
+   "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+   ],
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "controller_hash": "6cd9d3cee31008a3eed73260dbae6306253dfe962be97b21e28f5af7e597bd07",
+   "suite_hash": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+  },
+  {
+   "video": "main_comparison__combined_robust_history_s11_selected__v3-final-mixed_ood-0000.mp4",
+   "category": "main_comparison",
+   "method": "combined",
+   "run_id": "combined_robust_history_s11__selected",
+   "case_id": "v3-final-mixed_ood-0000",
+   "checkpoint": "step_002031616.pt",
+   "overrides": {},
+   "recording_process": "plan_common",
+   "bytes": 599647,
+   "sha256": "b7ea7fea2f638bc625d0f3a20a3ee14ed07a5be72aac52ac25cddf3b308472fe",
+   "sidecar": "main_comparison__combined_robust_history_s11_selected__v3-final-mixed_ood-0000.json",
+   "sidecar_sha256": "1af855c9e7e03d9a290796001efa74108902232318ac926f4a9f047707991135",
+   "decoded_frames": 94,
+   "resolution": [
+    960,
+    544
+   ],
+   "fps": 20,
+   "playback_speed": 1.0,
+   "mean_abs_frame_diff": 0.67,
+   "evaluation_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295
+   },
+   "replay_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295,
+    "release_command_time_s": 2.6500000953674316,
+    "independent_hold_s": 1.9999991655349731
+   },
+   "replay_matches_evaluation": true,
+   "checkpoint_sha256": "a47c8fc8e4c4cc41964685d2826fbe6ee32b18d492ca2fbaa5a3b7d041d34ed1",
+   "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+   ],
+   "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+   ],
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "controller_hash": "0236e8562afe1325444ad44393b9e965359118572fb6cd519d399111b57e48a0",
+   "suite_hash": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+  },
+  {
+   "video": "main_comparison__geometry_best_constant__v3-final-mixed_ood-0000.mp4",
+   "category": "main_comparison",
+   "method": "geometry",
+   "run_id": "geometry_best_constant",
+   "case_id": "v3-final-mixed_ood-0000",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.015
+   },
+   "recording_process": "plan_common",
+   "bytes": 516723,
+   "sha256": "4bebbad34fb483ff5ab2b50d94b8acfd8f1440d3b2119c33daad5cddab69f78d",
+   "sidecar": "main_comparison__geometry_best_constant__v3-final-mixed_ood-0000.json",
+   "sidecar_sha256": "ba7d44d351892a197f48ddbfaddbddbd74929836be6864aa98fd57072fe728c6",
+   "decoded_frames": 94,
+   "resolution": [
+    960,
+    544
+   ],
+   "fps": 20,
+   "playback_speed": 1.0,
+   "mean_abs_frame_diff": 0.615,
+   "evaluation_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295
+   },
+   "replay_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295,
+    "release_command_time_s": 2.6500000953674316,
+    "independent_hold_s": 1.9999991655349731
+   },
+   "replay_matches_evaluation": true,
+   "checkpoint_sha256": null,
+   "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+   ],
+   "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+   ],
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "controller_hash": "6cd9d3cee31008a3eed73260dbae6306253dfe962be97b21e28f5af7e597bd07",
+   "suite_hash": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+  },
+  {
+   "video": "clean_baseline__geometry_common__v3-final-clean-0000.mp4",
+   "category": "clean_baseline",
+   "method": "geometry",
+   "run_id": "geometry_common",
+   "case_id": "v3-final-clean-0000",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.015
+   },
+   "recording_process": "plan_common",
+   "bytes": 515883,
+   "sha256": "985335630bf5d818d5865ba11ab4ef35b57f7fe40adaa8b88db840e9eb23f1d5",
+   "sidecar": "clean_baseline__geometry_common__v3-final-clean-0000.json",
+   "sidecar_sha256": "940741b2d623c76a5873dfa587ee31fadf2b218bee899870be83f9d2e9ae895b",
+   "decoded_frames": 97,
+   "resolution": [
+    960,
+    544
+   ],
+   "fps": 20,
+   "playback_speed": 1.0,
+   "mean_abs_frame_diff": 0.589,
+   "evaluation_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.849999904632568
+   },
+   "replay_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.849999904632568,
+    "release_command_time_s": 2.799999952316284,
+    "independent_hold_s": 1.9999991655349731
+   },
+   "replay_matches_evaluation": true,
+   "checkpoint_sha256": null,
+   "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+   ],
+   "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+   ],
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "controller_hash": "6cd9d3cee31008a3eed73260dbae6306253dfe962be97b21e28f5af7e597bd07",
+   "suite_hash": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+  },
+  {
+   "video": "severe_noise__geometry_raw__v3-final-noise_4mm-0000.mp4",
+   "category": "severe_noise",
+   "method": "geometry",
+   "run_id": "geometry_raw",
+   "case_id": "v3-final-noise_4mm-0000",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.015
+   },
+   "recording_process": "plan_raw",
+   "bytes": 450741,
+   "sha256": "c33473375314d5abd2b90d3fc00da3f5e1f20f6fe6f8cddcf33113d33c6186af",
+   "sidecar": "severe_noise__geometry_raw__v3-final-noise_4mm-0000.json",
+   "sidecar_sha256": "d8c1503e6bc5a245cfb62c9fb1c353db2c21775e009ff17483328f6d20107b8c",
+   "decoded_frames": 74,
+   "resolution": [
+    960,
+    544
+   ],
+   "fps": 20,
+   "playback_speed": 1.0,
+   "mean_abs_frame_diff": 0.599,
+   "evaluation_outcome": {
+    "terminal_reason": "release_timeout",
+    "success": false,
+    "completion_time_s": null
+   },
+   "replay_outcome": {
+    "terminal_reason": "release_timeout",
+    "success": false,
+    "completion_time_s": null,
+    "release_command_time_s": null,
+    "independent_hold_s": 0.0
+   },
+   "replay_matches_evaluation": true,
+   "checkpoint_sha256": null,
+   "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+   ],
+   "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+   ],
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "config_hash": "8be94556b9fa19425fcf6f4c9d346de64b677657f9d6800035e1634bbf2e06d3",
+   "controller_hash": "4317f9cd36bdcdd0eddfc95096c061ed939df01ab94ca905ed4020ca922c7e8b",
+   "suite_hash": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+  },
+  {
+   "video": "giver_reference_comparison__geometry_giver__v3-final-mixed_ood-0002.mp4",
+   "category": "giver_reference_comparison",
+   "method": "geometry",
+   "run_id": "geometry_giver",
+   "case_id": "v3-final-mixed_ood-0002",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.015
+   },
+   "recording_process": "plan_common",
+   "bytes": 519058,
+   "sha256": "3768825ebb0a8f12af685c7fe6e1f8e4c706bf56f157f40e1455eba03ed5b864",
+   "sidecar": "giver_reference_comparison__geometry_giver__v3-final-mixed_ood-0002.json",
+   "sidecar_sha256": "7ace730d648fdfe9167c9a06c0930e99465fad5c78479b164e2b4038d9cb5aba",
+   "decoded_frames": 94,
+   "resolution": [
+    960,
+    544
+   ],
+   "fps": 20,
+   "playback_speed": 1.0,
+   "mean_abs_frame_diff": 0.618,
+   "evaluation_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295
+   },
+   "replay_outcome": {
+    "terminal_reason": "success",
+    "success": true,
+    "completion_time_s": 4.700000286102295,
+    "release_command_time_s": 2.6500000953674316,
+    "independent_hold_s": 1.9999991655349731
+   },
+   "replay_matches_evaluation": true,
+   "checkpoint_sha256": null,
+   "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+   ],
+   "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+   ],
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "config_hash": "f141af2488e0108f80634618e39f314891dbc9e158c10f3615735a5a78b6d8ec",
+   "controller_hash": "6cd9d3cee31008a3eed73260dbae6306253dfe962be97b21e28f5af7e597bd07",
+   "suite_hash": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+  },
+  {
+   "video": "giver_reference_comparison__geometry_filtered__v3-final-mixed_ood-0002.mp4",
+   "category": "giver_reference_comparison",
+   "method": "geometry",
+   "run_id": "geometry_filtered",
+   "case_id": "v3-final-mixed_ood-0002",
+   "checkpoint": null,
+   "overrides": {
+    "align_max": 0.015
+   },
+   "recording_process": "plan_filtered",
+   "bytes": 368564,
+   "sha256": "0d1f887ffe7bde464d586555777dc601167fde5356a9435a1eb17dad325f307d",
+   "sidecar": "giver_reference_comparison__geometry_filtered__v3-final-mixed_ood-0002.json",
+   "sidecar_sha256": "735cad2d074821b093d66098ff2277c28abdcf63f0b07348d09e11dad58b90f7",
+   "decoded_frames": 57,
+   "resolution": [
+    960,
+    544
+   ],
+   "fps": 20,
+   "playback_speed": 1.0,
+   "mean_abs_frame_diff": 0.688,
+   "evaluation_outcome": {
+    "terminal_reason": "prohibited_collision",
+    "success": false,
+    "completion_time_s": null
+   },
+   "replay_outcome": {
+    "terminal_reason": "prohibited_collision",
+    "success": false,
+    "completion_time_s": null,
+    "release_command_time_s": null,
+    "independent_hold_s": 0.0
+   },
+   "replay_matches_evaluation": true,
+   "checkpoint_sha256": null,
+   "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+   ],
+   "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+   ],
+   "source_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "source_dirty": false,
+   "config_hash": "ba139e1f37a83a30df4544307ce13e08bc84eb123b9f130b8c9e30a64ad1fa5f",
+   "controller_hash": "f383422c038a6453c3c6e29f5ed28e4fe5b8e3f671e3ab8d484c1eea080f14cc",
+   "suite_hash": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+  }
+ ],
+ "distinct_clips": 8,
+ "distinct_cases": 5,
+ "replay_disagreements": [],
+ "montage": {
+  "file": "montage.mp4",
+  "bytes": 4629837,
+  "sha256": "bbebd32dfb005a652436928271a5b2e724265445b14aa5f090e76bd9a378b3b0",
+  "frames": 858,
+  "fps": 20,
+  "seconds": 42.9
+ }
+}

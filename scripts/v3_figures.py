@@ -46,15 +46,15 @@ def pipeline(out: Path):
     hot = dict(boxstyle="round,pad=0.4", fc="#fde0dd", ec="#a50f15")
     acc = dict(boxstyle="round,pad=0.4", fc="#e5f5e0", ec="#006d2c")
     T = [(0.07, 0.80, "PhysX state\n(true object pose,\nrobots, contacts)", box),
-         (0.30, 0.80, "translation sensor\ny = x(k-d) + b + sigma*n(seed,k)\n(bias, noise, delay)", hot),
+         (0.30, 0.80, "translation sensor\ny = x(k-d) + b\n  + sigma*n(seed, k)\n(bias, noise, delay)", hot),
          (0.53, 0.80, "estimator\nEMA (alpha) or giver reference\n(giver TCP - nominal grasp,\nwhile giver holds)", hot),
          (0.77, 0.80, "controller measurements\nestimated position, velocity\n(finite difference of estimate)", hot),
          (0.53, 0.40, "accurate measurements\norientation, joints, TCPs,\nfinger widths, contact forces", acc),
          (0.77, 0.40, "geometry (alignment, anchor,\ncontact-gated release)\n+ policy input (46 or 5x46)", box),
          (0.30, 0.13, "true-state reward (training only)\nindependent 2 s receiver-only\nhold evaluator", acc)]
     for x, y, t, st in T:
-        ax.text(x, y, t, ha="center", va="center", fontsize=8.6, bbox=st, transform=ax.transAxes)
-    arrows = [((0.13, 0.80), (0.22, 0.80)), ((0.39, 0.80), (0.44, 0.80)), ((0.63, 0.80), (0.68, 0.80)),
+        ax.text(x, y, t, ha="center", va="center", fontsize=9.2, bbox=st, transform=ax.transAxes)
+    arrows = [((0.135, 0.80), (0.215, 0.80)), ((0.385, 0.80), (0.435, 0.80)), ((0.63, 0.80), (0.68, 0.80)),
               ((0.77, 0.70), (0.77, 0.50)), ((0.62, 0.40), (0.67, 0.40)), ((0.07, 0.70), (0.42, 0.42)), ((0.07, 0.70), (0.25, 0.21))]
     for (x0, y0), (x1, y1) in arrows:
         ax.annotate("", xy=(x1, y1), xytext=(x0, y0), xycoords="axes fraction", arrowprops=dict(arrowstyle="->", lw=1.2))
@@ -147,9 +147,10 @@ def effects(summary: Path, out: Path):
         ax.axvline(0, color="k", lw=0.8)
         ax.set_yticks(range(len(labels)))
         ax.set_yticklabels(labels, fontsize=7)
-        ax.set_xlabel("success difference [pp] (95% CI; red band: 97.5% family-wise; dots: per seed)")
+        ax.set_xlabel("success difference [pp]")
         ax.set_title(f"{role} checkpoints")
         ax.grid(axis="x", alpha=0.3)
+    fig.suptitle("Paired effects: point = mean, bar = 95% CI, red band = 97.5% family-wise (primary), dots = per seed", fontsize=10)
     fig.tight_layout()
     fig.savefig(out / "paired_effects.png", dpi=160)
     plt.close(fig)
@@ -160,8 +161,8 @@ def failures(summary: Path, out: Path):
     rows = load_counts(summary)
     fams = BASELINES + FAMILIES
     fig, axes = plt.subplots(1, 2, figsize=(13, 4.2), sharey=True)
-    keys = [("success", "#2ca02c"), ("drop", "#ff7f0e"), ("collision", "#d62728"), ("release_timeout", "#9467bd"),
-            ("episode_timeout", "#7f7f7f")]
+    keys = [("terminal_success", "#2ca02c"), ("terminal_drop", "#ff7f0e"), ("terminal_prohibited_collision", "#d62728"),
+            ("terminal_release_timeout", "#9467bd"), ("terminal_episode_timeout", "#7f7f7f")]  # exclusive terminal reasons
     for ax, cond in zip(axes, ("mixed_id", "mixed_ood")):
         bottom = np.zeros(len(fams))
         for k, col in keys:
@@ -169,7 +170,7 @@ def failures(summary: Path, out: Path):
             for f in fams:
                 rr = [r for r in rows if r["family"] == f and r["role"] in ("selected", "baseline") and r["condition"] == cond]
                 vals.append(np.mean([float(r[k]) / float(r["scheduled"]) for r in rr]) * 100 if rr else 0)
-            ax.bar(range(len(fams)), vals, bottom=bottom, color=col, label=k.replace("_", " "))
+            ax.bar(range(len(fams)), vals, bottom=bottom, color=col, label=k.replace("terminal_", "").replace("_", " "))
             bottom += np.array(vals)
         ax.set_xticks(range(len(fams)))
         ax.set_xticklabels([f.replace("_", "\n") for f in fams], fontsize=7)
@@ -181,32 +182,38 @@ def failures(summary: Path, out: Path):
     plt.close(fig)
 
 
-def traces(paths: list[str], out: Path):
+def traces(paths: list[str], out: Path, cases: list[str] | None = None):
     plt = plt_()
     for p in paths:
         tr = json.loads(Path(p).read_text())
-        for cid, rows in list(tr.items())[:2]:
+        for cid, rows in ([(c, tr[c]) for c in cases if c in tr] if cases else list(tr.items())[:2]):
             rows = [r for r in rows if r.get("mode_scored") or r.get("reason")]
             if not rows or "observed_obj_pos" not in rows[0]:
                 continue
             t = np.array([r["t"] for r in rows])
-            fig, axs = plt.subplots(3, 1, figsize=(9, 7), sharex=True)
+            fig, axs = plt.subplots(3, 1, figsize=(11.5, 7), sharex=True)
+            cols = ["#1f77b4", "#d62728", "#2ca02c"]
             for k, lab in enumerate("xyz"):
-                axs[0].plot(t, 1000 * np.array([r["obj_pos"][k] for r in rows]), "-", label=f"true {lab}", lw=1.4)
-                axs[0].plot(t, 1000 * np.array([r["observed_obj_pos"][k] for r in rows]), ".", ms=2, alpha=0.5, label=f"raw {lab}")
-                axs[0].plot(t, 1000 * np.array([r["controller_obj_pos"][k] for r in rows]), "--", lw=1.0, label=f"controller {lab}")
-            axs[0].set_ylabel("object position [mm]")
-            axs[0].legend(fontsize=6, ncol=3)
+                true = np.array([r["obj_pos"][k] for r in rows])
+                axs[0].plot(t, 1000 * (np.array([r["observed_obj_pos"][k] for r in rows]) - true), ".", ms=3, alpha=0.6,
+                            color=cols[k], label=f"raw sensor − true, {lab}")
+                axs[0].plot(t, 1000 * (np.array([r["controller_obj_pos"][k] for r in rows]) - true), "-", lw=1.4,
+                            color=cols[k], label=f"controller estimate − true, {lab}")
+                axs[0].plot(t, 1000 * (true - true[0]), ":", lw=1.0, color=cols[k], label=f"true motion from start, {lab}")
+            axs[0].axhline(0, color="k", lw=0.5)
+            axs[0].set_ylabel("translation error / motion [mm]")
+            axs[0].legend(fontsize=7, loc="upper left", bbox_to_anchor=(1.01, 1.0))
             res = 1000 * np.array([r["residual"] for r in rows])
             for k, lab in enumerate("xyz"):
                 axs[1].plot(t, res[:, k], label=f"residual {lab}")
-            axs[1].set_ylabel("residual [mm]")
-            axs[1].legend(fontsize=7)
+            axs[1].set_ylabel("commanded residual [mm]")
+            axs[1].legend(fontsize=7, loc="upper left", bbox_to_anchor=(1.01, 1.0))
             axs[2].plot(t, [r["giver_force"][0] for r in rows], label="giver finger force")
             axs[2].plot(t, [r["recv_force"][0] for r in rows], label="receiver finger force")
             axs[2].plot(t, [r["hold_timer"] for r in rows], label="independent-hold timer [s]")
+            axs[2].set_ylabel("force [N] / timer [s]")
             axs[2].set_xlabel("scored time [s]")
-            axs[2].legend(fontsize=7)
+            axs[2].legend(fontsize=7, loc="upper left", bbox_to_anchor=(1.01, 1.0))
             fig.suptitle(f"{Path(p).stem}: {cid}", fontsize=10)
             fig.tight_layout()
             fig.savefig(out / f"trace_{Path(p).stem}_{cid}.png", dpi=140)
@@ -219,6 +226,7 @@ def main():
     ap.add_argument("--selection", default="results/v3/selection")
     ap.add_argument("--output", default="results/v3/figures")
     ap.add_argument("--traces", nargs="*", default=[])
+    ap.add_argument("--trace-cases", nargs="*", default=None, help="case IDs to plot from each trace file")
     a = ap.parse_args()
     out = Path(a.output)
     out.mkdir(parents=True, exist_ok=True)
@@ -230,7 +238,7 @@ def main():
             severity(Path(a.summary), out, role)
         effects(Path(a.summary), out)
         failures(Path(a.summary), out)
-    traces(a.traces, out)
+    traces(a.traces, out, a.trace_cases)
     print("figures:", sorted(p.name for p in out.glob("*.png")))
 
 

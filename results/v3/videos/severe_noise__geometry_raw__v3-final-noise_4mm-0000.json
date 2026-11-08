@@ -1,0 +1,68 @@
+{
+  "video": "severe_noise__geometry_raw__v3-final-noise_4mm-0000.mp4",
+  "category": "severe_noise",
+  "selection_rule": null,
+  "method": "geometry",
+  "run_id": "geometry_raw",
+  "case_id": "v3-final-noise_4mm-0000",
+  "entry_id": null,
+  "overrides": {
+    "align_max": 0.015
+  },
+  "protocol": "$DELIVERY/configs/v3/video/protocol_raw.json",
+  "protocol_sha256": "bd258ceb321b9bf5aed88eafadbc470ba1bd555706e87f58d2fd6c482905145d",
+  "controller_hash": "4317f9cd36bdcdd0eddfc95096c061ed939df01ab94ca905ed4020ca922c7e8b",
+  "replay_command": null,
+  "condition": "noise_4mm",
+  "requested_offset_xyz_m": [
+    0.014513467,
+    0.005586094,
+    0.007308587
+  ],
+  "release_offset_s": -0.182551824,
+  "checkpoint": null,
+  "checkpoint_sha256": null,
+  "checkpoint_transitions": null,
+  "config_hash": "8be94556b9fa19425fcf6f4c9d346de64b677657f9d6800035e1634bbf2e06d3",
+  "suite_hash": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3",
+  "git": {
+    "commit": "3811f5da5ef55638f95f7306e449609877f546df",
+    "dirty": false,
+    "dirty_files": []
+  },
+  "frames": 74,
+  "fps": 20,
+  "playback_speed": 1.0,
+  "renderer": "NewtonWarpRenderer (RGB, direct lighting)",
+  "resolution": [
+    960,
+    540
+  ],
+  "camera_eye_m": [
+    0.1,
+    -1.55,
+    1.05
+  ],
+  "camera_target_m": [
+    0.0,
+    0.0,
+    0.42
+  ],
+  "replay_outcome": {
+    "terminal_reason": "release_timeout",
+    "success": false,
+    "completion_time_s": null,
+    "release_command_time_s": null,
+    "independent_hold_s": 0.0
+  },
+  "utc": "2026-11-08T22:03:56Z",
+  "evaluation_outcome": {
+    "terminal_reason": "release_timeout",
+    "success": false,
+    "completion_time_s": null
+  },
+  "evaluation_controller_hash": "4317f9cd36bdcdd0eddfc95096c061ed939df01ab94ca905ed4020ca922c7e8b",
+  "evaluation_checkpoint_sha256": null,
+  "evaluation_record_file": "geometry_raw.jsonl",
+  "replay_matches_evaluation": true
+}

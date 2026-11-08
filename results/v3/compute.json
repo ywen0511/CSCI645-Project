@@ -51,6 +51,27 @@
    "cpu_hours": 0.0,
    "max_task_min": 6.1
   },
+  "formal/extras": {
+   "attempts": 67,
+   "failed_attempts": 0,
+   "gpu_hours": 4.141,
+   "cpu_hours": 0.0,
+   "max_task_min": 10.7
+  },
+  "formal/final": {
+   "attempts": 50,
+   "failed_attempts": 0,
+   "gpu_hours": 2.083,
+   "cpu_hours": 0.0,
+   "max_task_min": 3.1
+  },
+  "formal/traces6": {
+   "attempts": 50,
+   "failed_attempts": 0,
+   "gpu_hours": 0.41,
+   "cpu_hours": 0.0,
+   "max_task_min": 0.9
+  },
   "formal/train": {
    "attempts": 23,
    "failed_attempts": 0,
@@ -64,10 +85,17 @@
    "gpu_hours": 1.387,
    "cpu_hours": 0.0,
    "max_task_min": 1.0
+  },
+  "formal/videos": {
+   "attempts": 4,
+   "failed_attempts": 0,
+   "gpu_hours": 0.044,
+   "cpu_hours": 0.004,
+   "max_task_min": 1.8
   }
  },
- "total_gpu_hours": 11.37,
- "total_attempts": 322,
+ "total_gpu_hours": 18.05,
+ "total_attempts": 493,
  "formal_training": {
   "runs": 23,
   "gpu_hours": 7.61,

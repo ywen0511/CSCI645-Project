@@ -20,6 +20,7 @@ from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
+TERMINAL = ("success", "prohibited_collision", "drop", "release_timeout", "episode_timeout")
 sys.path.insert(0, str(ROOT / "src"))
 from csci645_handover.v3_analysis import paired_effect
 from csci645_handover.v3_protocol import sha256, validate_records, write_json
@@ -84,6 +85,8 @@ def analyze(root, index_path, output, repeats=10000):
                            "drop": sum(r["drop"] for r in selected), "collision": sum(r["collision"] for r in selected),
                            "release_timeout": sum(r["terminal_reason"] == "release_timeout" for r in selected),
                            "episode_timeout": sum(r["terminal_reason"] == "episode_timeout" for r in selected),
+                           # exclusive terminal reasons (the drop/collision fields above are per-episode flags that can co-occur)
+                           **{f"terminal_{k}": sum(r["terminal_reason"] == k for r in selected) for k in TERMINAL},
                            "success_rate": np.mean([r["success"] for r in selected]),
                            "completion_time_success_mean_s": np.mean(times) if times else None,
                            "release_delay_mean_s": float(np.mean(delays)) if delays else None,
@@ -151,6 +154,7 @@ def analyze(root, index_path, output, repeats=10000):
                         "drop_mean": float(np.mean([x["drop"] for x in rows_])), "collision_mean": float(np.mean([x["collision"] for x in rows_])),
                         "release_timeout_mean": float(np.mean([x["release_timeout"] for x in rows_])),
                         "episode_timeout_mean": float(np.mean([x["episode_timeout"] for x in rows_])),
+                        "terminal_mean": {k: float(np.mean([x[f"terminal_{k}"] for x in rows_])) for k in TERMINAL},
                         "alias_of": rows_[0].get("alias_of")})
     write_json(output / "family_condition_summary.json", summary)
     write_json(output / "reconciliation.json", reconciliation)

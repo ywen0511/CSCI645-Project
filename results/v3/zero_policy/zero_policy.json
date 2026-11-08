@@ -1,0 +1,50 @@
+{
+ "rows": {
+  "combined_clean_ff": {
+   "reference": "geometry_common",
+   "cases": 65,
+   "success": 65,
+   "reference_success": 65,
+   "terminal_equal_reference": 65,
+   "invalid_resets": 0,
+   "max_abs_residual_m": 0.0
+  },
+  "combined_robust_ff": {
+   "reference": "geometry_common",
+   "cases": 65,
+   "success": 65,
+   "reference_success": 65,
+   "terminal_equal_reference": 65,
+   "invalid_resets": 0,
+   "max_abs_residual_m": 0.0
+  },
+  "combined_robust_history": {
+   "reference": "geometry_common",
+   "cases": 65,
+   "success": 65,
+   "reference_success": 65,
+   "terminal_equal_reference": 65,
+   "invalid_resets": 0,
+   "max_abs_residual_m": 0.0
+  },
+  "combined_robust_repeat": {
+   "reference": "geometry_common",
+   "cases": 65,
+   "success": 65,
+   "reference_success": 65,
+   "terminal_equal_reference": 65,
+   "invalid_resets": 0,
+   "max_abs_residual_m": 0.0
+  },
+  "residual_robust_history": {
+   "reference": "nominal",
+   "cases": 65,
+   "success": 29,
+   "reference_success": 29,
+   "terminal_equal_reference": 65,
+   "invalid_resets": 0,
+   "max_abs_residual_m": 0.0
+  }
+ },
+ "note": "reference records are the batch-256 final matrix; the control ran at batch 65"
+}

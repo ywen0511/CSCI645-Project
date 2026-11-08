@@ -1071,5 +1071,6 @@
    "cases": 2400
   }
  ],
+ "geometry_common_align_saturation_frac": 0.3180945036861386,
  "method": "OLS of episode-mean residual on [1, true offset, sensor bias] per axis"
 }

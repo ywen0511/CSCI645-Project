@@ -1,0 +1,4821 @@
+{
+ "succ.combined_clean_ff.final.bias_10mm": {
+  "value": 0.999,
+  "text": "99.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/bias_10mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.bias_10mm": {
+  "value": [
+   0.995,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "99.5 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/bias_10mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/bias_2mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.bias_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/bias_2mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/bias_5mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.bias_5mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/bias_5mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/clean.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.clean": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/clean.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.delay_1step": {
+  "value": 0.999,
+  "text": "99.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/delay_1step.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.delay_1step": {
+  "value": [
+   0.995,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "99.5 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/delay_1step.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.delay_2step": {
+  "value": 0.999,
+  "text": "99.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/delay_2step.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.delay_2step": {
+  "value": [
+   0.995,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "99.5 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/delay_2step.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.delay_4step": {
+  "value": 0.999,
+  "text": "99.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/delay_4step.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.delay_4step": {
+  "value": [
+   0.995,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "99.5 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/delay_4step.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.mixed_id": {
+  "value": 0.999,
+  "text": "99.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/mixed_id.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.mixed_id": {
+  "value": [
+   0.995,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "99.5 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/mixed_id.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/mixed_ood.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.mixed_ood": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/mixed_ood.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/noise_1mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.noise_1mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/noise_1mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/noise_2mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.noise_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/noise_2mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.noise_4mm": {
+  "value": 0.999,
+  "text": "99.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/noise_4mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.noise_4mm": {
+  "value": [
+   0.995,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "99.5 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/noise_4mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.final.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/physical_only.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.final.physical_only": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/final/physical_only.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.bias_10mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/bias_10mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.bias_10mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/bias_10mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/bias_2mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.bias_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/bias_2mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/bias_5mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.bias_5mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/bias_5mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/clean.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.clean": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/clean.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/delay_1step.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.delay_1step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/delay_1step.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/delay_2step.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.delay_2step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/delay_2step.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/delay_4step.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.delay_4step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/delay_4step.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/mixed_id.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.mixed_id": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/mixed_id.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/mixed_ood.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.mixed_ood": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/mixed_ood.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/noise_1mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.noise_1mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/noise_1mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/noise_2mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.noise_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/noise_2mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.noise_4mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/noise_4mm.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.noise_4mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/noise_4mm.success_rate_per_seed"
+ },
+ "succ.combined_clean_ff.selected.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/physical_only.success_rate_mean"
+ },
+ "seeds.combined_clean_ff.selected.physical_only": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/physical_only.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.bias_10mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/bias_10mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.bias_10mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/bias_10mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/bias_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.bias_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/bias_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/bias_5mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.bias_5mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/bias_5mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/clean.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.clean": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/clean.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/delay_1step.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.delay_1step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/delay_1step.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/delay_2step.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.delay_2step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/delay_2step.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/delay_4step.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.delay_4step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/delay_4step.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/mixed_id.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.mixed_id": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/mixed_id.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/mixed_ood.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.mixed_ood": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/mixed_ood.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/noise_1mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.noise_1mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/noise_1mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/noise_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.noise_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/noise_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.noise_4mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/noise_4mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.noise_4mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/noise_4mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.final.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/physical_only.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.final.physical_only": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/final/physical_only.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.bias_10mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/bias_10mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.bias_10mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/bias_10mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/bias_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.bias_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/bias_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/bias_5mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.bias_5mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/bias_5mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/clean.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.clean": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/clean.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/delay_1step.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.delay_1step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/delay_1step.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/delay_2step.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.delay_2step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/delay_2step.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/delay_4step.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.delay_4step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/delay_4step.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/mixed_id.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.mixed_id": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/mixed_id.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/mixed_ood.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.mixed_ood": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/mixed_ood.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/noise_1mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.noise_1mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/noise_1mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/noise_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.noise_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/noise_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.noise_4mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/noise_4mm.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.noise_4mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/noise_4mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_ff.selected.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/physical_only.success_rate_mean"
+ },
+ "seeds.combined_robust_ff.selected.physical_only": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/physical_only.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.bias_10mm": {
+  "value": 0.724,
+  "text": "72.4",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/bias_10mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.bias_10mm": {
+  "value": [
+   0.67,
+   1.0,
+   0.78,
+   0.98,
+   0.19
+  ],
+  "text": "67.0 / 100.0 / 78.0 / 98.0 / 19.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/bias_10mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.bias_2mm": {
+  "value": 0.717,
+  "text": "71.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/bias_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.bias_2mm": {
+  "value": [
+   0.64,
+   1.0,
+   0.78,
+   0.98,
+   0.185
+  ],
+  "text": "64.0 / 100.0 / 78.0 / 98.0 / 18.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/bias_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.bias_5mm": {
+  "value": 0.72,
+  "text": "72.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/bias_5mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.bias_5mm": {
+  "value": [
+   0.665,
+   1.0,
+   0.78,
+   0.98,
+   0.175
+  ],
+  "text": "66.5 / 100.0 / 78.0 / 98.0 / 17.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/bias_5mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.clean": {
+  "value": 0.696,
+  "text": "69.6",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/clean.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.clean": {
+  "value": [
+   0.48,
+   1.0,
+   1.0,
+   1.0,
+   0.0
+  ],
+  "text": "48.0 / 100.0 / 100.0 / 100.0 / 0.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/clean.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.delay_1step": {
+  "value": 0.7249999999999999,
+  "text": "72.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/delay_1step.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.delay_1step": {
+  "value": [
+   0.695,
+   1.0,
+   0.775,
+   0.98,
+   0.175
+  ],
+  "text": "69.5 / 100.0 / 77.5 / 98.0 / 17.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/delay_1step.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.delay_2step": {
+  "value": 0.721,
+  "text": "72.1",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/delay_2step.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.delay_2step": {
+  "value": [
+   0.675,
+   1.0,
+   0.78,
+   0.98,
+   0.17
+  ],
+  "text": "67.5 / 100.0 / 78.0 / 98.0 / 17.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/delay_2step.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.delay_4step": {
+  "value": 0.7210000000000001,
+  "text": "72.1",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/delay_4step.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.delay_4step": {
+  "value": [
+   0.665,
+   1.0,
+   0.78,
+   0.98,
+   0.18
+  ],
+  "text": "66.5 / 100.0 / 78.0 / 98.0 / 18.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/delay_4step.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.mixed_id": {
+  "value": 0.718,
+  "text": "71.8",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/mixed_id.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.mixed_id": {
+  "value": [
+   0.645,
+   1.0,
+   0.78,
+   0.98,
+   0.185
+  ],
+  "text": "64.5 / 100.0 / 78.0 / 98.0 / 18.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/mixed_id.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.mixed_ood": {
+  "value": 0.715,
+  "text": "71.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/mixed_ood.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.mixed_ood": {
+  "value": [
+   0.65,
+   1.0,
+   0.775,
+   0.98,
+   0.17
+  ],
+  "text": "65.0 / 100.0 / 77.5 / 98.0 / 17.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/mixed_ood.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.noise_1mm": {
+  "value": 0.7190000000000001,
+  "text": "71.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/noise_1mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.noise_1mm": {
+  "value": [
+   0.655,
+   1.0,
+   0.78,
+   0.98,
+   0.18
+  ],
+  "text": "65.5 / 100.0 / 78.0 / 98.0 / 18.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/noise_1mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.noise_2mm": {
+  "value": 0.7270000000000001,
+  "text": "72.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/noise_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.noise_2mm": {
+  "value": [
+   0.675,
+   1.0,
+   0.78,
+   0.98,
+   0.2
+  ],
+  "text": "67.5 / 100.0 / 78.0 / 98.0 / 20.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/noise_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.noise_4mm": {
+  "value": 0.7250000000000001,
+  "text": "72.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/noise_4mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.noise_4mm": {
+  "value": [
+   0.665,
+   1.0,
+   0.78,
+   0.98,
+   0.2
+  ],
+  "text": "66.5 / 100.0 / 78.0 / 98.0 / 20.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/noise_4mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.final.physical_only": {
+  "value": 0.725,
+  "text": "72.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/physical_only.success_rate_mean"
+ },
+ "seeds.combined_robust_history.final.physical_only": {
+  "value": [
+   0.675,
+   1.0,
+   0.78,
+   0.98,
+   0.19
+  ],
+  "text": "67.5 / 100.0 / 78.0 / 98.0 / 19.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/physical_only.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.bias_10mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/bias_10mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.bias_10mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/bias_10mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/bias_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.bias_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/bias_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/bias_5mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.bias_5mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/bias_5mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/clean.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.clean": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/clean.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/delay_1step.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.delay_1step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/delay_1step.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/delay_2step.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.delay_2step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/delay_2step.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/delay_4step.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.delay_4step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/delay_4step.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/mixed_id.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.mixed_id": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/mixed_id.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/mixed_ood.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.mixed_ood": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/mixed_ood.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/noise_1mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.noise_1mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/noise_1mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/noise_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.noise_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/noise_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.noise_4mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/noise_4mm.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.noise_4mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/noise_4mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_history.selected.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/physical_only.success_rate_mean"
+ },
+ "seeds.combined_robust_history.selected.physical_only": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/physical_only.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.bias_10mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/bias_10mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.bias_10mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/bias_10mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/bias_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.bias_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/bias_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/bias_5mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.bias_5mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/bias_5mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/clean.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.clean": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/clean.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/delay_1step.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.delay_1step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/delay_1step.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/delay_2step.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.delay_2step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/delay_2step.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/delay_4step.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.delay_4step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/delay_4step.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/mixed_id.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.mixed_id": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/mixed_id.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/mixed_ood.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.mixed_ood": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/mixed_ood.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/noise_1mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.noise_1mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/noise_1mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/noise_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.noise_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/noise_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.noise_4mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/noise_4mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.noise_4mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/noise_4mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.final.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/physical_only.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.final.physical_only": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/final/physical_only.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.bias_10mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/bias_10mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.bias_10mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/bias_10mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/bias_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.bias_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/bias_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/bias_5mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.bias_5mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/bias_5mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/clean.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.clean": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/clean.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/delay_1step.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.delay_1step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/delay_1step.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/delay_2step.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.delay_2step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/delay_2step.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/delay_4step.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.delay_4step": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/delay_4step.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/mixed_id.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.mixed_id": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/mixed_id.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/mixed_ood.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.mixed_ood": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/mixed_ood.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/noise_1mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.noise_1mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/noise_1mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/noise_2mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.noise_2mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/noise_2mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.noise_4mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/noise_4mm.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.noise_4mm": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/noise_4mm.success_rate_per_seed"
+ },
+ "succ.combined_robust_repeat.selected.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/physical_only.success_rate_mean"
+ },
+ "seeds.combined_robust_repeat.selected.physical_only": {
+  "value": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/physical_only.success_rate_per_seed"
+ },
+ "succ.geometry_best_constant.baseline.bias_10mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/bias_10mm.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/bias_2mm.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/bias_5mm.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/clean.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/delay_1step.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/delay_2step.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/delay_4step.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/mixed_id.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/mixed_ood.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/noise_1mm.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/noise_2mm.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.noise_4mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/noise_4mm.success_rate_mean"
+ },
+ "succ.geometry_best_constant.baseline.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_best_constant/baseline/physical_only.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.bias_10mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/bias_10mm.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/bias_2mm.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/bias_5mm.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/clean.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/delay_1step.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/delay_2step.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/delay_4step.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/mixed_id.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/mixed_ood.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/noise_1mm.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/noise_2mm.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.noise_4mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/noise_4mm.success_rate_mean"
+ },
+ "succ.geometry_common.baseline.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/physical_only.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.bias_10mm": {
+  "value": 0.675,
+  "text": "67.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/bias_10mm.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/bias_2mm.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/bias_5mm.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/clean.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/delay_1step.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/delay_2step.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/delay_4step.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/mixed_id.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.mixed_ood": {
+  "value": 0.96,
+  "text": "96.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/mixed_ood.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/noise_1mm.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/noise_2mm.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.noise_4mm": {
+  "value": 0.995,
+  "text": "99.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/noise_4mm.success_rate_mean"
+ },
+ "succ.geometry_filtered.baseline.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/physical_only.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.bias_10mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/bias_10mm.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/bias_2mm.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/bias_5mm.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/clean.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/delay_1step.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/delay_2step.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/delay_4step.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.mixed_id": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/mixed_id.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.mixed_ood": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/mixed_ood.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.noise_1mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/noise_1mm.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.noise_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/noise_2mm.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.noise_4mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/noise_4mm.success_rate_mean"
+ },
+ "succ.geometry_giver.baseline.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_giver/baseline/physical_only.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.bias_10mm": {
+  "value": 0.67,
+  "text": "67.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/bias_10mm.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.bias_2mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/bias_2mm.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.bias_5mm": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/bias_5mm.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/clean.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.delay_1step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/delay_1step.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.delay_2step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/delay_2step.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.delay_4step": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/delay_4step.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.mixed_id": {
+  "value": 0.0,
+  "text": "0.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/mixed_id.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.mixed_ood": {
+  "value": 0.0,
+  "text": "0.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/mixed_ood.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.noise_1mm": {
+  "value": 0.25,
+  "text": "25.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/noise_1mm.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.noise_2mm": {
+  "value": 0.005,
+  "text": "0.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/noise_2mm.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.noise_4mm": {
+  "value": 0.0,
+  "text": "0.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/noise_4mm.success_rate_mean"
+ },
+ "succ.geometry_raw.baseline.physical_only": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/physical_only.success_rate_mean"
+ },
+ "succ.nominal.baseline.bias_10mm": {
+  "value": 0.71,
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/bias_10mm.success_rate_mean"
+ },
+ "succ.nominal.baseline.bias_2mm": {
+  "value": 0.71,
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/bias_2mm.success_rate_mean"
+ },
+ "succ.nominal.baseline.bias_5mm": {
+  "value": 0.715,
+  "text": "71.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/bias_5mm.success_rate_mean"
+ },
+ "succ.nominal.baseline.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/clean.success_rate_mean"
+ },
+ "succ.nominal.baseline.delay_1step": {
+  "value": 0.705,
+  "text": "70.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/delay_1step.success_rate_mean"
+ },
+ "succ.nominal.baseline.delay_2step": {
+  "value": 0.71,
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/delay_2step.success_rate_mean"
+ },
+ "succ.nominal.baseline.delay_4step": {
+  "value": 0.71,
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/delay_4step.success_rate_mean"
+ },
+ "succ.nominal.baseline.mixed_id": {
+  "value": 0.705,
+  "text": "70.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/mixed_id.success_rate_mean"
+ },
+ "succ.nominal.baseline.mixed_ood": {
+  "value": 0.71,
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/mixed_ood.success_rate_mean"
+ },
+ "succ.nominal.baseline.noise_1mm": {
+  "value": 0.7,
+  "text": "70.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/noise_1mm.success_rate_mean"
+ },
+ "succ.nominal.baseline.noise_2mm": {
+  "value": 0.71,
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/noise_2mm.success_rate_mean"
+ },
+ "succ.nominal.baseline.noise_4mm": {
+  "value": 0.7,
+  "text": "70.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/noise_4mm.success_rate_mean"
+ },
+ "succ.nominal.baseline.physical_only": {
+  "value": 0.71,
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/physical_only.success_rate_mean"
+ },
+ "succ.residual_robust_history.final.bias_10mm": {
+  "value": 0.5890000000000001,
+  "text": "58.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/bias_10mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.bias_10mm": {
+  "value": [
+   0.72,
+   0.59,
+   0.79,
+   0.765,
+   0.08
+  ],
+  "text": "72.0 / 59.0 / 79.0 / 76.5 / 8.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/bias_10mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.bias_2mm": {
+  "value": 0.584,
+  "text": "58.4",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/bias_2mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.bias_2mm": {
+  "value": [
+   0.715,
+   0.59,
+   0.785,
+   0.75,
+   0.08
+  ],
+  "text": "71.5 / 59.0 / 78.5 / 75.0 / 8.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/bias_2mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.bias_5mm": {
+  "value": 0.584,
+  "text": "58.4",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/bias_5mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.bias_5mm": {
+  "value": [
+   0.705,
+   0.595,
+   0.785,
+   0.76,
+   0.075
+  ],
+  "text": "70.5 / 59.5 / 78.5 / 76.0 / 7.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/bias_5mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.clean": {
+  "value": 0.8,
+  "text": "80.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/clean.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.clean": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 0.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/clean.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.delay_1step": {
+  "value": 0.5870000000000001,
+  "text": "58.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/delay_1step.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.delay_1step": {
+  "value": [
+   0.715,
+   0.595,
+   0.79,
+   0.76,
+   0.075
+  ],
+  "text": "71.5 / 59.5 / 79.0 / 76.0 / 7.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/delay_1step.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.delay_2step": {
+  "value": 0.585,
+  "text": "58.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/delay_2step.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.delay_2step": {
+  "value": [
+   0.7,
+   0.595,
+   0.79,
+   0.76,
+   0.08
+  ],
+  "text": "70.0 / 59.5 / 79.0 / 76.0 / 8.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/delay_2step.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.delay_4step": {
+  "value": 0.585,
+  "text": "58.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/delay_4step.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.delay_4step": {
+  "value": [
+   0.705,
+   0.59,
+   0.79,
+   0.76,
+   0.08
+  ],
+  "text": "70.5 / 59.0 / 79.0 / 76.0 / 8.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/delay_4step.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.mixed_id": {
+  "value": 0.584,
+  "text": "58.4",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/mixed_id.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.mixed_id": {
+  "value": [
+   0.705,
+   0.595,
+   0.78,
+   0.76,
+   0.08
+  ],
+  "text": "70.5 / 59.5 / 78.0 / 76.0 / 8.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/mixed_id.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.mixed_ood": {
+  "value": 0.5880000000000001,
+  "text": "58.8",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/mixed_ood.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.mixed_ood": {
+  "value": [
+   0.71,
+   0.6,
+   0.79,
+   0.76,
+   0.08
+  ],
+  "text": "71.0 / 60.0 / 79.0 / 76.0 / 8.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/mixed_ood.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.noise_1mm": {
+  "value": 0.586,
+  "text": "58.6",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/noise_1mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.noise_1mm": {
+  "value": [
+   0.705,
+   0.6,
+   0.785,
+   0.76,
+   0.08
+  ],
+  "text": "70.5 / 60.0 / 78.5 / 76.0 / 8.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/noise_1mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.noise_2mm": {
+  "value": 0.5880000000000001,
+  "text": "58.8",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/noise_2mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.noise_2mm": {
+  "value": [
+   0.71,
+   0.6,
+   0.79,
+   0.76,
+   0.08
+  ],
+  "text": "71.0 / 60.0 / 79.0 / 76.0 / 8.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/noise_2mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.noise_4mm": {
+  "value": 0.584,
+  "text": "58.4",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/noise_4mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.noise_4mm": {
+  "value": [
+   0.7,
+   0.6,
+   0.79,
+   0.75,
+   0.08
+  ],
+  "text": "70.0 / 60.0 / 79.0 / 75.0 / 8.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/noise_4mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.final.physical_only": {
+  "value": 0.5860000000000001,
+  "text": "58.6",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/physical_only.success_rate_mean"
+ },
+ "seeds.residual_robust_history.final.physical_only": {
+  "value": [
+   0.72,
+   0.595,
+   0.785,
+   0.755,
+   0.075
+  ],
+  "text": "72.0 / 59.5 / 78.5 / 75.5 / 7.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/physical_only.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.bias_10mm": {
+  "value": 0.687,
+  "text": "68.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/bias_10mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.bias_10mm": {
+  "value": [
+   0.72,
+   0.535,
+   0.765,
+   0.72,
+   0.695
+  ],
+  "text": "72.0 / 53.5 / 76.5 / 72.0 / 69.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/bias_10mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.bias_2mm": {
+  "value": 0.687,
+  "text": "68.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/bias_2mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.bias_2mm": {
+  "value": [
+   0.715,
+   0.535,
+   0.775,
+   0.72,
+   0.69
+  ],
+  "text": "71.5 / 53.5 / 77.5 / 72.0 / 69.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/bias_2mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.bias_5mm": {
+  "value": 0.6859999999999999,
+  "text": "68.6",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/bias_5mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.bias_5mm": {
+  "value": [
+   0.705,
+   0.535,
+   0.77,
+   0.72,
+   0.7
+  ],
+  "text": "70.5 / 53.5 / 77.0 / 72.0 / 70.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/bias_5mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.clean": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/clean.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.clean": {
+  "value": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/clean.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.delay_1step": {
+  "value": 0.6880000000000001,
+  "text": "68.8",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/delay_1step.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.delay_1step": {
+  "value": [
+   0.715,
+   0.535,
+   0.765,
+   0.725,
+   0.7
+  ],
+  "text": "71.5 / 53.5 / 76.5 / 72.5 / 70.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/delay_1step.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.delay_2step": {
+  "value": 0.6839999999999999,
+  "text": "68.4",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/delay_2step.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.delay_2step": {
+  "value": [
+   0.7,
+   0.535,
+   0.775,
+   0.72,
+   0.69
+  ],
+  "text": "70.0 / 53.5 / 77.5 / 72.0 / 69.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/delay_2step.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.delay_4step": {
+  "value": 0.6829999999999999,
+  "text": "68.3",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/delay_4step.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.delay_4step": {
+  "value": [
+   0.705,
+   0.535,
+   0.765,
+   0.715,
+   0.695
+  ],
+  "text": "70.5 / 53.5 / 76.5 / 71.5 / 69.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/delay_4step.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.mixed_id": {
+  "value": 0.6869999999999999,
+  "text": "68.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/mixed_id.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.mixed_id": {
+  "value": [
+   0.705,
+   0.535,
+   0.77,
+   0.72,
+   0.705
+  ],
+  "text": "70.5 / 53.5 / 77.0 / 72.0 / 70.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/mixed_id.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.mixed_ood": {
+  "value": 0.6880000000000001,
+  "text": "68.8",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/mixed_ood.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.mixed_ood": {
+  "value": [
+   0.71,
+   0.535,
+   0.77,
+   0.725,
+   0.7
+  ],
+  "text": "71.0 / 53.5 / 77.0 / 72.5 / 70.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/mixed_ood.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.noise_1mm": {
+  "value": 0.6880000000000001,
+  "text": "68.8",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/noise_1mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.noise_1mm": {
+  "value": [
+   0.705,
+   0.535,
+   0.775,
+   0.72,
+   0.705
+  ],
+  "text": "70.5 / 53.5 / 77.5 / 72.0 / 70.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/noise_1mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.noise_2mm": {
+  "value": 0.687,
+  "text": "68.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/noise_2mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.noise_2mm": {
+  "value": [
+   0.71,
+   0.535,
+   0.77,
+   0.72,
+   0.7
+  ],
+  "text": "71.0 / 53.5 / 77.0 / 72.0 / 70.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/noise_2mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.noise_4mm": {
+  "value": 0.6839999999999999,
+  "text": "68.4",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/noise_4mm.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.noise_4mm": {
+  "value": [
+   0.7,
+   0.535,
+   0.77,
+   0.725,
+   0.69
+  ],
+  "text": "70.0 / 53.5 / 77.0 / 72.5 / 69.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/noise_4mm.success_rate_per_seed"
+ },
+ "succ.residual_robust_history.selected.physical_only": {
+  "value": 0.6890000000000001,
+  "text": "68.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/physical_only.success_rate_mean"
+ },
+ "seeds.residual_robust_history.selected.physical_only": {
+  "value": [
+   0.72,
+   0.535,
+   0.765,
+   0.72,
+   0.705
+  ],
+  "text": "72.0 / 53.5 / 76.5 / 72.0 / 70.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/physical_only.success_rate_per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_ff.selected.mixed_id": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id"
+ },
+ "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.fw": {
+  "value": [
+   0.0,
+   0.0
+  ],
+  "text": "[+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.familywise_95_interval"
+ },
+ "eff.combined_robust_history-combined_robust_ff.selected.mixed_ood": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_ood"
+ },
+ "eff.combined_robust_history-combined_robust_ff.selected.mixed_ood.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_ff.selected.nonclean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.nonclean"
+ },
+ "eff.combined_robust_history-combined_robust_ff.selected.nonclean.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.nonclean.per_seed"
+ },
+ "eff.combined_robust_history-geometry_best_constant.selected.mixed_id": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id"
+ },
+ "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.per_seed"
+ },
+ "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.fw": {
+  "value": [
+   0.0,
+   0.0
+  ],
+  "text": "[+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.familywise_95_interval"
+ },
+ "eff.combined_robust_history-geometry_best_constant.selected.mixed_ood": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_ood"
+ },
+ "eff.combined_robust_history-geometry_best_constant.selected.mixed_ood.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_history-geometry_best_constant.selected.nonclean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.nonclean"
+ },
+ "eff.combined_robust_history-geometry_best_constant.selected.nonclean.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.nonclean.per_seed"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.selected.mixed_id": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.selected.mixed_id"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.selected.mixed_id.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.selected.mixed_id.per_seed"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.selected.mixed_ood": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.selected.mixed_ood"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.selected.mixed_ood.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.selected.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.selected.nonclean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.selected.nonclean"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.selected.nonclean.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.selected.nonclean.per_seed"
+ },
+ "eff.residual_robust_history-nominal.selected.mixed_id": {
+  "value": [
+   -1.7999999999999998,
+   -10.2,
+   4.3999999999999995
+  ],
+  "text": "\u22121.8 [\u221210.2, +4.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.mixed_id"
+ },
+ "eff.residual_robust_history-nominal.selected.mixed_id.seeds": {
+  "value": [
+   0.0,
+   -17.0,
+   6.5,
+   1.5,
+   0.0
+  ],
+  "text": "+0.0 / \u221217.0 / +6.5 / +1.5 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.mixed_id.per_seed"
+ },
+ "eff.residual_robust_history-nominal.selected.mixed_ood": {
+  "value": [
+   -2.1999999999999997,
+   -10.7,
+   4.0
+  ],
+  "text": "\u22122.2 [\u221210.7, +4.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.mixed_ood"
+ },
+ "eff.residual_robust_history-nominal.selected.mixed_ood.seeds": {
+  "value": [
+   0.0,
+   -17.5,
+   6.0,
+   1.5,
+   -1.0
+  ],
+  "text": "+0.0 / \u221217.5 / +6.0 / +1.5 / \u22121.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.mixed_ood.per_seed"
+ },
+ "eff.residual_robust_history-nominal.selected.nonclean": {
+  "value": [
+   -2.1416666666666666,
+   -10.542291666666662,
+   3.9833333333333334
+  ],
+  "text": "\u22122.1 [\u221210.5, +4.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.nonclean"
+ },
+ "eff.residual_robust_history-nominal.selected.nonclean.seeds": {
+  "value": [
+   0.125,
+   -17.291666666666668,
+   6.166666666666667,
+   1.2916666666666667,
+   -1.0
+  ],
+  "text": "+0.1 / \u221217.3 / +6.2 / +1.3 / \u22121.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.nonclean.per_seed"
+ },
+ "eff.combined_robust_history-geometry_common.selected.mixed_id": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.selected.mixed_id"
+ },
+ "eff.combined_robust_history-geometry_common.selected.mixed_id.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.selected.mixed_id.per_seed"
+ },
+ "eff.combined_robust_history-geometry_common.selected.mixed_ood": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.selected.mixed_ood"
+ },
+ "eff.combined_robust_history-geometry_common.selected.mixed_ood.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.selected.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_history-geometry_common.selected.nonclean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.selected.nonclean"
+ },
+ "eff.combined_robust_history-geometry_common.selected.nonclean.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.selected.nonclean.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.selected.mixed_id": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.selected.mixed_id"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.selected.mixed_id.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.selected.mixed_id.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.selected.mixed_ood": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.selected.mixed_ood"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.selected.mixed_ood.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.selected.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.selected.nonclean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.selected.nonclean"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.selected.nonclean.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.selected.nonclean.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_ff.final.mixed_id": {
+  "value": [
+   -28.199999999999996,
+   -56.39999999999999,
+   -5.4
+  ],
+  "text": "\u221228.2 [\u221256.4, \u22125.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.final.mixed_id"
+ },
+ "eff.combined_robust_history-combined_robust_ff.final.mixed_id.seeds": {
+  "value": [
+   -35.5,
+   0.0,
+   -22.0,
+   -2.0,
+   -81.5
+  ],
+  "text": "\u221235.5 / +0.0 / \u221222.0 / \u22122.0 / \u221281.5",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.final.mixed_id.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_ff.final.mixed_ood": {
+  "value": [
+   -28.499999999999996,
+   -57.3,
+   -5.497500000000036
+  ],
+  "text": "\u221228.5 [\u221257.3, \u22125.5]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.final.mixed_ood"
+ },
+ "eff.combined_robust_history-combined_robust_ff.final.mixed_ood.seeds": {
+  "value": [
+   -35.0,
+   0.0,
+   -22.5,
+   -2.0,
+   -83.0
+  ],
+  "text": "\u221235.0 / +0.0 / \u221222.5 / \u22122.0 / \u221283.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.final.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_ff.final.nonclean": {
+  "value": [
+   -27.858333333333334,
+   -56.02624999999999,
+   -5.4
+  ],
+  "text": "\u221227.9 [\u221256.0, \u22125.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.final.nonclean"
+ },
+ "eff.combined_robust_history-combined_robust_ff.final.nonclean.seeds": {
+  "value": [
+   -33.541666666666664,
+   0.0,
+   -22.083333333333332,
+   -2.0,
+   -81.66666666666667
+  ],
+  "text": "\u221233.5 / +0.0 / \u221222.1 / \u22122.0 / \u221281.7",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.final.nonclean.per_seed"
+ },
+ "eff.combined_robust_history-geometry_best_constant.final.mixed_id": {
+  "value": [
+   -28.199999999999996,
+   -56.39999999999999,
+   -5.4
+  ],
+  "text": "\u221228.2 [\u221256.4, \u22125.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.final.mixed_id"
+ },
+ "eff.combined_robust_history-geometry_best_constant.final.mixed_id.seeds": {
+  "value": [
+   -35.5,
+   0.0,
+   -22.0,
+   -2.0,
+   -81.5
+  ],
+  "text": "\u221235.5 / +0.0 / \u221222.0 / \u22122.0 / \u221281.5",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.final.mixed_id.per_seed"
+ },
+ "eff.combined_robust_history-geometry_best_constant.final.mixed_ood": {
+  "value": [
+   -28.499999999999996,
+   -57.3,
+   -5.497500000000036
+  ],
+  "text": "\u221228.5 [\u221257.3, \u22125.5]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.final.mixed_ood"
+ },
+ "eff.combined_robust_history-geometry_best_constant.final.mixed_ood.seeds": {
+  "value": [
+   -35.0,
+   0.0,
+   -22.5,
+   -2.0,
+   -83.0
+  ],
+  "text": "\u221235.0 / +0.0 / \u221222.5 / \u22122.0 / \u221283.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.final.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_history-geometry_best_constant.final.nonclean": {
+  "value": [
+   -27.858333333333334,
+   -56.02624999999999,
+   -5.4
+  ],
+  "text": "\u221227.9 [\u221256.0, \u22125.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.final.nonclean"
+ },
+ "eff.combined_robust_history-geometry_best_constant.final.nonclean.seeds": {
+  "value": [
+   -33.541666666666664,
+   0.0,
+   -22.083333333333332,
+   -2.0,
+   -81.66666666666667
+  ],
+  "text": "\u221233.5 / +0.0 / \u221222.1 / \u22122.0 / \u221281.7",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.final.nonclean.per_seed"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.final.mixed_id": {
+  "value": [
+   0.1,
+   0.0,
+   0.6
+  ],
+  "text": "+0.1 [+0.0, +0.6]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.final.mixed_id"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.final.mixed_id.seeds": {
+  "value": [
+   0.5,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.5 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.final.mixed_id.per_seed"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.final.mixed_ood": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.final.mixed_ood"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.final.mixed_ood.seeds": {
+  "value": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.final.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.final.nonclean": {
+  "value": [
+   0.05,
+   0.0,
+   0.3
+  ],
+  "text": "+0.1 [+0.0, +0.3]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.final.nonclean"
+ },
+ "eff.combined_robust_ff-combined_clean_ff.final.nonclean.seeds": {
+  "value": [
+   0.25,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.2 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.final.nonclean.per_seed"
+ },
+ "eff.residual_robust_history-nominal.final.mixed_id": {
+  "value": [
+   -12.1,
+   -38.4,
+   5.702499999999964
+  ],
+  "text": "\u221212.1 [\u221238.4, +5.7]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.final.mixed_id"
+ },
+ "eff.residual_robust_history-nominal.final.mixed_id.seeds": {
+  "value": [
+   0.0,
+   -11.0,
+   7.5,
+   5.5,
+   -62.5
+  ],
+  "text": "+0.0 / \u221211.0 / +7.5 / +5.5 / \u221262.5",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.final.mixed_id.per_seed"
+ },
+ "eff.residual_robust_history-nominal.final.mixed_ood": {
+  "value": [
+   -12.2,
+   -38.6,
+   5.800000000000001
+  ],
+  "text": "\u221212.2 [\u221238.6, +5.8]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.final.mixed_ood"
+ },
+ "eff.residual_robust_history-nominal.final.mixed_ood.seeds": {
+  "value": [
+   0.0,
+   -11.0,
+   8.0,
+   5.0,
+   -63.0
+  ],
+  "text": "+0.0 / \u221211.0 / +8.0 / +5.0 / \u221263.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.final.mixed_ood.per_seed"
+ },
+ "eff.residual_robust_history-nominal.final.nonclean": {
+  "value": [
+   -12.208333333333334,
+   -38.56708333333333,
+   5.658541666666664
+  ],
+  "text": "\u221212.2 [\u221238.6, +5.7]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.final.nonclean"
+ },
+ "eff.residual_robust_history-nominal.final.nonclean.seeds": {
+  "value": [
+   0.125,
+   -11.25,
+   7.958333333333334,
+   5.041666666666666,
+   -62.916666666666664
+  ],
+  "text": "+0.1 / \u221211.2 / +8.0 / +5.0 / \u221262.9",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.final.nonclean.per_seed"
+ },
+ "eff.combined_robust_history-geometry_common.final.mixed_id": {
+  "value": [
+   -28.199999999999996,
+   -56.39999999999999,
+   -5.4
+  ],
+  "text": "\u221228.2 [\u221256.4, \u22125.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.mixed_id"
+ },
+ "eff.combined_robust_history-geometry_common.final.mixed_id.seeds": {
+  "value": [
+   -35.5,
+   0.0,
+   -22.0,
+   -2.0,
+   -81.5
+  ],
+  "text": "\u221235.5 / +0.0 / \u221222.0 / \u22122.0 / \u221281.5",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.mixed_id.per_seed"
+ },
+ "eff.combined_robust_history-geometry_common.final.mixed_ood": {
+  "value": [
+   -28.499999999999996,
+   -57.3,
+   -5.497500000000036
+  ],
+  "text": "\u221228.5 [\u221257.3, \u22125.5]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.mixed_ood"
+ },
+ "eff.combined_robust_history-geometry_common.final.mixed_ood.seeds": {
+  "value": [
+   -35.0,
+   0.0,
+   -22.5,
+   -2.0,
+   -83.0
+  ],
+  "text": "\u221235.0 / +0.0 / \u221222.5 / \u22122.0 / \u221283.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_history-geometry_common.final.nonclean": {
+  "value": [
+   -27.858333333333334,
+   -56.02624999999999,
+   -5.4
+  ],
+  "text": "\u221227.9 [\u221256.0, \u22125.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.nonclean"
+ },
+ "eff.combined_robust_history-geometry_common.final.nonclean.seeds": {
+  "value": [
+   -33.541666666666664,
+   0.0,
+   -22.083333333333332,
+   -2.0,
+   -81.66666666666667
+  ],
+  "text": "\u221233.5 / +0.0 / \u221222.1 / \u22122.0 / \u221281.7",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.nonclean.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.final.mixed_id": {
+  "value": [
+   -19.166666666666668,
+   -35.5,
+   0.0
+  ],
+  "text": "\u221219.2 [\u221235.5, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.final.mixed_id"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.final.mixed_id.seeds": {
+  "value": [
+   -35.5,
+   0.0,
+   -22.0
+  ],
+  "text": "\u221235.5 / +0.0 / \u221222.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.final.mixed_id.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.final.mixed_ood": {
+  "value": [
+   -19.166666666666668,
+   -35.00416666666663,
+   0.0
+  ],
+  "text": "\u221219.2 [\u221235.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.final.mixed_ood"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.final.mixed_ood.seeds": {
+  "value": [
+   -35.0,
+   0.0,
+   -22.5
+  ],
+  "text": "\u221235.0 / +0.0 / \u221222.5",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.final.mixed_ood.per_seed"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.final.nonclean": {
+  "value": [
+   -18.541666666666668,
+   -33.83333333333333,
+   0.0
+  ],
+  "text": "\u221218.5 [\u221233.8, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.final.nonclean"
+ },
+ "eff.combined_robust_history-combined_robust_repeat.final.nonclean.seeds": {
+  "value": [
+   -33.541666666666664,
+   0.0,
+   -22.083333333333332
+  ],
+  "text": "\u221233.5 / +0.0 / \u221222.1",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.final.nonclean.per_seed"
+ },
+ "table.main": {
+  "value": null,
+  "text": "| controller | clean | physical only | bias 2mm | bias 5mm | bias 10mm | noise 1mm | noise 2mm | noise 4mm | delay 1step | delay 2step | delay 4step | mixed id | mixed ood |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| nominal script | 100.0 | 71.0 | 71.0 | 71.5 | 71.0 | 70.0 | 71.0 | 70.0 | 70.5 | 71.0 | 71.0 | 70.5 | 71.0 |\n| geometry, raw estimate | 100.0 | 100.0 | 100.0 | 100.0 | 67.0 | 25.0 | 0.5 | 0.0 | 100.0 | 100.0 | 100.0 | 0.0 | 0.0 |\n| geometry, EMA-filtered | 100.0 | 100.0 | 100.0 | 100.0 | 67.5 | 100.0 | 100.0 | 99.5 | 100.0 | 100.0 | 100.0 | 100.0 | 96.0 |\n| geometry_common (giver reference) | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |\n| geometry_best_constant (= geometry_common) | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |\n| geometry_giver (= geometry_common) | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |\n| combined, clean-trained FF (selected) | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |\n| combined, robust FF (selected) | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |\n| combined, robust history (selected) | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |\n| residual-only, robust history (selected) | 100.0 | 68.9 | 68.7 | 68.6 | 68.7 | 68.8 | 68.7 | 68.4 | 68.8 | 68.4 | 68.3 | 68.7 | 68.8 |\n| combined, robust repeated-current (selected) | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |\n| combined, clean-trained FF (final) | 100.0 | 100.0 | 100.0 | 100.0 | 99.9 | 100.0 | 100.0 | 99.9 | 99.9 | 99.9 | 99.9 | 99.9 | 100.0 |\n| combined, robust FF (final) | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |\n| combined, robust history (final) | 69.6 | 72.5 | 71.7 | 72.0 | 72.4 | 71.9 | 72.7 | 72.5 | 72.5 | 72.1 | 72.1 | 71.8 | 71.5 |\n| residual-only, robust history (final) | 80.0 | 58.6 | 58.4 | 58.4 | 58.9 | 58.6 | 58.8 | 58.4 | 58.7 | 58.5 | 58.5 | 58.4 | 58.8 |\n| combined, robust repeated-current (final) | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "success % per condition (mean over training seeds; 200 cases each)"
+ },
+ "table.seeds": {
+  "value": null,
+  "text": "| family | role | mixed_id per seed | mixed_ood per seed |\n|---|---|---|---|\n| combined, clean-trained FF | selected | 100.0 / 100.0 / 100.0 / 100.0 / 100.0 | 100.0 / 100.0 / 100.0 / 100.0 / 100.0 |\n| combined, clean-trained FF | final | 99.5 / 100.0 / 100.0 / 100.0 / 100.0 | 100.0 / 100.0 / 100.0 / 100.0 / 100.0 |\n| combined, robust FF | selected | 100.0 / 100.0 / 100.0 / 100.0 / 100.0 | 100.0 / 100.0 / 100.0 / 100.0 / 100.0 |\n| combined, robust FF | final | 100.0 / 100.0 / 100.0 / 100.0 / 100.0 | 100.0 / 100.0 / 100.0 / 100.0 / 100.0 |\n| combined, robust history | selected | 100.0 / 100.0 / 100.0 / 100.0 / 100.0 | 100.0 / 100.0 / 100.0 / 100.0 / 100.0 |\n| combined, robust history | final | 64.5 / 100.0 / 78.0 / 98.0 / 18.5 | 65.0 / 100.0 / 77.5 / 98.0 / 17.0 |\n| residual-only, robust history | selected | 70.5 / 53.5 / 77.0 / 72.0 / 70.5 | 71.0 / 53.5 / 77.0 / 72.5 / 70.0 |\n| residual-only, robust history | final | 70.5 / 59.5 / 78.0 / 76.0 / 8.0 | 71.0 / 60.0 / 79.0 / 76.0 / 8.0 |\n| combined, robust repeated-current | selected | 100.0 / 100.0 / 100.0 | 100.0 / 100.0 / 100.0 |\n| combined, robust repeated-current | final | 100.0 / 100.0 / 100.0 | 100.0 / 100.0 / 100.0 |",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "per-seed success %"
+ },
+ "table.effects": {
+  "value": null,
+  "text": "| comparison | role | cases | difference [pp] (95% CI) | per seed [pp] |\n|---|---|---|---|---|\n| **combined_robust_history \u2212 combined_robust_ff** | selected | mixed_id | +0.0 [+0.0, +0.0]; 97.5%: [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 combined_robust_ff | selected | mixed_ood | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 combined_robust_ff | selected | 12 non-clean conditions (equal weight) | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| **combined_robust_history \u2212 geometry_best_constant** | selected | mixed_id | +0.0 [+0.0, +0.0]; 97.5%: [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 geometry_best_constant | selected | mixed_ood | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 geometry_best_constant | selected | 12 non-clean conditions (equal weight) | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_ff \u2212 combined_clean_ff | selected | mixed_id | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_ff \u2212 combined_clean_ff | selected | mixed_ood | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_ff \u2212 combined_clean_ff | selected | 12 non-clean conditions (equal weight) | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| residual_robust_history \u2212 nominal | selected | mixed_id | \u22121.8 [\u221210.2, +4.4] | +0.0 / \u221217.0 / +6.5 / +1.5 / +0.0 |\n| residual_robust_history \u2212 nominal | selected | mixed_ood | \u22122.2 [\u221210.7, +4.0] | +0.0 / \u221217.5 / +6.0 / +1.5 / \u22121.0 |\n| residual_robust_history \u2212 nominal | selected | 12 non-clean conditions (equal weight) | \u22122.1 [\u221210.5, +4.0] | +0.1 / \u221217.3 / +6.2 / +1.3 / \u22121.0 |\n| combined_robust_history \u2212 geometry_common | selected | mixed_id | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 geometry_common | selected | mixed_ood | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 geometry_common | selected | 12 non-clean conditions (equal weight) | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 combined_robust_repeat | selected | mixed_id | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 combined_robust_repeat | selected | mixed_ood | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 combined_robust_repeat | selected | 12 non-clean conditions (equal weight) | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 |\n| combined_robust_history \u2212 combined_robust_ff | final | mixed_id | \u221228.2 [\u221256.4, \u22125.4] | \u221235.5 / +0.0 / \u221222.0 / \u22122.0 / \u221281.5 |\n| combined_robust_history \u2212 combined_robust_ff | final | mixed_ood | \u221228.5 [\u221257.3, \u22125.5] | \u221235.0 / +0.0 / \u221222.5 / \u22122.0 / \u221283.0 |\n| combined_robust_history \u2212 combined_robust_ff | final | 12 non-clean conditions (equal weight) | \u221227.9 [\u221256.0, \u22125.4] | \u221233.5 / +0.0 / \u221222.1 / \u22122.0 / \u221281.7 |\n| combined_robust_history \u2212 geometry_best_constant | final | mixed_id | \u221228.2 [\u221256.4, \u22125.4] | \u221235.5 / +0.0 / \u221222.0 / \u22122.0 / \u221281.5 |\n| combined_robust_history \u2212 geometry_best_constant | final | mixed_ood | \u221228.5 [\u221257.3, \u22125.5] | \u221235.0 / +0.0 / \u221222.5 / \u22122.0 / \u221283.0 |\n| combined_robust_history \u2212 geometry_best_constant | final | 12 non-clean conditions (equal weight) | \u221227.9 [\u221256.0, \u22125.4] | \u221233.5 / +0.0 / \u221222.1 / \u22122.0 / \u221281.7 |\n| combined_robust_ff \u2212 combined_clean_ff | final | mixed_id | +0.1 [+0.0, +0.6] | +0.5 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_ff \u2212 combined_clean_ff | final | mixed_ood | +0.0 [+0.0, +0.0] | +0.0 / +0.0 / +0.0 / +0.0 / +0.0 |\n| combined_robust_ff \u2212 combined_clean_ff | final | 12 non-clean conditions (equal weight) | +0.1 [+0.0, +0.3] | +0.2 / +0.0 / +0.0 / +0.0 / +0.0 |\n| residual_robust_history \u2212 nominal | final | mixed_id | \u221212.1 [\u221238.4, +5.7] | +0.0 / \u221211.0 / +7.5 / +5.5 / \u221262.5 |\n| residual_robust_history \u2212 nominal | final | mixed_ood | \u221212.2 [\u221238.6, +5.8] | +0.0 / \u221211.0 / +8.0 / +5.0 / \u221263.0 |\n| residual_robust_history \u2212 nominal | final | 12 non-clean conditions (equal weight) | \u221212.2 [\u221238.6, +5.7] | +0.1 / \u221211.2 / +8.0 / +5.0 / \u221262.9 |\n| combined_robust_history \u2212 geometry_common | final | mixed_id | \u221228.2 [\u221256.4, \u22125.4] | \u221235.5 / +0.0 / \u221222.0 / \u22122.0 / \u221281.5 |\n| combined_robust_history \u2212 geometry_common | final | mixed_ood | \u221228.5 [\u221257.3, \u22125.5] | \u221235.0 / +0.0 / \u221222.5 / \u22122.0 / \u221283.0 |\n| combined_robust_history \u2212 geometry_common | final | 12 non-clean conditions (equal weight) | \u221227.9 [\u221256.0, \u22125.4] | \u221233.5 / +0.0 / \u221222.1 / \u22122.0 / \u221281.7 |\n| combined_robust_history \u2212 combined_robust_repeat | final | mixed_id | \u221219.2 [\u221235.5, +0.0] | \u221235.5 / +0.0 / \u221222.0 |\n| combined_robust_history \u2212 combined_robust_repeat | final | mixed_ood | \u221219.2 [\u221235.0, +0.0] | \u221235.0 / +0.0 / \u221222.5 |\n| combined_robust_history \u2212 combined_robust_repeat | final | 12 non-clean conditions (equal weight) | \u221218.5 [\u221233.8, +0.0] | \u221233.5 / +0.0 / \u221222.1 |",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "all paired effects"
+ },
+ "table.failures": {
+  "value": null,
+  "text": "| controller | condition | success | prohibited collision | drop | release timeout | episode timeout |\n|---|---|---|---|---|---|---|\n| nominal script | mixed_id | 141.0 | 52.0 | 2.0 | 0.0 | 5.0 |\n| nominal script | mixed_ood | 142.0 | 51.0 | 2.0 | 0.0 | 5.0 |\n| geometry, raw estimate | mixed_id | 0.0 | 0.0 | 0.0 | 200.0 | 0.0 |\n| geometry, raw estimate | mixed_ood | 0.0 | 3.0 | 0.0 | 197.0 | 0.0 |\n| geometry, EMA-filtered | mixed_id | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| geometry, EMA-filtered | mixed_ood | 192.0 | 5.0 | 0.0 | 3.0 | 0.0 |\n| geometry_common (giver reference) | mixed_id | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| geometry_common (giver reference) | mixed_ood | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| combined, clean-trained FF | mixed_id | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| combined, clean-trained FF | mixed_ood | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| combined, robust FF | mixed_id | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| combined, robust FF | mixed_ood | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| combined, robust history | mixed_id | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| combined, robust history | mixed_ood | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| residual-only, robust history | mixed_id | 137.4 | 51.6 | 5.6 | 0.0 | 5.4 |\n| residual-only, robust history | mixed_ood | 137.6 | 51.8 | 5.6 | 0.0 | 5.0 |\n| combined, robust repeated-current | mixed_id | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| combined, robust repeated-current | mixed_ood | 200.0 | 0.0 | 0.0 | 0.0 | 0.0 |\n| combined, robust history (final) | mixed_id | 143.6 | 36.6 | 0.8 | 5.0 | 14.0 |\n| combined, robust history (final) | mixed_ood | 143.0 | 37.2 | 0.8 | 5.2 | 13.8 |",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "terminal_mean (exclusive terminal reasons, counts of 200, mean over seeds)"
+ },
+ "table.baselines": {
+  "value": null,
+  "text": "| role | candidate | EMA alpha | giver ref. | bound [cm] | constant x [mm] | selection success (144 dev cases) |\n|---|---|---|---|---|---|---|\n| geometry_common | ema1p0_giver1/geom15_x+00 | 1.0 | True | 1.5 | 0.0 | 100.0% |\n| geometry_best_constant | ema1p0_giver1/geom15_x+00 | 1.0 | True | 1.5 | 0.0 | 100.0% |\n| geometry_raw | ema1p0_giver0/geom15_x+00 | 1.0 | False | 1.5 | 0.0 | 66.7% |\n| geometry_filtered | ema0p2_giver0/geom15_x+00 | 0.2 | False | 1.5 | 0.0 | 100.0% |\n| geometry_giver | ema1p0_giver1/geom15_x+00 | 1.0 | True | 1.5 | 0.0 | 100.0% |\n| nominal | nominal | \u2013 | \u2013 | \u2013 | \u2013 | 81.2% |",
+  "source": "configs/v3/baseline_selection.json",
+  "field": "roles"
+ },
+ "table.development": {
+  "value": null,
+  "text": "| development candidate (1.5 cm, 0 mm) | clean | physical only | bias 2mm | bias 5mm | bias 10mm | noise 1mm | noise 2mm | noise 4mm | delay 1step | delay 2step | delay 4step | mixed id | mixed ood |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| nominal | 24 | 18 | 18 | 18 | 19 | 18 | 19 | 18 | 19 | 19 | 19 | 19 | 18 |\n| ema1p0_giver0/geom15_x+00 | 24 | 24 | 24 | 24 | 19 | 6 | 0 | 0 | 24 | 24 | 24 | 0 | 0 |\n| ema0p5_giver0/geom15_x+00 | 24 | 24 | 24 | 24 | 19 | 24 | 13 | 0 | 24 | 24 | 24 | 13 | 0 |\n| ema0p2_giver0/geom15_x+00 | 24 | 24 | 24 | 24 | 19 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 23 |\n| ema1p0_giver1/geom15_x+00 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 |\n| ema0p5_giver1/geom15_x+00 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 |\n| ema0p2_giver1/geom15_x+00 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 | 24 |",
+  "source": "configs/v3/baseline_selection.json",
+  "field": "candidates[*].per_condition (successes of 24)"
+ },
+ "table.selection": {
+  "value": null,
+  "text": "| run | selected checkpoint | validation success | collision rate |\n|---|---|---|---|\n| combined_clean_ff_s11 | step_008028160 | 100.0% | 0.0% |\n| combined_clean_ff_s22 | step_010027008 | 100.0% | 0.0% |\n| combined_clean_ff_s33 | step_010027008 | 100.0% | 0.0% |\n| combined_clean_ff_s44 | step_010027008 | 100.0% | 0.0% |\n| combined_clean_ff_s55 | step_010027008 | 100.0% | 0.0% |\n| combined_robust_ff_s11 | step_010027008 | 100.0% | 0.0% |\n| combined_robust_ff_s22 | step_010027008 | 100.0% | 0.0% |\n| combined_robust_ff_s33 | step_010027008 | 100.0% | 0.0% |\n| combined_robust_ff_s44 | step_006029312 | 100.0% | 0.0% |\n| combined_robust_ff_s55 | step_010027008 | 100.0% | 0.0% |\n| combined_robust_history_s11 | step_002031616 | 100.0% | 0.0% |\n| combined_robust_history_s22 | step_002031616 | 100.0% | 0.0% |\n| combined_robust_history_s33 | step_004030464 | 100.0% | 0.0% |\n| combined_robust_history_s44 | step_008028160 | 100.0% | 0.0% |\n| combined_robust_history_s55 | step_002031616 | 100.0% | 0.0% |\n| combined_robust_repeat_s11 | step_010027008 | 100.0% | 0.0% |\n| combined_robust_repeat_s22 | step_008028160 | 100.0% | 0.0% |\n| combined_robust_repeat_s33 | step_010027008 | 100.0% | 0.0% |\n| residual_robust_history_s11 | step_010027008 | 80.8% | 16.7% |\n| residual_robust_history_s22 | step_002031616 | 77.1% | 18.8% |\n| residual_robust_history_s33 | step_008028160 | 83.3% | 14.6% |\n| residual_robust_history_s44 | step_002031616 | 84.6% | 16.7% |\n| residual_robust_history_s55 | step_002031616 | 83.3% | 16.7% |",
+  "source": "results/v3/selection/selection.json",
+  "field": "per run"
+ },
+ "count.final_records": {
+  "value": 135200,
+  "text": "135,200",
+  "source": "results/v3/summary/reconciliation.json",
+  "field": "sum(recorded)"
+ },
+ "count.invalid": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/summary/reconciliation.json",
+  "field": "sum(invalid_resets)"
+ },
+ "count.logical_episodes": {
+  "value": 135200,
+  "text": "135,200",
+  "source": "configs/v3/final_matrix_index.json",
+  "field": "declared_counts.logical_episodes"
+ },
+ "count.executed_episodes": {
+  "value": 130000,
+  "text": "130,000",
+  "source": "configs/v3/final_matrix_index.json",
+  "field": "declared_counts.executed_episodes"
+ },
+ "count.logical_entries": {
+  "value": 52,
+  "text": "52",
+  "source": "configs/v3/final_matrix_index.json",
+  "field": "declared_counts.logical_entries"
+ },
+ "count.executed_entries": {
+  "value": 50,
+  "text": "50",
+  "source": "configs/v3/final_matrix_index.json",
+  "field": "declared_counts.executed_entries"
+ },
+ "file.repeatability/repeatability.json": {
+  "value": null,
+  "text": "repeatability/repeatability.json",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "(see file)"
+ },
+ "file.interventions/interventions.json": {
+  "value": null,
+  "text": "interventions/interventions.json",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "(see file)"
+ },
+ "file.mechanisms/mechanisms.json": {
+  "value": null,
+  "text": "mechanisms/mechanisms.json",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "(see file)"
+ },
+ "file.compute.json": {
+  "value": null,
+  "text": "compute.json",
+  "source": "results/v3/compute.json",
+  "field": "(see file)"
+ },
+ "rep.eff.b1.6455601": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=1,process=6455601]"
+ },
+ "rep.eff.b1.6455602": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=1,process=6455602]"
+ },
+ "rep.eff.b1.6455603": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=1,process=6455603]"
+ },
+ "rep.eff.b1.mean_of_3": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=1,process=mean_of_3]"
+ },
+ "rep.eff.b23.6455601": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=23,process=6455601]"
+ },
+ "rep.eff.b23.6455602": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=23,process=6455602]"
+ },
+ "rep.eff.b23.6455603": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=23,process=6455603]"
+ },
+ "rep.eff.b23.mean_of_3": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=23,process=mean_of_3]"
+ },
+ "table.repeatability": {
+  "value": null,
+  "text": "| entry | batch | process seed | success /65 | terminal = original | success = original |\n|---|---|---|---|---|---|\n| geometry_common | 1 | 6455601 | 65 | 65 | 65 |\n| geometry_common | 1 | 6455602 | 65 | 65 | 65 |\n| geometry_common | 1 | 6455603 | 65 | 65 | 65 |\n| geometry_common | 23 | 6455601 | 65 | 65 | 65 |\n| geometry_common | 23 | 6455602 | 65 | 65 | 65 |\n| geometry_common | 23 | 6455603 | 65 | 65 | 65 |\n| geometry_best_constant | 1 | 6455601 | 65 | 65 | 65 |\n| geometry_best_constant | 1 | 6455602 | 65 | 65 | 65 |\n| geometry_best_constant | 1 | 6455603 | 65 | 65 | 65 |\n| geometry_best_constant | 23 | 6455601 | 65 | 65 | 65 |\n| geometry_best_constant | 23 | 6455602 | 65 | 65 | 65 |\n| geometry_best_constant | 23 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s11__selected | 1 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s11__selected | 1 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s11__selected | 1 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s11__selected | 23 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s11__selected | 23 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s11__selected | 23 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s22__selected | 1 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s22__selected | 1 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s22__selected | 1 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s22__selected | 23 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s22__selected | 23 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s22__selected | 23 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s33__selected | 1 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s33__selected | 1 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s33__selected | 1 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s33__selected | 23 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s33__selected | 23 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s33__selected | 23 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s44__selected | 1 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s44__selected | 1 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s44__selected | 1 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s44__selected | 23 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s44__selected | 23 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s44__selected | 23 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s55__selected | 1 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s55__selected | 1 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s55__selected | 1 | 6455603 | 65 | 65 | 65 |\n| combined_robust_history_s55__selected | 23 | 6455601 | 65 | 65 | 65 |\n| combined_robust_history_s55__selected | 23 | 6455602 | 65 | 65 | 65 |\n| combined_robust_history_s55__selected | 23 | 6455603 | 65 | 65 | 65 |",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "per_run"
+ },
+ "rep.terminal_equal": {
+  "value": [
+   2730,
+   2730
+  ],
+  "text": "2,730 of 2,730",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "sum(per_run.terminal_equal_original)"
+ },
+ "table.interventions": {
+  "value": null,
+  "text": "| policy | seed | unmodified /65 | frames permuted /65 | current frame only /65 |\n|---|---|---|---|---|\n| combined, robust history | 11 | 65 | 65 | 65 |\n| combined, robust history | 22 | 65 | 65 | 65 |\n| combined, robust history | 33 | 65 | 65 | 65 |\n| combined, robust history | 44 | 65 | 65 | 65 |\n| combined, robust history | 55 | 65 | 65 | 65 |\n| residual-only, robust history | 11 | 29 | 29 | 29 |\n| residual-only, robust history | 22 | 29 | 29 | 29 |\n| residual-only, robust history | 33 | 29 | 29 | 29 |\n| residual-only, robust history | 44 | 29 | 29 | 29 |\n| residual-only, robust history | 55 | 29 | 29 | 29 |",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "rows"
+ },
+ "table.mechanisms": {
+  "value": null,
+  "text": "| family | seed | mean abs residual [mm] | max abs residual [mm] | align. saturation | x intercept [mm] | x slope on true offset | x slope on sensor bias | R\u00b2 |\n|---|---|---|---|---|---|---|---|---|\n| combined, clean-trained FF | 11 | 5.71 | 12.53 | 0.320 | -2.65 | +0.016 | +0.001 | 0.38 |\n| combined, clean-trained FF | 22 | 4.58 | 12.45 | 0.318 | -2.05 | +0.038 | +0.004 | 0.72 |\n| combined, clean-trained FF | 33 | 3.47 | 12.85 | 0.317 | -2.19 | +0.016 | +0.003 | 0.16 |\n| combined, clean-trained FF | 44 | 3.89 | 10.51 | 0.319 | -1.13 | +0.030 | -0.003 | 0.72 |\n| combined, clean-trained FF | 55 | 2.98 | 14.57 | 0.318 | -1.54 | +0.042 | -0.000 | 0.66 |\n| combined, robust FF | 11 | 3.54 | 13.78 | 0.317 | -0.72 | +0.042 | +0.000 | 0.56 |\n| combined, robust FF | 22 | 4.94 | 11.15 | 0.318 | -2.64 | +0.015 | +0.006 | 0.13 |\n| combined, robust FF | 33 | 3.43 | 14.28 | 0.317 | -0.94 | +0.024 | -0.002 | 0.84 |\n| combined, robust FF | 44 | 5.76 | 14.30 | 0.319 | -1.48 | +0.035 | -0.002 | 0.20 |\n| combined, robust FF | 55 | 4.21 | 11.36 | 0.317 | -2.20 | +0.030 | +0.001 | 0.41 |\n| combined, robust history | 11 | 5.56 | 11.37 | 0.319 | -1.68 | +0.022 | -0.003 | 0.51 |\n| combined, robust history | 22 | 2.04 | 4.41 | 0.318 | -0.44 | +0.011 | +0.001 | 0.23 |\n| combined, robust history | 33 | 6.49 | 17.18 | 0.321 | -1.31 | -0.057 | +0.008 | 0.38 |\n| combined, robust history | 44 | 7.80 | 14.68 | 0.320 | -0.85 | +0.079 | +0.005 | 0.25 |\n| combined, robust history | 55 | 4.26 | 6.74 | 0.318 | -2.18 | +0.018 | -0.005 | 0.24 |\n| combined, robust repeated-current | 11 | 4.02 | 12.07 | 0.317 | -1.94 | +0.016 | -0.008 | 0.23 |\n| combined, robust repeated-current | 22 | 3.94 | 12.17 | 0.318 | -2.61 | +0.059 | -0.003 | 0.85 |\n| combined, robust repeated-current | 33 | 3.85 | 10.63 | 0.317 | -1.62 | +0.029 | -0.006 | 0.40 |\n| residual-only, robust history | 11 | 5.36 | 10.57 | 0.000 | +0.85 | +0.081 | -0.006 | 0.62 |\n| residual-only, robust history | 22 | 5.63 | 19.90 | 0.000 | +2.05 | +0.008 | +0.007 | 0.00 |\n| residual-only, robust history | 33 | 4.25 | 10.34 | 0.000 | +4.18 | +0.041 | -0.002 | 0.37 |\n| residual-only, robust history | 44 | 2.96 | 13.70 | 0.000 | +0.01 | -0.023 | +0.002 | 0.21 |\n| residual-only, robust history | 55 | 3.04 | 17.79 | 0.000 | +0.12 | +0.047 | -0.004 | 0.54 |",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed + fits(axis x)"
+ },
+ "compute.total_gpu_hours": {
+  "value": 18.05,
+  "text": "18.1",
+  "source": "results/v3/compute.json",
+  "field": "total_gpu_hours"
+ },
+ "compute.total_attempts": {
+  "value": 493,
+  "text": "493",
+  "source": "results/v3/compute.json",
+  "field": "total_attempts"
+ },
+ "val.combined_clean_ff_s11.step_002031616": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_clean_ff_s11.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_clean_ff_s11.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s11.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_clean_ff_s11.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s11.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_clean_ff_s11.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s11.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_clean_ff_s11.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s11.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_clean_ff_s22.step_002031616": {
+  "value": 0.9583333333333334,
+  "text": "95.8",
+  "source": "results/v3/selection/combined_clean_ff_s22.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_clean_ff_s22.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s22.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_clean_ff_s22.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s22.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_clean_ff_s22.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s22.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_clean_ff_s22.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s22.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_clean_ff_s33.step_002031616": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_clean_ff_s33.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_clean_ff_s33.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s33.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_clean_ff_s33.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s33.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_clean_ff_s33.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s33.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_clean_ff_s33.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s33.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_clean_ff_s44.step_002031616": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s44.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_clean_ff_s44.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s44.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_clean_ff_s44.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s44.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_clean_ff_s44.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s44.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_clean_ff_s44.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s44.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_clean_ff_s55.step_002031616": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s55.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_clean_ff_s55.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s55.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_clean_ff_s55.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s55.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_clean_ff_s55.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s55.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_clean_ff_s55.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_clean_ff_s55.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_ff_s11.step_002031616": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s11.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_ff_s11.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s11.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_ff_s11.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s11.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_ff_s11.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s11.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_ff_s11.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s11.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_ff_s22.step_002031616": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_robust_ff_s22.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_ff_s22.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s22.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_ff_s22.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s22.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_ff_s22.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s22.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_ff_s22.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s22.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_ff_s33.step_002031616": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_robust_ff_s33.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_ff_s33.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s33.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_ff_s33.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s33.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_ff_s33.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s33.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_ff_s33.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s33.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_ff_s44.step_002031616": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s44.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_ff_s44.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s44.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_ff_s44.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s44.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_ff_s44.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s44.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_ff_s44.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s44.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_ff_s55.step_002031616": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s55.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_ff_s55.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s55.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_ff_s55.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s55.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_ff_s55.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s55.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_ff_s55.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_ff_s55.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_history_s11.step_002031616": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s11.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_history_s11.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s11.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_history_s11.step_006029312": {
+  "value": 0.8541666666666666,
+  "text": "85.4",
+  "source": "results/v3/selection/combined_robust_history_s11.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_history_s11.step_008028160": {
+  "value": 0.0875,
+  "text": "8.8",
+  "source": "results/v3/selection/combined_robust_history_s11.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_history_s11.step_010027008": {
+  "value": 0.8125,
+  "text": "81.2",
+  "source": "results/v3/selection/combined_robust_history_s11.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_history_s22.step_002031616": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s22.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_history_s22.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s22.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_history_s22.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s22.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_history_s22.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s22.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_history_s22.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s22.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_history_s33.step_002031616": {
+  "value": 0.9833333333333333,
+  "text": "98.3",
+  "source": "results/v3/selection/combined_robust_history_s33.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_history_s33.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s33.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_history_s33.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s33.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_history_s33.step_008028160": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_robust_history_s33.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_history_s33.step_010027008": {
+  "value": 0.9333333333333333,
+  "text": "93.3",
+  "source": "results/v3/selection/combined_robust_history_s33.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_history_s44.step_002031616": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_robust_history_s44.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_history_s44.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s44.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_history_s44.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s44.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_history_s44.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s44.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_history_s44.step_010027008": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_robust_history_s44.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_history_s55.step_002031616": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s55.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_history_s55.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_history_s55.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_history_s55.step_006029312": {
+  "value": 0.0,
+  "text": "0.0",
+  "source": "results/v3/selection/combined_robust_history_s55.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_history_s55.step_008028160": {
+  "value": 0.0,
+  "text": "0.0",
+  "source": "results/v3/selection/combined_robust_history_s55.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_history_s55.step_010027008": {
+  "value": 0.19166666666666668,
+  "text": "19.2",
+  "source": "results/v3/selection/combined_robust_history_s55.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_repeat_s11.step_002031616": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s11.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_repeat_s11.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s11.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_repeat_s11.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s11.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_repeat_s11.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s11.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_repeat_s11.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s11.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_repeat_s22.step_002031616": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_robust_repeat_s22.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_repeat_s22.step_004030464": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_robust_repeat_s22.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_repeat_s22.step_006029312": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_robust_repeat_s22.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_repeat_s22.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s22.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_repeat_s22.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s22.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.combined_robust_repeat_s33.step_002031616": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "results/v3/selection/combined_robust_repeat_s33.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.combined_robust_repeat_s33.step_004030464": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s33.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.combined_robust_repeat_s33.step_006029312": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s33.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.combined_robust_repeat_s33.step_008028160": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s33.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.combined_robust_repeat_s33.step_010027008": {
+  "value": 1.0,
+  "text": "100.0",
+  "source": "results/v3/selection/combined_robust_repeat_s33.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.residual_robust_history_s11.step_002031616": {
+  "value": 0.7875,
+  "text": "78.8",
+  "source": "results/v3/selection/residual_robust_history_s11.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.residual_robust_history_s11.step_004030464": {
+  "value": 0.7458333333333333,
+  "text": "74.6",
+  "source": "results/v3/selection/residual_robust_history_s11.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.residual_robust_history_s11.step_006029312": {
+  "value": 0.7958333333333333,
+  "text": "79.6",
+  "source": "results/v3/selection/residual_robust_history_s11.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.residual_robust_history_s11.step_008028160": {
+  "value": 0.8,
+  "text": "80.0",
+  "source": "results/v3/selection/residual_robust_history_s11.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.residual_robust_history_s11.step_010027008": {
+  "value": 0.8083333333333333,
+  "text": "80.8",
+  "source": "results/v3/selection/residual_robust_history_s11.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.residual_robust_history_s22.step_002031616": {
+  "value": 0.7708333333333334,
+  "text": "77.1",
+  "source": "results/v3/selection/residual_robust_history_s22.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.residual_robust_history_s22.step_004030464": {
+  "value": 0.6166666666666667,
+  "text": "61.7",
+  "source": "results/v3/selection/residual_robust_history_s22.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.residual_robust_history_s22.step_006029312": {
+  "value": 0.1875,
+  "text": "18.8",
+  "source": "results/v3/selection/residual_robust_history_s22.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.residual_robust_history_s22.step_008028160": {
+  "value": 0.6083333333333333,
+  "text": "60.8",
+  "source": "results/v3/selection/residual_robust_history_s22.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.residual_robust_history_s22.step_010027008": {
+  "value": 0.7291666666666666,
+  "text": "72.9",
+  "source": "results/v3/selection/residual_robust_history_s22.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.residual_robust_history_s33.step_002031616": {
+  "value": 0.8041666666666667,
+  "text": "80.4",
+  "source": "results/v3/selection/residual_robust_history_s33.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.residual_robust_history_s33.step_004030464": {
+  "value": 0.6458333333333334,
+  "text": "64.6",
+  "source": "results/v3/selection/residual_robust_history_s33.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.residual_robust_history_s33.step_006029312": {
+  "value": 0.7916666666666666,
+  "text": "79.2",
+  "source": "results/v3/selection/residual_robust_history_s33.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.residual_robust_history_s33.step_008028160": {
+  "value": 0.8333333333333334,
+  "text": "83.3",
+  "source": "results/v3/selection/residual_robust_history_s33.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.residual_robust_history_s33.step_010027008": {
+  "value": 0.8125,
+  "text": "81.2",
+  "source": "results/v3/selection/residual_robust_history_s33.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.residual_robust_history_s44.step_002031616": {
+  "value": 0.8458333333333333,
+  "text": "84.6",
+  "source": "results/v3/selection/residual_robust_history_s44.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.residual_robust_history_s44.step_004030464": {
+  "value": 0.5666666666666667,
+  "text": "56.7",
+  "source": "results/v3/selection/residual_robust_history_s44.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.residual_robust_history_s44.step_006029312": {
+  "value": 0.6916666666666667,
+  "text": "69.2",
+  "source": "results/v3/selection/residual_robust_history_s44.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.residual_robust_history_s44.step_008028160": {
+  "value": 0.6791666666666667,
+  "text": "67.9",
+  "source": "results/v3/selection/residual_robust_history_s44.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.residual_robust_history_s44.step_010027008": {
+  "value": 0.8208333333333333,
+  "text": "82.1",
+  "source": "results/v3/selection/residual_robust_history_s44.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "val.residual_robust_history_s55.step_002031616": {
+  "value": 0.8333333333333334,
+  "text": "83.3",
+  "source": "results/v3/selection/residual_robust_history_s55.json",
+  "field": "candidates[step_002031616].success_rate"
+ },
+ "val.residual_robust_history_s55.step_004030464": {
+  "value": 0.7291666666666666,
+  "text": "72.9",
+  "source": "results/v3/selection/residual_robust_history_s55.json",
+  "field": "candidates[step_004030464].success_rate"
+ },
+ "val.residual_robust_history_s55.step_006029312": {
+  "value": 0.125,
+  "text": "12.5",
+  "source": "results/v3/selection/residual_robust_history_s55.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ "val.residual_robust_history_s55.step_008028160": {
+  "value": 0.0625,
+  "text": "6.2",
+  "source": "results/v3/selection/residual_robust_history_s55.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ "val.residual_robust_history_s55.step_010027008": {
+  "value": 0.05416666666666667,
+  "text": "5.4",
+  "source": "results/v3/selection/residual_robust_history_s55.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ "mech.geometry_common.saturation": {
+  "value": 0.3180945036861386,
+  "text": "31.8%",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "geometry_common_align_saturation_frac"
+ },
+ "mech.combined.intercept_range": {
+  "value": [
+   -2.6458487462055067,
+   -0.4352051109169361
+  ],
+  "text": "-2.6 to -0.4",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined].intercept_mm min/max"
+ },
+ "mech.combined.max_abs_slope_bias": {
+  "value": 0.008103694585532097,
+  "text": "0.008",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined] max |slope_on_sensor_bias|"
+ },
+ "mech.combined.max_abs_slope_true": {
+  "value": 0.07865002269286667,
+  "text": "0.079",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined] max |slope_on_true_offset|"
+ },
+ "mech.combined.abs_mean_range": {
+  "value": [
+   2.043638028128286,
+   7.8018819770419645
+  ],
+  "text": "2.0\u20137.8",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].residual_abs_mean_mm min/max"
+ },
+ "mech.combined.abs_max": {
+  "value": 17.178185284137726,
+  "text": "17.2",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].residual_abs_max_mm max"
+ },
+ "mech.combined.saturation_range": {
+  "value": [
+   0.31658372909734617,
+   0.32099154400158864
+  ],
+  "text": "31.7\u201332.1%",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].align_saturation_frac"
+ },
+ "mech.combined.clip_max": {
+  "value": 0.0024254561949657943,
+  "text": "0.002",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].workspace_clip_mean_mm max"
+ },
+ "mech.combined.paired.both_success": {
+  "value": 43200,
+  "text": "43,200",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[combined].paired_vs_geometry_common.both_success"
+ },
+ "mech.combined.paired.only_geometry": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[combined].paired_vs_geometry_common.only_geometry"
+ },
+ "mech.combined.paired.only_policy": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[combined].paired_vs_geometry_common.only_policy"
+ },
+ "mech.combined.paired.both_fail": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[combined].paired_vs_geometry_common.both_fail"
+ },
+ "mech.residual.intercept_range": {
+  "value": [
+   0.008932051401553343,
+   4.178401142416531
+  ],
+  "text": "+0.0 to +4.2",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,residual].intercept_mm min/max"
+ },
+ "mech.residual.max_abs_slope_bias": {
+  "value": 0.0072428679650140635,
+  "text": "0.007",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,residual] max |slope_on_sensor_bias|"
+ },
+ "mech.residual.max_abs_slope_true": {
+  "value": 0.08080116712497361,
+  "text": "0.081",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,residual] max |slope_on_true_offset|"
+ },
+ "mech.residual.abs_mean_range": {
+  "value": [
+   2.963450941652342,
+   5.626039757475865
+  ],
+  "text": "3.0\u20135.6",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[residual].residual_abs_mean_mm min/max"
+ },
+ "mech.residual.abs_max": {
+  "value": 19.898248836398125,
+  "text": "19.9",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[residual].residual_abs_max_mm max"
+ },
+ "mech.residual.saturation_range": {
+  "value": [
+   0.0,
+   0.0
+  ],
+  "text": "0.0\u20130.0%",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[residual].align_saturation_frac"
+ },
+ "mech.residual.clip_max": {
+  "value": 0.0,
+  "text": "0.000",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[residual].workspace_clip_mean_mm max"
+ },
+ "mech.residual.paired.both_success": {
+  "value": 8238,
+  "text": "8,238",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[residual].paired_vs_geometry_common.both_success"
+ },
+ "mech.residual.paired.only_geometry": {
+  "value": 3762,
+  "text": "3,762",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[residual].paired_vs_geometry_common.only_geometry"
+ },
+ "mech.residual.paired.only_policy": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[residual].paired_vs_geometry_common.only_policy"
+ },
+ "mech.residual.paired.both_fail": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[residual].paired_vs_geometry_common.both_fail"
+ },
+ "int.combined_robust_history.unmodified": {
+  "value": 325,
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].unmodified"
+ },
+ "int.combined_robust_history.permuted": {
+  "value": 325,
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].permuted"
+ },
+ "int.combined_robust_history.current_only": {
+  "value": 325,
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].current_only"
+ },
+ "int.combined_robust_history.permuted_changed_terminal": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].permuted_changed_terminal"
+ },
+ "int.combined_robust_history.current_only_changed_terminal": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].current_only_changed_terminal"
+ },
+ "int.combined_robust_history.episodes": {
+  "value": 325,
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "65 x 5 seeds"
+ },
+ "int.residual_robust_history.unmodified": {
+  "value": 145,
+  "text": "145",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[residual_robust_history].unmodified"
+ },
+ "int.residual_robust_history.permuted": {
+  "value": 145,
+  "text": "145",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[residual_robust_history].permuted"
+ },
+ "int.residual_robust_history.current_only": {
+  "value": 145,
+  "text": "145",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[residual_robust_history].current_only"
+ },
+ "int.residual_robust_history.permuted_changed_terminal": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[residual_robust_history].permuted_changed_terminal"
+ },
+ "int.residual_robust_history.current_only_changed_terminal": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[residual_robust_history].current_only_changed_terminal"
+ },
+ "int.residual_robust_history.episodes": {
+  "value": 325,
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "65 x 5 seeds"
+ },
+ "zero.combined_clean_ff": {
+  "value": 65,
+  "text": "65/65",
+  "source": "results/v3/zero_policy/zero_policy.json",
+  "field": "rows.combined_clean_ff"
+ },
+ "zero.combined_robust_ff": {
+  "value": 65,
+  "text": "65/65",
+  "source": "results/v3/zero_policy/zero_policy.json",
+  "field": "rows.combined_robust_ff"
+ },
+ "zero.combined_robust_history": {
+  "value": 65,
+  "text": "65/65",
+  "source": "results/v3/zero_policy/zero_policy.json",
+  "field": "rows.combined_robust_history"
+ },
+ "zero.combined_robust_repeat": {
+  "value": 65,
+  "text": "65/65",
+  "source": "results/v3/zero_policy/zero_policy.json",
+  "field": "rows.combined_robust_repeat"
+ },
+ "zero.residual_robust_history": {
+  "value": 29,
+  "text": "29/65",
+  "source": "results/v3/zero_policy/zero_policy.json",
+  "field": "rows.residual_robust_history"
+ },
+ "compute.formal.runs": {
+  "value": 23,
+  "text": "23",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.runs"
+ },
+ "compute.formal.gpu_hours": {
+  "value": 7.61,
+  "text": "7.6",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.gpu_hours"
+ },
+ "compute.formal.realized_transitions": {
+  "value": 230621184,
+  "text": "230,621,184",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.realized_transitions"
+ },
+ "compute.formal.transitions_per_s_incl_startup": {
+  "value": 8415.0,
+  "text": "8,415.0",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.transitions_per_s_incl_startup"
+ },
+ "compute.formal.mean_run_min": {
+  "value": 19.9,
+  "text": "19.9",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.mean_run_min"
+ },
+ "video.clips": {
+  "value": 8,
+  "text": "8",
+  "source": "results/v3/videos/video_index.json",
+  "field": "distinct_clips"
+ },
+ "video.cases": {
+  "value": 5,
+  "text": "5",
+  "source": "results/v3/videos/video_index.json",
+  "field": "distinct_cases"
+ },
+ "video.montage_s": {
+  "value": 42.9,
+  "text": "43",
+  "source": "results/v3/videos/video_index.json",
+  "field": "montage.seconds"
+ },
+ "video.replay_disagreements": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v3/videos/video_index.json",
+  "field": "len(replay_disagreements)"
+ },
+ "figures.traces": {
+  "value": null,
+  "text": "![geometry_common (giver reference): small constant estimate error while the giver holds, noisy fallback after release](../../results/v3/figures/trace_geometry_common_v3-final-mixed_id-0000.png)\n\n*geometry_common (giver reference): small constant estimate error while the giver holds, noisy fallback after release (case v3-final-mixed_id-0000).*\n\n![geometry_raw: noisy raw estimate; the giver never opens (release-gate timeout)](../../results/v3/figures/trace_geometry_raw_v3-final-mixed_id-0000.png)\n\n*geometry_raw: noisy raw estimate; the giver never opens (release-gate timeout) (case v3-final-mixed_id-0000).*\n\n![combined_robust_history seed 11, selected checkpoint: success](../../results/v3/figures/trace_combined_robust_history_s11__selected_v3-final-mixed_id-0000.png)\n\n*combined_robust_history seed 11, selected checkpoint: success (case v3-final-mixed_id-0000).*\n\n![combined_robust_history seed 55, final checkpoint: residual saturates near the 20 mm bound (collapse)](../../results/v3/figures/trace_combined_robust_history_s55__final_v3-final-mixed_id-0000.png)\n\n*combined_robust_history seed 55, final checkpoint: residual saturates near the 20 mm bound (collapse) (case v3-final-mixed_id-0000).*\n\n![residual_robust_history seed 22, selected checkpoint (on the nominal script)](../../results/v3/figures/trace_residual_robust_history_s22__selected_v3-final-mixed_id-0000.png)\n\n*residual_robust_history seed 22, selected checkpoint (on the nominal script) (case v3-final-mixed_id-0000).*",
+  "source": "results/v3/figures",
+  "field": "trace_*.png (scripts/v3_figures.py --traces)"
+ },
+ "trace.agree": {
+  "value": [
+   298,
+   300
+  ],
+  "text": "298 of 300",
+  "source": "results/v3/traces6/summary.json",
+  "field": "agree_total/total"
+ },
+ "trace.disagreements": {
+  "value": [
+   "combined_robust_history_s11__final on v3-final-mixed_id-0000 (success at batch 6 vs episode_timeout at batch 256)",
+   "combined_robust_history_s11__final on v3-final-noise_4mm-0000 (success at batch 6 vs episode_timeout at batch 256)"
+  ],
+  "text": "combined_robust_history_s11__final on v3-final-mixed_id-0000 (success at batch 6 vs episode_timeout at batch 256); combined_robust_history_s11__final on v3-final-noise_4mm-0000 (success at batch 6 vs episode_timeout at batch 256)",
+  "source": "results/v3/traces6/summary.json",
+  "field": "rows[*].cases where outcomes differ"
+ },
+ "acc.passed": {
+  "value": 10,
+  "text": "10 of 10",
+  "source": "results/v3/acceptance.json",
+  "field": "checks[*].pass"
+ },
+ "table.acceptance": {
+  "value": null,
+  "text": "| acceptance check | pass |\n|---|---|\n| 1. physical pipeline and negative controls | yes |\n| 2. zero residual and residual mechanics | yes |\n| 3. sensor model and layout pairing | yes |\n| 4. reset boundaries and tokens | yes |\n| 5. no hidden translation path | yes |\n| 6. zero error sensor vs archived path | yes |\n| 7. estimators and gate | yes |\n| 8. inputs history normalization | yes |\n| 9. ppo smoke save reload resume | yes |\n| 10. eval cache rejection and resume | yes |",
+  "source": "results/v3/acceptance.json",
+  "field": "checks"
+ },
+ "table.pilot": {
+  "value": null,
+  "text": "| pilot | transitions | fps | losses finite | train success (last 20%) | dev success /144 | resid. mean [mm] | resid. max [mm] | clip [mm] | align sat. | mean resid. x,y,z [mm] |\n|---|---|---|---|---|---|---|---|---|---|---|\n| combined_clean_ff_s101 | 2,752,512 | 9759 | True | 99.9% | 144 | 5.62 | 13.68 | 0.00 | 0.296 | -0.46, -5.08, -3.35 |\n| combined_robust_ff_s101 | 2,752,512 | 9593 | True | 99.7% | 144 | 6.21 | 12.41 | 0.00 | 0.300 | -2.74, -0.23, -5.90 |\n| combined_robust_ff_s102 | 2,752,512 | 9244 | True | 100.0% | 144 | 3.88 | 12.33 | 0.00 | 0.301 | -3.41, 1.36, 1.09 |\n| combined_robust_history_s101 | 2,752,512 | 9257 | True | 99.7% | 144 | 3.25 | 5.33 | 0.00 | 0.301 | -0.94, -0.03, -2.42 |\n| combined_robust_history_s102 | 2,752,512 | 9657 | True | 99.6% | 144 | 6.12 | 10.98 | 0.00 | 0.304 | 0.03, 3.06, 0.60 |\n| combined_robust_repeat_s101 | 2,752,512 | 9475 | True | 100.0% | 144 | 3.85 | 9.53 | 0.00 | 0.300 | -2.29, -0.27, -2.33 |\n| residual_robust_history_s101 | 2,752,512 | 9060 | True | 76.9% | 120 | 2.42 | 6.39 | 0.00 | 0.000 | 0.11, -0.30, -0.16 |\n| residual_robust_history_s102 | 2,752,512 | 8832 | True | 77.2% | 110 | 2.13 | 6.52 | 0.00 | 0.000 | 1.15, 0.84, -0.68 |",
+  "source": "results/v3/pilot/pilot_tables.md",
+  "field": "pilot table (generated by scripts/v3_pilot_report.py)"
+ }
+}
