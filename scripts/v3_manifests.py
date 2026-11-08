@@ -224,12 +224,25 @@ def final():
     d = ROOT / "configs/v3/final_matrices"
     d.mkdir(parents=True, exist_ok=True)
     tasks = []
+    selroles = json.loads((ROOT / "configs/v3/baseline_selection.json").read_text())["roles"]
+    order = ["nominal", "geometry_common", "geometry_best_constant", "geometry_raw", "geometry_filtered", "geometry_giver"]
+    first_of = {}
+    aliases = {}
+    for role in order:
+        cid = selroles[role]["candidate_id"]
+        if cid in first_of:
+            aliases[role] = first_of[cid]  # identical configuration: evaluated once, recorded as an alias
+        else:
+            first_of[cid] = role
+    (d / "baseline_aliases.json").write_text(json.dumps(aliases, indent=1, sort_keys=True) + "\n")
     for role, (base, ent) in baseline_entries().items():
+        if role in aliases:
+            continue
         mp = d / f"baseline_{role}.json"
         mp.write_text(json.dumps({"name": f"v3_final_{role}", "suite": "configs/v3/suites/final.jsonl", "num_envs": FINAL_BATCH,
                                   "protocol": "configs/v2/protocol.json", "base_overrides": base, "trace_cases": TRACE_FINAL,
                                   "entries": [ent]}, indent=1) + "\n")
-        tasks.append({"id": f"final_{role}", "kind": "isaac", "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)),
+        tasks.append({"id": f"final_{role}", "kind": "isaac", "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)),
                       "--only", role, "--output", f"$RUNS/final/{role}", "--seed", str(SEED_EVAL)],
                       "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/final/{role}/{role}.jsonl"]})
     for prof, method, seed in runs():
@@ -244,7 +257,7 @@ def final():
                                   "entries": ents}, indent=1) + "\n")
         for e in ents:
             tasks.append({"id": f"final_{e['id']}", "kind": "isaac",
-                          "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)), "--only", e["id"],
+                          "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)), "--only", e["id"],
                                    "--checkpoint-root", "$RUNS/train", "--output", f"$RUNS/final/{run}/{e['role']}", "--seed", str(SEED_EVAL)],
                           "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/final/{run}/{e['role']}/{e['id']}.jsonl"]})
     write("final", tasks)
@@ -258,7 +271,7 @@ def subset65():
     sub = [r for c in sorted(by) for r in sorted(by[c], key=lambda r: r["case_id"])[:5]]
     p = ROOT / "configs/v3/suites/final_subset65.jsonl"
     p.write_text("".join(json.dumps(r, sort_keys=True) + "\n" for r in sub))
-    return "configs/v3/suites/final_subset65.jsonl"
+    return "$DELIVERY/configs/v3/suites/final_subset65.jsonl"
 
 
 def extras():
@@ -275,7 +288,7 @@ def extras():
                                   "protocol": f"configs/v3/frozen/training/{prof}.json", "trace_cases": [],
                                   "entries": [{"id": f"{run}__step0", "method": method, "training_seed": 11, "role": "untrained_control",
                                                "checkpoint": f"{run}/checkpoints/step_000000000.pt"}]}, indent=1) + "\n")
-        tasks.append({"id": f"zero_{prof}", "kind": "isaac", "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)),
+        tasks.append({"id": f"zero_{prof}", "kind": "isaac", "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)),
                       "--checkpoint-root", "$RUNS/train", "--output", f"$RUNS/zero_policy/{prof}", "--seed", str(SEED_EVAL)],
                       "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/zero_policy/{prof}/{run}__step0.jsonl"]})
     hist = [(p, s) for p, m, s in runs() if p in ("combined_robust_history", "residual_robust_history")]
@@ -290,7 +303,7 @@ def extras():
                                                    "role": f"intervention_{name}", "allow_config_mismatch": True,
                                                    "intervention": base, "checkpoint": f"{run}/checkpoints/{sel[run]['selected']}.pt"}]},
                                      indent=1) + "\n")
-            tasks.append({"id": f"int_{name}_{run}", "kind": "isaac", "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)),
+            tasks.append({"id": f"int_{name}_{run}", "kind": "isaac", "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)),
                           "--checkpoint-root", "$RUNS/train", "--output", f"$RUNS/interventions/{name}/{run}", "--seed", str(SEED_EVAL)],
                           "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/interventions/{name}/{run}/{run}__selected__{name}.jsonl"]})
     rep = []
@@ -313,7 +326,7 @@ def extras():
         for ps in (6455601, 6455602, 6455603):
             for b in (1, 23):
                 tasks.append({"id": f"rep_{eid}_p{ps}_b{b}", "kind": "isaac",
-                              "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)), "--num-envs", str(b),
+                              "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)), "--num-envs", str(b),
                                        "--output", f"$RUNS/repeatability/b{b}/p{ps}/{eid}", "--seed", str(ps)]
                                       + (["--checkpoint-root", ck] if ck else []),
                               "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/repeatability/b{b}/p{ps}/{eid}/{eid}.jsonl"]})
