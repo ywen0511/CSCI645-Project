@@ -1,0 +1,151 @@
+{
+ "name": "acceptance_sim",
+ "tasks": [
+  {
+   "id": "acc_sensor",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "sensor",
+    "--output",
+    "$RUNS/acceptance/sensor.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py",
+    "src/csci645_handover/core/observation.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/sensor.json"
+   ]
+  },
+  {
+   "id": "acc_residual",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "residual",
+    "--output",
+    "$RUNS/acceptance/residual.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py",
+    "src/csci645_handover/tasks/handover_env.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/residual.json"
+   ]
+  },
+  {
+   "id": "acc_boundary",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "boundary",
+    "--output",
+    "$RUNS/acceptance/boundary.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py",
+    "src/csci645_handover/tasks/handover_env.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/boundary.json"
+   ]
+  },
+  {
+   "id": "acc_dependency_archived",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "dependency",
+    "--variant",
+    "archived",
+    "--output",
+    "$RUNS/acceptance/dependency_archived.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py",
+    "src/csci645_handover/tasks/handover_env.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/dependency_archived.json"
+   ]
+  },
+  {
+   "id": "acc_dependency_ff_ema1p0_giver0",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "dependency",
+    "--variant",
+    "ff_ema1p0_giver0",
+    "--output",
+    "$RUNS/acceptance/dependency_ff_ema1p0_giver0.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py",
+    "src/csci645_handover/tasks/handover_env.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/dependency_ff_ema1p0_giver0.json"
+   ]
+  },
+  {
+   "id": "acc_dependency_ff_ema0p5_giver1",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "dependency",
+    "--variant",
+    "ff_ema0p5_giver1",
+    "--output",
+    "$RUNS/acceptance/dependency_ff_ema0p5_giver1.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py",
+    "src/csci645_handover/tasks/handover_env.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/dependency_ff_ema0p5_giver1.json"
+   ]
+  },
+  {
+   "id": "acc_dependency_hist5_ema0p2_giver0",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "dependency",
+    "--variant",
+    "hist5_ema0p2_giver0",
+    "--output",
+    "$RUNS/acceptance/dependency_hist5_ema0p2_giver0.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py",
+    "src/csci645_handover/tasks/handover_env.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/dependency_hist5_ema0p2_giver0.json"
+   ]
+  },
+  {
+   "id": "acc_dependency_hist5_ema1p0_giver1",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "dependency",
+    "--variant",
+    "hist5_ema1p0_giver1",
+    "--output",
+    "$RUNS/acceptance/dependency_hist5_ema1p0_giver1.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py",
+    "src/csci645_handover/tasks/handover_env.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/dependency_hist5_ema1p0_giver1.json"
+   ]
+  }
+ ]
+}

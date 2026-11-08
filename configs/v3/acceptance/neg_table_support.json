@@ -1,0 +1,40 @@
+{
+ "base_overrides": {
+  "negative_control": "table_support",
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "clean_probability": 0.25,
+   "delay_steps": 2,
+   "ema_alpha": 0.5,
+   "max_delay_steps": 8,
+   "noise_std_m": 0.002
+  },
+  "table_size_override": [
+   0.06,
+   0.3,
+   0.2
+  ]
+ },
+ "entries": [
+  {
+   "id": "nominal",
+   "method": "nominal",
+   "trace": true
+  },
+  {
+   "id": "geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "trace": true
+  }
+ ],
+ "name": "v3acc_neg_table_support",
+ "num_envs": 8,
+ "protocol": "configs/v2/protocol.json",
+ "suite": "configs/v3/acceptance/suite_small.jsonl",
+ "trace_cases": [
+  "v3-development-physical_only-0000"
+ ]
+}

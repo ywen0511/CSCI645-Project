@@ -1,0 +1,22 @@
+{
+ "entries": [
+  {
+   "checkpoint": "smoke_combined_robust_ff_s101/checkpoints/step_000000000.pt",
+   "id": "combined_robust_ff_step0",
+   "method": "combined",
+   "training_seed": 101
+  },
+  {
+   "id": "geometry",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   }
+  }
+ ],
+ "name": "v3acc_a2_combined_robust_ff",
+ "num_envs": 23,
+ "protocol": "configs/v3/training/combined_robust_ff.json",
+ "suite": "configs/v3/acceptance/suite_layout.jsonl",
+ "trace_cases": []
+}

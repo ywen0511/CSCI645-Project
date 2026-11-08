@@ -1,0 +1,379 @@
+{
+ "name": "acceptance_eval",
+ "tasks": [
+  {
+   "id": "acc_a1_b1_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a1_b1.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/acceptance/a1_b1/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a1_b1.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a1_b1/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a1_b1_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a1_b1.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/a1_b1/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a1_b1.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a1_b1/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a1_b8_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a1_b8.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/acceptance/a1_b8/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a1_b8.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a1_b8/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a1_b8_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a1_b8.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/a1_b8/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a1_b8.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a1_b8/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  },
+  {
+   "id": "acc_neg_no_receiver_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/neg_no_receiver.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/acceptance/neg_no_receiver/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/neg_no_receiver.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/neg_no_receiver/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "acc_neg_no_receiver_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/neg_no_receiver.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/neg_no_receiver/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/neg_no_receiver.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/neg_no_receiver/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  },
+  {
+   "id": "acc_neg_giver_holds_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/neg_giver_holds.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/acceptance/neg_giver_holds/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/neg_giver_holds.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/neg_giver_holds/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "acc_neg_giver_holds_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/neg_giver_holds.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/neg_giver_holds/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/neg_giver_holds.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/neg_giver_holds/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  },
+  {
+   "id": "acc_neg_table_support_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/neg_table_support.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/acceptance/neg_table_support/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/neg_table_support.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/neg_table_support/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "acc_neg_table_support_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/neg_table_support.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/neg_table_support/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/neg_table_support.json",
+    "configs/v3/acceptance/suite_small.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/neg_table_support/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a3_b1_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a3_b1.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/a3_b1/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a3_b1.json",
+    "configs/v3/acceptance/suite_layout.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a3_b1/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a3_b23_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a3_b23.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/a3_b23/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a3_b23.json",
+    "configs/v3/acceptance/suite_layout.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a3_b23/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a3_b23rev_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a3_b23rev.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/a3_b23rev/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a3_b23rev.json",
+    "configs/v3/acceptance/suite_layout_rev.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a3_b23rev/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a6_sensor0_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a6_sensor0.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/acceptance/a6_sensor0/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a6_sensor0.json",
+    "configs/v3/acceptance/suite_physical.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a6_sensor0/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a6_sensor0_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a6_sensor0.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/a6_sensor0/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a6_sensor0.json",
+    "configs/v3/acceptance/suite_physical.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a6_sensor0/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a6_archived_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a6_archived.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/acceptance/a6_archived/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a6_archived.json",
+    "configs/v3/acceptance/suite_physical_v2fmt.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a6_archived/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a6_archived_geometry_1p5cm",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a6_archived.json",
+    "--only",
+    "geometry_1p5cm",
+    "--output",
+    "$RUNS/acceptance/a6_archived/geometry_1p5cm",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a6_archived.json",
+    "configs/v3/acceptance/suite_physical_v2fmt.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a6_archived/geometry_1p5cm/geometry_1p5cm.jsonl"
+   ]
+  }
+ ]
+}

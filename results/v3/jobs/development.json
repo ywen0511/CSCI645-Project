@@ -1,0 +1,1875 @@
+{
+ "name": "development",
+ "tasks": [
+  {
+   "id": "dev_ema0p2_giver0_geom15_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom15_x-10",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom15_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom15_x-10/geom15_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom15_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom15_x-05",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom15_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom15_x-05/geom15_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom15_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom15_x+00",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom15_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom15_x+00/geom15_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom15_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom15_x+05",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom15_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom15_x+05/geom15_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom15_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom15_x+10",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom15_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom15_x+10/geom15_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom15_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom15_x+15",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom15_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom15_x+15/geom15_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom15_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom15_x+20",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom15_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom15_x+20/geom15_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom20_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom20_x-10",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom20_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom20_x-10/geom20_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom20_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom20_x-05",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom20_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom20_x-05/geom20_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom20_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom20_x+00",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom20_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom20_x+00/geom20_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom20_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom20_x+05",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom20_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom20_x+05/geom20_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom20_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom20_x+10",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom20_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom20_x+10/geom20_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom20_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom20_x+15",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom20_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom20_x+15/geom20_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver0_geom20_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "--only",
+    "geom20_x+20",
+    "--output",
+    "$RUNS/development/ema0p2_giver0/geom20_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/geom20_x+20/geom20_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom15_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom15_x-10",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom15_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom15_x-10/geom15_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom15_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom15_x-05",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom15_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom15_x-05/geom15_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom15_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom15_x+00",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom15_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom15_x+00/geom15_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom15_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom15_x+05",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom15_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom15_x+05/geom15_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom15_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom15_x+10",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom15_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom15_x+10/geom15_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom15_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom15_x+15",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom15_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom15_x+15/geom15_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom15_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom15_x+20",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom15_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom15_x+20/geom15_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom20_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom20_x-10",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom20_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom20_x-10/geom20_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom20_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom20_x-05",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom20_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom20_x-05/geom20_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom20_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom20_x+00",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom20_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom20_x+00/geom20_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom20_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom20_x+05",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom20_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom20_x+05/geom20_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom20_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom20_x+10",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom20_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom20_x+10/geom20_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom20_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom20_x+15",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom20_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom20_x+15/geom20_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1_geom20_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "--only",
+    "geom20_x+20",
+    "--output",
+    "$RUNS/development/ema0p2_giver1/geom20_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p2_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/geom20_x+20/geom20_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom15_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom15_x-10",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom15_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom15_x-10/geom15_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom15_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom15_x-05",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom15_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom15_x-05/geom15_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom15_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom15_x+00",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom15_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom15_x+00/geom15_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom15_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom15_x+05",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom15_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom15_x+05/geom15_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom15_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom15_x+10",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom15_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom15_x+10/geom15_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom15_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom15_x+15",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom15_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom15_x+15/geom15_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom15_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom15_x+20",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom15_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom15_x+20/geom15_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom20_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom20_x-10",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom20_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom20_x-10/geom20_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom20_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom20_x-05",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom20_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom20_x-05/geom20_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom20_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom20_x+00",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom20_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom20_x+00/geom20_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom20_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom20_x+05",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom20_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom20_x+05/geom20_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom20_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom20_x+10",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom20_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom20_x+10/geom20_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom20_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom20_x+15",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom20_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom20_x+15/geom20_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0_geom20_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "--only",
+    "geom20_x+20",
+    "--output",
+    "$RUNS/development/ema0p5_giver0/geom20_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/geom20_x+20/geom20_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom15_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom15_x-10",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom15_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom15_x-10/geom15_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom15_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom15_x-05",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom15_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom15_x-05/geom15_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom15_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom15_x+00",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom15_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom15_x+00/geom15_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom15_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom15_x+05",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom15_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom15_x+05/geom15_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom15_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom15_x+10",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom15_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom15_x+10/geom15_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom15_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom15_x+15",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom15_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom15_x+15/geom15_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom15_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom15_x+20",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom15_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom15_x+20/geom15_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom20_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom20_x-10",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom20_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom20_x-10/geom20_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom20_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom20_x-05",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom20_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom20_x-05/geom20_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom20_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom20_x+00",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom20_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom20_x+00/geom20_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom20_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom20_x+05",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom20_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom20_x+05/geom20_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom20_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom20_x+10",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom20_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom20_x+10/geom20_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom20_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom20_x+15",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom20_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom20_x+15/geom20_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1_geom20_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "--only",
+    "geom20_x+20",
+    "--output",
+    "$RUNS/development/ema0p5_giver1/geom20_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema0p5_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/geom20_x+20/geom20_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom15_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom15_x-10",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom15_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom15_x-10/geom15_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom15_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom15_x-05",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom15_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom15_x-05/geom15_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom15_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom15_x+00",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom15_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom15_x+00/geom15_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom15_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom15_x+05",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom15_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom15_x+05/geom15_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom15_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom15_x+10",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom15_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom15_x+10/geom15_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom15_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom15_x+15",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom15_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom15_x+15/geom15_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom15_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom15_x+20",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom15_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom15_x+20/geom15_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom20_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom20_x-10",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom20_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom20_x-10/geom20_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom20_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom20_x-05",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom20_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom20_x-05/geom20_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom20_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom20_x+00",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom20_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom20_x+00/geom20_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom20_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom20_x+05",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom20_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom20_x+05/geom20_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom20_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom20_x+10",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom20_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom20_x+10/geom20_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom20_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom20_x+15",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom20_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom20_x+15/geom20_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0_geom20_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "--only",
+    "geom20_x+20",
+    "--output",
+    "$RUNS/development/ema1p0_giver0/geom20_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver0.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/geom20_x+20/geom20_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom15_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom15_x-10",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom15_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom15_x-10/geom15_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom15_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom15_x-05",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom15_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom15_x-05/geom15_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom15_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom15_x+00",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom15_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom15_x+00/geom15_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom15_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom15_x+05",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom15_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom15_x+05/geom15_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom15_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom15_x+10",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom15_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom15_x+10/geom15_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom15_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom15_x+15",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom15_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom15_x+15/geom15_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom15_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom15_x+20",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom15_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom15_x+20/geom15_x+20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom20_x-10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom20_x-10",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom20_x-10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom20_x-10/geom20_x-10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom20_x-05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom20_x-05",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom20_x-05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom20_x-05/geom20_x-05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom20_x+00",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom20_x+00",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom20_x+00",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom20_x+00/geom20_x+00.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom20_x+05",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom20_x+05",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom20_x+05",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom20_x+05/geom20_x+05.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom20_x+10",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom20_x+10",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom20_x+10",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom20_x+10/geom20_x+10.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom20_x+15",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom20_x+15",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom20_x+15",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom20_x+15/geom20_x+15.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1_geom20_x+20",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "--only",
+    "geom20_x+20",
+    "--output",
+    "$RUNS/development/ema1p0_giver1/geom20_x+20",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/matrices/development/ema1p0_giver1.json",
+    "configs/v3/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/geom20_x+20/geom20_x+20.jsonl"
+   ]
+  }
+ ]
+}
