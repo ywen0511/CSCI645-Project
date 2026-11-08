@@ -4,6 +4,11 @@
     "path": "configs/v3/suites/development.jsonl",
     "sha256": "e8139f3b4c2a745c24493819e6a04d00edeeffc83f01071aab5c832512071521"
   },
+  "final": {
+    "cases": 2600,
+    "path": "configs/v3/suites/final.jsonl",
+    "sha256": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+  },
   "validation": {
     "cases": 240,
     "path": "configs/v3/suites/validation.jsonl",
