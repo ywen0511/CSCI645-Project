@@ -1,0 +1,12 @@
+{
+  "development": {
+    "cases": 312,
+    "path": "configs/v3/suites/development.jsonl",
+    "sha256": "e8139f3b4c2a745c24493819e6a04d00edeeffc83f01071aab5c832512071521"
+  },
+  "validation": {
+    "cases": 240,
+    "path": "configs/v3/suites/validation.jsonl",
+    "sha256": "9051c414af4801e44ce13445be0077a2a78841f9a40a6700b04ad44a1199c024"
+  }
+}

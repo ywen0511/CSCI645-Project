@@ -103,8 +103,18 @@ def main():
             "checkpoint_interval_transitions": ckpt_every, "git": rt.git_state(), "hardware": rt.hardware_info(),
             "actor_init": actor_init,
         }
+        if protocol.get("protocol_id", "").startswith("v3") and meta["git"]["dirty"]:
+            raise RuntimeError("V3 training requires clean committed executable source")
         start_iter, transitions = 0, 0
         if args.resume:
+            if protocol.get("protocol_id", "").startswith("v3"):
+                ck = torch.load(args.resume, map_location="cpu", weights_only=False)
+                prior = ck.get("infos", {})
+                for key, value in {"method": args.method, "seed": args.seed, "obs_dim": cfg.observation_space,
+                                   "config_hash": meta["config_hash"], "protocol_sha256": meta["protocol_sha256"],
+                                   "source_commit": meta["git"]["commit"], "source_dirty": False}.items():
+                    if prior.get(key) != value:
+                        raise ValueError(f"Resume mismatch: {key}={prior.get(key)!r}, expected {value!r}")
             infos = runner.load(args.resume, map_location=device)
             transitions = int(infos["transitions"])
             start_iter = int(infos["iterations_done"])

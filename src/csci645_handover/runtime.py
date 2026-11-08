@@ -70,7 +70,10 @@ def config_hash(cfg) -> str:
     return sha256_json(d)
 
 
-V2_CONTROLLER_DEFAULTS = {"geom_align": True, "geom_anchor": True, "geom_gate": True, "constant_residual_m": None}
+V2_CONTROLLER_DEFAULTS = {"geom_align": True, "geom_anchor": True, "geom_gate": True, "constant_residual_m": None,
+                          "observation_sensor": None, "observation_history": 1,
+                          "observation_giver_reference": False, "observation_history_mode": "stack",
+                          "observation_history_permutation": None}
 # Task fields that can be changed on a live environment (read every step or rebuilt by
 # HandoverEnv.refresh_task_parameters). Everything else needs a new process.
 RUNTIME_FIELDS = {"method", "geometry_enabled", "residual_enabled", "phase_input", "geom_align", "geom_anchor",

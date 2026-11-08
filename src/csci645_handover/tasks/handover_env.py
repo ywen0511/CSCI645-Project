@@ -36,6 +36,7 @@ from ..core import outcomes as oc
 from ..core.case_suites import curriculum_stage
 from ..core.geometry import GeometryCfg, GeometryCoordinator, StabilityCfg, StabilityTracker, release_decision
 from ..core.policy_io import apply_phase_mask, contact_phase_onehot, residual_from_action
+from ..core.observation import ObservationHistory, PositionSensor
 from ..core.schedule import NominalSchedule, giver_target, receiver_finger_target, receiver_nominal_target
 from .handover_env_cfg import fixed_hand_quat
 
@@ -181,6 +182,16 @@ class HandoverEnv(DirectRLEnv):
         self.traces: dict[int, list[dict]] = {}
         self.stats = {k: 0 for k in ("episodes", "success", "drop", "collision", "release_timeout", "timeout",
                                      "invalid_reset", "infra_error")}
+        # Opt-in v3 state: never changes the archived default observation/evaluator path.
+        self.sensor = None
+        self.controller_m = {}
+        self.obs_history = ObservationHistory(n, 46, c.observation_history, dev)
+        self._sensor_rel_prev = z(n, 3)
+        self._sensor_rel_vel = z(n, 3)
+        self._sensor_fd_valid = zb()
+        if c.observation_sensor is not None:
+            s = c.observation_sensor
+            self.sensor = PositionSensor(n, dev, int(s.get("max_delay_steps", 8)), float(s.get("ema_alpha", 1.0)))
 
     # ------------------------------------------------------------------ helpers
     def refresh_task_parameters(self) -> None:
@@ -275,6 +286,32 @@ class HandoverEnv(DirectRLEnv):
             self.mode[env_ids] = SETTLE
         self.attempt[env_ids] = 0
         self.reset_fail_bits[env_ids] = 0
+        if self.sensor is not None:
+            s = self.cfg.observation_sensor
+            if self.case_queue is not None:
+                spec = []
+                for ci in self.case_index[env_ids].tolist():
+                    if ci < 0:
+                        spec.append({"seed": 0, "bias_xyz_m": [0, 0, 0], "noise_std_m": 0, "delay_steps": 0})
+                    else:
+                        case = self.case_queue[ci]
+                        if "observation_error" not in case:
+                            raise ValueError("V3 evaluation requires observation_error on every case")
+                        spec.append(case["observation_error"])
+                seeds = [v["seed"] for v in spec]
+                bias = [v["bias_xyz_m"] for v in spec]
+                sigma = [v["noise_std_m"] for v in spec]
+                delay = [v["delay_steps"] for v in spec]
+            else:
+                seeds = torch.randint(0, 2**31 - 1, (n,), generator=self.rng, device=self.device)
+                clean = torch.rand(n, generator=self.rng, device=self.device) < s.get("clean_probability", 0.25)
+                bias = (torch.rand(n, 3, generator=self.rng, device=self.device) * 2 - 1) * s.get("bias_bound_m", 0.0)
+                sigma = torch.rand(n, generator=self.rng, device=self.device) * s.get("noise_std_m", 0.0)
+                delay = torch.randint(0, int(s.get("delay_steps", 0)) + 1, (n,), generator=self.rng, device=self.device)
+                bias[clean] = 0
+                sigma[clean] = 0
+                delay[clean] = 0
+            self.sensor.reset(env_ids, seeds=seeds, bias=bias, sigma=sigma, delay=delay)
         self._begin_settle(env_ids)
         self.raw_action[env_ids] = 0.0
         self.residual[env_ids] = 0.0
@@ -331,6 +368,12 @@ class HandoverEnv(DirectRLEnv):
         self.stab.reset(env_ids)
         self.geom.reset(env_ids)
         self.evaluator.reset(env_ids)
+        self.obs_history.reset(env_ids)
+        if self.sensor is not None:
+            self.sensor.reset(env_ids)  # preserve case parameters on deterministic reset retries
+            self._sensor_fd_valid[env_ids] = False
+            self._sensor_rel_prev[env_ids] = 0
+            self._sensor_rel_vel[env_ids] = 0
 
     # ------------------------------------------------------------------ actions
     def _pre_physics_step(self, actions: torch.Tensor) -> None:
@@ -341,6 +384,10 @@ class HandoverEnv(DirectRLEnv):
         settle = self.mode == SETTLE
         t = self.t
         m = self.m if self.m else self._measure()
+
+        if self.sensor is not None:
+            self._measure()
+            m = self.controller_m
 
         # residual (bounded, relative to the current nominal target; never accumulated)
         self.prev_residual = self.residual.clone()
@@ -506,6 +553,28 @@ class HandoverEnv(DirectRLEnv):
             finite &= torch.isfinite(m[k]).all(-1)
         m["finite"] = finite
         self.m = m
+        if self.sensor is not None:
+            fresh = self.sensor.token != int(self.common_step_counter)
+            estimated_pos = self.sensor.update(m["obj_pos"], int(self.common_step_counter))
+            if self.cfg.observation_giver_reference:
+                grasp_g = -self.recv_grasp_in_obj
+                kinematic = m["giver_tcp"] - quat_apply(m["obj_quat"], grasp_g.expand(self.num_envs, 3))
+                use_giver = (~self.released) & (m["giver_force_l"] > self.cfg.contact_force) & (m["giver_force_r"] > self.cfg.contact_force)
+                estimated_pos = torch.where(use_giver[:, None], kinematic, estimated_pos)
+            cm = dict(m)
+            cm["obj_pos"] = estimated_pos
+            cm["grasp_from_obj"] = estimated_pos + quat_apply(m["obj_quat"], self.recv_grasp_in_obj.expand(self.num_envs, 3))
+            rel = quat_apply_inverse(m["recv_hand_quat"], estimated_pos - m["recv_hand_pos"])
+            velocity = quat_apply(m["recv_hand_quat"], (rel - self._sensor_rel_prev) / self.step_dt)
+            velocity = torch.where(self._sensor_fd_valid[:, None], velocity, torch.zeros_like(velocity))
+            self._sensor_rel_vel = torch.where(fresh[:, None], velocity, self._sensor_rel_vel)
+            self._sensor_rel_prev = torch.where(fresh[:, None], rel, self._sensor_rel_prev)
+            self._sensor_fd_valid |= fresh
+            cm["obj_rel_linvel"] = self._sensor_rel_vel
+            cm["obj_rel_speed"] = self._sensor_rel_vel.norm(dim=-1)
+            cm["obj_rel_in_recv"] = quat_apply_inverse(m["recv_hand_quat"], estimated_pos - m["recv_tcp"])
+            cm["grasp_error"] = (cm["grasp_from_obj"] - m["recv_tcp"]).norm(dim=-1)
+            self.controller_m = cm
         return m
 
     # ------------------------------------------------------------------ dones / rewards / obs
@@ -554,7 +623,8 @@ class HandoverEnv(DirectRLEnv):
         # exact episode clock from an integer step counter (float accumulation drifted by ~1e-6 s)
         self.k_scored = torch.where(scored, self.k_scored + 1, self.k_scored)
         self.t = torch.where(scored, self.k_scored.to(self.t.dtype) * dt, self.t)
-        raw = self.stab.raw(m["recv_force_l"], m["recv_force_r"], m["obj_rel_speed"], m["obj_rel_angspeed"])
+        ctrl = self.controller_m if self.sensor is not None else m
+        raw = self.stab.raw(ctrl["recv_force_l"], ctrl["recv_force_r"], ctrl["obj_rel_speed"], ctrl["obj_rel_angspeed"])
         self.stable = self.stab.update(raw & scored, self.t, dt)
         sig = dict(m)
         sig.update(t=self.t, released=self.released, release_timeout=self.release_timeout,
@@ -627,6 +697,9 @@ class HandoverEnv(DirectRLEnv):
     def _get_observations(self) -> dict[str, torch.Tensor]:
         c = self.cfg
         m = self.m if self.m else self._measure()
+        if self.sensor is not None:
+            self._measure()
+            m = self.controller_m
         q_rel = quat_mul(quat_conjugate(m["recv_hand_quat"]), m["obj_quat"])
         q_err = quat_mul(quat_conjugate(self.q_rel_nom.expand_as(q_rel)), q_rel)
         rel_lin = m["obj_rel_linvel"]
@@ -655,6 +728,13 @@ class HandoverEnv(DirectRLEnv):
         )
         obs = torch.nan_to_num(obs, nan=0.0, posinf=0.0, neginf=0.0).clamp(-10.0, 10.0)
         obs = apply_phase_mask(obs, PHASE_SLICE, c.phase_input)
+        if c.observation_history > 1:
+            if c.observation_history_mode == "repeat_current":
+                obs = obs.repeat(1, c.observation_history)
+            else:
+                obs = self.obs_history.update(obs, int(self.common_step_counter))
+                if c.observation_history_permutation is not None:
+                    obs = obs.reshape(self.num_envs, c.observation_history, 46)[:, c.observation_history_permutation].flatten(1)
         return {"policy": obs}
 
     # ------------------------------------------------------------------ logging / records
@@ -746,6 +826,10 @@ class HandoverEnv(DirectRLEnv):
                 rec["release_delay_s"] = rec["release_command_time_s"] - rec["release_request_time_s"]
             else:
                 rec["release_delay_s"] = None
+            if self.sensor is not None:
+                rec["observation_error"] = self.case_queue[ci]["observation_error"]
+                rec["sensor_ema_alpha"] = self.sensor.alpha
+                rec["observation_history"] = self.cfg.observation_history
             self.completed_records.append(rec)
             self._pending_records.append((rec, int(i)))
 
@@ -783,3 +867,9 @@ class HandoverEnv(DirectRLEnv):
                 )[0].argmax().item(),
             }
             self.traces.setdefault(i, []).append(row)
+            if self.sensor is not None:
+                row.update(observed_obj_pos=self.sensor.raw[i].tolist(),
+                           estimated_obj_pos=self.sensor.estimate[i].tolist(),
+                           controller_obj_pos=self.controller_m["obj_pos"][i].tolist(),
+                           observed_rel_linvel=self._sensor_rel_vel[i].tolist(),
+                           sensor_seed=int(self.sensor.seeds[i]), sensor_frame=int(self.sensor.frames[i]) - 1)

@@ -1,0 +1,59 @@
+{
+  "protocol_id": "v3-observation-robustness-draft-1",
+  "status": "CPU preparation only; remote simulator acceptance and protocol freeze required",
+  "baseline_commit": "4204da23b17f920d955a0bc90f94a8df271c524f",
+  "research_question": "When strong geometric handover control already succeeds, how do translation-estimation errors affect geometry and residual learning, and does short observation history help?",
+  "training_seeds": [11, 22, 33, 44, 55],
+  "pilot_seeds": [101, 102],
+  "pilot_transition_cap_total": 24000000,
+  "formal_transition_budget_per_run": 10000000,
+  "formal_run_count": 23,
+  "main_comparison_run_count": 20,
+  "formal_transition_budget_total": 230000000,
+  "sensor": {
+    "bias_bound_m": 0.005,
+    "noise_std_m": 0.002,
+    "delay_steps": 2,
+    "max_delay_steps": 8,
+    "ema_alpha": 1.0,
+    "clean_probability": 0.25
+  },
+  "profiles": {
+    "combined_clean_ff": {
+      "method": "combined", "history": 1,
+      "sensor_overrides": {"bias_bound_m": 0.0, "noise_std_m": 0.0, "delay_steps": 0, "clean_probability": 1.0}
+    },
+    "combined_robust_ff": {"method": "combined", "history": 1},
+    "combined_robust_history": {"method": "combined", "history": 5},
+    "residual_robust_history": {"method": "residual", "history": 5},
+    "combined_robust_repeat": {"method": "combined", "history": 5, "history_mode": "repeat_current", "seeds": [11, 22, 33]}
+  },
+  "baseline_search": {
+    "ema_alphas": [1.0, 0.5, 0.2],
+    "alignment_bounds_m": [0.015, 0.02],
+    "constant_x_m": [-0.01, -0.005, 0.0, 0.005, 0.01, 0.015, 0.02],
+    "selection": "equal-weight six validation-like development conditions; highest scheduled-case success, lowest collision rate, smallest absolute constant, larger alpha, smaller alignment bound, giver-reference false, lexicographic ID"
+  },
+  "primary_condition": "mixed_id",
+  "primary_comparisons": [
+    ["combined_robust_history", "combined_robust_ff"],
+    ["combined_robust_history", "geometry_best_constant"]
+  ],
+  "secondary_comparisons": [
+    ["combined_robust_ff", "combined_clean_ff"],
+    ["residual_robust_history", "nominal"],
+    ["combined_robust_history", "geometry_common"]
+  ],
+  "history_control": "repeat the current 46-dimensional observation five times; train with same input size and network widths as real history",
+  "history_control_required_seeds": [11, 22, 33],
+  "history_control_transition_budget_per_run": 10000000,
+  "optional_extension": "development-gated physical parameter transfer; no additional learning is required",
+  "secondary_transfer": {
+    "mass_multipliers": [0.75, 1.25],
+    "friction_multipliers": [0.75, 1.25],
+    "length_multipliers": [0.9, 1.1],
+    "width_multipliers": [0.9, 1.1],
+    "max_cells": 9,
+    "cases_per_cell": 100
+  }
+}

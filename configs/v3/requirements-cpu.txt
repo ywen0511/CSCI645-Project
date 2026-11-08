@@ -1,0 +1,5 @@
+# Preparation-only macOS/CPU test stack, Python 3.11.
+# Do not install this over the pinned remote Isaac Lab Python 3.12 environment.
+torch==2.15.0
+numpy==2.4.6
+pytest==9.2.0

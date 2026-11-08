@@ -154,6 +154,17 @@ def main():
 
             path = out / f"{e['id']}.jsonl"
             existing = rt.read_jsonl(path)
+            if cases_all and cases_all[0].get("suite_version") == 3:
+                from csci645_handover.v3_protocol import validate_records
+
+                # V3 caches must match the exact source and sensor realizations, not just counts.
+                validate_records(existing, entry_cases(e), {
+                    "suite_hash": s_hash, "config_hash": c_hash, "controller_hash": k_hash,
+                    "checkpoint_sha256": ck_sha, "entry_id": e["id"],
+                    "source_commit": git["commit"], "source_dirty": False,
+                })
+                if git["dirty"]:
+                    raise SystemExit("V3 evaluation requires clean committed executable source")
             seen = set()
             for r in existing:
                 if r["case_id"] in seen:
@@ -196,6 +207,12 @@ def main():
                       f"drop={sum(r['drop'] for r in records)} coll={sum(r['collision'] for r in records)} "
                       f"wall={info['wall_s']:.0f}s", flush=True)
             final = rt.read_jsonl(path)
+            if cases_all and cases_all[0].get("suite_version") == 3:
+                validate_records(final, cases, {
+                    "suite_hash": s_hash, "config_hash": c_hash, "controller_hash": k_hash,
+                    "checkpoint_sha256": ck_sha, "entry_id": e["id"],
+                    "source_commit": git["commit"], "source_dirty": False,
+                }, complete=True)
             status[e["id"]] = {"scheduled": len(cases), "recorded": len(final),
                                "missing": len({c["case_id"] for c in cases} - {r["case_id"] for r in final}),
                                "success": sum(r["success"] for r in final)}
