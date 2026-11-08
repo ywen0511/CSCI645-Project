@@ -52,7 +52,7 @@ def main():
     a = ap.parse_args()
     X, W = Path(a.runs).resolve(), Path(a.work).resolve()
     W.mkdir(parents=True, exist_ok=True)
-    idx = str(ROOT / "configs/v3/final_matrix_index.json")
+    idx = "configs/v3/final_matrix_index.json"  # relative to the repository (cwd of every step)
     py = sys.executable
     steps = {
         "selection": [py, "scripts/v3_select_checkpoints.py", "--validation", str(X / "validation"), "--output", str(W / "selection")],
