@@ -86,6 +86,8 @@ class Packer:
             rows, seen = [], set()
             with tarfile.open(self.out / asset, "w:gz", compresslevel=6) as t:
                 for src, arc in ms:
+                    for rx, tok in RX:  # member names too (e.g. TensorBoard files carry the host name)
+                        arc = rx.sub(tok.strip("<>"), arc)
                     if arc in seen:
                         raise SystemExit(f"duplicate member {arc}")
                     seen.add(arc)
