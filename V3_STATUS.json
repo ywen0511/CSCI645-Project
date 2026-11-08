@@ -3,8 +3,8 @@
   "branch": "study/v3-observation-robustness",
   "base_commit": "4204da23b17f920d955a0bc90f94a8df271c524f",
   "assignment": "V3_EXECUTION.md",
-  "stage": "packaging release v3.0.0 (all experiments, analysis and documents done)",
-  "complete": false,
+  "stage": "complete",
+  "complete": true,
   "gpu_work_run_by_preparation_agent": false,
   "remote_acceptance_complete": true,
   "protocol_frozen": true,
@@ -14,16 +14,11 @@
   "pilot_transition_cap": 24000000,
   "main_final_episodes_scheduled": 135200,
   "main_final_episodes_completed": 135200,
-  "release_published": false,
-  "fresh_download_verified": false,
-  "release_url": null,
+  "release_published": true,
+  "fresh_download_verified": true,
+  "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0",
   "active_jobs": [],
-  "next_actions": [
-    "package and verify the release candidate",
-    "tag v3.0.0 and publish the release",
-    "fresh-download verification (CPU + GPU replay/reload/resume)",
-    "final status"
-  ],
+  "next_actions": [],
   "experiment_tag": "experiment-v3",
   "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
   "tested_candidate_commit": "415cf8348728ccedbc2314a28adf9aaf7deddedf",
@@ -45,5 +40,20 @@
   "report": "report/v3/report.md + report.pdf",
   "slides": "report/v3/slides.pptx + slides.pdf + speaker_notes.md",
   "number_audit": "results/v3/number_audit.json",
-  "run_index": "results/v3/run_index.json"
+  "run_index": "results/v3/run_index.json",
+  "delivery_tag": "v3.0.0",
+  "delivery_commit": "ebfa328b17103c32ae19c13f0a6408ebc55a6459",
+  "verification": "docs/v3/VERIFICATION.md, results/v3/verification/verification.json",
+  "checklist": {
+    "remote_acceptance": true,
+    "development_and_freeze": true,
+    "23_runs_validation_selection": true,
+    "final_matrix_reconciled_negative_controls_repeatability": true,
+    "memory_control_and_interventions": true,
+    "physical_transfer": "not_performed (documented)",
+    "report_slides_figures_videos_audited": true,
+    "everything_published": true,
+    "fresh_download_regeneration_replay_resume": true
+  },
+  "findings": "geometry_common (giver-grasp reference) succeeds on all 2,600 held-out cases; every selected combined policy also does, so both primary contrasts are 0 pp (ceiling); raw/filtered estimators fail under noise/large bias; history final checkpoints unstable (3/5 lose >=22 pp); residual-only history does not beat nominal (-1.8 pp [-10.2, +4.4])"
 }

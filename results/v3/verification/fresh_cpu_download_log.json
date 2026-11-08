@@ -1,0 +1,219 @@
+{
+ "repo": "ywen0511/CSCI645-Project",
+ "tag": "v3.0.0",
+ "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0",
+ "published_at": "2026-11-08T22:33:22Z",
+ "anonymous": true,
+ "assets": [
+  {
+   "name": "RELEASE_NOTES.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/RELEASE_NOTES.md",
+   "bytes": 5189,
+   "sha256": "2607b5fd4e66a9f19008b9517d38f336bb7190726bbd04625a6c06d16f8c5992",
+   "utc": "2026-11-08T22:34:33Z"
+  },
+  {
+   "name": "REPRODUCE.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/REPRODUCE.md",
+   "bytes": 9560,
+   "sha256": "548fff68e57a8bae25cedb74cedc54fafcdf7c11f9849587a6bef07b2715ba7b",
+   "utc": "2026-11-08T22:34:34Z"
+  },
+  {
+   "name": "SHA256SUMS",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/SHA256SUMS",
+   "bytes": 2574,
+   "sha256": "fdfdc8458ea985ae406ea2791c4ff2a797e15d1cad2b3a36cf257b10c81fd16d",
+   "utc": "2026-11-08T22:34:35Z"
+  },
+  {
+   "name": "VERIFICATION.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/VERIFICATION.md",
+   "bytes": 3098,
+   "sha256": "e30428e2e9fe7cdb77d5a7fe1500ff369f7812d341a14aae10e4d59bc7efb8d5",
+   "utc": "2026-11-08T22:34:36Z"
+  },
+  {
+   "name": "analysis.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/analysis.tar.gz",
+   "bytes": 6356487,
+   "sha256": "9a4630d846a6d4e60ee934f3c4a9bcf4424ef5b53e0ad1b8ca3f05fec5e6cf80",
+   "utc": "2026-11-08T22:34:41Z"
+  },
+  {
+   "name": "archive_inventories.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/archive_inventories.json",
+   "bytes": 979238,
+   "sha256": "61fe1da8ade7095899ef690d1cfe9e530ed5e120cf8ed6b735977c69e07bd777",
+   "utc": "2026-11-08T22:34:43Z"
+  },
+  {
+   "name": "checkpoints-formal-combined_clean_ff.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/checkpoints-formal-combined_clean_ff.tar.gz",
+   "bytes": 33389948,
+   "sha256": "0a7e762f03ac4f410993308323bbb28acda1e44dfb9d11b61b49cc694ecae5d6",
+   "utc": "2026-11-08T22:34:52Z"
+  },
+  {
+   "name": "checkpoints-formal-combined_robust_ff.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/checkpoints-formal-combined_robust_ff.tar.gz",
+   "bytes": 33394755,
+   "sha256": "41dd44f93bb78fb3290cb6119e6b5f11f1ed7f7de6abf1cd1befa8fde2951080",
+   "utc": "2026-11-08T22:35:05Z"
+  },
+  {
+   "name": "checkpoints-formal-combined_robust_history.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/checkpoints-formal-combined_robust_history.tar.gz",
+   "bytes": 65790047,
+   "sha256": "b63403f5aca54281319ab825cdd68be10c1b6ee82ab78405bcae4c9d803995c0",
+   "utc": "2026-11-08T22:35:20Z"
+  },
+  {
+   "name": "checkpoints-formal-combined_robust_repeat.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/checkpoints-formal-combined_robust_repeat.tar.gz",
+   "bytes": 26994993,
+   "sha256": "9baa28f7f07073a1cfae3944df9ad7ec32d4c23bab5b62b0f04e30fdd55d9ea6",
+   "utc": "2026-11-08T22:35:33Z"
+  },
+  {
+   "name": "checkpoints-formal-residual_robust_history.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/checkpoints-formal-residual_robust_history.tar.gz",
+   "bytes": 65740802,
+   "sha256": "de6879179a1ff7da2289ee2946f81e300c5aa6072c6d6736000013b9b7dc6c01",
+   "utc": "2026-11-08T22:35:50Z"
+  },
+  {
+   "name": "checkpoints-pilot-smoke.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/checkpoints-pilot-smoke.tar.gz",
+   "bytes": 110690476,
+   "sha256": "e29b2834673c87560ee27809f9e2aadf6dba52dc1ded461635ca1eb495171c31",
+   "utc": "2026-11-08T22:36:13Z"
+  },
+  {
+   "name": "checkpoints.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/checkpoints.json",
+   "bytes": 184656,
+   "sha256": "071cb10b86437687d679cfd3bbf416eeaee721646eac04d031e7c8367687e5e9",
+   "utc": "2026-11-08T22:36:13Z"
+  },
+  {
+   "name": "logs.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/logs.tar.gz",
+   "bytes": 971786,
+   "sha256": "e742944133d47785117783a6ed129d08eccbbb9cc54f0798aae5e088944e4063",
+   "utc": "2026-11-08T22:36:14Z"
+  },
+  {
+   "name": "raw-acceptance.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/raw-acceptance.tar.gz",
+   "bytes": 3269300,
+   "sha256": "75a7eeb82b0febe0169380fde2a7d17aae68c1b5ecc9453a14505bc9dfe800f9",
+   "utc": "2026-11-08T22:36:15Z"
+  },
+  {
+   "name": "raw-development.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/raw-development.tar.gz",
+   "bytes": 6906780,
+   "sha256": "6abe332b103cd7eeba78e27872843156d1f64a5855a7c05ebd1490c22f35cd45",
+   "utc": "2026-11-08T22:36:17Z"
+  },
+  {
+   "name": "raw-extras.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/raw-extras.tar.gz",
+   "bytes": 20706045,
+   "sha256": "093ad5e4f0c7c3125700cbd93ea0ac893869a93f35c0619a86d2367fc4709e9a",
+   "utc": "2026-11-08T22:36:22Z"
+  },
+  {
+   "name": "raw-final.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/raw-final.tar.gz",
+   "bytes": 40547694,
+   "sha256": "43e447138ab9c2532be1cfd18de21a064048a543a0a363d7083a082a87ec7865",
+   "utc": "2026-11-08T22:36:31Z"
+  },
+  {
+   "name": "raw-validation.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/raw-validation.tar.gz",
+   "bytes": 7061811,
+   "sha256": "205d27aa89d3dff09c5a3970cabee5d3301e13d189bb7d33ead27e0b1dddb5d5",
+   "utc": "2026-11-08T22:36:34Z"
+  },
+  {
+   "name": "release_manifest.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/release_manifest.json",
+   "bytes": 340580,
+   "sha256": "d0380ea3efb5646f743dd19ee77373ccf6570cdb327aea389ce70b4747da1d4c",
+   "utc": "2026-11-08T22:36:35Z"
+  },
+  {
+   "name": "report.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/report.md",
+   "bytes": 49088,
+   "sha256": "831ebc5c506ce1d73a8d092a8bafe091e4f2c1f391bf8ea1f7a8eb66adaad885",
+   "utc": "2026-11-08T22:36:36Z"
+  },
+  {
+   "name": "report.pdf",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/report.pdf",
+   "bytes": 2379490,
+   "sha256": "0b49cf60e229abd0025438b16ca542ff3129584b225dbc3b7257828587b005b1",
+   "utc": "2026-11-08T22:36:39Z"
+  },
+  {
+   "name": "run_index.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/run_index.json",
+   "bytes": 15394,
+   "sha256": "4eb2b07c3c4d84137a7a9e5ba236cc737c0cc3b0042716caefa77d51ffcd56e0",
+   "utc": "2026-11-08T22:36:40Z"
+  },
+  {
+   "name": "slides.pdf",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/slides.pdf",
+   "bytes": 985757,
+   "sha256": "8f65d4ab7b8813e7d061baab741273baaf855170b5b604330b557db0be92ce1d",
+   "utc": "2026-11-08T22:36:41Z"
+  },
+  {
+   "name": "slides.pptx",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/slides.pptx",
+   "bytes": 1265313,
+   "sha256": "04ff787db68083da271c580bdfdae24eb50a1040e6a2fcbca0f9bbf28165ea8c",
+   "utc": "2026-11-08T22:36:42Z"
+  },
+  {
+   "name": "source-experiment-v3.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/source-experiment-v3.tar.gz",
+   "bytes": 9010340,
+   "sha256": "c48e1f3f757eb8abdd9d9994864e56a63c18c17b884a3616e887953455d3a397",
+   "utc": "2026-11-08T22:36:45Z"
+  },
+  {
+   "name": "source-v3.0.0.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/source-v3.0.0.tar.gz",
+   "bytes": 15216952,
+   "sha256": "be5b1a82812de587b380d9ba692b7529b8e077817f88d7befd01b1594a20523b",
+   "utc": "2026-11-08T22:36:50Z"
+  },
+  {
+   "name": "speaker_notes.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/speaker_notes.md",
+   "bytes": 3559,
+   "sha256": "ee893b8df7cbd168714ea04481131ef4a88309505f152611253f8be6601c28e0",
+   "utc": "2026-11-08T22:36:50Z"
+  },
+  {
+   "name": "videos.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/videos.json",
+   "bytes": 6744,
+   "sha256": "6aa523c31b4580df3a2b3e985a7dc21ed4c7bd1ada897c5ce956cf8482585462",
+   "utc": "2026-11-08T22:36:51Z"
+  },
+  {
+   "name": "videos.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.0/videos.tar.gz",
+   "bytes": 8700639,
+   "sha256": "7866ee8c62f04beea98423d9a88acfd99f98316902bb86f2d116ca0d597dad38",
+   "utc": "2026-11-08T22:36:55Z"
+  }
+ ]
+}

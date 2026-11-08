@@ -1,0 +1,9 @@
+{"step":"clone_delivery","start_utc":"2026-11-08T22:34:40Z","end_utc":"2026-11-08T22:34:41Z","exit_code":0}
+{"step":"checkout_delivery","start_utc":"2026-11-08T22:34:41Z","end_utc":"2026-11-08T22:34:43Z","exit_code":0}
+{"step":"clone_experiment","start_utc":"2026-11-08T22:34:43Z","end_utc":"2026-11-08T22:34:45Z","exit_code":0}
+{"step":"checkout_experiment","start_utc":"2026-11-08T22:34:45Z","end_utc":"2026-11-08T22:34:45Z","exit_code":0}
+{"step":"clone_tools","start_utc":"2026-11-08T22:34:45Z","end_utc":"2026-11-08T22:34:49Z","exit_code":0}
+{"step":"download","start_utc":"2026-11-08T22:34:49Z","end_utc":"2026-11-08T22:35:08Z","exit_code":0}
+{"step":"sha256sum","start_utc":"2026-11-08T22:35:08Z","end_utc":"2026-11-08T22:35:08Z","exit_code":0}
+{"step":"verify","start_utc":"2026-11-08T22:35:45Z","end_utc":"2026-11-08T22:36:15Z","exit_code":0}
+{"step":"gpu_verification","start_utc":"2026-11-08T22:36:15Z","end_utc":"2026-11-08T22:44:52Z","exit_code":0}

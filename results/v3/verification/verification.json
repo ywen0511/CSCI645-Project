@@ -1,0 +1,39 @@
+{
+ "release": "v3.0.0",
+ "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0",
+ "delivery_commit": "ebfa328b17103c32ae19c13f0a6408ebc55a6459",
+ "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+ "verified_utc": "2026-11-08T22:49Z",
+ "anonymous_download": true,
+ "assets": 30,
+ "bytes": 460979095,
+ "checks": {
+  "sha256sums": "29/29 ok",
+  "release_verifier": {
+   "cpu": true,
+   "gpu_node": true
+  },
+  "archive_members_rehashed": 4947,
+  "checkpoints_resolved": 457,
+  "formal_runs": 23,
+  "final_records": "50 x 2600",
+  "validation_records": "138 x 240",
+  "videos_decoded": 9,
+  "leak_hits": 0,
+  "tables_regenerated_identical": "35/35",
+  "figures_regenerated_identical": "6/6",
+  "replay65_terminal_equal": "455/455",
+  "reload_terminal_equal": "52/52",
+  "resume": {
+   "iterations": "306->308",
+   "transitions": "10027008->10092544",
+   "ok": true,
+   "original_sha256_unchanged": true
+  }
+ },
+ "mismatches": [],
+ "ok": true,
+ "notes": [
+  "environment attempts 1-2 failed (python3.13 not on PATH; python3 was 3.10); attempt 3 with Python 3.13.9 passed"
+ ]
+}

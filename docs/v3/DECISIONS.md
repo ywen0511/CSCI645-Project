@@ -140,3 +140,13 @@ Append remote decisions with the evidence split, source SHA and affected runs.
 - The simulator environment used for v3 is byte-identical (pip freeze) to `configs/v2/frozen/pip-freeze.txt`.
 - Compute (all attempts, `results/v3/compute.json`): 18.05 GPU-hours over 493 task attempts; formal training
   7.6 GPU-hours.
+
+### 2026-11-08 22:49 UTC — publication and fresh verification
+
+- Release-candidate bundle verified (`v3_verify.py` ok; 35/35 regenerated tables identical). The leak scan caught
+  host names in TensorBoard member names; the packager now applies the host regex to member names. Tag `v3.0.0` =
+  `ebfa328` (annotated), pushed; release created with 30 assets (checked first that no `v3.0.0` release existed).
+- Fresh verification from new directories with anonymous downloads: CPU (verifier ok, 35/35 tables and 6/6
+  figures byte-identical) and GPU (65-case replay 455/455, reloads 52/52, two-iteration resume ok, original file
+  hash unchanged). The first two CPU environment attempts failed (`python3.13` not on PATH; `python3` was 3.10);
+  logged and retried with Python 3.13.9. `V3_STATUS.json` set complete.

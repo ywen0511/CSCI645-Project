@@ -1,0 +1,99 @@
+{
+ "checks": {
+  "sha256sums": {
+   "listed": 29,
+   "assets": 30,
+   "bad": [],
+   "unlisted": []
+  },
+  "manifest": {
+   "assets": 28,
+   "bad": [],
+   "covers_all_other_assets": true,
+   "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+   "delivery_commit": "ebfa328b17103c32ae19c13f0a6408ebc55a6459"
+  },
+  "archives": {
+   "members_rehashed": 4947,
+   "problems": [],
+   "n_problems": 0
+  },
+  "checkpoints": {
+   "entries": 457,
+   "unresolved_or_bad": [],
+   "formal_runs_per_family": {
+    "combined_clean_ff": 5,
+    "combined_robust_ff": 5,
+    "combined_robust_history": 5,
+    "residual_robust_history": 5,
+    "combined_robust_repeat": 3
+   },
+   "each_formal_run_has_step0_10_periodic_final_latest_and_selected": true,
+   "pilot_smoke_runs": 18
+  },
+  "raw_counts": {
+   "final_files": 50,
+   "final_all_2600": true,
+   "final_records": 130000,
+   "validation_files": 138,
+   "validation_all_240": true
+  },
+  "media": {
+   "mp4": [
+    {
+     "video": "main_comparison__combined_robust_history_s11_selected__v3-final-mixed_id-0000.mp4",
+     "frames": 94,
+     "ok": true
+    },
+    {
+     "video": "main_comparison__geometry_best_constant__v3-final-mixed_id-0000.mp4",
+     "frames": 94,
+     "ok": true
+    },
+    {
+     "video": "main_comparison__combined_robust_history_s11_selected__v3-final-mixed_ood-0000.mp4",
+     "frames": 94,
+     "ok": true
+    },
+    {
+     "video": "main_comparison__geometry_best_constant__v3-final-mixed_ood-0000.mp4",
+     "frames": 94,
+     "ok": true
+    },
+    {
+     "video": "clean_baseline__geometry_common__v3-final-clean-0000.mp4",
+     "frames": 97,
+     "ok": true
+    },
+    {
+     "video": "severe_noise__geometry_raw__v3-final-noise_4mm-0000.mp4",
+     "frames": 74,
+     "ok": true
+    },
+    {
+     "video": "giver_reference_comparison__geometry_giver__v3-final-mixed_ood-0002.mp4",
+     "frames": 94,
+     "ok": true
+    },
+    {
+     "video": "giver_reference_comparison__geometry_filtered__v3-final-mixed_ood-0002.mp4",
+     "frames": 57,
+     "ok": true
+    },
+    {
+     "video": "montage.mp4",
+     "frames": 858,
+     "ok": true
+    }
+   ],
+   "pdf": "pypdf not installed",
+   "pptx": "python-pptx not installed"
+  },
+  "leak_scan": {
+   "hits": [],
+   "n_hits": 0
+  }
+ },
+ "failures": [],
+ "ok": true
+}
