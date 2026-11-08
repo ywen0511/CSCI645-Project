@@ -1,0 +1,1762 @@
+{
+ "checks": {
+  "1_physical_pipeline_and_negative_controls": {
+   "pass": true,
+   "physical": {
+    "a1_b1/nominal": {
+     "n": 8,
+     "success": 4,
+     "valid": 8,
+     "hold_ok": true,
+     "terminal": [
+      "drop",
+      "prohibited_collision",
+      "success"
+     ]
+    },
+    "a1_b1/geometry_1p5cm": {
+     "n": 8,
+     "success": 5,
+     "valid": 8,
+     "hold_ok": true,
+     "terminal": [
+      "release_timeout",
+      "success"
+     ]
+    },
+    "a1_b8/nominal": {
+     "n": 8,
+     "success": 4,
+     "valid": 8,
+     "hold_ok": true,
+     "terminal": [
+      "drop",
+      "prohibited_collision",
+      "success"
+     ]
+    },
+    "a1_b8/geometry_1p5cm": {
+     "n": 8,
+     "success": 5,
+     "valid": 8,
+     "hold_ok": true,
+     "terminal": [
+      "release_timeout",
+      "success"
+     ]
+    }
+   },
+   "negative_controls": {
+    "no_receiver/nominal": {
+     "n": 8,
+     "success": 0,
+     "terminal": [
+      "drop"
+     ]
+    },
+    "no_receiver/geometry_1p5cm": {
+     "n": 8,
+     "success": 0,
+     "terminal": [
+      "release_timeout"
+     ]
+    },
+    "giver_holds/nominal": {
+     "n": 8,
+     "success": 0,
+     "terminal": [
+      "episode_timeout",
+      "prohibited_collision"
+     ]
+    },
+    "giver_holds/geometry_1p5cm": {
+     "n": 8,
+     "success": 0,
+     "terminal": [
+      "episode_timeout"
+     ]
+    },
+    "table_support/nominal": {
+     "n": 8,
+     "success": 0,
+     "terminal": [
+      "episode_timeout",
+      "prohibited_collision"
+     ]
+    },
+    "table_support/geometry_1p5cm": {
+     "n": 8,
+     "success": 0,
+     "terminal": [
+      "episode_timeout",
+      "release_timeout"
+     ]
+    }
+   },
+   "batch1_vs_batch8_terminal_reason_equal_of_8": {
+    "nominal": 8,
+    "geometry_1p5cm": 8
+   },
+   "evidence": {
+    "acceptance/a1_b1/nominal/nominal.jsonl": "d2f696135ef597d3f55ada4184f18cb5b9130aa10ff2389533747dcbf093a282",
+    "acceptance/a1_b1/geometry_1p5cm/geometry_1p5cm.jsonl": "a0ad91eb0267b5565aa3d28e12274822a843d0f4d4dd5625b64a82627abbcc0a",
+    "acceptance/a1_b8/nominal/nominal.jsonl": "f09339396886aa15ac51f696820cc37801af10df9890cc611c496c1675ec893b",
+    "acceptance/a1_b8/geometry_1p5cm/geometry_1p5cm.jsonl": "85786bd9edfc3e6f718796eb4f3642c433d044add1862e41860dbdcb1b573cd2",
+    "acceptance/neg_no_receiver/nominal/nominal.jsonl": "d2ec40a71f6a26e0a7d1b73bf911eb0df95b920e6f85133fbe50d6775751d680",
+    "acceptance/neg_no_receiver/geometry_1p5cm/geometry_1p5cm.jsonl": "06a2abd042ccbb6cb7a191beb865d3da7ac01b11474fe475b04a32c366086cfe",
+    "acceptance/neg_giver_holds/nominal/nominal.jsonl": "d66b8a1837c38ce8aac5ff807def514c809e84ed4535c8bbdf40d27ff88d20a7",
+    "acceptance/neg_giver_holds/geometry_1p5cm/geometry_1p5cm.jsonl": "80bf42d0025c6e3c3f5a014032eec1305d09637e424b5d121b0b6d5de8f3c0b1",
+    "acceptance/neg_table_support/nominal/nominal.jsonl": "3f7fa9339c93444e99acd2d4d5fdf0346ff1c2598711c9649ee5ba9a562b7290",
+    "acceptance/neg_table_support/geometry_1p5cm/geometry_1p5cm.jsonl": "46d6d889b7ce0535139305ecd6040c2e052bcffbb2948e856555f8fae411d26b"
+   },
+   "commands": [
+    {
+     "task": "acc_a1_b1_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a1_b1.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/a1_b1/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a1_b1_nominal",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a1_b1.json",
+      "--only",
+      "nominal",
+      "--output",
+      "$RUNS/acceptance/a1_b1/nominal",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a1_b8_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a1_b8.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/a1_b8/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a1_b8_nominal",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a1_b8.json",
+      "--only",
+      "nominal",
+      "--output",
+      "$RUNS/acceptance/a1_b8/nominal",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_neg_giver_holds_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/neg_giver_holds.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/neg_giver_holds/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_neg_giver_holds_nominal",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/neg_giver_holds.json",
+      "--only",
+      "nominal",
+      "--output",
+      "$RUNS/acceptance/neg_giver_holds/nominal",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_neg_no_receiver_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/neg_no_receiver.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/neg_no_receiver/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_neg_no_receiver_nominal",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/neg_no_receiver.json",
+      "--only",
+      "nominal",
+      "--output",
+      "$RUNS/acceptance/neg_no_receiver/nominal",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_neg_table_support_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/neg_table_support.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/neg_table_support/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_neg_table_support_nominal",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/neg_table_support.json",
+      "--only",
+      "nominal",
+      "--output",
+      "$RUNS/acceptance/neg_table_support/nominal",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    }
+   ]
+  },
+  "2_zero_residual_and_residual_mechanics": {
+   "pass": true,
+   "zero_residual_vs_controller": {
+    "combined_robust_ff": {
+     "n": 23,
+     "terminal_equal": 23,
+     "success_equal": 23,
+     "completion_time_equal": 23,
+     "max_residual_m_step0": 0.0
+    },
+    "combined_robust_history": {
+     "n": 23,
+     "terminal_equal": 23,
+     "success_equal": 23,
+     "completion_time_equal": 23,
+     "max_residual_m_step0": 0.0
+    },
+    "residual_robust_history": {
+     "n": 23,
+     "terminal_equal": 23,
+     "success_equal": 23,
+     "completion_time_equal": 23,
+     "max_residual_m_step0": 0.0
+    }
+   },
+   "residual_mechanics": {
+    "single_squash_bound": true,
+    "composition_not_accumulated": true,
+    "zero_residual_outside_scored": true,
+    "fixed_release_without_geometry": true,
+    "all_cases_recorded": true
+   },
+   "residual_stats": {
+    "steps": 111,
+    "scored_steps": 251,
+    "max_err_squash": 0.0,
+    "max_err_compose": 5.587935447692871e-09,
+    "settle_nonzero": 0,
+    "accumulation_changes": 0,
+    "release_vs_request_s": [
+     0.03117823600769043,
+     0.020315885543823242,
+     0.026762723922729492
+    ]
+   },
+   "evidence": {
+    "acceptance/residual.json": "a868b8bb060b75a0f88baddb84171cd871810cd0c56352fbd42378c4d15ba907"
+   },
+   "commands": [
+    {
+     "task": "acc_a2_combined_robust_ff_combined_robust_ff_step0",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a2_combined_robust_ff.json",
+      "--only",
+      "combined_robust_ff_step0",
+      "--checkpoint-root",
+      "$RUNS/smoke",
+      "--output",
+      "$RUNS/acceptance/a2_combined_robust_ff/combined_robust_ff_step0",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a2_combined_robust_ff_geometry",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a2_combined_robust_ff.json",
+      "--only",
+      "geometry",
+      "--checkpoint-root",
+      "$RUNS/smoke",
+      "--output",
+      "$RUNS/acceptance/a2_combined_robust_ff/geometry",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a2_combined_robust_history_combined_robust_history_step0",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a2_combined_robust_history.json",
+      "--only",
+      "combined_robust_history_step0",
+      "--checkpoint-root",
+      "$RUNS/smoke",
+      "--output",
+      "$RUNS/acceptance/a2_combined_robust_history/combined_robust_history_step0",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a2_combined_robust_history_geometry",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a2_combined_robust_history.json",
+      "--only",
+      "geometry",
+      "--checkpoint-root",
+      "$RUNS/smoke",
+      "--output",
+      "$RUNS/acceptance/a2_combined_robust_history/geometry",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a2_residual_robust_history_nominal",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a2_residual_robust_history.json",
+      "--only",
+      "nominal",
+      "--checkpoint-root",
+      "$RUNS/smoke",
+      "--output",
+      "$RUNS/acceptance/a2_residual_robust_history/nominal",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a2_residual_robust_history_residual_robust_history_step0",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a2_residual_robust_history.json",
+      "--only",
+      "residual_robust_history_step0",
+      "--checkpoint-root",
+      "$RUNS/smoke",
+      "--output",
+      "$RUNS/acceptance/a2_residual_robust_history/residual_robust_history_step0",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_residual",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "residual",
+      "--output",
+      "$RUNS/acceptance/residual.json"
+     ],
+     "rc": 0,
+     "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+     "watchdog": null
+    }
+   ]
+  },
+  "3_sensor_model_and_layout_pairing": {
+   "pass": true,
+   "analytic_cuda_checks": {
+    "bias_and_delay_exact": true,
+    "noise_moments": true,
+    "repeated_read_idempotent": true,
+    "ema_step_response": true,
+    "finite_difference_velocity": true,
+    "noise_independent_of_slot_and_batch": true,
+    "history_oldest_to_newest": true,
+    "history_reset_repeat_first": true
+   },
+   "noise_moments": {
+    "2": {
+     "sigma": 0.0020000000949949026,
+     "mean": [
+      -2.1985138118907344e-06,
+      4.944413740304299e-05,
+      1.4353851838677656e-05
+     ],
+     "std": [
+      0.0020311479456722736,
+      0.0020022073294967413,
+      0.0019975488539785147
+     ]
+    },
+    "3": {
+     "sigma": 0.004000000189989805,
+     "mean": [
+      5.5089290981413797e-05,
+      -1.6936335669015534e-05,
+      2.0801351638510823e-05
+     ],
+     "std": [
+      0.003945816773921251,
+      0.00401732325553894,
+      0.003949271980673075
+     ]
+    },
+    "4": {
+     "sigma": 0.0020000000949949026,
+     "mean": [
+      1.1673934750433546e-05,
+      -3.0377221264643595e-05,
+      -2.046571535174735e-05
+     ],
+     "std": [
+      0.001995898550376296,
+      0.002000209642574191,
+      0.001986286835744977
+     ]
+    }
+   },
+   "cuda_vs_cpu_noise_max_abs_diff": 0.0,
+   "traced_cases": 4,
+   "traced_frames": 367,
+   "max_noise_component_diff_between_layouts_m": 5.960464477539063e-08,
+   "max_deviation_from_sigma_times_normal_m": 5.878899383580591e-08,
+   "note": "noise component = observed - truth(k - delay) - bias, compared between batch 1, batch 23 and a reversed case queue; physics trajectories themselves are not required to be bitwise equal",
+   "evidence": {
+    "acceptance/sensor.json": "45e30e60a75e86e3b554236295c7413ddd479ca8f6f16ef60afb09cf8a13f85c",
+    "acceptance/a3_b1/geometry_1p5cm/traces/geometry_1p5cm.json": "666b1c96e9a76d5deca6969c7722b80e5fa0aa7bd2ed7707c620870de753be99",
+    "acceptance/a3_b23/geometry_1p5cm/traces/geometry_1p5cm.json": "3be95cacaf2358d6a985a0d4ea911843ec203be266a15f3dbb6e73f0fe8d5030",
+    "acceptance/a3_b23rev/geometry_1p5cm/traces/geometry_1p5cm.json": "aa3ea3c1ef5381a2e3655ddca8cfebe97b816fde9698dd507fdeed46637902f0"
+   },
+   "commands": [
+    {
+     "task": "acc_a3_b1_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a3_b1.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/a3_b1/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a3_b23_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a3_b23.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/a3_b23/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a3_b23rev_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a3_b23rev.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/a3_b23rev/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_sensor",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "sensor",
+      "--output",
+      "$RUNS/acceptance/sensor.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    }
+   ]
+  },
+  "4_reset_boundaries_and_tokens": {
+   "pass": true,
+   "checks": {
+    "one_noise_advance_per_control_frame": true,
+    "fresh_stream_on_reset": true,
+    "no_stale_object_position_at_reset": true,
+    "raw_equals_delayed_truth_plus_error": true,
+    "history_repeat_first_on_reset": true,
+    "episodes": true
+   },
+   "max_reconstruction_error_m": 5.871823272052268e-08,
+   "evidence": {
+    "acceptance/boundary.json": "24c3bb89d0de0e2d1571e9cbdb49f972afd59464ea6d7e366fdbf1e96ba3bec0"
+   },
+   "commands": [
+    {
+     "task": "acc_boundary",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "boundary",
+      "--output",
+      "$RUNS/acceptance/boundary.json"
+     ],
+     "rc": 0,
+     "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+     "watchdog": null
+    }
+   ]
+  },
+  "5_no_hidden_translation_path": {
+   "pass": true,
+   "variants": {
+    "archived": {
+     "truth_shift_applied": true,
+     "archived_path_is_sensitive (control)": true
+    },
+    "ff_ema1p0_giver0": {
+     "truth_shift_applied": true,
+     "actor_input_unchanged": true,
+     "controller_object_channels_unchanged": true
+    },
+    "ff_ema0p5_giver1": {
+     "truth_shift_applied": true,
+     "actor_input_unchanged": true,
+     "controller_object_channels_unchanged": true
+    },
+    "hist5_ema0p2_giver0": {
+     "truth_shift_applied": true,
+     "actor_input_unchanged": true,
+     "controller_object_channels_unchanged": true
+    },
+    "hist5_ema1p0_giver1": {
+     "truth_shift_applied": true,
+     "actor_input_unchanged": true,
+     "controller_object_channels_unchanged": true
+    }
+   },
+   "allowed_accurate_channels": "giver_tcp - recv_tcp (obs 12:15), finger widths (15:17), contact forces (17:21), receiver joints (21:35), object orientation (3:6) and angular velocity (9:12), nominal target (35:38), time (38), residual (39:42), contact phase (42:46)",
+   "snapshots": {
+    "archived": [
+     {
+      "step": 27,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.003000020980834961,
+      "obs_changed_channels": [
+       0,
+       1,
+       2
+      ],
+      "controller_max_abs_change": {
+       "obj_pos": 0.003000020980834961,
+       "grasp_from_obj": 0.003000020980834961,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.0029994994401931763,
+       "grasp_error": 0.003071993589401245
+      },
+      "giver_reference_active_frac": 1.0
+     },
+     {
+      "step": 77,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.003000020980834961,
+      "obs_changed_channels": [
+       0,
+       1,
+       2
+      ],
+      "controller_max_abs_change": {
+       "obj_pos": 0.003000020980834961,
+       "grasp_from_obj": 0.003000020980834961,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.003007110208272934,
+       "grasp_error": 0.0033460534177720547
+      },
+      "giver_reference_active_frac": 0.25
+     }
+    ],
+    "ff_ema1p0_giver0": [
+     {
+      "step": 27,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.0,
+      "obs_changed_channels": [],
+      "controller_max_abs_change": {
+       "obj_pos": 0.0,
+       "grasp_from_obj": 0.0,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.0,
+       "grasp_error": 0.0
+      },
+      "giver_reference_active_frac": 1.0
+     },
+     {
+      "step": 77,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.0,
+      "obs_changed_channels": [],
+      "controller_max_abs_change": {
+       "obj_pos": 0.0,
+       "grasp_from_obj": 0.0,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.0,
+       "grasp_error": 0.0
+      },
+      "giver_reference_active_frac": 1.0
+     }
+    ],
+    "ff_ema0p5_giver1": [
+     {
+      "step": 27,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.0,
+      "obs_changed_channels": [],
+      "controller_max_abs_change": {
+       "obj_pos": 0.0,
+       "grasp_from_obj": 0.0,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.0,
+       "grasp_error": 0.0
+      },
+      "giver_reference_active_frac": 1.0
+     },
+     {
+      "step": 77,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.0,
+      "obs_changed_channels": [],
+      "controller_max_abs_change": {
+       "obj_pos": 0.0,
+       "grasp_from_obj": 0.0,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.0,
+       "grasp_error": 0.0
+      },
+      "giver_reference_active_frac": 0.25
+     }
+    ],
+    "hist5_ema0p2_giver0": [
+     {
+      "step": 27,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.0,
+      "obs_changed_channels": [],
+      "controller_max_abs_change": {
+       "obj_pos": 0.0,
+       "grasp_from_obj": 0.0,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.0,
+       "grasp_error": 0.0
+      },
+      "giver_reference_active_frac": 1.0
+     },
+     {
+      "step": 77,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.0,
+      "obs_changed_channels": [],
+      "controller_max_abs_change": {
+       "obj_pos": 0.0,
+       "grasp_from_obj": 0.0,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.0,
+       "grasp_error": 0.0
+      },
+      "giver_reference_active_frac": 0.25
+     }
+    ],
+    "hist5_ema1p0_giver1": [
+     {
+      "step": 27,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.0,
+      "obs_changed_channels": [],
+      "controller_max_abs_change": {
+       "obj_pos": 0.0,
+       "grasp_from_obj": 0.0,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.0,
+       "grasp_error": 0.0
+      },
+      "giver_reference_active_frac": 1.0
+     },
+     {
+      "step": 77,
+      "truth_shift_m": [
+       0.0030000132974237204,
+       -0.0020000585354864597,
+       0.0009999871253967285
+      ],
+      "obs_max_abs_change": 0.0,
+      "obs_changed_channels": [],
+      "controller_max_abs_change": {
+       "obj_pos": 0.0,
+       "grasp_from_obj": 0.0,
+       "obj_rel_linvel": 0.0,
+       "obj_rel_speed": 0.0,
+       "obj_rel_in_recv": 0.0,
+       "grasp_error": 0.0
+      },
+      "giver_reference_active_frac": 0.25
+     }
+    ]
+   },
+   "evidence": {
+    "acceptance/dependency_archived.json": "1ba9ceb514b4459575498e4ed4ad56c89d4fa36a9092d6758919b00775818ca6",
+    "acceptance/dependency_ff_ema1p0_giver0.json": "9197da0549d57ca2282954a2f8fdf56fd966137ac0100698e84fc4a69d0546bf",
+    "acceptance/dependency_ff_ema0p5_giver1.json": "880532931126f633e033474ecae88815b2ed26afdea17559807df4786d8aa4db",
+    "acceptance/dependency_hist5_ema0p2_giver0.json": "ce21f548d273e0c081a00cac990ec405aa18d89940640028519cb4256ca7ea36",
+    "acceptance/dependency_hist5_ema1p0_giver1.json": "5b92eab91c1912f5e6d9d0d7d00cf2ec57f324fd4eea4de5b291d2be7fd0d9e3"
+   },
+   "commands": [
+    {
+     "task": "acc_dependency_archived",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "dependency",
+      "--variant",
+      "archived",
+      "--output",
+      "$RUNS/acceptance/dependency_archived.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_dependency_ff_ema0p5_giver1",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "dependency",
+      "--variant",
+      "ff_ema0p5_giver1",
+      "--output",
+      "$RUNS/acceptance/dependency_ff_ema0p5_giver1.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_dependency_ff_ema1p0_giver0",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "dependency",
+      "--variant",
+      "ff_ema1p0_giver0",
+      "--output",
+      "$RUNS/acceptance/dependency_ff_ema1p0_giver0.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_dependency_hist5_ema0p2_giver0",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "dependency",
+      "--variant",
+      "hist5_ema0p2_giver0",
+      "--output",
+      "$RUNS/acceptance/dependency_hist5_ema0p2_giver0.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_dependency_hist5_ema1p0_giver1",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "dependency",
+      "--variant",
+      "hist5_ema1p0_giver1",
+      "--output",
+      "$RUNS/acceptance/dependency_hist5_ema1p0_giver1.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    }
+   ]
+  },
+  "6_zero_error_sensor_vs_archived_path": {
+   "pass": true,
+   "comparison": {
+    "nominal": {
+     "n": 24,
+     "terminal_equal": 24,
+     "differing_cases": [],
+     "success_sensor0": 19,
+     "success_archived": 19
+    },
+    "geometry_1p5cm": {
+     "n": 24,
+     "terminal_equal": 24,
+     "differing_cases": [],
+     "success_sensor0": 24,
+     "success_archived": 24
+    }
+   },
+   "evidence": {
+    "acceptance/a6_sensor0/nominal/nominal.jsonl": "280c27e8120678bcc8f99039444f6764cf1d0044120495a91c154a4022b87072",
+    "acceptance/a6_sensor0/geometry_1p5cm/geometry_1p5cm.jsonl": "62d2bf2a1ff490335795c56873668330012a2542aba4c7dc21e99827b6559d50",
+    "acceptance/a6_archived/nominal/nominal.jsonl": "2efb04f91586a22779dcbf37d9e3fec73885d9deb1f65b671b30b12f812c648f",
+    "acceptance/a6_archived/geometry_1p5cm/geometry_1p5cm.jsonl": "d3525b501b5ecda0ef800b67eeef906be5112880f77ec12f2609c8210a60b8dc"
+   },
+   "commands": [
+    {
+     "task": "acc_a6_archived_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a6_archived.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/a6_archived/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a6_archived_nominal",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a6_archived.json",
+      "--only",
+      "nominal",
+      "--output",
+      "$RUNS/acceptance/a6_archived/nominal",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a6_sensor0_geometry_1p5cm",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a6_sensor0.json",
+      "--only",
+      "geometry_1p5cm",
+      "--output",
+      "$RUNS/acceptance/a6_sensor0/geometry_1p5cm",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "acc_a6_sensor0_nominal",
+     "argv": [
+      "scripts/eval_matrix.py",
+      "--matrix",
+      "configs/v3/acceptance/a6_sensor0.json",
+      "--only",
+      "nominal",
+      "--output",
+      "$RUNS/acceptance/a6_sensor0/nominal",
+      "--seed",
+      "6455501"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    }
+   ],
+   "note": "zero-error sensor path (EMA 1, no giver reference) vs archived default path on the 24 physical_only development cases, fresh process each; observation boundary handling differs by construction (the v3 path re-measures after a reset) but no outcome changed"
+  },
+  "8_inputs_history_normalization": {
+   "pass": true,
+   "modes": {
+    "stack": {
+     "dims_46_230": true,
+     "frame_order": true,
+     "critic_sees_only_policy_observation": true,
+     "checkpoint_shape_compatible": true,
+     "normalizer_frozen_at_inference": true
+    },
+    "repeat_current": {
+     "dims_46_230": true,
+     "frame_order": true,
+     "critic_sees_only_policy_observation": true,
+     "checkpoint_shape_compatible": true,
+     "normalizer_frozen_at_inference": true
+    },
+    "permuted": {
+     "dims_46_230": true,
+     "frame_order": true,
+     "critic_sees_only_policy_observation": true,
+     "checkpoint_shape_compatible": true,
+     "normalizer_frozen_at_inference": true
+    }
+   },
+   "evidence": {
+    "acceptance/inputs_stack.json": "fbbf64afad482314217a4da53b81115bde513dc3a396f166429b4813c83f1555",
+    "acceptance/inputs_repeat_current.json": "f849086091359180204f1165bbb66408d03171a964be6306395d9425f605ec13",
+    "acceptance/inputs_permuted.json": "455f962d03904999c0b7b3e762ae6f7661d44bd328a95cc3d463fff46c81db6a"
+   },
+   "commands": [
+    {
+     "task": "acc_inputs_permuted",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "inputs",
+      "--mode",
+      "permuted",
+      "--checkpoint",
+      "$RUNS/smoke/smoke_combined_robust_history_s101/checkpoints/final.pt",
+      "--output",
+      "$RUNS/acceptance/inputs_permuted.json"
+     ],
+     "rc": 0,
+     "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+     "watchdog": null
+    },
+    {
+     "task": "acc_inputs_repeat_current",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "inputs",
+      "--mode",
+      "repeat_current",
+      "--checkpoint",
+      "$RUNS/smoke/smoke_combined_robust_repeat_s101/checkpoints/final.pt",
+      "--output",
+      "$RUNS/acceptance/inputs_repeat_current.json"
+     ],
+     "rc": 0,
+     "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+     "watchdog": null
+    },
+    {
+     "task": "acc_inputs_stack",
+     "argv": [
+      "scripts/v3_acceptance.py",
+      "inputs",
+      "--mode",
+      "stack",
+      "--checkpoint",
+      "$RUNS/smoke/smoke_combined_robust_history_s101/checkpoints/final.pt",
+      "--output",
+      "$RUNS/acceptance/inputs_stack.json"
+     ],
+     "rc": 0,
+     "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+     "watchdog": null
+    }
+   ]
+  },
+  "9_ppo_smoke_save_reload_resume": {
+   "pass": true,
+   "profiles": {
+    "combined_clean_ff": {
+     "checks": {
+      "counters_restored_and_advanced": true,
+      "optimizer_state_saved": true,
+      "normalizer_present": true,
+      "parameters_updated": true,
+      "reload_identical": true
+     },
+     "before": 4,
+     "after": 6,
+     "optimizer_steps": {
+      "before": 80.0,
+      "after": 120.0
+     }
+    },
+    "combined_robust_ff": {
+     "checks": {
+      "counters_restored_and_advanced": true,
+      "optimizer_state_saved": true,
+      "normalizer_present": true,
+      "parameters_updated": true,
+      "reload_identical": true
+     },
+     "before": 4,
+     "after": 6,
+     "optimizer_steps": {
+      "before": 80.0,
+      "after": 120.0
+     }
+    },
+    "combined_robust_history": {
+     "checks": {
+      "counters_restored_and_advanced": true,
+      "optimizer_state_saved": true,
+      "normalizer_present": true,
+      "parameters_updated": true,
+      "reload_identical": true
+     },
+     "before": 4,
+     "after": 6,
+     "optimizer_steps": {
+      "before": 80.0,
+      "after": 120.0
+     }
+    },
+    "residual_robust_history": {
+     "checks": {
+      "counters_restored_and_advanced": true,
+      "optimizer_state_saved": true,
+      "normalizer_present": true,
+      "parameters_updated": true,
+      "reload_identical": true
+     },
+     "before": 4,
+     "after": 6,
+     "optimizer_steps": {
+      "before": 80.0,
+      "after": 120.0
+     }
+    },
+    "combined_robust_repeat": {
+     "checks": {
+      "counters_restored_and_advanced": true,
+      "optimizer_state_saved": true,
+      "normalizer_present": true,
+      "parameters_updated": true,
+      "reload_identical": true
+     },
+     "before": 4,
+     "after": 6,
+     "optimizer_steps": {
+      "before": 80.0,
+      "after": 120.0
+     }
+    }
+   },
+   "evidence": {
+    "acceptance/resume_combined_clean_ff.json": "6626f67259155dde0e3f6307f7a12c542b5fac724a6c401f7e7fb4eb5f122145",
+    "acceptance/resume_combined_robust_ff.json": "d2da7e08f7bc0d981eb4a70128544355d17f09570d407126348111fbbcd00d54",
+    "acceptance/resume_combined_robust_history.json": "51830fb7288b681f2c6ec7d781558b5f32a8cb97d3b3a049536b61a88086e1b1",
+    "acceptance/resume_residual_robust_history.json": "3a5f828f0857880190d9aee39f64918ec81b06fbadaa57e9e614467d8a4ef97e",
+    "acceptance/resume_combined_robust_repeat.json": "789025ec1b8ba1f7b3caa24284ab604e0b3d70accb8d3b0bd617f0481b75af69"
+   },
+   "commands": [
+    {
+     "task": "smoke_combined_clean_ff",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "combined",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/combined_clean_ff.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "131072",
+      "--checkpoint-every",
+      "65536",
+      "--output",
+      "$RUNS/smoke/smoke_combined_clean_ff_s101"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_clean_ff_copy",
+     "argv": [
+      "rm",
+      "-rf",
+      "$RUNS/smoke/smoke_combined_clean_ff_s101_resume",
+      "&&",
+      "cp",
+      "-r",
+      "$RUNS/smoke/smoke_combined_clean_ff_s101",
+      "$RUNS/smoke/smoke_combined_clean_ff_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_clean_ff_inspect",
+     "argv": [
+      "scripts/closeout_inspect_ckpt.py",
+      "--before",
+      "$RUNS/smoke/smoke_combined_clean_ff_s101/checkpoints/latest.pt",
+      "--after",
+      "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/checkpoints/final.pt",
+      "--expect-iterations",
+      "6",
+      "--expect-transitions",
+      "196608",
+      "--output",
+      "$RUNS/acceptance/resume_combined_clean_ff.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_clean_ff_resume",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "combined",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/combined_clean_ff.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "196608",
+      "--checkpoint-every",
+      "65536",
+      "--resume",
+      "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/checkpoints/latest.pt",
+      "--output",
+      "$RUNS/smoke/smoke_combined_clean_ff_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_ff",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "combined",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/combined_robust_ff.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "131072",
+      "--checkpoint-every",
+      "65536",
+      "--output",
+      "$RUNS/smoke/smoke_combined_robust_ff_s101"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_ff_copy",
+     "argv": [
+      "rm",
+      "-rf",
+      "$RUNS/smoke/smoke_combined_robust_ff_s101_resume",
+      "&&",
+      "cp",
+      "-r",
+      "$RUNS/smoke/smoke_combined_robust_ff_s101",
+      "$RUNS/smoke/smoke_combined_robust_ff_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_ff_inspect",
+     "argv": [
+      "scripts/closeout_inspect_ckpt.py",
+      "--before",
+      "$RUNS/smoke/smoke_combined_robust_ff_s101/checkpoints/latest.pt",
+      "--after",
+      "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/checkpoints/final.pt",
+      "--expect-iterations",
+      "6",
+      "--expect-transitions",
+      "196608",
+      "--output",
+      "$RUNS/acceptance/resume_combined_robust_ff.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_ff_resume",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "combined",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/combined_robust_ff.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "196608",
+      "--checkpoint-every",
+      "65536",
+      "--resume",
+      "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/checkpoints/latest.pt",
+      "--output",
+      "$RUNS/smoke/smoke_combined_robust_ff_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_history",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "combined",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/combined_robust_history.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "131072",
+      "--checkpoint-every",
+      "65536",
+      "--output",
+      "$RUNS/smoke/smoke_combined_robust_history_s101"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_history_copy",
+     "argv": [
+      "rm",
+      "-rf",
+      "$RUNS/smoke/smoke_combined_robust_history_s101_resume",
+      "&&",
+      "cp",
+      "-r",
+      "$RUNS/smoke/smoke_combined_robust_history_s101",
+      "$RUNS/smoke/smoke_combined_robust_history_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_history_inspect",
+     "argv": [
+      "scripts/closeout_inspect_ckpt.py",
+      "--before",
+      "$RUNS/smoke/smoke_combined_robust_history_s101/checkpoints/latest.pt",
+      "--after",
+      "$RUNS/smoke/smoke_combined_robust_history_s101_resume/checkpoints/final.pt",
+      "--expect-iterations",
+      "6",
+      "--expect-transitions",
+      "196608",
+      "--output",
+      "$RUNS/acceptance/resume_combined_robust_history.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_history_resume",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "combined",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/combined_robust_history.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "196608",
+      "--checkpoint-every",
+      "65536",
+      "--resume",
+      "$RUNS/smoke/smoke_combined_robust_history_s101_resume/checkpoints/latest.pt",
+      "--output",
+      "$RUNS/smoke/smoke_combined_robust_history_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_repeat",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "combined",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/combined_robust_repeat.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "131072",
+      "--checkpoint-every",
+      "65536",
+      "--output",
+      "$RUNS/smoke/smoke_combined_robust_repeat_s101"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_repeat_copy",
+     "argv": [
+      "rm",
+      "-rf",
+      "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume",
+      "&&",
+      "cp",
+      "-r",
+      "$RUNS/smoke/smoke_combined_robust_repeat_s101",
+      "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_repeat_inspect",
+     "argv": [
+      "scripts/closeout_inspect_ckpt.py",
+      "--before",
+      "$RUNS/smoke/smoke_combined_robust_repeat_s101/checkpoints/latest.pt",
+      "--after",
+      "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/checkpoints/final.pt",
+      "--expect-iterations",
+      "6",
+      "--expect-transitions",
+      "196608",
+      "--output",
+      "$RUNS/acceptance/resume_combined_robust_repeat.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_combined_robust_repeat_resume",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "combined",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/combined_robust_repeat.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "196608",
+      "--checkpoint-every",
+      "65536",
+      "--resume",
+      "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/checkpoints/latest.pt",
+      "--output",
+      "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_residual_robust_history",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "residual",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/residual_robust_history.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "131072",
+      "--checkpoint-every",
+      "65536",
+      "--output",
+      "$RUNS/smoke/smoke_residual_robust_history_s101"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_residual_robust_history_copy",
+     "argv": [
+      "rm",
+      "-rf",
+      "$RUNS/smoke/smoke_residual_robust_history_s101_resume",
+      "&&",
+      "cp",
+      "-r",
+      "$RUNS/smoke/smoke_residual_robust_history_s101",
+      "$RUNS/smoke/smoke_residual_robust_history_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_residual_robust_history_inspect",
+     "argv": [
+      "scripts/closeout_inspect_ckpt.py",
+      "--before",
+      "$RUNS/smoke/smoke_residual_robust_history_s101/checkpoints/latest.pt",
+      "--after",
+      "$RUNS/smoke/smoke_residual_robust_history_s101_resume/checkpoints/final.pt",
+      "--expect-iterations",
+      "6",
+      "--expect-transitions",
+      "196608",
+      "--output",
+      "$RUNS/acceptance/resume_residual_robust_history.json"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    },
+    {
+     "task": "smoke_residual_robust_history_resume",
+     "argv": [
+      "scripts/train.py",
+      "--method",
+      "residual",
+      "--seed",
+      "101",
+      "--protocol",
+      "configs/v3/training/residual_robust_history.json",
+      "--run-type",
+      "smoke",
+      "--transitions",
+      "196608",
+      "--checkpoint-every",
+      "65536",
+      "--resume",
+      "$RUNS/smoke/smoke_residual_robust_history_s101_resume/checkpoints/latest.pt",
+      "--output",
+      "$RUNS/smoke/smoke_residual_robust_history_s101_resume"
+     ],
+     "rc": 0,
+     "source_commit": "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+     "watchdog": null
+    }
+   ]
+  },
+  "10_eval_cache_rejection_and_resume": {
+   "pass": true,
+   "result": {
+    "cases": 8,
+    "truncated": {
+     "rc": 0,
+     "watchdog": null,
+     "expected_log": "5 existing, 3 to run",
+     "records_after": 8
+    },
+    "tamper_config_hash": {
+     "rc": 1,
+     "watchdog": null,
+     "error_text_seen": true,
+     "file_unchanged": true
+    },
+    "tamper_case_observation_error": {
+     "rc": 1,
+     "watchdog": null,
+     "error_text_seen": true,
+     "file_unchanged": true
+    },
+    "tamper_checkpoint_sha256": {
+     "rc": 1,
+     "watchdog": null,
+     "error_text_seen": true,
+     "file_unchanged": true
+    },
+    "checks": {
+     "truncated_reexecutes_only_missing": true,
+     "tampered_config_hash_rejected": true,
+     "tampered_case_observation_error_rejected": true,
+     "tampered_checkpoint_sha256_rejected": true
+    },
+    "ok": true,
+    "note": "matrix_status.json alone is never trusted: eval_matrix re-validates every existing record against the suite, sensor realization, config/controller/checkpoint hashes and source commit"
+   },
+   "evidence": {
+    "acceptance/cache_test.json": "4061a5a175da4f60d4c16089aee2d020eb4d255433c5d2386b6f9cd4689e1520"
+   },
+   "commands": [
+    {
+     "task": "acc_cache_test",
+     "argv": [
+      "scripts/v3_cache_test.py",
+      "--isaac-python",
+      "$PY",
+      "--matrix",
+      "configs/v3/acceptance/a1_b8.json",
+      "--entry",
+      "geometry_1p5cm",
+      "--ckpt-matrix",
+      "configs/v3/acceptance/a2_combined_robust_ff.json",
+      "--ckpt-entry",
+      "combined_robust_ff_step0",
+      "--checkpoint-root",
+      "$RUNS/smoke",
+      "--work",
+      "$RUNS/acceptance/cache_test",
+      "--output",
+      "$RUNS/acceptance/cache_test.json"
+     ],
+     "rc": 0,
+     "source_commit": "5db172a2c9ddf68dade31bd40f2698cde00b4e5f",
+     "watchdog": null
+    }
+   ]
+  },
+  "7_estimators_and_gate": {
+   "pass": true,
+   "release_timeouts_of_24_by_estimator_1p5cm": {
+    "ema0p2_giver0/geom15_x+00": {
+     "noise_2mm": 0,
+     "noise_4mm": 0,
+     "mixed_id": 0,
+     "mixed_ood": 1
+    },
+    "ema0p2_giver1/geom15_x+00": {
+     "noise_2mm": 0,
+     "noise_4mm": 0,
+     "mixed_id": 0,
+     "mixed_ood": 0
+    },
+    "ema0p5_giver0/geom15_x+00": {
+     "noise_2mm": 11,
+     "noise_4mm": 24,
+     "mixed_id": 11,
+     "mixed_ood": 24
+    },
+    "ema0p5_giver1/geom15_x+00": {
+     "noise_2mm": 0,
+     "noise_4mm": 0,
+     "mixed_id": 0,
+     "mixed_ood": 0
+    },
+    "ema1p0_giver0/geom15_x+00": {
+     "noise_2mm": 24,
+     "noise_4mm": 24,
+     "mixed_id": 24,
+     "mixed_ood": 24
+    },
+    "ema1p0_giver1/geom15_x+00": {
+     "noise_2mm": 0,
+     "noise_4mm": 0,
+     "mixed_id": 0,
+     "mixed_ood": 0
+    }
+   },
+   "raw_sensor_blocks_gate": {
+    "noise_2mm": 24,
+    "noise_4mm": 24,
+    "mixed_id": 24,
+    "mixed_ood": 24
+   },
+   "finding": "unfiltered finite differences of a noisy translation estimate block the stability-gated release (release_timeout) at noise >= 2 mm; EMA 0.2 and the giver reference do not",
+   "common_estimator": {
+    "candidate_id": "ema1p0_giver1/geom15_x+00",
+    "method": "geometry",
+    "ema_alpha": 1.0,
+    "giver_reference": true,
+    "align_max_m": 0.015,
+    "constant_x_m": 0.0,
+    "selection_success_rate": 1.0,
+    "selection_collision_rate": 0.0,
+    "at_grid_edge": [
+     "align_max_m",
+     "ema_alpha"
+    ]
+   },
+   "shared_by_geometry_and_all_combined_profiles": "configs/v3/frozen/training/*.json inherit geometry_common (scripts/v3_make_protocols.py)",
+   "evidence": {
+    "configs/v3/baseline_selection.json": "270c0696ea5f68099b2784ac94edf1950a352027f04191dba8f31aa1b366ec04"
+   }
+  }
+ },
+ "source_commits": [
+  "2d20fe426c3b6b2c0be468653b79248d1c07a8b6",
+  "5db172a2c9ddf68dade31bd40f2698cde00b4e5f"
+ ],
+ "all_pass": true
+}

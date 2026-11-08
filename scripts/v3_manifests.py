@@ -141,7 +141,8 @@ def pilots():
                                "--checkpoint-root", "$RUNS/pilot", "--output", f"$RUNS/pilot_eval/{prof}_s{seed}", "--seed", str(SEED_EVAL)],
                       "inputs": [f"configs/v3/pilot/matrices/{prof}_s{seed}.json"],
                       "outputs": [f"$RUNS/pilot_eval/{prof}_s{seed}/{e}.jsonl"]})
-    write("pilots", tasks)
+    write("pilots", [t for t in tasks if t["id"].startswith("pilot_") and not t["id"].startswith("pilot_eval_")])
+    write("pilot_eval", [t for t in tasks if t["id"].startswith("pilot_eval_")])  # run after all pilots finished
 
 
 # ------------------------------------------------------------------------------ formal stages

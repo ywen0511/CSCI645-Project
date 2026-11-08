@@ -30,27 +30,6 @@
    ]
   },
   {
-   "id": "pilot_eval_combined_robust_ff_s101",
-   "kind": "isaac",
-   "argv": [
-    "scripts/eval_matrix.py",
-    "--matrix",
-    "configs/v3/pilot/matrices/combined_robust_ff_s101.json",
-    "--checkpoint-root",
-    "$RUNS/pilot",
-    "--output",
-    "$RUNS/pilot_eval/combined_robust_ff_s101",
-    "--seed",
-    "6455501"
-   ],
-   "inputs": [
-    "configs/v3/pilot/matrices/combined_robust_ff_s101.json"
-   ],
-   "outputs": [
-    "$RUNS/pilot_eval/combined_robust_ff_s101/combined_robust_ff_s101_final.jsonl"
-   ]
-  },
-  {
    "id": "pilot_combined_robust_ff_s102",
    "kind": "isaac",
    "argv": [
@@ -76,27 +55,6 @@
    "outputs": [
     "$RUNS/pilot/combined_robust_ff_s102/checkpoints/final.pt",
     "$RUNS/pilot/combined_robust_ff_s102/DONE.json"
-   ]
-  },
-  {
-   "id": "pilot_eval_combined_robust_ff_s102",
-   "kind": "isaac",
-   "argv": [
-    "scripts/eval_matrix.py",
-    "--matrix",
-    "configs/v3/pilot/matrices/combined_robust_ff_s102.json",
-    "--checkpoint-root",
-    "$RUNS/pilot",
-    "--output",
-    "$RUNS/pilot_eval/combined_robust_ff_s102",
-    "--seed",
-    "6455501"
-   ],
-   "inputs": [
-    "configs/v3/pilot/matrices/combined_robust_ff_s102.json"
-   ],
-   "outputs": [
-    "$RUNS/pilot_eval/combined_robust_ff_s102/combined_robust_ff_s102_final.jsonl"
    ]
   },
   {
@@ -128,27 +86,6 @@
    ]
   },
   {
-   "id": "pilot_eval_combined_robust_history_s101",
-   "kind": "isaac",
-   "argv": [
-    "scripts/eval_matrix.py",
-    "--matrix",
-    "configs/v3/pilot/matrices/combined_robust_history_s101.json",
-    "--checkpoint-root",
-    "$RUNS/pilot",
-    "--output",
-    "$RUNS/pilot_eval/combined_robust_history_s101",
-    "--seed",
-    "6455501"
-   ],
-   "inputs": [
-    "configs/v3/pilot/matrices/combined_robust_history_s101.json"
-   ],
-   "outputs": [
-    "$RUNS/pilot_eval/combined_robust_history_s101/combined_robust_history_s101_final.jsonl"
-   ]
-  },
-  {
    "id": "pilot_combined_robust_history_s102",
    "kind": "isaac",
    "argv": [
@@ -174,27 +111,6 @@
    "outputs": [
     "$RUNS/pilot/combined_robust_history_s102/checkpoints/final.pt",
     "$RUNS/pilot/combined_robust_history_s102/DONE.json"
-   ]
-  },
-  {
-   "id": "pilot_eval_combined_robust_history_s102",
-   "kind": "isaac",
-   "argv": [
-    "scripts/eval_matrix.py",
-    "--matrix",
-    "configs/v3/pilot/matrices/combined_robust_history_s102.json",
-    "--checkpoint-root",
-    "$RUNS/pilot",
-    "--output",
-    "$RUNS/pilot_eval/combined_robust_history_s102",
-    "--seed",
-    "6455501"
-   ],
-   "inputs": [
-    "configs/v3/pilot/matrices/combined_robust_history_s102.json"
-   ],
-   "outputs": [
-    "$RUNS/pilot_eval/combined_robust_history_s102/combined_robust_history_s102_final.jsonl"
    ]
   },
   {
@@ -226,27 +142,6 @@
    ]
   },
   {
-   "id": "pilot_eval_residual_robust_history_s101",
-   "kind": "isaac",
-   "argv": [
-    "scripts/eval_matrix.py",
-    "--matrix",
-    "configs/v3/pilot/matrices/residual_robust_history_s101.json",
-    "--checkpoint-root",
-    "$RUNS/pilot",
-    "--output",
-    "$RUNS/pilot_eval/residual_robust_history_s101",
-    "--seed",
-    "6455501"
-   ],
-   "inputs": [
-    "configs/v3/pilot/matrices/residual_robust_history_s101.json"
-   ],
-   "outputs": [
-    "$RUNS/pilot_eval/residual_robust_history_s101/residual_robust_history_s101_final.jsonl"
-   ]
-  },
-  {
    "id": "pilot_residual_robust_history_s102",
    "kind": "isaac",
    "argv": [
@@ -272,27 +167,6 @@
    "outputs": [
     "$RUNS/pilot/residual_robust_history_s102/checkpoints/final.pt",
     "$RUNS/pilot/residual_robust_history_s102/DONE.json"
-   ]
-  },
-  {
-   "id": "pilot_eval_residual_robust_history_s102",
-   "kind": "isaac",
-   "argv": [
-    "scripts/eval_matrix.py",
-    "--matrix",
-    "configs/v3/pilot/matrices/residual_robust_history_s102.json",
-    "--checkpoint-root",
-    "$RUNS/pilot",
-    "--output",
-    "$RUNS/pilot_eval/residual_robust_history_s102",
-    "--seed",
-    "6455501"
-   ],
-   "inputs": [
-    "configs/v3/pilot/matrices/residual_robust_history_s102.json"
-   ],
-   "outputs": [
-    "$RUNS/pilot_eval/residual_robust_history_s102/residual_robust_history_s102_final.jsonl"
    ]
   },
   {
@@ -324,27 +198,6 @@
    ]
   },
   {
-   "id": "pilot_eval_combined_robust_repeat_s101",
-   "kind": "isaac",
-   "argv": [
-    "scripts/eval_matrix.py",
-    "--matrix",
-    "configs/v3/pilot/matrices/combined_robust_repeat_s101.json",
-    "--checkpoint-root",
-    "$RUNS/pilot",
-    "--output",
-    "$RUNS/pilot_eval/combined_robust_repeat_s101",
-    "--seed",
-    "6455501"
-   ],
-   "inputs": [
-    "configs/v3/pilot/matrices/combined_robust_repeat_s101.json"
-   ],
-   "outputs": [
-    "$RUNS/pilot_eval/combined_robust_repeat_s101/combined_robust_repeat_s101_final.jsonl"
-   ]
-  },
-  {
    "id": "pilot_combined_clean_ff_s101",
    "kind": "isaac",
    "argv": [
@@ -370,27 +223,6 @@
    "outputs": [
     "$RUNS/pilot/combined_clean_ff_s101/checkpoints/final.pt",
     "$RUNS/pilot/combined_clean_ff_s101/DONE.json"
-   ]
-  },
-  {
-   "id": "pilot_eval_combined_clean_ff_s101",
-   "kind": "isaac",
-   "argv": [
-    "scripts/eval_matrix.py",
-    "--matrix",
-    "configs/v3/pilot/matrices/combined_clean_ff_s101.json",
-    "--checkpoint-root",
-    "$RUNS/pilot",
-    "--output",
-    "$RUNS/pilot_eval/combined_clean_ff_s101",
-    "--seed",
-    "6455501"
-   ],
-   "inputs": [
-    "configs/v3/pilot/matrices/combined_clean_ff_s101.json"
-   ],
-   "outputs": [
-    "$RUNS/pilot_eval/combined_clean_ff_s101/combined_clean_ff_s101_final.jsonl"
    ]
   }
  ]

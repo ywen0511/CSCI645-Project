@@ -60,17 +60,35 @@ def analyze(root, index_path, output, repeats=10000):
         if check["invalid_resets"] or check["infra_errors"]:
             raise ValueError(f"unresolved invalid resets/infrastructure errors in {path}; reconcile before final analysis")
         key = (e["family"], e["role"], e["seed"])
+        if e.get("alias_of") and e["sha256"] != next((x["sha256"] for x in index["entries"]
+                                                      if x["family"] == e["alias_of"] and x["role"] == "baseline"), None):
+            raise ValueError(f"{e['family']}: alias must point to the identical records file of {e['alias_of']}")
         if key in groups:
             raise ValueError(f"duplicate controller/role/seed: {key}")
         groups[key] = {r["case_id"]: r for r in rows}
         for condition in conditions:
             selected = [r for r in rows if r["condition"] == condition]
             times = [r["completion_time_s"] for r in selected if r["success"]]
+            delays = [r["release_delay_s"] for r in selected if r.get("release_delay_s") is not None]
+
+            def mean_of(key, sel=selected):
+                v = [r[key] for r in sel if r.get(key) is not None]
+                return float(np.mean(v)) if v else None
+
             counts.append({"family": e["family"], "role": e["role"], "seed": e["seed"], "condition": condition,
-                           "scheduled": len(selected), "success": sum(r["success"] for r in selected),
+                           "alias_of": e.get("alias_of"),
+                           "scheduled": len(selected), "valid_resets": sum(r["reset_valid"] for r in selected),
+                           "success": sum(r["success"] for r in selected),
                            "drop": sum(r["drop"] for r in selected), "collision": sum(r["collision"] for r in selected),
+                           "release_timeout": sum(r["terminal_reason"] == "release_timeout" for r in selected),
+                           "episode_timeout": sum(r["terminal_reason"] == "episode_timeout" for r in selected),
                            "success_rate": np.mean([r["success"] for r in selected]),
                            "completion_time_success_mean_s": np.mean(times) if times else None,
+                           "release_delay_mean_s": float(np.mean(delays)) if delays else None,
+                           "residual_abs_mean_m": mean_of("residual_abs_mean_m"),
+                           "residual_abs_max_m": mean_of("residual_abs_max_m"),
+                           "workspace_clip_mean_m": mean_of("workspace_clip_mean_m"),
+                           "geometry_align_saturation_frac": mean_of("geometry_align_saturation_frac"),
                            "unique_clean_initial_states": 1 if condition == "clean" else None})
     output.mkdir(parents=True, exist_ok=True)
     with (output / "per_seed_condition.csv").open("w") as f:
@@ -118,6 +136,21 @@ def analyze(root, index_path, output, repeats=10000):
                     # Bonferroni intervals for the two predeclared primary effects.
                     effects[-1]["familywise_95_interval"] = paired_effect(a, b, repeats=repeats, confidence=0.975)
     write_json(output / "paired_effects.json", effects)
+    # family-level summary over seeds (seed = replicate; deterministic baselines have one row)
+    fam = {}
+    for row in counts:
+        fam.setdefault((row["family"], row["role"], row["condition"]), []).append(row)
+    summary = []
+    for (f, r, c), rows_ in sorted(fam.items(), key=lambda kv: (kv[0][0], kv[0][1], kv[0][2])):
+        rates = [x["success_rate"] for x in rows_]
+        summary.append({"family": f, "role": r, "condition": c, "seeds": [x["seed"] for x in rows_],
+                        "success_rate_mean": float(np.mean(rates)), "success_rate_sd": float(np.std(rates, ddof=1)) if len(rates) > 1 else None,
+                        "success_rate_per_seed": rates, "scheduled_per_seed": rows_[0]["scheduled"],
+                        "drop_mean": float(np.mean([x["drop"] for x in rows_])), "collision_mean": float(np.mean([x["collision"] for x in rows_])),
+                        "release_timeout_mean": float(np.mean([x["release_timeout"] for x in rows_])),
+                        "episode_timeout_mean": float(np.mean([x["episode_timeout"] for x in rows_])),
+                        "alias_of": rows_[0].get("alias_of")})
+    write_json(output / "family_condition_summary.json", summary)
     write_json(output / "reconciliation.json", reconciliation)
     write_json(output / "analysis_manifest.json", {"index_sha256": sha256(index_path), "suite_sha256": sha256(suite_path),
                                                   "bootstrap": "paired training seed and shared base-case cluster; fixed conditions",

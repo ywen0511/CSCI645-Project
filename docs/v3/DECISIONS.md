@@ -72,3 +72,19 @@ Append remote decisions with the evidence split, source SHA and affected runs.
 - Simulator code (`src/`, train/eval/scripted/video scripts, v3 suites, development matrices, draft profiles) is
   byte-identical between `913cda1`, `2d20fe4` and the current commit (git diff empty); acceptance evidence
   produced at different commits of tooling therefore exercises the same simulator code.
+
+### 2026-11-08 16:35 UTC — giver-reference accuracy, physical transfer, video rule (split: development)
+
+- Giver-reference estimate vs true object position on traced development cases (EMA 1.0 + giver reference):
+  at most 3.0 mm while the giver holds (rigid-grasp model: nominal grasp offset vs the realized grasp), then
+  the corrupted sensor after release (up to 6.1 mm in noise_2mm, 10.7 mm in mixed_id). It is therefore not an
+  oracle; it removes most pre-release translation error by using accurate giver proprioception, which the
+  policy also observes (giver TCP − receiver TCP). This is the allowed information channel the assignment
+  requires to be disclosed.
+- Physical transfer (Section 10) is **not performed**. Evidence: the bar's spawn geometry, mass and friction
+  come from module constants in `handover_env_cfg.py` (`CuboidCfg(size=OBJECT_SIZE)`, `MassCfg(mass=OBJECT_MASS)`,
+  fixed `RigidBodyMaterialCfg`), so the task field `object_size` does not change the simulated object. A valid
+  transfer study needs spawn overrides plus consistent grasp transforms, reset poses and jaw clearance, each
+  validated on separate development starts before the freeze. The mandatory uncertainty study is prioritized;
+  nothing about transfer is claimed.
+- Video selection rule frozen in `configs/v3/video_rule.json` before any final outcome is opened.
