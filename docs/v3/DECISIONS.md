@@ -49,3 +49,26 @@ Append remote decisions with the evidence split, source SHA and affected runs.
   keyed to the source commit and are (correctly) rejected otherwise.
 - Pilot budget: 8 pilots × 2,752,512 transitions (84 PPO iterations) + 1,966,080 smoke/resume transitions (two
   attempts) = 23,986,176 ≤ 24M.
+
+### 2026-11-08 16:31 UTC — development baselines and selection (split: development only)
+
+- All 85 development entries (1 nominal + 6 estimators × 14 geometry settings, 312 cases each, fresh process
+  per entry) completed at `2d20fe4`; nominal ignores the estimator and is run once (aliased in the table).
+- Selection (`scripts/v3_select_baselines.py`, six validation-like strata, equal weight): `geometry_common` =
+  `geometry_best_constant` = `geometry_giver` = EMA 1.0 + giver reference, 1.5 cm, zero constant (144/144 on the
+  selection strata, 312/312 on all 13 development conditions); `geometry_filtered` = EMA 0.2, 1.5 cm (144/144);
+  `geometry_raw` = 96/144; nominal 117/144. The three aliased roles are evaluated once in the final matrix and
+  reported as aliases, not as independent evidence. Selections sit at grid edges (1.5 cm bound; EMA 1.0 for
+  the giver-reference estimator; EMA 0.2 for filtering), recorded in `at_grid_edge`; no further search.
+- Finding used for acceptance check 7: with the raw (unfiltered) estimate, finite-difference velocity noise
+  blocks the stability-gated release at noise ≥ 2 mm (24/24 release timeouts in noise_2mm, noise_4mm,
+  mixed_id, mixed_ood); EMA 0.2 and the giver reference do not. Delay up to 4 steps has no effect on any
+  estimator. Bias 10 mm causes collisions unless the giver reference is used.
+- Consequence fixed by the protocol (not chosen by us): every combined profile and the residual-only profile
+  inherit the giver-reference estimator. While the giver holds the bar (both contacts, release not commanded),
+  object translation is inferred from the measured giver TCP and the nominal grasp offset; the corrupted
+  sensor is used after release. Development data suggest little remaining headroom for learned residuals on
+  top of this controller; this is recorded as a pre-test expectation, not a result.
+- Simulator code (`src/`, train/eval/scripted/video scripts, v3 suites, development matrices, draft profiles) is
+  byte-identical between `913cda1`, `2d20fe4` and the current commit (git diff empty); acceptance evidence
+  produced at different commits of tooling therefore exercises the same simulator code.

@@ -1,0 +1,26 @@
+{
+ "name": "v3_pilot_residual_robust_history_s102",
+ "suite": "configs/v3/suites/development.jsonl",
+ "num_envs": 144,
+ "protocol": "configs/v3/pilot/residual_robust_history.json",
+ "trace_cases": [
+  "v3-development-mixed_id-0000"
+ ],
+ "entries": [
+  {
+   "id": "residual_robust_history_s102_final",
+   "method": "residual",
+   "training_seed": 102,
+   "trace": true,
+   "checkpoint": "residual_robust_history_s102/checkpoints/final.pt",
+   "conditions": [
+    "clean",
+    "physical_only",
+    "bias_5mm",
+    "noise_2mm",
+    "delay_2step",
+    "mixed_id"
+   ]
+  }
+ ]
+}

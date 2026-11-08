@@ -390,7 +390,9 @@ def check_inputs():
             sd0 = {k: v.clone() for k, v in runner.alg.get_policy().state_dict().items()}
             pol = runner.get_inference_policy(device="cuda:0")
             for _ in range(20):
-                obs, *_ = env.step(pol(TensorDict(obs, batch_size=[env.num_envs])))
+                with torch.inference_mode():
+                    act = pol(TensorDict(obs, batch_size=[env.num_envs]))
+                obs, *_ = env.step(act)
             sd1 = runner.alg.get_policy().state_dict()
             changed = [k for k in sd0 if not torch.equal(sd0[k], sd1[k])]
             checks["checkpoint_shape_compatible"] = infos.get("obs_dim") == 230

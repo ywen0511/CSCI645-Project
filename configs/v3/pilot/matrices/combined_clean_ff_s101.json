@@ -1,0 +1,26 @@
+{
+ "name": "v3_pilot_combined_clean_ff_s101",
+ "suite": "configs/v3/suites/development.jsonl",
+ "num_envs": 144,
+ "protocol": "configs/v3/pilot/combined_clean_ff.json",
+ "trace_cases": [
+  "v3-development-mixed_id-0000"
+ ],
+ "entries": [
+  {
+   "id": "combined_clean_ff_s101_final",
+   "method": "combined",
+   "training_seed": 101,
+   "trace": true,
+   "checkpoint": "combined_clean_ff_s101/checkpoints/final.pt",
+   "conditions": [
+    "clean",
+    "physical_only",
+    "bias_5mm",
+    "noise_2mm",
+    "delay_2step",
+    "mixed_id"
+   ]
+  }
+ ]
+}
