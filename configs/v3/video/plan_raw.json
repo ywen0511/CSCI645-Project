@@ -1,0 +1,14 @@
+[
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.015
+  },
+  "checkpoint": null,
+  "case_id": "v3-final-noise_4mm-0000",
+  "run_id": "geometry_raw",
+  "category": "severe_noise",
+  "eval_records": "$RUNS/final/geometry_raw/geometry_raw.jsonl",
+  "output": "$RUNS/videos/severe_noise__geometry_raw__v3-final-noise_4mm-0000.mp4"
+ }
+]

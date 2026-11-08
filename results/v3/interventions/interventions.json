@@ -1,0 +1,116 @@
+{
+ "cases": 65,
+ "rows": [
+  {
+   "family": "combined_robust_history",
+   "seed": 11,
+   "unmodified": 65,
+   "permuted": 65,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 65,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  },
+  {
+   "family": "combined_robust_history",
+   "seed": 22,
+   "unmodified": 65,
+   "permuted": 65,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 65,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  },
+  {
+   "family": "combined_robust_history",
+   "seed": 33,
+   "unmodified": 65,
+   "permuted": 65,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 65,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  },
+  {
+   "family": "combined_robust_history",
+   "seed": 44,
+   "unmodified": 65,
+   "permuted": 65,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 65,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  },
+  {
+   "family": "combined_robust_history",
+   "seed": 55,
+   "unmodified": 65,
+   "permuted": 65,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 65,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  },
+  {
+   "family": "residual_robust_history",
+   "seed": 11,
+   "unmodified": 29,
+   "permuted": 29,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 29,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  },
+  {
+   "family": "residual_robust_history",
+   "seed": 22,
+   "unmodified": 29,
+   "permuted": 29,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 29,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  },
+  {
+   "family": "residual_robust_history",
+   "seed": 33,
+   "unmodified": 29,
+   "permuted": 29,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 29,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  },
+  {
+   "family": "residual_robust_history",
+   "seed": 44,
+   "unmodified": 29,
+   "permuted": 29,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 29,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  },
+  {
+   "family": "residual_robust_history",
+   "seed": 55,
+   "unmodified": 29,
+   "permuted": 29,
+   "permuted_changed_terminal": 0,
+   "permuted_config_mismatch_declared": true,
+   "current_only": 29,
+   "current_only_changed_terminal": 0,
+   "current_only_config_mismatch_declared": true
+  }
+ ],
+ "note": "inference-time interventions on trained history policies; the trained repeated-current control (combined_robust_repeat) is the stronger memory comparison"
+}

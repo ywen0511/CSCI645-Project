@@ -1,0 +1,4890 @@
+[
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.999,
+    "success_rate_per_seed": [
+      0.995,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0022360679774997916
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.999,
+    "success_rate_per_seed": [
+      0.995,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0022360679774997916
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.999,
+    "success_rate_per_seed": [
+      0.995,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0022360679774997916
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.999,
+    "success_rate_per_seed": [
+      0.995,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0022360679774997916
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.999,
+    "success_rate_per_seed": [
+      0.995,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0022360679774997916
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.999,
+    "success_rate_per_seed": [
+      0.995,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0022360679774997916
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.6,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.2,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_clean_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_ff",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.8,
+    "condition": "bias_10mm",
+    "drop_mean": 0.8,
+    "episode_timeout_mean": 13.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.724,
+    "success_rate_per_seed": [
+      0.67,
+      1.0,
+      0.78,
+      0.98,
+      0.19
+    ],
+    "success_rate_sd": 0.3289832822500256
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.6,
+    "episode_timeout_mean": 14.2,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.2,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.717,
+    "success_rate_per_seed": [
+      0.64,
+      1.0,
+      0.78,
+      0.98,
+      0.185
+    ],
+    "success_rate_sd": 0.3324830822763769
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.2,
+    "condition": "bias_5mm",
+    "drop_mean": 0.6,
+    "episode_timeout_mean": 13.2,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.2,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.72,
+    "success_rate_per_seed": [
+      0.665,
+      1.0,
+      0.78,
+      0.98,
+      0.175
+    ],
+    "success_rate_sd": 0.3352797339536048
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 40.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 20.8,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.696,
+    "success_rate_per_seed": [
+      0.48,
+      1.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "success_rate_sd": 0.4495330911067616
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.0,
+    "condition": "delay_1step",
+    "drop_mean": 1.0,
+    "episode_timeout_mean": 11.8,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.2,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.7249999999999999,
+    "success_rate_per_seed": [
+      0.695,
+      1.0,
+      0.775,
+      0.98,
+      0.175
+    ],
+    "success_rate_sd": 0.3341219837125357
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.4,
+    "condition": "delay_2step",
+    "drop_mean": 0.8,
+    "episode_timeout_mean": 12.8,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.721,
+    "success_rate_per_seed": [
+      0.675,
+      1.0,
+      0.78,
+      0.98,
+      0.17
+    ],
+    "success_rate_sd": 0.33694213153002994
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.2,
+    "condition": "delay_4step",
+    "drop_mean": 0.8,
+    "episode_timeout_mean": 13.2,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.7210000000000001,
+    "success_rate_per_seed": [
+      0.665,
+      1.0,
+      0.78,
+      0.98,
+      0.18
+    ],
+    "success_rate_sd": 0.3332491560379411
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.4,
+    "condition": "mixed_id",
+    "drop_mean": 0.8,
+    "episode_timeout_mean": 14.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.718,
+    "success_rate_per_seed": [
+      0.645,
+      1.0,
+      0.78,
+      0.98,
+      0.185
+    ],
+    "success_rate_sd": 0.3322009933759982
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 42.2,
+    "condition": "mixed_ood",
+    "drop_mean": 0.8,
+    "episode_timeout_mean": 13.8,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.2,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.715,
+    "success_rate_per_seed": [
+      0.65,
+      1.0,
+      0.775,
+      0.98,
+      0.17
+    ],
+    "success_rate_sd": 0.33774990747593103
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.8,
+    "episode_timeout_mean": 13.4,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.2,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.7190000000000001,
+    "success_rate_per_seed": [
+      0.655,
+      1.0,
+      0.78,
+      0.98,
+      0.18
+    ],
+    "success_rate_sd": 0.3336989661356475
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.8,
+    "episode_timeout_mean": 12.8,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.7270000000000001,
+    "success_rate_per_seed": [
+      0.675,
+      1.0,
+      0.78,
+      0.98,
+      0.2
+    ],
+    "success_rate_sd": 0.32472295884338087
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.4,
+    "condition": "noise_4mm",
+    "drop_mean": 0.8,
+    "episode_timeout_mean": 13.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.2,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.7250000000000001,
+    "success_rate_per_seed": [
+      0.665,
+      1.0,
+      0.78,
+      0.98,
+      0.2
+    ],
+    "success_rate_sd": 0.3251538097577822
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 41.0,
+    "condition": "physical_only",
+    "drop_mean": 1.0,
+    "episode_timeout_mean": 12.6,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 5.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.725,
+    "success_rate_per_seed": [
+      0.675,
+      1.0,
+      0.78,
+      0.98,
+      0.19
+    ],
+    "success_rate_sd": 0.32878564445547187
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "combined_robust_repeat",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_best_constant",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_common",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 70.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.675,
+    "success_rate_per_seed": [
+      0.675
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 13.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 3.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.96,
+    "success_rate_per_seed": [
+      0.96
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 1.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.995,
+    "success_rate_per_seed": [
+      0.995
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_filtered",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": "geometry_common",
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_giver",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 70.0,
+    "condition": "bias_10mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.67,
+    "success_rate_per_seed": [
+      0.67
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "bias_5mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_1step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_2step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "delay_4step",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "mixed_id",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 200.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.0,
+    "success_rate_per_seed": [
+      0.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 10.0,
+    "condition": "mixed_ood",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 197.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.0,
+    "success_rate_per_seed": [
+      0.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_1mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 150.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.25,
+    "success_rate_per_seed": [
+      0.25
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_2mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 199.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.005,
+    "success_rate_per_seed": [
+      0.005
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "noise_4mm",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 200.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.0,
+    "success_rate_per_seed": [
+      0.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "physical_only",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "geometry_raw",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "bias_10mm",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.71,
+    "success_rate_per_seed": [
+      0.71
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "bias_2mm",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.71,
+    "success_rate_per_seed": [
+      0.71
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "bias_5mm",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 4.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.715,
+    "success_rate_per_seed": [
+      0.715
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "delay_1step",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.705,
+    "success_rate_per_seed": [
+      0.705
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "delay_2step",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.71,
+    "success_rate_per_seed": [
+      0.71
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "delay_4step",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.71,
+    "success_rate_per_seed": [
+      0.71
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.0,
+    "condition": "mixed_id",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.705,
+    "success_rate_per_seed": [
+      0.705
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "mixed_ood",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.71,
+    "success_rate_per_seed": [
+      0.71
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "noise_1mm",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.7,
+    "success_rate_per_seed": [
+      0.7
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "noise_2mm",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.71,
+    "success_rate_per_seed": [
+      0.71
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 54.0,
+    "condition": "noise_4mm",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.7,
+    "success_rate_per_seed": [
+      0.7
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 53.0,
+    "condition": "physical_only",
+    "drop_mean": 2.0,
+    "episode_timeout_mean": 5.0,
+    "family": "nominal",
+    "release_timeout_mean": 0.0,
+    "role": "baseline",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      null
+    ],
+    "success_rate_mean": 0.71,
+    "success_rate_per_seed": [
+      0.71
+    ],
+    "success_rate_sd": null
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.2,
+    "condition": "bias_10mm",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 6.6,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.5890000000000001,
+    "success_rate_per_seed": [
+      0.72,
+      0.59,
+      0.79,
+      0.765,
+      0.08
+    ],
+    "success_rate_sd": 0.29479654000683253
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.0,
+    "condition": "bias_2mm",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 7.2,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.584,
+    "success_rate_per_seed": [
+      0.715,
+      0.59,
+      0.785,
+      0.75,
+      0.08
+    ],
+    "success_rate_sd": 0.29119151773360435
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.2,
+    "condition": "bias_5mm",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 7.0,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.584,
+    "success_rate_per_seed": [
+      0.705,
+      0.595,
+      0.785,
+      0.76,
+      0.075
+    ],
+    "success_rate_sd": 0.29377712640707754
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 40.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.8,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0
+    ],
+    "success_rate_sd": 0.4472135954999579
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.2,
+    "condition": "delay_1step",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 6.6,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.5870000000000001,
+    "success_rate_per_seed": [
+      0.715,
+      0.595,
+      0.79,
+      0.76,
+      0.075
+    ],
+    "success_rate_sd": 0.29568987131790636
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.2,
+    "condition": "delay_2step",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 7.2,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.585,
+    "success_rate_per_seed": [
+      0.7,
+      0.595,
+      0.79,
+      0.76,
+      0.08
+    ],
+    "success_rate_sd": 0.29197602641312864
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.4,
+    "condition": "delay_4step",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 7.2,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.585,
+    "success_rate_per_seed": [
+      0.705,
+      0.59,
+      0.79,
+      0.76,
+      0.08
+    ],
+    "success_rate_sd": 0.2924465763177952
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.0,
+    "condition": "mixed_id",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 7.2,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.584,
+    "success_rate_per_seed": [
+      0.705,
+      0.595,
+      0.78,
+      0.76,
+      0.08
+    ],
+    "success_rate_sd": 0.2907619301077774
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.2,
+    "condition": "mixed_ood",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 6.8,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.5880000000000001,
+    "success_rate_per_seed": [
+      0.71,
+      0.6,
+      0.79,
+      0.76,
+      0.08
+    ],
+    "success_rate_sd": 0.2930358339862209
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.2,
+    "condition": "noise_1mm",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 7.2,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.586,
+    "success_rate_per_seed": [
+      0.705,
+      0.6,
+      0.785,
+      0.76,
+      0.08
+    ],
+    "success_rate_sd": 0.2916633333142855
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.0,
+    "condition": "noise_2mm",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 6.8,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.5880000000000001,
+    "success_rate_per_seed": [
+      0.71,
+      0.6,
+      0.79,
+      0.76,
+      0.08
+    ],
+    "success_rate_sd": 0.2930358339862209
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.2,
+    "condition": "noise_4mm",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 7.2,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.584,
+    "success_rate_per_seed": [
+      0.7,
+      0.6,
+      0.79,
+      0.75,
+      0.08
+    ],
+    "success_rate_sd": 0.29056840846864274
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 65.0,
+    "condition": "physical_only",
+    "drop_mean": 12.6,
+    "episode_timeout_mean": 6.8,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "final",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.5860000000000001,
+    "success_rate_per_seed": [
+      0.72,
+      0.595,
+      0.785,
+      0.755,
+      0.075
+    ],
+    "success_rate_sd": 0.2946693061721903
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.4,
+    "condition": "bias_10mm",
+    "drop_mean": 5.6,
+    "episode_timeout_mean": 4.6,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.687,
+    "success_rate_per_seed": [
+      0.72,
+      0.535,
+      0.765,
+      0.72,
+      0.695
+    ],
+    "success_rate_sd": 0.0886425405773097
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.4,
+    "condition": "bias_2mm",
+    "drop_mean": 5.6,
+    "episode_timeout_mean": 4.8,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.687,
+    "success_rate_per_seed": [
+      0.715,
+      0.535,
+      0.775,
+      0.72,
+      0.69
+    ],
+    "success_rate_sd": 0.09045717218662098
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.0,
+    "condition": "bias_5mm",
+    "drop_mean": 5.6,
+    "episode_timeout_mean": 4.8,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.6859999999999999,
+    "success_rate_per_seed": [
+      0.705,
+      0.535,
+      0.77,
+      0.72,
+      0.7
+    ],
+    "success_rate_sd": 0.08883974335847666
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 0.0,
+    "condition": "clean",
+    "drop_mean": 0.0,
+    "episode_timeout_mean": 0.0,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 1.0,
+    "success_rate_per_seed": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "success_rate_sd": 0.0
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.8,
+    "condition": "delay_1step",
+    "drop_mean": 5.6,
+    "episode_timeout_mean": 4.6,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.6880000000000001,
+    "success_rate_per_seed": [
+      0.715,
+      0.535,
+      0.765,
+      0.725,
+      0.7
+    ],
+    "success_rate_sd": 0.08885381252371784
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.2,
+    "condition": "delay_2step",
+    "drop_mean": 5.6,
+    "episode_timeout_mean": 5.4,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.6839999999999999,
+    "success_rate_per_seed": [
+      0.7,
+      0.535,
+      0.775,
+      0.72,
+      0.69
+    ],
+    "success_rate_sd": 0.0895404936327693
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.0,
+    "condition": "delay_4step",
+    "drop_mean": 5.8,
+    "episode_timeout_mean": 5.4,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.6829999999999999,
+    "success_rate_per_seed": [
+      0.705,
+      0.535,
+      0.765,
+      0.715,
+      0.695
+    ],
+    "success_rate_sd": 0.0870057469366248
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.4,
+    "condition": "mixed_id",
+    "drop_mean": 5.6,
+    "episode_timeout_mean": 5.4,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.6869999999999999,
+    "success_rate_per_seed": [
+      0.705,
+      0.535,
+      0.77,
+      0.72,
+      0.705
+    ],
+    "success_rate_sd": 0.08906458330896741
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.2,
+    "condition": "mixed_ood",
+    "drop_mean": 5.6,
+    "episode_timeout_mean": 5.0,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.6880000000000001,
+    "success_rate_per_seed": [
+      0.71,
+      0.535,
+      0.77,
+      0.725,
+      0.7
+    ],
+    "success_rate_sd": 0.08962421547773791
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.2,
+    "condition": "noise_1mm",
+    "drop_mean": 5.8,
+    "episode_timeout_mean": 4.8,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.6880000000000001,
+    "success_rate_per_seed": [
+      0.705,
+      0.535,
+      0.775,
+      0.72,
+      0.705
+    ],
+    "success_rate_sd": 0.09024965373894793
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.2,
+    "condition": "noise_2mm",
+    "drop_mean": 5.6,
+    "episode_timeout_mean": 5.4,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.687,
+    "success_rate_per_seed": [
+      0.71,
+      0.535,
+      0.77,
+      0.72,
+      0.7
+    ],
+    "success_rate_sd": 0.0891347294829574
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.2,
+    "condition": "noise_4mm",
+    "drop_mean": 5.6,
+    "episode_timeout_mean": 5.4,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.6839999999999999,
+    "success_rate_per_seed": [
+      0.7,
+      0.535,
+      0.77,
+      0.725,
+      0.69
+    ],
+    "success_rate_sd": 0.08883974335847666
+  },
+  {
+    "alias_of": null,
+    "collision_mean": 55.2,
+    "condition": "physical_only",
+    "drop_mean": 5.8,
+    "episode_timeout_mean": 4.8,
+    "family": "residual_robust_history",
+    "release_timeout_mean": 0.0,
+    "role": "selected",
+    "scheduled_per_seed": 200,
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "success_rate_mean": 0.6890000000000001,
+    "success_rate_per_seed": [
+      0.72,
+      0.535,
+      0.765,
+      0.72,
+      0.705
+    ],
+    "success_rate_sd": 0.08898033490609034
+  }
+]

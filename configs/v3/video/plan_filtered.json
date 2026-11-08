@@ -1,0 +1,14 @@
+[
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.015
+  },
+  "checkpoint": null,
+  "case_id": "v3-final-mixed_ood-0002",
+  "run_id": "geometry_filtered",
+  "category": "giver_reference_comparison",
+  "eval_records": "$RUNS/final/geometry_filtered/geometry_filtered.jsonl",
+  "output": "$RUNS/videos/giver_reference_comparison__geometry_filtered__v3-final-mixed_ood-0002.mp4"
+ }
+]

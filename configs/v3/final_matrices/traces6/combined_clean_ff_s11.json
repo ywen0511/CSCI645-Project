@@ -1,0 +1,32 @@
+{
+ "name": "v3_final_combined_clean_ff_s11_traces6",
+ "suite": "$DELIVERY/configs/v3/suites/final_trace6.jsonl",
+ "num_envs": 6,
+ "protocol": "configs/v3/frozen/training/combined_clean_ff.json",
+ "trace_cases": [
+  "v3-final-clean-0000",
+  "v3-final-mixed_id-0000",
+  "v3-final-mixed_id-0001",
+  "v3-final-mixed_ood-0000",
+  "v3-final-mixed_ood-0001",
+  "v3-final-noise_4mm-0000"
+ ],
+ "entries": [
+  {
+   "id": "combined_clean_ff_s11__selected",
+   "method": "combined",
+   "training_seed": 11,
+   "role": "selected",
+   "trace": true,
+   "checkpoint": "combined_clean_ff_s11/checkpoints/step_008028160.pt"
+  },
+  {
+   "id": "combined_clean_ff_s11__final",
+   "method": "combined",
+   "training_seed": 11,
+   "role": "final",
+   "trace": true,
+   "checkpoint": "combined_clean_ff_s11/checkpoints/final.pt"
+  }
+ ]
+}

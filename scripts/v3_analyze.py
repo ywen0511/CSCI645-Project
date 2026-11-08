@@ -28,6 +28,8 @@ from csci645_handover.v3_protocol import sha256, validate_records, write_json
 def analyze(root, index_path, output, repeats=10000):
     index = json.loads(index_path.read_text())
     suite_path = root / index["suite"]
+    if not suite_path.exists():  # suite lives in the repository; the runs root holds only records
+        suite_path = ROOT / index["suite"]
     cases = [json.loads(line) for line in suite_path.read_text().splitlines() if line.strip()]
     conditions = sorted({c["condition"] for c in cases})
     expected_keys = {"entry_id", "suite_hash", "config_hash", "controller_hash", "checkpoint_sha256", "source_commit", "source_dirty"}

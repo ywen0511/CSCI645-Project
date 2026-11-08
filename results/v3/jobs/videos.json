@@ -1,0 +1,87 @@
+{
+ "name": "videos",
+ "tasks": [
+  {
+   "id": "video_common",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v3/video/plan_common.json",
+    "--suite",
+    "configs/v3/suites/final.jsonl",
+    "--protocol",
+    "configs/v3/frozen/training/combined_robust_history.json"
+   ],
+   "inputs": [
+    "configs/v3/video/plan_common.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/main_comparison__combined_robust_history_s11_selected__v3-final-mixed_id-0000.mp4",
+    "$RUNS/videos/main_comparison__geometry_best_constant__v3-final-mixed_id-0000.mp4",
+    "$RUNS/videos/main_comparison__combined_robust_history_s11_selected__v3-final-mixed_ood-0000.mp4",
+    "$RUNS/videos/main_comparison__geometry_best_constant__v3-final-mixed_ood-0000.mp4",
+    "$RUNS/videos/clean_baseline__geometry_common__v3-final-clean-0000.mp4",
+    "$RUNS/videos/giver_reference_comparison__geometry_giver__v3-final-mixed_ood-0002.mp4"
+   ]
+  },
+  {
+   "id": "video_raw",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v3/video/plan_raw.json",
+    "--suite",
+    "configs/v3/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v3/video/protocol_raw.json"
+   ],
+   "inputs": [
+    "configs/v3/video/plan_raw.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/severe_noise__geometry_raw__v3-final-noise_4mm-0000.mp4"
+   ]
+  },
+  {
+   "id": "video_filtered",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v3/video/plan_filtered.json",
+    "--suite",
+    "configs/v3/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v3/video/protocol_filtered.json"
+   ],
+   "inputs": [
+    "configs/v3/video/plan_filtered.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/giver_reference_comparison__geometry_filtered__v3-final-mixed_ood-0002.mp4"
+   ]
+  },
+  {
+   "id": "video_index_montage",
+   "kind": "cpu",
+   "argv": [
+    "$DELIVERY/scripts/v3_video_index.py",
+    "--videos",
+    "$RUNS/videos",
+    "--plans",
+    "$DELIVERY/configs/v3/video",
+    "--output",
+    "$RUNS/videos"
+   ],
+   "inputs": [
+    "scripts/v3_video_index.py"
+   ],
+   "outputs": [
+    "$RUNS/videos/video_index.json",
+    "$RUNS/videos/montage.mp4"
+   ]
+  }
+ ]
+}

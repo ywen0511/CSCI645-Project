@@ -333,6 +333,36 @@ def extras():
     write("extras", tasks)
 
 
+def traces():
+    """Supplementary traces (after the final matrix). The frozen runtime traces only cases that occupy an env slot
+    at start-up, so the batch-256 final matrix traced only its first-wave case (clean-0000). This stage re-runs the
+    six predeclared TRACE_FINAL cases for every executed final entry in one batch of six, fresh process each,
+    with tracing on. Records stay separate from the primary matrix (outputs under $RUNS/traces6/)."""
+    rows = {json.loads(l)["case_id"]: l for l in (ROOT / "configs/v3/suites/final.jsonl").read_text().splitlines() if l.strip()}
+    sp = ROOT / "configs/v3/suites/final_trace6.jsonl"
+    sp.write_text("".join(rows[c].rstrip("\n") + "\n" for c in sorted(TRACE_FINAL)))
+    d = ROOT / "configs/v3/final_matrices/traces6"
+    d.mkdir(parents=True, exist_ok=True)
+    tasks = []
+    for mp in sorted((ROOT / "configs/v3/final_matrices").glob("*.json")):
+        if mp.name == "baseline_aliases.json":
+            continue
+        m = json.loads(mp.read_text())
+        m.update(name=m["name"] + "_traces6", suite="$DELIVERY/configs/v3/suites/final_trace6.jsonl", num_envs=len(TRACE_FINAL),
+                 trace_cases=sorted(TRACE_FINAL))
+        for e in m["entries"]:
+            e["trace"] = True
+        out = d / mp.name
+        out.write_text(json.dumps(m, indent=1) + "\n")
+        for e in m["entries"]:
+            ck = ["--checkpoint-root", "$RUNS/train"] if e.get("checkpoint") else []
+            tasks.append({"id": f"trace6_{e['id']}", "kind": "isaac",
+                          "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(out.relative_to(ROOT)), "--only", e["id"],
+                                   *ck, "--output", f"$RUNS/traces6/{e['id']}", "--seed", str(SEED_EVAL)],
+                          "inputs": [str(out.relative_to(ROOT))], "outputs": [f"$RUNS/traces6/{e['id']}/traces/{e['id']}.json"]})
+    write("traces6", tasks)
+
+
 def verification():
     """Stage 7 (published release): predeclared 65-case replay and a two-iteration resume check, run against
     the EXTRACTED download (--runs-root <extracted dir>); outputs go to replay65/ and resume_check/."""
@@ -385,4 +415,4 @@ if __name__ == "__main__":
     for stage in sys.argv[1:]:
         {"acceptance": acceptance, "development": development, "cache": cache, "pilots": pilots,
          "train": train, "validation_matrices": validation_matrices, "validation": validation, "final": final,
-         "extras": extras, "verification": verification}[stage]()
+         "extras": extras, "traces6": traces, "verification": verification}[stage]()

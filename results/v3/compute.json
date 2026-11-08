@@ -1,0 +1,79 @@
+{
+ "hardware": "NVIDIA A100-SXM4-40GB, one GPU per simulator task (LSF exclusive), driver 580.159.03",
+ "software": "Isaac Lab 3.0.0 / Isaac Sim 6.2.0.0 / RSL-RL 5.5.1 / torch 2.11.0+cu130",
+ "by_stage": {
+  "candidate/acceptance_cache": {
+   "attempts": 1,
+   "failed_attempts": 0,
+   "gpu_hours": 0.0,
+   "cpu_hours": 0.035,
+   "max_task_min": 2.1
+  },
+  "candidate/acceptance_eval": {
+   "attempts": 17,
+   "failed_attempts": 0,
+   "gpu_hours": 0.218,
+   "cpu_hours": 0.0,
+   "max_task_min": 3.3
+  },
+  "candidate/acceptance_sim": {
+   "attempts": 10,
+   "failed_attempts": 0,
+   "gpu_hours": 0.117,
+   "cpu_hours": 0.0,
+   "max_task_min": 0.9
+  },
+  "candidate/acceptance_smoke": {
+   "attempts": 32,
+   "failed_attempts": 3,
+   "gpu_hours": 0.258,
+   "cpu_hours": 0.0,
+   "max_task_min": 1.3
+  },
+  "candidate/development": {
+   "attempts": 85,
+   "failed_attempts": 0,
+   "gpu_hours": 0.906,
+   "cpu_hours": 0.0,
+   "max_task_min": 1.0
+  },
+  "candidate/pilot_eval": {
+   "attempts": 8,
+   "failed_attempts": 0,
+   "gpu_hours": 0.098,
+   "cpu_hours": 0.0,
+   "max_task_min": 0.9
+  },
+  "candidate/pilots": {
+   "attempts": 8,
+   "failed_attempts": 0,
+   "gpu_hours": 0.778,
+   "cpu_hours": 0.0,
+   "max_task_min": 6.1
+  },
+  "formal/train": {
+   "attempts": 23,
+   "failed_attempts": 0,
+   "gpu_hours": 7.613,
+   "cpu_hours": 0.0,
+   "max_task_min": 20.7
+  },
+  "formal/validation": {
+   "attempts": 138,
+   "failed_attempts": 0,
+   "gpu_hours": 1.387,
+   "cpu_hours": 0.0,
+   "max_task_min": 1.0
+  }
+ },
+ "total_gpu_hours": 11.37,
+ "total_attempts": 322,
+ "formal_training": {
+  "runs": 23,
+  "gpu_hours": 7.61,
+  "realized_transitions": 230621184,
+  "transitions_per_s_incl_startup": 8415.0,
+  "mean_run_min": 19.9
+ },
+ "note": "wall-clock per task including Isaac Sim start-up/shutdown; superseded attempts at the earlier candidate commit (moved to v3/superseded/) are not counted here"
+}
