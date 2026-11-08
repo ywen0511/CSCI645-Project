@@ -333,8 +333,56 @@ def extras():
     write("extras", tasks)
 
 
+def verification():
+    """Stage 7 (published release): predeclared 65-case replay and a two-iteration resume check, run against
+    the EXTRACTED download (--runs-root <extracted dir>); outputs go to replay65/ and resume_check/."""
+    d = ROOT / "configs/v3/final_matrices/extras"
+    tasks = []
+    for mp in sorted(d.glob("repeat_*.json")):
+        mx = json.loads(mp.read_text())
+        e = mx["entries"][0]["id"]
+        ck = ["--checkpoint-root", "$RUNS/formal/train"] if mx["entries"][0].get("checkpoint") else []
+        tasks.append({"id": f"replay65_{e}", "kind": "isaac",
+                      "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)), "--num-envs", "23",
+                               "--output", f"$RUNS/replay65/{e}", "--seed", str(SEED_EVAL)] + ck,
+                      "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/replay65/{e}/{e}.jsonl"]})
+    sel = json.loads((ROOT / "results/v3/selection/selection.json").read_text())
+    rows = [json.loads(l) for l in (ROOT / "configs/v3/suites/final.jsonl").read_text().splitlines() if l.strip()]
+    first = {}
+    for r in sorted(rows, key=lambda r: r["case_id"]):
+        first.setdefault(r["condition"], r)
+    sp = ROOT / "configs/v3/suites/final_reload13.jsonl"
+    sp.write_text("".join(json.dumps(first[c], sort_keys=True) + "\n" for c in sorted(first)))
+    for prof, method in PROFILES.items():  # reload every distinct architecture/estimator profile from the download
+        if prof == "combined_robust_history":
+            continue  # reloaded by the 65-case replay
+        run_ = f"{prof}_s11"
+        mp = d / f"reload_{prof}.json"
+        mp.write_text(json.dumps({"name": f"v3_reload_{prof}", "suite": "$DELIVERY/configs/v3/suites/final_reload13.jsonl",
+                                  "num_envs": 13, "protocol": f"configs/v3/frozen/training/{prof}.json", "trace_cases": [],
+                                  "entries": [{"id": f"{run_}__selected", "method": method, "training_seed": 11, "role": "selected",
+                                               "checkpoint": f"{run_}/checkpoints/{sel[run_]['selected']}.pt"}]}, indent=1) + "\n")
+        tasks.append({"id": f"reload_{prof}", "kind": "isaac",
+                      "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)),
+                               "--checkpoint-root", "$RUNS/formal/train", "--output", f"$RUNS/reload/{prof}", "--seed", str(SEED_EVAL)],
+                      "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/reload/{prof}/{run_}__selected.jsonl"]})
+    run = "combined_robust_history_s11"
+    src = f"$RUNS/formal/train/{run}/checkpoints/latest.pt"
+    out = f"$RUNS/resume_check/{run}"
+    tasks.append({"id": "resume_check_train", "kind": "isaac",
+                  "argv": ["scripts/train.py", "--method", "combined", "--seed", "11", "--protocol",
+                           "configs/v3/frozen/training/combined_robust_history.json", "--run-type", "smoke",
+                           "--resume", src, "--transitions", "10092544", "--output", out],
+                  "inputs": [], "outputs": [f"{out}/checkpoints/final.pt"]})
+    tasks.append({"id": "resume_check_inspect", "kind": "isaac",
+                  "argv": ["scripts/closeout_inspect_ckpt.py", "--before", src, "--after", f"{out}/checkpoints/final.pt",
+                           "--expect-iterations", "308", "--expect-transitions", "10092544", "--output", f"$RUNS/resume_check/inspect.json"],
+                  "inputs": [], "outputs": ["$RUNS/resume_check/inspect.json"]})
+    write("verification", tasks)
+
+
 if __name__ == "__main__":
     for stage in sys.argv[1:]:
         {"acceptance": acceptance, "development": development, "cache": cache, "pilots": pilots,
          "train": train, "validation_matrices": validation_matrices, "validation": validation, "final": final,
-         "extras": extras}[stage]()
+         "extras": extras, "verification": verification}[stage]()
