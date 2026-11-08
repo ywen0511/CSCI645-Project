@@ -101,3 +101,17 @@ Append remote decisions with the evidence split, source SHA and affected runs.
   `v3-final-*`, geometry_common estimator: EMA 1.0 + giver reference, 1.5 cm; 1,024 envs × 32 steps; 10,000,000
   requested → 10,027,008 realized transitions per run; seeds 11,22,33,44,55 and 11,22,33 for the repeated-current
   control). Validation matrices for the five fixed candidate steps are committed with the freeze.
+
+### 2026-11-08 19:28 UTC — validation selection (split: validation) and ledger redaction
+
+- All 23 formal runs finished (rc 0, 10,027,008 transitions each, source `3811f5da`, clean). All 138 validation
+  evaluations (23 runs × {step 0, 2M, 4M, 6M, 8M, 10M}) recorded 240/240 valid cases; step 0 was evaluated as the
+  untrained control and never eligible. `scripts/v3_select_checkpoints.py` applied `select_v2`
+  (`results/v3/selection/`). Every combined profile (clean FF, robust FF, robust history, repeated-current)
+  reaches 240/240 at its selected step, so selection among tied candidates fell to the residual-norm and
+  latest-step tie-breaks. Residual-only history selects 77–85% validation success. Final/extras/verification
+  manifests were generated from this selection before any final outcome was opened.
+- The first merged `results/v3/task_ledger.jsonl` (commit `b73003d`) contained absolute cluster run paths
+  (no credentials). Shared history is not rewritten (no force-push); `v3_jobs.py merge` now redacts cluster
+  run/checkout paths to `$RUNS`/`$REPO`, merges the candidate and formal runs roots, and refuses to write if any
+  leak pattern remains. The corrected ledger replaces the file in the next commit.

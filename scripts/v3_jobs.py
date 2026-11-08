@@ -168,20 +168,32 @@ def run(a):
 
 
 def merge(a):
-    runs = Path(a.runs_root).resolve()
+    """Merge per-task ledgers of one or more runs roots; absolute run/checkout paths are redacted to $RUNS/$REPO."""
+    import re
+
+    leaks = [r"/data/rtxw01", r"/home/(?!conda/)[a-z0-9_]+/", r"dcwip\w+", r"\.gm\.com", r"kztrgg", r"nbak/robot_intel"]
     rows = []
-    for p in sorted((runs / "ledger").glob("*.jsonl")):
-        for l in p.read_text().splitlines():
-            r = json.loads(l)
-            s = json.dumps(r).replace(str(runs), "$RUNS").replace(str(ROOT), "$REPO")
-            r = json.loads(s)
-            r["host"] = "<cluster-node>"
-            rows.append(r)
+    for root in a.runs_root:
+        runs = Path(root).resolve()
+        for p in sorted((runs / "ledger").glob("*.jsonl")):
+            for l in p.read_text().splitlines():
+                s = json.dumps(json.loads(l)).replace(str(runs), "$RUNS").replace(str(ROOT), "$REPO")
+                # paths written on the cluster: <anything>/v3/<runs root name> -> $RUNS; other checkouts -> $REPO
+                s = re.sub(r"(?:/[A-Za-z0-9_.\-]+)+/v3/" + re.escape(runs.name) + r"(?=[/\"])", "$RUNS", s)
+                s = re.sub(r"(?:/[A-Za-z0-9_.\-]+)+/projs/code/[A-Za-z0-9_.\-]+(?=[/\"])", "$REPO", s)
+                r = json.loads(s)
+                r["host"] = "<cluster-node>"
+                r["runs_root"] = runs.name
+                rows.append(r)
     rows.sort(key=lambda r: (r["start_utc"], r["task"], r["attempt"]))
+    text = "".join(json.dumps(r, sort_keys=True) + "\n" for r in rows)
+    hits = sorted({m.group(0) for pat in leaks for m in re.finditer(pat, text)})
+    if hits:
+        raise SystemExit(f"private paths/hosts left after redaction: {hits}")
     out = ROOT / "results/v3/task_ledger.jsonl"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text("".join(json.dumps(r, sort_keys=True) + "\n" for r in rows))
-    print(f"merged {len(rows)} attempts into {out}")
+    out.write_text(text)
+    print(f"merged {len(rows)} attempts from {len(a.runs_root)} runs roots into {out}")
 
 
 def main():
@@ -198,7 +210,7 @@ def main():
     r.add_argument("--allow-dirty", action="store_true")
     r.add_argument("--task-timeout-s", type=float, default=5400.0)
     m = sub.add_parser("merge")
-    m.add_argument("--runs-root", default=str(ROOT / "runs/v3"))
+    m.add_argument("--runs-root", action="append", required=True, help="repeatable; e.g. candidate then formal")
     a = ap.parse_args()
     {"run": run, "merge": merge}[a.cmd](a)
 

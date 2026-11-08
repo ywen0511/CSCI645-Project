@@ -96,6 +96,10 @@ def main():
                       "argv": ["scripts/record_video.py", "--plan", f"$DELIVERY/configs/v3/video/plan_{name}.json",
                                "--suite", "configs/v3/suites/final.jsonl", "--protocol", prot],
                       "inputs": [f"configs/v3/video/plan_{name}.json"], "outputs": [p["output"] for p in plan]})
+    tasks.append({"id": "video_index_montage", "kind": "cpu",
+                  "argv": ["$DELIVERY/scripts/v3_video_index.py", "--videos", "$RUNS/videos", "--plans",
+                           "$DELIVERY/configs/v3/video", "--output", "$RUNS/videos"],
+                  "inputs": ["scripts/v3_video_index.py"], "outputs": ["$RUNS/videos/video_index.json", "$RUNS/videos/montage.mp4"]})
     (ROOT / "results/v3/jobs/videos.json").write_text(json.dumps({"name": "videos", "tasks": tasks}, indent=1) + "\n")
     (O / "selection.json").write_text(json.dumps({"rule": "configs/v3/video_rule.json", "main": why,
                                                   "giver_reference_case": giver_case,
