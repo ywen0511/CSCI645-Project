@@ -1,31 +1,38 @@
 {
   "assignment": "POST_V3_EXECUTION.md",
   "complete": false,
-  "stage": "ready_for_remote_execution",
+  "stage": "stage_a_release_publication",
   "original_v3_complete": true,
   "original_release": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0",
   "local_gpu_or_simulator_run": false,
   "maintenance": {
-    "implementation": "prepared",
-    "cpu_validation": "passed: 60 tests; 1 simulator-only test skipped; final 12 maintenance regressions passed",
-    "evidence": "results/post_v3/maintenance_cpu.json",
-    "fresh_remote_verification": "pending",
-    "release": "pending"
+    "implementation": "complete",
+    "cpu_validation": "passed: 60 passed, 1 simulator-only test skipped (2026-11-09, isolated Python 3.13.9 venv)",
+    "evidence": [
+      "results/post_v3/maintenance_cpu.json",
+      "results/post_v3/cache_demo.json",
+      "results/post_v3/stage_a/"
+    ],
+    "fresh_remote_verification": "passed 2026-11-09: REPRODUCE sections 1-4 verbatim; 455/455 replay, 52/52 reload, resume ok, suites byte-identical, 34/35 tables identical + 1 float-rounding equal, 6/6 figures identical, repeat run 13/13 skipped, audit 0 discrepancies",
+    "cache_demonstration": "8/8 scenarios",
+    "release": "pending: v3.0.1",
+    "release_public_verification": "pending"
   },
   "v4": {
     "scope": "unknown physical giver grasp translation with calibrated geometry and bounded PPO residuals",
-    "implementation": "not_started",
+    "implementation": "in_development",
     "acceptance": "not_started",
     "frozen": false,
     "formal_runs_planned": 25,
     "formal_runs_completed": 0,
     "release": "pending",
     "fresh_download_verified": false,
-    "optional_dynamic_slip": "not_performed"
+    "optional_dynamic_slip": "not_performed",
+    "branch": "study/v4-grasp-uncertainty"
   },
   "next_actions": [
-    "Remote agent: execute POST_V3_EXECUTION.md Stage A through maintenance release verification",
-    "Remote agent: implement, freeze and execute Stage B, publish all checkpoints and deliverables, verify fresh downloads"
+    "Publish v3.0.1 and verify it from an anonymous download",
+    "Stage B: development, acceptance, freeze, formal runs, analysis, publication"
   ],
   "blockers": []
 }

@@ -50,10 +50,13 @@ For CPU regression checks in an isolated environment with torch, numpy and pytes
 CUDA_VISIBLE_DEVICES='' python -m pytest -q
 ```
 
-The maintenance changes are CPU-tested; their fresh GPU reproduction is a remote
-acceptance gate. See [maintenance notes](docs/v3/MAINTENANCE.md) and
-[continuation status](POST_V3_STATUS.json). CPU tests do not validate contact physics.
-The local preparation agent must not launch GPU or simulator workloads.
+The maintenance repairs passed remote GPU acceptance on 2026-11-09 (sections 1–4 of the
+reproduction instructions executed verbatim; 455/455 replay, 52/52 reload, resume, byte-identical
+suites and tables; see [maintenance notes](docs/v3/MAINTENANCE.md)). They are published as the
+maintenance release [v3.0.1](https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.1), which
+keeps every v3.0.0 asset byte-identical. Track the continuation in
+[POST_V3_STATUS.json](POST_V3_STATUS.json); the V4 uncertain-grasp study is developed on branch
+`study/v4-grasp-uncertainty`. CPU tests do not validate contact physics.
 
 ## History
 

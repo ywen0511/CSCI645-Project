@@ -1,10 +1,11 @@
 # Reproducing the archived V3 study
 
 Use only the public Git repository, release assets and official simulator distribution.
-This revision corrects paths and placeholder handling in the old instructions. The
-[published verification](VERIFICATION.md) records earlier execution, not a claim that
-these revised commands have already passed remote GPU verification. Track that gate
-in [POST_V3_STATUS.json](../../POST_V3_STATUS.json).
+This revision corrects paths and placeholder handling in the old instructions. Sections
+1–4 were executed verbatim on the GPU cluster on 2026-11-09 (tooling `4d7beb3`) and passed;
+the record is in [MAINTENANCE.md](MAINTENANCE.md) and `results/post_v3/stage_a/`. The
+[original verification](VERIFICATION.md) records the earlier v3.0.0 execution. The same
+assets are also available through the maintenance release `v3.0.1` (section 6).
 
 ## 1. Create three distinct checkouts (CPU)
 
@@ -60,7 +61,11 @@ The verifier checks release/member checksums, safely extracts archives, resolves
 457 checkpoint-index entries, reconciles final/validation counts, decodes videos and
 opens documents. Downloading consumes about 461 MB; extraction needs additional space.
 `$X/formal/train` contains released checkpoints; `$X/final` and `$X/validation` hold records.
-`$G/regen.json` reports regeneration and comparison of 35 tables and 6 figures.
+`$G/regen.json` reports regeneration and comparison of 35 tables and 6 figures. Exit code 0
+allows files that are numerically equal within a relative tolerance of 1e-9 (`float_only`).
+On the 2026-11-09 run (AMD EPYC node) `mechanisms/mechanisms.json` was `float_only`: 116
+least-squares values differed by at most 8.9e-16 (BLAS rounding); the other 34 files and all
+6 figures (`$G/figures/*.png` against `$D/results/v3/figures/`) were byte-identical.
 
 The suite rebuilder is standard-library-only and reads the original generator from
 `E`. It checks all 60 frozen inputs, with one explicit historical exception:
@@ -123,6 +128,17 @@ The comparator's exit code alone is not an acceptance gate; the explicit count/c
 assertions above are required. Investigate and report all mismatches, including hardware
 nondeterminism; do not erase them or relax checks merely to pass.
 
+Then audit the replay records themselves (case-ID sets against the subset suites,
+uniqueness, resets, source/suite/config/checkpoint hashes, outcomes; standard library only):
+
+```bash
+"$PY" -I "$T/scripts/post_v3_replay_audit.py" --replay "$R" --extracted "$X" --tooling "$T" \
+    --experiment-sha 3811f5da5ef55638f95f7306e449609877f546df --checkpoint-index "$B/checkpoints.json" \
+    --output "$V3_WORK/replay_audit.json"
+```
+
+Expected: `{"entries": 11, "replay65_episodes": 455, "reload_episodes": 52, "discrepancies": 0}`.
+
 Repeat the runner command once: all 13 tasks should skip only after hashes and
 provenance match. Preserve the new ledger separately from the historical release ledger.
 Symlinks above are read-only input references, not declared task outputs.
@@ -142,6 +158,25 @@ final tasks across available GPUs. Do not shard a manifest with task dependencie
 without scheduling its stages. Full retraining is unnecessary for maintenance acceptance;
 the historical training/selection contract is [V3_EXECUTION.md](../../V3_EXECUTION.md).
 A new training run needs its own validation-selected matrices, not the old selection.
+
+## 6. Using the maintenance release v3.0.1 (CPU)
+
+`v3.0.1` contains every `v3.0.0` asset byte-identical inside `v3.0.0-original-assets.tar`,
+plus the maintenance source, evidence and indices. To start from it instead of `v3.0.0`,
+replace the download line of section 2 with:
+
+```bash
+B1="$V3_WORK/release-v3.0.1"
+"$PY" -I "$T/scripts/v3_download.py" --tag v3.0.1 --output "$B1"
+"$PY" -I "$T/scripts/post_v3_verify_release.py" --bundle "$B1" --original-out "$B" \
+    --output "$V3_WORK/maintenance_release_verify.json"
+```
+
+This checks `SHA256SUMS`, manifest coverage, safe paths and every member hash of every
+archive, extracts the 30 original assets into `$B`, checks them against the manifest and the
+original `SHA256SUMS`, and resolves all 457 entries of `checkpoint_locations.json` by hashing
+the checkpoint inside its original archive. Expected: `"ok": true`, 30 original assets,
+457 checkpoints resolved. Continue with the `v3_verify.py` line of section 2 unchanged.
 
 ## Integrity and limits
 
