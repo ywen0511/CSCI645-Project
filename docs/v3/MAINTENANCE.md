@@ -51,7 +51,10 @@ clones (tooling `4d7beb3`) and an anonymous download:
 | CPU tests | 60 passed, 1 skipped (Isaac import) |
 
 The maintenance release `v3.0.1` preserves every `v3.0.0` asset byte-identical inside
-`v3.0.0-original-assets.tar` and adds the maintenance source, evidence and indices. Its
-public-download verification is recorded in `results/post_v3/release_verification/`.
+`v3.0.0-original-assets.tar` and adds the maintenance source, evidence and indices. It is
+published at https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.1 (tag
+`maintenance-v3.0.1` = `v3.0.1` = `c85fded`) and passed public-download verification on 2026-11-09:
+`results/post_v3/release_verification/` (parent and original checksums, 457 of 457 checkpoints resolved,
+original verifier, table/figure regeneration, suite rebuild, 65-case replay and 13-case reload).
 V4 is a separately frozen research extension on branch `study/v4-grasp-uncertainty`;
 nothing in this maintenance record claims V4 results.

@@ -1,7 +1,7 @@
 {
   "assignment": "POST_V3_EXECUTION.md",
   "complete": false,
-  "stage": "stage_a_release_publication",
+  "stage": "stage_b_v4",
   "original_v3_complete": true,
   "original_release": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0",
   "local_gpu_or_simulator_run": false,
@@ -15,8 +15,9 @@
     ],
     "fresh_remote_verification": "passed 2026-11-09: REPRODUCE sections 1-4 verbatim; 455/455 replay, 52/52 reload, resume ok, suites byte-identical, 34/35 tables identical + 1 float-rounding equal, 6/6 figures identical, repeat run 13/13 skipped, audit 0 discrepancies",
     "cache_demonstration": "8/8 scenarios",
-    "release": "pending: v3.0.1",
-    "release_public_verification": "pending"
+    "release": "published: https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.1 (11 assets; tag v3.0.1 = maintenance-v3.0.1 = c85fded)",
+    "release_public_verification": "passed 2026-11-09 from a new empty directory (results/post_v3/release_verification/)",
+    "complete": true
   },
   "v4": {
     "scope": "unknown physical giver grasp translation with calibrated geometry and bounded PPO residuals",
@@ -31,8 +32,7 @@
     "branch": "study/v4-grasp-uncertainty"
   },
   "next_actions": [
-    "Publish v3.0.1 and verify it from an anonymous download",
-    "Stage B: development, acceptance, freeze, formal runs, analysis, publication"
+    "Stage B: V4 development, acceptance, freeze, formal runs, analysis, publication (branch study/v4-grasp-uncertainty)"
   ],
   "blockers": []
 }

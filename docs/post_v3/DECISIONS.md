@@ -65,3 +65,26 @@ crash after writing outputs, not the runner.
 on which the original verifier runs unchanged. A new packager (`scripts/post_v3_package.py`) and verifier
 (`scripts/post_v3_verify_release.py`) were written instead of reusing the V3 packager, whose hard-coded layout
 would omit the maintenance evidence. `v3.0.0` is not modified.
+
+## 2026-11-09 16:10 — publishing v3.0.1 (upload failure and recovery)
+
+The first `gh release create` failed while uploading the 461 MB `v3.0.0-original-assets.tar`
+(`tls: bad record MAC`); GitHub kept no release. A draft with the ten small assets was then created, but three
+further uploads of the large asset from the workstation (gh and curl, with and without a rate limit) failed
+the same way after ~49 MB: the workstation's outbound link was corrupting long TLS uploads. The packager was
+re-run unchanged from a clean clone of `maintenance-v3.0.1` on the cluster against that machine's own
+anonymous v3.0.0 download; the nested archive was byte-identical (SHA-256 `809130f2…862b`), and it was
+uploaded from there (the token was passed on standard input, never written to disk). All 11 draft assets were
+reconciled by size and SHA-256 against the local bundle before the draft was published. The other small assets
+differ between the two builds only in git-archive gzip bytes (git version), so the published set is exactly
+the workstation build listed in its `SHA256SUMS`.
+
+## 2026-11-09 16:17 — public verification of v3.0.1
+
+From a new empty directory on the GPU cluster with public clones only (`maintenance-v3.0.1`, `v3.0.0`,
+`experiment-v3`) and an anonymous download of all 11 assets: `SHA256SUMS` ok; parent verification ok (788
+archive members re-hashed, 30 original assets equal to the manifest and the original `SHA256SUMS`, 457 of 457
+checkpoints resolved inside their original archives); original verifier ok on the extracted bundle; 34 of 35
+tables identical and 1 equal within rounding; 6 of 6 figures identical; suite rebuild check ok; 65-case
+replay (geometry_common) and 13-case reload (combined_robust_ff) from the extracted checkpoints equal the
+published records. Record: `results/post_v3/release_verification/`. Stage A is complete.

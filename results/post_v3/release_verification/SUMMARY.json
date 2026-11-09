@@ -1,0 +1,40 @@
+{
+ "release": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.1",
+ "tested_tag": "maintenance-v3.0.1 (= v3.0.1)",
+ "tested_tag_commit": "c85fded58f776c117368dc02be24405912593e38",
+ "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+ "original_delivery_commit": "ebfa328b17103c32ae19c13f0a6408ebc55a6459",
+ "utc": "2026-11-09T16:12Z..16:17Z",
+ "new_empty_directory": true,
+ "anonymous_download": true,
+ "assets_downloaded": 11,
+ "sha256sums_ok": true,
+ "parent_verification": {
+  "ok": true,
+  "archive_members_rehashed": 788,
+  "original_assets": 30,
+  "checkpoints_resolved": "457/457"
+ },
+ "original_sha256sums_ok": true,
+ "original_verifier_ok": true,
+ "tables": {
+  "identical": 34,
+  "float_only": 1,
+  "different": 0
+ },
+ "figures_identical": 6,
+ "suites_rebuild_check": "ok",
+ "gpu_replay": {
+  "replay65_geometry_common": "65/65 equal",
+  "reload_combined_robust_ff": "13/13 equal, checkpoint SHA-256 equal"
+ },
+ "files": [
+  "maintenance_release_verify.json",
+  "original_bundle_verify.json",
+  "regen.json",
+  "download_log_v3.0.1.json",
+  "replay_ledger.jsonl",
+  "transcript.log",
+  "verification_job.sh"
+ ]
+}

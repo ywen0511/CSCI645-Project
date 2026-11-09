@@ -1,0 +1,86 @@
+{
+ "repo": "ywen0511/CSCI645-Project",
+ "tag": "v3.0.1",
+ "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.1",
+ "published_at": "2026-11-09T16:12:26Z",
+ "anonymous": true,
+ "assets": [
+  {
+   "name": "MAINTENANCE.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/MAINTENANCE.md",
+   "bytes": 3980,
+   "sha256": "e73dd51e6d5c6fcd6a99855c80e60205e03cc233cd90e50fcd4aec59f628ac2c",
+   "utc": "2026-11-09T16:13:27Z"
+  },
+  {
+   "name": "MAINTENANCE_RELEASE_NOTES.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/MAINTENANCE_RELEASE_NOTES.md",
+   "bytes": 3340,
+   "sha256": "f21df8c3bafda87b57d8dbdfdae2e4662b5fdfb6f47da77e3a3e1cf28c610399",
+   "utc": "2026-11-09T16:13:27Z"
+  },
+  {
+   "name": "POST_V3_STATUS.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/POST_V3_STATUS.json",
+   "bytes": 1602,
+   "sha256": "fbe2c3899230fdc4f32d701d74ec50fb5f2e08895a72cede82630acb193023db",
+   "utc": "2026-11-09T16:13:28Z"
+  },
+  {
+   "name": "REPRODUCE.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/REPRODUCE.md",
+   "bytes": 11062,
+   "sha256": "7ded7c25a51d0b5bcb07799a1f0c67aca73f13053dc2ed6814459a1b8e7097a6",
+   "utc": "2026-11-09T16:13:28Z"
+  },
+  {
+   "name": "SHA256SUMS",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/SHA256SUMS",
+   "bytes": 898,
+   "sha256": "e6da9222e76d3d025de0cc6c485486457d4c8f053e1f5bc01b889ee1204d918c",
+   "utc": "2026-11-09T16:13:28Z"
+  },
+  {
+   "name": "archive_inventories.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/archive_inventories.json",
+   "bytes": 155150,
+   "sha256": "ada7fb4bd736bfc4771f49566d839702aebbc45eb380bbfaa538120a4660854d",
+   "utc": "2026-11-09T16:13:28Z"
+  },
+  {
+   "name": "checkpoint_locations.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/checkpoint_locations.json",
+   "bytes": 213527,
+   "sha256": "c71b294acff9d965fbaead929180c2ccf69bb14eb1daad0c7843121ef47b4996",
+   "utc": "2026-11-09T16:13:29Z"
+  },
+  {
+   "name": "maintenance-evidence.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/maintenance-evidence.tar.gz",
+   "bytes": 48788,
+   "sha256": "dc86af31da6afe9ca261fd8131928877d055b86b66f34c493e7a4a6f3d021612",
+   "utc": "2026-11-09T16:13:29Z"
+  },
+  {
+   "name": "release_manifest.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/release_manifest.json",
+   "bytes": 11402,
+   "sha256": "96ed7be221ab66647349b5922011b2abcb1842ed045ba2a0518919a8728f7d99",
+   "utc": "2026-11-09T16:13:29Z"
+  },
+  {
+   "name": "source-maintenance-v3.0.1.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/source-maintenance-v3.0.1.tar.gz",
+   "bytes": 15274861,
+   "sha256": "1d75c3640cbaf029c07bfc5fb7a9c1911cc8b848fb582ed380c9da8743885ce8",
+   "utc": "2026-11-09T16:13:30Z"
+  },
+  {
+   "name": "v3.0.0-original-assets.tar",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v3.0.1/v3.0.0-original-assets.tar",
+   "bytes": 461004800,
+   "sha256": "809130f2ee8a158e1af6d5cfdd245dcc310ce40e8971b3c2f24a3919e76a862b",
+   "utc": "2026-11-09T16:13:39Z"
+  }
+ ]
+}
