@@ -24,7 +24,7 @@ physics, policy checkpoints, frozen suites or published numerical results.
   rewrites the freeze or original creation script. This repairs reproducibility, not
   the timing or scientific meaning of the historical preregistration.
 
-## Validation boundary
+## Validation boundary and remote acceptance
 
 CPU regressions cover output corruption, directory changes, changed dependencies,
 legacy provenance, failed latest attempts, dry-run, cached reuse and non-mutating
@@ -32,8 +32,29 @@ rebuild of the actual immutable experiment. The check and copy modes both reprod
 312 development, 240 validation and 2,600 final cases; copies refuse overwrite.
 See `results/post_v3/maintenance_cpu.json` for executed commands and results.
 
-No GPU, Isaac Lab or Isaac Sim workload is run by the local preparation agent.
-Fresh download, table regeneration and simulator replay/resume of the revised workflow
-remain Stage A of the remote assignment. Historical published verification is not a
-new test of these changes. V4 is an authorized, separately frozen research extension;
-its implementation/results are not claimed here.
+**Remote acceptance passed on 2026-11-09** (`results/post_v3/stage_a/`, decisions in
+[`docs/post_v3/DECISIONS.md`](../post_v3/DECISIONS.md)). Sections 1–4 of
+[REPRODUCE.md](REPRODUCE.md) were executed verbatim on the GPU cluster from fresh public
+clones (tooling `4d7beb3`) and an anonymous download:
+
+| check | result |
+|---|---|
+| archive verification (`v3_verify.py`) | ok |
+| archived suite rebuild (`--check`, `--output`) | development 312, validation 240, final 2,600 — byte-identical |
+| table regeneration (`v3_regen.py`) | 34 of 35 byte-identical, 1 numerically equal (`mechanisms.json`, ≤ 8.9e-16 rounding in BLAS regression fits on an AMD EPYC node); 6 of 6 figures byte-identical |
+| 65-case replay (7 entries) | 455 of 455 terminal outcomes equal the published records |
+| reload (4 architectures × 13 cases) | 52 of 52 equal |
+| two-iteration resume | 306 → 308 iterations, 10,027,008 → 10,092,544 transitions; source checkpoint SHA-256 unchanged |
+| repeated runner | 13 of 13 tasks skipped after content verification; ledger unchanged; no launch |
+| record-level audit (`post_v3_replay_audit.py`) | case-ID sets, uniqueness, resets, source/suite/config/checkpoint hashes, outcomes: 0 discrepancies |
+| cache demonstrations (`post_v3_cache_demo.py`) | 8 of 8 scenarios: no false cache hit; missing output and failed latest attempt re-run |
+| CPU tests | 60 passed, 1 skipped (Isaac import) |
+
+The maintenance release `v3.0.1` preserves every `v3.0.0` asset byte-identical inside
+`v3.0.0-original-assets.tar` and adds the maintenance source, evidence and indices. It is
+published at https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.1 (tag
+`maintenance-v3.0.1` = `v3.0.1` = `c85fded`) and passed public-download verification on 2026-11-09:
+`results/post_v3/release_verification/` (parent and original checksums, 457 of 457 checkpoints resolved,
+original verifier, table/figure regeneration, suite rebuild, 65-case replay and 13-case reload).
+V4 is a separately frozen research extension on branch `study/v4-grasp-uncertainty`;
+nothing in this maintenance record claims V4 results.
