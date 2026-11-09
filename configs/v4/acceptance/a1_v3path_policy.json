@@ -1,0 +1,15 @@
+{
+ "name": "v4acc_a1_policy",
+ "suite": "configs/v3/suites/final_subset65.jsonl",
+ "num_envs": 23,
+ "protocol": "configs/v3/frozen/training/combined_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "v3_combined_robust_history_s11__selected",
+   "method": "combined",
+   "training_seed": 11,
+   "checkpoint": "combined_robust_history_s11/checkpoints/step_002031616.pt"
+  }
+ ]
+}

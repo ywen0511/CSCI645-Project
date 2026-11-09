@@ -1,0 +1,212 @@
+{
+ "name": "v4_dev_constant_search",
+ "suite": "configs/v4/suites/development.jsonl",
+ "num_envs": 288,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 0.2,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": true,
+  "grasp_uncertainty": true
+ },
+ "parent": "ema0p2_cal050_a25",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "const_x-10_z-5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.01,
+     0.0,
+     -0.005
+    ]
+   }
+  },
+  {
+   "id": "const_x-10_z+0",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.01,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_x-10_z+5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.01,
+     0.0,
+     0.005
+    ]
+   }
+  },
+  {
+   "id": "const_x-5_z-5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.005,
+     0.0,
+     -0.005
+    ]
+   }
+  },
+  {
+   "id": "const_x-5_z+0",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.005,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_x-5_z+5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.005,
+     0.0,
+     0.005
+    ]
+   }
+  },
+  {
+   "id": "const_x+0_z-5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.0,
+     0.0,
+     -0.005
+    ]
+   }
+  },
+  {
+   "id": "const_x+0_z+0",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5
+   }
+  },
+  {
+   "id": "const_x+0_z+5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.0,
+     0.0,
+     0.005
+    ]
+   }
+  },
+  {
+   "id": "const_x+5_z-5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.005,
+     0.0,
+     -0.005
+    ]
+   }
+  },
+  {
+   "id": "const_x+5_z+0",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.005,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_x+5_z+5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.005,
+     0.0,
+     0.005
+    ]
+   }
+  },
+  {
+   "id": "const_x+10_z-5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     -0.005
+    ]
+   }
+  },
+  {
+   "id": "const_x+10_z+0",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "const_x+10_z+5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     0.005
+    ]
+   }
+  }
+ ]
+}

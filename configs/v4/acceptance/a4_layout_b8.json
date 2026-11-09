@@ -1,0 +1,30 @@
+{
+ "name": "v4acc_layout_b8",
+ "suite": "configs/v4/acceptance/layout.jsonl",
+ "num_envs": 8,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 0.2,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": true,
+  "grasp_uncertainty": true
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "parent",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5
+   },
+   "trace": false
+  }
+ ]
+}

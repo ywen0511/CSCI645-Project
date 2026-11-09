@@ -1,0 +1,19 @@
+{
+ "name": "v4acc_a2_policy",
+ "suite": "configs/v4/acceptance/v3subset65_v4fmt.jsonl",
+ "num_envs": 23,
+ "protocol": "configs/v3/frozen/training/combined_robust_history.json",
+ "base_overrides": {
+  "grasp_uncertainty": true
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "v3_combined_robust_history_s11__selected",
+   "method": "combined",
+   "training_seed": 11,
+   "checkpoint": "combined_robust_history_s11/checkpoints/step_002031616.pt",
+   "allow_config_mismatch": true
+  }
+ ]
+}

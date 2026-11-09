@@ -1,0 +1,80 @@
+{
+ "name": "v4acc_priv_off",
+ "suite": "configs/v4/acceptance/privileged.jsonl",
+ "num_envs": 48,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 0.2,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": true,
+  "grasp_uncertainty": true,
+  "debug_perturb_privileged": false
+ },
+ "trace_cases": [
+  "v4-development-grasp_15mm-0000",
+  "v4-development-grasp_15mm-0001",
+  "v4-development-grasp_15mm-0002",
+  "v4-development-grasp_15mm-0003",
+  "v4-development-grasp_15mm-0004",
+  "v4-development-grasp_15mm-0005",
+  "v4-development-grasp_15mm-0006",
+  "v4-development-grasp_15mm-0007",
+  "v4-development-grasp_15mm-0008",
+  "v4-development-grasp_15mm-0009",
+  "v4-development-grasp_15mm-0010",
+  "v4-development-grasp_15mm-0011",
+  "v4-development-grasp_15mm-0012",
+  "v4-development-grasp_15mm-0013",
+  "v4-development-grasp_15mm-0014",
+  "v4-development-grasp_15mm-0015",
+  "v4-development-grasp_15mm-0016",
+  "v4-development-grasp_15mm-0017",
+  "v4-development-grasp_15mm-0018",
+  "v4-development-grasp_15mm-0019",
+  "v4-development-grasp_15mm-0020",
+  "v4-development-grasp_15mm-0021",
+  "v4-development-grasp_15mm-0022",
+  "v4-development-grasp_15mm-0023",
+  "v4-development-mixed_id-0000",
+  "v4-development-mixed_id-0001",
+  "v4-development-mixed_id-0002",
+  "v4-development-mixed_id-0003",
+  "v4-development-mixed_id-0004",
+  "v4-development-mixed_id-0005",
+  "v4-development-mixed_id-0006",
+  "v4-development-mixed_id-0007",
+  "v4-development-mixed_id-0008",
+  "v4-development-mixed_id-0009",
+  "v4-development-mixed_id-0010",
+  "v4-development-mixed_id-0011",
+  "v4-development-mixed_id-0012",
+  "v4-development-mixed_id-0013",
+  "v4-development-mixed_id-0014",
+  "v4-development-mixed_id-0015",
+  "v4-development-mixed_id-0016",
+  "v4-development-mixed_id-0017",
+  "v4-development-mixed_id-0018",
+  "v4-development-mixed_id-0019",
+  "v4-development-mixed_id-0020",
+  "v4-development-mixed_id-0021",
+  "v4-development-mixed_id-0022",
+  "v4-development-mixed_id-0023"
+ ],
+ "entries": [
+  {
+   "id": "parent",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5
+   },
+   "trace": true
+  }
+ ]
+}

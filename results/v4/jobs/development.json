@@ -18,8 +18,8 @@
     "configs/v4/suites/development.jsonl"
    ],
    "outputs": [
-    "$RUNS/development/ema0p2_giver0/ema0p2_none_a15.jsonl",
-    "$RUNS/development/ema0p2_giver0/ema0p2_none_a20.jsonl"
+    "$RUNS/development/ema0p2_giver0/ema0p2_none_a20.jsonl",
+    "$RUNS/development/ema0p2_giver0/ema0p2_none_a25.jsonl"
    ]
   },
   {
@@ -39,14 +39,14 @@
     "configs/v4/suites/development.jsonl"
    ],
    "outputs": [
-    "$RUNS/development/ema0p2_giver1/ema0p2_fixed_a15.jsonl",
     "$RUNS/development/ema0p2_giver1/ema0p2_fixed_a20.jsonl",
-    "$RUNS/development/ema0p2_giver1/ema0p2_cal010_a15.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_fixed_a25.jsonl",
     "$RUNS/development/ema0p2_giver1/ema0p2_cal010_a20.jsonl",
-    "$RUNS/development/ema0p2_giver1/ema0p2_cal025_a15.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal010_a25.jsonl",
     "$RUNS/development/ema0p2_giver1/ema0p2_cal025_a20.jsonl",
-    "$RUNS/development/ema0p2_giver1/ema0p2_cal050_a15.jsonl",
-    "$RUNS/development/ema0p2_giver1/ema0p2_cal050_a20.jsonl"
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal025_a25.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal050_a20.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal050_a25.jsonl"
    ]
   },
   {
@@ -66,8 +66,8 @@
     "configs/v4/suites/development.jsonl"
    ],
    "outputs": [
-    "$RUNS/development/ema0p5_giver0/ema0p5_none_a15.jsonl",
-    "$RUNS/development/ema0p5_giver0/ema0p5_none_a20.jsonl"
+    "$RUNS/development/ema0p5_giver0/ema0p5_none_a20.jsonl",
+    "$RUNS/development/ema0p5_giver0/ema0p5_none_a25.jsonl"
    ]
   },
   {
@@ -87,14 +87,14 @@
     "configs/v4/suites/development.jsonl"
    ],
    "outputs": [
-    "$RUNS/development/ema0p5_giver1/ema0p5_fixed_a15.jsonl",
     "$RUNS/development/ema0p5_giver1/ema0p5_fixed_a20.jsonl",
-    "$RUNS/development/ema0p5_giver1/ema0p5_cal010_a15.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_fixed_a25.jsonl",
     "$RUNS/development/ema0p5_giver1/ema0p5_cal010_a20.jsonl",
-    "$RUNS/development/ema0p5_giver1/ema0p5_cal025_a15.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal010_a25.jsonl",
     "$RUNS/development/ema0p5_giver1/ema0p5_cal025_a20.jsonl",
-    "$RUNS/development/ema0p5_giver1/ema0p5_cal050_a15.jsonl",
-    "$RUNS/development/ema0p5_giver1/ema0p5_cal050_a20.jsonl"
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal025_a25.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal050_a20.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal050_a25.jsonl"
    ]
   },
   {
@@ -115,8 +115,8 @@
    ],
    "outputs": [
     "$RUNS/development/ema1p0_giver0/nominal.jsonl",
-    "$RUNS/development/ema1p0_giver0/ema1p0_none_a15.jsonl",
-    "$RUNS/development/ema1p0_giver0/ema1p0_none_a20.jsonl"
+    "$RUNS/development/ema1p0_giver0/ema1p0_none_a20.jsonl",
+    "$RUNS/development/ema1p0_giver0/ema1p0_none_a25.jsonl"
    ]
   },
   {
@@ -138,12 +138,13 @@
    "outputs": [
     "$RUNS/development/ema1p0_giver1/ema1p0_fixed_a15.jsonl",
     "$RUNS/development/ema1p0_giver1/ema1p0_fixed_a20.jsonl",
-    "$RUNS/development/ema1p0_giver1/ema1p0_cal010_a15.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_fixed_a25.jsonl",
     "$RUNS/development/ema1p0_giver1/ema1p0_cal010_a20.jsonl",
-    "$RUNS/development/ema1p0_giver1/ema1p0_cal025_a15.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal010_a25.jsonl",
     "$RUNS/development/ema1p0_giver1/ema1p0_cal025_a20.jsonl",
-    "$RUNS/development/ema1p0_giver1/ema1p0_cal050_a15.jsonl",
-    "$RUNS/development/ema1p0_giver1/ema1p0_cal050_a20.jsonl"
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal025_a25.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal050_a20.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal050_a25.jsonl"
    ]
   }
  ]

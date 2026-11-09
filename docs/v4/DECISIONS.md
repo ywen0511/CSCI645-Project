@@ -89,3 +89,40 @@ where the giver reference fails (x ≥ +7 mm), which the probe shows is physical
   (α = 1, fixed transform, 1.5 cm): 32 ≤ 36 configurations. Whether 2.5 cm is physically valid is measured
   (collisions count as unsafe events in the selection rule).
 - Not done: no condition was removed because a method failed it; no sensor channel was disabled for any method.
+
+## 2026-11-09 16:20 — development round 2 result and baseline selection
+
+Round 2 (32 registered configurations × 288 development cases, source `1890ac1`, summary
+`results/v4/development/round2_summary.json`; 0 invalid resets). Every evaluation process exited 0 and every
+matrix status is complete, but the runner ledger marks the six tasks as failed: I had not regenerated
+`results/v4/jobs/development.json` after re-registering the grid, so the runner checked round-1 output names
+(1.5 cm entries) that no longer exist. The records themselves are complete and provenance-checked by
+`eval_matrix.py`; the manifest is regenerated now. Logged, not hidden.
+
+- Historical fixed transform (V3 configuration): grasp_10mm 7/24, grasp_15mm 3/24, mixed_id 17/24 — the measured
+  failure boundary of the giver reference under unknown in-grasp offsets (prohibited receiver collisions).
+- Calibrated references with a 2.5 cm bound and EMA α = 0.2 without the giver reference: 24/24 on all six
+  validation strata and mixed_id; failures remain only on mixed_ood (21–23/24).
+- Raw estimate (α = 1, no giver reference): noise_2mm 0/24, mixed_id 0/24.
+
+Selection by the registered rule (`configs/v4/development/baseline_selection.json`):
+common parent and `geometry_calibrated` = `ema0p2_cal050_a25` (EMA α 0.2, calibrated reference, 0.5 s window,
+2.5 cm alignment bound); `geometry_ema` = `ema0p2_none_a25`; `geometry_fixed` = `ema1p0_fixed_a15`
+(historical, not tuned); `nominal`. The calibrated 0.5 s window with α ∈ {0.2, 0.5, 1.0} tie on every key to 12
+digits (the EMA only acts after release, when the giver reference is no longer used); the registered final
+tie-break (candidate ID) selects α = 0.2.
+
+Not all development cases are at the ceiling (mixed_ood fails for every configuration; the historical reference
+fails widely), so no further expansion of uncertainty is made. The primary condition may be near the ceiling for
+the calibrated parent; that is a finding to report, not a reason to redesign.
+
+## 2026-11-09 16:21 — constant search, training protocols and acceptance plan
+
+- Constant-residual search on the parent: 15 offsets (x ∈ {−10, −5, 0, 5, 10} mm × z ∈ {−5, 0, 5} mm) on the
+  development suite (`configs/v4/development/matrices_constant/constant_search.json`).
+- Draft training protocols (`configs/v4/training/`, pilots `configs/v4/pilot/`): all profiles share the parent
+  estimator (α 0.2, giver reference, 0.5 s calibration) and alignment bound 2.5 cm; V3 PPO settings, rollout
+  (1,024 envs × 32 steps), curriculum of joint start displacement, actor zero-mean initialization and 10M budget
+  (10,027,008 realized). Robust profiles: sensor as V3 (bias ≤ 5 mm, noise ≤ 2 mm, delay ≤ 2 steps, 25% clean)
+  and in-grasp offset uniform over the training support (25% zero). History = 4 frames.
+- Acceptance checks A1–A9 (`scripts/v4_acceptance_setup.py`).

@@ -1,0 +1,39 @@
+{
+ "name": "constants",
+ "tasks": [
+  {
+   "id": "dev_constant_search",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/development/matrices_constant/constant_search.json",
+    "--output",
+    "$RUNS/development/constant_search",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/development/matrices_constant/constant_search.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/constant_search/const_x-10_z-5.jsonl",
+    "$RUNS/development/constant_search/const_x-10_z+0.jsonl",
+    "$RUNS/development/constant_search/const_x-10_z+5.jsonl",
+    "$RUNS/development/constant_search/const_x-5_z-5.jsonl",
+    "$RUNS/development/constant_search/const_x-5_z+0.jsonl",
+    "$RUNS/development/constant_search/const_x-5_z+5.jsonl",
+    "$RUNS/development/constant_search/const_x+0_z-5.jsonl",
+    "$RUNS/development/constant_search/const_x+0_z+0.jsonl",
+    "$RUNS/development/constant_search/const_x+0_z+5.jsonl",
+    "$RUNS/development/constant_search/const_x+5_z-5.jsonl",
+    "$RUNS/development/constant_search/const_x+5_z+0.jsonl",
+    "$RUNS/development/constant_search/const_x+5_z+5.jsonl",
+    "$RUNS/development/constant_search/const_x+10_z-5.jsonl",
+    "$RUNS/development/constant_search/const_x+10_z+0.jsonl",
+    "$RUNS/development/constant_search/const_x+10_z+5.jsonl"
+   ]
+  }
+ ]
+}
