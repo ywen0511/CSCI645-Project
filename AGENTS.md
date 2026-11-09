@@ -1,23 +1,21 @@
 # Agent instructions
 
-## Active V3 assignment (takes precedence over historical v1/v2 runbooks)
+## Active continuation assignment
 
-On `study/v3-observation-robustness`, execute the self-contained `V3_EXECUTION.md`.
-It extends the original scope with controlled translation-observation uncertainty,
-history/filtering/kinematic baselines and optional declared physical transfer.
-The fixed-physics constraint in the original PROJECT_SPEC still governs the main
-comparison; the explicitly labeled transfer extension is the only exception.
-V3 completeness is defined by V3_EXECUTION.md and V3_STATUS.json, not historical
-v2 completion flags. Preserve the original proposal and all earlier results.
-The preparation agent runs CPU checks only; the remote execution agent validates
-and runs the simulator/GPU experiments on already available resources. All public
-content must be English. Do not treat prepared code as GPU-validated evidence.
+The V3 study is completed and published as `v3.0.0`; `V3_EXECUTION.md` is historical.
+On `study/v3-observation-robustness`, the active self-contained assignment is
+`POST_V3_EXECUTION.md`, tracked separately in `POST_V3_STATUS.json`. It supersedes
+historical runbooks for new work. Preserve `V3_STATUS.json`, frozen inputs, published
+evidence, tags and releases. Do not restart the original V3 training matrix.
+The local preparation agent performs CPU-only maintenance; no GPU or simulator runs.
+The remote execution agent performs the documented verification and the separate
+uncertain-grasp extension on already available resources. All public content is English.
 
 ## Mission and authorization
 
 The owner, GitHub user `ywen0511`, explicitly requested a self-contained repository that a remote agent can read and use to complete the entire project, including implementation, training, evaluation, checkpoints, reports, videos, and GitHub Releases. All repository content and deliverables must be in English.
 
-Work in `ywen0511/CSCI645-Project`. Read `docs/REMOTE_AGENT_PROMPT.md` and its linked specifications before implementing. Continue through the complete runbook; do not stop after generating a scaffold, passing unit tests, running one episode, or starting a background training job.
+Work in `ywen0511/CSCI645-Project`. Read `POST_V3_EXECUTION.md` and its linked specifications before implementing. Continue through the complete runbook; do not stop after generating a scaffold, passing unit tests, running one episode, or starting a background training job.
 
 Authorized actions within available resources include implementing and fixing code, installing compatible project dependencies in an isolated environment, running simulations and experiments, resuming failed runs, committing and pushing project changes, creating project tags, and uploading/publishing project results in GitHub Releases. Routine engineering decisions and these uploads do not need repeated confirmation. Do not provision paid resources, change account/security settings, erase unrelated data, force-push shared history, or overwrite an existing published release. External compute must already be available or separately authorized.
 
@@ -46,4 +44,4 @@ The one-month planning horizon is not permission to launch unbounded jobs. Use t
 
 ## Completion
 
-Completion means all acceptance gates in `docs/RUNBOOK.md` and `docs/RELEASE.md` pass. Confirm a clean-clone installation, checkpoint replay, downloaded artifact checksums, and accessible published release URLs. Final communication must link the source commit/tag, release, report, summary metrics, checkpoints, and videos, and identify any unfulfilled requirement.
+Active continuation completion means all acceptance gates in `POST_V3_EXECUTION.md` pass. Historical v1/v2 gates in `docs/RUNBOOK.md` and `docs/RELEASE.md` remain references. Confirm a clean-clone installation, checkpoint replay, downloaded artifact checksums, and accessible published release URLs. Final communication must link the source commit/tag, release, report, summary metrics, checkpoints, and videos, and identify any unfulfilled requirement.

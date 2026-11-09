@@ -5,10 +5,11 @@
         --isaac-python /path/to/isaaclab/python [--runs-root runs/v3]
 
 A manifest is {"name": ..., "tasks": [{"id", "argv": [script, args...], "inputs": [repo-relative paths],
-"outputs": [paths whose existence marks completion], "kind": "isaac"|"cpu"|"shell"}]}. Paths starting with
+"outputs": [paths whose contents must match the successful ledger], "kind": "isaac"|"cpu"|"shell"}]}. Paths starting with
 ``$RUNS`` are resolved against --runs-root. Each task runs in a fresh process from the repository root
 (simulator tasks through scripts/cluster/isaac_run.sh). A task is skipped only if every output exists AND its
-last successful ledger entry has the same input hashes, argv and source commit; otherwise it runs again (the
+latest attempt succeeded and has matching output fingerprints, input hashes, resolved argv and source; otherwise
+missing work runs again, while changed/unverifiable completed outputs cause an explicit integrity error (the
 scripts themselves resume/reject partial outputs). Every attempt is appended to
 <runs-root>/ledger/<task id>.jsonl with command, source commit, input/output SHA-256, timestamps and exit code.
 ``merge`` concatenates all ledgers into results/v3/task_ledger.jsonl (paths relative, private prefixes removed).
@@ -58,6 +59,110 @@ def resolve(s: str, runs: Path) -> str:
     return s.replace("$RUNS", str(runs)).replace("$DELIVERY", str(ROOT)).replace("$PY", os.environ.get("V3_ISAAC_PYTHON", sys.executable))
 
 
+def fingerprint(path: Path):
+    """Hash files and directory membership/content; never bless a directory merely because it exists."""
+    if path.is_symlink():
+        raise ValueError(f"Output is a symlink, declare the actual artifact path: {path}")
+    if path.is_file():
+        return {"kind": "file", "bytes": path.stat().st_size, "sha256": sha(path)}
+    if path.is_dir():
+        members = {}
+        for member in sorted(path.rglob("*")):
+            if member.is_symlink():
+                raise ValueError(f"Output directory contains a symlink: {member}")
+            if member.is_file():
+                members[member.relative_to(path).as_posix()] = fingerprint(member)
+            elif member.is_dir():
+                members[member.relative_to(path).as_posix() + "/"] = {"kind": "directory"}
+            else:
+                raise ValueError(f"Unsupported output member: {member}")
+        digest = hashlib.sha256(json.dumps(members, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        return {"kind": "directory", "members": len(members), "sha256": digest}
+    return None
+
+
+def cache_valid(last, inputs, argv, source_commit, outs, context):
+    """A corrupt completed output is a hard error, not a request to overwrite evidence.
+
+    Legacy file hashes can detect corruption, but legacy records lack dependency/context
+    coverage and are not eligible for skipping. Use a fresh runs directory to verify old releases.
+    """
+    if not last or last.get("rc") != 0 or not last.get("outputs_exist"):
+        return False
+    complete = bool(outs)
+    for output in outs:
+        current = fingerprint(output)
+        if current is None:
+            complete = False
+            continue
+        saved = last.get("output_fingerprints", {}).get(str(output))
+        if saved is None:
+            old = last.get("outputs", {}).get(str(output))
+            if current["kind"] != "file" or not isinstance(old, str) or len(old) != 64:
+                raise ValueError(f"Unverifiable completed output: {output}; use a fresh runs directory")
+            matches = old == current["sha256"]
+        else:
+            matches = saved == current
+        if not matches:
+            raise ValueError(f"Output integrity mismatch: {output}; preserve it and use a fresh runs directory")
+    same = (last.get("inputs") == inputs and last.get("argv") == argv
+            and last.get("source_commit") == source_commit and last.get("cache_context") == context)
+    if complete and (not same or not last.get("output_fingerprints")):
+        raise ValueError("Completed outputs have changed or legacy provenance; preserve them and use a fresh runs directory")
+    return complete and same
+
+
+def resolve_json(value, runs):
+    if isinstance(value, str):
+        return resolve(value, runs)
+    if isinstance(value, list):
+        return [resolve_json(v, runs) for v in value]
+    if isinstance(value, dict):
+        return {k: resolve_json(v, runs) for k, v in value.items()}
+    return value
+
+
+def input_hashes(task, argv, runs):
+    """Cover declared inputs AND evaluation matrix dependencies/checkpoints before any cache skip."""
+    inputs = {}
+
+    def add(value):
+        p = Path(resolve(value, runs))
+        if not p.is_absolute():
+            p = EXEC / p if (EXEC / p).exists() else ROOT / p
+        if not p.is_file():
+            raise ValueError(f"Required input file missing: {p}")
+        inputs[str(p.resolve())] = sha(p)
+        return p
+
+    for value in task.get("inputs", []):
+        add(value)
+    if task.get("kind", "isaac") in ("cpu", "isaac") and argv and argv[0].endswith(".py"):
+        add(argv[0])
+    for k, value in enumerate(argv[:-1]):
+        if value in ("--protocol", "--suite", "--checkpoint", "--resume", "--before", "--after", "--eval-records"):
+            add(argv[k + 1])
+        if value in ("--matrix", "--plan"):
+            p = add(argv[k + 1])
+            data = json.loads(p.read_text())
+            entries = data if isinstance(data, list) else data.get("entries", [])
+            if isinstance(data, dict):
+                for field in ("protocol", "suite"):
+                    if data.get(field):
+                        add(data[field])
+            only = set(argv[argv.index("--only") + 1].split(",")) if "--only" in argv else set()
+            ckroot = Path(argv[argv.index("--checkpoint-root") + 1]) if "--checkpoint-root" in argv else None
+            for entry in entries:
+                if only and entry.get("id") not in only:
+                    continue
+                if entry.get("checkpoint"):
+                    cp = Path(entry["checkpoint"])
+                    add(str(ckroot / cp if ckroot is not None and not cp.is_absolute() else cp))
+                if entry.get("eval_records"):
+                    add(entry["eval_records"])
+    return inputs
+
+
 SHUTDOWN_MARK = "SimulationContext cleared"
 
 
@@ -102,9 +207,14 @@ def run(a):
     led_dir = runs / "ledger"
     led_dir.mkdir(parents=True, exist_ok=True)
     i, n = (int(x) for x in a.shard.split("/"))
+    if n < 1 or not 0 <= i < n:
+        raise ValueError("--shard must be I/N with N >= 1 and 0 <= I < N")
     tasks = [t for k, t in enumerate(man["tasks"]) if k % n == i]
     if a.only:
         keep = set(a.only.split(","))
+        unknown = keep - {t["id"] for t in man["tasks"]}
+        if unknown:
+            raise ValueError(f"Unknown task IDs: {sorted(unknown)}")
         tasks = [t for t in tasks if t["id"] in keep]
     os.environ["V3_ISAAC_PYTHON"] = a.isaac_python
     g = git_state()
@@ -122,17 +232,20 @@ def run(a):
                 if "$DELIVERY" in text or "$RUNS" in text:
                     rp = runs / "_resolved" / f"{t['id']}__{mp.name}"
                     rp.parent.mkdir(parents=True, exist_ok=True)
-                    rp.write_text(resolve(text, runs))
+                    rp.write_text(json.dumps(resolve_json(json.loads(text), runs), indent=2) + "\n")
                     argv[k] = str(rp)
-        inputs = {p: sha((EXEC / resolve(p, runs)) if (EXEC / resolve(p, runs)).exists() else (ROOT / resolve(p, runs)))
-                  for p in t.get("inputs", [])}
+        inputs = input_hashes(t, argv, runs)
         outs = [Path(resolve(p, runs)) for p in t.get("outputs", [])]
+        context = {"resolved_argv": argv, "kind": t.get("kind", "isaac"),
+                   "interpreter": a.isaac_python, "runner_sha256": sha(Path(__file__))}
+        if a.dry_run:
+            print(json.dumps({"task": t["id"], "dry_run": True, "argv": argv, "inputs": inputs,
+                              "outputs": [str(p) for p in outs], "execution_commit": g["commit"]}), flush=True)
+            continue
         lp = led_dir / f"{t['id']}.jsonl"
         hist = [json.loads(l) for l in lp.read_text().splitlines()] if lp.exists() else []
-        last_ok = next((h for h in reversed(hist) if h["rc"] == 0), None)
-        if outs and all(o.exists() for o in outs) and last_ok and last_ok["inputs"] == inputs \
-                and last_ok["argv"] == t["argv"] and last_ok["source_commit"] == g["commit"]:
-            print(f"[v3_jobs] skip {t['id']} (complete, inputs unchanged)", flush=True)
+        if cache_valid(hist[-1] if hist else None, inputs, t["argv"], g["commit"], outs, context):
+            print(f"[v3_jobs] skip {t['id']} (inputs and output contents verified)", flush=True)
             continue
         attempts = len(hist)
         if attempts >= a.max_attempts:
@@ -155,6 +268,7 @@ def run(a):
                "exec_repo": "experiment" if EXEC != ROOT else "delivery", "delivery_commit": git_state(ROOT)["commit"],
                "start_utc": t0, "end_utc": utc(), "rc": rc, "source_commit": g["commit"], "source_dirty": g["dirty"],
                "inputs": inputs, "outputs": {str(o): sha(o) if o.is_file() else ("dir" if o.is_dir() else None) for o in outs},
+               "output_fingerprints": {str(o): fingerprint(o) for o in outs}, "cache_context": context,
                "outputs_exist": all(o.exists() for o in outs), "log": str(log), "host": socket.gethostname(),
                "watchdog": watchdog,
                "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES")}
@@ -208,6 +322,7 @@ def main():
     r.add_argument("--runs-root", default=str(ROOT / "runs/v3"))
     r.add_argument("--max-attempts", type=int, default=3)
     r.add_argument("--allow-dirty", action="store_true")
+    r.add_argument("--dry-run", action="store_true", help="Resolve inputs/paths and validate dependencies without launching tasks")
     r.add_argument("--task-timeout-s", type=float, default=5400.0)
     m = sub.add_parser("merge")
     m.add_argument("--runs-root", action="append", required=True, help="repeatable; e.g. candidate then formal")

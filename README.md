@@ -1,58 +1,67 @@
-# CSCI 645 — V3 observation robustness in bimanual handover
+# CSCI 645 — Robust bimanual handover
 
-**Remote execution agent: [read and execute V3_EXECUTION.md](V3_EXECUTION.md).**
-It is the complete assignment: validate the prepared implementation on the remote
-GPU, freeze the protocol, train/evaluate all required methods, analyze the findings,
-create the report/slides/videos, publish every result and saved checkpoint in a
-new GitHub Release, and verify a fresh download. No local files or prior chat are
-needed. Do not stop at a plan, CPU tests, or launching training.
+**V3 is completed and published. The active continuation assignment is
+[POST_V3_EXECUTION.md](POST_V3_EXECUTION.md).** A remote agent should read that file
+and execute it through verification and publication; no previous chat or local
+files are needed. It covers the reproduction repairs and a new, separately frozen
+study of uncertain giver grasp geometry. Do not restart the archived V3 assignment.
 
-**Current status: CPU preparation complete; remote simulation/training is NOT done.**
-No GPU or simulator workload was run during preparation. See
-[preparation evidence](docs/v3/PREPARATION.md) and [V3 status](V3_STATUS.json).
-The prepared simulator integration requires the remote acceptance checks before
-formal experiments. New scientific results must not be inferred from CPU tests.
+This project uses Isaac Sim through Isaac Lab, PhysX, two Franka arms with
+**two-finger parallel-jaw grippers**, fixed commanded orientations, and a bounded
+XYZ PPO residual added to geometric coordination. Training data come from simulator
+interaction; no external demonstration dataset is required.
 
-This extends the existing Isaac Sim + Isaac Lab two-Franka, two-finger-gripper
-handover project. V3 asks when geometric coordination and bounded PPO residuals
-remain effective with translation-estimation bias, noise and delay, and whether
-short history helps beyond filtering, a giver-grasp kinematic baseline, and a
-matched-input-size control. Existing v1/v2 results are preserved.
+## Completed V3 evidence
 
-| Component | Prepared here | Remote work |
-|---|---|---|
-| Sensors/controllers | Corruption, EMA, giver reference, history, intervention hooks, CPU tests | Simulator timing/contact/zero-residual acceptance and any fixes |
-| Experiment design | Split generator, development/validation cases, five training profiles, baseline matrices | Development baselines/pilots, freeze, final suite, 23 training runs |
-| Evaluation/analysis | Provenance checks, count reconciliation, paired clustered bootstrap | Full matrix, checkpoint selection, mechanism and repeatability studies |
-| Delivery | Complete assignment and acceptance/publication contract | Report, slides, videos, all raw results/checkpoints, release and fresh verification |
+- [Published V3 release: results, checkpoints, PDFs, slides and videos](https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0)
+- [English report](report/v3/report.md), [results](results/v3/summary/family_condition_summary.json),
+  [verification record](docs/v3/VERIFICATION.md), [archived completion status](V3_STATUS.json).
+- Immutable experiment source: `experiment-v3`, commit
+  `3811f5da5ef55638f95f7306e449609877f546df`.
+- 23 formal training runs; 13 final conditions with 200 paired cases each;
+  130,000 executed final episodes (135,200 logical episodes including baseline aliases).
+- 30 release assets include the checkpoint index, all saved checkpoints, raw records,
+  source snapshots, checksums, a 19-page report, 15-slide deck, and 8 clips plus a montage.
 
-## Start
+The selected combined policies and strongest geometric baseline both achieve
+100% on the frozen final suite. This is a ceiling result, **not evidence that PPO
+improves on geometry or that the methods are generally equivalent**. The accurate
+giver reference and known grasp transform explain an important limitation; final
+history-policy checkpoints also expose training instability. Physical transfer
+experiments were not performed in V3. The continuation tests uncertain grasp geometry
+with fair, equally informed baselines and reports negative results if they persist.
+
+## Reproduce or continue
+
+[Reproduction instructions](docs/v3/REPRODUCE.md) separate the immutable experiment,
+archived delivery, and repaired tooling checkouts. They include CPU table regeneration,
+non-mutating suite reconstruction, a complete 65-case replay, and checkpoint resume.
+The old `v3_prepare.py --final` is a historical creation command, not the rebuild command.
 
 ```bash
 git clone --branch study/v3-observation-robustness https://github.com/ywen0511/CSCI645-Project.git
 cd CSCI645-Project
-cat V3_EXECUTION.md
+cat POST_V3_EXECUTION.md
 ```
 
-For CPU-only checks in an isolated environment with torch, numpy and pytest:
+For CPU regression checks in an isolated environment with torch, numpy and pytest:
 
 ```bash
 CUDA_VISIBLE_DEVICES='' python -m pytest -q
-python scripts/v3_prepare.py
 ```
 
-`v3_prepare.py` creates development inputs, not results. Read the execution document
-before installing the simulator or starting any remote job. No external training
-dataset is required; data come from simulator interaction.
+The maintenance changes are CPU-tested; their fresh GPU reproduction is a remote
+acceptance gate. See [maintenance notes](docs/v3/MAINTENANCE.md) and
+[continuation status](POST_V3_STATUS.json). CPU tests do not validate contact physics.
+The local preparation agent must not launch GPU or simulator workloads.
 
-## Prior completed work
+## History
 
-- [V2 final release](https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.1)
-- [V2 report](report/v2/report.md) and [verification](docs/closeout/VERIFICATION.md)
-- [Historical V2 README](README_V2_CLOSEOUT.md); its completion flags and commands
-  concern the archived study, not V3.
 - [Original proposal](proposal/proposal.txt), preserved as submitted.
+- [V2 release](https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.1),
+  [V2 report](report/v2/report.md), [historical V2 README](README_V2_CLOSEOUT.md).
+- [Archived V3 execution contract](V3_EXECUTION.md). Its completion flags describe
+  the published V3 study, not the active continuation.
 
-V3 work stays on `study/v3-observation-robustness`. The execution agent must publish
-an immutable `experiment-v3` tag and a verified `v3.0.0` release (or a new version
-if those names are already in use), without rewriting old history or releases.
+Preserve all existing experiment tags, published releases, raw evidence and source
+history. Publish new work under new tags; never overwrite previous release assets.

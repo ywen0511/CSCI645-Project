@@ -1,5 +1,10 @@
 # V3 execution assignment: observation robustness in bimanual handover
 
+> **Archived assignment — completed in release v3.0.0.** For current work, execute
+> [POST_V3_EXECUTION.md](POST_V3_EXECUTION.md). Keep this original contract as
+> historical evidence; do not repeat its freeze or training stages in place.
+
+
 ## Your assignment and authorization
 
 You are the remote execution agent for Yan Wen's CSCI 645 project in

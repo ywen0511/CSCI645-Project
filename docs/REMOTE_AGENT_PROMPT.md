@@ -1,7 +1,7 @@
 # Complete remote-agent assignment
 
 > Historical v1 assignment. On branch `study/v3-observation-robustness`, the active
-> self-contained assignment is [`../V3_EXECUTION.md`](../V3_EXECUTION.md).
+> self-contained assignment is [`../POST_V3_EXECUTION.md`](../POST_V3_EXECUTION.md).
 > Preserve this document as history; do not restart v1 or mark v3 complete from v2 status.
 
 You are working for Yan Wen on the CSCI 645 Fall 2026 final project in `https://github.com/ywen0511/CSCI645-Project`. Complete the project end to end using this repository alone for assignment context. All output must be English. The owner has approximately one month and expects implementation and experimental execution on your remote machine, with all deliverables uploaded to this repository and GitHub Releases.

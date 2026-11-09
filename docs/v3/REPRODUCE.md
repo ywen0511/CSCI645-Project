@@ -1,155 +1,159 @@
-# Reproducing the v3 study from public sources
+# Reproducing the archived V3 study
 
-Everything below uses only this public repository, the GitHub release `v3.0.0` and the official simulator
-distribution. Paths are relative to a checkout. [VERIFICATION.md](VERIFICATION.md) records which of these
-commands were run on a fresh download, with exit codes and results.
+Use only the public Git repository, release assets and official simulator distribution.
+This revision corrects paths and placeholder handling in the old instructions. The
+[published verification](VERIFICATION.md) records earlier execution, not a claim that
+these revised commands have already passed remote GPU verification. Track that gate
+in [POST_V3_STATUS.json](../../POST_V3_STATUS.json).
 
-## Versions and roles
+## 1. Create three distinct checkouts (CPU)
 
-| Role | Revision | Used for |
-|---|---|---|
-| Experiment source | tag `experiment-v3` = `3811f5da5ef55638f95f7306e449609877f546df` | every simulator command (training, validation, final evaluation, extras, videos) |
-| Delivery source | tag `v3.0.0` (release) | analysis, regeneration, figures, report/slides, packaging, verification, and the post-freeze matrices/suites passed to the experiment checkout (`configs/v3/final_matrices/`, `configs/v3/suites/final_subset65.jsonl`, `final_trace6.jsonl`, `configs/v3/video/`) |
-
-Post-freeze files are created by frozen rules from the selection (`scripts/v3_manifests.py`); they never change
-simulator code. Both source trees are in the release (`source-experiment-v3.tar.gz`, `source-v3.0.0.tar.gz`).
-
-## Environments
-
-- **CPU (analysis, regeneration, rendering, verification):** Python 3.13 with
-  [`configs/closeout/requirements-analysis.txt`](../../configs/closeout/requirements-analysis.txt) (NumPy 2.4.4,
-  Matplotlib 3.11.2, Markdown, python-pptx, pypdf, imageio-ffmpeg). Rendering also needs Chrome/Chromium (report
-  PDF) and LibreOffice (slides PDF).
-- **GPU (simulator):** Isaac Lab v3.0.0, Isaac Sim 6.2.0.0 (PhysX), RSL-RL 5.5.1, PyTorch 2.11 (CUDA 13), Python
-  3.12, installed per [`docs/SETUP_REMOTE.md`](../SETUP_REMOTE.md). The environment used for v3 is identical
-  to the lock [`configs/v2/frozen/pip-freeze.txt`](../../configs/v2/frozen/pip-freeze.txt) (checked on
-  2026-11-08). The study ran on A100-SXM4-40GB, driver 580.159.03. A node without a system Vulkan driver needs a
-  user-space NVIDIA ICD folder in `CLOSEOUT_VK_ICD_DIR`; it is not distributed here. Simulator commands are run
-  through `scripts/cluster/isaac_run.sh <isaac python> <script> ...` (sets caches, Vulkan and `PYTHONPATH`).
-
-## 1. Download, check and extract (CPU)
+Run the blocks in the same Bash shell. Choose a **new** workspace; the command below
+creates one automatically. All subsequent paths are absolute, independent of `cd`.
 
 ```bash
-git clone https://github.com/ywen0511/CSCI645-Project.git v3-delivery
-cd v3-delivery && git checkout v3.0.0
-python3.13 -m venv .venv && .venv/bin/pip install -r configs/closeout/requirements-analysis.txt
-PY=$PWD/.venv/bin/python
-mkdir -p ../v3-release && gh release download v3.0.0 --repo ywen0511/CSCI645-Project --dir ../v3-release
-#   (or download every asset from https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0)
-(cd ../v3-release && sha256sum -c SHA256SUMS)
-$PY -I scripts/v3_verify.py --bundle ../v3-release --extract ../v3-x --output ../v3-verify.json
+set -eu
+V3_WORK=$(mktemp -d "${TMPDIR:-/tmp}/csci645-reproduce.XXXXXX")
+T="$V3_WORK/tooling"
+D="$V3_WORK/delivery"
+E="$V3_WORK/experiment"
+B="$V3_WORK/release"
+X="$V3_WORK/extracted"
+R="$V3_WORK/replay"
+G="$V3_WORK/regenerated"
+REPO_URL=https://github.com/ywen0511/CSCI645-Project.git
+git clone --branch study/v3-observation-robustness "$REPO_URL" "$T"
+git -C "$T" rev-parse HEAD > "$V3_WORK/tooling_commit.txt"
+git clone --branch v3.0.0 "$REPO_URL" "$D"
+git clone --branch experiment-v3 "$REPO_URL" "$E"
+test "$(git -C "$E" rev-parse HEAD)" = 3811f5da5ef55638f95f7306e449609877f546df
+test "$(git -C "$D" rev-parse HEAD)" = ebfa328b17103c32ae19c13f0a6408ebc55a6459
 ```
 
-`v3_verify.py` checks `SHA256SUMS` and `release_manifest.json`, re-hashes every archive member against
-`archive_inventories.json`, extracts safely into `../v3-x`, and checks that every checkpoint in
-`checkpoints.json` resolves (all 23 formal runs with step 0, ten periodic saves, final, latest and the selected
-tag), that the 50 executed final record files have 2,600 records each and the 138 validation files 240 each,
-that the videos decode, the PDFs and PPTX open, and that no private path appears. Extracted layout:
-`train/` is under `formal/train/`; `final/`, `validation/`, `zero_policy/`, `interventions/`, `repeatability/`,
-`traces6/`, `development/`, `acceptance/`, `pilot/`, `smoke/`, `videos/`, `results/v3/`, `configs/v3/`, `report/v3/`.
+`T` contains repaired tooling. Pin its recorded commit when repeating this procedure;
+never assume a moving branch is an immutable source reference. `D` contains the
+archived analysis/delivery source. `E` is the unchanged simulator source used for every
+V3 replay and resume. Do not copy maintenance changes into `E`.
 
-## 2. Quickstart: regenerate all tables and figures from the raw records (CPU, ~1 min)
+The archived CPU analysis lock uses Python 3.13.9 and
+[requirements-analysis.txt](../../configs/closeout/requirements-analysis.txt).
+The remote simulator environment is Isaac Lab v3.0.0 / Isaac Sim 6.2.0.0 / PhysX,
+Python 3.12, RSL-RL 5.5.1 and PyTorch 2.11 (CUDA 13), as recorded in
+[SETUP_REMOTE.md](../SETUP_REMOTE.md) and [the environment lock](../../configs/v2/frozen/pip-freeze.txt).
+Check installed versions against these records. Rendering also needs Chrome/Chromium
+and LibreOffice. Do not silently substitute a different simulator and call it exact reproduction.
+
+## 2. Download, verify and regenerate (CPU)
 
 ```bash
-$PY scripts/v3_regen.py --runs ../v3-x --work ../v3-regen
+python3.13 -m venv "$V3_WORK/analysis-env"
+PY="$V3_WORK/analysis-env/bin/python"
+"$PY" -m pip install -r "$D/configs/closeout/requirements-analysis.txt"
+"$PY" -I "$T/scripts/v3_download.py" --tag v3.0.0 --output "$B"
+"$PY" -I "$D/scripts/v3_verify.py" --bundle "$B" --extract "$X" --output "$V3_WORK/bundle_verify.json"
+"$PY" "$D/scripts/v3_regen.py" --runs "$X" --work "$G"
+"$PY" "$T/scripts/v3_rebuild_suites.py" --experiment-repo "$E" --check
+"$PY" "$T/scripts/v3_rebuild_suites.py" --experiment-repo "$E" --output "$V3_WORK/rebuilt-suites"
 ```
 
-Runs checkpoint selection, the main analysis (`v3_analyze.py`, 10,000 bootstrap replicates), mechanisms,
-repeatability, interventions, zero-policy and trace summaries plus figures, and compares every generated
-JSON/CSV with the committed `results/v3/` (identical / float-only / different) in `../v3-regen/regen.json`.
-Individual steps:
+The verifier checks release/member checksums, safely extracts archives, resolves the
+457 checkpoint-index entries, reconciles final/validation counts, decodes videos and
+opens documents. Downloading consumes about 461 MB; extraction needs additional space.
+`$X/formal/train` contains released checkpoints; `$X/final` and `$X/validation` hold records.
+`$G/regen.json` reports regeneration and comparison of 35 tables and 6 figures.
+
+The suite rebuilder is standard-library-only and reads the original generator from
+`E`. It checks all 60 frozen inputs, with one explicit historical exception:
+`SUITES.json` gained its final entry after freeze. It retrieves and hashes the
+pre-final Git bytes, checks that only that entry was added, and compares every generated
+suite and manifest field with the archive. It never rewrites `FREEZE.json` or `E`;
+`--check` is repeatable, and `--output` refuses an existing directory. Do not use
+`v3_prepare.py --final` to rebuild an already finalized archive.
+
+## 3. Small complete replay (remote GPU only)
+
+Set `ISAAC` to the absolute Python executable of the installed compatible simulator
+environment. Find it from the remote environment inventory; this is the only
+machine-specific executable path below. Set `CLOSEOUT_VK_ICD_DIR` if the documented
+cluster wrapper requires a user-space Vulkan ICD. No simulator is launched in CPU preparation.
 
 ```bash
-$PY scripts/v3_select_checkpoints.py --validation ../v3-x/validation --output ../v3-regen/selection
-$PY scripts/v3_analyze.py --index configs/v3/final_matrix_index.json --root ../v3-x --output ../v3-regen/summary
-$PY scripts/v3_mechanisms.py --index configs/v3/final_matrix_index.json --root ../v3-x --output ../v3-regen/mechanisms
-$PY scripts/v3_repeatability.py --runs ../v3-x --index configs/v3/final_matrix_index.json --output ../v3-regen/repeatability
-$PY scripts/v3_interventions.py --runs ../v3-x --index configs/v3/final_matrix_index.json --output ../v3-regen/interventions
-$PY scripts/v3_figures.py --summary ../v3-regen/summary --selection ../v3-regen/selection --output ../v3-regen/figures
+ISAAC=/absolute/path/to/isaaclab-env/bin/python
+test -x "$ISAAC"
+mkdir -p "$R/formal"
+ln -s "$X/formal/train" "$R/formal/train"
+ln -s "$X/final" "$R/final"
+"$PY" "$T/scripts/v3_jobs.py" run --manifest "$T/results/v3/jobs/verification.json"   --repo "$E" --runs-root "$R" --isaac-python "$ISAAC"   --only replay65_geometry_common --dry-run
+"$PY" "$T/scripts/v3_jobs.py" run --manifest "$T/results/v3/jobs/verification.json"   --repo "$E" --runs-root "$R" --isaac-python "$ISAAC"   --only replay65_geometry_common --task-timeout-s 3600
 ```
 
-Report numbers: `scripts/v3_report_values.py` (→ `results/v3/report_values.json`), `scripts/v3_render_report.py`
-(template → `report/v3/report.md` + `results/v3/number_audit.json`), `scripts/v3_build_report.py` (PDF),
-`scripts/v3_build_slides.py` (slides, notes and slide number audit).
+This executes **all 65 cases**, with 23 environments. It is not a one-case example;
+let it finish. Results are in `$R/replay65/geometry_common/geometry_common.jsonl`.
+The runner resolves `$DELIVERY` and `$RUNS` inside JSON matrices. Do not pass the
+unresolved delivery matrix directly to `eval_matrix.py`. Dry-run resolves dependencies
+and writes local resolved JSON, but never launches a task.
 
-## 3. Simulator steps (GPU)
-
-Run from a clean experiment checkout; post-freeze matrices are read from the delivery checkout. Set
+## 4. All replay, reload and resume checks (remote GPU)
 
 ```bash
-git clone https://github.com/ywen0511/CSCI645-Project.git v3-exp && git -C v3-exp checkout experiment-v3
-ISAAC=/path/to/isaaclab-env/bin/python
-D=$PWD/v3-delivery            # delivery checkout at v3.0.0
-X=$PWD/v3-x                   # extracted release (checkpoints under $X/formal/train)
-cd v3-exp
+"$PY" - "$X/formal/train/combined_robust_history_s11/checkpoints/latest.pt" > "$V3_WORK/resume-input.sha256" <<'HASH'
+import hashlib, pathlib, sys
+print(hashlib.sha256(pathlib.Path(sys.argv[1]).read_bytes()).hexdigest())
+HASH
+"$PY" "$T/scripts/v3_jobs.py" run --manifest "$T/results/v3/jobs/verification.json"   --repo "$E" --runs-root "$R" --isaac-python "$ISAAC" --task-timeout-s 3600
+"$PY" "$T/scripts/v3_fresh_compare.py" --x "$R" --output "$V3_WORK/fresh_gpu.json"
+"$PY" - "$V3_WORK/fresh_gpu.json" "$X/formal/train/combined_robust_history_s11/checkpoints/latest.pt"   "$V3_WORK/resume-input.sha256" <<'CHECK'
+import hashlib, json, pathlib, sys
+r = json.loads(pathlib.Path(sys.argv[1]).read_text())
+assert len(r['replay65']) == 7 and all(x['cases'] == 65 for x in r['replay65'])
+assert len(r['reload']) == 4 and all(x['cases'] == 13 for x in r['reload'])
+assert r['summary']['mismatches'] == 0 and r['resume']['ok']
+for x in r['replay65'] + r['reload']:
+    assert not x['missing_in_final'] and x['invalid_resets'] == 0
+    assert x['terminal_equal'] == x['success_equal'] == x['cases']
+    assert x['observation_error_equal'] and x['checkpoint_sha256_equal']
+assert hashlib.sha256(pathlib.Path(sys.argv[2]).read_bytes()).hexdigest() == pathlib.Path(sys.argv[3]).read_text().strip()
+CHECK
 ```
 
-**Tiny replay (one case, ~2 min):** geometry_common on the first case of the predeclared 65-case subset —
+Expected coverage: 455 replay and 52 reload episodes, plus two resumed PPO iterations
+(306 to 308; 10,027,008 to 10,092,544 transitions) into `$R/resume_check`, preserving the
+released checkpoint. Execute sequentially: resume inspection depends on resume training.
+The comparator's exit code alone is not an acceptance gate; the explicit count/content
+assertions above are required. Investigate and report all mismatches, including hardware
+nondeterminism; do not erase them or relax checks merely to pass.
+
+Repeat the runner command once: all 13 tasks should skip only after hashes and
+provenance match. Preserve the new ledger separately from the historical release ledger.
+Symlinks above are read-only input references, not declared task outputs.
+
+## 5. Full final reevaluation (optional reproduction, remote GPU)
 
 ```bash
-bash scripts/cluster/isaac_run.sh $ISAAC scripts/eval_matrix.py \
-  --matrix $D/configs/v3/final_matrices/extras/repeat_geometry_common.json --num-envs 1 \
-  --output ../replay_tiny --seed 6455601
+F="$V3_WORK/full-final"
+mkdir "$F"
+ln -s "$X/formal/train" "$F/train"
+"$PY" "$T/scripts/v3_jobs.py" run --manifest "$T/results/v3/jobs/final.json"   --repo "$E" --runs-root "$F" --isaac-python "$ISAAC" --task-timeout-s 3600
 ```
 
-(`eval_matrix.py` runs all 65 cases of that matrix; stop after the first record if you only want one.) Matrix
-files reference `$DELIVERY/...`; the job runner `scripts/v3_jobs.py` substitutes `$DELIVERY`, `$RUNS` and `$PY`.
-Running a whole stage through the runner is the simplest way:
+This runs 50 executed entries of 2,600 cases. The aliases are declared in
+`configs/v3/final_matrices/baseline_aliases.json`. `--shard I/N` may distribute independent
+final tasks across available GPUs. Do not shard a manifest with task dependencies
+without scheduling its stages. Full retraining is unnecessary for maintenance acceptance;
+the historical training/selection contract is [V3_EXECUTION.md](../../V3_EXECUTION.md).
+A new training run needs its own validation-selected matrices, not the old selection.
 
-```bash
-cd $D
-$ISAAC scripts/v3_jobs.py run --manifest results/v3/jobs/verification.json --isaac-python $ISAAC \
-    --runs-root $X --repo ../v3-exp --task-timeout-s 3600      # 65-case replay (7 entries), reloads, resume check
-```
+## Integrity and limits
 
-Each manifest (`results/v3/jobs/*.json`) lists every task of one stage with exact argv, inputs and outputs:
-`train.json` (23 formal runs, ~20 min each on one A100), `validation.json` (138), `final.json` (50 executed
-entries; three baseline roles are aliases, `configs/v3/final_matrices/baseline_aliases.json`), `extras.json`
-(zero-policy, interventions, repeatability), `traces6.json`, `videos.json` (recording + index/montage) and
-`verification.json`. `--shard I/N` runs every N-th task; shards are independent (one GPU each). Use
-`--runs-root <new dir>` to re-train or re-evaluate from scratch; use `--runs-root $X` to evaluate the released
-checkpoints.
+The repaired runner requires the **latest** attempt to succeed and verifies input files,
+matrix suite/protocol/checkpoint dependencies, resolved arguments, execution commit,
+runner context, and output file/directory fingerprints before skipping. Modified complete
+outputs or legacy provenance are refused; preserve them and use a fresh run directory.
+Missing outputs may resume through the underlying script's provenance checks. Directory
+fingerprints cover content and membership and reject symlinks. Old ledgers are historical
+evidence, not upgraded cache certificates. Use `T` for the runner and `E` for execution.
 
-**Complete final evaluation** (re-evaluate the released checkpoints):
-
-```bash
-$ISAAC scripts/v3_jobs.py run --manifest results/v3/jobs/final.json --isaac-python $ISAAC --runs-root ../v3-reeval \
-    --repo ../v3-exp --task-timeout-s 3600
-```
-
-with `../v3-reeval/train` → a link to `$X/formal/train` (the final matrices take checkpoints relative to
-`$RUNS/train`). Records are bitwise comparable to `$X/final/` only up to GPU floating-point nondeterminism;
-the 65-case replay quantifies this.
-
-**Resume:** every formal run keeps `checkpoints/latest.pt` (optimizer, normalizer, RNG and counters):
-
-```bash
-sha256sum $X/formal/train/combined_robust_history_s11/checkpoints/latest.pt     # unchanged afterwards
-bash scripts/cluster/isaac_run.sh $ISAAC scripts/train.py --method combined --seed 11 \
-  --protocol configs/v3/frozen/training/combined_robust_history.json --run-type smoke \
-  --resume $X/formal/train/combined_robust_history_s11/checkpoints/latest.pt --transitions 10092544 \
-  --output /tmp/resume_s11
-bash scripts/cluster/isaac_run.sh $ISAAC scripts/closeout_inspect_ckpt.py \
-  --before $X/formal/train/combined_robust_history_s11/checkpoints/latest.pt \
-  --after /tmp/resume_s11/checkpoints/final.pt --expect-iterations 308 --expect-transitions 10092544 \
-  --output /tmp/resume_s11/inspect.json
-```
-
-(two more PPO iterations, 306 → 308, into a disposable directory; the inspection compares counters, optimizer
-and normalizer state; these are the `resume_check_*` tasks of `verification.json`).
-
-**Video replay:** `results/v3/jobs/videos.json` (three recording processes, one per estimator configuration,
-then `scripts/v3_video_index.py` for decode checks and the montage). Plans: `configs/v3/video/plan_*.json`.
-
-**Re-training from scratch:** `results/v3/jobs/train.json` then `validation.json`, then
-`scripts/v3_select_checkpoints.py` and `scripts/v3_manifests.py final extras traces6 verification` to rebuild
-post-freeze matrices from the new selection.
-
-## Resume and refusal rules
-
-`eval_matrix.py` resumes an incomplete entry by skipping recorded case IDs only if their suite, configuration,
-controller, checkpoint hashes and observation-error spec match, and aborts otherwise (acceptance check 10). The
-job runner skips a task only if its outputs exist and its last successful attempt had identical inputs, argv
-and source commit; every attempt is logged in `<runs>/ledger/<task>.jsonl` (merged in
-`results/v3/task_ledger.jsonl`). A task is killed 90 s after the simulator prints its shutdown marker if all
-outputs exist (Isaac Sim may otherwise hang at exit); this is logged as a watchdog event.
+The inherited simulator shutdown watchdog can terminate a process after its shutdown
+marker; output existence alone is not scientific validation. Always check case counts,
+provenance and outcome comparisons above. CPU regression tests use synthetic fixtures;
+they do not establish physics fidelity or revalidate the reported success rates.
