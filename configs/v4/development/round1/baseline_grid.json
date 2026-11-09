@@ -1,0 +1,255 @@
+{
+ "status": "registered before evaluation",
+ "max_configurations": 36,
+ "configurations": [
+  {
+   "id": "nominal",
+   "method": "nominal",
+   "ema_alpha": 1.0,
+   "reference": "none",
+   "align_max_m": null
+  },
+  {
+   "id": "ema1p0_none_a15",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "none",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema1p0_none_a20",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "none",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema1p0_fixed_a15",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "fixed",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema1p0_fixed_a20",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "fixed",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema1p0_cal010_a15",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "cal010",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema1p0_cal010_a20",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "cal010",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema1p0_cal025_a15",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "cal025",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema1p0_cal025_a20",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "cal025",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema1p0_cal050_a15",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "cal050",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema1p0_cal050_a20",
+   "method": "geometry",
+   "ema_alpha": 1.0,
+   "reference": "cal050",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p5_none_a15",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "none",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p5_none_a20",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "none",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p5_fixed_a15",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "fixed",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p5_fixed_a20",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "fixed",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p5_cal010_a15",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "cal010",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p5_cal010_a20",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "cal010",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p5_cal025_a15",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "cal025",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p5_cal025_a20",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "cal025",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p5_cal050_a15",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "cal050",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p5_cal050_a20",
+   "method": "geometry",
+   "ema_alpha": 0.5,
+   "reference": "cal050",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p2_none_a15",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "none",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p2_none_a20",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "none",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p2_fixed_a15",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "fixed",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p2_fixed_a20",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "fixed",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p2_cal010_a15",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "cal010",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p2_cal010_a20",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "cal010",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p2_cal025_a15",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "cal025",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p2_cal025_a20",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "cal025",
+   "align_max_m": 0.02
+  },
+  {
+   "id": "ema0p2_cal050_a15",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "cal050",
+   "align_max_m": 0.015
+  },
+  {
+   "id": "ema0p2_cal050_a20",
+   "method": "geometry",
+   "ema_alpha": 0.2,
+   "reference": "cal050",
+   "align_max_m": 0.02
+  }
+ ],
+ "historical_fixed_transform": "ema1p0_fixed_a15",
+ "suite": "configs/v4/suites/development.jsonl",
+ "suite_sha256": "4319c2cd12371ae5ee212503eb39e3c8434cba2f1932b5dc1abace91c73b2cdf",
+ "selection_strata": [
+  "clean",
+  "grasp_5mm",
+  "grasp_10mm",
+  "bias_5mm",
+  "noise_2mm",
+  "mixed_id"
+ ],
+ "rule": "(development cases only; strata = the six validation conditions, equal weight, 24 cases each,\nall scheduled cases in the denominator): success rate desc, unsafe-event rate asc (any prohibited collision or\ndrop), correction magnitude asc (geometry: mean |alignment correction|; constant search: |c|), mean completion\ntime of successes asc, candidate ID asc.",
+ "constant_search": {
+  "x_m": [
+   -0.01,
+   -0.005,
+   0.0,
+   0.005,
+   0.01
+  ],
+  "y_m": [
+   0.0
+  ],
+  "z_m": [
+   -0.005,
+   0.0,
+   0.005
+  ],
+  "bound_m": 0.02,
+  "applied_to": "the selected common geometric parent",
+  "count": 15
+ }
+}

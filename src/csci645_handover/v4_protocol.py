@@ -58,35 +58,38 @@ def grasp_offset(rule: dict, rng: random.Random) -> list[float]:
 # y is the finger-closing axis; the fingers re-centre the bar (achieved y ~ -0.2 mm for requested +-5 mm).
 # x toward the giver palm (negative) is limited: -10 mm produced prohibited contact at reset in 3 of 4 probe
 # cases and -15 mm in 4 of 4; +15 mm (toward the receiver) settled stably. Training support is therefore
-# asymmetric in x.
-TRAIN_SUPPORT = {"low_xyz_m": [-0.005, 0.0, -0.010], "high_xyz_m": [0.010, 0.0, 0.010]}
+# asymmetric in x. Development round 2 (docs/v4/DECISIONS.md): the support covers the full feasible +x range
+# (+15 mm), because the giver-reference failure regime (x >= +7 mm) must lie inside the in-distribution
+# primary condition; in round 1 (x <= +10 mm) the strongest baselines were at ceiling on mixed_id.
+TRAIN_SUPPORT = {"low_xyz_m": [-0.005, 0.0, -0.010], "high_xyz_m": [0.015, 0.0, 0.010]}
 S0 = {}
 CONDITIONS = {
     "clean": {"physical": False, "grasp": {"mode": "zero"}, "sensor": S0},
     "grasp_2mm": {"grasp": {"x": {"sign": 0.002}, "z": {"sign": 0.002}}, "sensor": S0},
     "grasp_5mm": {"grasp": {"x": {"sign": 0.005}, "z": {"sign": 0.005}}, "sensor": S0},
-    # -10 mm in x is physically infeasible (giver palm contact); the 10 mm severity uses +10 mm in x
+    # -10 mm and -15 mm in x are physically infeasible (giver palm contact): larger severities use +x only
     "grasp_10mm": {"grasp": {"x": {"fixed": 0.010}, "z": {"sign": 0.010}}, "sensor": S0},
+    "grasp_15mm": {"grasp": {"x": {"fixed": 0.015}, "z": {"sign": 0.010}}, "sensor": S0},
     "bias_5mm": {"grasp": {"mode": "zero"}, "sensor": {"bias_m": 0.005}},
     "noise_2mm": {"grasp": {"mode": "zero"}, "sensor": {"noise_std_m": 0.002}},
     "delay_2step": {"grasp": {"mode": "zero"}, "sensor": {"delay_steps": 2}},
-    "mixed_id": {"grasp": {"x": {"uniform": [-0.005, 0.010]}, "z": {"uniform": [-0.010, 0.010]}},
+    "mixed_id": {"grasp": {"x": {"uniform": [-0.005, 0.015]}, "z": {"uniform": [-0.010, 0.010]}},
                  "sensor": {"bias_m": 0.005, "bias_mode": "uniform", "noise_std_m": 0.002, "delay_steps": 2}},
     "mixed_ood": {"grasp": {"x": {"uniform": [-0.007, 0.015]}, "z": {"uniform": [-0.015, 0.015]}},
                   "sensor": {"bias_m": 0.010, "bias_mode": "uniform", "noise_std_m": 0.004, "delay_steps": 4}},
-    "boundary_x_plus_15": {"grasp": {"x": {"fixed": 0.015}}, "sensor": S0},
     "boundary_x_minus_7": {"grasp": {"x": {"fixed": -0.007}}, "sensor": S0},
     "boundary_z_15": {"grasp": {"z": {"sign": 0.015}}, "sensor": S0},
 }
 ORDER = list(CONDITIONS)
-VALIDATION = ("clean", "grasp_5mm", "grasp_10mm", "bias_5mm", "noise_2mm", "mixed_id")
+VALIDATION = ("clean", "grasp_10mm", "grasp_15mm", "bias_5mm", "noise_2mm", "mixed_id")
 TRAINING_LABEL = {  # position of each final condition relative to the robust training distribution
-    "clean": "in support (zero)", "grasp_2mm": "interpolation", "grasp_5mm": "interpolation",
-    "grasp_10mm": "support edge (x = +10 mm is the training maximum; z +-10 mm is the training bound)",
+    "clean": "in support (zero)", "grasp_2mm": "interpolation", "grasp_5mm": "interpolation (x = -5 mm is the support edge)",
+    "grasp_10mm": "interpolation in x; z = +-10 mm is the support edge",
+    "grasp_15mm": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
     "bias_5mm": "support edge (bias bound 5 mm)", "noise_2mm": "support edge (noise std <= 2 mm)",
     "delay_2step": "support edge (delay <= 2 steps)", "mixed_id": "in support (same distribution family)",
-    "mixed_ood": "extrapolation (grasp, bias, noise and delay beyond support)",
-    "boundary_x_plus_15": "extrapolation in +x (beyond +10 mm)", "boundary_x_minus_7": "extrapolation in -x (beyond -5 mm)",
+    "mixed_ood": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+    "boundary_x_minus_7": "extrapolation toward the giver palm (beyond -5 mm)",
     "boundary_z_15": "extrapolation in z (beyond +-10 mm)",
 }
 

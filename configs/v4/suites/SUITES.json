@@ -16,14 +16,6 @@
    },
    "sensor": {}
   },
-  "boundary_x_plus_15": {
-   "grasp": {
-    "x": {
-     "fixed": 0.015
-    }
-   },
-   "sensor": {}
-  },
   "boundary_z_15": {
    "grasp": {
     "z": {
@@ -58,6 +50,17 @@
    },
    "sensor": {}
   },
+  "grasp_15mm": {
+   "grasp": {
+    "x": {
+     "fixed": 0.015
+    },
+    "z": {
+     "sign": 0.01
+    }
+   },
+   "sensor": {}
+  },
   "grasp_2mm": {
    "grasp": {
     "x": {
@@ -85,7 +88,7 @@
     "x": {
      "uniform": [
       -0.005,
-      0.01
+      0.015
      ]
     },
     "z": {
@@ -139,12 +142,12 @@
   "grasp_2mm",
   "grasp_5mm",
   "grasp_10mm",
+  "grasp_15mm",
   "bias_5mm",
   "noise_2mm",
   "delay_2step",
   "mixed_id",
   "mixed_ood",
-  "boundary_x_plus_15",
   "boundary_x_minus_7",
   "boundary_z_15"
  ],
@@ -158,19 +161,19 @@
    "cases": 288,
    "path": "configs/v4/suites/development.jsonl",
    "per_condition": 24,
-   "sha256": "4319c2cd12371ae5ee212503eb39e3c8434cba2f1932b5dc1abace91c73b2cdf"
+   "sha256": "f0e518b9c5ab74daf23d4438fe04119f0500cc0c521e5561dca0b4ac1b4611ec"
   },
   "validation": {
    "cases": 240,
    "path": "configs/v4/suites/validation.jsonl",
    "per_condition": 40,
-   "sha256": "9e3005a54cb0ea25f42e2edbb31eebd1c036f63e8d90d84424759fff1ea70007"
+   "sha256": "88ac483e30adbfb1e1ff7e2c36d1c04af8c999c04bcb642d2f46eea46100309c"
   }
  },
  "validation_conditions": [
   "clean",
-  "grasp_5mm",
   "grasp_10mm",
+  "grasp_15mm",
   "bias_5mm",
   "noise_2mm",
   "mixed_id"

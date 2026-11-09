@@ -17,7 +17,7 @@
  },
  "trace_cases": [
   "v4-development-mixed_id-0000",
-  "v4-development-grasp_10mm-0000",
+  "v4-development-grasp_15mm-0000",
   "v4-development-clean-0000"
  ],
  "entries": [
@@ -38,11 +38,10 @@
    "trace": true
   },
   {
-   "id": "ema1p0_cal010_a15",
+   "id": "ema1p0_fixed_a25",
    "method": "geometry",
    "overrides": {
-    "align_max": 0.015,
-    "giver_calibration_window_s": 0.1
+    "align_max": 0.025
    },
    "trace": true
   },
@@ -56,11 +55,11 @@
    "trace": true
   },
   {
-   "id": "ema1p0_cal025_a15",
+   "id": "ema1p0_cal010_a25",
    "method": "geometry",
    "overrides": {
-    "align_max": 0.015,
-    "giver_calibration_window_s": 0.25
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.1
    },
    "trace": true
   },
@@ -74,11 +73,11 @@
    "trace": true
   },
   {
-   "id": "ema1p0_cal050_a15",
+   "id": "ema1p0_cal025_a25",
    "method": "geometry",
    "overrides": {
-    "align_max": 0.015,
-    "giver_calibration_window_s": 0.5
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.25
    },
    "trace": true
   },
@@ -87,6 +86,15 @@
    "method": "geometry",
    "overrides": {
     "align_max": 0.02,
+    "giver_calibration_window_s": 0.5
+   },
+   "trace": true
+  },
+  {
+   "id": "ema1p0_cal050_a25",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
     "giver_calibration_window_s": 0.5
    },
    "trace": true

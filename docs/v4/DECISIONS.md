@@ -62,3 +62,30 @@ alignment bound ∈ {1.5, 2.0} cm (31 ≤ 36). The historical fixed-transform ba
 `geometry_common` configuration (α = 1, fixed transform, 1.5 cm). The constant-residual search (x ∈ {−10, −5, 0,
 +5, +10} mm × z ∈ {−5, 0, +5} mm, y = 0; 15 offsets, ±2 cm bound) is applied to the selected common parent
 afterwards and logged separately. Selection strata are the six validation conditions of the development suite.
+
+## 2026-11-09 16:05 — development round 1 result and round 2 (support covers the full feasible +x range)
+
+Round 1 (`configs/v4/development/round1/`, 31 registered configurations × 288 development cases, source
+`901f7c8`; summary `results/v4/development/round1_summary.json`; 0 invalid resets, 0 failed tasks):
+
+- The historical fixed transform fails where the probe predicted: grasp_10mm 7/24, x = +15 mm 3/24 (prohibited
+  receiver collisions), but mixed_id 23/24 because few uniform draws in [−5, +10] mm exceed +7 mm.
+- Calibrated references (any window/α) and EMA α = 0.2 without the giver reference reach 24/24 on every
+  validation-like stratum including mixed_id with a 2.0 cm alignment bound; they fail only on mixed_ood and
+  x = +15 mm (21/24, alignment bound saturated). A 1.5 cm bound was never better than 2.0 cm on any condition.
+- Raw estimate (α = 1, no giver reference) fails on noise (0/24) as in V3.
+
+The predeclared primary condition (mixed_id) was therefore at the ceiling for the strongest baselines, which
+would make the primary contrasts degenerate (the V3 failure mode). The research question concerns the regime
+where the giver reference fails (x ≥ +7 mm), which the probe shows is physically feasible up to +15 mm. Decision
+(before any training, validation or final data exist):
+
+- Training support and mixed_id grasp range: x ∈ [−5, +15] mm (full feasible range toward the receiver),
+  z ∈ [−10, +10] mm. New severity `grasp_15mm` (x = +15 mm, z = ±10 mm random sign) replaces the round-1
+  boundary condition x = +15 mm, which is now inside the support. Validation conditions: clean, grasp_10mm,
+  grasp_15mm, bias_5mm, noise_2mm, mixed_id. Sensor error distributions are unchanged.
+- Grid round 2 (re-registered before evaluation): the dominated 1.5 cm bound is replaced by 2.5 cm
+  (α × reference × {2.0, 2.5} cm = 30) plus nominal and the unchanged historical V3 configuration
+  (α = 1, fixed transform, 1.5 cm): 32 ≤ 36 configurations. Whether 2.5 cm is physically valid is measured
+  (collisions count as unsafe events in the selection rule).
+- Not done: no condition was removed because a method failed it; no sensor channel was disabled for any method.

@@ -35,11 +35,11 @@ SENSOR = {"bias_bound_m": 0.005, "noise_std_m": 0.002, "delay_steps": 2, "max_de
 ALPHAS = (1.0, 0.5, 0.2)
 REFERENCES = {"none": (False, None), "fixed": (True, None), "cal010": (True, 0.1), "cal025": (True, 0.25),
               "cal050": (True, 0.5)}
-ALIGN = (0.015, 0.020)
+ALIGN = (0.020, 0.025)  # round 2: 1.5 cm was dominated by 2.0 cm on every round-1 condition
 CONSTANTS_X = (-0.010, -0.005, 0.0, 0.005, 0.010)
 CONSTANTS_Z = (-0.005, 0.0, 0.005)
 HISTORICAL = "ema1p0_fixed_a15"  # the V3 geometry_common configuration, carried unchanged
-TRACE_DEV = ["v4-development-mixed_id-0000", "v4-development-grasp_10mm-0000", "v4-development-clean-0000"]
+TRACE_DEV = ["v4-development-mixed_id-0000", "v4-development-grasp_15mm-0000", "v4-development-clean-0000"]
 
 
 def tag(a: float) -> str:
@@ -61,7 +61,9 @@ def suites():
 
 
 def grid_configs():
-    out = [{"id": "nominal", "method": "nominal", "ema_alpha": 1.0, "reference": "none", "align_max_m": None}]
+    out = [{"id": "nominal", "method": "nominal", "ema_alpha": 1.0, "reference": "none", "align_max_m": None},
+           {"id": HISTORICAL, "method": "geometry", "ema_alpha": 1.0, "reference": "fixed", "align_max_m": 0.015,
+            "note": "historical V3 geometry_common configuration, carried unchanged"}]
     for a in ALPHAS:
         for ref in REFERENCES:
             for al in ALIGN:
@@ -89,7 +91,8 @@ def grid():
     DEV.mkdir(parents=True, exist_ok=True)
     cfgs = grid_configs()
     assert len(cfgs) <= 36
-    reg = {"status": "registered before evaluation", "max_configurations": 36, "configurations": cfgs,
+    reg = {"status": "registered before evaluation (development round 2; round 1 archived in configs/v4/development/round1/)",
+           "max_configurations": 36, "configurations": cfgs,
            "historical_fixed_transform": HISTORICAL, "suite": "configs/v4/suites/development.jsonl",
            "suite_sha256": v4.sha256(SUITES / "development.jsonl"), "selection_strata": list(v4.VALIDATION),
            "rule": __doc__.split("Selection rule")[1].strip(),

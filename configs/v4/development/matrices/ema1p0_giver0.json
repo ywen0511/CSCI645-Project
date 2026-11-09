@@ -17,7 +17,7 @@
  },
  "trace_cases": [
   "v4-development-mixed_id-0000",
-  "v4-development-grasp_10mm-0000",
+  "v4-development-grasp_15mm-0000",
   "v4-development-clean-0000"
  ],
  "entries": [
@@ -27,18 +27,18 @@
    "trace": true
   },
   {
-   "id": "ema1p0_none_a15",
-   "method": "geometry",
-   "overrides": {
-    "align_max": 0.015
-   },
-   "trace": true
-  },
-  {
    "id": "ema1p0_none_a20",
    "method": "geometry",
    "overrides": {
     "align_max": 0.02
+   },
+   "trace": true
+  },
+  {
+   "id": "ema1p0_none_a25",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025
    },
    "trace": true
   }
