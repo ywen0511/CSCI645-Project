@@ -380,8 +380,10 @@ class HandoverEnv(DirectRLEnv):
         tpose[:, 6] = 1.0
         if self.cfg.negative_control == "table_support":
             # (run with a narrow table, cfg.table_size_override, that fits between the two grippers' fingertips)
-            top = self.obj_nominal_local[2] + self.offset[env_ids, 2] - self.cfg.object_size[2] / 2
-            tpose[:, 0] = origins[:, 0] + self.obj_nominal_local[0] + self.offset[env_ids, 0]
+            # V4: the bar is spawned at nominal + joint offset + in-grasp offset; the table must sit under it
+            g = self.grasp_offset[env_ids]
+            top = self.obj_nominal_local[2] + self.offset[env_ids, 2] + g[:, 2] - self.cfg.object_size[2] / 2
+            tpose[:, 0] = origins[:, 0] + self.obj_nominal_local[0] + self.offset[env_ids, 0] + g[:, 0]
             tpose[:, 2] = origins[:, 2] + top - self.table_half_height
         self.table.write_root_pose_to_sim_index(root_pose=tpose, env_ids=env_ids)
         self.realized_offset[env_ids] = 0.0

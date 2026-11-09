@@ -1,0 +1,290 @@
+{
+ "A1_v3_path": {
+  "geometry_common": {
+   "cases": 65,
+   "missing": [],
+   "agree": 65,
+   "disagreements": []
+  },
+  "policy_s11_selected": {
+   "cases": 65,
+   "missing": [],
+   "agree": 65,
+   "disagreements": []
+  },
+  "observation_error_equal": true,
+  "checkpoint_sha256_equal": true,
+  "config_hash_equal_to_v3": true,
+  "pass": true
+ },
+ "A2_v4_zero_offset": {
+  "geometry_common": {
+   "cases": 65,
+   "missing": [],
+   "agree": 65,
+   "disagreements": []
+  },
+  "policy_s11_selected": {
+   "cases": 65,
+   "missing": [],
+   "agree": 65,
+   "disagreements": []
+  },
+  "observation_error_equal": true,
+  "checkpoint_sha256_equal": true,
+  "pass": true
+ },
+ "A3_negative_controls": {
+  "runs": {
+   "no_receiver/nominal": {
+    "cases": 16,
+    "success": 0,
+    "terminal": [
+     "drop"
+    ],
+    "invalid_resets": 0
+   },
+   "no_receiver/parent": {
+    "cases": 16,
+    "success": 0,
+    "terminal": [
+     "release_timeout"
+    ],
+    "invalid_resets": 0
+   },
+   "giver_holds/nominal": {
+    "cases": 16,
+    "success": 0,
+    "terminal": [
+     "episode_timeout",
+     "prohibited_collision"
+    ],
+    "invalid_resets": 0
+   },
+   "giver_holds/parent": {
+    "cases": 16,
+    "success": 0,
+    "terminal": [
+     "episode_timeout"
+    ],
+    "invalid_resets": 0
+   },
+   "table_support/nominal": {
+    "cases": 16,
+    "success": 5,
+    "terminal": [
+     "invalid_reset",
+     "prohibited_collision",
+     "success"
+    ],
+    "invalid_resets": 8
+   },
+   "table_support/parent": {
+    "cases": 16,
+    "success": 8,
+    "terminal": [
+     "invalid_reset",
+     "success"
+    ],
+    "invalid_resets": 8
+   }
+  },
+  "pass": false
+ },
+ "A4_layout": {
+  "exogenous_parameters_identical": true,
+  "vs_b72": {
+   "b1": {
+    "cases": 72,
+    "missing": [],
+    "agree": 72,
+    "disagreements": [],
+    "max_calibration_diff_m": 0.00021251741054584272
+   },
+   "b8": {
+    "cases": 72,
+    "missing": [],
+    "agree": 72,
+    "disagreements": [],
+    "max_calibration_diff_m": 0.00018713041208684444
+   },
+   "b72rev": {
+    "cases": 72,
+    "missing": [],
+    "agree": 72,
+    "disagreements": [],
+    "max_calibration_diff_m": 2.368912100791931e-05
+   }
+  },
+  "pass": true
+ },
+ "A5_reset_leakage": {
+  "batch16_vs_batch288": {
+   "cases": 288,
+   "missing": [],
+   "agree": 288,
+   "disagreements": [],
+   "max_calibration_diff_m": 0.0003841728903353214
+  },
+  "exogenous_parameters_identical": true,
+  "invalid_resets": 0,
+  "pass": true
+ },
+ "A6_privileged_parent": {
+  "cases": 48,
+  "traced_cases": 48,
+  "trace_steps": 5578,
+  "steps_with_perturbed_privileged_tensor": 4714,
+  "controller_trace_differences": [],
+  "record_differences": [],
+  "pass": true
+ },
+ "A8_privileged_policy": {
+  "cases": 48,
+  "traced_cases": 48,
+  "trace_steps": 5579,
+  "steps_with_perturbed_privileged_tensor": 4715,
+  "controller_trace_differences": [],
+  "record_differences": [],
+  "pass": true
+ },
+ "A7_zero_residual_equals_parent": {
+  "profiles": {
+   "combined_clean_ff": {
+    "cases": 72,
+    "missing": [],
+    "agree": 72,
+    "disagreements": [],
+    "completion_time_equal": true,
+    "residual_abs_max_m": 0.0
+   },
+   "combined_robust_ff": {
+    "cases": 72,
+    "missing": [],
+    "agree": 72,
+    "disagreements": [],
+    "completion_time_equal": true,
+    "residual_abs_max_m": 0.0
+   },
+   "combined_robust_history": {
+    "cases": 72,
+    "missing": [],
+    "agree": 72,
+    "disagreements": [],
+    "completion_time_equal": true,
+    "residual_abs_max_m": 0.0
+   },
+   "combined_robust_repeat": {
+    "cases": 72,
+    "missing": [],
+    "agree": 72,
+    "disagreements": [],
+    "completion_time_equal": true,
+    "residual_abs_max_m": 0.0
+   },
+   "residual_robust_history": {
+    "cases": 72,
+    "missing": [],
+    "agree": 72,
+    "disagreements": [],
+    "completion_time_equal": true,
+    "residual_abs_max_m": 0.0
+   }
+  },
+  "pass": true
+ },
+ "resume_smoke": {
+  "profiles": {
+   "combined_clean_ff": {
+    "ok": true,
+    "checks": {
+     "counters_restored_and_advanced": true,
+     "optimizer_state_saved": true,
+     "normalizer_present": true,
+     "parameters_updated": true,
+     "reload_identical": true
+    }
+   },
+   "combined_robust_ff": {
+    "ok": true,
+    "checks": {
+     "counters_restored_and_advanced": true,
+     "optimizer_state_saved": true,
+     "normalizer_present": true,
+     "parameters_updated": true,
+     "reload_identical": true
+    }
+   },
+   "combined_robust_history": {
+    "ok": true,
+    "checks": {
+     "counters_restored_and_advanced": true,
+     "optimizer_state_saved": true,
+     "normalizer_present": true,
+     "parameters_updated": true,
+     "reload_identical": true
+    }
+   },
+   "combined_robust_repeat": {
+    "ok": true,
+    "checks": {
+     "counters_restored_and_advanced": true,
+     "optimizer_state_saved": true,
+     "normalizer_present": true,
+     "parameters_updated": true,
+     "reload_identical": true
+    }
+   },
+   "residual_robust_history": {
+    "ok": true,
+    "checks": {
+     "counters_restored_and_advanced": true,
+     "optimizer_state_saved": true,
+     "normalizer_present": true,
+     "parameters_updated": true,
+     "reload_identical": true
+    }
+   }
+  },
+  "pass": true
+ },
+ "A9_eval_resume_and_tamper": {
+  "result": {
+   "cases": 72,
+   "truncated": {
+    "rc": 0,
+    "watchdog": null,
+    "expected_log": "69 existing, 3 to run",
+    "records_after": 72
+   },
+   "tamper_config_hash": {
+    "rc": 1,
+    "watchdog": null,
+    "error_text_seen": true,
+    "file_unchanged": true
+   },
+   "tamper_case_observation_error": {
+    "rc": 1,
+    "watchdog": null,
+    "error_text_seen": true,
+    "file_unchanged": true
+   },
+   "tamper_checkpoint_sha256": {
+    "rc": 1,
+    "watchdog": null,
+    "error_text_seen": true,
+    "file_unchanged": true
+   },
+   "checks": {
+    "truncated_reexecutes_only_missing": true,
+    "tampered_config_hash_rejected": true,
+    "tampered_case_observation_error_rejected": true,
+    "tampered_checkpoint_sha256_rejected": true
+   },
+   "ok": true,
+   "note": "matrix_status.json alone is never trusted: eval_matrix re-validates every existing record against the suite, sensor realization, config/controller/checkpoint hashes and source commit"
+  },
+  "pass": true
+ },
+ "all_pass": false
+}

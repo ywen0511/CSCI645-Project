@@ -81,7 +81,7 @@ def main():
     for ctl in ("no_receiver", "giver_holds", "table_support"):
         for e in ("nominal", "parent"):
             rows = jl(A / f"a3_neg_{ctl}" / f"{e}.jsonl")
-            neg[f"{ctl}/{e}"] = {"cases": len(rows), "success": sum(r["success"] for r in rows),
+            neg[f"{ctl}/{e}"] = {"cases": len(rows), "success": sum(r["success"] for r in rows.values()),
                                  "terminal": sorted({r["terminal_reason"] for r in rows.values()}),
                                  "invalid_resets": sum(not r["reset_valid"] for r in rows.values())}
     out["A3_negative_controls"] = {"runs": neg, "pass": all(v["success"] == 0 and v["cases"] == 16 for v in neg.values())}
