@@ -93,7 +93,7 @@ def plan(sel):
                        "interventions": ["zero residual (= parent)", "constant mean residual fitted on development records only",
                                          "history order reversed [3, 2, 1, 0]", "current frame repeated four times",
                                          "untrained step-0 checkpoints"], "seeds": "every selected history run"},
-        "repeatability": {"subset": "the 60-case mechanism subset", "batch_sizes": [1, 20], "process_seeds": [6456601, 6456602, 6456603],
+        "repeatability": {"subset": "the 60-case mechanism subset", "batch_sizes": [6, 20], "process_seeds": [6456601, 6456602, 6456603],
                           "entries": ["geometry_calibrated", "best_constant_geometry", "combined_robust_history selected (all seeds)"]},
         "traces": {"cases": TRACE_FINAL, "how": "separate supplementary batch-6 runs; never replace formal records"},
         "compute_budget_gpu_hours": 100,

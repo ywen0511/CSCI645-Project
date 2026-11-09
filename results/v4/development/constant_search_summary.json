@@ -1,0 +1,1775 @@
+{
+ "const_x+0_z+0": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 3,
+   "invalid_reset": 0,
+   "success": 22,
+   "terminal": {
+    "prohibited_collision": 2,
+    "success": 22
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  }
+ },
+ "const_x+0_z+5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 2,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 2,
+   "invalid_reset": 0,
+   "success": 22,
+   "terminal": {
+    "prohibited_collision": 2,
+    "success": 22
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  }
+ },
+ "const_x+0_z-5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 2,
+   "invalid_reset": 0,
+   "success": 22,
+   "terminal": {
+    "prohibited_collision": 2,
+    "success": 22
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  }
+ },
+ "const_x+10_z+0": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  }
+ },
+ "const_x+10_z+5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  }
+ },
+ "const_x+10_z-5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  }
+ },
+ "const_x+5_z+0": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  }
+ },
+ "const_x+5_z+5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  }
+ },
+ "const_x+5_z-5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "success": 24
+   }
+  }
+ },
+ "const_x-10_z+0": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 17,
+   "invalid_reset": 0,
+   "success": 10,
+   "terminal": {
+    "prohibited_collision": 14,
+    "success": 10
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 20,
+   "invalid_reset": 0,
+   "success": 5,
+   "terminal": {
+    "prohibited_collision": 19,
+    "success": 5
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 21,
+   "invalid_reset": 0,
+   "success": 7,
+   "terminal": {
+    "prohibited_collision": 17,
+    "success": 7
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 23,
+   "invalid_reset": 0,
+   "success": 2,
+   "terminal": {
+    "prohibited_collision": 22,
+    "success": 2
+   }
+  }
+ },
+ "const_x-10_z+5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 17,
+   "invalid_reset": 0,
+   "success": 9,
+   "terminal": {
+    "prohibited_collision": 15,
+    "success": 9
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 20,
+   "invalid_reset": 0,
+   "success": 5,
+   "terminal": {
+    "prohibited_collision": 19,
+    "success": 5
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 21,
+   "invalid_reset": 0,
+   "success": 7,
+   "terminal": {
+    "prohibited_collision": 17,
+    "success": 7
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 23,
+   "invalid_reset": 0,
+   "success": 2,
+   "terminal": {
+    "prohibited_collision": 22,
+    "success": 2
+   }
+  }
+ },
+ "const_x-10_z-5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 17,
+   "invalid_reset": 0,
+   "success": 12,
+   "terminal": {
+    "prohibited_collision": 12,
+    "success": 12
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 0,
+   "terminal": {
+    "prohibited_collision": 24,
+    "success": 0
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 20,
+   "invalid_reset": 0,
+   "success": 5,
+   "terminal": {
+    "prohibited_collision": 19,
+    "success": 5
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 21,
+   "invalid_reset": 0,
+   "success": 6,
+   "terminal": {
+    "prohibited_collision": 18,
+    "success": 6
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 23,
+   "invalid_reset": 0,
+   "success": 1,
+   "terminal": {
+    "prohibited_collision": 23,
+    "success": 1
+   }
+  }
+ },
+ "const_x-5_z+0": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 10,
+   "invalid_reset": 0,
+   "success": 14,
+   "terminal": {
+    "prohibited_collision": 10,
+    "success": 14
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 2,
+   "terminal": {
+    "prohibited_collision": 22,
+    "success": 2
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 3,
+   "invalid_reset": 0,
+   "success": 21,
+   "terminal": {
+    "prohibited_collision": 3,
+    "success": 21
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 2,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 8,
+   "invalid_reset": 0,
+   "success": 19,
+   "terminal": {
+    "prohibited_collision": 5,
+    "success": 19
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 5,
+   "invalid_reset": 0,
+   "success": 20,
+   "terminal": {
+    "prohibited_collision": 4,
+    "success": 20
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 9,
+   "invalid_reset": 0,
+   "success": 17,
+   "terminal": {
+    "prohibited_collision": 7,
+    "success": 17
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  }
+ },
+ "const_x-5_z+5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 10,
+   "invalid_reset": 0,
+   "success": 14,
+   "terminal": {
+    "prohibited_collision": 10,
+    "success": 14
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 2,
+   "terminal": {
+    "prohibited_collision": 22,
+    "success": 2
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 3,
+   "invalid_reset": 0,
+   "success": 21,
+   "terminal": {
+    "prohibited_collision": 3,
+    "success": 21
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 2,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 8,
+   "invalid_reset": 0,
+   "success": 19,
+   "terminal": {
+    "prohibited_collision": 5,
+    "success": 19
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 5,
+   "invalid_reset": 0,
+   "success": 20,
+   "terminal": {
+    "prohibited_collision": 4,
+    "success": 20
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 9,
+   "invalid_reset": 0,
+   "success": 17,
+   "terminal": {
+    "prohibited_collision": 7,
+    "success": 17
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  }
+ },
+ "const_x-5_z-5": {
+  "_source_commit": "f261da35623d2c14ef778c2402d1009845a51739",
+  "bias_5mm": {
+   "cases": 24,
+   "collision": 10,
+   "invalid_reset": 0,
+   "success": 14,
+   "terminal": {
+    "prohibited_collision": 10,
+    "success": 14
+   }
+  },
+  "boundary_x_minus_7": {
+   "cases": 24,
+   "collision": 24,
+   "invalid_reset": 0,
+   "success": 3,
+   "terminal": {
+    "prohibited_collision": 21,
+    "success": 3
+   }
+  },
+  "boundary_z_15": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "clean": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "delay_2step": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_10mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_15mm": {
+   "cases": 24,
+   "collision": 3,
+   "invalid_reset": 0,
+   "success": 21,
+   "terminal": {
+    "prohibited_collision": 3,
+    "success": 21
+   }
+  },
+  "grasp_2mm": {
+   "cases": 24,
+   "collision": 1,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  },
+  "grasp_5mm": {
+   "cases": 24,
+   "collision": 8,
+   "invalid_reset": 0,
+   "success": 19,
+   "terminal": {
+    "prohibited_collision": 5,
+    "success": 19
+   }
+  },
+  "mixed_id": {
+   "cases": 24,
+   "collision": 5,
+   "invalid_reset": 0,
+   "success": 21,
+   "terminal": {
+    "prohibited_collision": 3,
+    "success": 21
+   }
+  },
+  "mixed_ood": {
+   "cases": 24,
+   "collision": 9,
+   "invalid_reset": 0,
+   "success": 16,
+   "terminal": {
+    "prohibited_collision": 8,
+    "success": 16
+   }
+  },
+  "noise_2mm": {
+   "cases": 24,
+   "collision": 0,
+   "invalid_reset": 0,
+   "success": 24,
+   "terminal": {
+    "prohibited_collision": 0,
+    "success": 24
+   }
+  }
+ }
+}

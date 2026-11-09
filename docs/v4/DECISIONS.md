@@ -126,3 +126,29 @@ the calibrated parent; that is a finding to report, not a reason to redesign.
   (10,027,008 realized). Robust profiles: sensor as V3 (bias ≤ 5 mm, noise ≤ 2 mm, delay ≤ 2 steps, 25% clean)
   and in-grasp offset uniform over the training support (25% zero). History = 4 frames.
 - Acceptance checks A1–A9 (`scripts/v4_acceptance_setup.py`).
+
+## 2026-11-09 16:45 — acceptance (first pass) and the table-support control fix
+
+All 43 acceptance tasks ran (source `f261da3`); judge: `results/v4/acceptance/acceptance.json`. Passed: V3 path
+identical to published V3 records (A1), zero-offset V4 path identical (A2), layout batch 1/8/72/72-reversed
+72/72 agreement with identical exogenous parameters (A4; calibration estimates differ by ≤ 0.21 mm through
+physics), reset leakage 288/288 agreement over 18 consecutive episodes per environment (A5; ≤ 0.38 mm),
+privileged perturbation leaves every controller trace field and every outcome identical for the parent and a
+smoke policy (A6, A8), step-0 (zero-mean) checkpoints of all five profiles reproduce their parents (A7), smoke
+resume for all five profiles (counters, optimizer, normalizer, RNG), evaluation resume/tamper (A9).
+
+Failed: A3 table support — 5/16 (nominal) and 8/16 (parent) "successes" plus 8 invalid resets. Cause: the
+negative-control harness placed the support table under the nominal bar position, ignoring the in-grasp offset.
+With z = +10 mm the bar sat 10 mm above the table (so the control's premise did not hold and those were genuine
+receiver holds); with z = −10 mm the table intersected the bar (invalid resets). The other two negative controls
+(no receiver; giver keeps holding) produced 0 successes. Fix in `_begin_settle` (table_support branch only):
+place the table under nominal + joint offset + in-grasp offset. A1–A3 are rerun at the fixed commit; the rest of
+the code is unchanged by the fix.
+
+## 2026-11-09 17:03 — pilots run one at a time
+
+Four pilots were first packed on one GPU with two acceptance evaluations: ≈1,100 transitions/s each (≈4,400/s
+in total) versus ≈8,900/s for one V3 training process on the same hardware. The packed job was killed after 4
+PPO iterations per pilot (≤ 0.66M transitions in total, counted against the 24M pilot cap; partial outputs kept
+under `v4/pilots/`) and the pilots were restarted one at a time in a new runs root. Pilot total ≤ 23.67M.
+Formal training also runs one process per GPU.
