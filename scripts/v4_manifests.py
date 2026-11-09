@@ -23,6 +23,8 @@ SEED_EVAL = 6456501  # evaluation process seed (outside the split RNG namespaces
 def write(name, tasks):
     OUT.mkdir(parents=True, exist_ok=True)
     ids = [t["id"] for t in tasks]
+    if not ids:
+        raise ValueError(f"Refusing empty {name} manifest; prepare its required inputs first")
     assert len(ids) == len(set(ids)), "duplicate task ids"
     (OUT / f"{name}.json").write_text(json.dumps({"name": name, "tasks": tasks}, indent=1) + "\n")
     print(f"{name}: {len(tasks)} tasks")
@@ -93,6 +95,11 @@ def runs():
         prot = json.loads(p.read_text())
         for seed in prot["training"]["seeds"]:
             out.append((p.stem, prot["training"]["methods"][0], seed))
+    profiles = ("combined_clean_ff", "combined_robust_ff", "combined_robust_history",
+                "combined_robust_repeat", "residual_robust_history")
+    expected = {(p, s) for p in profiles for s in (111, 222, 333, 444, 555)}
+    if len(out) != 25 or {(p, s) for p, _, s in out} != expected:
+        raise ValueError("Formal manifests require all five frozen profiles and five declared seeds")
     return out
 
 

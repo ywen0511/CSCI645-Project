@@ -1,0 +1,67 @@
+{
+  "reviewed_base_commit": "f68136211e6b0debac01e5a856f88249d0a7738c",
+  "utc": "2026-11-09T21:51:14.276710+00:00",
+  "scope": "CPU workflow repairs only; existing simulator and scientific evidence unchanged",
+  "gpu_or_simulator_run": false,
+  "environment": {
+    "python": "3.11.16",
+    "platform": "Darwin",
+    "pytest": "9.2.0",
+    "torch": "2.15.0",
+    "numpy": "2.4.6"
+  },
+  "checks": [
+    {
+      "command": "CUDA_VISIBLE_DEVICES='' python -m pytest -q",
+      "passed": 94,
+      "skipped": 1,
+      "skip_reason": "Isaac Lab not installed",
+      "exit_code": 0
+    },
+    {
+      "command": "CUDA_VISIBLE_DEVICES='' python -m pytest -q tests/test_v4_workflow.py",
+      "passed": 19,
+      "skipped": 0,
+      "exit_code": 0,
+      "note": "Rerun after enforcing frozen hashes for validation suite and matrices"
+    },
+    {
+      "command": "python -m py_compile scripts/v4_freeze.py scripts/v4_select_checkpoints.py scripts/v4_manifests.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/v4_freeze.py check",
+      "exit_code": 1,
+      "expected_failure": true,
+      "missing_prerequisite": "results/v4/pilot/summary.json",
+      "freeze_created": false,
+      "final_suite_created": false
+    },
+    {
+      "check": "Changed Markdown links resolve",
+      "passed": true
+    },
+    {
+      "check": "bash -n on all remaining-work Bash examples (syntax only; commands not executed)",
+      "blocks": 6,
+      "passed": true
+    },
+    {
+      "check": "No simulator source, configurations or uploaded development/acceptance results modified",
+      "passed": true
+    }
+  ],
+  "tested_code_sha256": {
+    "scripts/v4_freeze.py": "2e274ddb2610f0fe9df002d6f90d193b2f3492f4489e534973eeaa04ac8a67e5",
+    "scripts/v4_select_checkpoints.py": "4d7fe62f00c927f0075af043bfe1f88047767ca23b68271a229e3e0f7645bbec",
+    "scripts/v4_manifests.py": "dd1ca917c0b89a82e2e8477c66da11f3567f5237538619f806316ecfc08f1bb6",
+    "tests/test_v4_workflow.py": "61f8f4e795195149859d3f38bd2a90502f4f14247a9f2e2596bbf3347bd0f8de"
+  },
+  "remote_pending": [
+    "Real completed pilot evidence and all-attempt accounting",
+    "Real-artifact workflow validation and immutable experiment freeze",
+    "Formal training, evaluation, mechanisms and repeatability",
+    "Reports, all checkpoints and raw results, videos, release and fresh public verification"
+  ],
+  "handoff": "V4_REMAINING.md"
+}

@@ -1,8 +1,18 @@
 # V4 preregistration — unknown in-grasp object translation
 
-Frozen with `configs/v4/FREEZE.json` and tagged `experiment-v4` before any formal training. The machine-readable
-plan is `configs/v4/analysis_plan.json`; this page summarizes it. Development, probe and pilot data were used to
-choose ranges, baselines and settings; validation data choose checkpoints only; final data choose nothing.
+This is the protocol specification; this page alone does **not** establish that a freeze
+has occurred. At the reviewed public snapshot `f681362`, the freeze, analysis-plan and
+final-suite manifests and `experiment-v4` tag do not yet exist. The remote agent must
+finish the pilot evidence, pass `python scripts/v4_freeze.py check`, then commit the
+freeze and tag the clean experiment source before formal training. The generated
+`configs/v4/FREEZE.json`, `analysis_plan.json`, `video_rule.json` and `FINAL_SUITE.json`
+are the authoritative artifacts once present; do not edit this hash-covered specification
+after freeze merely to change its status wording. Track live completion in
+`POST_V3_STATUS.json` and the README.
+
+Development/probe observations already informed ranges and baselines. Pilot outcomes
+must be summarized before finalizing training settings. Validation chooses checkpoints
+only; final outcomes choose nothing. Details below describe the intended frozen study.
 
 ## Question
 
@@ -66,7 +76,7 @@ combined_robust_repeat (current frame ×4), residual_robust_history (parent = no
 ## Selection, primary analysis and reporting
 
 - Checkpoints: first save at or after 2, 4, 6, 8, 10M transitions; step 0 never eligible. Validation mean success
-  (equal weight per condition) ↓, unsafe-event rate ↑, residual magnitude ↑, latest candidate; values rounded
+  (equal weight per condition), descending; unsafe-event rate, ascending; residual magnitude, ascending; latest candidate; values rounded
   to 12 decimals. Selected and final checkpoints are analysed separately.
 - Primary: `mixed_id`, selected checkpoints, success difference of combined_robust_history − combined_robust_ff and
   combined_robust_history − best_constant_geometry; paired hierarchical bootstrap over training seeds and base-case
