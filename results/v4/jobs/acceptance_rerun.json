@@ -1,0 +1,145 @@
+{
+ "name": "acceptance_rerun",
+ "tasks": [
+  {
+   "id": "acc_a1_v3path_geometry",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a1_v3path_geometry.json",
+    "--output",
+    "$RUNS/acceptance/a1_v3path_geometry",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a1_v3path_geometry.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a1_v3path_geometry/geometry_common.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a1_v3path_policy",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a1_v3path_policy.json",
+    "--output",
+    "$RUNS/acceptance/a1_v3path_policy",
+    "--seed",
+    "6456501",
+    "--checkpoint-root",
+    "$RUNS/v3x/formal/train"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a1_v3path_policy.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a1_v3path_policy/v3_combined_robust_history_s11__selected.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a2_v4zero_geometry",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a2_v4zero_geometry.json",
+    "--output",
+    "$RUNS/acceptance/a2_v4zero_geometry",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a2_v4zero_geometry.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_v4zero_geometry/geometry_common.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a2_v4zero_policy",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a2_v4zero_policy.json",
+    "--output",
+    "$RUNS/acceptance/a2_v4zero_policy",
+    "--seed",
+    "6456501",
+    "--checkpoint-root",
+    "$RUNS/v3x/formal/train"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a2_v4zero_policy.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_v4zero_policy/v3_combined_robust_history_s11__selected.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a3_neg_no_receiver",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a3_neg_no_receiver.json",
+    "--output",
+    "$RUNS/acceptance/a3_neg_no_receiver",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a3_neg_no_receiver.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a3_neg_no_receiver/nominal.jsonl",
+    "$RUNS/acceptance/a3_neg_no_receiver/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a3_neg_giver_holds",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a3_neg_giver_holds.json",
+    "--output",
+    "$RUNS/acceptance/a3_neg_giver_holds",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a3_neg_giver_holds.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a3_neg_giver_holds/nominal.jsonl",
+    "$RUNS/acceptance/a3_neg_giver_holds/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a3_neg_table_support",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a3_neg_table_support.json",
+    "--output",
+    "$RUNS/acceptance/a3_neg_table_support",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a3_neg_table_support.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a3_neg_table_support/nominal.jsonl",
+    "$RUNS/acceptance/a3_neg_table_support/parent.jsonl"
+   ]
+  }
+ ]
+}
