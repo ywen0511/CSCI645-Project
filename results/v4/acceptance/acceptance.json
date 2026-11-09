@@ -71,25 +71,23 @@
    },
    "table_support/nominal": {
     "cases": 16,
-    "success": 5,
+    "success": 0,
     "terminal": [
-     "invalid_reset",
-     "prohibited_collision",
-     "success"
+     "episode_timeout",
+     "prohibited_collision"
     ],
-    "invalid_resets": 8
+    "invalid_resets": 0
    },
    "table_support/parent": {
     "cases": 16,
-    "success": 8,
+    "success": 0,
     "terminal": [
-     "invalid_reset",
-     "success"
+     "episode_timeout"
     ],
-    "invalid_resets": 8
+    "invalid_resets": 0
    }
   },
-  "pass": false
+  "pass": true
  },
  "A4_layout": {
   "exogenous_parameters_identical": true,
@@ -286,5 +284,5 @@
   },
   "pass": true
  },
- "all_pass": false
+ "all_pass": true
 }
