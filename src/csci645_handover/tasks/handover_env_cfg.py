@@ -250,6 +250,25 @@ class HandoverEnvCfg(DirectRLEnvCfg):
     while the giver has both contacts and has not been commanded to release.
     Uses measured TCP and nominal grasp geometry, never true object translation.
     """
+    grasp_uncertainty: bool = False
+    """V4 opt-in: the object's initial physical translation inside the giver grasp is a per-episode unknown.
+    Evaluation cases must carry ``grasp_offset_xyz_m`` (env-local frame; x = bar axis, z = vertical). During
+    settling the object is pinned at nominal + joint offset + grasp offset while the giver closes on it at its
+    unshifted hold pose, so the giver grasps a different part of the bar; after pinning ends only contact holds
+    it. The true offset is used only for that spawn and for privileged records, never by a controller.
+    False keeps the archived V3 behaviour and records exactly."""
+    grasp_offset_train: dict | None = None
+    """V4 training distribution of the in-grasp offset: {"bound_xyz_m": [bx, by, bz], "clean_probability": p}.
+    Each axis is uniform in [-b, b]; with probability p the offset is zero. None = no grasp offset in training."""
+    giver_calibration_window_s: float | None = None
+    """V4 calibrated giver reference: during the first window of the scored episode (giver holding, both giver
+    contacts), average the corrupted translation measurement minus the fixed-transform kinematic estimate in
+    the giver-hand frame; afterwards the giver reference adds that estimate. Requires
+    ``observation_giver_reference``. Before the window closes the fixed transform is used. None = historical
+    fixed transform."""
+    debug_perturb_privileged: bool = False
+    """Acceptance check only: overwrite privileged-only tensors (true grasp offset after spawn, achieved
+    offset record) with garbage every step. Controller actions must be unchanged."""
     stab_min_finger_force: float = 0.2
     stab_max_rel_lin_speed: float = 0.03
     stab_max_rel_ang_speed: float = 0.5

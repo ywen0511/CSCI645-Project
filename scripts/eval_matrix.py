@@ -154,8 +154,11 @@ def main():
 
             path = out / f"{e['id']}.jsonl"
             existing = rt.read_jsonl(path)
-            if cases_all and cases_all[0].get("suite_version") == 3:
-                from csci645_handover.v3_protocol import validate_records
+            if cases_all and cases_all[0].get("suite_version") in (3, 4):
+                if cases_all[0]["suite_version"] == 4:
+                    from csci645_handover.v4_protocol import validate_records
+                else:
+                    from csci645_handover.v3_protocol import validate_records
 
                 # V3 caches must match the exact source and sensor realizations, not just counts.
                 validate_records(existing, entry_cases(e), {
@@ -207,7 +210,7 @@ def main():
                       f"drop={sum(r['drop'] for r in records)} coll={sum(r['collision'] for r in records)} "
                       f"wall={info['wall_s']:.0f}s", flush=True)
             final = rt.read_jsonl(path)
-            if cases_all and cases_all[0].get("suite_version") == 3:
+            if cases_all and cases_all[0].get("suite_version") in (3, 4):
                 validate_records(final, cases, {
                     "suite_hash": s_hash, "config_hash": c_hash, "controller_hash": k_hash,
                     "checkpoint_sha256": ck_sha, "entry_id": e["id"],
