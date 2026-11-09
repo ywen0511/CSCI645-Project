@@ -26,32 +26,69 @@ def case_seed(*parts) -> int:
 
 
 def grasp_offset(rule: dict, rng: random.Random) -> list[float]:
-    """In-grasp offset from a condition rule.
+    """In-grasp offset from a condition rule (env-local frame; x = bar axis toward the receiver, z = up).
 
-    rule = {"mode": "zero"} | {"mode": "sign", "magnitude_m": a, "axes": "xz"} (each listed axis +-a, random sign)
-         | {"mode": "uniform", "bound_m": b, "axes": "xz"} (each listed axis uniform in [-b, b])
-         | {"mode": "fixed", "xyz_m": [x, y, z]} (deterministic direction check)
-         | {"mode": "sign_axis", "magnitude_m": a, "axis": "x", "sign": +1|-1|0} (one axis; sign 0 = random)
+    Per-axis form: {"x": axis_rule, "z": axis_rule}, axes drawn in x, y, z order from one stream, with
+    axis_rule = {"sign": a} (+-a, random sign) | {"uniform": [lo, hi]} | {"fixed": v}.
+    Legacy forms (development probe): {"mode": "zero"} | {"mode": "fixed", "xyz_m": [x, y, z]}.
     """
-    mode = rule.get("mode", "zero")
-    out = [0.0, 0.0, 0.0]
-    if mode == "zero":
-        return out
-    if mode == "fixed":
+    if rule.get("mode") == "fixed":
         return [round(float(v), 9) for v in rule["xyz_m"]]
-    if mode == "sign_axis":
-        s = rule.get("sign", 0) or rng.choice([-1, 1])
-        out[AXES.index(rule["axis"])] = round(s * rule["magnitude_m"], 9)
-        return out
-    for ax in rule["axes"]:
-        k = AXES.index(ax)
-        if mode == "sign":
-            out[k] = round(rule["magnitude_m"] * rng.choice([-1, 1]), 9)
-        elif mode == "uniform":
-            out[k] = round(rng.uniform(-rule["bound_m"], rule["bound_m"]), 9)
+    if rule.get("mode", "axes") == "zero":
+        return [0.0, 0.0, 0.0]
+    out = [0.0, 0.0, 0.0]
+    for k, ax in enumerate(AXES):
+        r = rule.get(ax)
+        if r is None:
+            continue
+        if "sign" in r:
+            out[k] = round(r["sign"] * rng.choice([-1, 1]), 9)
+        elif "uniform" in r:
+            lo, hi = r["uniform"]
+            out[k] = round(rng.uniform(lo, hi), 9)
+        elif "fixed" in r:
+            out[k] = round(float(r["fixed"]), 9)
         else:
-            raise ValueError(f"unknown grasp rule {mode}")
+            raise ValueError(f"unknown axis rule {r}")
     return out
+
+
+# ---------------------------------------------------------------------------------------------- V4 design
+# Physically supported in-grasp axes (development probe, docs/v4/DECISIONS.md): x (bar axis) and z (vertical).
+# y is the finger-closing axis; the fingers re-centre the bar (achieved y ~ -0.2 mm for requested +-5 mm).
+# x toward the giver palm (negative) is limited: -10 mm produced prohibited contact at reset in 3 of 4 probe
+# cases and -15 mm in 4 of 4; +15 mm (toward the receiver) settled stably. Training support is therefore
+# asymmetric in x.
+TRAIN_SUPPORT = {"low_xyz_m": [-0.005, 0.0, -0.010], "high_xyz_m": [0.010, 0.0, 0.010]}
+S0 = {}
+CONDITIONS = {
+    "clean": {"physical": False, "grasp": {"mode": "zero"}, "sensor": S0},
+    "grasp_2mm": {"grasp": {"x": {"sign": 0.002}, "z": {"sign": 0.002}}, "sensor": S0},
+    "grasp_5mm": {"grasp": {"x": {"sign": 0.005}, "z": {"sign": 0.005}}, "sensor": S0},
+    # -10 mm in x is physically infeasible (giver palm contact); the 10 mm severity uses +10 mm in x
+    "grasp_10mm": {"grasp": {"x": {"fixed": 0.010}, "z": {"sign": 0.010}}, "sensor": S0},
+    "bias_5mm": {"grasp": {"mode": "zero"}, "sensor": {"bias_m": 0.005}},
+    "noise_2mm": {"grasp": {"mode": "zero"}, "sensor": {"noise_std_m": 0.002}},
+    "delay_2step": {"grasp": {"mode": "zero"}, "sensor": {"delay_steps": 2}},
+    "mixed_id": {"grasp": {"x": {"uniform": [-0.005, 0.010]}, "z": {"uniform": [-0.010, 0.010]}},
+                 "sensor": {"bias_m": 0.005, "bias_mode": "uniform", "noise_std_m": 0.002, "delay_steps": 2}},
+    "mixed_ood": {"grasp": {"x": {"uniform": [-0.007, 0.015]}, "z": {"uniform": [-0.015, 0.015]}},
+                  "sensor": {"bias_m": 0.010, "bias_mode": "uniform", "noise_std_m": 0.004, "delay_steps": 4}},
+    "boundary_x_plus_15": {"grasp": {"x": {"fixed": 0.015}}, "sensor": S0},
+    "boundary_x_minus_7": {"grasp": {"x": {"fixed": -0.007}}, "sensor": S0},
+    "boundary_z_15": {"grasp": {"z": {"sign": 0.015}}, "sensor": S0},
+}
+ORDER = list(CONDITIONS)
+VALIDATION = ("clean", "grasp_5mm", "grasp_10mm", "bias_5mm", "noise_2mm", "mixed_id")
+TRAINING_LABEL = {  # position of each final condition relative to the robust training distribution
+    "clean": "in support (zero)", "grasp_2mm": "interpolation", "grasp_5mm": "interpolation",
+    "grasp_10mm": "support edge (x = +10 mm is the training maximum; z +-10 mm is the training bound)",
+    "bias_5mm": "support edge (bias bound 5 mm)", "noise_2mm": "support edge (noise std <= 2 mm)",
+    "delay_2step": "support edge (delay <= 2 steps)", "mixed_id": "in support (same distribution family)",
+    "mixed_ood": "extrapolation (grasp, bias, noise and delay beyond support)",
+    "boundary_x_plus_15": "extrapolation in +x (beyond +10 mm)", "boundary_x_minus_7": "extrapolation in -x (beyond -5 mm)",
+    "boundary_z_15": "extrapolation in z (beyond +-10 mm)",
+}
 
 
 def sensor_error(rule: dict, rng: random.Random, seed: int) -> dict:
@@ -83,7 +120,7 @@ def make_cases(split: str, conditions: dict, order: list[str], *, count: int | N
             release = round(prng.uniform(-0.30, 0.30), 9)
             if not spec.get("physical", True):
                 offset, release = [0.0, 0.0, 0.0], 0.0
-            grng = random.Random(case_seed(seed, i, "grasp", condition))
+            grng = random.Random(case_seed(seed, i, "grasp", condition))  # keyed per condition
             brng = random.Random(case_seed(seed, i, "bias"))
             rows.append({
                 "case_id": f"{prefix}-{split}-{condition}-{i:04d}",

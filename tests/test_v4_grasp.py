@@ -106,3 +106,12 @@ def test_train_offsets_bounds_clean_and_determinism():
     clean = (a == 0).all(-1).float().mean().item()
     assert 0.2 < clean < 0.3
     assert torch.equal(sample_train_offsets(5, None, torch.Generator(), "cpu"), torch.zeros(5, 3))
+
+
+def test_train_offsets_asymmetric_support():
+    spec = {"low_xyz_m": [-0.005, 0.0, -0.01], "high_xyz_m": [0.01, 0.0, 0.01], "clean_probability": 0.0}
+    a = sample_train_offsets(20000, spec, torch.Generator().manual_seed(3), "cpu")
+    assert (a[:, 0] >= -0.005).all() and (a[:, 0] <= 0.01).all() and (a[:, 1] == 0).all()
+    assert abs(a[:, 0].mean().item() - 0.0025) < 3e-4 and abs(a[:, 2].mean().item()) < 3e-4
+    with pytest.raises(ValueError):
+        sample_train_offsets(2, {"low_xyz_m": [0.01, 0, 0], "high_xyz_m": [0.0, 0, 0]}, torch.Generator(), "cpu")

@@ -38,13 +38,25 @@ def window_frames(window_s: float, step_dt: float) -> int:
 
 
 def sample_train_offsets(n: int, spec: dict | None, generator: torch.Generator, device) -> torch.Tensor:
-    """Training draw of in-grasp offsets: per-axis uniform in [-b, b], zero with ``clean_probability``."""
+    """Training draw of in-grasp offsets: per-axis uniform in [low, high], zero with ``clean_probability``.
+
+    spec = {"low_xyz_m": [...], "high_xyz_m": [...], "clean_probability": p}; the symmetric shorthand
+    {"bound_xyz_m": [bx, by, bz]} means low = -b, high = +b. The support may be asymmetric because the
+    feasible physical range is (the bar cannot sit deeper toward the giver palm than it can toward the receiver).
+    """
     if not spec:
         return torch.zeros(n, 3, device=device)
-    bound = torch.tensor(spec["bound_xyz_m"], dtype=torch.float32, device=device)
-    u = torch.rand(n, 3, generator=generator, device=device) * 2 - 1
+    if "bound_xyz_m" in spec:
+        hi = torch.tensor(spec["bound_xyz_m"], dtype=torch.float32, device=device)
+        lo = -hi
+    else:
+        lo = torch.tensor(spec["low_xyz_m"], dtype=torch.float32, device=device)
+        hi = torch.tensor(spec["high_xyz_m"], dtype=torch.float32, device=device)
+    if (lo > hi).any():
+        raise ValueError("grasp offset support needs low <= high")
+    u = torch.rand(n, 3, generator=generator, device=device)
     clean = torch.rand(n, generator=generator, device=device) < float(spec.get("clean_probability", 0.0))
-    out = u * bound
+    out = lo + u * (hi - lo)
     out[clean] = 0.0
     return out
 

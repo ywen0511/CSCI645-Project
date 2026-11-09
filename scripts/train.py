@@ -103,11 +103,11 @@ def main():
             "checkpoint_interval_transitions": ckpt_every, "git": rt.git_state(), "hardware": rt.hardware_info(),
             "actor_init": actor_init,
         }
-        if protocol.get("protocol_id", "").startswith("v3") and meta["git"]["dirty"]:
-            raise RuntimeError("V3 training requires clean committed executable source")
+        if protocol.get("protocol_id", "").startswith(("v3", "v4")) and meta["git"]["dirty"]:
+            raise RuntimeError("V3/V4 training requires clean committed executable source")
         start_iter, transitions = 0, 0
         if args.resume:
-            if protocol.get("protocol_id", "").startswith("v3"):
+            if protocol.get("protocol_id", "").startswith(("v3", "v4")):
                 ck = torch.load(args.resume, map_location="cpu", weights_only=False)
                 prior = ck.get("infos", {})
                 for key, value in {"method": args.method, "seed": args.seed, "obs_dim": cfg.observation_space,

@@ -1,0 +1,150 @@
+{
+ "name": "development",
+ "tasks": [
+  {
+   "id": "dev_ema0p2_giver0",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/development/matrices/ema0p2_giver0.json",
+    "--output",
+    "$RUNS/development/ema0p2_giver0",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/development/matrices/ema0p2_giver0.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver0/ema0p2_none_a15.jsonl",
+    "$RUNS/development/ema0p2_giver0/ema0p2_none_a20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p2_giver1",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/development/matrices/ema0p2_giver1.json",
+    "--output",
+    "$RUNS/development/ema0p2_giver1",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/development/matrices/ema0p2_giver1.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p2_giver1/ema0p2_fixed_a15.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_fixed_a20.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal010_a15.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal010_a20.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal025_a15.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal025_a20.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal050_a15.jsonl",
+    "$RUNS/development/ema0p2_giver1/ema0p2_cal050_a20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver0",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/development/matrices/ema0p5_giver0.json",
+    "--output",
+    "$RUNS/development/ema0p5_giver0",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/development/matrices/ema0p5_giver0.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver0/ema0p5_none_a15.jsonl",
+    "$RUNS/development/ema0p5_giver0/ema0p5_none_a20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema0p5_giver1",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/development/matrices/ema0p5_giver1.json",
+    "--output",
+    "$RUNS/development/ema0p5_giver1",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/development/matrices/ema0p5_giver1.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema0p5_giver1/ema0p5_fixed_a15.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_fixed_a20.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal010_a15.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal010_a20.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal025_a15.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal025_a20.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal050_a15.jsonl",
+    "$RUNS/development/ema0p5_giver1/ema0p5_cal050_a20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver0",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/development/matrices/ema1p0_giver0.json",
+    "--output",
+    "$RUNS/development/ema1p0_giver0",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/development/matrices/ema1p0_giver0.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver0/nominal.jsonl",
+    "$RUNS/development/ema1p0_giver0/ema1p0_none_a15.jsonl",
+    "$RUNS/development/ema1p0_giver0/ema1p0_none_a20.jsonl"
+   ]
+  },
+  {
+   "id": "dev_ema1p0_giver1",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/development/matrices/ema1p0_giver1.json",
+    "--output",
+    "$RUNS/development/ema1p0_giver1",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/development/matrices/ema1p0_giver1.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/development/ema1p0_giver1/ema1p0_fixed_a15.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_fixed_a20.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal010_a15.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal010_a20.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal025_a15.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal025_a20.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal050_a15.jsonl",
+    "$RUNS/development/ema1p0_giver1/ema1p0_cal050_a20.jsonl"
+   ]
+  }
+ ]
+}
