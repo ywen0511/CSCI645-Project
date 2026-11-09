@@ -108,16 +108,17 @@ def train():
 
 
 def validation():
+    """One fresh simulator process per formal run evaluates its step-0 control and five candidates in turn
+    (runtime fields restored between entries by eval_matrix.py)."""
     tasks = []
     for prof, method, seed in runs():
         mp = ROOT / f"configs/v4/frozen/matrices/validation/{prof}_s{seed}.json"
-        for e in json.loads(mp.read_text())["entries"]:
-            tasks.append({"id": f"val_{e['id']}", "kind": "isaac",
-                          "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)), "--only", e["id"],
-                                   "--checkpoint-root", "$RUNS/train", "--output", f"$RUNS/validation/{prof}_s{seed}/{e['id']}",
-                                   "--seed", str(SEED_EVAL)],
-                          "inputs": [str(mp.relative_to(ROOT))],
-                          "outputs": [f"$RUNS/validation/{prof}_s{seed}/{e['id']}/{e['id']}.jsonl"]})
+        ents = json.loads(mp.read_text())["entries"]
+        out = f"$RUNS/validation/{prof}_s{seed}"
+        tasks.append({"id": f"val_{prof}_s{seed}", "kind": "isaac",
+                      "argv": ["scripts/eval_matrix.py", "--matrix", str(mp.relative_to(ROOT)), "--checkpoint-root", "$RUNS/train",
+                               "--output", out, "--seed", str(SEED_EVAL)],
+                      "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"{out}/{e['id']}.jsonl" for e in ents]})
     write("validation", tasks)
 
 
@@ -178,11 +179,10 @@ def final():
         mp.write_text(json.dumps({"name": f"v4_final_{run}", "suite": "$DELIVERY/configs/v4/suites/final.jsonl",
                                   "num_envs": FINAL_BATCH, "protocol": f"configs/v4/frozen/training/{prof}.json",
                                   "trace_cases": trace, "entries": ents}, indent=1) + "\n")
-        for e in ents:
-            tasks.append({"id": f"final_{e['id']}", "kind": "isaac",
-                          "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)), "--only", e["id"],
-                                   "--checkpoint-root", "$RUNS/train", "--output", f"$RUNS/final/{run}/{e['role']}", "--seed", str(SEED_EVAL)],
-                          "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/final/{run}/{e['role']}/{e['id']}.jsonl"]})
+        tasks.append({"id": f"final_{run}", "kind": "isaac",
+                      "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)),
+                               "--checkpoint-root", "$RUNS/train", "--output", f"$RUNS/final/{run}", "--seed", str(SEED_EVAL)],
+                      "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/final/{run}/{e['id']}.jsonl" for e in ents]})
     write("final", tasks)
 
 

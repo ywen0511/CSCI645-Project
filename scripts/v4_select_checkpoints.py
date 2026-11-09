@@ -54,7 +54,7 @@ def main():
         run = mp.stem
         cands, control = [], None
         for e in json.loads(mp.read_text())["entries"]:
-            f = V / run / e["id"] / f"{e['id']}.jsonl"
+            f = V / run / f"{e['id']}.jsonl"
             rows = [json.loads(l) for l in f.read_text().splitlines() if l.strip()]
             ids = [r["case_id"] for r in rows]
             if sorted(ids) != sorted(suite):
