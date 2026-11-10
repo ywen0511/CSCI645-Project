@@ -1,0 +1,16 @@
+{
+ "name": "v4_mech_selected_residual_robust_history_s333",
+ "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl",
+ "num_envs": 60,
+ "protocol": "configs/v4/frozen/training/residual_robust_history.json",
+ "base_overrides": {},
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s333__selected",
+   "method": "residual",
+   "training_seed": 333,
+   "checkpoint": "residual_robust_history_s333/checkpoints/step_006029312.pt"
+  }
+ ]
+}

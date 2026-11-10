@@ -1,0 +1,16 @@
+{
+ "name": "v4_repeat_combined_robust_history_s333",
+ "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl",
+ "num_envs": 20,
+ "protocol": "configs/v4/frozen/training/combined_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_robust_history_s333__selected",
+   "method": "combined",
+   "training_seed": 333,
+   "role": "selected",
+   "checkpoint": "combined_robust_history_s333/checkpoints/step_006029312.pt"
+  }
+ ]
+}

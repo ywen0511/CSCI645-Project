@@ -1,0 +1,16 @@
+{
+ "name": "v4_mech_selected_combined_robust_history_s111",
+ "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl",
+ "num_envs": 60,
+ "protocol": "configs/v4/frozen/training/combined_robust_history.json",
+ "base_overrides": {},
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_robust_history_s111__selected",
+   "method": "combined",
+   "training_seed": 111,
+   "checkpoint": "combined_robust_history_s111/checkpoints/step_004030464.pt"
+  }
+ ]
+}

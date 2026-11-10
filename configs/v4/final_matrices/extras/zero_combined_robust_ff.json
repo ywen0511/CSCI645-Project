@@ -1,0 +1,16 @@
+{
+ "name": "v4_zero_combined_robust_ff",
+ "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl",
+ "num_envs": 60,
+ "protocol": "configs/v4/frozen/training/combined_robust_ff.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_robust_ff_s111__step0",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "untrained_control",
+   "checkpoint": "combined_robust_ff_s111/checkpoints/step_000000000.pt"
+  }
+ ]
+}

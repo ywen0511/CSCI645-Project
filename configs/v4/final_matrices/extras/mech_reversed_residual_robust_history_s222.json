@@ -1,0 +1,24 @@
+{
+ "name": "v4_mech_reversed_residual_robust_history_s222",
+ "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl",
+ "num_envs": 60,
+ "protocol": "configs/v4/frozen/training/residual_robust_history.json",
+ "base_overrides": {
+  "observation_history_permutation": [
+   3,
+   2,
+   1,
+   0
+  ]
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s222__reversed",
+   "method": "residual",
+   "training_seed": 222,
+   "checkpoint": "residual_robust_history_s222/checkpoints/step_008028160.pt",
+   "allow_config_mismatch": true
+  }
+ ]
+}

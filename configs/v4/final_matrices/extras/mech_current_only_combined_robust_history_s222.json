@@ -1,0 +1,19 @@
+{
+ "name": "v4_mech_current_only_combined_robust_history_s222",
+ "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl",
+ "num_envs": 60,
+ "protocol": "configs/v4/frozen/training/combined_robust_history.json",
+ "base_overrides": {
+  "observation_history_mode": "repeat_current"
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_robust_history_s222__current_only",
+   "method": "combined",
+   "training_seed": 222,
+   "checkpoint": "combined_robust_history_s222/checkpoints/step_010027008.pt",
+   "allow_config_mismatch": true
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "name": "v4_mech_current_only_residual_robust_history_s444",
+ "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl",
+ "num_envs": 60,
+ "protocol": "configs/v4/frozen/training/residual_robust_history.json",
+ "base_overrides": {
+  "observation_history_mode": "repeat_current"
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s444__current_only",
+   "method": "residual",
+   "training_seed": 444,
+   "checkpoint": "residual_robust_history_s444/checkpoints/step_002031616.pt",
+   "allow_config_mismatch": true
+  }
+ ]
+}
