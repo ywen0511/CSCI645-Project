@@ -1,0 +1,18 @@
+{
+ "suite": "configs/v4/suites/final.jsonl",
+ "cases": 2400,
+ "sha256": "481c40c7cfede0e7c0d895e0e707c9b7f72265e8dc417b1276aa08ef712c9456",
+ "generator": "src/csci645_handover/v4_protocol.py",
+ "generator_sha256": "d75b1d10b722c8dd393c3a02cbfcb22b43bed7d1eb0c9a2f074b68b745b19e7f",
+ "freeze_sha256": "34a3da573344a024af48ff973ae7f1296edca9741d8bebef6d60aff69a0325d7",
+ "split_seed": 6456301,
+ "experiment_tag": "experiment-v4",
+ "trace_cases": [
+  "v4-final-mixed_id-0000",
+  "v4-final-mixed_id-0001",
+  "v4-final-grasp_15mm-0000",
+  "v4-final-grasp_10mm-0000",
+  "v4-final-mixed_ood-0000",
+  "v4-final-clean-0000"
+ ]
+}
