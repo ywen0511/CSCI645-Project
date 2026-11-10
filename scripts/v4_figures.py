@@ -148,11 +148,11 @@ def grasp_offsets(runs, index, out):
     save(fig, out)
 
 
-def learning_curves(runs, out):
+def learning_curves(train, out):
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.1))
     for f in LEARNED:
         logs = []
-        for d in sorted((runs / "train").glob(f"{f}_s*")):
+        for d in sorted(train.glob(f"{f}_s*")):
             p = d / "train_log.jsonl"
             if p.exists():
                 logs.append([json.loads(l) for l in p.read_text().splitlines() if l.strip()])
@@ -214,6 +214,7 @@ def main():
     ap.add_argument("--summary", default=str(ROOT / "results/v4/summary"))
     ap.add_argument("--runs", required=True)
     ap.add_argument("--index", default=str(ROOT / "configs/v4/final_matrix_index.json"))
+    ap.add_argument("--train", default=None, help="formal train dir with train_log.jsonl (default <runs>/train)")
     ap.add_argument("--output", default=str(ROOT / "results/v4/figures"))
     a = ap.parse_args()
     S, R, O = Path(a.summary), Path(a.runs), Path(a.output)
@@ -226,8 +227,9 @@ def main():
     effects(eff, O / "paired_effects.png")
     failures(summary, O / "failure_breakdown.png")
     grasp_offsets(R, index, O / "grasp_offsets.png")
-    if (R / "train").exists():
-        learning_curves(R, O / "learning_curves.png")
+    train = Path(a.train) if a.train else R / "train"
+    if train.exists():
+        learning_curves(train, O / "learning_curves.png")
     t = traces(R, O)
     print(sorted(p.name for p in O.glob("*.png")), t)
 
