@@ -116,6 +116,23 @@ def main():
         put("comp.total", C["total_gpu_hours"], f"{C['total_gpu_hours']:.1f}", csrc, "total_gpu_hours")
         for k, v in C["by_stage"].items():
             put(f"comp.{k}", v["gpu_hours"], f"{v['gpu_hours']:.1f}", csrc, f"by_stage.{k}.gpu_hours")
+    asrc = "results/v4/acceptance/acceptance.json"
+    A = json.loads((ROOT / asrc).read_text())
+    a1 = A["A1_v3_path"]
+    put("acc.A1", None, f"{a1['geometry_common']['agree']}/{a1['geometry_common']['cases']} + {a1['policy_s11_selected']['agree']}/{a1['policy_s11_selected']['cases']}", asrc, "A1_v3_path")
+    a2 = A["A2_v4_zero_offset"]
+    put("acc.A2", None, f"{a2['geometry_common']['agree']}/{a2['geometry_common']['cases']} + {a2['policy_s11_selected']['agree']}/{a2['policy_s11_selected']['cases']}", asrc, "A2_v4_zero_offset")
+    a4 = A["A4_layout"]["vs_b72"]
+    put("acc.A4", None, ", ".join(f"{v['agree']}/{v['cases']}" for v in a4.values()), asrc, "A4_layout.vs_b72.*.agree")
+    put("acc.A4.cal", None, f"{1000 * max(v['max_calibration_diff_m'] for v in a4.values()):.2f}", asrc, "A4_layout.vs_b72.*.max_calibration_diff_m")
+    a5 = A["A5_reset_leakage"]["batch16_vs_batch288"]
+    put("acc.A5", None, f"{a5['agree']}/{a5['cases']}", asrc, "A5_reset_leakage.batch16_vs_batch288")
+    put("acc.A5.cal", None, f"{1000 * a5['max_calibration_diff_m']:.2f}", asrc, "A5_reset_leakage.max_calibration_diff_m")
+    a7 = A["A7_zero_residual_equals_parent"]["profiles"]
+    put("acc.A7", None, ", ".join(f"{v['agree']}/{v['cases']}" for v in a7.values()) + " (five profiles)", asrc, "A7.profiles.*.agree")
+    psrc = "results/v4/pilot/summary.json"
+    PL = json.loads((ROOT / psrc).read_text())
+    put("pilot.total", PL["total_training_transitions"], f"{PL['total_training_transitions']:,}", psrc, "total_training_transitions")
     # main table: baselines + learned selected + learned final, success % per condition
     hdr = "| controller | " + " | ".join(c.replace("boundary_", "").replace("_", " ") for c in v4.ORDER) + " |"
     lines = [hdr, "|" + "---|" * (len(v4.ORDER) + 1)]
