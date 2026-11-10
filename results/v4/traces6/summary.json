@@ -1,0 +1,14 @@
+{
+ "entries": 54,
+ "pairs": 324,
+ "agree": 323,
+ "traced_cases": 324,
+ "disagreements": [
+  {
+   "entry": "combined_robust_history_s444__final",
+   "case": "v4-final-mixed_ood-0000",
+   "trace_run": "episode_timeout",
+   "formal": "success"
+  }
+ ]
+}

@@ -60,6 +60,7 @@ def main():
         "constants": [py, "scripts/v4_fit_constants.py", "--devfit", str(X / "mechanisms/devfit"), "--output",
                       str(W / "mechanisms/constant_fits.json")],
         "mechanisms": [py, "scripts/v4_mechanisms.py", "--runs", str(X), "--output", str(W / "mechanisms")],
+        "traces6": [py, "scripts/v4_traces6.py", "--runs", str(X), "--output", str(W / "traces6/summary.json")],
     }
     rec = {"runs": "<extracted>", "steps": {}, "files": {}}
     fail = []
@@ -79,7 +80,7 @@ def main():
     if fig.returncode or not figs or any(v is not True for v in figs.values()):
         fail.append("figures")
     counts = {"identical": 0, "float_only": 0, "different": 0, "missing": 0}
-    for name in sorted({"selection", "summary", "mechanisms"}):
+    for name in sorted({"selection", "summary", "mechanisms", "traces6"}):
         for gen in sorted((W / name).rglob("*")):
             if not gen.is_file() or gen.suffix not in (".json", ".csv"):
                 continue
