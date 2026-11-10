@@ -152,3 +152,14 @@ in total) versus ≈8,900/s for one V3 training process on the same hardware. Th
 PPO iterations per pilot (≤ 0.66M transitions in total, counted against the 24M pilot cap; partial outputs kept
 under `v4/pilots/`) and the pilots were restarted one at a time in a new runs root. Pilot total ≤ 23.67M.
 Formal training also runs one process per GPU.
+
+## 2026-11-10 01:40 — pilots reviewed; no change to training settings
+
+Four pilots (5,505,024 transitions each, seeds 901/902, `results/v4/pilots/pilot_eval_summary.json`; source
+`5089373`), evaluated on the six validation-like development strata at 2M, 4M and final: the combined robust
+feed-forward and history pilots reach 24/24 in every stratum at every checkpoint (one 23/24 at 4M), i.e. the
+level of their calibrated parent; the residual-only history pilot (nominal parent) reaches 12–24/24 (mixed_id
+15/24). Training was stable (no collapse, no non-finite values, ~8,300 transitions/s alone on one A100).
+Pilot transitions: 22,020,096 + smoke 983,040 + killed packed attempt ≤ 655,360 = ≤ 23,658,496 ≤ 24M cap.
+Decision: keep the V3 PPO, network, rollout and curriculum settings; freeze. (The session was paused for about
+eight hours after the pilots finished; nothing ran in between.)
