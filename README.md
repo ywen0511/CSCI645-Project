@@ -1,11 +1,17 @@
 # CSCI 645 — Robust bimanual handover
 
-**V3 and its maintenance release are completed. V4 is in progress.**
-The active remote entry point is [V4_REMAINING.md](V4_REMAINING.md): complete the
-existing pilots, freeze the protocol, execute the formal study and publish every
-checkpoint/result with fresh-download verification. No previous chat or owner-local
-files are needed. Do not repeat completed V3 work or restart existing V4 pilots.
-The original continuation contract is retained in [POST_V3_EXECUTION.md](POST_V3_EXECUTION.md).
+**V4 (uncertain giver grasp) is released as [v4.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.0)**
+on branch `study/v4-grasp-uncertainty`: [report](report/v4/report.md) (PDF in the release),
+[slides](report/v4/slides.pptx), [summary metrics](results/v4/summary/family_condition_summary.json),
+[paired effects](results/v4/summary/paired_effects.json), [reproduction](docs/v4/REPRODUCE.md),
+[verification](docs/v4/VERIFICATION.md), [decision log](docs/v4/DECISIONS.md), [status](POST_V3_STATUS.json).
+Simulator source of every formal run: tag `experiment-v4`. V3 and its maintenance release v3.0.1 are complete.
+The remote assignment that produced V4 is [V4_REMAINING.md](V4_REMAINING.md) (contract: [POST_V3_EXECUTION.md](POST_V3_EXECUTION.md)).
+
+**V4 in one paragraph.** When the bar's position inside the giver's grasp is unknown (physically produced, up to
++15 mm along the bar), the V3 fixed-transform grasp reference fails beyond about +5 mm (5.5% success at +15 mm); a
+0.5 s calibration from the same noisy sensor restores it (94.5%). Residual PPO with or without a four-frame history
+adds at most a few in-distribution cases (primary contrasts touch zero) and is fragile outside its training support.
 
 This project uses Isaac Sim through Isaac Lab, PhysX, two Franka arms with
 **two-finger parallel-jaw grippers**, fixed commanded orientations, and a bounded
