@@ -1,0 +1,177 @@
+{
+ "combined_clean_ff_s111": {
+  "checkpoint_sha256": "8c06a960edee0f2a314ca0b4956ba482194aabd22c16d6d6dff1a23672da0861",
+  "residual_magnitude_m": 0.005374980176075942,
+  "selected": "step_004030464",
+  "success_rate": 0.9916666666666667,
+  "unsafe_rate": 0.008333333333333333
+ },
+ "combined_clean_ff_s222": {
+  "checkpoint_sha256": "5e53b4e3bad41a775dc79a6d84c380cc0ad76e2be631591bf334db798ca537e9",
+  "residual_magnitude_m": 0.002863049442048735,
+  "selected": "step_006029312",
+  "success_rate": 0.9916666666666667,
+  "unsafe_rate": 0.008333333333333333
+ },
+ "combined_clean_ff_s333": {
+  "checkpoint_sha256": "5f553dc6f4e0bf61e8bc2a3d3213a09cbe9eb4df926936d3362bf5f524daac5e",
+  "residual_magnitude_m": 0.0035251101302214475,
+  "selected": "step_006029312",
+  "success_rate": 0.9916666666666667,
+  "unsafe_rate": 0.008333333333333333
+ },
+ "combined_clean_ff_s444": {
+  "checkpoint_sha256": "4701266915c18e2da2985d9728c8175ebf0a93c2ff9927c6c8732a6b3e76bdf2",
+  "residual_magnitude_m": 0.004975387444038201,
+  "selected": "step_010027008",
+  "success_rate": 0.9874999999999999,
+  "unsafe_rate": 0.020833333333333332
+ },
+ "combined_clean_ff_s555": {
+  "checkpoint_sha256": "e9e5809ed17b3aecfc4766a3513437c71d5c901d531d11ff9233bf7c4c388661",
+  "residual_magnitude_m": 0.0035680050617202933,
+  "selected": "step_010027008",
+  "success_rate": 0.9916666666666667,
+  "unsafe_rate": 0.008333333333333333
+ },
+ "combined_robust_ff_s111": {
+  "checkpoint_sha256": "d1d29cec0969f0bec30b944ee0cb2ccf78a676507994fb168bbf1a59f9d6a6a3",
+  "residual_magnitude_m": 0.0026561480260144173,
+  "selected": "step_006029312",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.004166666666666667
+ },
+ "combined_robust_ff_s222": {
+  "checkpoint_sha256": "90070c8e265dfef1b103dec47d4cc0bc8bfcaa36d398f7b35fbbc16366d73ce9",
+  "residual_magnitude_m": 0.004759682970672999,
+  "selected": "step_010027008",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.004166666666666667
+ },
+ "combined_robust_ff_s333": {
+  "checkpoint_sha256": "b11cd44948adaa9b84677ba362e2fef3474915a06fcb7408f5036f187e155153",
+  "residual_magnitude_m": 0.0035379786191712414,
+  "selected": "step_010027008",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.004166666666666667
+ },
+ "combined_robust_ff_s444": {
+  "checkpoint_sha256": "60a688b94b01a722bea801af812fbb708cb82432727dff5af2d8e11abf021617",
+  "residual_magnitude_m": 0.0034511257272099543,
+  "selected": "step_010027008",
+  "success_rate": 0.9958333333333332,
+  "unsafe_rate": 0.008333333333333333
+ },
+ "combined_robust_ff_s555": {
+  "checkpoint_sha256": "54cba4ebf079e7da3a36e41e96725ea76e32ea15cfaf859f38fc5f0493a80492",
+  "residual_magnitude_m": 0.002652612931787856,
+  "selected": "step_010027008",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.008333333333333333
+ },
+ "combined_robust_history_s111": {
+  "checkpoint_sha256": "222d14bb5d186a89888b63321b93983bdd8a62ad589e1e74101a300c1a15771a",
+  "residual_magnitude_m": 0.010842446708878288,
+  "selected": "step_004030464",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.0
+ },
+ "combined_robust_history_s222": {
+  "checkpoint_sha256": "02ee63914aae03a1fb6045c9cdcc9bf06d663b895aeed02b67dc1c11b5c0dff9",
+  "residual_magnitude_m": 0.007763817029138861,
+  "selected": "step_010027008",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.0
+ },
+ "combined_robust_history_s333": {
+  "checkpoint_sha256": "afd9ac48cf266f6310c2c7be1d67a3c7a7a8c95075b38b2b1952440bcb1ec4d9",
+  "residual_magnitude_m": 0.00787519225132442,
+  "selected": "step_006029312",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.0
+ },
+ "combined_robust_history_s444": {
+  "checkpoint_sha256": "b5a1810c09fcd6dc9ca6556dd77406a943cd5a3046eb28eafdfc4d7e5a6ac0cc",
+  "residual_magnitude_m": 0.007803969470936403,
+  "selected": "step_006029312",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.0
+ },
+ "combined_robust_history_s555": {
+  "checkpoint_sha256": "7813ff91bd397628b0552be6b746fb76d303256b92c752ddd5cfa8a93638e279",
+  "residual_magnitude_m": 0.004188300401450062,
+  "selected": "step_008028160",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.004166666666666667
+ },
+ "combined_robust_repeat_s111": {
+  "checkpoint_sha256": "1a9195093bccb99300bea53357a30e1d92c17d9dc103a99ab22376f7901560a8",
+  "residual_magnitude_m": 0.0035960787576369353,
+  "selected": "step_008028160",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.0125
+ },
+ "combined_robust_repeat_s222": {
+  "checkpoint_sha256": "cf954d3ba4ad76f1f044b3a6e3a315253382121ac89d76ed329436ffd535fe67",
+  "residual_magnitude_m": 0.0035793567327839673,
+  "selected": "step_010027008",
+  "success_rate": 0.9958333333333332,
+  "unsafe_rate": 0.0125
+ },
+ "combined_robust_repeat_s333": {
+  "checkpoint_sha256": "4020cfb64bbb9102e9ec1dce3e5e1980dfced15d3cbf15ee4b8c0ab2011e8d00",
+  "residual_magnitude_m": 0.004411617720728044,
+  "selected": "step_010027008",
+  "success_rate": 0.9916666666666667,
+  "unsafe_rate": 0.0125
+ },
+ "combined_robust_repeat_s444": {
+  "checkpoint_sha256": "503665f9fcf8dbfec45fd2b4d2e3dfcb2e7a522fd37eb6baa0fca2a56805d55f",
+  "residual_magnitude_m": 0.0032284620504274696,
+  "selected": "step_010027008",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.008333333333333333
+ },
+ "combined_robust_repeat_s555": {
+  "checkpoint_sha256": "1d9b165d1dac676d15d81c952ce40c87de76a81aa7167ec1f0648a7303ad19c8",
+  "residual_magnitude_m": 0.006183166616667805,
+  "selected": "step_002031616",
+  "success_rate": 1.0,
+  "unsafe_rate": 0.004166666666666667
+ },
+ "residual_robust_history_s111": {
+  "checkpoint_sha256": "3e66e6056ed82940d897503c6b2bb206f94d5e2d85e372006a911b2fc59883f8",
+  "residual_magnitude_m": 0.010899086965697852,
+  "selected": "step_002031616",
+  "success_rate": 0.5375,
+  "unsafe_rate": 0.4375
+ },
+ "residual_robust_history_s222": {
+  "checkpoint_sha256": "4f20b769b8f9ea6de01e13e51fb31e7ee7a9ccc00b93c8be6cbc73a25d30416a",
+  "residual_magnitude_m": 0.012612483246124928,
+  "selected": "step_008028160",
+  "success_rate": 0.6124999999999999,
+  "unsafe_rate": 0.375
+ },
+ "residual_robust_history_s333": {
+  "checkpoint_sha256": "6debdc6a08f26c08acc0e6a264d9c3b22edee91b2da4a64eaeb1708d12e91f43",
+  "residual_magnitude_m": 0.014294902363461957,
+  "selected": "step_006029312",
+  "success_rate": 0.6541666666666667,
+  "unsafe_rate": 0.325
+ },
+ "residual_robust_history_s444": {
+  "checkpoint_sha256": "7d01c966891d09057b09511a4f97604a2a7be589145155606ead066409c157bc",
+  "residual_magnitude_m": 0.0019890402399514325,
+  "selected": "step_002031616",
+  "success_rate": 0.5916666666666667,
+  "unsafe_rate": 0.38333333333333336
+ },
+ "residual_robust_history_s555": {
+  "checkpoint_sha256": "eee11953379f99221c26bf2c14f5b26a9eaaf9f8db0ebee21029d2358b5451cb",
+  "residual_magnitude_m": 0.0009316087260382342,
+  "selected": "step_002031616",
+  "success_rate": 0.5958333333333333,
+  "unsafe_rate": 0.37916666666666665
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "run": "combined_robust_history_s222",
+ "rule": "1. validation mean success, equal weight per validation condition (6 x 40 cases), descending;\n  2. unsafe-event rate (any prohibited collision or a drop), ascending;\n  3. residual magnitude (mean over cases of the per-episode mean max-axis |residual|), ascending;\n  4. latest candidate (largest transition count).\nNumerical ties: each value is rounded to 12 decimal places before comparison. Every scheduled validation case must\nbe recorded exactly once; invalid resets abort selection for reconciliation. Final outcomes are never read.",
+ "source_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9",
+ "suite_sha256": "88ac483e30adbfb1e1ff7e2c36d1c04af8c999c04bcb642d2f46eea46100309c",
+ "selected": "step_010027008",
+ "candidates": [
+  {
+   "success_rate": 0.9958333333333332,
+   "unsafe_rate": 0.008333333333333333,
+   "residual_magnitude_m": 0.005831042852112704,
+   "transitions": 2031616,
+   "checkpoint_sha256": "09b8253fde57fa001dfa6c8b29f17d33cfbc8e943986515965d9a1baad703d60",
+   "by_condition": {
+    "clean": 40,
+    "grasp_10mm": 40,
+    "grasp_15mm": 39,
+    "bias_5mm": 40,
+    "noise_2mm": 40,
+    "mixed_id": 40
+   },
+   "tag": "step_002031616",
+   "entry": "combined_robust_history_s222__step_002031616"
+  },
+  {
+   "success_rate": 0.9958333333333332,
+   "unsafe_rate": 0.004166666666666667,
+   "residual_magnitude_m": 0.005792302447781116,
+   "transitions": 4030464,
+   "checkpoint_sha256": "41f6c4f96a0c752207959e1d02a47e709eb1f1d87c7c8cde3f1dabc2a486e563",
+   "by_condition": {
+    "clean": 40,
+    "grasp_10mm": 40,
+    "grasp_15mm": 39,
+    "bias_5mm": 40,
+    "noise_2mm": 40,
+    "mixed_id": 40
+   },
+   "tag": "step_004030464",
+   "entry": "combined_robust_history_s222__step_004030464"
+  },
+  {
+   "success_rate": 1.0,
+   "unsafe_rate": 0.004166666666666667,
+   "residual_magnitude_m": 0.009205028634254974,
+   "transitions": 6029312,
+   "checkpoint_sha256": "95bdf49cc8935f2d473b04a35fef2ad95f5567352e2163c7248e7fdb0c48ebac",
+   "by_condition": {
+    "clean": 40,
+    "grasp_10mm": 40,
+    "grasp_15mm": 40,
+    "bias_5mm": 40,
+    "noise_2mm": 40,
+    "mixed_id": 40
+   },
+   "tag": "step_006029312",
+   "entry": "combined_robust_history_s222__step_006029312"
+  },
+  {
+   "success_rate": 1.0,
+   "unsafe_rate": 0.004166666666666667,
+   "residual_magnitude_m": 0.012506223488376246,
+   "transitions": 8028160,
+   "checkpoint_sha256": "073c137b134286ee0cd64fb2c6140f9d3d35a31eb2867f3c2b5098aaaf4b4bcb",
+   "by_condition": {
+    "clean": 40,
+    "grasp_10mm": 40,
+    "grasp_15mm": 40,
+    "bias_5mm": 40,
+    "noise_2mm": 40,
+    "mixed_id": 40
+   },
+   "tag": "step_008028160",
+   "entry": "combined_robust_history_s222__step_008028160"
+  },
+  {
+   "success_rate": 1.0,
+   "unsafe_rate": 0.0,
+   "residual_magnitude_m": 0.007763817029138861,
+   "transitions": 10027008,
+   "checkpoint_sha256": "02ee63914aae03a1fb6045c9cdcc9bf06d663b895aeed02b67dc1c11b5c0dff9",
+   "by_condition": {
+    "clean": 40,
+    "grasp_10mm": 40,
+    "grasp_15mm": 40,
+    "bias_5mm": 40,
+    "noise_2mm": 40,
+    "mixed_id": 40
+   },
+   "tag": "step_010027008",
+   "entry": "combined_robust_history_s222__step_010027008"
+  }
+ ],
+ "untrained_control": {
+  "success_rate": 0.9958333333333332,
+  "unsafe_rate": 0.008333333333333333,
+  "residual_magnitude_m": 0.0,
+  "transitions": 0,
+  "checkpoint_sha256": "9f16ce782dca0a5af4e9c7b675c49a5be05e24966030d2fc4b56557fc220d3d7",
+  "by_condition": {
+   "clean": 40,
+   "grasp_10mm": 40,
+   "grasp_15mm": 39,
+   "bias_5mm": 40,
+   "noise_2mm": 40,
+   "mixed_id": 40
+  },
+  "tag": "step_000000000",
+  "entry": "combined_robust_history_s222__step0"
+ }
+}
