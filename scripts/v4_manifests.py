@@ -347,7 +347,72 @@ def traces():
     write("traces6", tasks)
 
 
+def verification():
+    """Public-download checks (run with --runs-root <extracted release>): a complete 60-case replay of the calibrated
+    baseline and the seed-111 selected history policy, a 12-case reload (first case of every condition) of one selected
+    checkpoint of every architecture, and a two-iteration resume of combined_robust_history_s111 into a new directory."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from v4_dev import REFERENCES, base_overrides, entry_overrides
+    sel = json.loads((ROOT / "results/v4/selection/selection.json").read_text())
+    roles = json.loads((ROOT / "configs/v4/development/baseline_selection.json").read_text())["roles"]
+    rows = [json.loads(l) for l in (ROOT / "configs/v4/suites/final.jsonl").read_text().splitlines() if l.strip()]
+    first = {}
+    for r in sorted(rows, key=lambda r: r["case_id"]):
+        first.setdefault(r["condition"], r)
+    sp = ROOT / "configs/v4/suites/final_reload12.jsonl"
+    sp.write_text("".join(json.dumps(first[c], sort_keys=True) + "\n" for c in sorted(first)))
+    d = ROOT / "configs/v4/final_matrices/verification"
+    d.mkdir(parents=True, exist_ok=True)
+    tasks = []
+    x = roles["geometry_calibrated"]
+    mp = d / "replay60_geometry_calibrated.json"
+    mp.write_text(json.dumps({"name": "v4_replay60_geometry_calibrated", "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl",
+                              "num_envs": 20, "protocol": "configs/v2/protocol.json",
+                              "base_overrides": base_overrides(x["ema_alpha"], REFERENCES[x["reference"]][0]), "trace_cases": [],
+                              "entries": [{"id": "geometry_calibrated", "method": "geometry", "overrides": entry_overrides(x)}]}, indent=1) + "\n")
+    tasks.append({"id": "replay60_geometry_calibrated", "kind": "isaac",
+                  "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)), "--output",
+                           "$RUNS/replay60/geometry_calibrated", "--seed", str(SEED_EVAL)],
+                  "inputs": [str(mp.relative_to(ROOT))], "outputs": ["$RUNS/replay60/geometry_calibrated/geometry_calibrated.jsonl"]})
+    run = "combined_robust_history_s111"
+    mp = d / f"replay60_{run}.json"
+    mp.write_text(json.dumps({"name": f"v4_replay60_{run}", "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl", "num_envs": 20,
+                              "protocol": "configs/v4/frozen/training/combined_robust_history.json", "trace_cases": [],
+                              "entries": [{"id": f"{run}__selected", "method": "combined", "training_seed": 111, "role": "selected",
+                                           "checkpoint": f"{run}/checkpoints/{sel[run]['selected']}.pt"}]}, indent=1) + "\n")
+    tasks.append({"id": f"replay60_{run}", "kind": "isaac",
+                  "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)), "--checkpoint-root",
+                           "$RUNS/formal/train", "--output", f"$RUNS/replay60/{run}", "--seed", str(SEED_EVAL)],
+                  "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/replay60/{run}/{run}__selected.jsonl"]})
+    for prof, method, seed in runs():
+        if seed != 111:
+            continue
+        r = f"{prof}_s{seed}"
+        mp = d / f"reload_{prof}.json"
+        mp.write_text(json.dumps({"name": f"v4_reload_{prof}", "suite": "$DELIVERY/configs/v4/suites/final_reload12.jsonl", "num_envs": 12,
+                                  "protocol": f"configs/v4/frozen/training/{prof}.json", "trace_cases": [],
+                                  "entries": [{"id": f"{r}__selected", "method": method, "training_seed": seed, "role": "selected",
+                                               "checkpoint": f"{r}/checkpoints/{sel[r]['selected']}.pt"}]}, indent=1) + "\n")
+        tasks.append({"id": f"reload_{prof}", "kind": "isaac",
+                      "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)), "--checkpoint-root",
+                               "$RUNS/formal/train", "--output", f"$RUNS/reload/{prof}", "--seed", str(SEED_EVAL)],
+                      "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/reload/{prof}/{r}__selected.jsonl"]})
+    src = f"$RUNS/formal/train/{run}/checkpoints/latest.pt"
+    out = f"$RUNS/resume_check/{run}"
+    tasks.append({"id": "resume_check_train", "kind": "isaac",
+                  "argv": ["scripts/train.py", "--method", "combined", "--seed", "111", "--protocol",
+                           "configs/v4/frozen/training/combined_robust_history.json", "--run-type", "smoke",
+                           "--resume", src, "--transitions", "10092544", "--output", out],
+                  "inputs": [], "outputs": [f"{out}/checkpoints/final.pt"]})
+    tasks.append({"id": "resume_check_inspect", "kind": "isaac",
+                  "argv": ["scripts/closeout_inspect_ckpt.py", "--before", src, "--after", f"{out}/checkpoints/final.pt",
+                           "--expect-iterations", "308", "--expect-transitions", "10092544", "--output", "$RUNS/resume_check/inspect.json"],
+                  "inputs": [], "outputs": ["$RUNS/resume_check/inspect.json"]})
+    write("verification", tasks)
+
+
 if __name__ == "__main__":
     for stage in sys.argv[1:]:
         {"development": development, "constants": constants, "pilots": pilots, "train": train,
-         "validation": validation, "final": final, "mech_dev": mech_dev, "extras": extras, "traces6": traces}[stage]()
+         "validation": validation, "final": final, "mech_dev": mech_dev, "extras": extras, "traces6": traces,
+         "verification": verification}[stage]()
