@@ -1,5 +1,9 @@
 # V4 remaining-work assignment — resume through complete public delivery
 
+> **Historical completed assignment.** V4 is released as v4.0.0 with repaired tooling
+> in v4.0.1. Do not restart this training/evaluation mission. The current finite
+> assignment is [FINAL_DELIVERY_HANDOFF.md](FINAL_DELIVERY_HANDOFF.md).
+
 ## Mission and authorization
 
 You are the remote execution agent for Yan Wen's CSCI 645 project at

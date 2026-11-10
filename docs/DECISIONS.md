@@ -168,3 +168,26 @@ those archives.
 - Declared now, before any final-suite result of a learned policy exists: a **secondary analysis** evaluates
   the preserved *final* checkpoint of all nine runs on the same 1,800 final cases. It is reported separately,
   labelled secondary, and is never used to choose among checkpoints. Records go to `eval_final_checkpoint/`.
+
+### 2026-11-10 — Final synthesis and independent CPU review of completed V4
+
+- Reviewed completed V4 branch commit `0cef74fc92007e6e86f4e378b4635f7b4185ec0b`.
+  The study remains complete; its frozen simulator source, data, reports, tags and releases
+  are unchanged. No GPU or simulator work was run for this review.
+- Independently downloaded and hashed the final-record archive, reconciled 129,600
+  executed records and every published success/reset summary, reproduced both primary
+  bootstrap comparisons, checked 78 frozen input blobs and 25 validation-summary selections.
+- Added an explicitly retrospective common-valid reset analysis. The same 189 boundary
+  cases are retained across all 54 executed entries. Selected history remains below
+  calibrated geometry by 30.79 pp (95% CI [-43.60, -18.20]); original primary denominators
+  and conclusions remain unchanged. See `results/final_review/audit.json`.
+- The final fixed-versus-calibrated contrast changes EMA and alignment bound as well as
+  reference. New prose treats it as a controller-configuration comparison and labels
+  matched development comparisons separately. Other corrections are in
+  `docs/final_review/REVIEW.md`; archived report/deck bytes are preserved.
+- Added a generated six-page project synthesis, plot, defense/demo notes and release
+  packaging/verification tooling. CPU regression: 105 passed, one Isaac-import skip.
+  New PDF pages were visually checked; the complete PDF and generation code are in Git.
+- README and AGENTS now point to `FINAL_DELIVERY_HANDOFF.md`, a finite CPU publication
+  assignment. `FINAL_REVIEW_STATUS.json` keeps supplement publication/verification pending
+  separately from the completed historical V4 study. Do not restart old training missions.

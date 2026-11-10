@@ -2,21 +2,19 @@
 
 ## Active continuation assignment
 
-The V3 study is completed and published as `v3.0.0`; `V3_EXECUTION.md` is historical.
-On `study/v4-grasp-uncertainty`, the active self-contained remaining-work assignment
-is `V4_REMAINING.md`, tracked in `POST_V3_STATUS.json`. Stage A is already verified
-and published as v3.0.1; the original contract remains `POST_V3_EXECUTION.md`. It supersedes
-historical runbooks for new work. Preserve `V3_STATUS.json`, frozen inputs, published
-evidence, tags and releases. Do not restart the original V3 training matrix.
-The local preparation agent performs CPU-only maintenance; no GPU or simulator runs.
-The remote execution agent performs the documented verification and the separate
-uncertain-grasp extension on already available resources. All public content is English.
+V3 and V4 are complete and released. On `study/v4-grasp-uncertainty`, the active
+self-contained assignment is `FINAL_DELIVERY_HANDOFF.md`, tracked separately in
+`FINAL_REVIEW_STATUS.json`. It publishes and verifies the CPU review supplement.
+No new GPU or simulator work is required or authorized by that assignment.
+`V4_REMAINING.md`, `POST_V3_EXECUTION.md` and `V3_EXECUTION.md` are historical contracts.
+Preserve historical status files, frozen inputs, published evidence, tags and releases.
+Do not restart completed training or evaluation matrices. All public content is English.
 
 ## Mission and authorization
 
 The owner, GitHub user `ywen0511`, explicitly requested a self-contained repository that a remote agent can read and use to complete the entire project, including implementation, training, evaluation, checkpoints, reports, videos, and GitHub Releases. All repository content and deliverables must be in English.
 
-Work in `ywen0511/CSCI645-Project`. Read `V4_REMAINING.md` and its linked specifications before implementing. Continue through the complete runbook; do not stop after generating a scaffold, passing unit tests, running one episode, or starting a background training job.
+Work in `ywen0511/CSCI645-Project`. Read `FINAL_DELIVERY_HANDOFF.md` before implementing. Complete its publication and verification gates; do not stop at a local package or draft release. The broader historical mission below does not override the current CPU-only scope.
 
 Authorized actions within available resources include implementing and fixing code, installing compatible project dependencies in an isolated environment, running simulations and experiments, resuming failed runs, committing and pushing project changes, creating project tags, and uploading/publishing project results in GitHub Releases. Routine engineering decisions and these uploads do not need repeated confirmation. Do not provision paid resources, change account/security settings, erase unrelated data, force-push shared history, or overwrite an existing published release. External compute must already be available or separately authorized.
 
@@ -45,4 +43,4 @@ The one-month planning horizon is not permission to launch unbounded jobs. Use t
 
 ## Completion
 
-Active continuation completion means all remaining-work acceptance gates in `V4_REMAINING.md` and the preserved scientific contract pass. Historical v1/v2 gates in `docs/RUNBOOK.md` and `docs/RELEASE.md` remain references. Confirm a clean-clone installation, checkpoint replay, downloaded artifact checksums, and accessible published release URLs. Final communication must link the source commit/tag, release, report, summary metrics, checkpoints, and videos, and identify any unfulfilled requirement.
+Active completion means every gate in `FINAL_DELIVERY_HANDOFF.md` passes. Historical study gates and GPU verification are already recorded; do not rerun them as part of the CPU supplement. Verify new release downloads and inherited artifact checksums/availability. Final communication must link the source commit/tag, release, report, summary metrics, checkpoints, videos and public verification, and identify any unfulfilled requirement.

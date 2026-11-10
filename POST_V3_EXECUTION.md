@@ -1,9 +1,8 @@
-# Active remote assignment: verified reproduction and uncertain-grasp handover
+# Historical remote assignment: verified reproduction and uncertain-grasp handover
 
-> **Current entry point: [V4_REMAINING.md](V4_REMAINING.md).** Stage A has completed
-> and v3.0.1 is publicly verified. V4 development and acceptance are already uploaded.
-> Use the remaining-work document to resume the current state; preserve this original
-> scientific/publication contract and do not restart completed stages.
+> **Completed historical contract.** Stage A and V4 are released and verified.
+> The current entry point is [FINAL_DELIVERY_HANDOFF.md](FINAL_DELIVERY_HANDOFF.md).
+> Preserve this original scientific/publication contract; do not restart its stages.
 
 
 ## Mission, scope and authority

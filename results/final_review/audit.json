@@ -1,0 +1,372 @@
+{
+  "schema": 1,
+  "scope": "CPU audit of published V4 records; no simulation or training",
+  "archive_sha256": "26b27cd5f9d97f1a6dea85412ecb050aba772eb84fee6bd9a9f18038bf7cf627",
+  "experiment_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9",
+  "passed": true,
+  "executed_files": 54,
+  "executed_episodes": 129600,
+  "logical_entries": 55,
+  "frozen_inputs_verified": 78,
+  "all_published_success_and_invalid_reset_summaries_match": true,
+  "primary_recomputed": [
+    {
+      "left": "combined_robust_history",
+      "right": "combined_robust_ff",
+      "difference_pp": 0.6,
+      "ci_low_pp": 0.0,
+      "ci_high_pp": 2.0,
+      "confidence": 0.95,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    },
+    {
+      "left": "combined_robust_history",
+      "right": "combined_robust_ff",
+      "difference_pp": 0.6,
+      "ci_low_pp": 0.0,
+      "ci_high_pp": 2.1,
+      "confidence": 0.975,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    },
+    {
+      "left": "combined_robust_history",
+      "right": "best_constant_geometry",
+      "difference_pp": 1.5,
+      "ci_low_pp": 0.0,
+      "ci_high_pp": 3.5000000000000004,
+      "confidence": 0.95,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    },
+    {
+      "left": "combined_robust_history",
+      "right": "best_constant_geometry",
+      "difference_pp": 1.5,
+      "ci_low_pp": 0.0,
+      "ci_high_pp": 3.5000000000000004,
+      "confidence": 0.975,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    }
+  ],
+  "selection_from_recorded_validation_summaries": [
+    {
+      "run": "combined_clean_ff_s111",
+      "selected": "step_004030464"
+    },
+    {
+      "run": "combined_clean_ff_s222",
+      "selected": "step_006029312"
+    },
+    {
+      "run": "combined_clean_ff_s333",
+      "selected": "step_006029312"
+    },
+    {
+      "run": "combined_clean_ff_s444",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_clean_ff_s555",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_robust_ff_s111",
+      "selected": "step_006029312"
+    },
+    {
+      "run": "combined_robust_ff_s222",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_robust_ff_s333",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_robust_ff_s444",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_robust_ff_s555",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_robust_history_s111",
+      "selected": "step_004030464"
+    },
+    {
+      "run": "combined_robust_history_s222",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_robust_history_s333",
+      "selected": "step_006029312"
+    },
+    {
+      "run": "combined_robust_history_s444",
+      "selected": "step_006029312"
+    },
+    {
+      "run": "combined_robust_history_s555",
+      "selected": "step_008028160"
+    },
+    {
+      "run": "combined_robust_repeat_s111",
+      "selected": "step_008028160"
+    },
+    {
+      "run": "combined_robust_repeat_s222",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_robust_repeat_s333",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_robust_repeat_s444",
+      "selected": "step_010027008"
+    },
+    {
+      "run": "combined_robust_repeat_s555",
+      "selected": "step_002031616"
+    },
+    {
+      "run": "residual_robust_history_s111",
+      "selected": "step_002031616"
+    },
+    {
+      "run": "residual_robust_history_s222",
+      "selected": "step_008028160"
+    },
+    {
+      "run": "residual_robust_history_s333",
+      "selected": "step_006029312"
+    },
+    {
+      "run": "residual_robust_history_s444",
+      "selected": "step_002031616"
+    },
+    {
+      "run": "residual_robust_history_s555",
+      "selected": "step_002031616"
+    }
+  ],
+  "published_report_matches_template": true,
+  "invalid_reset_records": 380,
+  "invalid_in_any_entry": [
+    "v4-final-boundary_x_minus_7-0006",
+    "v4-final-boundary_x_minus_7-0017",
+    "v4-final-boundary_x_minus_7-0077",
+    "v4-final-boundary_x_minus_7-0079",
+    "v4-final-boundary_x_minus_7-0097",
+    "v4-final-boundary_x_minus_7-0134",
+    "v4-final-boundary_x_minus_7-0143",
+    "v4-final-boundary_x_minus_7-0157",
+    "v4-final-boundary_x_minus_7-0164",
+    "v4-final-boundary_x_minus_7-0177",
+    "v4-final-boundary_x_minus_7-0179"
+  ],
+  "invalid_in_every_entry": [
+    "v4-final-boundary_x_minus_7-0006",
+    "v4-final-boundary_x_minus_7-0077",
+    "v4-final-boundary_x_minus_7-0097",
+    "v4-final-boundary_x_minus_7-0143"
+  ],
+  "common_valid_boundary_cases": 189,
+  "boundary_sensitivity": [
+    {
+      "family": "combined_robust_history",
+      "cohort": "all_scheduled",
+      "cases_per_seed": 200,
+      "success_pct_per_seed": [
+        59.0,
+        61.5,
+        85.5,
+        72.5,
+        47.5
+      ],
+      "success_pct": 65.2,
+      "parent_success_pct": 96.5,
+      "difference_pp": -31.3,
+      "ci_low_pp": -43.8,
+      "ci_high_pp": -18.7,
+      "confidence": 0.95,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    },
+    {
+      "family": "combined_robust_history",
+      "cohort": "common_valid_posthoc",
+      "cases_per_seed": 189,
+      "success_pct_per_seed": [
+        62.43386243386243,
+        65.07936507936508,
+        88.88888888888889,
+        76.71957671957672,
+        50.264550264550266
+      ],
+      "success_pct": 68.67724867724868,
+      "parent_success_pct": 99.47089947089947,
+      "difference_pp": -30.793650793650794,
+      "ci_low_pp": -43.597883597883595,
+      "ci_high_pp": -18.201058201058203,
+      "confidence": 0.95,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    },
+    {
+      "family": "combined_robust_ff",
+      "cohort": "all_scheduled",
+      "cases_per_seed": 200,
+      "success_pct_per_seed": [
+        97.0,
+        54.0,
+        96.5,
+        96.0,
+        97.5
+      ],
+      "success_pct": 88.2,
+      "parent_success_pct": 96.5,
+      "difference_pp": -8.3,
+      "ci_low_pp": -25.900000000000002,
+      "ci_high_pp": 1.2,
+      "confidence": 0.95,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    },
+    {
+      "family": "combined_robust_ff",
+      "cohort": "common_valid_posthoc",
+      "cases_per_seed": 189,
+      "success_pct_per_seed": [
+        100.0,
+        57.14285714285714,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "success_pct": 91.42857142857143,
+      "parent_success_pct": 99.47089947089947,
+      "difference_pp": -8.042328042328043,
+      "ci_low_pp": -26.137566137566136,
+      "ci_high_pp": 1.0582010582010581,
+      "confidence": 0.95,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    },
+    {
+      "family": "combined_robust_repeat",
+      "cohort": "all_scheduled",
+      "cases_per_seed": 200,
+      "success_pct_per_seed": [
+        96.5,
+        92.5,
+        96.5,
+        97.0,
+        73.5
+      ],
+      "success_pct": 91.2,
+      "parent_success_pct": 96.5,
+      "difference_pp": -5.3,
+      "ci_low_pp": -14.799999999999999,
+      "ci_high_pp": 0.5,
+      "confidence": 0.95,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    },
+    {
+      "family": "combined_robust_repeat",
+      "cohort": "common_valid_posthoc",
+      "cases_per_seed": 189,
+      "success_pct_per_seed": [
+        100.0,
+        96.82539682539682,
+        100.0,
+        100.0,
+        77.24867724867724
+      ],
+      "success_pct": 94.81481481481482,
+      "parent_success_pct": 99.47089947089947,
+      "difference_pp": -4.656084656084656,
+      "ci_low_pp": -14.285714285714285,
+      "ci_high_pp": 1.0582010582010581,
+      "confidence": 0.95,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 6456401
+    }
+  ],
+  "matched_development_only": {
+    "ema0p2_fixed_a25": {
+      "grasp_15mm": {
+        "cases": 24,
+        "collision": 24,
+        "invalid_reset": 0,
+        "success": 0,
+        "terminal": {
+          "prohibited_collision": 24,
+          "success": 0
+        }
+      },
+      "mixed_id": {
+        "cases": 24,
+        "collision": 7,
+        "invalid_reset": 0,
+        "success": 17,
+        "terminal": {
+          "prohibited_collision": 7,
+          "success": 17
+        }
+      },
+      "mixed_ood": {
+        "cases": 24,
+        "collision": 6,
+        "invalid_reset": 0,
+        "success": 18,
+        "terminal": {
+          "prohibited_collision": 6,
+          "success": 18
+        }
+      }
+    },
+    "ema0p2_cal050_a25": {
+      "grasp_15mm": {
+        "cases": 24,
+        "collision": 0,
+        "invalid_reset": 0,
+        "success": 24,
+        "terminal": {
+          "prohibited_collision": 0,
+          "success": 24
+        }
+      },
+      "mixed_id": {
+        "cases": 24,
+        "collision": 0,
+        "invalid_reset": 0,
+        "success": 24,
+        "terminal": {
+          "prohibited_collision": 0,
+          "success": 24
+        }
+      },
+      "mixed_ood": {
+        "cases": 24,
+        "collision": 3,
+        "invalid_reset": 0,
+        "success": 22,
+        "terminal": {
+          "prohibited_collision": 2,
+          "success": 22
+        }
+      }
+    }
+  },
+  "limits": [
+    "No independent GPU replay or checkpoint-weight validation in this review.",
+    "Selection is checked against recorded candidate summaries, not reloaded raw validation files.",
+    "Common-valid analysis is post hoc and conditional on outcomes of the reset procedure.",
+    "The primary all-scheduled denominator and all published scientific outputs are unchanged."
+  ]
+}

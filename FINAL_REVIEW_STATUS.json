@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "assignment": "FINAL_DELIVERY_HANDOFF.md",
+  "reviewed_branch_commit": "0cef74fc92007e6e86f4e378b4635f7b4185ec0b",
+  "historical_v4_study_complete": true,
+  "cpu_review_complete": true,
+  "local_gpu_or_simulator_runs": 0,
+  "cpu_tests": {"passed": 105, "skipped": 1, "skip_reason": "Isaac Lab is not installed locally"},
+  "raw_final_audit": "results/final_review/audit.json",
+  "overview_pdf": "report/final/overview.pdf",
+  "overview_pdf_pages": 6,
+  "visual_review": "All six supplement pages inspected; archived report/deck rendered and checked for gross layout issues.",
+  "proposed_release_tag": "v4.0.2",
+  "supplement_release_published": false,
+  "fresh_public_download_verified": false,
+  "complete": false,
+  "remaining": [
+    "Publish the review supplement with a new immutable tag and all package assets.",
+    "Verify fresh public downloads and inherited artifact availability/checksums; commit the verification record and final status."
+  ]
+}
