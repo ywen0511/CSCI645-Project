@@ -85,3 +85,27 @@ from `POST_V3_EXECUTION.md` and `V4_REMAINING.md` on the owner's behalf, on the 
 owner's own CPU workflow guards (`docs/v4/CPU_REVIEW.md`) were merged during the study. Decisions are logged with
 UTC times in `docs/v4/DECISIONS.md`; every measured number comes from checked-in scripts applied to the released raw
 records (`results/v4/number_audit.json`).
+
+## Acceptance (simulator checks before freezing)
+
+All checks are in `results/v4/acceptance/acceptance.json` (lineage: `PROVENANCE.json`).
+
+| check | what it shows | result |
+|---|---|---|
+| A1 V3 path | V4 code with the V4 options off reproduces the published V3 records (65 cases; geometry and a V3 policy) and V3 configuration hashes | 65/65 + 65/65 identical outcomes |
+| A2 zero offset | the V4 grasp path with zero offset reproduces them too | 65/65 + 65/65 |
+| A3 negative controls | no receiver / giver keeps holding / table support (16 grasp_10mm–15mm cases each, nominal and parent) give no success | 0 successes (first pass failed for table support — harness bug, fixed and rerun) |
+| A4 layout | batch 1, 8, 72 and 72 reversed: identical per-case sensor and grasp specifications | 72/72 outcomes agree; calibration estimates within 0.21 mm |
+| A5 leakage | 18 consecutive episodes per environment (batch 16) vs one (batch 288) | 288/288 agree; within 0.38 mm |
+| A6/A8 privileged | perturbing the true offset and achieved-offset tensors every step changes no controller quantity | every traced controller field identical (parent and a policy) |
+| A7 zero residual | the untrained (zero-mean) checkpoint of every profile reproduces its parent | 72/72 for all five |
+| smoke resume | interrupted training resumes counters, optimizer, normalizer and RNG | 5/5 profiles |
+| A9 evaluation resume | partial evaluations resume; tampered records are rejected | pass |
+
+## Reproducibility and artifacts
+
+Source: `experiment-v4` (simulator source of every formal run) and the delivery tag `v4.0.0` (analysis, report,
+packaging). The release contains every saved checkpoint (formal, pilot, smoke, resume and the killed packed attempt),
+every raw development, acceptance, validation, final, mechanism, repeatability and trace record, all logs and task
+ledgers, figures, videos and indices with SHA-256 for every archive member. `docs/v4/REPRODUCE.md` gives tested
+commands from public sources only; `docs/v4/VERIFICATION.md` records the public-download verification.
