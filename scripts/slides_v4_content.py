@@ -32,8 +32,8 @@ def build(prs, new, notes, n, title, bullets, table, pic, foot, F):
                 "Feasibility probe (development): y re-centred by the fingers → not a supported axis",
                 "  toward the palm: −10 mm touches the giver hand (invalid), −7 mm valid; toward receiver: +15 mm stable",
                 "Training support: x ∈ [−5, +15] mm, z ∈ [−10, +10] mm, 25% zero; evaluation adds −7 mm and ±15 mm (z)"],
-            x=0.5, w=6.6, size=16)
-    pic(s, F / "grasp_offsets.png", 7.2, 1.5, w=5.9)
+            x=0.5, y=1.35, w=12.3, h=3.0, size=15)
+    pic(s, F / "grasp_offsets.png", 1.9, 4.45, w=9.5)
     notes(s, "The achieved offsets track the requests within about a millimetre. The right panel shows the calibration "
              "error: about zero without sensor error, about the bias with it.")
 
@@ -70,12 +70,12 @@ def build(prs, new, notes, n, title, bullets, table, pic, foot, F):
               *[[c, n(f"succ.nominal.baseline.{c}"), n(f"succ.geometry_fixed.baseline.{c}"), n(f"succ.geometry_ema.baseline.{c}"),
                  n(f"succ.geometry_calibrated.baseline.{c}")]
                 for c in ("clean", "grasp_5mm", "grasp_10mm", "grasp_15mm", "bias_5mm", "mixed_id", "mixed_ood", "boundary_x_minus_7")]],
-          0.5, 1.5, 7.4, 4.6, size=14, first_col_w=2.4)
+          0.5, 1.5, 8.0, 4.6, size=14, first_col_w=2.4)
     bullets(s, [f"Calibrated − fixed on grasp_15mm: {n('eff.geometry_calibrated-geometry_fixed.selected.grasp_15mm')} pp",
                 "Failures are collisions with the bar end: the target lies inside the bar",
                 "Vertical and palm-side offsets are tolerated by the fixed transform",
                 "Sensor-only corruption does not hurt it (it ignores the sensor while the giver holds)"],
-            x=8.2, y=1.5, w=4.8, size=15)
+            x=8.8, y=1.5, w=4.2, size=15)
     notes(s, "Success in percent. The calibrated controller removes most of the failure at the cost of inheriting sensor bias.")
 
     s = new("Where methods fail")
@@ -100,23 +100,23 @@ def build(prs, new, notes, n, title, bullets, table, pic, foot, F):
     notes(s, "The two primary contrasts were frozen before any training. Selected checkpoints come from validation only.")
 
     s = new("Outside the training support")
-    title(s, "Result 3: learned residuals are fragile outside their support")
-    pic(s, F / "severity_selected.png", 0.3, 1.25, w=8.6)
+    title(s, "Result 3: fragile outside the training support")
+    pic(s, F / "severity_selected.png", 0.4, 1.2, w=12.5)
     bullets(s, [f"Palm-side −7 mm (outside [−5, +15]): history {n('succ.combined_robust_history.selected.boundary_x_minus_7')}% vs calibrated parent {n('succ.geometry_calibrated.baseline.boundary_x_minus_7')}%",
                 f"  per seed {n('seeds.combined_robust_history.selected.boundary_x_minus_7')}%",
                 f"Over all non-clean conditions: history − parent = {n('eff.combined_robust_history-geometry_calibrated.selected.nonclean')} pp",
                 f"Residual-only on nominal: {n('succ.residual_robust_history.selected.mixed_id')}% vs nominal {n('succ.nominal.baseline.mixed_id')}% (mixed_id)"],
-            x=9.0, y=1.4, w=4.1, size=14)
+            x=0.5, y=5.75, w=12.3, h=1.6, size=14)
     notes(s, "Validation did not include the palm-side boundary, so checkpoint selection could not detect this weakness.")
 
     s = new("Training stability")
     title(s, "Result 4: late training instability (again)")
-    pic(s, F / "learning_curves.png", 0.4, 1.3, w=8.4)
+    pic(s, F / "learning_curves.png", 0.6, 1.2, w=12.0)
     bullets(s, [f"History final checkpoints: bias_5mm per seed {n('seeds.combined_robust_history.final.bias_5mm')}%",
                 f"Residual-only collapses after ~3M transitions: final {n('succ.residual_robust_history.final.mixed_id')}% on mixed_id",
                 f"Selected steps ({{step: runs}}): {n('sel.tag_counts')}",
                 "Validation-based selection avoided most of the late damage"],
-            x=8.9, y=1.4, w=4.2, size=14)
+            x=0.5, y=5.0, w=12.3, h=2.2, size=14)
     notes(s, "Same pattern as V3: some history seeds degrade late. Selected and final checkpoints are reported separately.")
 
     s = new("Effects overview")
@@ -124,4 +124,59 @@ def build(prs, new, notes, n, title, bullets, table, pic, foot, F):
     pic(s, F / "paired_effects.png", 1.5, 1.2, h=5.9)
     notes(s, "Calibrated vs fixed is the large effect. Learned-vs-learned and learned-vs-parent effects are small or negative.")
 
+    s = new("Mechanisms")
+    title(s, "What do the learned residuals do?", "60-case subset (5 per condition), selected history runs")
+    table(s, [["run", "policy", "reversed", "current only", "dev constant", "parent"],
+              *[[f"history s{k}", n(f"mech.combined_robust_history_s{k}.selected"), n(f"mech.combined_robust_history_s{k}.reversed"),
+                 n(f"mech.combined_robust_history_s{k}.current_only"), n(f"mech.combined_robust_history_s{k}.constant"),
+                 n(f"mech.combined_robust_history_s{k}.zero_residual_parent")] for k in (111, 222, 333, 444, 555)]],
+          0.5, 1.5, 7.6, 3.4, size=14, first_col_w=1.9)
+    bullets(s, ["A constant fitted on development records does as well as each policy (or better)",
+                "Reversing or removing frame order changes only a few outcomes → little temporal use",
+                f"Residual-only seeds 222/333 learned ~1 cm offsets ({n('mech.residual_robust_history_s222.const')} mm) and fail",
+                f"Untrained step-0 checkpoints reproduce their parents ({n('mech.zero.combined_robust_history.agree')})"],
+            x=8.4, y=1.5, w=4.6, size=15)
+    notes(s, "Successes out of 60. This is the same picture as V2 and V3: learned residuals mostly encode a fixed offset.")
+
+    s = new("Repeatability, traces and videos")
+    title(s, "Repeatability, traces and videos")
+    pic(s, F / "trace_v4-final-grasp_15mm-0000.png", 0.8, 1.2, w=11.6)
+    bullets(s, [f"Repeatability: {n('rep.agree')} of {n('rep.episodes')} reruns (batch 6/20 × 3 process seeds) reproduce the outcome",
+                f"Six-case trace runs agree with formal records in {n('trace.agree')}/{n('trace.pairs')} pairs",
+                f"{n('video.clips')} clips + {n('video.montage_s')} s montage by a frozen rule; replays = evaluations",
+                "No selected history policy failed a mixed_id case → no failure clip, no substitute",
+                "Trace: fixed transform keeps the offset as a constant error until collision; calibration removes it at 0.5 s"],
+            x=0.5, y=4.6, w=12.3, h=2.6, size=14)
+    notes(s, "The trace shows the mechanism of the boundary directly. Videos are in the release with a montage.")
+
+    s = new("Answer")
+    title(s, "Answer to the V4 question")
+    bullets(s, [f"The fixed-transform grasp reference breaks beyond ~+5 mm toward the receiver ({n('succ.geometry_fixed.baseline.grasp_10mm')}% at +10 mm)",
+                f"A 0.5 s calibration from the same noisy measurements is the effective fix ({n('eff.geometry_calibrated-geometry_fixed.selected.mixed_id')} pp on mixed_id)",
+                "Calibration inherits sensor bias; EMA filtering is a close second in distribution",
+                "Residual PPO and short history add at most a few in-distribution cases (primary CIs touch zero)",
+                "…and they are fragile outside the training support and late in training",
+                "Practical lesson: estimate what you can measure (calibrate) before learning a residual"], size=18)
+    notes(s, "A measured failure boundary plus a strong geometric remedy; no positive RL result, consistent with V1–V3.")
+
+    s = new("Limitations")
+    title(s, "Limitations")
+    bullets(s, ["Static in-grasp offsets only; dynamic slip not performed (no slip-robustness claim)",
+                "Synthetic translation sensor, one bar, simulation only (no vision, no sim-to-real)",
+                "Calibration assumes accurate proprioception/orientation and a still giver during 0.5 s",
+                f"Near-ceiling primary condition (calibrated {n('succ.geometry_calibrated.baseline.mixed_id')}%): small effects, no equivalence claim",
+                "Training support widened once during development (logged); −7 mm boundary was outside it and outside validation",
+                f"{n('count.invalid_resets')} invalid resets at the −7 mm palm limit count as failures for every method",
+                "Five seeds per profile"], size=17)
+    notes(s, "All limitations are also in the report, Section 10.")
+
+    s = new("Reproduce")
+    title(s, "Everything is released", "github.com/ywen0511/CSCI645-Project · release v4.0.0")
+    bullets(s, ["Tags: experiment-v4 (simulator source of every run) and v4.0.0 (analysis, report, packaging)",
+                "Every checkpoint (formal, pilot, smoke, resume, killed attempt), raw record, log, ledger, video",
+                "Manifest + per-archive member inventories + SHA256SUMS; checkpoint index with asset/member/SHA-256",
+                "docs/v4/REPRODUCE.md: anonymous download → verify → regenerate tables/figures → replay/reload/resume",
+                f"Compute: {n('comp.total')} A100 GPU-hours for the whole continuation (cap 100)",
+                "AI assistance: implemented, run and written by an AI coding agent (Claude via Claude Code) for the owner"], size=17)
+    notes(s, "The public-download verification record is docs/v4/VERIFICATION.md on the branch.")
     return s

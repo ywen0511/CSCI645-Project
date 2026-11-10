@@ -1,0 +1,754 @@
+[
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 1,
+  "key": "succ.geometry_fixed.baseline.grasp_15mm",
+  "text": "5.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/grasp_15mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 1,
+  "key": "succ.geometry_calibrated.baseline.grasp_15mm",
+  "text": "94.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/grasp_15mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 1,
+  "key": "count.logical_episodes",
+  "text": "132,000",
+  "source": "results/v4/summary/reconciliation.json",
+  "field": "totals.logical_episodes"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 5,
+  "key": "acc.A1",
+  "text": "65/65 + 65/65",
+  "source": "results/v4/acceptance/acceptance.json",
+  "field": "A1_v3_path"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 5,
+  "key": "pilot.total",
+  "text": "23,658,496",
+  "source": "results/v4/pilot/summary.json",
+  "field": "total_training_transitions"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 5,
+  "key": "count.executed_entries",
+  "text": "54",
+  "source": "results/v4/summary/reconciliation.json",
+  "field": "totals.executed_entries"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 5,
+  "key": "count.executed_episodes",
+  "text": "129,600",
+  "source": "results/v4/summary/reconciliation.json",
+  "field": "totals.executed_episodes"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.nominal.baseline.clean",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "nominal/baseline/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_fixed.baseline.clean",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_ema.baseline.clean",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_ema/baseline/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_calibrated.baseline.clean",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.nominal.baseline.grasp_5mm",
+  "text": "64.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "nominal/baseline/grasp_5mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_fixed.baseline.grasp_5mm",
+  "text": "95.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/grasp_5mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_ema.baseline.grasp_5mm",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_ema/baseline/grasp_5mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_calibrated.baseline.grasp_5mm",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/grasp_5mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.nominal.baseline.grasp_10mm",
+  "text": "47.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "nominal/baseline/grasp_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_fixed.baseline.grasp_10mm",
+  "text": "39.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/grasp_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_ema.baseline.grasp_10mm",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_ema/baseline/grasp_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_calibrated.baseline.grasp_10mm",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/grasp_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.nominal.baseline.grasp_15mm",
+  "text": "38.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "nominal/baseline/grasp_15mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_fixed.baseline.grasp_15mm",
+  "text": "5.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/grasp_15mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_ema.baseline.grasp_15mm",
+  "text": "94.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_ema/baseline/grasp_15mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_calibrated.baseline.grasp_15mm",
+  "text": "94.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/grasp_15mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.nominal.baseline.bias_5mm",
+  "text": "72.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "nominal/baseline/bias_5mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_fixed.baseline.bias_5mm",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/bias_5mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_ema.baseline.bias_5mm",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_ema/baseline/bias_5mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_calibrated.baseline.bias_5mm",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/bias_5mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.nominal.baseline.mixed_id",
+  "text": "59.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "nominal/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_fixed.baseline.mixed_id",
+  "text": "69.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_ema.baseline.mixed_id",
+  "text": "99.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_ema/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_calibrated.baseline.mixed_id",
+  "text": "98.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.nominal.baseline.mixed_ood",
+  "text": "59.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "nominal/baseline/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_fixed.baseline.mixed_ood",
+  "text": "73.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_ema.baseline.mixed_ood",
+  "text": "90.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_ema/baseline/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_calibrated.baseline.mixed_ood",
+  "text": "94.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.nominal.baseline.boundary_x_minus_7",
+  "text": "48.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "nominal/baseline/boundary_x_minus_7.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_fixed.baseline.boundary_x_minus_7",
+  "text": "96.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/boundary_x_minus_7.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_ema.baseline.boundary_x_minus_7",
+  "text": "96.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_ema/baseline/boundary_x_minus_7.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "succ.geometry_calibrated.baseline.boundary_x_minus_7",
+  "text": "96.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/boundary_x_minus_7.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 6,
+  "key": "eff.geometry_calibrated-geometry_fixed.selected.grasp_15mm",
+  "text": "+89.0 [+84.5, +93.0]",
+  "source": "results/v4/summary/paired_effects.json",
+  "field": "eff.geometry_calibrated-geometry_fixed.selected.grasp_15mm"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 8,
+  "key": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id",
+  "text": "+0.6 [+0.0, +2.0]",
+  "source": "results/v4/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 8,
+  "key": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.fw",
+  "text": "[+0.0, +2.1]",
+  "source": "results/v4/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.bonferroni_97_5"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 8,
+  "key": "eff.combined_robust_history-best_constant_geometry.selected.mixed_id",
+  "text": "+1.5 [+0.0, +3.5]",
+  "source": "results/v4/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-best_constant_geometry.selected.mixed_id"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 8,
+  "key": "eff.combined_robust_history-best_constant_geometry.selected.mixed_id.fw",
+  "text": "[+0.0, +3.5]",
+  "source": "results/v4/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-best_constant_geometry.selected.mixed_id.bonferroni_97_5"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_history.selected.mixed_id",
+  "text": "100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_calibrated.baseline.mixed_id",
+  "text": "98.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 8,
+  "key": "eff.combined_robust_history-best_constant_geometry.final.mixed_id",
+  "text": "\u22121.5 [\u22125.5, +1.7]",
+  "source": "results/v4/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-best_constant_geometry.final.mixed_id"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 9,
+  "key": "succ.combined_robust_history.selected.boundary_x_minus_7",
+  "text": "65.2",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/boundary_x_minus_7.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 9,
+  "key": "succ.geometry_calibrated.baseline.boundary_x_minus_7",
+  "text": "96.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/boundary_x_minus_7.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 9,
+  "key": "seeds.combined_robust_history.selected.boundary_x_minus_7",
+  "text": "59.0 / 61.5 / 85.5 / 72.5 / 47.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/boundary_x_minus_7.success_rate_per_seed"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 9,
+  "key": "eff.combined_robust_history-geometry_calibrated.selected.nonclean",
+  "text": "\u22122.3 [\u22123.9, \u22120.7]",
+  "source": "results/v4/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_calibrated.selected.nonclean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 9,
+  "key": "succ.residual_robust_history.selected.mixed_id",
+  "text": "56.3",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 9,
+  "key": "succ.nominal.baseline.mixed_id",
+  "text": "59.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "nominal/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 10,
+  "key": "seeds.combined_robust_history.final.bias_5mm",
+  "text": "100.0 / 100.0 / 60.5 / 84.5 / 100.0",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "combined_robust_history/final/bias_5mm.success_rate_per_seed"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 10,
+  "key": "succ.residual_robust_history.final.mixed_id",
+  "text": "33.3",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "residual_robust_history/final/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 10,
+  "key": "sel.tag_counts",
+  "text": "2031616: 4, 4030464: 2, 6029312: 6, 8028160: 3, 10027008: 10",
+  "source": "results/v4/selection/selection.json",
+  "field": "count of selected tags"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s111.selected",
+  "text": "57",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.selected"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s111.reversed",
+  "text": "57",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.reversed"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s111.current_only",
+  "text": "55",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.current_only"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s111.constant",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.constant"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s111.zero_residual_parent",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.zero_residual_parent"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s222.selected",
+  "text": "58",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.selected"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s222.reversed",
+  "text": "57",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.reversed"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s222.current_only",
+  "text": "57",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.current_only"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s222.constant",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.constant"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s222.zero_residual_parent",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.zero_residual_parent"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s333.selected",
+  "text": "59",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.selected"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s333.reversed",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.reversed"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s333.current_only",
+  "text": "59",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.current_only"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s333.constant",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.constant"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s333.zero_residual_parent",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.zero_residual_parent"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s444.selected",
+  "text": "59",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.selected"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s444.reversed",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.reversed"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s444.current_only",
+  "text": "58",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.current_only"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s444.constant",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.constant"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s444.zero_residual_parent",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.zero_residual_parent"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s555.selected",
+  "text": "55",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.selected"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s555.reversed",
+  "text": "51",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.reversed"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s555.current_only",
+  "text": "51",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.current_only"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s555.constant",
+  "text": "59",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.constant"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined_robust_history_s555.zero_residual_parent",
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.zero_residual_parent"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.residual_robust_history_s222.const",
+  "text": "+9.1, \u221211.0, \u221211.8",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.fitted_constant_m"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 12,
+  "key": "mech.zero.combined_robust_history.agree",
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.combined_robust_history.agreement_with_parent"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 13,
+  "key": "rep.agree",
+  "text": "2,160",
+  "source": "results/v4/mechanisms/repeatability.json",
+  "field": "agree_with_reference"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 13,
+  "key": "rep.episodes",
+  "text": "2,160",
+  "source": "results/v4/mechanisms/repeatability.json",
+  "field": "episodes"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 13,
+  "key": "trace.agree",
+  "text": "323",
+  "source": "results/v4/traces6/summary.json",
+  "field": "agree"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 13,
+  "key": "trace.pairs",
+  "text": "324",
+  "source": "results/v4/traces6/summary.json",
+  "field": "pairs"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 13,
+  "key": "video.clips",
+  "text": "10",
+  "source": "results/v4/videos/video_index.json",
+  "field": "distinct_clips"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 13,
+  "key": "video.montage_s",
+  "text": "53",
+  "source": "results/v4/videos/video_index.json",
+  "field": "montage.seconds"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 14,
+  "key": "succ.geometry_fixed.baseline.grasp_10mm",
+  "text": "39.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_fixed/baseline/grasp_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 14,
+  "key": "eff.geometry_calibrated-geometry_fixed.selected.mixed_id",
+  "text": "+29.0 [+23.0, +35.5]",
+  "source": "results/v4/summary/paired_effects.json",
+  "field": "eff.geometry_calibrated-geometry_fixed.selected.mixed_id"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 15,
+  "key": "succ.geometry_calibrated.baseline.mixed_id",
+  "text": "98.5",
+  "source": "results/v4/summary/family_condition_summary.json",
+  "field": "geometry_calibrated/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 15,
+  "key": "count.invalid_resets",
+  "text": "380",
+  "source": "results/v4/summary/reconciliation.json",
+  "field": "totals.invalid_resets"
+ },
+ {
+  "document": "report/v4/slides.pptx",
+  "slide": 16,
+  "key": "comp.total",
+  "text": "16.0",
+  "source": "results/v4/compute.json",
+  "field": "total_gpu_hours"
+ }
+]
