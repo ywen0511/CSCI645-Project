@@ -1,0 +1,605 @@
+{
+ "name": "train",
+ "tasks": [
+  {
+   "id": "train_combined_clean_ff_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "111",
+    "--protocol",
+    "configs/v4/frozen/training/combined_clean_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_clean_ff_s111"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_clean_ff_s111/checkpoints/final.pt",
+    "$RUNS/train/combined_clean_ff_s111/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_clean_ff_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "222",
+    "--protocol",
+    "configs/v4/frozen/training/combined_clean_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_clean_ff_s222"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_clean_ff_s222/checkpoints/final.pt",
+    "$RUNS/train/combined_clean_ff_s222/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_clean_ff_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "333",
+    "--protocol",
+    "configs/v4/frozen/training/combined_clean_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_clean_ff_s333"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_clean_ff_s333/checkpoints/final.pt",
+    "$RUNS/train/combined_clean_ff_s333/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_clean_ff_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "444",
+    "--protocol",
+    "configs/v4/frozen/training/combined_clean_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_clean_ff_s444"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_clean_ff_s444/checkpoints/final.pt",
+    "$RUNS/train/combined_clean_ff_s444/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_clean_ff_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "555",
+    "--protocol",
+    "configs/v4/frozen/training/combined_clean_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_clean_ff_s555"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_clean_ff_s555/checkpoints/final.pt",
+    "$RUNS/train/combined_clean_ff_s555/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_ff_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "111",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_ff_s111"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_ff_s111/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_ff_s111/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_ff_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "222",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_ff_s222"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_ff_s222/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_ff_s222/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_ff_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "333",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_ff_s333"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_ff_s333/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_ff_s333/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_ff_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "444",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_ff_s444"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_ff_s444/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_ff_s444/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_ff_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "555",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_ff.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_ff_s555"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_ff_s555/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_ff_s555/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "111",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_history_s111"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_history_s111/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_history_s111/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "222",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_history_s222"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_history_s222/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_history_s222/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "333",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_history_s333"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_history_s333/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_history_s333/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "444",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_history_s444"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_history_s444/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_history_s444/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "555",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_history_s555"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_history_s555/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_history_s555/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_repeat_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "111",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_repeat.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_repeat_s111"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_repeat_s111/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_repeat_s111/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_repeat_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "222",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_repeat.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_repeat_s222"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_repeat_s222/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_repeat_s222/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_repeat_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "333",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_repeat.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_repeat_s333"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_repeat_s333/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_repeat_s333/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_repeat_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "444",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_repeat.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_repeat_s444"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_repeat_s444/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_repeat_s444/DONE.json"
+   ]
+  },
+  {
+   "id": "train_combined_robust_repeat_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "555",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_repeat.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/combined_robust_repeat_s555"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/train/combined_robust_repeat_s555/checkpoints/final.pt",
+    "$RUNS/train/combined_robust_repeat_s555/DONE.json"
+   ]
+  },
+  {
+   "id": "train_residual_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "111",
+    "--protocol",
+    "configs/v4/frozen/training/residual_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/residual_robust_history_s111"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/residual_robust_history_s111/checkpoints/final.pt",
+    "$RUNS/train/residual_robust_history_s111/DONE.json"
+   ]
+  },
+  {
+   "id": "train_residual_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "222",
+    "--protocol",
+    "configs/v4/frozen/training/residual_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/residual_robust_history_s222"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/residual_robust_history_s222/checkpoints/final.pt",
+    "$RUNS/train/residual_robust_history_s222/DONE.json"
+   ]
+  },
+  {
+   "id": "train_residual_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "333",
+    "--protocol",
+    "configs/v4/frozen/training/residual_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/residual_robust_history_s333"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/residual_robust_history_s333/checkpoints/final.pt",
+    "$RUNS/train/residual_robust_history_s333/DONE.json"
+   ]
+  },
+  {
+   "id": "train_residual_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "444",
+    "--protocol",
+    "configs/v4/frozen/training/residual_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/residual_robust_history_s444"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/residual_robust_history_s444/checkpoints/final.pt",
+    "$RUNS/train/residual_robust_history_s444/DONE.json"
+   ]
+  },
+  {
+   "id": "train_residual_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "555",
+    "--protocol",
+    "configs/v4/frozen/training/residual_robust_history.json",
+    "--run-type",
+    "final",
+    "--output",
+    "$RUNS/train/residual_robust_history_s555"
+   ],
+   "inputs": [
+    "configs/v4/frozen/training/residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/train/residual_robust_history_s555/checkpoints/final.pt",
+    "$RUNS/train/residual_robust_history_s555/DONE.json"
+   ]
+  }
+ ]
+}

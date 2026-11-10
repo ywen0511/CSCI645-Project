@@ -1,0 +1,47 @@
+{
+ "status": "frozen before final evaluation",
+ "clips": [
+  {
+   "id": "nominal_vs_geometry_vs_learned",
+   "rule": "case v4-final-grasp_15mm-0000 for nominal, geometry_fixed, geometry_calibrated and combined_robust_history (seed 111, selected)"
+  },
+  {
+   "id": "unknown_grasp_boundary",
+   "rule": "geometry_fixed on the first grasp_15mm final case (by case_id) whose outcome is a failure; if none fails, state that and show v4-final-grasp_15mm-0000"
+  },
+  {
+   "id": "noisy_calibration",
+   "rule": "geometry_calibrated on v4-final-mixed_ood-0000"
+  },
+  {
+   "id": "failure",
+   "rule": "combined_robust_history (selected) on the first mixed_id final case (seed order 111..555, then case_id) with a non-success outcome; if none exists, record 'no failure' and add no substitute"
+  },
+  {
+   "id": "intervention",
+   "rule": "combined_robust_history seed 111 selected with history order reversed on v4-final-mixed_id-0000"
+  },
+  {
+   "id": "learned_mixed_id",
+   "rule": "combined_robust_history seed 111 selected on v4-final-mixed_id-0001"
+  },
+  {
+   "id": "ema_noise",
+   "rule": "geometry_ema on v4-final-noise_2mm-0000"
+  },
+  {
+   "id": "clean",
+   "rule": "geometry_calibrated on v4-final-clean-0000"
+  }
+ ],
+ "montage": "all clips in the order above, labelled with method, seed, case, source commit and checkpoint tag",
+ "labels": [
+  "method",
+  "training seed",
+  "case id",
+  "condition",
+  "source commit",
+  "checkpoint tag",
+  "outcome"
+ ]
+}
