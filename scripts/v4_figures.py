@@ -95,7 +95,7 @@ def effects(eff, out):
     ax.axvline(0, color="#8a8984", lw=0.8)
     ax.set_yticks(range(len(rows)), [n for n, _ in reversed(rows)], fontsize=6.3)
     ax.set_xlabel("success difference (pp), 95% CI")
-    ax.set_title("Selected checkpoints. Blue = primary contrasts (thin line: Bonferroni 97.5%)", loc="left", fontsize=7.5)
+    ax.set_title("Selected checkpoints; blue = primary (thin: Bonferroni 97.5%)", loc="right", fontsize=7.5)
     fig.tight_layout()
     save(fig, out)
 

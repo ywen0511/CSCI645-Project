@@ -1,0 +1,747 @@
+{
+ "subset_cases": 60,
+ "parents": {
+  "geometry": 60,
+  "nominal": 52
+ },
+ "runs": {
+  "combined_robust_history_s111": {
+   "success": {
+    "selected": 57,
+    "reversed": 57,
+    "current_only": 55,
+    "constant": 60,
+    "zero_residual_parent": 60
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 60,
+     "disagreements": []
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 58,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0002",
+      "v4-final-boundary_x_minus_7-0003"
+     ]
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 57,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 57,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    0.0010455958790761479,
+    0.0037164437954100163,
+    0.004114319721683964
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     0.001262810398771793,
+     0.004467398595591924,
+     0.004859941587417254
+    ],
+    "sd_across_cases": [
+     0.00040431820232629843,
+     0.000919493961514601,
+     0.002484619328041634
+    ]
+   },
+   "residual_abs_max_mean_m": 0.01484554602454106,
+   "residual_saturated_episode_frac": 0.0
+  },
+  "combined_robust_history_s222": {
+   "success": {
+    "selected": 58,
+    "reversed": 57,
+    "current_only": 57,
+    "constant": 60,
+    "zero_residual_parent": 60
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0001"
+     ]
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0001"
+     ]
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 58,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 58,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    -0.0001397415634949488,
+    -0.003185174539038923,
+    0.004511039909719852
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     -0.0003063601544830818,
+     -0.0024718821117016405,
+     0.006369009986828768
+    ],
+    "sd_across_cases": [
+     0.0003748834759756438,
+     0.001342117386885963,
+     0.005666182927012873
+    ]
+   },
+   "residual_abs_max_mean_m": 0.01192539200031509,
+   "residual_saturated_episode_frac": 0.0
+  },
+  "combined_robust_history_s333": {
+   "success": {
+    "selected": 59,
+    "reversed": 60,
+    "current_only": 59,
+    "constant": 60,
+    "zero_residual_parent": 60
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 58,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    0.002403922721356237,
+    0.0033200557367737103,
+    0.002519157478728852
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     0.0026962418346635703,
+     0.004198533086759804,
+     0.003736868925505278
+    ],
+    "sd_across_cases": [
+     0.0005800784545585329,
+     0.001327818218688526,
+     0.0021876816480135377
+    ]
+   },
+   "residual_abs_max_mean_m": 0.014289383947228392,
+   "residual_saturated_episode_frac": 0.0
+  },
+  "combined_robust_history_s444": {
+   "success": {
+    "selected": 59,
+    "reversed": 60,
+    "current_only": 58,
+    "constant": 60,
+    "zero_residual_parent": 60
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000"
+     ]
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0004"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    0.0009690347901204619,
+    0.0012742782161329696,
+    0.001205736269609819
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     0.0009441642493324733,
+     0.0016928665479918974,
+     0.0012097718706921546
+    ],
+    "sd_across_cases": [
+     0.0001967865178859476,
+     0.001869981084000412,
+     0.0017542570066740033
+    ]
+   },
+   "residual_abs_max_mean_m": 0.011547948932275176,
+   "residual_saturated_episode_frac": 0.0
+  },
+  "combined_robust_history_s555": {
+   "success": {
+    "selected": 55,
+    "reversed": 51,
+    "current_only": 51,
+    "constant": 59,
+    "zero_residual_parent": 60
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 56,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0002",
+      "v4-final-boundary_x_minus_7-0003",
+      "v4-final-grasp_5mm-0000",
+      "v4-final-grasp_5mm-0004"
+     ]
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 56,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0002",
+      "v4-final-boundary_x_minus_7-0003",
+      "v4-final-grasp_5mm-0000",
+      "v4-final-grasp_5mm-0004"
+     ]
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 56,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_x_minus_7-0004",
+      "v4-final-grasp_5mm-0001",
+      "v4-final-mixed_ood-0000"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 55,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_x_minus_7-0004",
+      "v4-final-grasp_5mm-0001",
+      "v4-final-mixed_ood-0000"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    -0.00018272847908001847,
+    4.839931695605929e-05,
+    0.00047791753124797786
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     3.615289717367145e-05,
+     0.0007620066257205405,
+     0.0009109491307857704
+    ],
+    "sd_across_cases": [
+     0.0007690880228423628,
+     0.0016576428436067404,
+     0.0009710096547888666
+    ]
+   },
+   "residual_abs_max_mean_m": 0.005966572828280429,
+   "residual_saturated_episode_frac": 0.0
+  },
+  "residual_robust_history_s111": {
+   "success": {
+    "selected": 54,
+    "reversed": 55,
+    "current_only": 48,
+    "constant": 52,
+    "zero_residual_parent": 52
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000"
+     ]
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 54,
+     "disagreements": [
+      "v4-final-boundary_z_15-0004",
+      "v4-final-delay_2step-0004",
+      "v4-final-grasp_15mm-0003",
+      "v4-final-grasp_2mm-0004",
+      "v4-final-grasp_5mm-0004",
+      "v4-final-noise_2mm-0004"
+     ]
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 56,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_x_minus_7-0003",
+      "v4-final-grasp_15mm-0003",
+      "v4-final-mixed_ood-0001"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 56,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_x_minus_7-0003",
+      "v4-final-grasp_15mm-0003",
+      "v4-final-mixed_ood-0001"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    -0.00012238150760190316,
+    0.0034364874348333705,
+    0.0008986016547071101
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     0.00013834890521236822,
+     -0.0006468157661316513,
+     -0.0008010211591344858
+    ],
+    "sd_across_cases": [
+     0.0003088328993853508,
+     0.002124549749767787,
+     0.0009312735256212644
+    ]
+   },
+   "residual_abs_max_mean_m": 0.019395458108435074,
+   "residual_saturated_episode_frac": 0.0
+  },
+  "residual_robust_history_s222": {
+   "success": {
+    "selected": 23,
+    "reversed": 22,
+    "current_only": 22,
+    "constant": 18,
+    "zero_residual_parent": 52
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 57,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-grasp_2mm-0004"
+     ]
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 57,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-grasp_2mm-0004"
+     ]
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 48,
+     "disagreements": [
+      "v4-final-bias_5mm-0000",
+      "v4-final-bias_5mm-0004",
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_z_15-0004",
+      "v4-final-delay_2step-0000",
+      "v4-final-delay_2step-0004",
+      "v4-final-grasp_2mm-0000",
+      "v4-final-grasp_5mm-0000",
+      "v4-final-grasp_5mm-0001",
+      "v4-final-mixed_ood-0000",
+      "v4-final-noise_2mm-0000",
+      "v4-final-noise_2mm-0004"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 26,
+     "disagreements": [
+      "v4-final-bias_5mm-0002",
+      "v4-final-bias_5mm-0003",
+      "v4-final-bias_5mm-0004",
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_x_minus_7-0003",
+      "v4-final-boundary_z_15-0002",
+      "v4-final-boundary_z_15-0003",
+      "v4-final-boundary_z_15-0004",
+      "v4-final-delay_2step-0002",
+      "v4-final-delay_2step-0003",
+      "v4-final-delay_2step-0004",
+      "v4-final-grasp_10mm-0000",
+      "v4-final-grasp_10mm-0002",
+      "v4-final-grasp_10mm-0003",
+      "v4-final-grasp_10mm-0004",
+      "v4-final-grasp_15mm-0000",
+      "v4-final-grasp_15mm-0004",
+      "v4-final-grasp_2mm-0002",
+      "v4-final-grasp_2mm-0003",
+      "v4-final-grasp_2mm-0004",
+      "v4-final-grasp_5mm-0002",
+      "v4-final-grasp_5mm-0003",
+      "v4-final-grasp_5mm-0004",
+      "v4-final-mixed_id-0002",
+      "v4-final-mixed_id-0003",
+      "v4-final-mixed_id-0004",
+      "v4-final-mixed_ood-0001",
+      "v4-final-mixed_ood-0002",
+      "v4-final-mixed_ood-0003",
+      "v4-final-mixed_ood-0004",
+      "v4-final-noise_2mm-0002",
+      "v4-final-noise_2mm-0003",
+      "v4-final-noise_2mm-0004"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    0.009123576638332694,
+    -0.011042371391214586,
+    -0.011814781837622211
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     0.009500455071063065,
+     -0.01141482152273074,
+     -0.01223289225109406
+    ],
+    "sd_across_cases": [
+     0.0017585350094597248,
+     0.001783610423926631,
+     0.0022582209656839655
+    ]
+   },
+   "residual_abs_max_mean_m": 0.018482634394119183,
+   "residual_saturated_episode_frac": 0.0
+  },
+  "residual_robust_history_s333": {
+   "success": {
+    "selected": 39,
+    "reversed": 39,
+    "current_only": 37,
+    "constant": 42,
+    "zero_residual_parent": 52
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 58,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-grasp_5mm-0004"
+     ]
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 53,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_z_15-0000",
+      "v4-final-boundary_z_15-0001",
+      "v4-final-delay_2step-0001",
+      "v4-final-grasp_10mm-0002",
+      "v4-final-grasp_10mm-0003",
+      "v4-final-noise_2mm-0001"
+     ]
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 49,
+     "disagreements": [
+      "v4-final-bias_5mm-0000",
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0004",
+      "v4-final-delay_2step-0000",
+      "v4-final-grasp_10mm-0002",
+      "v4-final-grasp_10mm-0003",
+      "v4-final-grasp_2mm-0000",
+      "v4-final-grasp_5mm-0000",
+      "v4-final-mixed_id-0003",
+      "v4-final-mixed_ood-0000",
+      "v4-final-noise_2mm-0000"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 38,
+     "disagreements": [
+      "v4-final-bias_5mm-0000",
+      "v4-final-boundary_x_minus_7-0000",
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_x_minus_7-0003",
+      "v4-final-boundary_z_15-0004",
+      "v4-final-delay_2step-0000",
+      "v4-final-grasp_10mm-0000",
+      "v4-final-grasp_10mm-0002",
+      "v4-final-grasp_10mm-0003",
+      "v4-final-grasp_15mm-0000",
+      "v4-final-grasp_15mm-0002",
+      "v4-final-grasp_15mm-0003",
+      "v4-final-grasp_2mm-0000",
+      "v4-final-grasp_5mm-0000",
+      "v4-final-grasp_5mm-0001",
+      "v4-final-grasp_5mm-0003",
+      "v4-final-grasp_5mm-0004",
+      "v4-final-mixed_id-0002",
+      "v4-final-mixed_id-0003",
+      "v4-final-mixed_ood-0000",
+      "v4-final-mixed_ood-0001",
+      "v4-final-noise_2mm-0000"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    0.011131423894478515,
+    0.0025313160202633652,
+    -0.010605002527359953
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     0.009674729310404145,
+     0.00143522498647572,
+     -0.00966904967916775
+    ],
+    "sd_across_cases": [
+     0.005030707135720286,
+     0.0015815448464229149,
+     0.004077668423926036
+    ]
+   },
+   "residual_abs_max_mean_m": 0.01994793818642696,
+   "residual_saturated_episode_frac": 0.016666666666666666
+  },
+  "residual_robust_history_s444": {
+   "success": {
+    "selected": 51,
+    "reversed": 51,
+    "current_only": 51,
+    "constant": 53,
+    "zero_residual_parent": 52
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 60,
+     "disagreements": []
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 60,
+     "disagreements": []
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 58,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0001",
+      "v4-final-boundary_x_minus_7-0003"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0003"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    -0.0003697802788176507,
+    0.0002173766140277053,
+    6.429209512517868e-05
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     -0.00032664450550354306,
+     4.276492686138961e-05,
+     -0.0005205251763233809
+    ],
+    "sd_across_cases": [
+     0.00022210280986562615,
+     0.00038631617938846767,
+     0.0004716478901985727
+    ]
+   },
+   "residual_abs_max_mean_m": 0.00441653449088335,
+   "residual_saturated_episode_frac": 0.0
+  },
+  "residual_robust_history_s555": {
+   "success": {
+    "selected": 53,
+    "reversed": 53,
+    "current_only": 52,
+    "constant": 52,
+    "zero_residual_parent": 52
+   },
+   "agreement_with_selected": {
+    "reversed": {
+     "cases": 60,
+     "agree": 60,
+     "disagreements": []
+    },
+    "current_only": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0002"
+     ]
+    },
+    "constant": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0002"
+     ]
+    },
+    "zero_residual_parent": {
+     "cases": 60,
+     "agree": 59,
+     "disagreements": [
+      "v4-final-boundary_x_minus_7-0002"
+     ]
+    }
+   },
+   "fitted_constant_m": [
+    2.8595328321779452e-05,
+    -0.00019410830578477404,
+    -0.0005449565262097808
+   ],
+   "residual_episode_mean_xyz_m": {
+    "mean": [
+     -8.824995958522958e-05,
+     -0.0004739668431075021,
+     -0.0004441651038877122
+    ],
+    "sd_across_cases": [
+     0.00016000795777891102,
+     0.0004604253623177653,
+     0.00018948146625667349
+    ]
+   },
+   "residual_abs_max_mean_m": 0.002255250230276336,
+   "residual_saturated_episode_frac": 0.0
+  }
+ },
+ "untrained_controls": {
+  "combined_clean_ff": {
+   "success": 60,
+   "agreement_with_parent": {
+    "cases": 60,
+    "agree": 60,
+    "disagreements": []
+   },
+   "residual_abs_max_m": 0.0
+  },
+  "combined_robust_ff": {
+   "success": 60,
+   "agreement_with_parent": {
+    "cases": 60,
+    "agree": 60,
+    "disagreements": []
+   },
+   "residual_abs_max_m": 0.0
+  },
+  "combined_robust_history": {
+   "success": 60,
+   "agreement_with_parent": {
+    "cases": 60,
+    "agree": 60,
+    "disagreements": []
+   },
+   "residual_abs_max_m": 0.0
+  },
+  "combined_robust_repeat": {
+   "success": 60,
+   "agreement_with_parent": {
+    "cases": 60,
+    "agree": 60,
+    "disagreements": []
+   },
+   "residual_abs_max_m": 0.0
+  },
+  "residual_robust_history": {
+   "success": 52,
+   "agreement_with_parent": {
+    "cases": 60,
+    "agree": 60,
+    "disagreements": []
+   },
+   "residual_abs_max_m": 0.0
+  }
+ }
+}

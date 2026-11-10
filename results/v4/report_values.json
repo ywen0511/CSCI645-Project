@@ -15571,6 +15571,796 @@
   "source": "results/v4/selection/selection.json",
   "field": "count of selected tags"
  },
+ "mech.combined_robust_history_s111.selected": {
+  "value": 57,
+  "text": "57",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.selected"
+ },
+ "mech.combined_robust_history_s111.reversed": {
+  "value": 57,
+  "text": "57",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.reversed"
+ },
+ "mech.combined_robust_history_s111.current_only": {
+  "value": 55,
+  "text": "55",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.current_only"
+ },
+ "mech.combined_robust_history_s111.constant": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.constant"
+ },
+ "mech.combined_robust_history_s111.zero_residual_parent": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.success.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s111.agree.reversed": {
+  "value": 60,
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.agreement_with_selected.reversed"
+ },
+ "mech.combined_robust_history_s111.agree.current_only": {
+  "value": 58,
+  "text": "58/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.agreement_with_selected.current_only"
+ },
+ "mech.combined_robust_history_s111.agree.constant": {
+  "value": 57,
+  "text": "57/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.agreement_with_selected.constant"
+ },
+ "mech.combined_robust_history_s111.agree.zero_residual_parent": {
+  "value": 57,
+  "text": "57/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s111.const": {
+  "value": [
+   0.0010455958790761479,
+   0.0037164437954100163,
+   0.004114319721683964
+  ],
+  "text": "+1.0, +3.7, +4.1",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s111.fitted_constant_m"
+ },
+ "mech.combined_robust_history_s222.selected": {
+  "value": 58,
+  "text": "58",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.selected"
+ },
+ "mech.combined_robust_history_s222.reversed": {
+  "value": 57,
+  "text": "57",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.reversed"
+ },
+ "mech.combined_robust_history_s222.current_only": {
+  "value": 57,
+  "text": "57",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.current_only"
+ },
+ "mech.combined_robust_history_s222.constant": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.constant"
+ },
+ "mech.combined_robust_history_s222.zero_residual_parent": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.success.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s222.agree.reversed": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.agreement_with_selected.reversed"
+ },
+ "mech.combined_robust_history_s222.agree.current_only": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.agreement_with_selected.current_only"
+ },
+ "mech.combined_robust_history_s222.agree.constant": {
+  "value": 58,
+  "text": "58/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.agreement_with_selected.constant"
+ },
+ "mech.combined_robust_history_s222.agree.zero_residual_parent": {
+  "value": 58,
+  "text": "58/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s222.const": {
+  "value": [
+   -0.0001397415634949488,
+   -0.003185174539038923,
+   0.004511039909719852
+  ],
+  "text": "−0.1, −3.2, +4.5",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s222.fitted_constant_m"
+ },
+ "mech.combined_robust_history_s333.selected": {
+  "value": 59,
+  "text": "59",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.selected"
+ },
+ "mech.combined_robust_history_s333.reversed": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.reversed"
+ },
+ "mech.combined_robust_history_s333.current_only": {
+  "value": 59,
+  "text": "59",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.current_only"
+ },
+ "mech.combined_robust_history_s333.constant": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.constant"
+ },
+ "mech.combined_robust_history_s333.zero_residual_parent": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.success.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s333.agree.reversed": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.agreement_with_selected.reversed"
+ },
+ "mech.combined_robust_history_s333.agree.current_only": {
+  "value": 58,
+  "text": "58/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.agreement_with_selected.current_only"
+ },
+ "mech.combined_robust_history_s333.agree.constant": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.agreement_with_selected.constant"
+ },
+ "mech.combined_robust_history_s333.agree.zero_residual_parent": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s333.const": {
+  "value": [
+   0.002403922721356237,
+   0.0033200557367737103,
+   0.002519157478728852
+  ],
+  "text": "+2.4, +3.3, +2.5",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s333.fitted_constant_m"
+ },
+ "mech.combined_robust_history_s444.selected": {
+  "value": 59,
+  "text": "59",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.selected"
+ },
+ "mech.combined_robust_history_s444.reversed": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.reversed"
+ },
+ "mech.combined_robust_history_s444.current_only": {
+  "value": 58,
+  "text": "58",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.current_only"
+ },
+ "mech.combined_robust_history_s444.constant": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.constant"
+ },
+ "mech.combined_robust_history_s444.zero_residual_parent": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.success.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s444.agree.reversed": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.agreement_with_selected.reversed"
+ },
+ "mech.combined_robust_history_s444.agree.current_only": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.agreement_with_selected.current_only"
+ },
+ "mech.combined_robust_history_s444.agree.constant": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.agreement_with_selected.constant"
+ },
+ "mech.combined_robust_history_s444.agree.zero_residual_parent": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s444.const": {
+  "value": [
+   0.0009690347901204619,
+   0.0012742782161329696,
+   0.001205736269609819
+  ],
+  "text": "+1.0, +1.3, +1.2",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s444.fitted_constant_m"
+ },
+ "mech.combined_robust_history_s555.selected": {
+  "value": 55,
+  "text": "55",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.selected"
+ },
+ "mech.combined_robust_history_s555.reversed": {
+  "value": 51,
+  "text": "51",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.reversed"
+ },
+ "mech.combined_robust_history_s555.current_only": {
+  "value": 51,
+  "text": "51",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.current_only"
+ },
+ "mech.combined_robust_history_s555.constant": {
+  "value": 59,
+  "text": "59",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.constant"
+ },
+ "mech.combined_robust_history_s555.zero_residual_parent": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.success.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s555.agree.reversed": {
+  "value": 56,
+  "text": "56/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.agreement_with_selected.reversed"
+ },
+ "mech.combined_robust_history_s555.agree.current_only": {
+  "value": 56,
+  "text": "56/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.agreement_with_selected.current_only"
+ },
+ "mech.combined_robust_history_s555.agree.constant": {
+  "value": 56,
+  "text": "56/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.agreement_with_selected.constant"
+ },
+ "mech.combined_robust_history_s555.agree.zero_residual_parent": {
+  "value": 55,
+  "text": "55/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.combined_robust_history_s555.const": {
+  "value": [
+   -0.00018272847908001847,
+   4.839931695605929e-05,
+   0.00047791753124797786
+  ],
+  "text": "−0.2, +0.0, +0.5",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.combined_robust_history_s555.fitted_constant_m"
+ },
+ "mech.residual_robust_history_s111.selected": {
+  "value": 54,
+  "text": "54",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.success.selected"
+ },
+ "mech.residual_robust_history_s111.reversed": {
+  "value": 55,
+  "text": "55",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.success.reversed"
+ },
+ "mech.residual_robust_history_s111.current_only": {
+  "value": 48,
+  "text": "48",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.success.current_only"
+ },
+ "mech.residual_robust_history_s111.constant": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.success.constant"
+ },
+ "mech.residual_robust_history_s111.zero_residual_parent": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.success.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s111.agree.reversed": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.agreement_with_selected.reversed"
+ },
+ "mech.residual_robust_history_s111.agree.current_only": {
+  "value": 54,
+  "text": "54/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.agreement_with_selected.current_only"
+ },
+ "mech.residual_robust_history_s111.agree.constant": {
+  "value": 56,
+  "text": "56/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.agreement_with_selected.constant"
+ },
+ "mech.residual_robust_history_s111.agree.zero_residual_parent": {
+  "value": 56,
+  "text": "56/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s111.const": {
+  "value": [
+   -0.00012238150760190316,
+   0.0034364874348333705,
+   0.0008986016547071101
+  ],
+  "text": "−0.1, +3.4, +0.9",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s111.fitted_constant_m"
+ },
+ "mech.residual_robust_history_s222.selected": {
+  "value": 23,
+  "text": "23",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.success.selected"
+ },
+ "mech.residual_robust_history_s222.reversed": {
+  "value": 22,
+  "text": "22",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.success.reversed"
+ },
+ "mech.residual_robust_history_s222.current_only": {
+  "value": 22,
+  "text": "22",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.success.current_only"
+ },
+ "mech.residual_robust_history_s222.constant": {
+  "value": 18,
+  "text": "18",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.success.constant"
+ },
+ "mech.residual_robust_history_s222.zero_residual_parent": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.success.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s222.agree.reversed": {
+  "value": 57,
+  "text": "57/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.agreement_with_selected.reversed"
+ },
+ "mech.residual_robust_history_s222.agree.current_only": {
+  "value": 57,
+  "text": "57/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.agreement_with_selected.current_only"
+ },
+ "mech.residual_robust_history_s222.agree.constant": {
+  "value": 48,
+  "text": "48/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.agreement_with_selected.constant"
+ },
+ "mech.residual_robust_history_s222.agree.zero_residual_parent": {
+  "value": 26,
+  "text": "26/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s222.const": {
+  "value": [
+   0.009123576638332694,
+   -0.011042371391214586,
+   -0.011814781837622211
+  ],
+  "text": "+9.1, −11.0, −11.8",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s222.fitted_constant_m"
+ },
+ "mech.residual_robust_history_s333.selected": {
+  "value": 39,
+  "text": "39",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.success.selected"
+ },
+ "mech.residual_robust_history_s333.reversed": {
+  "value": 39,
+  "text": "39",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.success.reversed"
+ },
+ "mech.residual_robust_history_s333.current_only": {
+  "value": 37,
+  "text": "37",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.success.current_only"
+ },
+ "mech.residual_robust_history_s333.constant": {
+  "value": 42,
+  "text": "42",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.success.constant"
+ },
+ "mech.residual_robust_history_s333.zero_residual_parent": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.success.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s333.agree.reversed": {
+  "value": 58,
+  "text": "58/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.agreement_with_selected.reversed"
+ },
+ "mech.residual_robust_history_s333.agree.current_only": {
+  "value": 53,
+  "text": "53/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.agreement_with_selected.current_only"
+ },
+ "mech.residual_robust_history_s333.agree.constant": {
+  "value": 49,
+  "text": "49/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.agreement_with_selected.constant"
+ },
+ "mech.residual_robust_history_s333.agree.zero_residual_parent": {
+  "value": 38,
+  "text": "38/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s333.const": {
+  "value": [
+   0.011131423894478515,
+   0.0025313160202633652,
+   -0.010605002527359953
+  ],
+  "text": "+11.1, +2.5, −10.6",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s333.fitted_constant_m"
+ },
+ "mech.residual_robust_history_s444.selected": {
+  "value": 51,
+  "text": "51",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.success.selected"
+ },
+ "mech.residual_robust_history_s444.reversed": {
+  "value": 51,
+  "text": "51",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.success.reversed"
+ },
+ "mech.residual_robust_history_s444.current_only": {
+  "value": 51,
+  "text": "51",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.success.current_only"
+ },
+ "mech.residual_robust_history_s444.constant": {
+  "value": 53,
+  "text": "53",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.success.constant"
+ },
+ "mech.residual_robust_history_s444.zero_residual_parent": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.success.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s444.agree.reversed": {
+  "value": 60,
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.agreement_with_selected.reversed"
+ },
+ "mech.residual_robust_history_s444.agree.current_only": {
+  "value": 60,
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.agreement_with_selected.current_only"
+ },
+ "mech.residual_robust_history_s444.agree.constant": {
+  "value": 58,
+  "text": "58/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.agreement_with_selected.constant"
+ },
+ "mech.residual_robust_history_s444.agree.zero_residual_parent": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s444.const": {
+  "value": [
+   -0.0003697802788176507,
+   0.0002173766140277053,
+   6.429209512517868e-05
+  ],
+  "text": "−0.4, +0.2, +0.1",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s444.fitted_constant_m"
+ },
+ "mech.residual_robust_history_s555.selected": {
+  "value": 53,
+  "text": "53",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.success.selected"
+ },
+ "mech.residual_robust_history_s555.reversed": {
+  "value": 53,
+  "text": "53",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.success.reversed"
+ },
+ "mech.residual_robust_history_s555.current_only": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.success.current_only"
+ },
+ "mech.residual_robust_history_s555.constant": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.success.constant"
+ },
+ "mech.residual_robust_history_s555.zero_residual_parent": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.success.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s555.agree.reversed": {
+  "value": 60,
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.agreement_with_selected.reversed"
+ },
+ "mech.residual_robust_history_s555.agree.current_only": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.agreement_with_selected.current_only"
+ },
+ "mech.residual_robust_history_s555.agree.constant": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.agreement_with_selected.constant"
+ },
+ "mech.residual_robust_history_s555.agree.zero_residual_parent": {
+  "value": 59,
+  "text": "59/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.agreement_with_selected.zero_residual_parent"
+ },
+ "mech.residual_robust_history_s555.const": {
+  "value": [
+   2.8595328321779452e-05,
+   -0.00019410830578477404,
+   -0.0005449565262097808
+  ],
+  "text": "+0.0, −0.2, −0.5",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.residual_robust_history_s555.fitted_constant_m"
+ },
+ "mech.zero.combined_clean_ff": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.combined_clean_ff.success"
+ },
+ "mech.zero.combined_clean_ff.agree": {
+  "value": 60,
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.combined_clean_ff.agreement_with_parent"
+ },
+ "mech.zero.combined_robust_ff": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.combined_robust_ff.success"
+ },
+ "mech.zero.combined_robust_ff.agree": {
+  "value": 60,
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.combined_robust_ff.agreement_with_parent"
+ },
+ "mech.zero.combined_robust_history": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.combined_robust_history.success"
+ },
+ "mech.zero.combined_robust_history.agree": {
+  "value": 60,
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.combined_robust_history.agreement_with_parent"
+ },
+ "mech.zero.combined_robust_repeat": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.combined_robust_repeat.success"
+ },
+ "mech.zero.combined_robust_repeat.agree": {
+  "value": 60,
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.combined_robust_repeat.agreement_with_parent"
+ },
+ "mech.zero.residual_robust_history": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.residual_robust_history.success"
+ },
+ "mech.zero.residual_robust_history.agree": {
+  "value": 60,
+  "text": "60/60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "untrained_controls.residual_robust_history.agreement_with_parent"
+ },
+ "mech.parent.geometry": {
+  "value": 60,
+  "text": "60",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "parents.geometry"
+ },
+ "mech.parent.nominal": {
+  "value": 52,
+  "text": "52",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "parents.nominal"
+ },
+ "rep.episodes": {
+  "value": 2160,
+  "text": "2,160",
+  "source": "results/v4/mechanisms/repeatability.json",
+  "field": "episodes"
+ },
+ "rep.agree": {
+  "value": 2160,
+  "text": "2,160",
+  "source": "results/v4/mechanisms/repeatability.json",
+  "field": "agree_with_reference"
+ },
+ "comp.total": {
+  "value": 15.98,
+  "text": "16.0",
+  "source": "results/v4/compute.json",
+  "field": "total_gpu_hours"
+ },
+ "comp.stage_a": {
+  "value": 0.259,
+  "text": "0.3",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.stage_a.gpu_hours"
+ },
+ "comp.v4_acceptance": {
+  "value": 0.877,
+  "text": "0.9",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.v4_acceptance.gpu_hours"
+ },
+ "comp.v4_development": {
+  "value": 0.394,
+  "text": "0.4",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.v4_development.gpu_hours"
+ },
+ "comp.v4_final_evaluation": {
+  "value": 2.116,
+  "text": "2.1",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.v4_final_evaluation.gpu_hours"
+ },
+ "comp.v4_formal_training": {
+  "value": 8.606,
+  "text": "8.6",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.v4_formal_training.gpu_hours"
+ },
+ "comp.v4_mechanisms_repeatability": {
+  "value": 1.407,
+  "text": "1.4",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.v4_mechanisms_repeatability.gpu_hours"
+ },
+ "comp.v4_pilots": {
+  "value": 1.003,
+  "text": "1.0",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.v4_pilots.gpu_hours"
+ },
+ "comp.v4_traces": {
+  "value": 0.472,
+  "text": "0.5",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.v4_traces.gpu_hours"
+ },
+ "comp.v4_validation": {
+  "value": 0.754,
+  "text": "0.8",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.v4_validation.gpu_hours"
+ },
+ "comp.v4_videos": {
+  "value": 0.096,
+  "text": "0.1",
+  "source": "results/v4/compute.json",
+  "field": "by_stage.v4_videos.gpu_hours"
+ },
  "acc.A1": {
   "value": null,
   "text": "65/65 + 65/65",
@@ -15618,6 +16408,36 @@
   "text": "23,658,496",
   "source": "results/v4/pilot/summary.json",
   "field": "total_training_transitions"
+ },
+ "table.mechanisms": {
+  "value": null,
+  "text": "| selected run | selected | reversed history | current frame only | dev-fitted constant | zero residual (parent) | constant fitted (x, y, z mm) |\n|---|---|---|---|---|---|---|\n| combined_robust_history_s111 | 57 | 57 | 55 | 60 | 60 | +1.0, +3.7, +4.1 |\n| combined_robust_history_s222 | 58 | 57 | 57 | 60 | 60 | −0.1, −3.2, +4.5 |\n| combined_robust_history_s333 | 59 | 60 | 59 | 60 | 60 | +2.4, +3.3, +2.5 |\n| combined_robust_history_s444 | 59 | 60 | 58 | 60 | 60 | +1.0, +1.3, +1.2 |\n| combined_robust_history_s555 | 55 | 51 | 51 | 59 | 60 | −0.2, +0.0, +0.5 |\n| residual_robust_history_s111 | 54 | 55 | 48 | 52 | 52 | −0.1, +3.4, +0.9 |\n| residual_robust_history_s222 | 23 | 22 | 22 | 18 | 52 | +9.1, −11.0, −11.8 |\n| residual_robust_history_s333 | 39 | 39 | 37 | 42 | 52 | +11.1, +2.5, −10.6 |\n| residual_robust_history_s444 | 51 | 51 | 51 | 53 | 52 | −0.4, +0.2, +0.1 |\n| residual_robust_history_s555 | 53 | 53 | 52 | 52 | 52 | +0.0, −0.2, −0.5 |",
+  "source": "results/v4/mechanisms/mechanisms.json",
+  "field": "runs.*.success (of 60 subset cases)"
+ },
+ "trace.agree": {
+  "value": 323,
+  "text": "323",
+  "source": "results/v4/traces6/summary.json",
+  "field": "agree"
+ },
+ "trace.pairs": {
+  "value": 324,
+  "text": "324",
+  "source": "results/v4/traces6/summary.json",
+  "field": "pairs"
+ },
+ "video.montage_s": {
+  "value": 52.9,
+  "text": "53",
+  "source": "results/v4/videos/video_index.json",
+  "field": "montage.seconds"
+ },
+ "video.clips": {
+  "value": 10,
+  "text": "10",
+  "source": "results/v4/videos/video_index.json",
+  "field": "distinct_clips"
  },
  "table.main": {
   "value": null,

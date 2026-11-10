@@ -133,6 +133,25 @@ def main():
     psrc = "results/v4/pilot/summary.json"
     PL = json.loads((ROOT / psrc).read_text())
     put("pilot.total", PL["total_training_transitions"], f"{PL['total_training_transitions']:,}", psrc, "total_training_transitions")
+    if (ROOT / msrc).exists():
+        M = json.loads((ROOT / msrc).read_text())
+        lines = ["| selected run | selected | reversed history | current frame only | dev-fitted constant | zero residual (parent) | constant fitted (x, y, z mm) |",
+                 "|---|---|---|---|---|---|---|"]
+        for run, m in M["runs"].items():
+            sc = m["success"]
+            lines.append(f"| {run} | {sc['selected']} | {sc['reversed']} | {sc['current_only']} | {sc['constant']} | {sc['zero_residual_parent']} | "
+                         + ", ".join(f"{1000 * x:+.1f}".replace("-", "−") for x in m["fitted_constant_m"]) + " |")
+        put("table.mechanisms", None, "\n".join(lines), msrc, "runs.*.success (of 60 subset cases)")
+    tsrc = "results/v4/traces6/summary.json"
+    if (ROOT / tsrc).exists():
+        T6 = json.loads((ROOT / tsrc).read_text())
+        put("trace.agree", T6["agree"], str(T6["agree"]), tsrc, "agree")
+        put("trace.pairs", T6["pairs"], str(T6["pairs"]), tsrc, "pairs")
+    vsrc = "results/v4/videos/video_index.json"
+    if (ROOT / vsrc).exists():
+        VI = json.loads((ROOT / vsrc).read_text())
+        put("video.montage_s", VI["montage"]["seconds"], f"{VI['montage']['seconds']:.0f}", vsrc, "montage.seconds")
+        put("video.clips", VI["distinct_clips"], str(VI["distinct_clips"]), vsrc, "distinct_clips")
     # main table: baselines + learned selected + learned final, success % per condition
     hdr = "| controller | " + " | ".join(c.replace("boundary_", "").replace("_", " ") for c in v4.ORDER) + " |"
     lines = [hdr, "|" + "---|" * (len(v4.ORDER) + 1)]

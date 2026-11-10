@@ -233,7 +233,54 @@ history training degrades late for some seeds, and residual-only training degrad
 
 {{table.selection}}
 
-{{section.mechanisms}}
+## 7. Mechanisms (60-case subset: five base cases per final condition; selected checkpoints)
+
+Each selected history run was re-evaluated with its history reversed, with the current frame repeated four times
+(no temporal information), with its own residual replaced by one constant vector fitted on development records only,
+and with the residual removed (= its parent). Successes out of 60:
+
+{{table.mechanisms}}
+
+- **Learned combined residuals behave like constant offsets.** For every combined history seed the development-fitted
+  constant does at least as well as the policy itself on this subset (e.g. seed 111: policy {{mech.combined_robust_history_s111.selected}},
+  constant {{mech.combined_robust_history_s111.constant}}, parent {{mech.combined_robust_history_s111.zero_residual_parent}}).
+- **Little temporal use.** Reversing the four frames changes few outcomes (seed 111 agrees on {{mech.combined_robust_history_s111.agree.reversed}}
+  cases, seed 555 on {{mech.combined_robust_history_s555.agree.reversed}}); repeating the current frame changes a similar number
+  (seed 555 {{mech.combined_robust_history_s555.agree.current_only}}). The exploratory history − repeated-current advantage on
+  `mixed_ood` (Section 6.3) is therefore not explained by a strong use of frame order.
+- **Residual-only failures are large constant offsets.** Two residual-only seeds learned offsets of about 1 cm per axis
+  (seed 222: {{mech.residual_robust_history_s222.const}} mm; seed 333: {{mech.residual_robust_history_s333.const}} mm) and fall
+  to {{mech.residual_robust_history_s222.selected}} and {{mech.residual_robust_history_s333.selected}} of 60, below the nominal parent ({{mech.parent.nominal}}).
+- **Untrained controls.** Step-0 checkpoints (zero-mean output) of every profile reproduce their parents on all 60 cases
+  (combined: {{mech.zero.combined_robust_history}}/60, agreement {{mech.zero.combined_robust_history.agree}}; residual-only:
+  {{mech.zero.residual_robust_history}}/60).
+
+## 8. Repeatability, traces and videos
+
+**Repeatability.** The calibrated baseline and all five selected history policies were re-run on the 60-case subset at
+batch sizes 6 and 20 with three process seeds each: {{rep.agree}} of {{rep.episodes}} episodes reproduce the reference terminal
+outcome (`results/v4/mechanisms/repeatability.json`).
+
+**Supplementary traces.** The final matrix runs 240 environments at a time, so per-step traces were recorded in separate
+batch-6 runs of six predeclared cases for every executed entry; their outcomes agree with the formal records in
+{{trace.agree}} of {{trace.pairs}} case-entry pairs (the exception is listed in `results/v4/traces6/summary.json`). Formal outcomes
+always come from the final matrix.
+
+![Estimate error over time, grasp_15mm case](../../results/v4/figures/trace_v4-final-grasp_15mm-0000.png)
+
+*Controller estimate − true bar position. Left: the fixed transform carries the in-grasp offset as a constant error until
+the receiver collides. Right: the calibrated reference removes it when the 0.5 s window closes.*
+
+![Estimate error over time, mixed_id case](../../results/v4/figures/trace_v4-final-mixed_id-0000.png)
+
+*With a biased sensor (`mixed_id`), calibration removes the grasp offset but inherits the bias (a few millimetres).*
+
+**Videos.** Ten clips and a {{video.montage_s}} s montage were chosen by the frozen rule (`configs/v4/video_rule.json`;
+`results/v4/videos/video_index.json`): matched nominal / fixed / calibrated / learned clips on a +15 mm case, the
+fixed-transform boundary failure, noisy calibration, the reversed-history intervention, a learned `mixed_id` case, EMA
+under noise and a clean case. Every replay outcome equals its evaluation record. The designated learned failure clip
+does not exist: no selected history policy failed a `mixed_id` case, and no substitute was chosen.
+
 
 ## 9. Compute
 
