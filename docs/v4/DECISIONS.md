@@ -153,7 +153,7 @@ PPO iterations per pilot (≤ 0.66M transitions in total, counted against the 24
 under `v4/pilots/`) and the pilots were restarted one at a time in a new runs root. Pilot total ≤ 23.67M.
 Formal training also runs one process per GPU.
 
-## 2026-11-10 01:40 — pilots reviewed; no change to training settings
+## 2026-11-10 01:31 — pilots reviewed; no change to training settings
 
 Four pilots (5,505,024 transitions each, seeds 901/902, `results/v4/pilots/pilot_eval_summary.json`; source
 `5089373`), evaluated on the six validation-like development strata at 2M, 4M and final: the combined robust
@@ -164,7 +164,7 @@ Pilot transitions: 22,020,096 + smoke 983,040 + killed packed attempt ≤ 655,36
 Decision: keep the V3 PPO, network, rollout and curriculum settings; freeze. (The session was paused for about
 eight hours after the pilots finished; nothing ran in between.)
 
-## 2026-11-10 01:55 — freeze, concurrent owner guards, and final suite
+## 2026-11-10 01:32–01:34 — freeze, concurrent owner guards, and final suite
 
 - The freeze was committed as `aac4d98` (pilot evidence committed first in `79d691d`) and tagged `experiment-v4`; the
   tag was pushed before the branch push was rejected because the owner had pushed CPU workflow guards (`d2cc873`,
@@ -185,3 +185,6 @@ eight hours after the pilots finished; nothing ran in between.)
   `481c40c7cfede0e7c0d895e0e707c9b7f72265e8dc417b1276aa08ef712c9456`, 2,400 cases) and copied with its manifest
   `configs/v4/FINAL_SUITE.json`; the delivery tree's generator reproduces the same bytes. Formal runs execute from
   `experiment-v4`; selection/analysis tooling runs from the delivery tree (owner's guarded versions).
+
+(Correction, 01:40: the two headings above first carried guessed times, 01:40 and 01:55; they now carry the
+commit times of `79d691d` (01:32) and `aac4d98`/`856fa5c`/`ff70df1` (01:32–01:34). Formal training started 01:35.)
