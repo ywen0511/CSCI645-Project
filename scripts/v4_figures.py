@@ -106,7 +106,7 @@ def failures(summary, out):
                ("drop", "#6250d6"), ("episode_timeout", "#8a8984")]
     conds = ["grasp_15mm", "mixed_id", "mixed_ood"]
     ents = [(f, "baseline") for f in BASES] + [(f, "selected") for f in LEARNED]
-    fig, axes = plt.subplots(1, 3, figsize=(10, 3.4), sharey=True)
+    fig, axes = plt.subplots(1, 3, figsize=(10, 3.8), sharey=True)
     for ax, c in zip(axes, conds):
         left = np.zeros(len(ents))
         for reason, col in reasons:
@@ -118,8 +118,9 @@ def failures(summary, out):
         ax.invert_yaxis()
     axes[0].set_yticks(range(len(ents)), [LABEL[f] + ("" if r == "baseline" else " (sel.)") for f, r in ents], fontsize=6.5)
     axes[1].set_xlabel("cases (of 200; learned = mean over seeds); exclusive terminal reason")
-    axes[2].legend(fontsize=6.5, loc="lower right")
-    fig.tight_layout()
+    h, l = axes[0].get_legend_handles_labels()
+    fig.legend(h, l, loc="lower center", ncol=5, fontsize=7, bbox_to_anchor=(0.6, 0.0))
+    fig.tight_layout(rect=(0, 0.07, 1, 1))
     save(fig, out)
 
 
@@ -166,7 +167,7 @@ def learning_curves(train, out):
         sm = lambda a: np.convolve(a, np.ones(win) / win, mode="valid")  # noqa: E731
         axes[0].plot(t[win - 1:], 100 * sm(succ.mean(0)), color=COLOR[f], lw=1.5, label=LABEL[f])
         axes[1].plot(t, std.mean(0), color=COLOR[f], lw=1.5, label=LABEL[f])
-    axes[0].set_ylabel("training-episode success (%, 10-iteration mean, 5 seeds)")
+    axes[0].set_ylabel("training success (%, mean of 5 seeds)")
     axes[1].set_ylabel("policy action std (normalized)")
     for ax in axes:
         ax.set_xlabel("transitions (millions)")
