@@ -1,7 +1,7 @@
 {
  "assignment": "V4_REMAINING.md",
- "complete": false,
- "stage": "v4_release",
+ "complete": true,
+ "stage": "complete",
  "original_v3_complete": true,
  "original_release": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0",
  "local_gpu_or_simulator_run": false,
@@ -26,8 +26,8 @@
   "frozen": true,
   "formal_runs_planned": 25,
   "formal_runs_completed": 25,
-  "release": "pending v4.0.0 publication",
-  "fresh_download_verified": false,
+  "release": "published: https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.0 (30 assets, all data) + https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.1 (delivery patch: verification stage)",
+  "fresh_download_verified": true,
   "optional_dynamic_slip": "not_performed",
   "branch": "study/v4-grasp-uncertainty",
   "acceptance_evidence": "results/v4/acceptance/acceptance.json",
@@ -48,12 +48,15 @@
   "videos": "10 clips + montage (results/v4/videos/video_index.json)",
   "report": "report/v4/report.md + report.pdf",
   "slides": "report/v4/slides.pptx + slides.pdf + speaker_notes.md",
-  "gpu_hours": "see results/v4/compute.json"
+  "gpu_hours": "see results/v4/compute.json",
+  "delivery_tags": {
+   "v4.0.0": "0160e378a398fde898169d1146aec2b89fe4a6b8",
+   "v4.0.1": "c561eb43175c32ec25a1e30c826bea6bed4430a0"
+  },
+  "fresh_download_verification": "docs/v4/VERIFICATION.md (v4.0.1 instructions: all checks passed; v4.0.0 instructions failed at section 3, fixed by v4.0.1)",
+  "gpu_hours_total": 16.18
  },
- "next_actions": [
-  "Package and publish v4.0.0 (all checkpoints and raw records)",
-  "Fresh public-download verification; set complete"
- ],
+ "next_actions": [],
  "blockers": [],
  "original_assignment": "POST_V3_EXECUTION.md"
 }

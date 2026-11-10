@@ -1,0 +1,51 @@
+{
+ "repo": "ywen0511/CSCI645-Project",
+ "tag": "v4.0.1",
+ "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.1",
+ "published_at": "2026-11-10T05:16:52Z",
+ "anonymous": true,
+ "assets": [
+  {
+   "name": "RELEASE_NOTES.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.1/RELEASE_NOTES.md",
+   "bytes": 1176,
+   "sha256": "7fe2195a162fb4657d1911ed46cd78cc55d1a42cc3285362f283c89a7aea0107",
+   "utc": "2026-11-10T05:25:53Z"
+  },
+  {
+   "name": "REPRODUCE.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.1/REPRODUCE.md",
+   "bytes": 6283,
+   "sha256": "9424c56e3916a27c7c83ccc9804d10b088847b183152588defdb9e947cd14b20",
+   "utc": "2026-11-10T05:25:54Z"
+  },
+  {
+   "name": "SHA256SUMS",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.1/SHA256SUMS",
+   "bytes": 419,
+   "sha256": "8caf64c9790ccbf0338a2bf36c12f6c8e18bbcb5dc2658e88711bd0083a697bf",
+   "utc": "2026-11-10T05:25:54Z"
+  },
+  {
+   "name": "VERIFICATION.md",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.1/VERIFICATION.md",
+   "bytes": 692,
+   "sha256": "f9099346458001f0b07fab48e6ad6e090064951df3135378adaf54ba9e07ea73",
+   "utc": "2026-11-10T05:25:54Z"
+  },
+  {
+   "name": "release_manifest.json",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.1/release_manifest.json",
+   "bytes": 8438,
+   "sha256": "d75bbad0893d5b3e82c689b8ec9fa823734ecd8a95e48100a331f18ad0a5a11d",
+   "utc": "2026-11-10T05:25:54Z"
+  },
+  {
+   "name": "source-v4.0.1.tar.gz",
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.1/source-v4.0.1.tar.gz",
+   "bytes": 19246790,
+   "sha256": "227823ecc6949ed1cab58e54592d594126e63cbcedad9e0317949c0e114c5a83",
+   "utc": "2026-11-10T05:25:55Z"
+  }
+ ]
+}

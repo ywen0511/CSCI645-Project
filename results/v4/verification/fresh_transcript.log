@@ -1,0 +1,483 @@
+Sender: LSF System <<lsf>
+Subject: Job 8108811: <c645v4_fresh2> in cluster <<cluster>> Done
+
+Job <c645v4_fresh2> was submitted from host <<cluster>> by user <<user>> in cluster <<cluster>> at Tue Nov 10 05:17:30 2026
+Job was executed on host(s) <16*<cluster>>, in queue <gpu_large_shared>, as user <<user>> in cluster <<cluster>> at Tue Nov 10 05:17:34 2026
+<<home>> was used as the home directory.
+<<home>> was used as the working directory.
+Started at Tue Nov 10 05:17:34 2026
+Terminated at Tue Nov 10 05:25:55 2026
+Results reported at Tue Nov 10 05:25:55 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+bash <work-root>/runs/csci645-project/post_v3/v4_fresh2.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   640.01 sec.
+    Max Memory :                                 5720.18 MB
+    Average Memory :                             2428.57 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   185699 MB
+    Max Processes :                              6
+    Max Threads :                                86
+    Run time :                                   507 sec.
+    Turnaround time :                            505 sec.
+
+The output (if any) follows:
+
++ [05:17:34] echo '=== REPRODUCE section: 1. Checkouts (CPU) ==='
+=== REPRODUCE section: 1. Checkouts (CPU) ===
++ [05:17:34] set -eu
+++ [05:17:34] mktemp -d <work-root>/runs/csci645-project/v4_fresh2/csci645-v4-reproduce.XXXXXX
++ [05:17:34] V4_WORK=$V4_WORK
++ [05:17:34] T=$V4_WORK/delivery
++ [05:17:34] E=$V4_WORK/experiment
++ [05:17:34] B=$V4_WORK/release
++ [05:17:34] X=$V4_WORK/extracted
++ [05:17:34] G=$V4_WORK/regenerated
++ [05:17:34] R=$V4_WORK/replay
++ [05:17:34] REPO_URL=https://github.com/ywen0511/CSCI645-Project.git
++ [05:17:34] git clone --branch v4.0.1 https://github.com/ywen0511/CSCI645-Project.git $V4_WORK/delivery
+Cloning into '$V4_WORK/delivery'...
+Note: switching to 'c561eb43175c32ec25a1e30c826bea6bed4430a0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  33% (375/1108)
+Updating files:  34% (377/1108)
+Updating files:  35% (388/1108)
+Updating files:  36% (399/1108)
+Updating files:  37% (410/1108)
+Updating files:  38% (422/1108)
+Updating files:  39% (433/1108)
+Updating files:  40% (444/1108)
+Updating files:  41% (455/1108)
+Updating files:  42% (466/1108)
+Updating files:  43% (477/1108)
+Updating files:  44% (488/1108)
+Updating files:  45% (499/1108)
+Updating files:  46% (510/1108)
+Updating files:  47% (521/1108)
+Updating files:  48% (532/1108)
+Updating files:  49% (543/1108)
+Updating files:  50% (554/1108)
+Updating files:  51% (566/1108)
+Updating files:  52% (577/1108)
+Updating files:  53% (588/1108)
+Updating files:  54% (599/1108)
+Updating files:  55% (610/1108)
+Updating files:  56% (621/1108)
+Updating files:  57% (632/1108)
+Updating files:  58% (643/1108)
+Updating files:  59% (654/1108)
+Updating files:  60% (665/1108)
+Updating files:  61% (676/1108)
+Updating files:  62% (687/1108)
+Updating files:  62% (698/1108)
+Updating files:  63% (699/1108)
+Updating files:  64% (710/1108)
+Updating files:  65% (721/1108)
+Updating files:  66% (732/1108)
+Updating files:  67% (743/1108)
+Updating files:  68% (754/1108)
+Updating files:  69% (765/1108)
+Updating files:  70% (776/1108)
+Updating files:  71% (787/1108)
+Updating files:  72% (798/1108)
+Updating files:  73% (809/1108)
+Updating files:  74% (820/1108)
+Updating files:  75% (831/1108)
+Updating files:  76% (843/1108)
+Updating files:  77% (854/1108)
+Updating files:  78% (865/1108)
+Updating files:  79% (876/1108)
+Updating files:  80% (887/1108)
+Updating files:  81% (898/1108)
+Updating files:  82% (909/1108)
+Updating files:  83% (920/1108)
+Updating files:  84% (931/1108)
+Updating files:  85% (942/1108)
+Updating files:  86% (953/1108)
+Updating files:  87% (964/1108)
+Updating files:  88% (976/1108)
+Updating files:  89% (987/1108)
+Updating files:  90% (998/1108)
+Updating files:  91% (1009/1108)
+Updating files:  92% (1020/1108)
+Updating files:  93% (1031/1108)
+Updating files:  93% (1039/1108)
+Updating files:  94% (1042/1108)
+Updating files:  95% (1053/1108)
+Updating files:  96% (1064/1108)
+Updating files:  97% (1075/1108)
+Updating files:  98% (1086/1108)
+Updating files:  99% (1097/1108)
+Updating files: 100% (1108/1108)
+Updating files: 100% (1108/1108), done.
++ [05:17:39] git clone --branch experiment-v4 https://github.com/ywen0511/CSCI645-Project.git $V4_WORK/experiment
+Cloning into '$V4_WORK/experiment'...
+Note: switching to 'aac4d98274814b1ab121a715db71187e3e1cc0b9'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  41% (359/870)
+Updating files:  42% (366/870)
+Updating files:  43% (375/870)
+Updating files:  44% (383/870)
+Updating files:  45% (392/870)
+Updating files:  46% (401/870)
+Updating files:  47% (409/870)
+Updating files:  48% (418/870)
+Updating files:  49% (427/870)
+Updating files:  50% (435/870)
+Updating files:  51% (444/870)
+Updating files:  52% (453/870)
+Updating files:  53% (462/870)
+Updating files:  54% (470/870)
+Updating files:  55% (479/870)
+Updating files:  56% (488/870)
+Updating files:  57% (496/870)
+Updating files:  58% (505/870)
+Updating files:  59% (514/870)
+Updating files:  60% (522/870)
+Updating files:  61% (531/870)
+Updating files:  62% (540/870)
+Updating files:  63% (549/870)
+Updating files:  64% (557/870)
+Updating files:  65% (566/870)
+Updating files:  66% (575/870)
+Updating files:  67% (583/870)
+Updating files:  68% (592/870)
+Updating files:  69% (601/870)
+Updating files:  70% (609/870)
+Updating files:  71% (618/870)
+Updating files:  72% (627/870)
+Updating files:  73% (636/870)
+Updating files:  74% (644/870)
+Updating files:  75% (653/870)
+Updating files:  75% (660/870)
+Updating files:  76% (662/870)
+Updating files:  77% (670/870)
+Updating files:  78% (679/870)
+Updating files:  79% (688/870)
+Updating files:  80% (696/870)
+Updating files:  81% (705/870)
+Updating files:  82% (714/870)
+Updating files:  83% (723/870)
+Updating files:  84% (731/870)
+Updating files:  85% (740/870)
+Updating files:  86% (749/870)
+Updating files:  87% (757/870)
+Updating files:  88% (766/870)
+Updating files:  89% (775/870)
+Updating files:  90% (783/870)
+Updating files:  91% (792/870)
+Updating files:  92% (801/870)
+Updating files:  93% (810/870)
+Updating files:  94% (818/870)
+Updating files:  95% (827/870)
+Updating files:  96% (836/870)
+Updating files:  97% (844/870)
+Updating files:  98% (853/870)
+Updating files:  99% (862/870)
+Updating files: 100% (870/870)
+Updating files: 100% (870/870), done.
+++ [05:17:42] git -C $V4_WORK/experiment rev-parse HEAD
++ [05:17:42] test aac4d98274814b1ab121a715db71187e3e1cc0b9 = aac4d98274814b1ab121a715db71187e3e1cc0b9
++ [05:17:42] git -C $V4_WORK/delivery rev-parse HEAD
++ [05:17:42] echo '=== REPRODUCE section: 2. Download, verify and regenerate (CPU) ==='
+=== REPRODUCE section: 2. Download, verify and regenerate (CPU) ===
++ [05:17:42] python3.13 -m venv $V4_WORK/analysis-env
++ [05:17:47] PY=$V4_WORK/analysis-env/bin/python
++ [05:17:47] $V4_WORK/analysis-env/bin/python -m pip install -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt
+Collecting contourpy==1.4.0 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 5))
+  Using cached contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler==0.12.1 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 6))
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools==4.68.0 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 7))
+  Using cached fonttools-4.68.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+Collecting ImageIO==2.38.1 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 8))
+  Using cached imageio-2.38.1-py3-none-any.whl.metadata (9.7 kB)
+Collecting imageio-ffmpeg==0.8.1 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 9))
+  Using cached imageio_ffmpeg-0.8.1-py3-none-manylinux_2_28_x86_64.whl.metadata (1.5 kB)
+Collecting kiwisolver==1.5.1 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 10))
+  Using cached kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting lxml==6.1.3 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 11))
+  Using cached lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting Markdown==3.11.2 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 12))
+  Using cached markdown-3.11.2-py3-none-any.whl.metadata (5.1 kB)
+Collecting matplotlib==3.11.2 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 13))
+  Using cached matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting numpy==2.4.4 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 14))
+  Using cached numpy-2.4.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting packaging==26.3 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 15))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow==13.0.0 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 16))
+  Using cached pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing==3.3.3 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 17))
+  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting pypdf==6.21.4 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 18))
+  Using cached pypdf-6.21.4-py3-none-any.whl.metadata (7.6 kB)
+Collecting python-dateutil==4.0.0 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 19))
+  Using cached python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting python-pptx==1.0.2 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 20))
+  Using cached python_pptx-1.0.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting typing_extensions==4.16.0 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 21))
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting tzdata==2026.6 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 22))
+  Using cached tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting xlsxwriter==3.3.1 (from -r $V4_WORK/delivery/configs/closeout/requirements-analysis.txt (line 23))
+  Using cached xlsxwriter-3.3.1-py3-none-any.whl.metadata (2.9 kB)
+Using cached contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Using cached fonttools-4.68.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+Using cached imageio-2.38.1-py3-none-any.whl (328 kB)
+Using cached imageio_ffmpeg-0.8.1-py3-none-manylinux_2_28_x86_64.whl (68.0 MB)
+Using cached kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+Using cached lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+Using cached markdown-3.11.2-py3-none-any.whl (114 kB)
+Using cached matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+Using cached numpy-2.4.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Using cached pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Using cached pypdf-6.21.4-py3-none-any.whl (410 kB)
+Using cached python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Using cached python_pptx-1.0.2-py3-none-any.whl (472 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Using cached xlsxwriter-3.3.1-py3-none-any.whl (180 kB)
+Installing collected packages: xlsxwriter, tzdata, typing_extensions, pypdf, pyparsing, pillow, packaging, numpy, Markdown, lxml, kiwisolver, imageio-ffmpeg, fonttools, cycler, python-pptx, python-dateutil, ImageIO, contourpy, matplotlib
+
+Successfully installed ImageIO-2.38.1 Markdown-3.11.2 contourpy-1.4.0 cycler-0.12.1 fonttools-4.68.0 imageio-ffmpeg-0.8.1 kiwisolver-1.5.1 lxml-6.1.3 matplotlib-3.11.2 numpy-2.4.4 packaging-26.3 pillow-13.0.0 pyparsing-3.3.3 pypdf-6.21.4 python-dateutil-4.0.0 python-pptx-1.0.2 typing_extensions-4.16.0 tzdata-2026.6 xlsxwriter-3.3.1
++ [05:18:10] $V4_WORK/analysis-env/bin/python -I $V4_WORK/delivery/scripts/v3_download.py --tag v4.0.0 --output $V4_WORK/release
+RELEASE_NOTES.md: 5,053 bytes
+REPRODUCE.md: 5,668 bytes
+SHA256SUMS: 2,574 bytes
+VERIFICATION.md: 692 bytes
+analysis.tar.gz: 3,839,625 bytes
+archive_inventories.json: 990,923 bytes
+checkpoints-formal-combined_clean_ff.tar.gz: 33,405,755 bytes
+checkpoints-formal-combined_robust_ff.tar.gz: 33,405,155 bytes
+checkpoints-formal-combined_robust_history.tar.gz: 57,617,917 bytes
+checkpoints-formal-combined_robust_repeat.tar.gz: 42,117,759 bytes
+checkpoints-formal-residual_robust_history.tar.gz: 57,575,778 bytes
+checkpoints-pilot-smoke.tar.gz: 64,745,964 bytes
+checkpoints.json: 266,462 bytes
+logs.tar.gz: 1,003,054 bytes
+raw-acceptance.tar.gz: 15,851,417 bytes
+raw-development.tar.gz: 17,938,932 bytes
+raw-extras.tar.gz: 26,844,301 bytes
+raw-final.tar.gz: 52,791,146 bytes
+raw-validation.tar.gz: 11,267,878 bytes
+release_manifest.json: 339,763 bytes
+report.md: 32,526 bytes
+report.pdf: 1,294,121 bytes
+run_index.json: 16,589 bytes
+slides.pdf: 751,420 bytes
+slides.pptx: 854,610 bytes
+source-experiment-v4.tar.gz: 15,394,163 bytes
+source-v4.0.0.tar.gz: 19,220,095 bytes
+speaker_notes.md: 2,528 bytes
+videos.json: 8,396 bytes
+videos.tar.gz: 11,018,734 bytes
+30 assets, 468.6 MB
++ [05:18:19] cd $V4_WORK/release
++ [05:18:19] sha256sum -c SHA256SUMS
+RELEASE_NOTES.md: OK
+REPRODUCE.md: OK
+VERIFICATION.md: OK
+analysis.tar.gz: OK
+archive_inventories.json: OK
+checkpoints-formal-combined_clean_ff.tar.gz: OK
+checkpoints-formal-combined_robust_ff.tar.gz: OK
+checkpoints-formal-combined_robust_history.tar.gz: OK
+checkpoints-formal-combined_robust_repeat.tar.gz: OK
+checkpoints-formal-residual_robust_history.tar.gz: OK
+checkpoints-pilot-smoke.tar.gz: OK
+checkpoints.json: OK
+logs.tar.gz: OK
+raw-acceptance.tar.gz: OK
+raw-development.tar.gz: OK
+raw-extras.tar.gz: OK
+raw-final.tar.gz: OK
+raw-validation.tar.gz: OK
+release_manifest.json: OK
+report.md: OK
+report.pdf: OK
+run_index.json: OK
+slides.pdf: OK
+slides.pptx: OK
+source-experiment-v4.tar.gz: OK
+source-v4.0.0.tar.gz: OK
+speaker_notes.md: OK
+videos.json: OK
+videos.tar.gz: OK
++ [05:18:20] $V4_WORK/analysis-env/bin/python -I $V4_WORK/delivery/scripts/v4_verify.py --bundle $V4_WORK/release --extract $V4_WORK/extracted --output $V4_WORK/bundle_verify.json
+{
+ "ok": true,
+ "failures": [],
+ "sha256sums": {
+  "listed": 29,
+  "assets": 30,
+  "bad": [],
+  "unlisted": []
+ },
+ "manifest": {
+  "assets": 28,
+  "bad": [],
+  "covers_all_other_assets": true,
+  "experiment_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9",
+  "delivery_commit": "0160e378a398fde898169d1146aec2b89fe4a6b8"
+ },
+ "archives": {
+  "members_rehashed": 5007,
+  "n_problems": 0
+ },
+ "checkpoints": {
+  "entries": 424,
+  "unresolved_or_bad": [],
+  "formal_runs_per_family": {
+   "combined_clean_ff": 5,
+   "combined_robust_ff": 5,
+   "combined_robust_history": 5,
+   "residual_robust_history": 5,
+   "combined_robust_repeat": 5
+  },
+  "each_formal_run_has_step0_10_periodic_final_latest_and_selected": true,
+  "pilot_smoke_runs": 18
+ },
+ "raw_counts": {
+  "final_files": 54,
+  "final_all_2400": true,
+  "final_records": 129600,
+  "validation_files": 150,
+  "validation_all_240": true
+ },
+ "media": {
+  "pdf": {
+   "report.pdf": 12,
+   "slides.pdf": 16
+  },
+  "pptx": {
+   "slides.pptx": 16
+  }
+ },
+ "leak_scan": {
+  "n_hits": 0
+ }
+}
++ [05:19:01] $V4_WORK/analysis-env/bin/python $V4_WORK/delivery/scripts/v4_regen.py --runs $V4_WORK/extracted --work $V4_WORK/regenerated
+{"ok": true, "counts": {"identical": 35, "float_only": 0, "different": 0, "missing": 0}, "failed_steps": []}
++ [05:20:36] echo '=== REPRODUCE section: 3. Small complete replay, reload of every architecture, resume (remote GPU) ==='
+=== REPRODUCE section: 3. Small complete replay, reload of every architecture, resume (remote GPU) ===
++ [05:20:36] ISAAC=$ISAAC
++ [05:20:36] test -x $ISAAC
++ [05:20:36] mkdir -p $V4_WORK/replay/formal
++ [05:20:36] ln -s $V4_WORK/extracted/formal/train $V4_WORK/replay/formal/train
++ [05:20:36] ln -s $V4_WORK/extracted/final $V4_WORK/replay/final
++ [05:20:36] $V4_WORK/analysis-env/bin/python $V4_WORK/delivery/scripts/v3_jobs.py run --manifest $V4_WORK/delivery/results/v4/jobs/verification.json --repo $V4_WORK/experiment --runs-root $V4_WORK/replay --isaac-python $ISAAC --dry-run --only replay60_geometry_calibrated,replay60_combined_robust_history_s111,reload_combined_clean_ff,reload_combined_robust_ff,reload_combined_robust_history,reload_combined_robust_repeat,reload_residual_robust_history,resume_check_train
+{"task": "replay60_geometry_calibrated", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "$V4_WORK/replay/_resolved/replay60_geometry_calibrated__replay60_geometry_calibrated.json", "--output", "$V4_WORK/replay/replay60/geometry_calibrated", "--seed", "6456501"], "inputs": {"$V4_WORK/delivery/configs/v4/final_matrices/verification/replay60_geometry_calibrated.json": "7924a5e8ecdc96179c918928bb4a4cc9e626d0900b2d03b9f71d10d0fb46b373", "$V4_WORK/experiment/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "$V4_WORK/replay/_resolved/replay60_geometry_calibrated__replay60_geometry_calibrated.json": "610a87ba66ba9a2d55a0ebbee3a7e867a9eea7f20e8425ce05953a9542a558bc", "$V4_WORK/experiment/configs/v2/protocol.json": "096f3c00eaea4b20ef93e1253b49615cd06e3a10b841e137e22710abaf459db8", "$V4_WORK/delivery/configs/v4/suites/final_subset60.jsonl": "4cceb03f8bc2fd16e8ae0702d58f8653cb8b7d62f1956c740a8b5233199f7900"}, "outputs": ["$V4_WORK/replay/replay60/geometry_calibrated/geometry_calibrated.jsonl"], "execution_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9"}
+{"task": "replay60_combined_robust_history_s111", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "$V4_WORK/replay/_resolved/replay60_combined_robust_history_s111__replay60_combined_robust_history_s111.json", "--checkpoint-root", "$V4_WORK/replay/formal/train", "--output", "$V4_WORK/replay/replay60/combined_robust_history_s111", "--seed", "6456501"], "inputs": {"$V4_WORK/delivery/configs/v4/final_matrices/verification/replay60_combined_robust_history_s111.json": "f9356d44515ce67b5501f98488d8e3af75b7f18d6e83a89577bfd9ab9db4e225", "$V4_WORK/experiment/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "$V4_WORK/replay/_resolved/replay60_combined_robust_history_s111__replay60_combined_robust_history_s111.json": "3e4ca1e2c5ab76a13e0e7ce50e27928647193bd66de511f8a38e420db0a17a02", "$V4_WORK/experiment/configs/v4/frozen/training/combined_robust_history.json": "14062f538365439d55a626ed57292f494d07cc9eeca7ee1c8b0029653816e181", "$V4_WORK/delivery/configs/v4/suites/final_subset60.jsonl": "4cceb03f8bc2fd16e8ae0702d58f8653cb8b7d62f1956c740a8b5233199f7900", "$V4_WORK/extracted/formal/train/combined_robust_history_s111/checkpoints/step_004030464.pt": "222d14bb5d186a89888b63321b93983bdd8a62ad589e1e74101a300c1a15771a"}, "outputs": ["$V4_WORK/replay/replay60/combined_robust_history_s111/combined_robust_history_s111__selected.jsonl"], "execution_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9"}
+{"task": "reload_combined_clean_ff", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "$V4_WORK/replay/_resolved/reload_combined_clean_ff__reload_combined_clean_ff.json", "--checkpoint-root", "$V4_WORK/replay/formal/train", "--output", "$V4_WORK/replay/reload/combined_clean_ff", "--seed", "6456501"], "inputs": {"$V4_WORK/delivery/configs/v4/final_matrices/verification/reload_combined_clean_ff.json": "606e8a19171016ca79b6abca5d896f7ff48f313d1098b5b495581f9c01d36498", "$V4_WORK/experiment/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "$V4_WORK/replay/_resolved/reload_combined_clean_ff__reload_combined_clean_ff.json": "ab91ee7d3468a47e65b0f7b62b8953fe582d24bd8802961865be0c73a85acfff", "$V4_WORK/experiment/configs/v4/frozen/training/combined_clean_ff.json": "24c43b6c541fbff1c2dc54462bf7c850f94130a18bde347da0d0949b0c60aa14", "$V4_WORK/delivery/configs/v4/suites/final_reload12.jsonl": "9e2b231b316aacf4b41338742808242014dad615d6d65e1733d568d4726ad092", "$V4_WORK/extracted/formal/train/combined_clean_ff_s111/checkpoints/step_004030464.pt": "8c06a960edee0f2a314ca0b4956ba482194aabd22c16d6d6dff1a23672da0861"}, "outputs": ["$V4_WORK/replay/reload/combined_clean_ff/combined_clean_ff_s111__selected.jsonl"], "execution_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9"}
+{"task": "reload_combined_robust_ff", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "$V4_WORK/replay/_resolved/reload_combined_robust_ff__reload_combined_robust_ff.json", "--checkpoint-root", "$V4_WORK/replay/formal/train", "--output", "$V4_WORK/replay/reload/combined_robust_ff", "--seed", "6456501"], "inputs": {"$V4_WORK/delivery/configs/v4/final_matrices/verification/reload_combined_robust_ff.json": "ee7220cf852fc98bf76a50a5b7547048979f8bd5f0c9877030eb618cb3cc59fd", "$V4_WORK/experiment/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "$V4_WORK/replay/_resolved/reload_combined_robust_ff__reload_combined_robust_ff.json": "84731d3758b715387a655dec6dbc4484bbb3f5ee66cf1c611fac5681e5cfa9ee", "$V4_WORK/experiment/configs/v4/frozen/training/combined_robust_ff.json": "933a065712ec5d6b65a88e3bae2722850abc4e03932e9100284bd43fd5ee9578", "$V4_WORK/delivery/configs/v4/suites/final_reload12.jsonl": "9e2b231b316aacf4b41338742808242014dad615d6d65e1733d568d4726ad092", "$V4_WORK/extracted/formal/train/combined_robust_ff_s111/checkpoints/step_006029312.pt": "d1d29cec0969f0bec30b944ee0cb2ccf78a676507994fb168bbf1a59f9d6a6a3"}, "outputs": ["$V4_WORK/replay/reload/combined_robust_ff/combined_robust_ff_s111__selected.jsonl"], "execution_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9"}
+{"task": "reload_combined_robust_history", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "$V4_WORK/replay/_resolved/reload_combined_robust_history__reload_combined_robust_history.json", "--checkpoint-root", "$V4_WORK/replay/formal/train", "--output", "$V4_WORK/replay/reload/combined_robust_history", "--seed", "6456501"], "inputs": {"$V4_WORK/delivery/configs/v4/final_matrices/verification/reload_combined_robust_history.json": "80c1b24eece08ad66d0fad461f9adaeaba65292db69f1b3f1eff22e089cc7e70", "$V4_WORK/experiment/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "$V4_WORK/replay/_resolved/reload_combined_robust_history__reload_combined_robust_history.json": "1212276c788b3a22292acddde5b8e1a352c4ce67a3cfbf66dca45e0960e9c471", "$V4_WORK/experiment/configs/v4/frozen/training/combined_robust_history.json": "14062f538365439d55a626ed57292f494d07cc9eeca7ee1c8b0029653816e181", "$V4_WORK/delivery/configs/v4/suites/final_reload12.jsonl": "9e2b231b316aacf4b41338742808242014dad615d6d65e1733d568d4726ad092", "$V4_WORK/extracted/formal/train/combined_robust_history_s111/checkpoints/step_004030464.pt": "222d14bb5d186a89888b63321b93983bdd8a62ad589e1e74101a300c1a15771a"}, "outputs": ["$V4_WORK/replay/reload/combined_robust_history/combined_robust_history_s111__selected.jsonl"], "execution_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9"}
+{"task": "reload_combined_robust_repeat", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "$V4_WORK/replay/_resolved/reload_combined_robust_repeat__reload_combined_robust_repeat.json", "--checkpoint-root", "$V4_WORK/replay/formal/train", "--output", "$V4_WORK/replay/reload/combined_robust_repeat", "--seed", "6456501"], "inputs": {"$V4_WORK/delivery/configs/v4/final_matrices/verification/reload_combined_robust_repeat.json": "406a618d3b4f69712b9b134c553425251faab904cd095632bb45afc66ed8eeb2", "$V4_WORK/experiment/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "$V4_WORK/replay/_resolved/reload_combined_robust_repeat__reload_combined_robust_repeat.json": "7b6f164afe62a207899d2a6f4813c6e6e7062f96588052496b30f677c12a9eb9", "$V4_WORK/experiment/configs/v4/frozen/training/combined_robust_repeat.json": "0ea732051f91ab81f4e95164ac8ae20847a79c7d632174c7e70631a0c9d6f53a", "$V4_WORK/delivery/configs/v4/suites/final_reload12.jsonl": "9e2b231b316aacf4b41338742808242014dad615d6d65e1733d568d4726ad092", "$V4_WORK/extracted/formal/train/combined_robust_repeat_s111/checkpoints/step_008028160.pt": "1a9195093bccb99300bea53357a30e1d92c17d9dc103a99ab22376f7901560a8"}, "outputs": ["$V4_WORK/replay/reload/combined_robust_repeat/combined_robust_repeat_s111__selected.jsonl"], "execution_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9"}
+{"task": "reload_residual_robust_history", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "$V4_WORK/replay/_resolved/reload_residual_robust_history__reload_residual_robust_history.json", "--checkpoint-root", "$V4_WORK/replay/formal/train", "--output", "$V4_WORK/replay/reload/residual_robust_history", "--seed", "6456501"], "inputs": {"$V4_WORK/delivery/configs/v4/final_matrices/verification/reload_residual_robust_history.json": "f86efa82726df8238177cfd22d662e53ac76a95e2a33cb175f8df3cee134ffc3", "$V4_WORK/experiment/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "$V4_WORK/replay/_resolved/reload_residual_robust_history__reload_residual_robust_history.json": "14d2f04e0d543d9d417329dd87b312cb11824916d4bebd6bbe4989fd2b884fd6", "$V4_WORK/experiment/configs/v4/frozen/training/residual_robust_history.json": "fa644b448b060229b3cd27927baf75d137a84b1898ad4775311a2d0a257774e6", "$V4_WORK/delivery/configs/v4/suites/final_reload12.jsonl": "9e2b231b316aacf4b41338742808242014dad615d6d65e1733d568d4726ad092", "$V4_WORK/extracted/formal/train/residual_robust_history_s111/checkpoints/step_002031616.pt": "3e66e6056ed82940d897503c6b2bb206f94d5e2d85e372006a911b2fc59883f8"}, "outputs": ["$V4_WORK/replay/reload/residual_robust_history/residual_robust_history_s111__selected.jsonl"], "execution_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9"}
+{"task": "resume_check_train", "dry_run": true, "argv": ["scripts/train.py", "--method", "combined", "--seed", "111", "--protocol", "configs/v4/frozen/training/combined_robust_history.json", "--run-type", "smoke", "--resume", "$V4_WORK/replay/formal/train/combined_robust_history_s111/checkpoints/latest.pt", "--transitions", "10092544", "--output", "$V4_WORK/replay/resume_check/combined_robust_history_s111"], "inputs": {"$V4_WORK/experiment/scripts/train.py": "665bf1e969cfd2a9546ade63adeebfd73a10dd4ddff03742a85c52ece202bb6c", "$V4_WORK/experiment/configs/v4/frozen/training/combined_robust_history.json": "14062f538365439d55a626ed57292f494d07cc9eeca7ee1c8b0029653816e181", "$V4_WORK/extracted/formal/train/combined_robust_history_s111/checkpoints/latest.pt": "a7dade5ca6b0e99c5103d816888d5b55a3381d08928ca81ed16504646fb2d619"}, "outputs": ["$V4_WORK/replay/resume_check/combined_robust_history_s111/checkpoints/final.pt"], "execution_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9"}
+{"shard": "0/1", "tasks": 8, "failed": []}
++ [05:20:36] $V4_WORK/analysis-env/bin/python $V4_WORK/delivery/scripts/v3_jobs.py run --manifest $V4_WORK/delivery/results/v4/jobs/verification.json --repo $V4_WORK/experiment --runs-root $V4_WORK/replay --isaac-python $ISAAC --task-timeout-s 3600
+[v3_jobs] run replay60_geometry_calibrated: scripts/eval_matrix.py --matrix $V4_WORK/replay/_resolved/replay60_geometry_calibrated__replay60_geometry_calibrated.json --output $V4_WORK/replay/replay60/geometry_calibrated --seed 6456501
+[v3_jobs] replay60_geometry_calibrated rc=0
+[v3_jobs] run replay60_combined_robust_history_s111: scripts/eval_matrix.py --matrix $V4_WORK/replay/_resolved/replay60_combined_robust_history_s111__replay60_combined_robust_history_s111.json --checkpoint-root $V4_WORK/replay/formal/train --output $V4_WORK/replay/replay60/combined_robust_history_s111 --seed 6456501
+[v3_jobs] replay60_combined_robust_history_s111 rc=0
+[v3_jobs] run reload_combined_clean_ff: scripts/eval_matrix.py --matrix $V4_WORK/replay/_resolved/reload_combined_clean_ff__reload_combined_clean_ff.json --checkpoint-root $V4_WORK/replay/formal/train --output $V4_WORK/replay/reload/combined_clean_ff --seed 6456501
+[v3_jobs] reload_combined_clean_ff rc=0
+[v3_jobs] run reload_combined_robust_ff: scripts/eval_matrix.py --matrix $V4_WORK/replay/_resolved/reload_combined_robust_ff__reload_combined_robust_ff.json --checkpoint-root $V4_WORK/replay/formal/train --output $V4_WORK/replay/reload/combined_robust_ff --seed 6456501
+[v3_jobs] reload_combined_robust_ff rc=0
+[v3_jobs] run reload_combined_robust_history: scripts/eval_matrix.py --matrix $V4_WORK/replay/_resolved/reload_combined_robust_history__reload_combined_robust_history.json --checkpoint-root $V4_WORK/replay/formal/train --output $V4_WORK/replay/reload/combined_robust_history --seed 6456501
+[v3_jobs] reload_combined_robust_history rc=0
+[v3_jobs] run reload_combined_robust_repeat: scripts/eval_matrix.py --matrix $V4_WORK/replay/_resolved/reload_combined_robust_repeat__reload_combined_robust_repeat.json --checkpoint-root $V4_WORK/replay/formal/train --output $V4_WORK/replay/reload/combined_robust_repeat --seed 6456501
+[v3_jobs] reload_combined_robust_repeat rc=0
+[v3_jobs] run reload_residual_robust_history: scripts/eval_matrix.py --matrix $V4_WORK/replay/_resolved/reload_residual_robust_history__reload_residual_robust_history.json --checkpoint-root $V4_WORK/replay/formal/train --output $V4_WORK/replay/reload/residual_robust_history --seed 6456501
+[v3_jobs] reload_residual_robust_history rc=0
+[v3_jobs] run resume_check_train: scripts/train.py --method combined --seed 111 --protocol configs/v4/frozen/training/combined_robust_history.json --run-type smoke --resume $V4_WORK/replay/formal/train/combined_robust_history_s111/checkpoints/latest.pt --transitions 10092544 --output $V4_WORK/replay/resume_check/combined_robust_history_s111
+[v3_jobs] resume_check_train rc=0
+[v3_jobs] run resume_check_inspect: scripts/closeout_inspect_ckpt.py --before $V4_WORK/replay/formal/train/combined_robust_history_s111/checkpoints/latest.pt --after $V4_WORK/replay/resume_check/combined_robust_history_s111/checkpoints/final.pt --expect-iterations 308 --expect-transitions 10092544 --output $V4_WORK/replay/resume_check/inspect.json
+[v3_jobs] resume_check_inspect rc=0
+{"shard": "0/1", "tasks": 9, "failed": []}
++ [05:25:52] $V4_WORK/analysis-env/bin/python -I $V4_WORK/delivery/scripts/v4_fresh_compare.py --x $V4_WORK/replay --index $V4_WORK/delivery/configs/v4/final_matrix_index.json --output $V4_WORK/fresh_gpu.json
+{"replay60_episodes": 120, "replay60_terminal_equal": 120, "reload_episodes": 60, "reload_terminal_equal": 60, "mismatches": 0, "resume_ok": true, "ok": true}
++ [05:25:53] echo '=== REPRODUCE section: 3. Small complete replay, reload of every architecture, resume (remote GPU) ==='
+=== REPRODUCE section: 3. Small complete replay, reload of every architecture, resume (remote GPU) ===
++ [05:25:53] sha256sum $V4_WORK/extracted/formal/train/combined_robust_history_s111/checkpoints/latest.pt
+a7dade5ca6b0e99c5103d816888d5b55a3381d08928ca81ed16504646fb2d619  $V4_WORK/extracted/formal/train/combined_robust_history_s111/checkpoints/latest.pt
++ [05:25:53] grep -A1 '"member": "formal/train/combined_robust_history_s111/checkpoints/latest.pt"' $V4_WORK/release/checkpoints.json
+  "member": "formal/train/combined_robust_history_s111/checkpoints/latest.pt",
+  "sha256": "a7dade5ca6b0e99c5103d816888d5b55a3381d08928ca81ed16504646fb2d619",
++ [05:25:53] echo '=== v4.0.1 patch assets ==='
+=== v4.0.1 patch assets ===
++ [05:25:53] $V4_WORK/analysis-env/bin/python -I $V4_WORK/delivery/scripts/v3_download.py --tag v4.0.1 --output $V4_WORK/release-v4.0.1
+RELEASE_NOTES.md: 1,176 bytes
+REPRODUCE.md: 6,283 bytes
+SHA256SUMS: 419 bytes
+VERIFICATION.md: 692 bytes
+release_manifest.json: 8,438 bytes
+source-v4.0.1.tar.gz: 19,246,790 bytes
+6 assets, 19.3 MB
++ [05:25:55] cd $V4_WORK/release-v4.0.1
++ [05:25:55] sha256sum -c SHA256SUMS
+RELEASE_NOTES.md: OK
+REPRODUCE.md: OK
+VERIFICATION.md: OK
+release_manifest.json: OK
+source-v4.0.1.tar.gz: OK
++ [05:25:55] echo '=== repeat the runner: completed tasks must skip ==='
+=== repeat the runner: completed tasks must skip ===
++ [05:25:55] cp -r $V4_WORK/replay/ledger $V4_WORK/ledger_after_first
++ [05:25:55] rc=0
++ [05:25:55] $V4_WORK/analysis-env/bin/python $V4_WORK/delivery/scripts/v3_jobs.py run --manifest $V4_WORK/delivery/results/v4/jobs/verification.json --repo $V4_WORK/experiment --runs-root $V4_WORK/replay --isaac-python $ISAAC --task-timeout-s 3600
++ [05:25:55] echo repeat_rc=0
+repeat_rc=0
++ [05:25:55] grep -c 'skip ' $V4_WORK/repeat_run.log
+9
++ [05:25:55] $V4_WORK/analysis-env/bin/python -c 'import sys;print(sys.version)'
+3.13.9 (main, Oct 14 2025, 21:29:44) [Clang 20.1.4 ]
++ [05:25:55] echo V4_WORK=$V4_WORK
+V4_WORK=$V4_WORK
++ [05:25:55] echo V4FRESH_DONE
+V4FRESH_DONE
