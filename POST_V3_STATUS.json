@@ -1,7 +1,7 @@
 {
  "assignment": "V4_REMAINING.md",
  "complete": false,
- "stage": "stage_b_v4",
+ "stage": "v4_release",
  "original_v3_complete": true,
  "original_release": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0",
  "local_gpu_or_simulator_run": false,
@@ -25,8 +25,8 @@
   "acceptance": "passed in uploaded evidence: A1-A9 and five-profile smoke resume; mixed-commit lineage in PROVENANCE.json",
   "frozen": true,
   "formal_runs_planned": 25,
-  "formal_runs_completed": 0,
-  "release": "pending",
+  "formal_runs_completed": 25,
+  "release": "pending v4.0.0 publication",
   "fresh_download_verified": false,
   "optional_dynamic_slip": "not_performed",
   "branch": "study/v4-grasp-uncertainty",
@@ -39,12 +39,20 @@
   "freeze_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9",
   "experiment_tag": "experiment-v4",
   "final_suite": "configs/v4/FINAL_SUITE.json (2,400 cases, sha256 481c40c7...)",
-  "formal_training": "running since 2026-11-10 01:35 UTC (5 GPUs, one process each)",
-  "cpu_tests": "94 passed, 1 simulator-only skip (2026-11-10, merged tree)"
+  "formal_training": "complete 2026-11-10 (25 x 10,027,008 transitions)",
+  "cpu_tests": "94 passed, 1 simulator-only skip (2026-11-10, merged tree)",
+  "selection": "results/v4/selection/selection.json (validation only; committed before learned final evaluation)",
+  "final_evaluation": "complete: 55 logical / 54 executed entries x 2,400 = 132,000 / 129,600 episodes",
+  "analysis": "results/v4/summary/ (paired hierarchical bootstrap, seed 6456401)",
+  "mechanisms_repeatability": "complete (results/v4/mechanisms/)",
+  "videos": "10 clips + montage (results/v4/videos/video_index.json)",
+  "report": "report/v4/report.md + report.pdf",
+  "slides": "report/v4/slides.pptx + slides.pdf + speaker_notes.md",
+  "gpu_hours": "see results/v4/compute.json"
  },
  "next_actions": [
-  "Validation, selection, final evaluation, mechanisms/repeatability, traces, videos",
-  "Report, slides, release v4.0.0, fresh public-download verification"
+  "Package and publish v4.0.0 (all checkpoints and raw records)",
+  "Fresh public-download verification; set complete"
  ],
  "blockers": [],
  "original_assignment": "POST_V3_EXECUTION.md"
