@@ -1,8 +1,9 @@
 # Reproducing the V4 uncertain-grasp study
 
 Only public sources are needed: this repository, the `v4.0.0` release assets and the official simulator
-distribution. Every block below was executed for the public verification recorded in
-[VERIFICATION.md](VERIFICATION.md); expected outputs are stated after each block.
+distribution. Use the delivery tag **`v4.0.1`** for the tooling: `v4.0.0` lacked the GPU verification manifest of
+section 3 (see the v4.0.1 release notes); its data assets are unchanged and are the ones downloaded below. Every block
+was executed for the public verification recorded in [VERIFICATION.md](VERIFICATION.md); expected outputs follow each block.
 
 ## 0. Software
 
@@ -25,7 +26,7 @@ T="$V4_WORK/delivery"      # analysis/delivery tooling at the release tag
 E="$V4_WORK/experiment"    # immutable simulator source of every formal run
 B="$V4_WORK/release"; X="$V4_WORK/extracted"; G="$V4_WORK/regenerated"; R="$V4_WORK/replay"
 REPO_URL=https://github.com/ywen0511/CSCI645-Project.git
-git clone --branch v4.0.0 "$REPO_URL" "$T"
+git clone --branch v4.0.1 "$REPO_URL" "$T"
 git clone --branch experiment-v4 "$REPO_URL" "$E"
 test "$(git -C "$E" rev-parse HEAD)" = aac4d98274814b1ab121a715db71187e3e1cc0b9
 git -C "$T" rev-parse HEAD > "$V4_WORK/delivery_commit.txt"

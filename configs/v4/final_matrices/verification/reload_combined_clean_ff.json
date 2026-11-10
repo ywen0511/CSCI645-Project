@@ -1,0 +1,16 @@
+{
+ "name": "v4_reload_combined_clean_ff",
+ "suite": "$DELIVERY/configs/v4/suites/final_reload12.jsonl",
+ "num_envs": 12,
+ "protocol": "configs/v4/frozen/training/combined_clean_ff.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_clean_ff_s111__selected",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "selected",
+   "checkpoint": "combined_clean_ff_s111/checkpoints/step_004030464.pt"
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+{
+ "checks": {
+  "sha256sums": {
+   "listed": 29,
+   "assets": 30,
+   "bad": [],
+   "unlisted": []
+  },
+  "manifest": {
+   "assets": 28,
+   "bad": [],
+   "covers_all_other_assets": true,
+   "experiment_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9",
+   "delivery_commit": "0160e378a398fde898169d1146aec2b89fe4a6b8"
+  },
+  "archives": {
+   "members_rehashed": 5007,
+   "problems": [],
+   "n_problems": 0
+  },
+  "checkpoints": {
+   "entries": 424,
+   "unresolved_or_bad": [],
+   "formal_runs_per_family": {
+    "combined_clean_ff": 5,
+    "combined_robust_ff": 5,
+    "combined_robust_history": 5,
+    "residual_robust_history": 5,
+    "combined_robust_repeat": 5
+   },
+   "each_formal_run_has_step0_10_periodic_final_latest_and_selected": true,
+   "pilot_smoke_runs": 18
+  },
+  "raw_counts": {
+   "final_files": 54,
+   "final_all_2400": true,
+   "final_records": 129600,
+   "validation_files": 150,
+   "validation_all_240": true
+  },
+  "media": {
+   "mp4": [
+    {
+     "video": "nominal_vs_geometry_vs_learned__nominal__v4-final-grasp_15mm-0000.mp4",
+     "frames": 95,
+     "ok": true
+    },
+    {
+     "video": "nominal_vs_geometry_vs_learned__geometry_fixed__v4-final-grasp_15mm-0000.mp4",
+     "frames": 47,
+     "ok": true
+    },
+    {
+     "video": "nominal_vs_geometry_vs_learned__geometry_calibrated__v4-final-grasp_15mm-0000.mp4",
+     "frames": 95,
+     "ok": true
+    },
+    {
+     "video": "nominal_vs_geometry_vs_learned__combined_robust_history_s111_selected__v4-final-grasp_15mm-0000.mp4",
+     "frames": 95,
+     "ok": true
+    },
+    {
+     "video": "unknown_grasp_boundary__geometry_fixed__v4-final-grasp_15mm-0000.mp4",
+     "frames": 47,
+     "ok": true
+    },
+    {
+     "video": "noisy_calibration__geometry_calibrated__v4-final-mixed_ood-0000.mp4",
+     "frames": 95,
+     "ok": true
+    },
+    {
+     "video": "intervention__combined_robust_history_s111_reversed_history__v4-final-mixed_id-0000.mp4",
+     "frames": 95,
+     "ok": true
+    },
+    {
+     "video": "learned_mixed_id__combined_robust_history_s111_selected__v4-final-mixed_id-0001.mp4",
+     "frames": 96,
+     "ok": true
+    },
+    {
+     "video": "ema_noise__geometry_ema__v4-final-noise_2mm-0000.mp4",
+     "frames": 95,
+     "ok": true
+    },
+    {
+     "video": "clean__geometry_calibrated__v4-final-clean-0000.mp4",
+     "frames": 97,
+     "ok": true
+    },
+    {
+     "video": "montage.mp4",
+     "frames": 1057,
+     "ok": true
+    }
+   ],
+   "pdf": {
+    "report.pdf": 12,
+    "slides.pdf": 16
+   },
+   "pptx": {
+    "slides.pptx": 16
+   }
+  },
+  "leak_scan": {
+   "hits": [],
+   "n_hits": 0
+  }
+ },
+ "failures": [],
+ "ok": true
+}

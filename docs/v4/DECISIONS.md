@@ -210,3 +210,16 @@ Their records are not opened until results/v4/selection/selection.json is commit
   This is the physical palm limit measured in the probe (−10 mm failed, −7 mm passed 4/4 there), not a reset
   bug: resets precede any controller action and use the same case draws. Per the frozen plan they count as
   non-success for every method, are reported per entry, and nothing is excluded.
+
+## 2026-11-10 05:14 — public verification of v4.0.0 found a missing manifest; patch v4.0.1
+
+Release v4.0.0 was published at 05:08 UTC (30 assets reconciled by size and SHA-256 with the bundle). The fresh
+public-download run of `docs/v4/REPRODUCE.md` (tag v4.0.0) passed sections 1–2 — anonymous download, `SHA256SUMS`,
+the release verifier (all members, 424 checkpoints, 54 × 2,400 final and 150 × 240 validation records, 0 leak hits)
+and regeneration (35/35 tables and 8/8 figures byte-identical) — but section 3 stopped at once: the tag did not contain
+`results/v4/jobs/verification.json` (the stage had been written in `scripts/v4_manifests.py` but never generated).
+The published tag and assets are immutable, so the fix is a new delivery tag `v4.0.1` with the generated verification
+stage (replay/reload matrices, `configs/v4/suites/final_reload12.jsonl`) and REPRODUCE pointing at it; the data assets of
+v4.0.0 are unchanged and are what v4.0.1 instructions download. A small v4.0.1 release carries the corrected source and
+documents. Earlier pre-publication: the first candidate bundle failed its own leak scan (a word-boundary pattern missed
+the user name inside temporary paths); it was rebuilt with a corrected pattern and never uploaded.
