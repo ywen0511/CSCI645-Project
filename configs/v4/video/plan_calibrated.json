@@ -1,0 +1,55 @@
+[
+ {
+  "method": "nominal",
+  "overrides": {},
+  "checkpoint": null,
+  "case_id": "v4-final-grasp_15mm-0000",
+  "run_id": "nominal",
+  "category": "nominal_vs_geometry_vs_learned",
+  "order": 0,
+  "eval_records": "$RUNS/final/nominal/nominal.jsonl",
+  "output": "$RUNS/videos/nominal_vs_geometry_vs_learned__nominal__v4-final-grasp_15mm-0000.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.025,
+   "giver_calibration_window_s": 0.5
+  },
+  "checkpoint": null,
+  "case_id": "v4-final-grasp_15mm-0000",
+  "run_id": "geometry_calibrated",
+  "category": "nominal_vs_geometry_vs_learned",
+  "order": 2,
+  "eval_records": "$RUNS/final/geometry_calibrated/geometry_calibrated.jsonl",
+  "output": "$RUNS/videos/nominal_vs_geometry_vs_learned__geometry_calibrated__v4-final-grasp_15mm-0000.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.025,
+   "giver_calibration_window_s": 0.5
+  },
+  "checkpoint": null,
+  "case_id": "v4-final-mixed_ood-0000",
+  "run_id": "geometry_calibrated",
+  "category": "noisy_calibration",
+  "order": 0,
+  "eval_records": "$RUNS/final/geometry_calibrated/geometry_calibrated.jsonl",
+  "output": "$RUNS/videos/noisy_calibration__geometry_calibrated__v4-final-mixed_ood-0000.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.025,
+   "giver_calibration_window_s": 0.5
+  },
+  "checkpoint": null,
+  "case_id": "v4-final-clean-0000",
+  "run_id": "geometry_calibrated",
+  "category": "clean",
+  "order": 0,
+  "eval_records": "$RUNS/final/geometry_calibrated/geometry_calibrated.jsonl",
+  "output": "$RUNS/videos/clean__geometry_calibrated__v4-final-clean-0000.mp4"
+ }
+]

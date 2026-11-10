@@ -1,0 +1,15 @@
+[
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.025
+  },
+  "checkpoint": null,
+  "case_id": "v4-final-noise_2mm-0000",
+  "run_id": "geometry_ema",
+  "category": "ema_noise",
+  "order": 0,
+  "eval_records": "$RUNS/final/geometry_ema/geometry_ema.jsonl",
+  "output": "$RUNS/videos/ema_noise__geometry_ema__v4-final-noise_2mm-0000.mp4"
+ }
+]

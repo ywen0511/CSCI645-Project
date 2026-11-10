@@ -1,0 +1,12 @@
+[
+ {
+  "method": "combined",
+  "checkpoint": "$RUNS/train/combined_robust_history_s111/checkpoints/step_004030464.pt",
+  "case_id": "v4-final-mixed_id-0000",
+  "run_id": "combined_robust_history_s111__reversed_history",
+  "category": "intervention",
+  "order": 0,
+  "eval_records": "$RUNS/final/combined_robust_history_s111/combined_robust_history_s111__selected.jsonl",
+  "output": "$RUNS/videos/intervention__combined_robust_history_s111_reversed_history__v4-final-mixed_id-0000.mp4"
+ }
+]

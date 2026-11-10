@@ -1,0 +1,17 @@
+{
+ "protocol_id": "v4-video-ema",
+ "env_overrides": {
+  "align_max": 0.015,
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 0.2,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": false,
+  "grasp_uncertainty": true
+ },
+ "ppo_overrides": {}
+}

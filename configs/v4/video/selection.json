@@ -1,0 +1,48 @@
+{
+ "rule": "configs/v4/video_rule.json",
+ "clips": [
+  {
+   "clip": "nominal_vs_geometry_vs_learned",
+   "case": "v4-final-grasp_15mm-0000",
+   "rule": "fixed case"
+  },
+  {
+   "clip": "unknown_grasp_boundary",
+   "case": "v4-final-grasp_15mm-0000",
+   "rule": "first failing grasp_15mm case of geometry_fixed"
+  },
+  {
+   "clip": "noisy_calibration",
+   "case": "v4-final-mixed_ood-0000",
+   "rule": "fixed case"
+  },
+  {
+   "clip": "failure",
+   "case": null,
+   "seed": null,
+   "rule": "first mixed_id non-success of combined_robust_history selected (seeds 111..555, then case id)",
+   "note": "no selected history policy failed any mixed_id case; no substitute chosen"
+  },
+  {
+   "clip": "intervention",
+   "case": "v4-final-mixed_id-0000",
+   "rule": "history order reversed [3,2,1,0]"
+  },
+  {
+   "clip": "learned_mixed_id",
+   "case": "v4-final-mixed_id-0001",
+   "rule": "fixed case"
+  },
+  {
+   "clip": "ema_noise",
+   "case": "v4-final-noise_2mm-0000",
+   "rule": "fixed case"
+  },
+  {
+   "clip": "clean",
+   "case": "v4-final-clean-0000",
+   "rule": "fixed case"
+  }
+ ],
+ "recordings": 10
+}

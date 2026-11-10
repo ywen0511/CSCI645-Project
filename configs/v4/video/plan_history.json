@@ -1,0 +1,22 @@
+[
+ {
+  "method": "combined",
+  "checkpoint": "$RUNS/train/combined_robust_history_s111/checkpoints/step_004030464.pt",
+  "case_id": "v4-final-grasp_15mm-0000",
+  "run_id": "combined_robust_history_s111__selected",
+  "category": "nominal_vs_geometry_vs_learned",
+  "order": 3,
+  "eval_records": "$RUNS/final/combined_robust_history_s111/combined_robust_history_s111__selected.jsonl",
+  "output": "$RUNS/videos/nominal_vs_geometry_vs_learned__combined_robust_history_s111_selected__v4-final-grasp_15mm-0000.mp4"
+ },
+ {
+  "method": "combined",
+  "checkpoint": "$RUNS/train/combined_robust_history_s111/checkpoints/step_004030464.pt",
+  "case_id": "v4-final-mixed_id-0001",
+  "run_id": "combined_robust_history_s111__selected",
+  "category": "learned_mixed_id",
+  "order": 0,
+  "eval_records": "$RUNS/final/combined_robust_history_s111/combined_robust_history_s111__selected.jsonl",
+  "output": "$RUNS/videos/learned_mixed_id__combined_robust_history_s111_selected__v4-final-mixed_id-0001.mp4"
+ }
+]
