@@ -235,7 +235,35 @@ history training degrades late for some seeds, and residual-only training degrad
 
 {{section.mechanisms}}
 
-{{section.rest}}
+## 9. Compute
+
+Every job used one A100-SXM4-40GB on one node (LSF; one training process per GPU). GPU-hours are LSF wall-clock time
+× 1 GPU per job, including start-up, killed and failed jobs: {{comp.total}} GPU-hours in total for the continuation
+(Stage A maintenance {{comp.stage_a}}, development {{comp.v4_development}}, acceptance {{comp.v4_acceptance}}, pilots
+{{comp.v4_pilots}}, formal training {{comp.v4_formal_training}}, validation {{comp.v4_validation}}, final evaluation
+{{comp.v4_final_evaluation}}, mechanisms/repeatability {{comp.v4_mechanisms_repeatability}}, traces {{comp.v4_traces}}, videos
+{{comp.v4_videos}}), against a cap of 100. Each formal run took about 20 minutes (10,027,008 transitions at about 9,000
+transitions per second). Details: `results/v4/compute.json`.
+
+## 10. Limitations
+
+- **Static offsets only.** The in-grasp offset is fixed within an episode; slip during transport was not studied
+  (the optional dynamic-slip extension was not performed). Nothing here supports a claim about slip robustness.
+- **Synthetic sensing, one object, simulation.** The translation sensor is a controlled error model (bias, noise,
+  delay), not vision; one rigid bar with fixed mass, friction and size; no sim-to-real evidence.
+- **The calibrated reference uses accurate proprioception and orientation**, and a window in which the giver is
+  known to hold the bar still. It cannot separate a sensor bias from an in-grasp offset; with both present, its error
+  is the bias (Section 6.2).
+- **Near-ceiling primary condition.** The calibrated baseline reaches {{succ.geometry_calibrated.baseline.mixed_id}}% on
+  `mixed_id`, which leaves a few cases for the primary contrasts; intervals touching zero are not evidence of
+  equivalence.
+- **Development choices.** The training support was widened once during development (Section 4), before training;
+  the palm-side boundary condition (−7 mm) lies outside it and is where learned policies fail most. Validation did not
+  include that condition, so checkpoint selection could not see it.
+- **Invalid resets** at the palm-side boundary ({{count.invalid_resets}} records) count as failures for every method and are
+  reported, not excluded; some vary between entries because contact at the physical limit is sensitive to
+  trajectory noise.
+- **Five training seeds** per profile; per-seed results show large spread out of distribution.
 
 ## 11. Reproducibility and artifacts
 
@@ -244,6 +272,39 @@ packaging). The release contains every saved checkpoint (formal, pilot, smoke, r
 every raw development, acceptance, validation, final, mechanism, repeatability and trace record, all logs and task
 ledgers, figures, videos and indices with SHA-256 for every archive member. `docs/v4/REPRODUCE.md` gives tested
 commands from public sources only; `docs/v4/VERIFICATION.md` records the public-download verification.
+
+
+## 12. Related work
+
+Learned bimanual handover has been studied mainly with dexterous hands and learned perception [1]; here the grippers
+are parallel-jaw and the question is a geometric one. Residual reinforcement learning adds a learned correction to a
+hand-designed controller [2, 3]; V1–V4 of this project test that idea against strong geometric controllers. The
+simulator is Isaac Lab on Isaac Sim (PhysX) [4]; PPO [6] is from RSL-RL [5]. Earlier stages of this project are
+documented in their own releases [7, 8].
+
+## References
+
+[1] D. Frau-Alfaro, J. Castaño-Amorós, S. Puente, P. Gil, R. Calandra. "Learning Dexterous Object Handover."
+IEEE RO-MAN 2025, pp. 380–387. doi:10.1109/RO-MAN63969.2025.11217592. arXiv:2506.16822.
+
+[2] T. Johannink, S. Bahl, A. Nair, J. Luo, A. Kumar, M. Loskyll, J. A. Ojea, E. Solowjow, S. Levine.
+"Residual Reinforcement Learning for Robot Control." IEEE ICRA 2019, pp. 6023–6029. doi:10.1109/ICRA.2019.8794127.
+
+[3] T. Silver, K. Allen, J. Tenenbaum, L. Kaelbling. "Residual Policy Learning." arXiv:1812.06298, 2018.
+
+[4] M. Mittal et al. "Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning."
+arXiv:2511.04831, 2025. Software: Isaac Lab v3.0.0.
+
+[5] C. Schwarke, M. Mittal, N. Rudin, D. Hoeller, M. Hutter. "RSL-RL: A Learning Library for Robotics
+Research." arXiv:2509.10771, 2025. Software: rsl-rl-lib 5.5.1.
+
+[6] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, O. Klimov. "Proximal Policy Optimization Algorithms."
+arXiv:1707.06347, 2017.
+
+[7] CSCI645-Project V3 report and release v3.0.0, https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0
+(maintenance release v3.0.1).
+
+[8] CSCI645-Project V2 report and release v2.1.1, https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.1.
 
 
 ## Software and AI-assistance disclosure
