@@ -196,3 +196,17 @@ best_constant_geometry is the declared exact alias of geometry_calibrated, confi
 do not depend on checkpoint selection, so their final-suite tasks run while formal training/validation finish
 (results/v4/jobs/final_baselines.json; the same task ids, matrices and outputs as in the later final manifest).
 Their records are not opened until results/v4/selection/selection.json is committed.
+
+## 2026-11-10 04:00 — final analysis: one post-freeze bug fix; invalid-reset investigation
+
+- `scripts/v4_analyze.py` (a frozen input) crashed while writing `paired_effects.json`: the `degenerate` flag was a
+  NumPy boolean when an interval had zero width (JSON cannot serialize it). The synthetic pre-freeze test had no
+  zero-width intervals. Fix: wrap the expression in `bool(...)`. No statistic, rule, seed or input changed; the
+  frozen hash of this file therefore no longer matches `FREEZE.json`, which is why this entry exists.
+- Invalid resets: 380 records over the 54 executed final entries, all in `boundary_x_minus_7` (bar 7 mm deeper toward
+  the giver palm), all failing the `prohibited_contact` reset check (the bar end touches the giver hand while
+  settling); no other condition has any. 11 distinct base cases are affected; 4 are invalid for every entry and the
+  others differ between entries (contact exactly at the physical limit is sensitive to batch/trajectory noise).
+  This is the physical palm limit measured in the probe (−10 mm failed, −7 mm passed 4/4 there), not a reset
+  bug: resets precede any controller action and use the same case draws. Per the frozen plan they count as
+  non-success for every method, are reported per entry, and nothing is excluded.

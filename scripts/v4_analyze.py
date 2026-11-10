@@ -126,7 +126,7 @@ def analyze(root: Path, index_path: Path, output: Path, repeats: int):
                 a, b = array(left, lr, ls, subset), array(right, rr, rs, subset)
                 res = paired_effect(a, b, repeats=repeats, seed=SEED)
                 both = (a.mean(), b.mean())
-                res["degenerate"] = (res["ci_low_pp"] == res["ci_high_pp"] and both[0] in (0.0, 1.0) and both[0] == both[1])
+                res["degenerate"] = bool(res["ci_low_pp"] == res["ci_high_pp"] and both[0] in (0.0, 1.0) and both[0] == both[1])
                 res["left_success_pct"], res["right_success_pct"] = float(both[0] * 100), float(both[1] * 100)
                 row = {"left": left, "right": right, "role": role, "conditions": subset, "left_role": lr, "right_role": rr,
                        "primary": primary and role == "selected" and subset == ["mixed_id"],
