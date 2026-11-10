@@ -1,0 +1,89 @@
+{
+ "name": "final_baselines",
+ "tasks": [
+  {
+   "id": "final_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/baseline_nominal.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/final/nominal",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/baseline_nominal.json"
+   ],
+   "outputs": [
+    "$RUNS/final/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "final_geometry_fixed",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/baseline_geometry_fixed.json",
+    "--only",
+    "geometry_fixed",
+    "--output",
+    "$RUNS/final/geometry_fixed",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/baseline_geometry_fixed.json"
+   ],
+   "outputs": [
+    "$RUNS/final/geometry_fixed/geometry_fixed.jsonl"
+   ]
+  },
+  {
+   "id": "final_geometry_ema",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/baseline_geometry_ema.json",
+    "--only",
+    "geometry_ema",
+    "--output",
+    "$RUNS/final/geometry_ema",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/baseline_geometry_ema.json"
+   ],
+   "outputs": [
+    "$RUNS/final/geometry_ema/geometry_ema.jsonl"
+   ]
+  },
+  {
+   "id": "final_geometry_calibrated",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/baseline_geometry_calibrated.json",
+    "--only",
+    "geometry_calibrated",
+    "--output",
+    "$RUNS/final/geometry_calibrated",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/baseline_geometry_calibrated.json"
+   ],
+   "outputs": [
+    "$RUNS/final/geometry_calibrated/geometry_calibrated.jsonl"
+   ]
+  }
+ ]
+}

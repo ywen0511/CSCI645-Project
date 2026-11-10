@@ -188,3 +188,11 @@ eight hours after the pilots finished; nothing ran in between.)
 
 (Correction, 01:40: the two headings above first carried guessed times, 01:40 and 01:55; they now carry the
 commit times of `79d691d` (01:32) and `aac4d98`/`856fa5c`/`ff70df1` (01:32–01:34). Formal training started 01:35.)
+
+## 2026-11-10 02:18 — baseline final evaluations started before checkpoint selection
+
+The four executed deterministic baselines (nominal, geometry_fixed, geometry_ema, geometry_calibrated;
+best_constant_geometry is the declared exact alias of geometry_calibrated, configs/v4/final_matrices/baseline_aliases.json)
+do not depend on checkpoint selection, so their final-suite tasks run while formal training/validation finish
+(results/v4/jobs/final_baselines.json; the same task ids, matrices and outputs as in the later final manifest).
+Their records are not opened until results/v4/selection/selection.json is committed.

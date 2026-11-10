@@ -164,6 +164,19 @@ def baseline_matrices():
     return out, aliases
 
 
+def final_baselines():
+    """The deterministic baselines' final tasks, identical (ids, matrices, outputs) to those in `final`, so they may run
+    before checkpoint selection; their outcomes are not opened until selection is committed."""
+    tasks = []
+    base, _ = baseline_matrices()
+    for r, (mp, mx) in base.items():
+        tasks.append({"id": f"final_{r}", "kind": "isaac",
+                      "argv": ["scripts/eval_matrix.py", "--matrix", "$DELIVERY/" + str(mp.relative_to(ROOT)), "--only", r,
+                               "--output", f"$RUNS/final/{r}", "--seed", str(SEED_EVAL)],
+                      "inputs": [str(mp.relative_to(ROOT))], "outputs": [f"$RUNS/final/{r}/{r}.jsonl"]})
+    write("final_baselines", tasks)
+
+
 def final():
     """After checkpoint selection (results/v4/selection/selection.json)."""
     sel = json.loads((ROOT / "results/v4/selection/selection.json").read_text())
@@ -414,5 +427,5 @@ def verification():
 if __name__ == "__main__":
     for stage in sys.argv[1:]:
         {"development": development, "constants": constants, "pilots": pilots, "train": train,
-         "validation": validation, "final": final, "mech_dev": mech_dev, "extras": extras, "traces6": traces,
+         "validation": validation, "final": final, "final_baselines": final_baselines, "mech_dev": mech_dev, "extras": extras, "traces6": traces,
          "verification": verification}[stage]()
