@@ -1,0 +1,215 @@
+{
+ "name": "mech_dev",
+ "tasks": [
+  {
+   "id": "devfit_combined_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_combined_robust_history_s111.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/combined_robust_history_s111",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_combined_robust_history_s111.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/combined_robust_history_s111/combined_robust_history_s111__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "devfit_combined_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_combined_robust_history_s222.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/combined_robust_history_s222",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_combined_robust_history_s222.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/combined_robust_history_s222/combined_robust_history_s222__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "devfit_combined_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_combined_robust_history_s333.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/combined_robust_history_s333",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_combined_robust_history_s333.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/combined_robust_history_s333/combined_robust_history_s333__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "devfit_combined_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_combined_robust_history_s444.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/combined_robust_history_s444",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_combined_robust_history_s444.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/combined_robust_history_s444/combined_robust_history_s444__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "devfit_combined_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_combined_robust_history_s555.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/combined_robust_history_s555",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_combined_robust_history_s555.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/combined_robust_history_s555/combined_robust_history_s555__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "devfit_residual_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_residual_robust_history_s111.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/residual_robust_history_s111",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_residual_robust_history_s111.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/residual_robust_history_s111/residual_robust_history_s111__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "devfit_residual_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_residual_robust_history_s222.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/residual_robust_history_s222",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_residual_robust_history_s222.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/residual_robust_history_s222/residual_robust_history_s222__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "devfit_residual_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_residual_robust_history_s333.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/residual_robust_history_s333",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_residual_robust_history_s333.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/residual_robust_history_s333/residual_robust_history_s333__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "devfit_residual_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_residual_robust_history_s444.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/residual_robust_history_s444",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_residual_robust_history_s444.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/residual_robust_history_s444/residual_robust_history_s444__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "devfit_residual_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/extras/devfit_residual_robust_history_s555.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/mechanisms/devfit/residual_robust_history_s555",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/extras/devfit_residual_robust_history_s555.json"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/residual_robust_history_s555/residual_robust_history_s555__selected__dev.jsonl"
+   ]
+  }
+ ]
+}

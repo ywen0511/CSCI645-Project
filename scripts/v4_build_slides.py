@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
+import sys
 from pathlib import Path
 
 from pptx import Presentation
@@ -95,3 +96,43 @@ def foot(slide, text):
     p.font.size, p.font.color.rgb = Pt(11), GREY
 
 
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--soffice", default="libreoffice")
+    a = ap.parse_args()
+    prs = Presentation()
+    prs.slide_width, prs.slide_height = Inches(13.333), Inches(7.5)
+    blank = prs.slide_layouts[6]
+    F = ROOT / "results/v4/figures"
+    notes_md = ["# V4 speaker notes", ""]
+
+    def new(note_title):
+        s = prs.slides.add_slide(blank)
+        CUR["slide"] = len(prs.slides)
+        s._note_title = note_title
+        return s
+
+    def notes(s, text):
+        s.notes_slide.notes_text_frame.text = text
+        notes_md.extend([f"## Slide {CUR['slide']}: {s._note_title}", "", text, ""])
+
+    import slides_v4_content  # noqa: E402  (scripts/slides_v4_content.py: results slides, written after the analysis)
+
+    slides_v4_content.build(prs, new, notes, n, title, bullets, table, pic, foot, F)
+    prs.core_properties.author = "Yan Wen (CSCI 645); generated with Claude Code"
+    prs.core_properties.title = "Uncertain giver grasp in bimanual handover — V4"
+    prs.core_properties.last_modified_by = "csci645-v4"
+    out = OUT / "slides.pptx"
+    prs.save(out)
+    (OUT / "speaker_notes.md").write_text("\n".join(notes_md) + "\n")
+    (ROOT / "results/v4/slide_numbers.json").write_text(json.dumps(AUDIT, indent=1) + "\n")
+    subprocess.run([a.soffice, "--headless", "--convert-to", "pdf", "--outdir", str(OUT), str(out)], check=True,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    print(f"{len(prs.slides)} slides, {len(AUDIT)} audited numbers")
+
+
+if __name__ == "__main__":
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    main()

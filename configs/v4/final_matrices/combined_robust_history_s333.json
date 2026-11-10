@@ -1,0 +1,32 @@
+{
+ "name": "v4_final_combined_robust_history_s333",
+ "suite": "$DELIVERY/configs/v4/suites/final.jsonl",
+ "num_envs": 240,
+ "protocol": "configs/v4/frozen/training/combined_robust_history.json",
+ "trace_cases": [
+  "v4-final-mixed_id-0000",
+  "v4-final-mixed_id-0001",
+  "v4-final-grasp_15mm-0000",
+  "v4-final-grasp_10mm-0000",
+  "v4-final-mixed_ood-0000",
+  "v4-final-clean-0000"
+ ],
+ "entries": [
+  {
+   "id": "combined_robust_history_s333__selected",
+   "method": "combined",
+   "training_seed": 333,
+   "role": "selected",
+   "trace": true,
+   "checkpoint": "combined_robust_history_s333/checkpoints/step_006029312.pt"
+  },
+  {
+   "id": "combined_robust_history_s333__final",
+   "method": "combined",
+   "training_seed": 333,
+   "role": "final",
+   "trace": true,
+   "checkpoint": "combined_robust_history_s333/checkpoints/final.pt"
+  }
+ ]
+}
