@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Freeze the V4 protocol (CPU). Two separate steps with separate manifests, so neither invalidates the other.
 
+    python3 scripts/v4_freeze.py check         # read-only acceptance/pilot readiness gate
     python3 scripts/v4_freeze.py freeze        # pre-final inputs -> configs/v4/FREEZE.json (+ frozen protocols, matrices, plan)
     git commit ...; git tag experiment-v4      # simulator source used for every formal run
     python3 scripts/v4_freeze.py final_suite   # final suite from the frozen generator -> configs/v4/FINAL_SUITE.json
@@ -32,7 +33,71 @@ INPUT_GLOBS = ["src/csci645_handover/**/*.py", "scripts/train.py", "scripts/eval
                "configs/v2/protocol.json", "configs/v4/suites/development.jsonl", "configs/v4/suites/validation.jsonl",
                "configs/v4/suites/SUITES.json", "configs/v4/development/baseline_grid.json",
                "configs/v4/development/baseline_selection.json", "configs/v4/frozen/**/*.json", "configs/v4/analysis_plan.json",
-               "configs/v4/video_rule.json", "configs/v2/frozen/pip-freeze.txt"]
+               "configs/v4/video_rule.json", "configs/v2/frozen/pip-freeze.txt",
+               "results/v4/acceptance/*.json", "results/v4/pilot/summary.json", "docs/v4/PREREGISTRATION.md"]
+PROFILES = ("combined_clean_ff", "combined_robust_ff", "combined_robust_history",
+            "combined_robust_repeat", "residual_robust_history")
+PILOT_RUNS = {("combined_robust_history", 901), ("combined_robust_history", 902),
+              ("combined_robust_ff", 901), ("residual_robust_history", 901)}
+
+
+def prerequisites(root):
+    """Read-only gate. A successful acceptance headline alone is insufficient to freeze."""
+    root = Path(root)
+    acceptance = json.loads((root / "results/v4/acceptance/acceptance.json").read_text())
+    required = ("A1_v3_path", "A2_v4_zero_offset", "A3_negative_controls", "A4_layout", "A5_reset_leakage",
+                "A6_privileged_parent", "A7_zero_residual_equals_parent", "A8_privileged_policy",
+                "A9_eval_resume_and_tamper", "resume_smoke")
+    if acceptance.get("all_pass") is not True or any(acceptance.get(k, {}).get("pass") is not True for k in required):
+        raise ValueError("All acceptance checks and smoke resume must pass before freeze")
+    # Keep the mixed-commit acceptance lineage with the evidence; no new GPU claim is made here.
+    provenance = root / "results/v4/acceptance/PROVENANCE.json"
+    if not json.loads(provenance.read_text()).get("final_judgement"):
+        raise ValueError("Acceptance provenance is missing")
+    pilot = json.loads((root / "results/v4/pilot/summary.json").read_text())
+    runs = pilot.get("runs", [])
+    ids = [(r.get("profile"), r.get("seed")) for r in runs]
+    if len(ids) != len(PILOT_RUNS) or set(ids) != PILOT_RUNS:
+        raise ValueError("Pilot report must cover the four declared pilot runs exactly once")
+    if (pilot.get("complete") is not True or pilot.get("all_attempts_accounted") is not True
+            or not pilot.get("formal_configuration_decision")):
+        raise ValueError("Pilot completion, all-attempt accounting and configuration decision are required")
+    if any(r.get("status") != "completed" or r.get("transitions") != 5505024 for r in runs):
+        raise ValueError("Every declared pilot must complete its 5,505,024-transition budget")
+    other = pilot.get("other_training_transitions")
+    if type(other) is not int or other < 0:
+        raise ValueError("Account for smoke, resume and failed/restarted pilot transitions")
+    total = sum(r["transitions"] for r in runs) + other
+    if pilot.get("total_training_transitions") != total or total > 24000000:
+        raise ValueError("Pilot transition accounting differs or exceeds the 24M cap")
+    evidence = pilot.get("evidence", [])
+    if not evidence:
+        raise ValueError("Pilot report requires hashed, repository-local evidence files")
+    paths = []
+    for item in evidence:
+        path = (root / item["path"]).resolve()
+        if root.resolve() not in path.parents or v4.sha256(path) != item["sha256"]:
+            raise ValueError("Pilot evidence path or checksum mismatch")
+        paths.append(path)
+    protocols = sorted((root / "configs/v4/training").glob("*.json"))
+    if {p.stem for p in protocols} != set(PROFILES):
+        raise ValueError("Exactly five training profiles are required")
+    for p in protocols:
+        tr = json.loads(p.read_text())["training"]
+        if (sorted(tr["seeds"]) != sorted(v4.TRAINING_SEEDS)
+                or tr["final_transitions_per_run"] != 10000000):
+            raise ValueError(f"Unexpected formal seeds or budget: {p.name}")
+    return {"acceptance_passed": True, "pilot_runs": len(runs), "pilot_transitions": total,
+            "formal_runs": 25, "pilot_evidence": [str(p.relative_to(root.resolve())) for p in paths]}
+
+
+def write_unchanged_or_new(path, text):
+    """An existing different artifact is evidence, never silently replace it."""
+    if path.exists() and path.read_text() != text:
+        raise ValueError(f"Refusing to overwrite different frozen artifact: {path}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not path.exists():
+        path.write_text(text)
 
 
 def git(*a):
@@ -123,8 +188,11 @@ VIDEO_RULE = {
 
 
 def freeze():
+    if (ROOT / "configs/v4/FREEZE.json").exists():
+        raise SystemExit("FREEZE.json already exists; verify it, never overwrite a frozen study")
     if git("status", "--porcelain", "--untracked-files=no"):
         raise SystemExit("freeze requires a clean committed tree")
+    readiness = prerequisites(ROOT)
     sel = json.loads((ROOT / "configs/v4/development/baseline_selection.json").read_text())
     if "best_constant_geometry" not in sel["roles"]:
         raise SystemExit("constant search selection missing")
@@ -150,9 +218,11 @@ def freeze():
             "num_envs": 240, "protocol": f"configs/v4/frozen/training/{prof}.json", "trace_cases": [], "entries": ents}, indent=1) + "\n")
     (ROOT / "configs/v4/analysis_plan.json").write_text(json.dumps(plan(sel), indent=1) + "\n")
     (ROOT / "configs/v4/video_rule.json").write_text(json.dumps(VIDEO_RULE, indent=1) + "\n")
-    files = sorted({p for g in INPUT_GLOBS for p in ROOT.glob(g) if p.is_file() and "__pycache__" not in p.parts})
+    files = sorted({p for g in INPUT_GLOBS for p in ROOT.glob(g) if p.is_file() and "__pycache__" not in p.parts}
+                   | {ROOT / p for p in readiness["pilot_evidence"]})
     rec = {"freeze_utc": now, "base_commit": git("rev-parse", "HEAD"), "formal_runs": len(runs),
-           "runs": [f"{p}_s{s}" for p, _, s in runs], "inputs": {str(p.relative_to(ROOT)): v4.sha256(p) for p in files},
+           "runs": [f"{p}_s{s}" for p, _, s in runs], "readiness": readiness,
+           "inputs": {str(p.relative_to(ROOT)): v4.sha256(p) for p in files},
            "final_suite": "generated after this freeze by `scripts/v4_freeze.py final_suite`; see configs/v4/FINAL_SUITE.json",
            "note": "FREEZE.json lists the pre-final inputs only; it never changes after the experiment-v4 tag."}
     (ROOT / "configs/v4/FREEZE.json").write_text(json.dumps(rec, indent=1) + "\n")
@@ -166,14 +236,23 @@ def final_suite():
         raise SystemExit(f"frozen inputs changed: {bad[:5]}")
     rows = v4.make_cases("final", v4.CONDITIONS, v4.ORDER)
     p = ROOT / "configs/v4/suites/final.jsonl"
-    v4.write_jsonl(p, rows)
-    (ROOT / "configs/v4/FINAL_SUITE.json").write_text(json.dumps({
-        "suite": "configs/v4/suites/final.jsonl", "cases": len(rows), "sha256": v4.sha256(p),
+    content = "".join(json.dumps(r, sort_keys=True) + "\n" for r in rows)
+    import hashlib
+    metadata = json.dumps({
+        "suite": "configs/v4/suites/final.jsonl", "cases": len(rows), "sha256": hashlib.sha256(content.encode()).hexdigest(),
         "generator": "src/csci645_handover/v4_protocol.py", "generator_sha256": v4.sha256(ROOT / "src/csci645_handover/v4_protocol.py"),
         "freeze_sha256": v4.sha256(ROOT / "configs/v4/FREEZE.json"), "split_seed": v4.SPLIT_SEEDS["final"],
-        "experiment_tag": "experiment-v4", "trace_cases": TRACE_FINAL}, indent=1) + "\n")
+        "experiment_tag": "experiment-v4", "trace_cases": TRACE_FINAL}, indent=1) + "\n"
+    mp = ROOT / "configs/v4/FINAL_SUITE.json"
+    # Validate both before writing either, including repeated reconstruction.
+    for target, text in ((p, content), (mp, metadata)):
+        if target.exists() and target.read_text() != text:
+            raise ValueError(f"Refusing to overwrite different frozen artifact: {target}")
+    write_unchanged_or_new(p, content)
+    write_unchanged_or_new(mp, metadata)
     print(len(rows), v4.sha256(p))
 
 
 if __name__ == "__main__":
-    {"freeze": freeze, "final_suite": final_suite}[sys.argv[1]]()
+    {"check": lambda: print(json.dumps(prerequisites(ROOT), indent=2)),
+     "freeze": freeze, "final_suite": final_suite}[sys.argv[1]]()

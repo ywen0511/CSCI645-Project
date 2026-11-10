@@ -1,5 +1,5 @@
 {
-  "assignment": "POST_V3_EXECUTION.md",
+  "assignment": "V4_REMAINING.md",
   "complete": false,
   "stage": "stage_b_v4",
   "original_v3_complete": true,
@@ -22,17 +22,26 @@
   "v4": {
     "scope": "unknown physical giver grasp translation with calibrated geometry and bounded PPO residuals",
     "implementation": "in_development",
-    "acceptance": "not_started",
+    "acceptance": "passed in uploaded evidence: A1-A9 and five-profile smoke resume; mixed-commit lineage in PROVENANCE.json",
     "frozen": false,
     "formal_runs_planned": 25,
     "formal_runs_completed": 0,
     "release": "pending",
     "fresh_download_verified": false,
     "optional_dynamic_slip": "not_performed",
-    "branch": "study/v4-grasp-uncertainty"
+    "branch": "study/v4-grasp-uncertainty",
+    "acceptance_evidence": "results/v4/acceptance/acceptance.json",
+    "acceptance_provenance": "results/v4/acceptance/PROVENANCE.json",
+    "pilot": "execution reported in decision log; completed pilot summary not yet committed",
+    "cpu_workflow_review": "docs/v4/CPU_REVIEW.md",
+    "cpu_workflow_evidence": "results/v4/cpu_workflow_review.json",
+    "cpu_workflow_validation": "94 passed, 1 simulator-only skip; final 19 workflow regression tests passed"
   },
   "next_actions": [
-    "Stage B: V4 development, acceptance, freeze, formal runs, analysis, publication (branch study/v4-grasp-uncertainty)"
+    "Remote agent: resume existing pilots and publish complete evidence/accounting; do not restart them blindly",
+    "Run freeze preflight, commit/tag experiment-v4, generate final suite and execute the 25 formal runs",
+    "Validate/select/evaluate, complete mechanisms/repeatability, then publish all artifacts and verify fresh downloads as V4_REMAINING.md requires"
   ],
-  "blockers": []
+  "blockers": [],
+  "original_assignment": "POST_V3_EXECUTION.md"
 }

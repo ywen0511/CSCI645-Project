@@ -1,5 +1,11 @@
 # Active remote assignment: verified reproduction and uncertain-grasp handover
 
+> **Current entry point: [V4_REMAINING.md](V4_REMAINING.md).** Stage A has completed
+> and v3.0.1 is publicly verified. V4 development and acceptance are already uploaded.
+> Use the remaining-work document to resume the current state; preserve this original
+> scientific/publication contract and do not restart completed stages.
+
+
 ## Mission, scope and authority
 
 You are the remote execution agent for Yan Wen's CSCI 645 project in
