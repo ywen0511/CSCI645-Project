@@ -62,14 +62,16 @@ mkdir -p "$R/formal"
 ln -s "$X/formal/train" "$R/formal/train"
 ln -s "$X/final" "$R/final"
 "$PY" "$T/scripts/v3_jobs.py" run --manifest "$T/results/v4/jobs/verification.json" --repo "$E" \
-    --runs-root "$R" --isaac-python "$ISAAC" --dry-run
+    --runs-root "$R" --isaac-python "$ISAAC" --dry-run \
+    --only replay60_geometry_calibrated,replay60_combined_robust_history_s111,reload_combined_clean_ff,reload_combined_robust_ff,reload_combined_robust_history,reload_combined_robust_repeat,reload_residual_robust_history,resume_check_train
 "$PY" "$T/scripts/v3_jobs.py" run --manifest "$T/results/v4/jobs/verification.json" --repo "$E" \
     --runs-root "$R" --isaac-python "$ISAAC" --task-timeout-s 3600
 "$PY" -I "$T/scripts/v4_fresh_compare.py" --x "$R" --index "$T/configs/v4/final_matrix_index.json" \
     --output "$V4_WORK/fresh_gpu.json"
 ```
 
-This runs **all 60 cases** of the mechanism subset for the calibrated baseline and the seed-111 selected history
+The dry run resolves every input except that of `resume_check_inspect`, whose input is the checkpoint written by
+`resume_check_train`; the real run executes the nine tasks in order. This runs **all 60 cases** of the mechanism subset for the calibrated baseline and the seed-111 selected history
 policy (batch 20), 12 cases (first case of every condition) for one selected checkpoint of each of the five
 architectures, and two PPO iterations resumed from `combined_robust_history_s111/checkpoints/latest.pt` into a new
 directory (306 → 308 iterations; 10,027,008 → 10,092,544 transitions). Let every task finish. Expected:
