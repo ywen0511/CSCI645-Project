@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "source_commit": "50037af8c0ac2d17c4a3989b538332f6c8807ad3",
+  "kind": "CPU review supplement; inherited study data unchanged",
+  "assets": [
+    {
+      "name": "DEFENSE_NOTES.md",
+      "bytes": 6744,
+      "sha256": "017260ba51561721cf97091634000f14654ed57cb536bbbaa77a521ca3351d42"
+    },
+    {
+      "name": "INHERITED_ASSETS.json",
+      "bytes": 10808,
+      "sha256": "ec380c06f206111c0fab88ae244174c7dc30730ccc26be235c5cf964f6d647b6"
+    },
+    {
+      "name": "RELEASE_NOTES.md",
+      "bytes": 2057,
+      "sha256": "1876c0d2d5c0bda64fc345babb5bd195a0e4601bcb8d96334bc567363f6d392e"
+    },
+    {
+      "name": "REVIEW.md",
+      "bytes": 7041,
+      "sha256": "d81df30b469e0d8f2ed3b14c48f2bbc19c681cc2a7d7960587653fa9ab58a131"
+    },
+    {
+      "name": "SOURCE_COMMIT.txt",
+      "bytes": 41,
+      "sha256": "aeba9d57b9de70f5b4e58b9c251e4df8323e26cf6e3fd64c3acb1fc2b4f1b747"
+    },
+    {
+      "name": "audit.json",
+      "bytes": 9621,
+      "sha256": "4107fa66adaecd4f48146e62346cf16671e18bded79003325f24d29bb1911c5f"
+    },
+    {
+      "name": "boundary_sensitivity.png",
+      "bytes": 57110,
+      "sha256": "ba86484210ff268c179166458aa71e3809d9947a06233bd11eafb6731316fe63"
+    },
+    {
+      "name": "overview.md",
+      "bytes": 16481,
+      "sha256": "b705b877e696a27d0e1e76ab4bbf74a570f24086376685c382468a9d0206870c"
+    },
+    {
+      "name": "overview.pdf",
+      "bytes": 85068,
+      "sha256": "a220fda12d241c407e378eba26d803382271e0e6beeb36a003595bc9cc558052"
+    },
+    {
+      "name": "source-review.tar.gz",
+      "bytes": 19421023,
+      "sha256": "3f36a7cb7884a528dc7c365ee96845641fed1c3a01fb4ad64b1df07d203aebfe"
+    }
+  ]
+}

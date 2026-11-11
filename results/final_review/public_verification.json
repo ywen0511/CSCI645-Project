@@ -1,0 +1,231 @@
+{
+ "schema": 1,
+ "assignment": "FINAL_DELIVERY_HANDOFF.md",
+ "release": {
+  "tag": "v4.0.2",
+  "url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.2",
+  "tag_object": "8be793566043d82ec8a56420cbb28e1313970b24",
+  "source_commit": "50037af8c0ac2d17c4a3989b538332f6c8807ad3",
+  "published_at": "2026-11-11T04:16:28Z",
+  "draft_verified_before_publication": true,
+  "experiment_tag": "experiment-v4",
+  "experiment_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9",
+  "contains_trained_weights": false
+ },
+ "timestamps_utc": {
+  "inherited_36_asset_check_completed": "2026-11-11T03:27:06Z",
+  "branch_clone_cpu_validation_completed": "2026-11-11T03:29:31Z",
+  "package_built": "2026-11-11T04:14:05Z",
+  "published": "2026-11-11T04:16:28Z",
+  "fresh_verification_start": "2026-11-11T04:16:43Z",
+  "fresh_verification_end": "2026-11-11T04:19:19Z"
+ },
+ "new_assets": {
+  "count": 12,
+  "expected": 12,
+  "anonymous_download": true,
+  "assets": [
+   {
+    "name": "DEFENSE_NOTES.md",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/DEFENSE_NOTES.md",
+    "bytes": 6744,
+    "sha256": "017260ba51561721cf97091634000f14654ed57cb536bbbaa77a521ca3351d42",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "INHERITED_ASSETS.json",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/INHERITED_ASSETS.json",
+    "bytes": 10808,
+    "sha256": "ec380c06f206111c0fab88ae244174c7dc30730ccc26be235c5cf964f6d647b6",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "RELEASE_NOTES.md",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/RELEASE_NOTES.md",
+    "bytes": 2057,
+    "sha256": "1876c0d2d5c0bda64fc345babb5bd195a0e4601bcb8d96334bc567363f6d392e",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "REVIEW.md",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/REVIEW.md",
+    "bytes": 7041,
+    "sha256": "d81df30b469e0d8f2ed3b14c48f2bbc19c681cc2a7d7960587653fa9ab58a131",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "SHA256SUMS",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/SHA256SUMS",
+    "bytes": 914,
+    "sha256": "766be9fff2953d0f967e331e51d1f61ba683d1f60a87b2f3aae9a0b977c4b3c6",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "SOURCE_COMMIT.txt",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/SOURCE_COMMIT.txt",
+    "bytes": 41,
+    "sha256": "aeba9d57b9de70f5b4e58b9c251e4df8323e26cf6e3fd64c3acb1fc2b4f1b747",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "audit.json",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/audit.json",
+    "bytes": 9621,
+    "sha256": "4107fa66adaecd4f48146e62346cf16671e18bded79003325f24d29bb1911c5f",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "boundary_sensitivity.png",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/boundary_sensitivity.png",
+    "bytes": 57110,
+    "sha256": "ba86484210ff268c179166458aa71e3809d9947a06233bd11eafb6731316fe63",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "overview.md",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/overview.md",
+    "bytes": 16481,
+    "sha256": "b705b877e696a27d0e1e76ab4bbf74a570f24086376685c382468a9d0206870c",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "overview.pdf",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/overview.pdf",
+    "bytes": 85068,
+    "sha256": "a220fda12d241c407e378eba26d803382271e0e6beeb36a003595bc9cc558052",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "release_manifest.json",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/release_manifest.json",
+    "bytes": 1678,
+    "sha256": "10ff5fc9dfbc970dbbf616b7774ffcbda6e183a205f6088ef6652936d0494b40",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   },
+   {
+    "name": "source-review.tar.gz",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/source-review.tar.gz",
+    "bytes": 19421023,
+    "sha256": "3f36a7cb7884a528dc7c365ee96845641fed1c3a01fb4ad64b1df07d203aebfe",
+    "matches_release_manifest": true,
+    "byte_identical_to_built_package": true
+   }
+  ],
+  "package_verifier": {
+   "passed": true,
+   "assets": 12,
+   "source_commit": "50037af8c0ac2d17c4a3989b538332f6c8807ad3",
+   "archive_members": 1298,
+   "scope": "local bytes and source consistency; no network or GPU replay"
+  },
+  "package_verifier_passed": true,
+  "all_match_manifest": true
+ },
+ "draft_check": {
+  "assets": 12,
+  "authenticated_download_byte_identical_to_package": true,
+  "package_verifier_passed": true,
+  "tag_resolves_to_source_commit": true
+ },
+ "inherited_assets": {
+  "index": "results/final_review/INHERITED_ASSETS.json",
+  "checked": 36,
+  "passed": 36,
+  "all_passed": true,
+  "releases": [
+   {
+    "tag": "v4.0.0",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.0",
+    "indexed_assets": 30,
+    "downloaded_assets": 30,
+    "anonymous": true,
+    "exact_asset_set": true
+   },
+   {
+    "tag": "v4.0.1",
+    "url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.1",
+    "indexed_assets": 6,
+    "downloaded_assets": 6,
+    "anonymous": true,
+    "exact_asset_set": true
+   }
+  ],
+  "per_asset": "results/final_review/public_verification/inherited_check.json",
+  "method": "fresh anonymous download of every v4.0.0 and v4.0.1 asset; size, SHA-256 and URL compared with the index"
+ },
+ "fresh_tag_clone": {
+  "ref": "v4.0.2",
+  "resolved_commit": "50037af8c0ac2d17c4a3989b538332f6c8807ad3",
+  "experiment_v4_fetched": "aac4d98274814b1ab121a715db71187e3e1cc0b9",
+  "raw_final_download": {
+   "url": "https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.0/raw-final.tar.gz",
+   "sha256": "26b27cd5f9d97f1a6dea85412ecb050aba772eb84fee6bd9a9f18038bf7cf627",
+   "matches_inherited_index": true
+  },
+  "audit_passed": true,
+  "audit_summary": "PASS: 129600 episodes; 189 common-valid boundary cases",
+  "audit_json_byte_identical_to_released": true,
+  "overview_markdown_regenerated_byte_identical_to_released": true,
+  "worktree_clean_after_regeneration": true
+ },
+ "branch_clone_check": {
+  "commit": "50037af8c0ac2d17c4a3989b538332f6c8807ad3",
+  "audit_equal_to_committed": true,
+  "overview_markdown_unchanged": true,
+  "package_built_and_verified": true
+ },
+ "pdf": {
+  "asset": "overview.pdf",
+  "sha256": "a220fda12d241c407e378eba26d803382271e0e6beeb36a003595bc9cc558052",
+  "pages": 6,
+  "all_pages_visually_inspected": true,
+  "link_targets": 18,
+  "all_links_public_https": true,
+  "note": "Published PDF downloaded anonymously, rendered page by page and inspected: text, two tables, primary-contrast table, boundary figure with labels/legend, references and links."
+ },
+ "cpu_tests": {
+  "command": "CUDA_VISIBLE_DEVICES='' python -m pytest -q",
+  "passed": 105,
+  "skipped": 1,
+  "skip_reason": "Isaac Lab not installed",
+  "runs": [
+   "fresh branch clone at 50037af",
+   "fresh tag clone at v4.0.2"
+  ],
+  "outputs": [
+   "results/final_review/public_verification/pytest_branch_clone.txt",
+   "results/final_review/public_verification/pytest_fresh_tag_clone.txt"
+  ]
+ },
+ "environment": {
+  "python": "3.13.9 (venv; the system Python lacked the venv module)",
+  "numpy": "2.4.6",
+  "torch": "2.15.0+cpu (CPU wheel index)",
+  "pytest": "9.2.0",
+  "matplotlib": "3.11.2",
+  "reportlab": "4.4.9",
+  "machine": "remote Linux CPU node; CUDA hidden"
+ },
+ "gpu_runs": 0,
+ "simulator_runs": 0,
+ "incidents": [
+  "Workstation upload of source-review.tar.gz failed with a TLS error, leaving an incomplete 'starter' asset in the unpublished draft; that incomplete placeholder was deleted and the file uploaded from the remote CPU node. Draft then had exactly 12 assets, byte-identical to the package, before publication."
+ ],
+ "limitations": [
+  "No new GPU replay or physics run: prior physics/reload/resume verification is docs/v4/VERIFICATION.md.",
+  "The PDF was rebuilt neither locally nor remotely; the released PDF is the owner's committed build, verified by hash and visual inspection.",
+  "Package verification checks bytes and source consistency; the audit checks published records, not new simulation."
+ ],
+ "passed": true
+}

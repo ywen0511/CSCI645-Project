@@ -191,3 +191,31 @@ those archives.
 - README and AGENTS now point to `FINAL_DELIVERY_HANDOFF.md`, a finite CPU publication
   assignment. `FINAL_REVIEW_STATUS.json` keeps supplement publication/verification pending
   separately from the completed historical V4 study. Do not restart old training missions.
+
+### 2026-11-11 — Review supplement v4.0.2 published and publicly verified
+
+- Validated a fresh clone of branch commit `50037af` on a remote CPU node with CUDA hidden:
+  - CPU tests: 105 passed and 1 skipped (Isaac Lab import).
+  - Audit of a freshly downloaded `raw-final.tar.gz`: byte-identical to the committed `audit.json`.
+  - Overview Markdown regeneration: unchanged.
+  - Environment: Python 3.13.9 venv, because the system Python lacked `venv`.
+  - No analysis definition changed.
+- Tagged `v4.0.2` → `50037af` (v4.0.2 was unused) and built the 12-asset package from that clean checkout.
+- Created the draft release. The workstation upload of `source-review.tar.gz` failed with a TLS error,
+  leaving an incomplete draft asset. I deleted that incomplete entry and uploaded the same file from the
+  remote node.
+- Before publishing, verified the draft by authenticated download:
+  - all 12 assets byte-identical to the package;
+  - the package verifier passed;
+  - the tag resolves to `50037af`.
+- Published 2026-11-11T04:16:28Z.
+- Fresh public verification:
+  - anonymous v4.0.2 download passed the verifier;
+  - a fresh tag clone re-ran the audit, byte-identical to the released `audit.json`;
+  - the regenerated overview Markdown is byte-identical to the released one;
+  - the released PDF (6 pages) was inspected visually and all 18 of its links are public;
+  - all 36 inherited v4.0.0/v4.0.1 assets match `INHERITED_ASSETS.json`.
+- Added `scripts/final_review_inherited_check.py` for the inherited check, after the tag.
+- No GPU or simulator work.
+- Records: `results/final_review/public_verification.json`, `docs/final_review/PUBLIC_VERIFICATION.md`.
+- `FINAL_REVIEW_STATUS.json` set complete. `POST_V3_STATUS.json` is unchanged.

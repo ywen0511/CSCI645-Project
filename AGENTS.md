@@ -2,13 +2,13 @@
 
 ## Active continuation assignment
 
-V3 and V4 are complete and released. On `study/v4-grasp-uncertainty`, the active
-self-contained assignment is `FINAL_DELIVERY_HANDOFF.md`, tracked separately in
-`FINAL_REVIEW_STATUS.json`. It publishes and verifies the CPU review supplement.
-No new GPU or simulator work is required or authorized by that assignment.
-`V4_REMAINING.md`, `POST_V3_EXECUTION.md` and `V3_EXECUTION.md` are historical contracts.
-Preserve historical status files, frozen inputs, published evidence, tags and releases.
-Do not restart completed training or evaluation matrices. All public content is English.
+V3 and V4 are complete and released. The final review assignment
+`FINAL_DELIVERY_HANDOFF.md` is **complete**: supplement release v4.0.2 is published and
+publicly verified (`FINAL_REVIEW_STATUS.json`, `docs/final_review/PUBLIC_VERIFICATION.md`).
+There is no active assignment. `V4_REMAINING.md`, `POST_V3_EXECUTION.md` and `V3_EXECUTION.md`
+are historical contracts. Preserve historical status files, frozen inputs, published evidence,
+tags and releases. Do not restart completed training or evaluation matrices. All public
+content is English.
 
 ## Mission and authorization
 

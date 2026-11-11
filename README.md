@@ -1,19 +1,23 @@
 # CSCI 645 — Robust bimanual handover
 
-**The V4 experimental study is complete and publicly released.** This branch adds a
-final project synthesis, independent CPU audit and retrospective sensitivity analysis.
-The supplement's release/public-download verification is tracked separately in
-[FINAL_REVIEW_STATUS.json](FINAL_REVIEW_STATUS.json). No new training is required.
+**The V4 experimental study is complete and publicly released, and the final review
+supplement is published and publicly verified:** release
+[**v4.0.2**](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.2)
+([overview PDF](https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/overview.pdf)) ·
+verification record [docs/final_review/PUBLIC_VERIFICATION.md](docs/final_review/PUBLIC_VERIFICATION.md) ·
+status [FINAL_REVIEW_STATUS.json](FINAL_REVIEW_STATUS.json) (complete). The supplement adds
+corrections and retrospective CPU analysis only; it ran no new GPU experiment.
+Study data, checkpoints and videos remain in
+[v4.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.0), with tooling in
+[v4.0.1](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.1).
 
 **Start here:** [six-page project overview (PDF)](report/final/overview.pdf) ·
 [overview (Markdown)](report/final/overview.md) ·
 [review and corrections](docs/final_review/REVIEW.md) ·
 [defense/demo notes](docs/final_review/DEFENSE_NOTES.md).
 
-**Execution agent:** read [FINAL_DELIVERY_HANDOFF.md](FINAL_DELIVERY_HANDOFF.md) and
-complete its finite publication and public-download checks. That document is the
-current assignment and contains commands, authority, deliverables and completion gates.
-Do not restart training from the historical V3/V4 execution runbooks.
+There is no active execution assignment. [FINAL_DELIVERY_HANDOFF.md](FINAL_DELIVERY_HANDOFF.md)
+is complete. Do not restart training from the historical V3/V4 execution runbooks.
 
 ## What this project studies
 

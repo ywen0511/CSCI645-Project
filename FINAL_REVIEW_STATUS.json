@@ -5,17 +5,25 @@
   "historical_v4_study_complete": true,
   "cpu_review_complete": true,
   "local_gpu_or_simulator_runs": 0,
-  "cpu_tests": {"passed": 105, "skipped": 1, "skip_reason": "Isaac Lab is not installed locally"},
+  "cpu_tests": {
+    "passed": 105,
+    "skipped": 1,
+    "skip_reason": "Isaac Lab is not installed locally"
+  },
   "raw_final_audit": "results/final_review/audit.json",
   "overview_pdf": "report/final/overview.pdf",
   "overview_pdf_pages": 6,
   "visual_review": "All six supplement pages inspected; archived report/deck rendered and checked for gross layout issues.",
-  "proposed_release_tag": "v4.0.2",
-  "supplement_release_published": false,
-  "fresh_public_download_verified": false,
-  "complete": false,
-  "remaining": [
-    "Publish the review supplement with a new immutable tag and all package assets.",
-    "Verify fresh public downloads and inherited artifact availability/checksums; commit the verification record and final status."
-  ]
+  "supplement_release_published": true,
+  "fresh_public_download_verified": true,
+  "complete": true,
+  "remaining": [],
+  "release_tag": "v4.0.2",
+  "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.2",
+  "release_source_commit": "50037af8c0ac2d17c4a3989b538332f6c8807ad3",
+  "release_published_at": "2026-11-11T04:16:28Z",
+  "inherited_assets_verified": "36/36",
+  "public_verification": "results/final_review/public_verification.json",
+  "public_verification_doc": "docs/final_review/PUBLIC_VERIFICATION.md",
+  "gpu_runs": 0
 }
