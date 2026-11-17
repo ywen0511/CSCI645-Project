@@ -1,0 +1,32 @@
+{
+ "status": "frozen before any Study B final evaluation and before rendering (V5_EXECUTION.md section 4)",
+ "clips": [
+  {
+   "id": "study_a_matched_calibration",
+   "rule": "Study A matched pair on v5cal-heldout-grasp_15mm-0000: ema0p2_fixed_a25 (fixed nominal transform) and ema0p2_cal050_a25 (0.5 s calibration); EMA 0.2 and bound 25 mm in both"
+  },
+  {
+   "id": "slip_one_shot_vs_tracking_vs_history",
+   "rule": "geometry_calibrated, geometry_tracking and slip_robust_history (seed 111, selected) on the same case: the first slip_mixed_id final case (by case_id) whose geometry_calibrated outcome is a failure other than invalid_slip; if none exists, v5slip-final-slip_mixed_id-0000"
+  },
+  {
+   "id": "slip_feed_forward",
+   "rule": "slip_robust_ff (seed 111, selected) on the same case as slip_one_shot_vs_tracking_vs_history"
+  },
+  {
+   "id": "study_b_failure",
+   "rule": "slip_robust_history (selected) on the first slip_mixed_id final case (seeds 111..555, then case_id) with a non-success outcome other than invalid_slip; if none exists, geometry_best on its first such slip_mixed_id case; if none exists either, record 'no failure' and add no substitute"
+  },
+  {
+   "id": "no_slip_control",
+   "rule": "slip_robust_history (seed 111, selected) on v5slip-final-static_mixed_id-0000 (no slip)"
+  },
+  {
+   "id": "large_slip_tracking",
+   "rule": "geometry_tracking on v5slip-final-slip_pos_8-0000"
+  }
+ ],
+ "montage": "all clips in the order above, labelled with method, seed, case, condition, outcome, source commit and checkpoint tag",
+ "index": "results/v5/videos/videos.json: per clip method, training seed, case, condition, checkpoint tag and SHA-256, evaluation outcome, replay outcome, source commit",
+ "replay": "each clip replays one case in a single-environment process; the replay outcome is compared with the batched evaluation outcome and every mismatch is disclosed"
+}
