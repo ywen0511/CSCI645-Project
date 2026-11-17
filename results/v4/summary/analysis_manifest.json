@@ -1,0 +1,13 @@
+{
+ "index_sha256": "b40855b55bbd09055047b24361f132657ca76c7aa9d1c78d53d14833e3fce389",
+ "suite_sha256": "481c40c7cfede0e7c0d895e0e707c9b7f72265e8dc417b1276aa08ef712c9456",
+ "bootstrap_seed": 6456401,
+ "repeats": 10000,
+ "bootstrap": "paired training seeds x shared base-case clusters; fixed condition strata; deterministic baselines broadcast",
+ "outputs": {
+  "family_condition_summary.json": "863d596286c1cee843ca106baa663157d896f0907e43fe3842f4537222cdb54e",
+  "paired_effects.json": "5a515d9cd3ecca21769e601bbb44f0badf5f5b9cd474a3fc6362bb2033da6b3f",
+  "per_seed_condition.csv": "87d5f50a44360af8b0fa7a416f50ee66fd5b1186da24771105fe779c203cf047",
+  "reconciliation.json": "93a48509d8119444271fb77943b5eed9729e84f0a412e22fe0c340401758d09f"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "name": "v3_zero_residual_robust_history",
+ "suite": "$DELIVERY/configs/v3/suites/final_subset65.jsonl",
+ "num_envs": 65,
+ "protocol": "configs/v3/frozen/training/residual_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s11__step0",
+   "method": "residual",
+   "training_seed": 11,
+   "role": "untrained_control",
+   "checkpoint": "residual_robust_history_s11/checkpoints/step_000000000.pt"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+[
+ {
+  "method": "combined",
+  "checkpoint": "$RUNS/train/combined_robust_history_s11/checkpoints/step_002031616.pt",
+  "case_id": "v3-final-mixed_id-0000",
+  "run_id": "combined_robust_history_s11__selected",
+  "category": "main_comparison",
+  "eval_records": "$RUNS/final/combined_robust_history_s11/selected/combined_robust_history_s11__selected.jsonl",
+  "output": "$RUNS/videos/main_comparison__combined_robust_history_s11_selected__v3-final-mixed_id-0000.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.015
+  },
+  "checkpoint": null,
+  "case_id": "v3-final-mixed_id-0000",
+  "run_id": "geometry_best_constant",
+  "category": "main_comparison",
+  "eval_records": "$RUNS/final/geometry_common/geometry_common.jsonl",
+  "output": "$RUNS/videos/main_comparison__geometry_best_constant__v3-final-mixed_id-0000.mp4"
+ },
+ {
+  "method": "combined",
+  "checkpoint": "$RUNS/train/combined_robust_history_s11/checkpoints/step_002031616.pt",
+  "case_id": "v3-final-mixed_ood-0000",
+  "run_id": "combined_robust_history_s11__selected",
+  "category": "main_comparison",
+  "eval_records": "$RUNS/final/combined_robust_history_s11/selected/combined_robust_history_s11__selected.jsonl",
+  "output": "$RUNS/videos/main_comparison__combined_robust_history_s11_selected__v3-final-mixed_ood-0000.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.015
+  },
+  "checkpoint": null,
+  "case_id": "v3-final-mixed_ood-0000",
+  "run_id": "geometry_best_constant",
+  "category": "main_comparison",
+  "eval_records": "$RUNS/final/geometry_common/geometry_common.jsonl",
+  "output": "$RUNS/videos/main_comparison__geometry_best_constant__v3-final-mixed_ood-0000.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.015
+  },
+  "checkpoint": null,
+  "case_id": "v3-final-clean-0000",
+  "run_id": "geometry_common",
+  "category": "clean_baseline",
+  "eval_records": "$RUNS/final/geometry_common/geometry_common.jsonl",
+  "output": "$RUNS/videos/clean_baseline__geometry_common__v3-final-clean-0000.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.015
+  },
+  "checkpoint": null,
+  "case_id": "v3-final-mixed_ood-0002",
+  "run_id": "geometry_giver",
+  "category": "giver_reference_comparison",
+  "eval_records": "$RUNS/final/geometry_common/geometry_common.jsonl",
+  "output": "$RUNS/videos/giver_reference_comparison__geometry_giver__v3-final-mixed_ood-0002.mp4"
+ }
+]

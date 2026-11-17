@@ -1,0 +1,33 @@
+{
+ "protocol_id": "v4-video-history",
+ "env_overrides": {
+  "align_max": 0.025,
+  "giver_calibration_window_s": 0.5,
+  "grasp_offset_train": {
+   "clean_probability": 0.25,
+   "high_xyz_m": [
+    0.015,
+    0.0,
+    0.01
+   ],
+   "low_xyz_m": [
+    -0.005,
+    0.0,
+    -0.01
+   ]
+  },
+  "grasp_uncertainty": true,
+  "observation_giver_reference": true,
+  "observation_history": 4,
+  "observation_history_mode": "stack",
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "clean_probability": 0.25,
+   "delay_steps": 2,
+   "ema_alpha": 0.2,
+   "max_delay_steps": 8,
+   "noise_std_m": 0.002
+  }
+ },
+ "ppo_overrides": {}
+}

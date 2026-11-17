@@ -1,0 +1,23 @@
+{
+ "name": "v3_intervention_current_only_residual_robust_history_s55",
+ "suite": "$DELIVERY/configs/v3/suites/final_subset65.jsonl",
+ "num_envs": 65,
+ "protocol": "configs/v3/frozen/training/residual_robust_history.json",
+ "base_overrides": {
+  "observation_history_mode": "repeat_current"
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s55__selected__current_only",
+   "method": "residual",
+   "training_seed": 55,
+   "role": "intervention_current_only",
+   "allow_config_mismatch": true,
+   "intervention": {
+    "observation_history_mode": "repeat_current"
+   },
+   "checkpoint": "residual_robust_history_s55/checkpoints/step_002031616.pt"
+  }
+ ]
+}

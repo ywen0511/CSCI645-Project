@@ -1,0 +1,21 @@
+{
+ "name": "v4acc_zero_combined_robust_ff",
+ "suite": "configs/v4/acceptance/zero_residual.jsonl",
+ "num_envs": 72,
+ "protocol": "configs/v4/pilot/combined_robust_ff.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_robust_ff_step0",
+   "method": "combined",
+   "training_seed": 101,
+   "checkpoint": "smoke_combined_robust_ff_s101/checkpoints/step_000000000.pt"
+  },
+  {
+   "id": "combined_robust_ff_final",
+   "method": "combined",
+   "training_seed": 101,
+   "checkpoint": "smoke_combined_robust_ff_s101/checkpoints/final.pt"
+  }
+ ]
+}

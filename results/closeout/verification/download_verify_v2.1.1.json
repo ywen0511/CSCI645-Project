@@ -1,0 +1,240 @@
+{
+ "stage": "verify_v2.1.1",
+ "utc": "2026-11-06T04:40:09Z",
+ "host": "USMCDLNCN228G2D",
+ "tools": {
+  "commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+  "dirty": false,
+  "tags": [
+   "v2.1.1"
+  ]
+ },
+ "experiment": {
+  "commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+  "dirty": false,
+  "tags": [
+   "experiment-v2"
+  ]
+ },
+ "verify_archives": {
+  "cmd": [
+   "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+   "-I",
+   "<FRESH>/CSCI645-Project/scripts/verify_archives.py",
+   "--bundle",
+   "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1"
+  ],
+  "cwd": "$WORK/.",
+  "rc": 0,
+  "start": "2026-11-06T04:39:59.809773+00:00",
+  "wall_s": 2.506265,
+  "log": "$WORK/logs/verify.log"
+ },
+ "command": {
+  "cmd": [
+   "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+   "-I",
+   "<FRESH>/CSCI645-Project/scripts/closeout_verify.py",
+   "--bundle",
+   "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1",
+   "--extract",
+   "<FRESH>/CSCI645-Project/closeout_work/verify/v2.1.1/x",
+   "--output",
+   "<FRESH>/CSCI645-Project/closeout_work/verify/v2.1.1.json"
+  ],
+  "cwd": "$WORK/.",
+  "rc": 0,
+  "start": "2026-11-06T04:40:02.316121+00:00",
+  "wall_s": 7.145483,
+  "log": "$WORK/logs/verify.log"
+ },
+ "result": {
+  "bundle": "v2.1.1",
+  "checks": {
+   "sha256sums": {
+    "listed": 37,
+    "assets": 38,
+    "mismatch_or_missing": [],
+    "unlisted": []
+   },
+   "manifest": {
+    "assets": 36,
+    "bad": [],
+    "covers_all_but_manifest_and_sums": true
+   },
+   "copied_from_v2.0.0": {
+    "n": 18,
+    "hash_changed": []
+   },
+   "archives": {
+    "archives": 23,
+    "members_rehashed": 1796,
+    "problems": [],
+    "n_problems": 0
+   },
+   "checkpoints_index": {
+    "entries": 170,
+    "superseded": 1,
+    "problems": [],
+    "final_runs": 9,
+    "all_final_runs_have_roles_and_11_periodic": true
+   },
+   "runs_index": {
+    "entries": 64,
+    "closeout_unresolved": [],
+    "types": [
+     "final",
+     "negative_control",
+     "pilot",
+     "smoke",
+     "supplementary_evaluation",
+     "throughput_check (not a result)"
+    ]
+   },
+   "videos_index": {
+    "videos": 10,
+    "hash_problems": [],
+    "missing_sidecars": [],
+    "replay_matches_evaluation": 10
+   },
+   "repeatability_records": 115200,
+   "media": {
+    "mp4": [
+     {
+      "video": "alignment_bound__geometry_1cm__v2final-joint_early_2cm_030-0018.mp4",
+      "frames_decoded": 52,
+      "index_frames": 52,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "video": "alignment_bound__geometry_1p5cm__v2final-joint_early_2cm_030-0018.mp4",
+      "frames_decoded": 94,
+      "index_frames": 94,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "video": "matched_comparison__combined_seed11__selected__v2final-joint_early_2cm_030-0000.mp4",
+      "frames_decoded": 94,
+      "index_frames": 94,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "video": "matched_comparison__geometry_1p5cm__v2final-joint_early_2cm_030-0000.mp4",
+      "frames_decoded": 94,
+      "index_frames": 94,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "video": "matched_comparison__nominal__v2final-joint_early_2cm_030-0000.mp4",
+      "frames_decoded": 160,
+      "index_frames": 160,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "video": "release_gate_rescue__ablation_1cm_AG__v2final-joint_early_2cm_030-0006.mp4",
+      "frames_decoded": 95,
+      "index_frames": 95,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "video": "release_gate_rescue__ablation_1cm_A__v2final-joint_early_2cm_030-0006.mp4",
+      "frames_decoded": 160,
+      "index_frames": 160,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "video": "residual_policy__residual_seed11__selected__v2final-joint_early_1cm_015-0006.mp4",
+      "frames_decoded": 94,
+      "index_frames": 94,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "video": "trained_failure__combined_seed11__selected__v2final-joint_early_3cm_045-0001.mp4",
+      "frames_decoded": 42,
+      "index_frames": 42,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     },
+     {
+      "video": "trained_success__combined_seed11__selected__v2final-joint_late_3cm_045-0029.mp4",
+      "frames_decoded": 106,
+      "index_frames": 106,
+      "frame_shape": [
+       544,
+       960,
+       3
+      ],
+      "ok": true
+     }
+    ],
+    "pdf": {
+     "deck.pdf": 13,
+     "report-v1-corrected.pdf": 12,
+     "report.pdf": 11
+    },
+    "pptx": {
+     "deck.pptx": 13
+    }
+   },
+   "leak_scan": {
+    "patterns": [
+     "/data/rtxw01",
+     "/home/(?!conda/)[a-z0-9_]+/",
+     "dcwip\\w+",
+     "\\.gm\\.com",
+     "<user>",
+     "nbak/robot_intel"
+    ],
+    "hits": [],
+    "n_hits": 0,
+    "scope": "text members of archives created for this release and loose JSON/Markdown assets (copied v2.0.0 archives were scanned when v2.0.0 was released)"
+   }
+  },
+  "failures": [],
+  "ok": true
+ }
+}

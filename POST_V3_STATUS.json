@@ -1,0 +1,62 @@
+{
+ "assignment": "V4_REMAINING.md",
+ "complete": true,
+ "stage": "complete",
+ "original_v3_complete": true,
+ "original_release": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0",
+ "local_gpu_or_simulator_run": false,
+ "maintenance": {
+  "implementation": "complete",
+  "cpu_validation": "passed: 60 passed, 1 simulator-only test skipped (2026-11-09, isolated Python 3.13.9 venv)",
+  "evidence": [
+   "results/post_v3/maintenance_cpu.json",
+   "results/post_v3/cache_demo.json",
+   "results/post_v3/stage_a/"
+  ],
+  "fresh_remote_verification": "passed 2026-11-09: REPRODUCE sections 1-4 verbatim; 455/455 replay, 52/52 reload, resume ok, suites byte-identical, 34/35 tables identical + 1 float-rounding equal, 6/6 figures identical, repeat run 13/13 skipped, audit 0 discrepancies",
+  "cache_demonstration": "8/8 scenarios",
+  "release": "published: https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.1 (11 assets; tag v3.0.1 = maintenance-v3.0.1 = c85fded)",
+  "release_public_verification": "passed 2026-11-09 from a new empty directory (results/post_v3/release_verification/)",
+  "complete": true
+ },
+ "v4": {
+  "scope": "unknown physical giver grasp translation with calibrated geometry and bounded PPO residuals",
+  "implementation": "complete (simulator extension, protocol, tooling)",
+  "acceptance": "passed in uploaded evidence: A1-A9 and five-profile smoke resume; mixed-commit lineage in PROVENANCE.json",
+  "frozen": true,
+  "formal_runs_planned": 25,
+  "formal_runs_completed": 25,
+  "release": "published: https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.0 (30 assets, all data) + https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.1 (delivery patch: verification stage)",
+  "fresh_download_verified": true,
+  "optional_dynamic_slip": "not_performed",
+  "branch": "study/v4-grasp-uncertainty",
+  "acceptance_evidence": "results/v4/acceptance/acceptance.json",
+  "acceptance_provenance": "results/v4/acceptance/PROVENANCE.json",
+  "pilot": "complete: results/v4/pilot/summary.json (4 x 5,505,024 + 1,638,400 other = 23,658,496 <= 24M)",
+  "cpu_workflow_review": "docs/v4/CPU_REVIEW.md",
+  "cpu_workflow_evidence": "results/v4/cpu_workflow_review.json",
+  "cpu_workflow_validation": "94 passed, 1 simulator-only skip; final 19 workflow regression tests passed",
+  "freeze_commit": "aac4d98274814b1ab121a715db71187e3e1cc0b9",
+  "experiment_tag": "experiment-v4",
+  "final_suite": "configs/v4/FINAL_SUITE.json (2,400 cases, sha256 481c40c7...)",
+  "formal_training": "complete 2026-11-10 (25 x 10,027,008 transitions)",
+  "cpu_tests": "94 passed, 1 simulator-only skip (2026-11-10, merged tree)",
+  "selection": "results/v4/selection/selection.json (validation only; committed before learned final evaluation)",
+  "final_evaluation": "complete: 55 logical / 54 executed entries x 2,400 = 132,000 / 129,600 episodes",
+  "analysis": "results/v4/summary/ (paired hierarchical bootstrap, seed 6456401)",
+  "mechanisms_repeatability": "complete (results/v4/mechanisms/)",
+  "videos": "10 clips + montage (results/v4/videos/video_index.json)",
+  "report": "report/v4/report.md + report.pdf",
+  "slides": "report/v4/slides.pptx + slides.pdf + speaker_notes.md",
+  "gpu_hours": "see results/v4/compute.json",
+  "delivery_tags": {
+   "v4.0.0": "0160e378a398fde898169d1146aec2b89fe4a6b8",
+   "v4.0.1": "c561eb43175c32ec25a1e30c826bea6bed4430a0"
+  },
+  "fresh_download_verification": "docs/v4/VERIFICATION.md (v4.0.1 instructions: all checks passed; v4.0.0 instructions failed at section 3, fixed by v4.0.1)",
+  "gpu_hours_total": 16.18
+ },
+ "next_actions": [],
+ "blockers": [],
+ "original_assignment": "POST_V3_EXECUTION.md"
+}

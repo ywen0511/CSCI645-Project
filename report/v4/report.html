@@ -1,0 +1,1003 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Uncertain Giver Grasp in Bimanual Handover — V4 Study</title><style>
+body { font-family: 'DejaVu Serif', Georgia, serif; font-size: 10pt; line-height: 1.36; max-width: 7.0in; margin: 0 auto; color: #111; }
+h1 { font-size: 16pt; margin-bottom: 0.1em; } h2 { font-size: 12.5pt; margin-top: 1.1em; border-bottom: 1px solid #bbb; }
+h3 { font-size: 11pt; } .meta { color: #444; margin-bottom: 1.1em; }
+table { border-collapse: collapse; font-size: 7.4pt; margin: 0.5em 0; page-break-inside: auto; } tr { page-break-inside: avoid; }
+th, td { border: 1px solid #aaa; padding: 1px 3px; } th { background: #eee; }
+img { max-width: 100%; page-break-inside: avoid; } code { font-size: 8.5pt; } p, li { text-align: justify; }
+@page { size: letter; margin: 0.7in; }
+</style></head><body><h1>Uncertain Giver Grasp in Bimanual Handover — V4 Study</h1><div class='meta'>Where a fixed-transform grasp reference fails, and whether calibration, filtering, short history or residual PPO help (Isaac Lab 3.0 / Isaac Sim 6.2, PhysX) — release v4.0.0<br>CSCI 645 Robot Manipulation, Fall 2026 · Yan Wen &middot; November 2026</div><p><strong>Reading guide.</strong> Sections 1–4 give the motivation, the physical change, the controllers and the frozen protocol.
+Section 5 summarizes development and acceptance (used to design and check the study; not held-out evidence).
+Sections 6–9 report the held-out results, mechanisms and repeatability. Sections 10–11 give limitations and
+reproducibility. Earlier-study numbers are quoted from their reports and labelled. Every measured number below is
+generated from raw records by checked-in scripts; <code>results/v4/number_audit.json</code> maps each one to its source.</p>
+<h2>Summary</h2>
+<ul>
+<li><strong>Question.</strong> V3's strongest controller located the bar from the giver's grasp, assuming a known, rigid grasp
+  transform. V4 makes the bar's initial translation inside the giver's grasp an unknown (physically produced,
+  x ∈ [−7, +15] mm along the bar, z ∈ ±15 mm vertical) and asks where that reference fails and what fixes it.</li>
+<li><strong>The historical fixed-transform reference has a sharp failure boundary.</strong> Held out (200 paired cases per
+  condition), it succeeds in 95.5% at ±5 mm, 39.5% at
+  +10 mm and 5.5% at +15 mm along the bar, and 69.5% on the
+  in-distribution mixture (<code>mixed_id</code>); failures are prohibited receiver collisions with the bar end.</li>
+<li><strong>A 0.5 s calibration window fixes most of it.</strong> Averaging (measurement − fixed-transform estimate) while the giver
+  holds raises success to 94.5% at +15 mm and 98.5% on
+  <code>mixed_id</code> (+29.0 [+23.0, +35.5] pp, paired 95% CI). EMA filtering without any giver reference does
+  about as well in distribution (99.0%) but is worse under heavier sensor corruption
+  (<code>mixed_ood</code> 90.5% vs 94.5%).</li>
+<li><strong>Primary contrasts: small, not established.</strong> With selected checkpoints on <code>mixed_id</code>, robust history − robust
+  feed-forward = +0.6 [+0.0, +2.0] pp (Bonferroni 97.5%:
+  [+0.0, +2.1]) and robust history − best constant geometry =
+  +1.5 [+0.0, +3.5] pp (97.5%: [+0.0, +3.5]).
+  Robust history succeeded on every <code>mixed_id</code> case for every seed (100.0%)
+  while the calibrated baseline reached 98.5%. Both intervals touch zero, so no
+  improvement is established.</li>
+<li><strong>Learned residuals are fragile outside their training support.</strong> At the palm-side boundary (x = −7 mm, outside the
+  [−5, +15] mm training range) robust history reaches 65.2% versus
+  96.5% for its own calibrated parent (−31.3 [−43.8, −18.7] pp);
+  over all non-clean conditions it is −2.3 [−3.9, −0.7] pp versus the parent.</li>
+<li><strong>Training remains unstable late, and residual-only learning does not help.</strong> Final (10M) history checkpoints lose
+  ground (−6.7 [−11.6, −3.1] pp versus the parent over non-clean conditions;
+  <code>bias_5mm</code> per seed 100.0 / 100.0 / 60.5 / 84.5 / 100.0%). Residual-only history PPO on the nominal trajectory
+  reaches 56.3% on <code>mixed_id</code> versus 59.5% for nominal
+  (−3.2 [−10.5, +2.9] pp) and collapses at its final checkpoint (33.3%).</li>
+<li><strong>Answer.</strong> Unknown in-grasp translation breaks the fixed-transform reference beyond about +5 mm; a short in-episode
+  calibration from the same noisy measurements is the effective remedy. Learned residuals and history add at most a
+  few cases in distribution and lose robustly outside their training support.</li>
+</ul>
+<h2>1. Motivation and earlier studies</h2>
+<p>The project (CSCI 645, Robot Manipulation) studies a bimanual handover in Isaac Sim through Isaac Lab: a giver
+Franka Panda holds an 18 × 3.5 × 3.5 cm bar with a parallel-jaw gripper and a receiver Franka must grasp it and hold
+it alone, using a nominal trajectory, a training-free geometric coordination module (target alignment, a shared
+holding anchor and a contact-gated release) and a bounded XYZ residual learned with PPO (±2 cm per axis). The
+original proposal asked whether residual learning on top of geometric coordination improves robustness.</p>
+<ul>
+<li><strong>V1/V2</strong> (releases v1.0.0, v2.0.0, v2.1.1) found that geometric coordination did almost all of the work; learned
+  residuals on top of it were near-constant offsets, and a tuned constant offset matched them.</li>
+<li><strong>V3</strong> (release v3.0.0) corrupted the bar's translation measurement (bias, noise, delay). A geometry controller that
+  infers the bar position from the giver's grasp — <code>giver TCP + fixed object-to-gripper transform</code>, used while the
+  giver holds — succeeded on all 2,600 held-out cases, and so did every selected learned policy: a ceiling. Its
+  report identified the key assumption: the grasp transform is known and rigid.</li>
+</ul>
+<p><strong>V4 removes that assumption.</strong> The bar's initial translation inside the giver grasp is now a per-episode unknown,
+produced physically. The question is where the historical fixed-transform reference fails, and whether a calibrated
+reference, EMA filtering, a short observation history or learned residuals help in that regime. A measured failure
+boundary or a strong geometric solution are both acceptable answers; a positive RL result was not required.</p>
+<h2>2. Task, physical grasp uncertainty and feasibility</h2>
+<p>Everything except the grasp is unchanged from V3: two Franka arms with fixed commanded hand orientations, differential
+IK, a 120 Hz PhysX step and 20 Hz control, an 8 s scored horizon, and the V3 evaluator (success = the receiver alone
+holds the bar for 2 s with the giver open and out of contact, no table support, above the drop height and with low
+relative speed, without a prohibited collision, drop, release timeout or episode timeout).</p>
+<p><strong>How the offset is produced.</strong> During reset settling the bar is pinned at its nominal start pose plus the case's
+joint displacement plus the in-grasp offset, while the giver moves to its <em>unshifted</em> hold pose and closes its
+fingers. The pin is then removed and only finger contact holds the bar for the last 0.3 s of settling, after which
+the start is validated: two-finger giver contact, no table support, low speed, no prohibited contact, and both the
+joint displacement and the achieved in-grasp offset within 8 mm of the request. There is no weld and no teleport
+in scored time. The achieved offset (<code>bar position − (giver TCP + nominal grasp vector)</code>) is recorded for every case.</p>
+<p><strong>Feasibility (development probe, 132 cases).</strong> The finger-closing axis (y) is not a supported axis: the fingers
+re-centre the bar. Toward the giver palm (−x) the bar end touches the hand at −10 mm (3 of 4 resets invalid) and
+−15 mm (4 of 4), but −7 mm is valid; toward the receiver (+x) +15 mm settles stably; z ±15 mm is stable. Achieved
+offsets track requests within about 1 mm. The supported region is therefore x ∈ [−7, +15] mm, z ∈ [−15, +15] mm.</p>
+<h2>3. Controllers, information access and calibration</h2>
+<p>Every controller receives the same deployable channels: the corrupted bar translation (per-episode bias, per-step
+noise and delay, optionally EMA-filtered), robot proprioception, the measured bar orientation, finger contact forces
+and the contact phase. No controller reads the sampled offset, the clean bar position, the case label or a future
+measurement; the evaluator and privileged debug logs use ground truth only (acceptance A6/A8 verify this by
+perturbing the privileged tensors during episodes — controller traces stay bit-identical).</p>
+<ul>
+<li><strong>Fixed-transform reference (historical, V3).</strong> While the giver holds the bar with both fingers, the bar position
+  is <code>giver TCP + R(bar) · nominal grasp vector</code>. An unknown in-grasp offset becomes an equal, undetected estimate
+  error.</li>
+<li><strong>Calibrated reference.</strong> During the first 0.5 s of the scored episode (10 control frames, while the giver holds),
+  the controller averages <code>measurement − fixed-transform estimate</code> in the giver-hand frame and then adds that mean
+  to the kinematic estimate. This removes the in-grasp offset but inherits the sensor bias, and averages noise by
+  √10. The window lies inside the common schedule (the receiver reaches pre-grasp at 1.0 s), so no method's timing
+  changes; completion times include it.</li>
+<li><strong>EMA geometry.</strong> The raw estimate filtered by an EMA (α = 0.2), without any giver reference. It is unaffected by
+  the in-grasp offset but sees the sensor bias directly and lags.</li>
+<li><strong>Learned profiles.</strong> The bounded PPO residual is added to the common geometric parent (the calibrated reference
+  with a 2.5 cm alignment bound) or, for the residual-only profile, to the nominal trajectory. All learned profiles
+  observe the parent's calibrated estimate.</li>
+</ul>
+<h2>4. Protocol</h2>
+<p><strong>Development (not held-out evidence).</strong> Two registered baseline grids (round 1: 31 configurations; round 2: 32 ≤ 36)
+on 288 development cases selected the baselines by success, then unsafe events, correction magnitude and completion
+time, on the six validation-like strata. Round 1 used an x support of [−5, +10] mm and left the strongest baselines
+at the ceiling on <code>mixed_id</code>; because the research question concerns the fixed-transform failure regime (x ≥ +7 mm),
+round 2 widened the support to the full feasible +x range (+15 mm) before any training. Every round and decision is
+logged in <code>docs/v4/DECISIONS.md</code>.</p>
+<p><strong>Pilots and freeze.</strong> Four pilots (5.5M transitions each; 23,658,496 transitions in total with smoke runs and a killed packed attempt,
+under the 24M cap) showed stable training and no reason to change the V3 PPO settings. The protocol was frozen
+(<code>configs/v4/FREEZE.json</code>, tag <code>experiment-v4</code>) before formal training; the final suite was generated afterwards by
+the frozen generator. Preregistration: <code>docs/v4/PREREGISTRATION.md</code>; machine-readable plan: <code>configs/v4/analysis_plan.json</code>.</p>
+<h2>5. Acceptance (simulator checks before freezing)</h2>
+<p>All checks are in <code>results/v4/acceptance/acceptance.json</code> (lineage: <code>PROVENANCE.json</code>).</p>
+<table>
+<thead>
+<tr>
+<th>check</th>
+<th>what it shows</th>
+<th>result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1 V3 path</td>
+<td>V4 code with the V4 options off reproduces the published V3 records (65 cases; geometry and a V3 policy) and V3 configuration hashes</td>
+<td>65/65 + 65/65 identical outcomes</td>
+</tr>
+<tr>
+<td>A2 zero offset</td>
+<td>the V4 grasp path with zero offset reproduces them too</td>
+<td>65/65 + 65/65</td>
+</tr>
+<tr>
+<td>A3 negative controls</td>
+<td>no receiver / giver keeps holding / table support (16 grasp_10mm–15mm cases each, nominal and parent) give no success</td>
+<td>0 successes (first pass failed for table support — harness bug, fixed and rerun)</td>
+</tr>
+<tr>
+<td>A4 layout</td>
+<td>batch 1, 8, 72 and 72 reversed: identical per-case sensor and grasp specifications</td>
+<td>72/72, 72/72, 72/72 outcomes agree; calibration estimates within 0.21 mm</td>
+</tr>
+<tr>
+<td>A5 leakage</td>
+<td>18 consecutive episodes per environment (batch 16) vs one (batch 288)</td>
+<td>288/288 agree; within 0.38 mm</td>
+</tr>
+<tr>
+<td>A6/A8 privileged</td>
+<td>perturbing the true offset and achieved-offset tensors every step changes no controller quantity</td>
+<td>every traced controller field identical (parent and a policy)</td>
+</tr>
+<tr>
+<td>A7 zero residual</td>
+<td>the untrained (zero-mean) checkpoint of every profile reproduces its parent</td>
+<td>72/72, 72/72, 72/72, 72/72, 72/72 (five profiles)</td>
+</tr>
+<tr>
+<td>smoke resume</td>
+<td>interrupted training resumes counters, optimizer, normalizer and RNG</td>
+<td>5/5 profiles</td>
+</tr>
+<tr>
+<td>A9 evaluation resume</td>
+<td>partial evaluations resume; tampered records are rejected</td>
+<td>pass</td>
+</tr>
+</tbody>
+</table>
+<h2>6. Held-out results (final suite: 12 conditions × 200 paired base cases)</h2>
+<p>All methods share every case's physical draw, in-grasp offset and sensor error. Learned rows are means over five
+training seeds; all scheduled cases are the denominator. Invalid resets (380 records in total, all in
+<code>boundary_x_minus_7</code>: the bar end touches the giver hand during settling at this physical limit; 11 distinct base cases,
+4 of them invalid for every method) count as non-success for every method.</p>
+<table>
+<thead>
+<tr>
+<th>controller</th>
+<th>clean</th>
+<th>grasp 2mm</th>
+<th>grasp 5mm</th>
+<th>grasp 10mm</th>
+<th>grasp 15mm</th>
+<th>bias 5mm</th>
+<th>noise 2mm</th>
+<th>delay 2step</th>
+<th>mixed id</th>
+<th>mixed ood</th>
+<th>x minus 7</th>
+<th>z 15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nominal trajectory</td>
+<td>100.0</td>
+<td>72.5</td>
+<td>64.0</td>
+<td>47.0</td>
+<td>38.5</td>
+<td>72.5</td>
+<td>73.0</td>
+<td>72.5</td>
+<td>59.5</td>
+<td>59.0</td>
+<td>48.0</td>
+<td>52.5</td>
+</tr>
+<tr>
+<td>fixed-transform geometry (V3)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>95.5</td>
+<td>39.5</td>
+<td>5.5</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>69.5</td>
+<td>73.5</td>
+<td>96.0</td>
+<td>99.0</td>
+</tr>
+<tr>
+<td>EMA geometry (α 0.2)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>94.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.0</td>
+<td>90.5</td>
+<td>96.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>calibrated geometry (0.5 s)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>94.5</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>98.5</td>
+<td>94.5</td>
+<td>96.5</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>best constant on calibrated (= calibrated geometry (0.5 s), exact alias)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>94.5</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>98.5</td>
+<td>94.5</td>
+<td>96.5</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>combined, clean-trained FF (selected)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>98.8</td>
+<td>100.0</td>
+<td>92.2</td>
+<td>98.7</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>98.3</td>
+<td>86.5</td>
+<td>68.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>combined, robust FF (selected)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>96.5</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.4</td>
+<td>94.5</td>
+<td>88.2</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>combined, robust history (4 frames) (selected)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>98.5</td>
+<td>100.0</td>
+<td>99.1</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>97.0</td>
+<td>65.2</td>
+<td>98.8</td>
+</tr>
+<tr>
+<td>combined, repeated current frame (selected)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.8</td>
+<td>100.0</td>
+<td>96.2</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.5</td>
+<td>91.3</td>
+<td>91.2</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>residual-only, robust history (selected)</td>
+<td>100.0</td>
+<td>64.4</td>
+<td>56.6</td>
+<td>46.6</td>
+<td>40.3</td>
+<td>65.0</td>
+<td>65.0</td>
+<td>64.5</td>
+<td>56.3</td>
+<td>53.7</td>
+<td>42.3</td>
+<td>47.1</td>
+</tr>
+<tr>
+<td>combined, clean-trained FF (final)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.1</td>
+<td>100.0</td>
+<td>92.2</td>
+<td>98.7</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>98.3</td>
+<td>86.0</td>
+<td>69.4</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>combined, robust FF (final)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>96.6</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.5</td>
+<td>94.6</td>
+<td>87.9</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>combined, robust history (4 frames) (final)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>93.8</td>
+<td>99.9</td>
+<td>97.2</td>
+<td>89.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>97.0</td>
+<td>81.8</td>
+<td>55.0</td>
+<td>96.8</td>
+</tr>
+<tr>
+<td>combined, repeated current frame (final)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>96.8</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.5</td>
+<td>92.1</td>
+<td>90.4</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>residual-only, robust history (final)</td>
+<td>55.8</td>
+<td>33.2</td>
+<td>30.9</td>
+<td>30.0</td>
+<td>28.1</td>
+<td>33.4</td>
+<td>33.9</td>
+<td>33.6</td>
+<td>33.3</td>
+<td>31.4</td>
+<td>25.2</td>
+<td>28.3</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Success by condition: baselines and learned families (selected checkpoints; bars = seed range)" src="../../results/v4/figures/severity_selected.png" /></p>
+<p><em>Success by condition (selected checkpoints). Left: deterministic baselines. Right: learned families, mean of 5 seeds with the per-seed range.</em></p>
+<h3>6.1 The failure boundary of the fixed-transform reference</h3>
+<p>The fixed transform is exact when the offset is zero and degrades in proportion to the offset toward the receiver:
+100.0% (±2 mm), 95.5% (±5 mm), 39.5%
+(+10 mm), 5.5% (+15 mm). When the bar sits further toward the receiver than assumed,
+the receiver's target lies inside the bar and its fingers strike the bar end (prohibited collision). Vertical (z ±15 mm)
+and palm-side (−7 mm) offsets are tolerated (99.0%, 96.0%), because
+the receiver closes across the 35 mm bar and approaches from +x. Sensor-only corruption does not affect it (it never uses
+the measured translation while the giver holds): bias, noise and delay all 100.0%.</p>
+<p><img alt="Exclusive terminal reasons" src="../../results/v4/figures/failure_breakdown.png" /></p>
+<p><em>Exclusive terminal reasons on grasp_15mm, mixed_id and mixed_ood (learned: selected checkpoints, mean over seeds).</em></p>
+<h3>6.2 Calibration and filtering</h3>
+<p>Calibration removes the unknown offset but inherits the sensor bias. Its estimate error (max axis, mean over cases) is
+0.0 mm with a clean sensor at +15 mm, 3.8 mm on
+<code>mixed_id</code> (bias ≤ 5 mm) and 7.7 mm on <code>mixed_ood</code> (bias ≤ 10 mm). The 2.5 cm alignment
+bound absorbs most of this; the remaining failures are collisions at the largest offsets and biases
+(<code>grasp_15mm</code> 94.5%, <code>mixed_ood</code> 94.5%).</p>
+<p><img alt="Requested vs achieved in-grasp offsets and calibration error" src="../../results/v4/figures/grasp_offsets.png" /></p>
+<p><em>Left/middle: requested vs achieved offsets after settling (calibrated-geometry final records). Right: calibration error;
+blue = cases without sensor error (≈ 0), orange = biased/noisy sensor (error ≈ the bias).</em></p>
+<p>EMA geometry (α 0.2, no giver reference) measures the bar directly and is unaffected by the grasp offset; it matches
+calibration in distribution (−0.5 [−1.5, +0.0] pp on <code>mixed_id</code>) and trails it under
+<code>mixed_ood</code> (+4.0 [+0.0, +8.5] pp; more release timeouts from lagged, biased estimates).</p>
+<h3>6.3 Primary contrasts and learned policies</h3>
+<table>
+<thead>
+<tr>
+<th>contrast (mixed_id, selected)</th>
+<th>difference [pp] (95% CI)</th>
+<th>Bonferroni 97.5%</th>
+<th>per seed [pp]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>robust history − robust feed-forward</td>
+<td>+0.6 [+0.0, +2.0]</td>
+<td>[+0.0, +2.1]</td>
+<td>+1.5 / +0.0 / +0.0 / +1.5 / +0.0</td>
+</tr>
+<tr>
+<td>robust history − best constant geometry</td>
+<td>+1.5 [+0.0, +3.5]</td>
+<td>[+0.0, +3.5]</td>
+<td>+1.5 / +1.5 / +1.5 / +1.5 / +1.5</td>
+</tr>
+</tbody>
+</table>
+<p>Neither interval excludes zero. The deterministic baseline is one row broadcast against each seed, never treated as
+five seeds; the interval reflects base-case clusters (the calibrated baseline's few <code>mixed_id</code> failures) and seeds. No
+equivalence claim is made (no margin was prespecified).</p>
+<p>Exploratory comparisons (selected checkpoints; 95% CI):</p>
+<table>
+<thead>
+<tr>
+<th>comparison</th>
+<th>mixed_id</th>
+<th>mixed_ood</th>
+<th>boundary_x_minus_7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>robust FF − clean FF</td>
+<td>+1.1 [+0.1, +2.6]</td>
+<td>+8.0 [+4.4, +12.1]</td>
+<td>+20.2 [−14.5, +48.6]</td>
+</tr>
+<tr>
+<td>robust history − repeated current frame</td>
+<td>+0.5 [+0.0, +1.6]</td>
+<td>+5.7 [+1.4, +10.6]</td>
+<td>−26.0 [−35.0, −16.8]</td>
+</tr>
+<tr>
+<td>robust history − calibrated parent</td>
+<td>+1.5 [+0.0, +3.5]</td>
+<td>+2.5 [−1.0, +6.2]</td>
+<td>−31.3 [−43.8, −18.7]</td>
+</tr>
+<tr>
+<td>residual-only history − nominal</td>
+<td>−3.2 [−10.5, +2.9]</td>
+<td>−5.3 [−11.6, −0.3]</td>
+<td>−5.7 [−22.6, +8.1]</td>
+</tr>
+<tr>
+<td>calibrated − fixed transform</td>
+<td>+29.0 [+23.0, +35.5]</td>
+<td>+21.0 [+14.0, +28.0]</td>
+<td>+0.5 [−1.0, +2.0]</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Paired effects" src="../../results/v4/figures/paired_effects.png" /></p>
+<p><em>Paired effects (selected checkpoints). Blue: the two primary contrasts with Bonferroni intervals.</em></p>
+<p>The learned combined policies help a little where they were trained and much less outside: on <code>mixed_ood</code> noise-trained
+policies beat the clean-trained one, and the history policy beats the repeated-current control; at the palm-side
+boundary every combined family falls below its calibrated parent, with large seed spread (history per seed
+59.0 / 61.5 / 85.5 / 72.5 / 47.5%).</p>
+<h3>6.4 Final-checkpoint sensitivity and per-seed results</h3>
+<table>
+<thead>
+<tr>
+<th>family</th>
+<th>role</th>
+<th>mixed_id per seed (111/222/333/444/555)</th>
+<th>grasp_15mm per seed</th>
+<th>mixed_ood per seed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>combined, clean-trained FF</td>
+<td>selected</td>
+<td>98.5 / 98.5 / 98.5 / 97.5 / 98.5</td>
+<td>92.0 / 93.0 / 94.0 / 88.5 / 93.5</td>
+<td>85.0 / 87.5 / 93.0 / 80.0 / 87.0</td>
+</tr>
+<tr>
+<td>combined, clean-trained FF</td>
+<td>final</td>
+<td>98.5 / 98.5 / 98.5 / 97.5 / 98.5</td>
+<td>92.5 / 93.0 / 93.5 / 88.5 / 93.5</td>
+<td>86.0 / 87.5 / 89.5 / 80.0 / 87.0</td>
+</tr>
+<tr>
+<td>combined, robust FF</td>
+<td>selected</td>
+<td>98.5 / 100.0 / 100.0 / 98.5 / 100.0</td>
+<td>96.0 / 97.0 / 97.0 / 96.0 / 96.5</td>
+<td>94.0 / 94.5 / 96.0 / 92.0 / 96.0</td>
+</tr>
+<tr>
+<td>combined, robust FF</td>
+<td>final</td>
+<td>99.0 / 100.0 / 100.0 / 98.5 / 100.0</td>
+<td>97.5 / 97.0 / 97.0 / 95.0 / 96.5</td>
+<td>95.5 / 94.5 / 95.5 / 91.5 / 96.0</td>
+</tr>
+<tr>
+<td>combined, robust history (4 frames)</td>
+<td>selected</td>
+<td>100.0 / 100.0 / 100.0 / 100.0 / 100.0</td>
+<td>100.0 / 95.5 / 100.0 / 100.0 / 100.0</td>
+<td>97.5 / 94.0 / 99.5 / 99.5 / 94.5</td>
+</tr>
+<tr>
+<td>combined, robust history (4 frames)</td>
+<td>final</td>
+<td>99.0 / 99.5 / 90.5 / 96.0 / 100.0</td>
+<td>95.0 / 95.5 / 96.0 / 99.5 / 100.0</td>
+<td>87.0 / 94.0 / 50.5 / 85.5 / 92.0</td>
+</tr>
+<tr>
+<td>combined, repeated current frame</td>
+<td>selected</td>
+<td>99.5 / 100.0 / 99.5 / 99.0 / 99.5</td>
+<td>95.5 / 95.5 / 94.5 / 97.5 / 98.0</td>
+<td>93.5 / 91.0 / 88.5 / 91.0 / 92.5</td>
+</tr>
+<tr>
+<td>combined, repeated current frame</td>
+<td>final</td>
+<td>100.0 / 99.5 / 99.5 / 99.0 / 99.5</td>
+<td>98.5 / 95.0 / 94.5 / 98.0 / 98.0</td>
+<td>96.5 / 91.5 / 89.0 / 92.0 / 91.5</td>
+</tr>
+<tr>
+<td>residual-only, robust history</td>
+<td>selected</td>
+<td>52.0 / 48.0 / 59.5 / 61.0 / 61.0</td>
+<td>31.0 / 40.0 / 53.5 / 38.5 / 38.5</td>
+<td>51.0 / 47.0 / 54.0 / 58.0 / 58.5</td>
+</tr>
+<tr>
+<td>residual-only, robust history</td>
+<td>final</td>
+<td>28.0 / 47.5 / 16.5 / 40.5 / 34.0</td>
+<td>26.0 / 38.5 / 17.5 / 26.5 / 32.0</td>
+<td>27.5 / 41.0 / 14.0 / 45.0 / 29.5</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Final checkpoints" src="../../results/v4/figures/severity_final.png" /></p>
+<p><em>Final (10M-transition) checkpoints.</em></p>
+<table>
+<thead>
+<tr>
+<th>contrast (mixed_id, final checkpoints)</th>
+<th>difference [pp] (95% CI)</th>
+<th>per seed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>robust history − robust feed-forward</td>
+<td>−2.5 [−6.5, +0.1]</td>
+<td>+0.0 / −0.5 / −9.5 / −2.5 / +0.0</td>
+</tr>
+<tr>
+<td>robust history − best constant geometry</td>
+<td>−1.5 [−5.5, +1.7]</td>
+<td>+0.5 / +1.0 / −8.0 / −2.5 / +1.5</td>
+</tr>
+</tbody>
+</table>
+<p>Selected checkpoints were spread over training (2031616: 4, 4030464: 2, 6029312: 6, 8028160: 3, 10027008: 10 runs per selected step; validation table below). As in V3,
+history training degrades late for some seeds, and residual-only training degrades from about 3M transitions
+(learning curves).</p>
+<p><img alt="Learning curves" src="../../results/v4/figures/learning_curves.png" /></p>
+<p><em>Training-episode success and action standard deviation (mean of 5 seeds per profile).</em></p>
+<table>
+<thead>
+<tr>
+<th>run</th>
+<th>selected</th>
+<th>validation success % (2M / 4M / 6M / 8M / 10M)</th>
+<th>step 0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>combined_clean_ff_s111</td>
+<td>4030464</td>
+<td>98.8 / 99.2 / 99.2 / 98.8 / 98.8</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_clean_ff_s222</td>
+<td>6029312</td>
+<td>99.2 / 99.2 / 99.2 / 99.2 / 99.2</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_clean_ff_s333</td>
+<td>6029312</td>
+<td>95.0 / 99.2 / 99.2 / 99.2 / 99.2</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_clean_ff_s444</td>
+<td>10027008</td>
+<td>90.4 / 94.6 / 97.5 / 98.3 / 98.8</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_clean_ff_s555</td>
+<td>10027008</td>
+<td>95.4 / 99.2 / 99.2 / 99.2 / 99.2</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_ff_s111</td>
+<td>6029312</td>
+<td>98.3 / 99.2 / 100.0 / 100.0 / 100.0</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_ff_s222</td>
+<td>10027008</td>
+<td>98.8 / 99.2 / 99.2 / 99.2 / 100.0</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_ff_s333</td>
+<td>10027008</td>
+<td>98.3 / 99.2 / 99.2 / 100.0 / 100.0</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_ff_s444</td>
+<td>10027008</td>
+<td>98.8 / 98.8 / 99.2 / 99.6 / 99.6</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_ff_s555</td>
+<td>10027008</td>
+<td>98.8 / 99.2 / 99.2 / 100.0 / 100.0</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_history_s111</td>
+<td>4030464</td>
+<td>98.3 / 100.0 / 99.2 / 99.2 / 99.2</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_history_s222</td>
+<td>10027008</td>
+<td>99.6 / 99.6 / 100.0 / 100.0 / 100.0</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_history_s333</td>
+<td>6029312</td>
+<td>99.2 / 99.6 / 100.0 / 100.0 / 91.2</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_history_s444</td>
+<td>6029312</td>
+<td>99.2 / 99.6 / 100.0 / 100.0 / 97.1</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_history_s555</td>
+<td>8028160</td>
+<td>98.3 / 100.0 / 100.0 / 100.0 / 100.0</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_repeat_s111</td>
+<td>8028160</td>
+<td>97.9 / 98.3 / 98.3 / 100.0 / 100.0</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_repeat_s222</td>
+<td>10027008</td>
+<td>99.2 / 98.3 / 99.2 / 99.2 / 99.6</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_repeat_s333</td>
+<td>10027008</td>
+<td>97.9 / 98.8 / 98.8 / 98.8 / 99.2</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_repeat_s444</td>
+<td>10027008</td>
+<td>99.2 / 98.8 / 98.8 / 99.6 / 100.0</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>combined_robust_repeat_s555</td>
+<td>2031616</td>
+<td>100.0 / 99.6 / 99.6 / 100.0 / 100.0</td>
+<td>99.6</td>
+</tr>
+<tr>
+<td>residual_robust_history_s111</td>
+<td>2031616</td>
+<td>53.8 / 37.9 / 27.1 / 46.7 / 50.0</td>
+<td>58.8</td>
+</tr>
+<tr>
+<td>residual_robust_history_s222</td>
+<td>8028160</td>
+<td>58.8 / 50.0 / 54.6 / 61.2 / 52.5</td>
+<td>58.8</td>
+</tr>
+<tr>
+<td>residual_robust_history_s333</td>
+<td>6029312</td>
+<td>58.8 / 52.1 / 65.4 / 56.7 / 20.8</td>
+<td>58.8</td>
+</tr>
+<tr>
+<td>residual_robust_history_s444</td>
+<td>2031616</td>
+<td>59.2 / 47.9 / 41.2 / 58.8 / 27.5</td>
+<td>58.8</td>
+</tr>
+<tr>
+<td>residual_robust_history_s555</td>
+<td>2031616</td>
+<td>59.6 / 56.2 / 52.5 / 45.8 / 30.0</td>
+<td>58.8</td>
+</tr>
+</tbody>
+</table>
+<h2>7. Mechanisms (60-case subset: five base cases per final condition; selected checkpoints)</h2>
+<p>Each selected history run was re-evaluated with its history reversed, with the current frame repeated four times
+(no temporal information), with its own residual replaced by one constant vector fitted on development records only,
+and with the residual removed (= its parent). Successes out of 60:</p>
+<table>
+<thead>
+<tr>
+<th>selected run</th>
+<th>selected</th>
+<th>reversed history</th>
+<th>current frame only</th>
+<th>dev-fitted constant</th>
+<th>zero residual (parent)</th>
+<th>constant fitted (x, y, z mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>combined_robust_history_s111</td>
+<td>57</td>
+<td>57</td>
+<td>55</td>
+<td>60</td>
+<td>60</td>
+<td>+1.0, +3.7, +4.1</td>
+</tr>
+<tr>
+<td>combined_robust_history_s222</td>
+<td>58</td>
+<td>57</td>
+<td>57</td>
+<td>60</td>
+<td>60</td>
+<td>−0.1, −3.2, +4.5</td>
+</tr>
+<tr>
+<td>combined_robust_history_s333</td>
+<td>59</td>
+<td>60</td>
+<td>59</td>
+<td>60</td>
+<td>60</td>
+<td>+2.4, +3.3, +2.5</td>
+</tr>
+<tr>
+<td>combined_robust_history_s444</td>
+<td>59</td>
+<td>60</td>
+<td>58</td>
+<td>60</td>
+<td>60</td>
+<td>+1.0, +1.3, +1.2</td>
+</tr>
+<tr>
+<td>combined_robust_history_s555</td>
+<td>55</td>
+<td>51</td>
+<td>51</td>
+<td>59</td>
+<td>60</td>
+<td>−0.2, +0.0, +0.5</td>
+</tr>
+<tr>
+<td>residual_robust_history_s111</td>
+<td>54</td>
+<td>55</td>
+<td>48</td>
+<td>52</td>
+<td>52</td>
+<td>−0.1, +3.4, +0.9</td>
+</tr>
+<tr>
+<td>residual_robust_history_s222</td>
+<td>23</td>
+<td>22</td>
+<td>22</td>
+<td>18</td>
+<td>52</td>
+<td>+9.1, −11.0, −11.8</td>
+</tr>
+<tr>
+<td>residual_robust_history_s333</td>
+<td>39</td>
+<td>39</td>
+<td>37</td>
+<td>42</td>
+<td>52</td>
+<td>+11.1, +2.5, −10.6</td>
+</tr>
+<tr>
+<td>residual_robust_history_s444</td>
+<td>51</td>
+<td>51</td>
+<td>51</td>
+<td>53</td>
+<td>52</td>
+<td>−0.4, +0.2, +0.1</td>
+</tr>
+<tr>
+<td>residual_robust_history_s555</td>
+<td>53</td>
+<td>53</td>
+<td>52</td>
+<td>52</td>
+<td>52</td>
+<td>+0.0, −0.2, −0.5</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Learned combined residuals behave like constant offsets.</strong> For every combined history seed the development-fitted
+  constant does at least as well as the policy itself on this subset (e.g. seed 111: policy 57,
+  constant 60, parent 60).</li>
+<li><strong>Little temporal use.</strong> Reversing the four frames changes few outcomes (seed 111 agrees on 60/60
+  cases, seed 555 on 56/60); repeating the current frame changes a similar number
+  (seed 555 56/60). The exploratory history − repeated-current advantage on
+  <code>mixed_ood</code> (Section 6.3) is therefore not explained by a strong use of frame order.</li>
+<li><strong>Residual-only failures are large constant offsets.</strong> Two residual-only seeds learned offsets of about 1 cm per axis
+  (seed 222: +9.1, −11.0, −11.8 mm; seed 333: +11.1, +2.5, −10.6 mm) and fall
+  to 23 and 39 of 60, below the nominal parent (52).</li>
+<li><strong>Untrained controls.</strong> Step-0 checkpoints (zero-mean output) of every profile reproduce their parents on all 60 cases
+  (combined: 60/60, agreement 60/60; residual-only:
+  52/60).</li>
+</ul>
+<h2>8. Repeatability, traces and videos</h2>
+<p><strong>Repeatability.</strong> The calibrated baseline and all five selected history policies were re-run on the 60-case subset at
+batch sizes 6 and 20 with three process seeds each: 2,160 of 2,160 episodes reproduce the reference terminal
+outcome (<code>results/v4/mechanisms/repeatability.json</code>).</p>
+<p><strong>Supplementary traces.</strong> The final matrix runs 240 environments at a time, so per-step traces were recorded in separate
+batch-6 runs of six predeclared cases for every executed entry; their outcomes agree with the formal records in
+323 of 324 case-entry pairs (the exception is listed in <code>results/v4/traces6/summary.json</code>). Formal outcomes
+always come from the final matrix.</p>
+<p><img alt="Estimate error over time, grasp_15mm case" src="../../results/v4/figures/trace_v4-final-grasp_15mm-0000.png" /></p>
+<p><em>Controller estimate − true bar position. Left: the fixed transform carries the in-grasp offset as a constant error until
+the receiver collides. Right: the calibrated reference removes it when the 0.5 s window closes.</em></p>
+<p><img alt="Estimate error over time, mixed_id case" src="../../results/v4/figures/trace_v4-final-mixed_id-0000.png" /></p>
+<p><em>With a biased sensor (<code>mixed_id</code>), calibration removes the grasp offset but inherits the bias (a few millimetres).</em></p>
+<p><strong>Videos.</strong> Ten clips and a 53 s montage were chosen by the frozen rule (<code>configs/v4/video_rule.json</code>;
+<code>results/v4/videos/video_index.json</code>): matched nominal / fixed / calibrated / learned clips on a +15 mm case, the
+fixed-transform boundary failure, noisy calibration, the reversed-history intervention, a learned <code>mixed_id</code> case, EMA
+under noise and a clean case. Every replay outcome equals its evaluation record. The designated learned failure clip
+does not exist: no selected history policy failed a <code>mixed_id</code> case, and no substitute was chosen.</p>
+<h2>9. Compute</h2>
+<p>Every job used one A100-SXM4-40GB on one node (LSF; one training process per GPU). GPU-hours are LSF wall-clock time
+× 1 GPU per job, including start-up, killed and failed jobs: 16.0 GPU-hours in total for the continuation
+(Stage A maintenance 0.3, development 0.4, acceptance 0.9, pilots
+1.0, formal training 8.6, validation 0.8, final evaluation
+2.1, mechanisms/repeatability 1.4, traces 0.5, videos
+0.1), against a cap of 100. Each formal run took about 20 minutes (10,027,008 transitions at about 9,000
+transitions per second). Details: <code>results/v4/compute.json</code>.</p>
+<h2>10. Limitations</h2>
+<ul>
+<li><strong>Static offsets only.</strong> The in-grasp offset is fixed within an episode; slip during transport was not studied
+  (the optional dynamic-slip extension was not performed). Nothing here supports a claim about slip robustness.</li>
+<li><strong>Synthetic sensing, one object, simulation.</strong> The translation sensor is a controlled error model (bias, noise,
+  delay), not vision; one rigid bar with fixed mass, friction and size; no sim-to-real evidence.</li>
+<li><strong>The calibrated reference uses accurate proprioception and orientation</strong>, and a window in which the giver is
+  known to hold the bar still. It cannot separate a sensor bias from an in-grasp offset; with both present, its error
+  is the bias (Section 6.2).</li>
+<li><strong>Near-ceiling primary condition.</strong> The calibrated baseline reaches 98.5% on
+  <code>mixed_id</code>, which leaves a few cases for the primary contrasts; intervals touching zero are not evidence of
+  equivalence.</li>
+<li><strong>Development choices.</strong> The training support was widened once during development (Section 4), before training;
+  the palm-side boundary condition (−7 mm) lies outside it and is where learned policies fail most. Validation did not
+  include that condition, so checkpoint selection could not see it.</li>
+<li><strong>Invalid resets</strong> at the palm-side boundary (380 records) count as failures for every method and are
+  reported, not excluded; some vary between entries because contact at the physical limit is sensitive to
+  trajectory noise.</li>
+<li><strong>Five training seeds</strong> per profile; per-seed results show large spread out of distribution.</li>
+</ul>
+<h2>11. Reproducibility and artifacts</h2>
+<p>Source: <code>experiment-v4</code> (simulator source of every formal run) and the delivery tag <code>v4.0.0</code> (analysis, report,
+packaging). The release contains every saved checkpoint (formal, pilot, smoke, resume and the killed packed attempt),
+every raw development, acceptance, validation, final, mechanism, repeatability and trace record, all logs and task
+ledgers, figures, videos and indices with SHA-256 for every archive member. <code>docs/v4/REPRODUCE.md</code> gives tested
+commands from public sources only; <code>docs/v4/VERIFICATION.md</code> records the public-download verification.</p>
+<h2>12. Related work</h2>
+<p>Learned bimanual handover has been studied mainly with dexterous hands and learned perception [1]; here the grippers
+are parallel-jaw and the question is a geometric one. Residual reinforcement learning adds a learned correction to a
+hand-designed controller [2, 3]; V1–V4 of this project test that idea against strong geometric controllers. The
+simulator is Isaac Lab on Isaac Sim (PhysX) [4]; PPO [6] is from RSL-RL [5]. Earlier stages of this project are
+documented in their own releases [7, 8].</p>
+<h2>References</h2>
+<p>[1] D. Frau-Alfaro, J. Castaño-Amorós, S. Puente, P. Gil, R. Calandra. "Learning Dexterous Object Handover."
+IEEE RO-MAN 2025, pp. 380–387. doi:10.1109/RO-MAN63969.2025.11217592. arXiv:2506.16822.</p>
+<p>[2] T. Johannink, S. Bahl, A. Nair, J. Luo, A. Kumar, M. Loskyll, J. A. Ojea, E. Solowjow, S. Levine.
+"Residual Reinforcement Learning for Robot Control." IEEE ICRA 2019, pp. 6023–6029. doi:10.1109/ICRA.2019.8794127.</p>
+<p>[3] T. Silver, K. Allen, J. Tenenbaum, L. Kaelbling. "Residual Policy Learning." arXiv:1812.06298, 2018.</p>
+<p>[4] M. Mittal et al. "Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning."
+arXiv:2511.04831, 2025. Software: Isaac Lab v3.0.0.</p>
+<p>[5] C. Schwarke, M. Mittal, N. Rudin, D. Hoeller, M. Hutter. "RSL-RL: A Learning Library for Robotics
+Research." arXiv:2509.10771, 2025. Software: rsl-rl-lib 5.5.1.</p>
+<p>[6] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, O. Klimov. "Proximal Policy Optimization Algorithms."
+arXiv:1707.06347, 2017.</p>
+<p>[7] CSCI645-Project V3 report and release v3.0.0, https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0
+(maintenance release v3.0.1).</p>
+<p>[8] CSCI645-Project V2 report and release v2.1.1, https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.1.</p>
+<h2>Software and AI-assistance disclosure</h2>
+<p><strong>Software.</strong> NVIDIA Isaac Sim 6.2.0.0 (PhysX), Isaac Lab v3.0.0, RSL-RL 5.5.1 (PPO), PyTorch 2.11, NumPy,
+Matplotlib, imageio/FFmpeg, python-pptx. No external datasets or demonstrations; all training data are simulator
+transitions.</p>
+<p><strong>AI assistance.</strong> The V4 implementation, acceptance tests, experiments, analysis code, figures, this report, the
+slides and the videos were produced by an AI coding agent (Anthropic Claude, operating through Claude Code) working
+from <code>POST_V3_EXECUTION.md</code> and <code>V4_REMAINING.md</code> on the owner's behalf, on the owner's account and compute. The
+owner's own CPU workflow guards (<code>docs/v4/CPU_REVIEW.md</code>) were merged during the study. Decisions are logged with
+UTC times in <code>docs/v4/DECISIONS.md</code>; every measured number comes from checked-in scripts applied to the released raw
+records (<code>results/v4/number_audit.json</code>).</p></body></html>

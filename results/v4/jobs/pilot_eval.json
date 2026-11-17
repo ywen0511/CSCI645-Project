@@ -1,0 +1,101 @@
+{
+ "name": "pilot_eval",
+ "tasks": [
+  {
+   "id": "pilot_eval_combined_robust_history_s901",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/pilot/matrices/combined_robust_history_s901.json",
+    "--output",
+    "$RUNS/pilot_eval/combined_robust_history_s901",
+    "--seed",
+    "6456501",
+    "--checkpoint-root",
+    "$RUNS/pilot"
+   ],
+   "inputs": [
+    "configs/v4/pilot/matrices/combined_robust_history_s901.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/pilot_eval/combined_robust_history_s901/combined_robust_history_s901__step_002031616.jsonl",
+    "$RUNS/pilot_eval/combined_robust_history_s901/combined_robust_history_s901__step_004030464.jsonl",
+    "$RUNS/pilot_eval/combined_robust_history_s901/combined_robust_history_s901__final.jsonl"
+   ]
+  },
+  {
+   "id": "pilot_eval_combined_robust_history_s902",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/pilot/matrices/combined_robust_history_s902.json",
+    "--output",
+    "$RUNS/pilot_eval/combined_robust_history_s902",
+    "--seed",
+    "6456501",
+    "--checkpoint-root",
+    "$RUNS/pilot"
+   ],
+   "inputs": [
+    "configs/v4/pilot/matrices/combined_robust_history_s902.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/pilot_eval/combined_robust_history_s902/combined_robust_history_s902__step_002031616.jsonl",
+    "$RUNS/pilot_eval/combined_robust_history_s902/combined_robust_history_s902__step_004030464.jsonl",
+    "$RUNS/pilot_eval/combined_robust_history_s902/combined_robust_history_s902__final.jsonl"
+   ]
+  },
+  {
+   "id": "pilot_eval_combined_robust_ff_s901",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/pilot/matrices/combined_robust_ff_s901.json",
+    "--output",
+    "$RUNS/pilot_eval/combined_robust_ff_s901",
+    "--seed",
+    "6456501",
+    "--checkpoint-root",
+    "$RUNS/pilot"
+   ],
+   "inputs": [
+    "configs/v4/pilot/matrices/combined_robust_ff_s901.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/pilot_eval/combined_robust_ff_s901/combined_robust_ff_s901__step_002031616.jsonl",
+    "$RUNS/pilot_eval/combined_robust_ff_s901/combined_robust_ff_s901__step_004030464.jsonl",
+    "$RUNS/pilot_eval/combined_robust_ff_s901/combined_robust_ff_s901__final.jsonl"
+   ]
+  },
+  {
+   "id": "pilot_eval_residual_robust_history_s901",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/pilot/matrices/residual_robust_history_s901.json",
+    "--output",
+    "$RUNS/pilot_eval/residual_robust_history_s901",
+    "--seed",
+    "6456501",
+    "--checkpoint-root",
+    "$RUNS/pilot"
+   ],
+   "inputs": [
+    "configs/v4/pilot/matrices/residual_robust_history_s901.json",
+    "configs/v4/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/pilot_eval/residual_robust_history_s901/residual_robust_history_s901__step_002031616.jsonl",
+    "$RUNS/pilot_eval/residual_robust_history_s901/residual_robust_history_s901__step_004030464.jsonl",
+    "$RUNS/pilot_eval/residual_robust_history_s901/residual_robust_history_s901__final.jsonl"
+   ]
+  }
+ ]
+}

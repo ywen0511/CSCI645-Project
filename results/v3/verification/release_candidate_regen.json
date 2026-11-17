@@ -1,0 +1,89 @@
+{
+ "runs": "<extracted>",
+ "steps": {
+  "selection": {
+   "command": "scripts/v3_select_checkpoints.py --validation <extracted>/validation --output <work>/selection",
+   "exit_code": 0
+  },
+  "summary": {
+   "command": "scripts/v3_analyze.py --index configs/v3/final_matrix_index.json --root <extracted> --output <work>/summary",
+   "exit_code": 0
+  },
+  "mechanisms": {
+   "command": "scripts/v3_mechanisms.py --index configs/v3/final_matrix_index.json --root <extracted> --output <work>/mechanisms",
+   "exit_code": 0
+  },
+  "repeatability": {
+   "command": "scripts/v3_repeatability.py --runs <extracted> --index configs/v3/final_matrix_index.json --output <work>/repeatability",
+   "exit_code": 0
+  },
+  "interventions": {
+   "command": "scripts/v3_interventions.py --runs <extracted> --index configs/v3/final_matrix_index.json --output <work>/interventions",
+   "exit_code": 0
+  },
+  "zero_policy": {
+   "command": "scripts/v3_zero_policy.py --runs <extracted> --output <work>/zero_policy",
+   "exit_code": 0
+  },
+  "traces6": {
+   "command": "scripts/v3_traces6.py --runs <extracted> --index configs/v3/final_matrix_index.json --output <work>/traces6",
+   "exit_code": 0
+  },
+  "figures": {
+   "exit_code": 0,
+   "figures": [
+    "failure_breakdown.png",
+    "learning_curves.png",
+    "paired_effects.png",
+    "pipeline.png",
+    "severity_final.png",
+    "severity_selected.png"
+   ]
+  }
+ },
+ "files": {
+  "selection/combined_clean_ff_s11.json": "identical",
+  "selection/combined_clean_ff_s22.json": "identical",
+  "selection/combined_clean_ff_s33.json": "identical",
+  "selection/combined_clean_ff_s44.json": "identical",
+  "selection/combined_clean_ff_s55.json": "identical",
+  "selection/combined_robust_ff_s11.json": "identical",
+  "selection/combined_robust_ff_s22.json": "identical",
+  "selection/combined_robust_ff_s33.json": "identical",
+  "selection/combined_robust_ff_s44.json": "identical",
+  "selection/combined_robust_ff_s55.json": "identical",
+  "selection/combined_robust_history_s11.json": "identical",
+  "selection/combined_robust_history_s22.json": "identical",
+  "selection/combined_robust_history_s33.json": "identical",
+  "selection/combined_robust_history_s44.json": "identical",
+  "selection/combined_robust_history_s55.json": "identical",
+  "selection/combined_robust_repeat_s11.json": "identical",
+  "selection/combined_robust_repeat_s22.json": "identical",
+  "selection/combined_robust_repeat_s33.json": "identical",
+  "selection/residual_robust_history_s11.json": "identical",
+  "selection/residual_robust_history_s22.json": "identical",
+  "selection/residual_robust_history_s33.json": "identical",
+  "selection/residual_robust_history_s44.json": "identical",
+  "selection/residual_robust_history_s55.json": "identical",
+  "selection/selection.json": "identical",
+  "summary/analysis_manifest.json": "identical",
+  "summary/family_condition_summary.json": "identical",
+  "summary/paired_effects.json": "identical",
+  "summary/per_seed_condition.csv": "identical",
+  "summary/reconciliation.json": "identical",
+  "mechanisms/mechanisms.json": "identical",
+  "mechanisms/residual_fits.csv": "identical",
+  "repeatability/repeatability.json": "identical",
+  "interventions/interventions.json": "identical",
+  "zero_policy/zero_policy.json": "identical",
+  "traces6/summary.json": "identical"
+ },
+ "counts": {
+  "identical": 35,
+  "float_only": 0,
+  "different": 0,
+  "missing": 0
+ },
+ "ok": true,
+ "failed_steps": []
+}

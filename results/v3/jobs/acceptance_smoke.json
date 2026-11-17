@@ -1,0 +1,683 @@
+{
+ "name": "acceptance_smoke",
+ "tasks": [
+  {
+   "id": "smoke_combined_clean_ff",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/combined_clean_ff.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101"
+   ],
+   "inputs": [
+    "configs/v3/training/combined_clean_ff.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_clean_ff_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_clean_ff_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_clean_ff_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/combined_clean_ff.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume"
+   ],
+   "inputs": [
+    "configs/v3/training/combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_clean_ff_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_combined_clean_ff.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_combined_clean_ff.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_ff",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/combined_robust_ff.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101"
+   ],
+   "inputs": [
+    "configs/v3/training/combined_robust_ff.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_ff_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_ff_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_ff_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/combined_robust_ff.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume"
+   ],
+   "inputs": [
+    "configs/v3/training/combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_ff_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_combined_robust_ff.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_combined_robust_ff.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/combined_robust_history.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_history_s101"
+   ],
+   "inputs": [
+    "configs/v3/training/combined_robust_history.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_history_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_history_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_combined_robust_history_s101",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_history_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/combined_robust_history.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume"
+   ],
+   "inputs": [
+    "configs/v3/training/combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_history_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_combined_robust_history_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_combined_robust_history.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_combined_robust_history.json"
+   ]
+  },
+  {
+   "id": "smoke_residual_robust_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/residual_robust_history.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_residual_robust_history_s101"
+   ],
+   "inputs": [
+    "configs/v3/training/residual_robust_history.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_residual_robust_history_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_residual_robust_history_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_residual_robust_history_s101",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_residual_robust_history_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/residual_robust_history.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume"
+   ],
+   "inputs": [
+    "configs/v3/training/residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_residual_robust_history_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_residual_robust_history_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_residual_robust_history.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_residual_robust_history.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_repeat",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/combined_robust_repeat.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101"
+   ],
+   "inputs": [
+    "configs/v3/training/combined_robust_repeat.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_repeat_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_repeat_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/training/combined_robust_repeat.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume"
+   ],
+   "inputs": [
+    "configs/v3/training/combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_repeat_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_combined_robust_repeat.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_combined_robust_repeat.json"
+   ]
+  },
+  {
+   "id": "acc_a2_combined_robust_ff_combined_robust_ff_step0",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a2_combined_robust_ff.json",
+    "--only",
+    "combined_robust_ff_step0",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a2_combined_robust_ff/combined_robust_ff_step0",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a2_combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_combined_robust_ff/combined_robust_ff_step0/combined_robust_ff_step0.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a2_combined_robust_ff_geometry",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a2_combined_robust_ff.json",
+    "--only",
+    "geometry",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a2_combined_robust_ff/geometry",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a2_combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_combined_robust_ff/geometry/geometry.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a2_combined_robust_history_combined_robust_history_step0",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a2_combined_robust_history.json",
+    "--only",
+    "combined_robust_history_step0",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a2_combined_robust_history/combined_robust_history_step0",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a2_combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_combined_robust_history/combined_robust_history_step0/combined_robust_history_step0.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a2_combined_robust_history_geometry",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a2_combined_robust_history.json",
+    "--only",
+    "geometry",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a2_combined_robust_history/geometry",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a2_combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_combined_robust_history/geometry/geometry.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a2_residual_robust_history_residual_robust_history_step0",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a2_residual_robust_history.json",
+    "--only",
+    "residual_robust_history_step0",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a2_residual_robust_history/residual_robust_history_step0",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a2_residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_residual_robust_history/residual_robust_history_step0/residual_robust_history_step0.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a2_residual_robust_history_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v3/acceptance/a2_residual_robust_history.json",
+    "--only",
+    "nominal",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a2_residual_robust_history/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/acceptance/a2_residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_residual_robust_history/nominal/nominal.jsonl"
+   ]
+  },
+  {
+   "id": "acc_inputs_stack",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "inputs",
+    "--mode",
+    "stack",
+    "--checkpoint",
+    "$RUNS/smoke/smoke_combined_robust_history_s101/checkpoints/final.pt",
+    "--output",
+    "$RUNS/acceptance/inputs_stack.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/inputs_stack.json"
+   ]
+  },
+  {
+   "id": "acc_inputs_repeat_current",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "inputs",
+    "--mode",
+    "repeat_current",
+    "--checkpoint",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101/checkpoints/final.pt",
+    "--output",
+    "$RUNS/acceptance/inputs_repeat_current.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/inputs_repeat_current.json"
+   ]
+  },
+  {
+   "id": "acc_inputs_permuted",
+   "kind": "isaac",
+   "argv": [
+    "scripts/v3_acceptance.py",
+    "inputs",
+    "--mode",
+    "permuted",
+    "--checkpoint",
+    "$RUNS/smoke/smoke_combined_robust_history_s101/checkpoints/final.pt",
+    "--output",
+    "$RUNS/acceptance/inputs_permuted.json"
+   ],
+   "inputs": [
+    "scripts/v3_acceptance.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/inputs_permuted.json"
+   ]
+  }
+ ]
+}

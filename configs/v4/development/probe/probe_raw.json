@@ -1,0 +1,43 @@
+{
+ "name": "v4_probe_raw",
+ "suite": "configs/v4/development/probe/suite.jsonl",
+ "num_envs": 132,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 1.0,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": false,
+  "grasp_uncertainty": true
+ },
+ "trace_cases": [
+  "v4probe-development-g0-0000",
+  "v4probe-development-x-10-0000",
+  "v4probe-development-x+10-0000",
+  "v4probe-development-z-10-0000",
+  "v4probe-development-z+10-0000",
+  "v4probe-development-y+5-0000"
+ ],
+ "entries": [
+  {
+   "id": "geometry_sensor_clean",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "trace": true
+  },
+  {
+   "id": "geometry_sensor_clean_a20",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.02
+   }
+  }
+ ]
+}

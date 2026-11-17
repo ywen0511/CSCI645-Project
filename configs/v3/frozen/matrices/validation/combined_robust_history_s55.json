@@ -1,0 +1,51 @@
+{
+ "name": "v3_validation_combined_robust_history_s55",
+ "suite": "configs/v3/suites/validation.jsonl",
+ "num_envs": 240,
+ "protocol": "configs/v3/frozen/training/combined_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_robust_history_s55__step0",
+   "method": "combined",
+   "training_seed": 55,
+   "role": "untrained_control",
+   "checkpoint": "combined_robust_history_s55/checkpoints/step_000000000.pt"
+  },
+  {
+   "id": "combined_robust_history_s55__step_002031616",
+   "method": "combined",
+   "training_seed": 55,
+   "role": "candidate",
+   "checkpoint": "combined_robust_history_s55/checkpoints/step_002031616.pt"
+  },
+  {
+   "id": "combined_robust_history_s55__step_004030464",
+   "method": "combined",
+   "training_seed": 55,
+   "role": "candidate",
+   "checkpoint": "combined_robust_history_s55/checkpoints/step_004030464.pt"
+  },
+  {
+   "id": "combined_robust_history_s55__step_006029312",
+   "method": "combined",
+   "training_seed": 55,
+   "role": "candidate",
+   "checkpoint": "combined_robust_history_s55/checkpoints/step_006029312.pt"
+  },
+  {
+   "id": "combined_robust_history_s55__step_008028160",
+   "method": "combined",
+   "training_seed": 55,
+   "role": "candidate",
+   "checkpoint": "combined_robust_history_s55/checkpoints/step_008028160.pt"
+  },
+  {
+   "id": "combined_robust_history_s55__step_010027008",
+   "method": "combined",
+   "training_seed": 55,
+   "role": "candidate",
+   "checkpoint": "combined_robust_history_s55/checkpoints/step_010027008.pt"
+  }
+ ]
+}

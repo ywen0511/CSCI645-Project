@@ -1,0 +1,16 @@
+{
+ "name": "v4_devfit_residual_robust_history_s444",
+ "suite": "configs/v4/suites/development.jsonl",
+ "num_envs": 288,
+ "protocol": "configs/v4/frozen/training/residual_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s444__selected__dev",
+   "method": "residual",
+   "training_seed": 444,
+   "role": "development_fit",
+   "checkpoint": "residual_robust_history_s444/checkpoints/step_002031616.pt"
+  }
+ ]
+}

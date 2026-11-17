@@ -1,0 +1,16 @@
+{
+ "name": "v4_devfit_combined_robust_history_s222",
+ "suite": "configs/v4/suites/development.jsonl",
+ "num_envs": 288,
+ "protocol": "configs/v4/frozen/training/combined_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_robust_history_s222__selected__dev",
+   "method": "combined",
+   "training_seed": 222,
+   "role": "development_fit",
+   "checkpoint": "combined_robust_history_s222/checkpoints/step_010027008.pt"
+  }
+ ]
+}

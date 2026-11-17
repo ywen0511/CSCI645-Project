@@ -1,0 +1,267 @@
+{
+ "summary": {
+  "compared": 1320,
+  "terminal_reason_equal": 1309,
+  "success_equal": 1312,
+  "terminal_reason_disagree": 11,
+  "success_archived_only": 6,
+  "success_replay_only": 2,
+  "entries": 22,
+  "deterministic": {
+   "compared": 240,
+   "terminal_reason_equal": 239,
+   "success_equal": 239
+  },
+  "learned": {
+   "compared": 1080,
+   "terminal_reason_equal": 1070,
+   "success_equal": 1073
+  },
+  "all_checkpoint_hashes_match": true,
+  "note": "observed agreement on the predeclared sample; not a population bound and not a bitwise reproducibility claim"
+ },
+ "per_entry": [
+  {
+   "entry": "combined_no_phase_seed11__final",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_no_phase_seed11__selected",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_no_phase_seed22__final",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_no_phase_seed22__selected",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_no_phase_seed33__final",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_no_phase_seed33__selected",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_seed11__final",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_seed11__selected",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_seed22__final",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_seed22__selected",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_seed33__final",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "combined_seed33__selected",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "const_geometry_1p5cm",
+   "learned": false,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "const_nominal",
+   "learned": false,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 59,
+   "success_equal": 59,
+   "success_archived_only": 1,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 1
+  },
+  {
+   "entry": "geometry_1p5cm",
+   "learned": false,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "nominal",
+   "learned": false,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "residual_seed11__final",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 59,
+   "success_equal": 59,
+   "success_archived_only": 0,
+   "success_replay_only": 1,
+   "terminal_reason_disagree": 1
+  },
+  {
+   "entry": "residual_seed11__selected",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 58,
+   "success_equal": 59,
+   "success_archived_only": 0,
+   "success_replay_only": 1,
+   "terminal_reason_disagree": 2
+  },
+  {
+   "entry": "residual_seed22__final",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 58,
+   "success_equal": 59,
+   "success_archived_only": 1,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 2
+  },
+  {
+   "entry": "residual_seed22__selected",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 59,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 1
+  },
+  {
+   "entry": "residual_seed33__final",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 60,
+   "success_equal": 60,
+   "success_archived_only": 0,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 0
+  },
+  {
+   "entry": "residual_seed33__selected",
+   "learned": true,
+   "checkpoint_sha256_matches_archived": true,
+   "compared": 60,
+   "terminal_reason_equal": 56,
+   "success_equal": 56,
+   "success_archived_only": 4,
+   "success_replay_only": 0,
+   "terminal_reason_disagree": 4
+  }
+ ]
+}

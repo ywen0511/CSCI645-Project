@@ -1,0 +1,152 @@
+{
+ "id": "closeout-repeatability-v1",
+ "kind": "retrospective robustness check on the already-used v2 final suite (not a held-out confirmatory experiment); no checkpoint, constant, threshold or reportable subset is selected from it",
+ "suite": "configs/v2/suites/final.jsonl",
+ "suite_sha256": "041ca5cfab39dceba4e143e3116f1d0e850af3976929c96be71e57a4ea0ce1b4",
+ "cases": 2400,
+ "case_order": "suite file order",
+ "protocol": "configs/v2/frozen/protocol.json",
+ "protocol_sha256": "bd79ae5140db002aaeb532a41ebc01a698fdd015078288dcd518f4c4f7779f10",
+ "checkpoint_source": {
+  "release": "v2.0.0",
+  "index": "checkpoints.json",
+  "note": "checkpoint paths are relative to the extracted v2.0.0 archives (--checkpoint-root)"
+ },
+ "process_seeds": [
+  6454101,
+  6454102,
+  6454103
+ ],
+ "batch_sizes": [
+  900,
+  23
+ ],
+ "inference": "deterministic actor mean (eval_matrix.py at experiment-v2); observation normalisation frozen from the checkpoint",
+ "entries": [
+  {
+   "id": "geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "archived_entry": "geometry_1p5cm",
+   "archived_matrix": "configs/v2/matrices/final/final_det_1.json",
+   "group": "stronger comparator (matches combined)"
+  },
+  {
+   "id": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     0.0
+    ]
+   },
+   "archived_entry": "const_geometry_1p5cm",
+   "archived_matrix": "configs/v2/matrices/final/final_det_1.json",
+   "group": "primary constant control for combined"
+  },
+  {
+   "id": "combined_seed11__selected",
+   "method": "combined",
+   "overrides": {},
+   "archived_entry": "combined_seed11__selected",
+   "archived_matrix": "configs/v2/matrices/final/final_combined_seed11.json",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "role": "selected",
+   "checkpoint_tag": "step_008028160",
+   "checkpoint": "combined_seed11/checkpoints/step_008028160.pt",
+   "group": "selected",
+   "checkpoint_sha256": "900f6f9ce76f91210f2493c5996dc66ab2b8a06a411b7e087e3d80a944f1c69f",
+   "checkpoint_asset": "checkpoints-combined-seed11.tar.gz"
+  },
+  {
+   "id": "combined_seed22__selected",
+   "method": "combined",
+   "overrides": {},
+   "archived_entry": "combined_seed22__selected",
+   "archived_matrix": "configs/v2/matrices/final/final_combined_seed22.json",
+   "training_seed": 22,
+   "run_id": "combined_seed22",
+   "role": "selected",
+   "checkpoint_tag": "step_010027008",
+   "checkpoint": "combined_seed22/checkpoints/step_010027008.pt",
+   "group": "selected",
+   "checkpoint_sha256": "450ecb57ae6d3b47bba4c0f74871ec6119203592a61d14f4cb447cdcd167bdb4",
+   "checkpoint_asset": "checkpoints-combined-seed22.tar.gz"
+  },
+  {
+   "id": "combined_seed33__selected",
+   "method": "combined",
+   "overrides": {},
+   "archived_entry": "combined_seed33__selected",
+   "archived_matrix": "configs/v2/matrices/final/final_combined_seed33.json",
+   "training_seed": 33,
+   "run_id": "combined_seed33",
+   "role": "selected",
+   "checkpoint_tag": "step_010027008",
+   "checkpoint": "combined_seed33/checkpoints/step_010027008.pt",
+   "group": "selected",
+   "checkpoint_sha256": "8fd863bdb046935469ec48837c724fcc995c87bc312088eaa7c96858397ee61d",
+   "checkpoint_asset": "checkpoints-combined-seed33.tar.gz"
+  },
+  {
+   "id": "combined_seed11__final",
+   "method": "combined",
+   "overrides": {},
+   "archived_entry": "combined_seed11__final",
+   "archived_matrix": "configs/v2/matrices/final/final_combined_seed11.json",
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "combined_seed11/checkpoints/final.pt",
+   "group": "final",
+   "checkpoint_sha256": "d00db6c8397c9eee7a6c29661beeed9f9dc7abaa569895e1db030f4537569527",
+   "checkpoint_asset": "checkpoints-combined-seed11.tar.gz"
+  },
+  {
+   "id": "combined_seed22__final",
+   "method": "combined",
+   "overrides": {},
+   "archived_entry": "combined_seed22__final",
+   "archived_matrix": "configs/v2/matrices/final/final_combined_seed22.json",
+   "training_seed": 22,
+   "run_id": "combined_seed22",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "combined_seed22/checkpoints/final.pt",
+   "group": "final",
+   "checkpoint_sha256": "90dbeb58d98eb92399a3a7737fc1d43bee8f75e0a6e30ad7c019ab27f4e5a366",
+   "checkpoint_asset": "checkpoints-combined-seed22.tar.gz"
+  },
+  {
+   "id": "combined_seed33__final",
+   "method": "combined",
+   "overrides": {},
+   "archived_entry": "combined_seed33__final",
+   "archived_matrix": "configs/v2/matrices/final/final_combined_seed33.json",
+   "training_seed": 33,
+   "run_id": "combined_seed33",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "combined_seed33/checkpoints/final.pt",
+   "group": "final",
+   "checkpoint_sha256": "983839d10204dd06cc7e9c9f5e3969e71ae35738b34b20597611a037e155a837",
+   "checkpoint_asset": "checkpoints-combined-seed33.tar.gz"
+  }
+ ],
+ "deduplication": {
+  "rule": "merge entries only if checkpoint bytes (SHA-256), controller settings and case ordering are identical",
+  "aliases": [],
+  "result": "no duplicates: selected and final checkpoints differ in bytes for every seed, including seeds 22 and 33 whose selected step equals the last periodic step"
+ },
+ "scheduled_episodes": 115200,
+ "task_unit": "one fresh simulator process per (batch size, process repeat, controller); same process seed for every controller within a repeat",
+ "retry_policy": "a failed or incomplete task may be resumed at most 2 times (eval_matrix resumes by case ID and rejects hash mismatches); every attempt is recorded",
+ "analysis_plan": "docs/closeout/REPEATABILITY_PLAN.md",
+ "analysis_script": "scripts/closeout_repeatability.py"
+}

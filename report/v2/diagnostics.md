@@ -7,7 +7,7 @@ ran on identical cases in the v1 task configuration (hash `b9eac03d…`), with t
 deterministic policy inference and frozen observation normalization. Archived v1 checkpoints were taken from
 the downloaded v1.0.0 assets after hash verification. Full generated tables:
 [`results/v2/diagnostics/tables.md`](../../results/v2/diagnostics/tables.md); raw records and traces are in
-the v2 release (`raw-dev.tar.gz`).
+the v2 release (`raw-development.tar.gz`; an earlier version of this page misnamed it raw-dev.tar.gz).
 
 ## Controls
 

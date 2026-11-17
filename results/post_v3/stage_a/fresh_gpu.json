@@ -1,0 +1,195 @@
+{
+ "replay65": [
+  {
+   "entry": "combined_robust_history_s11__selected",
+   "cases": 65,
+   "missing_in_final": [],
+   "terminal_equal": 65,
+   "success_equal": 65,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 65,
+   "invalid_resets": 0
+  },
+  {
+   "entry": "combined_robust_history_s22__selected",
+   "cases": 65,
+   "missing_in_final": [],
+   "terminal_equal": 65,
+   "success_equal": 65,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 65,
+   "invalid_resets": 0
+  },
+  {
+   "entry": "combined_robust_history_s33__selected",
+   "cases": 65,
+   "missing_in_final": [],
+   "terminal_equal": 65,
+   "success_equal": 65,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 65,
+   "invalid_resets": 0
+  },
+  {
+   "entry": "combined_robust_history_s44__selected",
+   "cases": 65,
+   "missing_in_final": [],
+   "terminal_equal": 65,
+   "success_equal": 65,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 65,
+   "invalid_resets": 0
+  },
+  {
+   "entry": "combined_robust_history_s55__selected",
+   "cases": 65,
+   "missing_in_final": [],
+   "terminal_equal": 65,
+   "success_equal": 65,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 65,
+   "invalid_resets": 0
+  },
+  {
+   "entry": "geometry_best_constant",
+   "cases": 65,
+   "missing_in_final": [],
+   "terminal_equal": 65,
+   "success_equal": 65,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 65,
+   "invalid_resets": 0
+  },
+  {
+   "entry": "geometry_common",
+   "cases": 65,
+   "missing_in_final": [],
+   "terminal_equal": 65,
+   "success_equal": 65,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 65,
+   "invalid_resets": 0
+  }
+ ],
+ "reload": [
+  {
+   "entry": "combined_clean_ff_s11__selected",
+   "cases": 13,
+   "missing_in_final": [],
+   "terminal_equal": 13,
+   "success_equal": 13,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 13,
+   "invalid_resets": 0
+  },
+  {
+   "entry": "combined_robust_ff_s11__selected",
+   "cases": 13,
+   "missing_in_final": [],
+   "terminal_equal": 13,
+   "success_equal": 13,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 13,
+   "invalid_resets": 0
+  },
+  {
+   "entry": "combined_robust_repeat_s11__selected",
+   "cases": 13,
+   "missing_in_final": [],
+   "terminal_equal": 13,
+   "success_equal": 13,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 13,
+   "invalid_resets": 0
+  },
+  {
+   "entry": "residual_robust_history_s11__selected",
+   "cases": 13,
+   "missing_in_final": [],
+   "terminal_equal": 13,
+   "success_equal": 13,
+   "observation_error_equal": true,
+   "checkpoint_sha256_equal": true,
+   "success": 1,
+   "invalid_resets": 0
+  }
+ ],
+ "mismatches": [],
+ "resume": {
+  "before": {
+   "file": "latest.pt",
+   "sha256": "fc452c3622a9455a34120d39957d0b4de17ce2466bccdcb947e2746d72e1512d",
+   "iterations_done": 306,
+   "transitions": 10027008,
+   "keys": [
+    "actor_state_dict",
+    "critic_state_dict",
+    "infos",
+    "iter",
+    "optimizer_state_dict"
+   ]
+  },
+  "after": {
+   "file": "final.pt",
+   "sha256": "a3ebffc2adb074dc105c55b5f318af1437b28e19f4b248b5ac423106d310aad6",
+   "iterations_done": 308,
+   "transitions": 10092544,
+   "keys": [
+    "actor_state_dict",
+    "critic_state_dict",
+    "infos",
+    "iter",
+    "optimizer_state_dict"
+   ]
+  },
+  "expected_after": {
+   "iterations_done": 308,
+   "transitions": 10092544
+  },
+  "optimizer_state_present": {
+   "before": true,
+   "after": true
+  },
+  "optimizer_step_counts": {
+   "before": 6120.0,
+   "after": 6160.0
+  },
+  "normalizer_tensors": {
+   "before": 8,
+   "after": 8,
+   "changed_by_2_iterations": 8
+  },
+  "model_tensors": 11,
+  "model_tensors_changed_by_2_iterations": 11,
+  "rng_state_present": {
+   "before": true,
+   "after": true
+  },
+  "reload_identical": true,
+  "checks": {
+   "counters_restored_and_advanced": true,
+   "optimizer_state_saved": true,
+   "normalizer_present": true,
+   "parameters_updated": true,
+   "reload_identical": true
+  },
+  "ok": true
+ },
+ "summary": {
+  "replay65_episodes": 455,
+  "replay65_terminal_equal": 455,
+  "reload_episodes": 52,
+  "reload_terminal_equal": 52,
+  "mismatches": 0
+ }
+}

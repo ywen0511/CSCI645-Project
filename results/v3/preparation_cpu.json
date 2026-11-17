@@ -1,0 +1,60 @@
+{
+  "kind": "CPU preparation evidence; not simulator/scientific results",
+  "utc": "2026-11-08T04:13:46.556242+00:00",
+  "base_commit": "4204da23b17f920d955a0bc90f94a8df271c524f",
+  "python": "3.11.16",
+  "platform": "Darwin",
+  "machine": "arm64",
+  "torch": "2.15.0",
+  "numpy": "2.4.6",
+  "pytest": "9.2.0",
+  "device_used": "cpu",
+  "gpu_work_executed": false,
+  "commands": [
+    {
+      "command": [
+        ".venv-cpu/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "..................s..............................                        [100%]\n=========================== short test summary info ============================\nSKIPPED [1] tests/test_registration.py:18: Isaac Lab not installed\n48 passed, 1 skipped in 1.56s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv-cpu/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "scripts"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv-cpu/bin/python",
+        "scripts/v3_prepare.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"development\": {\n    \"path\": \"configs/v3/suites/development.jsonl\",\n    \"cases\": 312,\n    \"sha256\": \"e8139f3b4c2a745c24493819e6a04d00edeeffc83f01071aab5c832512071521\"\n  },\n  \"validation\": {\n    \"path\": \"configs/v3/suites/validation.jsonl\",\n    \"cases\": 240,\n    \"sha256\": \"9051c414af4801e44ce13445be0077a2a78841f9a40a6700b04ad44a1199c024\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "all_commands_passed": true,
+  "simulator_acceptance": "not run; required remotely"
+}

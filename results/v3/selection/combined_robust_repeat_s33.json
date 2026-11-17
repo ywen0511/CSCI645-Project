@@ -1,0 +1,140 @@
+{
+ "run": "combined_robust_repeat_s33",
+ "rule": "select_v2: success desc, collision asc, residual sq norm asc, latest; step 0 excluded",
+ "selected": "step_010027008",
+ "selected_checkpoint_sha256": "24ee6acde49936db922b1ddf1044a5f241fa85615792b85f0e56dd8ab02a5e7a",
+ "candidates": [
+  {
+   "checkpoint": "step_002031616",
+   "checkpoint_sha256": "e2bfc2429be79330f7612f5815f360c162ea8812812c966ccd31c4ba21a9be48",
+   "transitions": 2031616,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 0.9791666666666666,
+   "collision_rate": 0.020833333333333332,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 5.223458065618182e-05,
+   "tag": "step_002031616",
+   "entry": "combined_robust_repeat_s33__step_002031616",
+   "records": "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_002031616/combined_robust_repeat_s33__step_002031616.jsonl",
+   "by_condition": {
+    "bias_5mm": 39,
+    "clean": 40,
+    "delay_2step": 39,
+    "mixed_id": 39,
+    "noise_2mm": 39,
+    "physical_only": 39
+   }
+  },
+  {
+   "checkpoint": "step_004030464",
+   "checkpoint_sha256": "1b8a5fb0429f7e11fde92f0eee39b489293f71f3bd4ad1637adaa95a193a9b43",
+   "transitions": 4030464,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.020833333333333332,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 3.688252725267923e-05,
+   "tag": "step_004030464",
+   "entry": "combined_robust_repeat_s33__step_004030464",
+   "records": "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_004030464/combined_robust_repeat_s33__step_004030464.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  },
+  {
+   "checkpoint": "step_006029312",
+   "checkpoint_sha256": "bbb93478b087e6b80d47088573f52a58ffc7d29ec3da592f8e4f9406767da6c6",
+   "transitions": 6029312,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.0,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 3.293835773302983e-05,
+   "tag": "step_006029312",
+   "entry": "combined_robust_repeat_s33__step_006029312",
+   "records": "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_006029312/combined_robust_repeat_s33__step_006029312.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  },
+  {
+   "checkpoint": "step_008028160",
+   "checkpoint_sha256": "3ab16a45c22e4209fc2e2b6fb9c5735f509ad5e9b75107a309d15ce89fd77421",
+   "transitions": 8028160,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.0,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 2.988800058962517e-05,
+   "tag": "step_008028160",
+   "entry": "combined_robust_repeat_s33__step_008028160",
+   "records": "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_008028160/combined_robust_repeat_s33__step_008028160.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  },
+  {
+   "checkpoint": "step_010027008",
+   "checkpoint_sha256": "24ee6acde49936db922b1ddf1044a5f241fa85615792b85f0e56dd8ab02a5e7a",
+   "transitions": 10027008,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.0,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 2.5568621132963446e-05,
+   "tag": "step_010027008",
+   "entry": "combined_robust_repeat_s33__step_010027008",
+   "records": "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step_010027008/combined_robust_repeat_s33__step_010027008.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  }
+ ],
+ "untrained_control": {
+  "checkpoint": "step_000000000",
+  "checkpoint_sha256": "71218fad8a2b51ba7c73b40174e9bc19e59fb3d4db0aad48d8830a5df620825f",
+  "transitions": 0,
+  "scheduled": 240,
+  "valid": 240,
+  "success_rate": 1.0,
+  "collision_rate": 0.0,
+  "drop_rate": 0.0,
+  "residual_sq_norm_mean_m2": 0.0,
+  "tag": "step_000000000",
+  "entry": "combined_robust_repeat_s33__step0",
+  "records": "validation/combined_robust_repeat_s33/combined_robust_repeat_s33__step0/combined_robust_repeat_s33__step0.jsonl",
+  "by_condition": {
+   "bias_5mm": 40,
+   "clean": 40,
+   "delay_2step": 40,
+   "mixed_id": 40,
+   "noise_2mm": 40,
+   "physical_only": 40
+  }
+ }
+}

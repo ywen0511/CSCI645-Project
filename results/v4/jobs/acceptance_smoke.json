@@ -1,0 +1,686 @@
+{
+ "name": "acceptance_smoke",
+ "tasks": [
+  {
+   "id": "smoke_combined_clean_ff",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/combined_clean_ff.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101"
+   ],
+   "inputs": [
+    "configs/v4/pilot/combined_clean_ff.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_clean_ff_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_clean_ff_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_clean_ff_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/combined_clean_ff.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume"
+   ],
+   "inputs": [
+    "configs/v4/pilot/combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_clean_ff_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_combined_clean_ff_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_combined_clean_ff.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_combined_clean_ff.json"
+   ]
+  },
+  {
+   "id": "acc_a7_zero_combined_clean_ff",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a7_zero_combined_clean_ff.json",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a7_zero_combined_clean_ff",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a7_zero_combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a7_zero_combined_clean_ff/combined_clean_ff_step0.jsonl",
+    "$RUNS/acceptance/a7_zero_combined_clean_ff/combined_clean_ff_final.jsonl"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_ff",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/combined_robust_ff.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101"
+   ],
+   "inputs": [
+    "configs/v4/pilot/combined_robust_ff.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_ff_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_ff_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_ff_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/combined_robust_ff.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume"
+   ],
+   "inputs": [
+    "configs/v4/pilot/combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_ff_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_combined_robust_ff_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_combined_robust_ff.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_combined_robust_ff.json"
+   ]
+  },
+  {
+   "id": "acc_a7_zero_combined_robust_ff",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a7_zero_combined_robust_ff.json",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a7_zero_combined_robust_ff",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a7_zero_combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a7_zero_combined_robust_ff/combined_robust_ff_step0.jsonl",
+    "$RUNS/acceptance/a7_zero_combined_robust_ff/combined_robust_ff_final.jsonl"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/combined_robust_history.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_history_s101"
+   ],
+   "inputs": [
+    "configs/v4/pilot/combined_robust_history.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_history_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_history_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_combined_robust_history_s101",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_history_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/combined_robust_history.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume"
+   ],
+   "inputs": [
+    "configs/v4/pilot/combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_history_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_combined_robust_history_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_combined_robust_history_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_combined_robust_history.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_combined_robust_history.json"
+   ]
+  },
+  {
+   "id": "acc_a7_zero_combined_robust_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a7_zero_combined_robust_history.json",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a7_zero_combined_robust_history",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a7_zero_combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a7_zero_combined_robust_history/combined_robust_history_step0.jsonl",
+    "$RUNS/acceptance/a7_zero_combined_robust_history/combined_robust_history_final.jsonl"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_repeat",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/combined_robust_repeat.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101"
+   ],
+   "inputs": [
+    "configs/v4/pilot/combined_robust_repeat.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_repeat_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_repeat_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/combined_robust_repeat.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume"
+   ],
+   "inputs": [
+    "configs/v4/pilot/combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_combined_robust_repeat_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_combined_robust_repeat_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_combined_robust_repeat.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_combined_robust_repeat.json"
+   ]
+  },
+  {
+   "id": "acc_a7_zero_combined_robust_repeat",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a7_zero_combined_robust_repeat.json",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a7_zero_combined_robust_repeat",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a7_zero_combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a7_zero_combined_robust_repeat/combined_robust_repeat_step0.jsonl",
+    "$RUNS/acceptance/a7_zero_combined_robust_repeat/combined_robust_repeat_final.jsonl"
+   ]
+  },
+  {
+   "id": "smoke_residual_robust_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/residual_robust_history.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "131072",
+    "--checkpoint-every",
+    "65536",
+    "--output",
+    "$RUNS/smoke/smoke_residual_robust_history_s101"
+   ],
+   "inputs": [
+    "configs/v4/pilot/residual_robust_history.json",
+    "scripts/train.py"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_residual_robust_history_s101/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "smoke_residual_robust_history_copy",
+   "kind": "shell",
+   "argv": [
+    "rm",
+    "-rf",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume",
+    "&&",
+    "cp",
+    "-r",
+    "$RUNS/smoke/smoke_residual_robust_history_s101",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume/checkpoints/latest.pt"
+   ]
+  },
+  {
+   "id": "smoke_residual_robust_history_resume",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v4/pilot/residual_robust_history.json",
+    "--run-type",
+    "smoke",
+    "--transitions",
+    "196608",
+    "--checkpoint-every",
+    "65536",
+    "--resume",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume/checkpoints/latest.pt",
+    "--output",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume"
+   ],
+   "inputs": [
+    "configs/v4/pilot/residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume/run_resume.json"
+   ]
+  },
+  {
+   "id": "smoke_residual_robust_history_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/smoke/smoke_residual_robust_history_s101/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/smoke/smoke_residual_robust_history_s101_resume/checkpoints/final.pt",
+    "--expect-iterations",
+    "6",
+    "--expect-transitions",
+    "196608",
+    "--output",
+    "$RUNS/acceptance/resume_residual_robust_history.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/acceptance/resume_residual_robust_history.json"
+   ]
+  },
+  {
+   "id": "acc_a7_zero_residual_robust_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a7_zero_residual_robust_history.json",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a7_zero_residual_robust_history",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a7_zero_residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a7_zero_residual_robust_history/residual_robust_history_step0.jsonl",
+    "$RUNS/acceptance/a7_zero_residual_robust_history/residual_robust_history_final.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a7_parents",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a7_parents.json",
+    "--output",
+    "$RUNS/acceptance/a7_parents",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a7_parents.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a7_parents/nominal.jsonl",
+    "$RUNS/acceptance/a7_parents/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a8_priv_policy_off",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a8_priv_policy_off.json",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a8_priv_policy_off",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a8_priv_policy_off.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a8_priv_policy_off/history_smoke_final.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a8_priv_policy_on",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a8_priv_policy_on.json",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--output",
+    "$RUNS/acceptance/a8_priv_policy_on",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a8_priv_policy_on.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a8_priv_policy_on/history_smoke_final.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a9_cache",
+   "kind": "cpu",
+   "argv": [
+    "scripts/v3_cache_test.py",
+    "--isaac-python",
+    "$PY",
+    "--matrix",
+    "configs/v4/acceptance/a4_layout_b8.json",
+    "--entry",
+    "parent",
+    "--ckpt-matrix",
+    "configs/v4/acceptance/a7_zero_combined_robust_ff.json",
+    "--ckpt-entry",
+    "combined_robust_ff_step0",
+    "--checkpoint-root",
+    "$RUNS/smoke",
+    "--work",
+    "$RUNS/acceptance/a9_cache",
+    "--output",
+    "$RUNS/acceptance/a9_cache.json"
+   ],
+   "inputs": [
+    "scripts/v3_cache_test.py"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a9_cache.json"
+   ]
+  }
+ ]
+}

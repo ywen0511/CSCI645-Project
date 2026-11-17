@@ -1,0 +1,21 @@
+{
+ "name": "v4acc_zero_residual_robust_history",
+ "suite": "configs/v4/acceptance/zero_residual.jsonl",
+ "num_envs": 72,
+ "protocol": "configs/v4/pilot/residual_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_step0",
+   "method": "residual",
+   "training_seed": 101,
+   "checkpoint": "smoke_residual_robust_history_s101/checkpoints/step_000000000.pt"
+  },
+  {
+   "id": "residual_robust_history_final",
+   "method": "residual",
+   "training_seed": 101,
+   "checkpoint": "smoke_residual_robust_history_s101/checkpoints/final.pt"
+  }
+ ]
+}

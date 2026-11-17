@@ -1,0 +1,83 @@
+{
+ "runs": "<extracted>",
+ "steps": {
+  "selection": {
+   "command": "scripts/v4_select_checkpoints.py --validation <extracted>/validation --checkpoint-root <extracted>/formal/train --output <work>/selection",
+   "exit_code": 0
+  },
+  "summary": {
+   "command": "scripts/v4_analyze.py --index configs/v4/final_matrix_index.json --root <extracted> --output <work>/summary",
+   "exit_code": 0
+  },
+  "constants": {
+   "command": "scripts/v4_fit_constants.py --devfit <extracted>/mechanisms/devfit --output <work>/mechanisms/constant_fits.json",
+   "exit_code": 0
+  },
+  "mechanisms": {
+   "command": "scripts/v4_mechanisms.py --runs <extracted> --output <work>/mechanisms",
+   "exit_code": 0
+  },
+  "traces6": {
+   "command": "scripts/v4_traces6.py --runs <extracted> --output <work>/traces6/summary.json",
+   "exit_code": 0
+  },
+  "figures": {
+   "exit_code": 0,
+   "figures_identical": {
+    "failure_breakdown.png": true,
+    "grasp_offsets.png": true,
+    "learning_curves.png": true,
+    "paired_effects.png": true,
+    "severity_final.png": true,
+    "severity_selected.png": true,
+    "trace_v4-final-grasp_15mm-0000.png": true,
+    "trace_v4-final-mixed_id-0000.png": true
+   }
+  }
+ },
+ "files": {
+  "mechanisms/constant_fits.json": "identical",
+  "mechanisms/mechanisms.json": "identical",
+  "mechanisms/repeatability.json": "identical",
+  "selection/combined_clean_ff_s111.json": "identical",
+  "selection/combined_clean_ff_s222.json": "identical",
+  "selection/combined_clean_ff_s333.json": "identical",
+  "selection/combined_clean_ff_s444.json": "identical",
+  "selection/combined_clean_ff_s555.json": "identical",
+  "selection/combined_robust_ff_s111.json": "identical",
+  "selection/combined_robust_ff_s222.json": "identical",
+  "selection/combined_robust_ff_s333.json": "identical",
+  "selection/combined_robust_ff_s444.json": "identical",
+  "selection/combined_robust_ff_s555.json": "identical",
+  "selection/combined_robust_history_s111.json": "identical",
+  "selection/combined_robust_history_s222.json": "identical",
+  "selection/combined_robust_history_s333.json": "identical",
+  "selection/combined_robust_history_s444.json": "identical",
+  "selection/combined_robust_history_s555.json": "identical",
+  "selection/combined_robust_repeat_s111.json": "identical",
+  "selection/combined_robust_repeat_s222.json": "identical",
+  "selection/combined_robust_repeat_s333.json": "identical",
+  "selection/combined_robust_repeat_s444.json": "identical",
+  "selection/combined_robust_repeat_s555.json": "identical",
+  "selection/residual_robust_history_s111.json": "identical",
+  "selection/residual_robust_history_s222.json": "identical",
+  "selection/residual_robust_history_s333.json": "identical",
+  "selection/residual_robust_history_s444.json": "identical",
+  "selection/residual_robust_history_s555.json": "identical",
+  "selection/selection.json": "identical",
+  "summary/analysis_manifest.json": "identical",
+  "summary/family_condition_summary.json": "identical",
+  "summary/paired_effects.json": "identical",
+  "summary/per_seed_condition.csv": "identical",
+  "summary/reconciliation.json": "identical",
+  "traces6/summary.json": "identical"
+ },
+ "counts": {
+  "identical": 35,
+  "float_only": 0,
+  "different": 0,
+  "missing": 0
+ },
+ "ok": true,
+ "failed_steps": []
+}

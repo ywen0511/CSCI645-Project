@@ -1,0 +1,1147 @@
+{
+ "name": "traces6",
+ "tasks": [
+  {
+   "id": "trace6_geometry_common",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/baseline_geometry_common.json",
+    "--only",
+    "geometry_common",
+    "--output",
+    "$RUNS/traces6/geometry_common",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/baseline_geometry_common.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/geometry_common/traces/geometry_common.json"
+   ]
+  },
+  {
+   "id": "trace6_geometry_filtered",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/baseline_geometry_filtered.json",
+    "--only",
+    "geometry_filtered",
+    "--output",
+    "$RUNS/traces6/geometry_filtered",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/baseline_geometry_filtered.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/geometry_filtered/traces/geometry_filtered.json"
+   ]
+  },
+  {
+   "id": "trace6_geometry_raw",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/baseline_geometry_raw.json",
+    "--only",
+    "geometry_raw",
+    "--output",
+    "$RUNS/traces6/geometry_raw",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/baseline_geometry_raw.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/geometry_raw/traces/geometry_raw.json"
+   ]
+  },
+  {
+   "id": "trace6_nominal",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/baseline_nominal.json",
+    "--only",
+    "nominal",
+    "--output",
+    "$RUNS/traces6/nominal",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/baseline_nominal.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/nominal/traces/nominal.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s11__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s11.json",
+    "--only",
+    "combined_clean_ff_s11__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s11__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s11__selected/traces/combined_clean_ff_s11__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s11__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s11.json",
+    "--only",
+    "combined_clean_ff_s11__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s11__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s11__final/traces/combined_clean_ff_s11__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s22__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s22.json",
+    "--only",
+    "combined_clean_ff_s22__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s22__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s22__selected/traces/combined_clean_ff_s22__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s22__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s22.json",
+    "--only",
+    "combined_clean_ff_s22__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s22__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s22__final/traces/combined_clean_ff_s22__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s33__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s33.json",
+    "--only",
+    "combined_clean_ff_s33__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s33__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s33__selected/traces/combined_clean_ff_s33__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s33__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s33.json",
+    "--only",
+    "combined_clean_ff_s33__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s33__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s33__final/traces/combined_clean_ff_s33__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s44__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s44.json",
+    "--only",
+    "combined_clean_ff_s44__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s44__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s44.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s44__selected/traces/combined_clean_ff_s44__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s44__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s44.json",
+    "--only",
+    "combined_clean_ff_s44__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s44__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s44.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s44__final/traces/combined_clean_ff_s44__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s55__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s55.json",
+    "--only",
+    "combined_clean_ff_s55__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s55__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s55.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s55__selected/traces/combined_clean_ff_s55__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_clean_ff_s55__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_clean_ff_s55.json",
+    "--only",
+    "combined_clean_ff_s55__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_clean_ff_s55__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_clean_ff_s55.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_clean_ff_s55__final/traces/combined_clean_ff_s55__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s11__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s11.json",
+    "--only",
+    "combined_robust_ff_s11__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s11__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s11__selected/traces/combined_robust_ff_s11__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s11__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s11.json",
+    "--only",
+    "combined_robust_ff_s11__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s11__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s11__final/traces/combined_robust_ff_s11__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s22__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s22.json",
+    "--only",
+    "combined_robust_ff_s22__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s22__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s22__selected/traces/combined_robust_ff_s22__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s22__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s22.json",
+    "--only",
+    "combined_robust_ff_s22__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s22__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s22__final/traces/combined_robust_ff_s22__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s33__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s33.json",
+    "--only",
+    "combined_robust_ff_s33__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s33__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s33__selected/traces/combined_robust_ff_s33__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s33__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s33.json",
+    "--only",
+    "combined_robust_ff_s33__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s33__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s33__final/traces/combined_robust_ff_s33__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s44__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s44.json",
+    "--only",
+    "combined_robust_ff_s44__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s44__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s44.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s44__selected/traces/combined_robust_ff_s44__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s44__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s44.json",
+    "--only",
+    "combined_robust_ff_s44__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s44__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s44.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s44__final/traces/combined_robust_ff_s44__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s55__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s55.json",
+    "--only",
+    "combined_robust_ff_s55__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s55__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s55.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s55__selected/traces/combined_robust_ff_s55__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_ff_s55__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_ff_s55.json",
+    "--only",
+    "combined_robust_ff_s55__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_ff_s55__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_ff_s55.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_ff_s55__final/traces/combined_robust_ff_s55__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s11__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s11.json",
+    "--only",
+    "combined_robust_history_s11__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s11__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s11__selected/traces/combined_robust_history_s11__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s11__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s11.json",
+    "--only",
+    "combined_robust_history_s11__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s11__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s11__final/traces/combined_robust_history_s11__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s22__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s22.json",
+    "--only",
+    "combined_robust_history_s22__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s22__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s22__selected/traces/combined_robust_history_s22__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s22__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s22.json",
+    "--only",
+    "combined_robust_history_s22__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s22__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s22__final/traces/combined_robust_history_s22__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s33__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s33.json",
+    "--only",
+    "combined_robust_history_s33__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s33__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s33__selected/traces/combined_robust_history_s33__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s33__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s33.json",
+    "--only",
+    "combined_robust_history_s33__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s33__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s33__final/traces/combined_robust_history_s33__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s44__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s44.json",
+    "--only",
+    "combined_robust_history_s44__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s44__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s44.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s44__selected/traces/combined_robust_history_s44__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s44__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s44.json",
+    "--only",
+    "combined_robust_history_s44__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s44__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s44.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s44__final/traces/combined_robust_history_s44__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s55__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s55.json",
+    "--only",
+    "combined_robust_history_s55__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s55__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s55.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s55__selected/traces/combined_robust_history_s55__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_history_s55__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_history_s55.json",
+    "--only",
+    "combined_robust_history_s55__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_history_s55__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_history_s55.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_history_s55__final/traces/combined_robust_history_s55__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_repeat_s11__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_repeat_s11.json",
+    "--only",
+    "combined_robust_repeat_s11__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_repeat_s11__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_repeat_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_repeat_s11__selected/traces/combined_robust_repeat_s11__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_repeat_s11__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_repeat_s11.json",
+    "--only",
+    "combined_robust_repeat_s11__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_repeat_s11__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_repeat_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_repeat_s11__final/traces/combined_robust_repeat_s11__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_repeat_s22__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_repeat_s22.json",
+    "--only",
+    "combined_robust_repeat_s22__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_repeat_s22__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_repeat_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_repeat_s22__selected/traces/combined_robust_repeat_s22__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_repeat_s22__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_repeat_s22.json",
+    "--only",
+    "combined_robust_repeat_s22__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_repeat_s22__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_repeat_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_repeat_s22__final/traces/combined_robust_repeat_s22__final.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_repeat_s33__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_repeat_s33.json",
+    "--only",
+    "combined_robust_repeat_s33__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_repeat_s33__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_repeat_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_repeat_s33__selected/traces/combined_robust_repeat_s33__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_combined_robust_repeat_s33__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/combined_robust_repeat_s33.json",
+    "--only",
+    "combined_robust_repeat_s33__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/combined_robust_repeat_s33__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/combined_robust_repeat_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/combined_robust_repeat_s33__final/traces/combined_robust_repeat_s33__final.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s11__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s11.json",
+    "--only",
+    "residual_robust_history_s11__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s11__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s11__selected/traces/residual_robust_history_s11__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s11__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s11.json",
+    "--only",
+    "residual_robust_history_s11__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s11__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s11.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s11__final/traces/residual_robust_history_s11__final.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s22__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s22.json",
+    "--only",
+    "residual_robust_history_s22__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s22__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s22__selected/traces/residual_robust_history_s22__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s22__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s22.json",
+    "--only",
+    "residual_robust_history_s22__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s22__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s22.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s22__final/traces/residual_robust_history_s22__final.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s33__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s33.json",
+    "--only",
+    "residual_robust_history_s33__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s33__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s33__selected/traces/residual_robust_history_s33__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s33__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s33.json",
+    "--only",
+    "residual_robust_history_s33__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s33__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s33.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s33__final/traces/residual_robust_history_s33__final.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s44__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s44.json",
+    "--only",
+    "residual_robust_history_s44__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s44__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s44.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s44__selected/traces/residual_robust_history_s44__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s44__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s44.json",
+    "--only",
+    "residual_robust_history_s44__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s44__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s44.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s44__final/traces/residual_robust_history_s44__final.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s55__selected",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s55.json",
+    "--only",
+    "residual_robust_history_s55__selected",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s55__selected",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s55.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s55__selected/traces/residual_robust_history_s55__selected.json"
+   ]
+  },
+  {
+   "id": "trace6_residual_robust_history_s55__final",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v3/final_matrices/traces6/residual_robust_history_s55.json",
+    "--only",
+    "residual_robust_history_s55__final",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/traces6/residual_robust_history_s55__final",
+    "--seed",
+    "6455501"
+   ],
+   "inputs": [
+    "configs/v3/final_matrices/traces6/residual_robust_history_s55.json"
+   ],
+   "outputs": [
+    "$RUNS/traces6/residual_robust_history_s55__final/traces/residual_robust_history_s55__final.json"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,655 @@
+{
+ "name": "validation",
+ "tasks": [
+  {
+   "id": "val_combined_clean_ff_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s111.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_clean_ff_s111",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s111.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_clean_ff_s111/combined_clean_ff_s111__step0.jsonl",
+    "$RUNS/validation/combined_clean_ff_s111/combined_clean_ff_s111__step_002031616.jsonl",
+    "$RUNS/validation/combined_clean_ff_s111/combined_clean_ff_s111__step_004030464.jsonl",
+    "$RUNS/validation/combined_clean_ff_s111/combined_clean_ff_s111__step_006029312.jsonl",
+    "$RUNS/validation/combined_clean_ff_s111/combined_clean_ff_s111__step_008028160.jsonl",
+    "$RUNS/validation/combined_clean_ff_s111/combined_clean_ff_s111__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_clean_ff_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s222.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_clean_ff_s222",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s222.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_clean_ff_s222/combined_clean_ff_s222__step0.jsonl",
+    "$RUNS/validation/combined_clean_ff_s222/combined_clean_ff_s222__step_002031616.jsonl",
+    "$RUNS/validation/combined_clean_ff_s222/combined_clean_ff_s222__step_004030464.jsonl",
+    "$RUNS/validation/combined_clean_ff_s222/combined_clean_ff_s222__step_006029312.jsonl",
+    "$RUNS/validation/combined_clean_ff_s222/combined_clean_ff_s222__step_008028160.jsonl",
+    "$RUNS/validation/combined_clean_ff_s222/combined_clean_ff_s222__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_clean_ff_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s333.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_clean_ff_s333",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s333.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_clean_ff_s333/combined_clean_ff_s333__step0.jsonl",
+    "$RUNS/validation/combined_clean_ff_s333/combined_clean_ff_s333__step_002031616.jsonl",
+    "$RUNS/validation/combined_clean_ff_s333/combined_clean_ff_s333__step_004030464.jsonl",
+    "$RUNS/validation/combined_clean_ff_s333/combined_clean_ff_s333__step_006029312.jsonl",
+    "$RUNS/validation/combined_clean_ff_s333/combined_clean_ff_s333__step_008028160.jsonl",
+    "$RUNS/validation/combined_clean_ff_s333/combined_clean_ff_s333__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_clean_ff_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s444.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_clean_ff_s444",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s444.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_clean_ff_s444/combined_clean_ff_s444__step0.jsonl",
+    "$RUNS/validation/combined_clean_ff_s444/combined_clean_ff_s444__step_002031616.jsonl",
+    "$RUNS/validation/combined_clean_ff_s444/combined_clean_ff_s444__step_004030464.jsonl",
+    "$RUNS/validation/combined_clean_ff_s444/combined_clean_ff_s444__step_006029312.jsonl",
+    "$RUNS/validation/combined_clean_ff_s444/combined_clean_ff_s444__step_008028160.jsonl",
+    "$RUNS/validation/combined_clean_ff_s444/combined_clean_ff_s444__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_clean_ff_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s555.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_clean_ff_s555",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_clean_ff_s555.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_clean_ff_s555/combined_clean_ff_s555__step0.jsonl",
+    "$RUNS/validation/combined_clean_ff_s555/combined_clean_ff_s555__step_002031616.jsonl",
+    "$RUNS/validation/combined_clean_ff_s555/combined_clean_ff_s555__step_004030464.jsonl",
+    "$RUNS/validation/combined_clean_ff_s555/combined_clean_ff_s555__step_006029312.jsonl",
+    "$RUNS/validation/combined_clean_ff_s555/combined_clean_ff_s555__step_008028160.jsonl",
+    "$RUNS/validation/combined_clean_ff_s555/combined_clean_ff_s555__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_ff_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s111.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_ff_s111",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s111.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_ff_s111/combined_robust_ff_s111__step0.jsonl",
+    "$RUNS/validation/combined_robust_ff_s111/combined_robust_ff_s111__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_ff_s111/combined_robust_ff_s111__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_ff_s111/combined_robust_ff_s111__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_ff_s111/combined_robust_ff_s111__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_ff_s111/combined_robust_ff_s111__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_ff_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s222.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_ff_s222",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s222.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_ff_s222/combined_robust_ff_s222__step0.jsonl",
+    "$RUNS/validation/combined_robust_ff_s222/combined_robust_ff_s222__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_ff_s222/combined_robust_ff_s222__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_ff_s222/combined_robust_ff_s222__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_ff_s222/combined_robust_ff_s222__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_ff_s222/combined_robust_ff_s222__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_ff_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s333.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_ff_s333",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s333.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_ff_s333/combined_robust_ff_s333__step0.jsonl",
+    "$RUNS/validation/combined_robust_ff_s333/combined_robust_ff_s333__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_ff_s333/combined_robust_ff_s333__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_ff_s333/combined_robust_ff_s333__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_ff_s333/combined_robust_ff_s333__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_ff_s333/combined_robust_ff_s333__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_ff_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s444.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_ff_s444",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s444.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_ff_s444/combined_robust_ff_s444__step0.jsonl",
+    "$RUNS/validation/combined_robust_ff_s444/combined_robust_ff_s444__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_ff_s444/combined_robust_ff_s444__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_ff_s444/combined_robust_ff_s444__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_ff_s444/combined_robust_ff_s444__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_ff_s444/combined_robust_ff_s444__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_ff_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s555.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_ff_s555",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_ff_s555.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_ff_s555/combined_robust_ff_s555__step0.jsonl",
+    "$RUNS/validation/combined_robust_ff_s555/combined_robust_ff_s555__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_ff_s555/combined_robust_ff_s555__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_ff_s555/combined_robust_ff_s555__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_ff_s555/combined_robust_ff_s555__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_ff_s555/combined_robust_ff_s555__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s111.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_history_s111",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s111.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_history_s111/combined_robust_history_s111__step0.jsonl",
+    "$RUNS/validation/combined_robust_history_s111/combined_robust_history_s111__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_history_s111/combined_robust_history_s111__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_history_s111/combined_robust_history_s111__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_history_s111/combined_robust_history_s111__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_history_s111/combined_robust_history_s111__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s222.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_history_s222",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s222.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_history_s222/combined_robust_history_s222__step0.jsonl",
+    "$RUNS/validation/combined_robust_history_s222/combined_robust_history_s222__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_history_s222/combined_robust_history_s222__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_history_s222/combined_robust_history_s222__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_history_s222/combined_robust_history_s222__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_history_s222/combined_robust_history_s222__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s333.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_history_s333",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s333.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_history_s333/combined_robust_history_s333__step0.jsonl",
+    "$RUNS/validation/combined_robust_history_s333/combined_robust_history_s333__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_history_s333/combined_robust_history_s333__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_history_s333/combined_robust_history_s333__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_history_s333/combined_robust_history_s333__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_history_s333/combined_robust_history_s333__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s444.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_history_s444",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s444.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_history_s444/combined_robust_history_s444__step0.jsonl",
+    "$RUNS/validation/combined_robust_history_s444/combined_robust_history_s444__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_history_s444/combined_robust_history_s444__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_history_s444/combined_robust_history_s444__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_history_s444/combined_robust_history_s444__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_history_s444/combined_robust_history_s444__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s555.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_history_s555",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_history_s555.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_history_s555/combined_robust_history_s555__step0.jsonl",
+    "$RUNS/validation/combined_robust_history_s555/combined_robust_history_s555__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_history_s555/combined_robust_history_s555__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_history_s555/combined_robust_history_s555__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_history_s555/combined_robust_history_s555__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_history_s555/combined_robust_history_s555__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_repeat_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s111.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_repeat_s111",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s111.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_repeat_s111/combined_robust_repeat_s111__step0.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s111/combined_robust_repeat_s111__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s111/combined_robust_repeat_s111__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s111/combined_robust_repeat_s111__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s111/combined_robust_repeat_s111__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s111/combined_robust_repeat_s111__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_repeat_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s222.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_repeat_s222",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s222.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_repeat_s222/combined_robust_repeat_s222__step0.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s222/combined_robust_repeat_s222__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s222/combined_robust_repeat_s222__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s222/combined_robust_repeat_s222__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s222/combined_robust_repeat_s222__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s222/combined_robust_repeat_s222__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_repeat_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s333.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_repeat_s333",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s333.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_repeat_s333/combined_robust_repeat_s333__step0.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s333/combined_robust_repeat_s333__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s333/combined_robust_repeat_s333__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s333/combined_robust_repeat_s333__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s333/combined_robust_repeat_s333__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s333/combined_robust_repeat_s333__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_repeat_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s444.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_repeat_s444",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s444.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_repeat_s444/combined_robust_repeat_s444__step0.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s444/combined_robust_repeat_s444__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s444/combined_robust_repeat_s444__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s444/combined_robust_repeat_s444__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s444/combined_robust_repeat_s444__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s444/combined_robust_repeat_s444__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_combined_robust_repeat_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s555.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/combined_robust_repeat_s555",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/combined_robust_repeat_s555.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/combined_robust_repeat_s555/combined_robust_repeat_s555__step0.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s555/combined_robust_repeat_s555__step_002031616.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s555/combined_robust_repeat_s555__step_004030464.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s555/combined_robust_repeat_s555__step_006029312.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s555/combined_robust_repeat_s555__step_008028160.jsonl",
+    "$RUNS/validation/combined_robust_repeat_s555/combined_robust_repeat_s555__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_residual_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s111.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/residual_robust_history_s111",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s111.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/residual_robust_history_s111/residual_robust_history_s111__step0.jsonl",
+    "$RUNS/validation/residual_robust_history_s111/residual_robust_history_s111__step_002031616.jsonl",
+    "$RUNS/validation/residual_robust_history_s111/residual_robust_history_s111__step_004030464.jsonl",
+    "$RUNS/validation/residual_robust_history_s111/residual_robust_history_s111__step_006029312.jsonl",
+    "$RUNS/validation/residual_robust_history_s111/residual_robust_history_s111__step_008028160.jsonl",
+    "$RUNS/validation/residual_robust_history_s111/residual_robust_history_s111__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_residual_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s222.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/residual_robust_history_s222",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s222.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/residual_robust_history_s222/residual_robust_history_s222__step0.jsonl",
+    "$RUNS/validation/residual_robust_history_s222/residual_robust_history_s222__step_002031616.jsonl",
+    "$RUNS/validation/residual_robust_history_s222/residual_robust_history_s222__step_004030464.jsonl",
+    "$RUNS/validation/residual_robust_history_s222/residual_robust_history_s222__step_006029312.jsonl",
+    "$RUNS/validation/residual_robust_history_s222/residual_robust_history_s222__step_008028160.jsonl",
+    "$RUNS/validation/residual_robust_history_s222/residual_robust_history_s222__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_residual_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s333.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/residual_robust_history_s333",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s333.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/residual_robust_history_s333/residual_robust_history_s333__step0.jsonl",
+    "$RUNS/validation/residual_robust_history_s333/residual_robust_history_s333__step_002031616.jsonl",
+    "$RUNS/validation/residual_robust_history_s333/residual_robust_history_s333__step_004030464.jsonl",
+    "$RUNS/validation/residual_robust_history_s333/residual_robust_history_s333__step_006029312.jsonl",
+    "$RUNS/validation/residual_robust_history_s333/residual_robust_history_s333__step_008028160.jsonl",
+    "$RUNS/validation/residual_robust_history_s333/residual_robust_history_s333__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_residual_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s444.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/residual_robust_history_s444",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s444.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/residual_robust_history_s444/residual_robust_history_s444__step0.jsonl",
+    "$RUNS/validation/residual_robust_history_s444/residual_robust_history_s444__step_002031616.jsonl",
+    "$RUNS/validation/residual_robust_history_s444/residual_robust_history_s444__step_004030464.jsonl",
+    "$RUNS/validation/residual_robust_history_s444/residual_robust_history_s444__step_006029312.jsonl",
+    "$RUNS/validation/residual_robust_history_s444/residual_robust_history_s444__step_008028160.jsonl",
+    "$RUNS/validation/residual_robust_history_s444/residual_robust_history_s444__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_residual_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s555.json",
+    "--checkpoint-root",
+    "$RUNS/train",
+    "--output",
+    "$RUNS/validation/residual_robust_history_s555",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/frozen/matrices/validation/residual_robust_history_s555.json"
+   ],
+   "outputs": [
+    "$RUNS/validation/residual_robust_history_s555/residual_robust_history_s555__step0.jsonl",
+    "$RUNS/validation/residual_robust_history_s555/residual_robust_history_s555__step_002031616.jsonl",
+    "$RUNS/validation/residual_robust_history_s555/residual_robust_history_s555__step_004030464.jsonl",
+    "$RUNS/validation/residual_robust_history_s555/residual_robust_history_s555__step_006029312.jsonl",
+    "$RUNS/validation/residual_robust_history_s555/residual_robust_history_s555__step_008028160.jsonl",
+    "$RUNS/validation/residual_robust_history_s555/residual_robust_history_s555__step_010027008.jsonl"
+   ]
+  }
+ ]
+}

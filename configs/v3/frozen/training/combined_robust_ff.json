@@ -1,0 +1,73 @@
+{
+  "env_overrides": {
+    "align_max": 0.015,
+    "observation_giver_reference": true,
+    "observation_history": 1,
+    "observation_history_mode": "stack",
+    "observation_sensor": {
+      "bias_bound_m": 0.005,
+      "clean_probability": 0.25,
+      "delay_steps": 2,
+      "ema_alpha": 1.0,
+      "max_delay_steps": 8,
+      "noise_std_m": 0.002
+    }
+  },
+  "frozen_utc": "2026-11-08T16:59:40Z",
+  "geometry_common": {
+    "align_max_m": 0.015,
+    "candidate_id": "ema1p0_giver1/geom15_x+00",
+    "ema_alpha": 1.0,
+    "giver_reference": true
+  },
+  "ppo_overrides": {},
+  "protocol_id": "v3-final-combined_robust_ff",
+  "status": "frozen",
+  "training": {
+    "actor_init": "zero_mean_output",
+    "checkpoint_interval_transitions": 1000000,
+    "curriculum": [
+      {
+        "fraction_end": 0.1,
+        "fraction_start": 0.0,
+        "position_bound_m": 0.0,
+        "release_offset_bound_s": 0.0
+      },
+      {
+        "fraction_end": 0.3,
+        "fraction_start": 0.1,
+        "position_bound_m": 0.01,
+        "release_offset_bound_s": 0.15
+      },
+      {
+        "fraction_end": 0.5,
+        "fraction_start": 0.3,
+        "position_bound_m": 0.015,
+        "release_offset_bound_s": 0.225
+      },
+      {
+        "fraction_end": 1.0,
+        "fraction_start": 0.5,
+        "position_bound_m": 0.02,
+        "release_offset_bound_s": 0.3
+      }
+    ],
+    "final_transitions_per_run": 10000000,
+    "methods": [
+      "combined"
+    ],
+    "num_envs": 1024,
+    "realized_transitions_per_run": 10027008,
+    "rollout_batch_transitions": 32768,
+    "rollout_steps_per_env": 32,
+    "scored_transitions": "also logged per iteration (environment steps in the SCORED phase, residual active)",
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "transition_definition": "vectorized environment steps x environments, including the scripted reset-settling steps (residual disabled)"
+  }
+}

@@ -1,0 +1,51 @@
+{
+ "name": "v3_validation_residual_robust_history_s33",
+ "suite": "configs/v3/suites/validation.jsonl",
+ "num_envs": 240,
+ "protocol": "configs/v3/frozen/training/residual_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s33__step0",
+   "method": "residual",
+   "training_seed": 33,
+   "role": "untrained_control",
+   "checkpoint": "residual_robust_history_s33/checkpoints/step_000000000.pt"
+  },
+  {
+   "id": "residual_robust_history_s33__step_002031616",
+   "method": "residual",
+   "training_seed": 33,
+   "role": "candidate",
+   "checkpoint": "residual_robust_history_s33/checkpoints/step_002031616.pt"
+  },
+  {
+   "id": "residual_robust_history_s33__step_004030464",
+   "method": "residual",
+   "training_seed": 33,
+   "role": "candidate",
+   "checkpoint": "residual_robust_history_s33/checkpoints/step_004030464.pt"
+  },
+  {
+   "id": "residual_robust_history_s33__step_006029312",
+   "method": "residual",
+   "training_seed": 33,
+   "role": "candidate",
+   "checkpoint": "residual_robust_history_s33/checkpoints/step_006029312.pt"
+  },
+  {
+   "id": "residual_robust_history_s33__step_008028160",
+   "method": "residual",
+   "training_seed": 33,
+   "role": "candidate",
+   "checkpoint": "residual_robust_history_s33/checkpoints/step_008028160.pt"
+  },
+  {
+   "id": "residual_robust_history_s33__step_010027008",
+   "method": "residual",
+   "training_seed": 33,
+   "role": "candidate",
+   "checkpoint": "residual_robust_history_s33/checkpoints/step_010027008.pt"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{"step":"clone","start_utc":"2026-11-08T22:34:25Z","end_utc":"2026-11-08T22:34:32Z","exit_code":0}
+{"step":"checkout","start_utc":"2026-11-08T22:34:32Z","end_utc":"2026-11-08T22:34:32Z","exit_code":0}
+{"step":"download","start_utc":"2026-11-08T22:34:32Z","end_utc":"2026-11-08T22:36:55Z","exit_code":0}
+{"step":"sha256sum","start_utc":"2026-11-08T22:36:55Z","end_utc":"2026-11-08T22:36:56Z","exit_code":0}
+{"step":"venv","start_utc":"2026-11-08T22:36:56Z","end_utc":"2026-11-08T22:36:56Z","exit_code":127}
+{"step":"pip","start_utc":"2026-11-08T22:36:56Z","end_utc":"2026-11-08T22:36:56Z","exit_code":127}
+{"step":"verify","start_utc":"2026-11-08T22:36:56Z","end_utc":"2026-11-08T22:36:56Z","exit_code":127}
+{"step":"regen","start_utc":"2026-11-08T22:36:56Z","end_utc":"2026-11-08T22:36:56Z","exit_code":127}
+{"step":"venv","start_utc":"2026-11-08T22:37:08Z","end_utc":"2026-11-08T22:37:10Z","exit_code":0,"attempt":2,"note":"python3.13 not on PATH; used python3, which is 3.10 here, so the pinned requirements failed to install"}
+{"step":"pip","start_utc":"2026-11-08T22:37:10Z","end_utc":"2026-11-08T22:38:11Z","exit_code":1,"attempt":2,"note":"python3.13 not on PATH; used python3, which is 3.10 here, so the pinned requirements failed to install"}
+{"step":"regen","start_utc":"2026-11-08T22:38:11Z","end_utc":"2026-11-08T22:38:11Z","exit_code":1,"attempt":2,"note":"python3.13 not on PATH; used python3, which is 3.10 here, so the pinned requirements failed to install"}
+{"step":"venv","start_utc":"2026-11-08T22:40:32Z","end_utc":"2026-11-08T22:40:33Z","exit_code":0,"attempt":3,"note":"Python 3.13.9 (miniconda); new dirs venv313/regen313"}
+{"step":"pip","start_utc":"2026-11-08T22:40:33Z","end_utc":"2026-11-08T22:42:02Z","exit_code":0,"attempt":3,"note":"Python 3.13.9 (miniconda); new dirs venv313/regen313"}
+{"step":"verify","start_utc":"2026-11-08T22:42:02Z","end_utc":"2026-11-08T22:42:12Z","exit_code":0,"attempt":3,"note":"Python 3.13.9 (miniconda); new dirs venv313/regen313"}
+{"step":"regen","start_utc":"2026-11-08T22:42:12Z","end_utc":"2026-11-08T22:42:37Z","exit_code":0,"attempt":3,"note":"Python 3.13.9 (miniconda); new dirs venv313/regen313"}

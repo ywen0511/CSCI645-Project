@@ -1,0 +1,20 @@
+{
+ "entries": [
+  {
+   "checkpoint": "smoke_residual_robust_history_s101/checkpoints/step_000000000.pt",
+   "id": "residual_robust_history_step0",
+   "method": "residual",
+   "training_seed": 101
+  },
+  {
+   "id": "nominal",
+   "method": "nominal",
+   "overrides": {}
+  }
+ ],
+ "name": "v3acc_a2_residual_robust_history",
+ "num_envs": 23,
+ "protocol": "configs/v3/training/residual_robust_history.json",
+ "suite": "configs/v3/acceptance/suite_layout.jsonl",
+ "trace_cases": []
+}

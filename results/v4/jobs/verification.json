@@ -1,0 +1,196 @@
+{
+ "name": "verification",
+ "tasks": [
+  {
+   "id": "replay60_geometry_calibrated",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/verification/replay60_geometry_calibrated.json",
+    "--output",
+    "$RUNS/replay60/geometry_calibrated",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/verification/replay60_geometry_calibrated.json"
+   ],
+   "outputs": [
+    "$RUNS/replay60/geometry_calibrated/geometry_calibrated.jsonl"
+   ]
+  },
+  {
+   "id": "replay60_combined_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/verification/replay60_combined_robust_history_s111.json",
+    "--checkpoint-root",
+    "$RUNS/formal/train",
+    "--output",
+    "$RUNS/replay60/combined_robust_history_s111",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/verification/replay60_combined_robust_history_s111.json"
+   ],
+   "outputs": [
+    "$RUNS/replay60/combined_robust_history_s111/combined_robust_history_s111__selected.jsonl"
+   ]
+  },
+  {
+   "id": "reload_combined_clean_ff",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/verification/reload_combined_clean_ff.json",
+    "--checkpoint-root",
+    "$RUNS/formal/train",
+    "--output",
+    "$RUNS/reload/combined_clean_ff",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/verification/reload_combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/reload/combined_clean_ff/combined_clean_ff_s111__selected.jsonl"
+   ]
+  },
+  {
+   "id": "reload_combined_robust_ff",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/verification/reload_combined_robust_ff.json",
+    "--checkpoint-root",
+    "$RUNS/formal/train",
+    "--output",
+    "$RUNS/reload/combined_robust_ff",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/verification/reload_combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/reload/combined_robust_ff/combined_robust_ff_s111__selected.jsonl"
+   ]
+  },
+  {
+   "id": "reload_combined_robust_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/verification/reload_combined_robust_history.json",
+    "--checkpoint-root",
+    "$RUNS/formal/train",
+    "--output",
+    "$RUNS/reload/combined_robust_history",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/verification/reload_combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/reload/combined_robust_history/combined_robust_history_s111__selected.jsonl"
+   ]
+  },
+  {
+   "id": "reload_combined_robust_repeat",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/verification/reload_combined_robust_repeat.json",
+    "--checkpoint-root",
+    "$RUNS/formal/train",
+    "--output",
+    "$RUNS/reload/combined_robust_repeat",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/verification/reload_combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/reload/combined_robust_repeat/combined_robust_repeat_s111__selected.jsonl"
+   ]
+  },
+  {
+   "id": "reload_residual_robust_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v4/final_matrices/verification/reload_residual_robust_history.json",
+    "--checkpoint-root",
+    "$RUNS/formal/train",
+    "--output",
+    "$RUNS/reload/residual_robust_history",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/final_matrices/verification/reload_residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/reload/residual_robust_history/residual_robust_history_s111__selected.jsonl"
+   ]
+  },
+  {
+   "id": "resume_check_train",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "111",
+    "--protocol",
+    "configs/v4/frozen/training/combined_robust_history.json",
+    "--run-type",
+    "smoke",
+    "--resume",
+    "$RUNS/formal/train/combined_robust_history_s111/checkpoints/latest.pt",
+    "--transitions",
+    "10092544",
+    "--output",
+    "$RUNS/resume_check/combined_robust_history_s111"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/resume_check/combined_robust_history_s111/checkpoints/final.pt"
+   ]
+  },
+  {
+   "id": "resume_check_inspect",
+   "kind": "isaac",
+   "argv": [
+    "scripts/closeout_inspect_ckpt.py",
+    "--before",
+    "$RUNS/formal/train/combined_robust_history_s111/checkpoints/latest.pt",
+    "--after",
+    "$RUNS/resume_check/combined_robust_history_s111/checkpoints/final.pt",
+    "--expect-iterations",
+    "308",
+    "--expect-transitions",
+    "10092544",
+    "--output",
+    "$RUNS/resume_check/inspect.json"
+   ],
+   "inputs": [],
+   "outputs": [
+    "$RUNS/resume_check/inspect.json"
+   ]
+  }
+ ]
+}

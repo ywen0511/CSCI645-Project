@@ -1,0 +1,32 @@
+{
+ "name": "v4_mech_constant_residual_robust_history_s555",
+ "suite": "$DELIVERY/configs/v4/suites/final_subset60.jsonl",
+ "num_envs": 60,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 0.2,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": true,
+  "grasp_uncertainty": true
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s555__constant",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     2.8595328321779452e-05,
+     -0.00019410830578477404,
+     -0.0005449565262097808
+    ]
+   }
+  }
+ ]
+}

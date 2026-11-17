@@ -1,0 +1,446 @@
+Sender: LSF System <<lsf>
+Subject: Job 8102475: <c645pv3_fresh301> in cluster <<cluster>> Done
+
+Job <c645pv3_fresh301> was submitted from host <<cluster>> by user <<user>> in cluster <<cluster>> at Mon Nov  9 16:12:41 2026
+Job was executed on host(s) <8*<cluster>>, in queue <gpu_large_shared>, as user <<user>> in cluster <<cluster>> at Mon Nov  9 16:12:50 2026
+<<home>> was used as the home directory.
+<<home>> was used as the working directory.
+Started at Mon Nov  9 16:12:50 2026
+Terminated at Mon Nov  9 16:16:46 2026
+Results reported at Mon Nov  9 16:16:46 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+bash <work-root>/runs/csci645-project/post_v3/fresh301.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   262.52 sec.
+    Max Memory :                                 4590.39 MB
+    Average Memory :                             1223.31 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   184711 MB
+    Max Processes :                              5
+    Max Threads :                                85
+    Run time :                                   242 sec.
+    Turnaround time :                            245 sec.
+
+The output (if any) follows:
+
+++ [16:12:50] mktemp -d <work-root>/runs/csci645-project/post_v3/fresh301/v301.XXXXXX
++ [16:12:50] V3_WORK=$V3_WORK
++ [16:12:50] T=$V3_WORK/tooling
++ [16:12:50] D=$V3_WORK/delivery
++ [16:12:50] E=$V3_WORK/experiment
++ [16:12:50] B1=$V3_WORK/release-v3.0.1
++ [16:12:50] B=$V3_WORK/release
++ [16:12:50] X=$V3_WORK/extracted
++ [16:12:50] G=$V3_WORK/regenerated
++ [16:12:50] R=$V3_WORK/replay
++ [16:12:50] REPO_URL=https://github.com/ywen0511/CSCI645-Project.git
++ [16:12:50] git clone --branch maintenance-v3.0.1 https://github.com/ywen0511/CSCI645-Project.git $V3_WORK/tooling
+Cloning into '$V3_WORK/tooling'...
+Note: switching to 'c85fded58f776c117368dc02be24405912593e38'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  43% (320/728)
+Updating files:  44% (321/728)
+Updating files:  45% (328/728)
+Updating files:  46% (335/728)
+Updating files:  47% (343/728)
+Updating files:  48% (350/728)
+Updating files:  49% (357/728)
+Updating files:  50% (364/728)
+Updating files:  51% (372/728)
+Updating files:  52% (379/728)
+Updating files:  53% (386/728)
+Updating files:  54% (394/728)
+Updating files:  55% (401/728)
+Updating files:  56% (408/728)
+Updating files:  57% (415/728)
+Updating files:  58% (423/728)
+Updating files:  59% (430/728)
+Updating files:  60% (437/728)
+Updating files:  61% (445/728)
+Updating files:  62% (452/728)
+Updating files:  63% (459/728)
+Updating files:  64% (466/728)
+Updating files:  65% (474/728)
+Updating files:  66% (481/728)
+Updating files:  67% (488/728)
+Updating files:  68% (496/728)
+Updating files:  69% (503/728)
+Updating files:  70% (510/728)
+Updating files:  71% (517/728)
+Updating files:  72% (525/728)
+Updating files:  73% (532/728)
+Updating files:  74% (539/728)
+Updating files:  75% (546/728)
+Updating files:  76% (554/728)
+Updating files:  77% (561/728)
+Updating files:  78% (568/728)
+Updating files:  79% (576/728)
+Updating files:  80% (583/728)
+Updating files:  81% (590/728)
+Updating files:  82% (597/728)
+Updating files:  83% (605/728)
+Updating files:  84% (612/728)
+Updating files:  85% (619/728)
+Updating files:  86% (627/728)
+Updating files:  86% (629/728)
+Updating files:  87% (634/728)
+Updating files:  88% (641/728)
+Updating files:  89% (648/728)
+Updating files:  90% (656/728)
+Updating files:  91% (663/728)
+Updating files:  92% (670/728)
+Updating files:  93% (678/728)
+Updating files:  94% (685/728)
+Updating files:  95% (692/728)
+Updating files:  96% (699/728)
+Updating files:  97% (707/728)
+Updating files:  98% (714/728)
+Updating files:  99% (721/728)
+Updating files: 100% (728/728)
+Updating files: 100% (728/728), done.
++ [16:12:53] git clone --branch v3.0.0 https://github.com/ywen0511/CSCI645-Project.git $V3_WORK/delivery
+Cloning into '$V3_WORK/delivery'...
+Note: switching to 'ebfa328b17103c32ae19c13f0a6408ebc55a6459'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  47% (326/690)
+Updating files:  48% (332/690)
+Updating files:  49% (339/690)
+Updating files:  50% (345/690)
+Updating files:  51% (352/690)
+Updating files:  52% (359/690)
+Updating files:  53% (366/690)
+Updating files:  54% (373/690)
+Updating files:  55% (380/690)
+Updating files:  56% (387/690)
+Updating files:  57% (394/690)
+Updating files:  58% (401/690)
+Updating files:  59% (408/690)
+Updating files:  60% (414/690)
+Updating files:  61% (421/690)
+Updating files:  62% (428/690)
+Updating files:  63% (435/690)
+Updating files:  64% (442/690)
+Updating files:  65% (449/690)
+Updating files:  66% (456/690)
+Updating files:  67% (463/690)
+Updating files:  68% (470/690)
+Updating files:  69% (477/690)
+Updating files:  70% (483/690)
+Updating files:  71% (490/690)
+Updating files:  72% (497/690)
+Updating files:  73% (504/690)
+Updating files:  74% (511/690)
+Updating files:  75% (518/690)
+Updating files:  76% (525/690)
+Updating files:  77% (532/690)
+Updating files:  78% (539/690)
+Updating files:  79% (546/690)
+Updating files:  80% (552/690)
+Updating files:  81% (559/690)
+Updating files:  82% (566/690)
+Updating files:  83% (573/690)
+Updating files:  84% (580/690)
+Updating files:  85% (587/690)
+Updating files:  86% (594/690)
+Updating files:  87% (601/690)
+Updating files:  88% (608/690)
+Updating files:  89% (615/690)
+Updating files:  90% (621/690)
+Updating files:  91% (628/690)
+Updating files:  92% (635/690)
+Updating files:  92% (639/690)
+Updating files:  93% (642/690)
+Updating files:  94% (649/690)
+Updating files:  95% (656/690)
+Updating files:  96% (663/690)
+Updating files:  97% (670/690)
+Updating files:  98% (677/690)
+Updating files:  99% (684/690)
+Updating files: 100% (690/690)
+Updating files: 100% (690/690), done.
++ [16:12:56] git clone --branch experiment-v3 https://github.com/ywen0511/CSCI645-Project.git $V3_WORK/experiment
+Cloning into '$V3_WORK/experiment'...
+Note: switching to '3811f5da5ef55638f95f7306e449609877f546df'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  64% (314/490)
+Updating files:  65% (319/490)
+Updating files:  66% (324/490)
+Updating files:  67% (329/490)
+Updating files:  68% (334/490)
+Updating files:  69% (339/490)
+Updating files:  70% (343/490)
+Updating files:  71% (348/490)
+Updating files:  72% (353/490)
+Updating files:  73% (358/490)
+Updating files:  74% (363/490)
+Updating files:  75% (368/490)
+Updating files:  76% (373/490)
+Updating files:  77% (378/490)
+Updating files:  78% (383/490)
+Updating files:  79% (388/490)
+Updating files:  80% (392/490)
+Updating files:  81% (397/490)
+Updating files:  82% (402/490)
+Updating files:  83% (407/490)
+Updating files:  84% (412/490)
+Updating files:  85% (417/490)
+Updating files:  86% (422/490)
+Updating files:  87% (427/490)
+Updating files:  88% (432/490)
+Updating files:  89% (437/490)
+Updating files:  90% (441/490)
+Updating files:  91% (446/490)
+Updating files:  92% (451/490)
+Updating files:  93% (456/490)
+Updating files:  94% (461/490)
+Updating files:  95% (466/490)
+Updating files:  96% (471/490)
+Updating files:  97% (476/490)
+Updating files:  98% (481/490)
+Updating files:  99% (486/490)
+Updating files: 100% (490/490)
+Updating files: 100% (490/490), done.
+++ [16:12:59] git -C $V3_WORK/tooling rev-parse HEAD
++ [16:12:59] test c85fded58f776c117368dc02be24405912593e38 = c85fded58f776c117368dc02be24405912593e38
+++ [16:12:59] git -C $V3_WORK/tooling rev-parse 'v3.0.1^{commit}'
++ [16:12:59] test c85fded58f776c117368dc02be24405912593e38 = c85fded58f776c117368dc02be24405912593e38
+++ [16:12:59] git -C $V3_WORK/experiment rev-parse HEAD
++ [16:12:59] test 3811f5da5ef55638f95f7306e449609877f546df = 3811f5da5ef55638f95f7306e449609877f546df
+++ [16:12:59] git -C $V3_WORK/delivery rev-parse HEAD
++ [16:12:59] test ebfa328b17103c32ae19c13f0a6408ebc55a6459 = ebfa328b17103c32ae19c13f0a6408ebc55a6459
++ [16:12:59] python3.13 -m venv $V3_WORK/analysis-env
++ [16:13:04] PY=$V3_WORK/analysis-env/bin/python
++ [16:13:04] $V3_WORK/analysis-env/bin/python -m pip install -q -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt
++ [16:13:27] $V3_WORK/analysis-env/bin/python -I $V3_WORK/tooling/scripts/v3_download.py --tag v3.0.1 --output $V3_WORK/release-v3.0.1
+MAINTENANCE.md: 3,980 bytes
+MAINTENANCE_RELEASE_NOTES.md: 3,340 bytes
+POST_V3_STATUS.json: 1,602 bytes
+REPRODUCE.md: 11,062 bytes
+SHA256SUMS: 898 bytes
+archive_inventories.json: 155,150 bytes
+checkpoint_locations.json: 213,527 bytes
+maintenance-evidence.tar.gz: 48,788 bytes
+release_manifest.json: 11,402 bytes
+source-maintenance-v3.0.1.tar.gz: 15,274,861 bytes
+v3.0.0-original-assets.tar: 461,004,800 bytes
+11 assets, 476.7 MB
++ [16:13:39] cd $V3_WORK/release-v3.0.1
++ [16:13:39] sha256sum -c SHA256SUMS
+MAINTENANCE.md: OK
+MAINTENANCE_RELEASE_NOTES.md: OK
+POST_V3_STATUS.json: OK
+REPRODUCE.md: OK
+archive_inventories.json: OK
+checkpoint_locations.json: OK
+maintenance-evidence.tar.gz: OK
+release_manifest.json: OK
+source-maintenance-v3.0.1.tar.gz: OK
+v3.0.0-original-assets.tar: OK
++ [16:13:40] $V3_WORK/analysis-env/bin/python -I $V3_WORK/tooling/scripts/post_v3_verify_release.py --bundle $V3_WORK/release-v3.0.1 --original-out $V3_WORK/release --expect-tooling-sha c85fded58f776c117368dc02be24405912593e38 --output $V3_WORK/maintenance_release_verify.json
+{"ok": true, "problems": [], "assets_checked": 10, "archive_members_rehashed": 788, "original_assets": 30, "checkpoints_indexed": 457, "checkpoints_resolved": 457}
++ [16:13:47] cd $V3_WORK/release
++ [16:13:47] sha256sum -c SHA256SUMS
+RELEASE_NOTES.md: OK
+REPRODUCE.md: OK
+VERIFICATION.md: OK
+analysis.tar.gz: OK
+archive_inventories.json: OK
+checkpoints-formal-combined_clean_ff.tar.gz: OK
+checkpoints-formal-combined_robust_ff.tar.gz: OK
+checkpoints-formal-combined_robust_history.tar.gz: OK
+checkpoints-formal-combined_robust_repeat.tar.gz: OK
+checkpoints-formal-residual_robust_history.tar.gz: OK
+checkpoints-pilot-smoke.tar.gz: OK
+checkpoints.json: OK
+logs.tar.gz: OK
+raw-acceptance.tar.gz: OK
+raw-development.tar.gz: OK
+raw-extras.tar.gz: OK
+raw-final.tar.gz: OK
+raw-validation.tar.gz: OK
+release_manifest.json: OK
+report.md: OK
+report.pdf: OK
+run_index.json: OK
+slides.pdf: OK
+slides.pptx: OK
+source-experiment-v3.tar.gz: OK
+source-v3.0.0.tar.gz: OK
+speaker_notes.md: OK
+videos.json: OK
+videos.tar.gz: OK
++ [16:13:48] $V3_WORK/analysis-env/bin/python -I $V3_WORK/delivery/scripts/v3_verify.py --bundle $V3_WORK/release --extract $V3_WORK/extracted --output $V3_WORK/bundle_verify.json
+{
+ "ok": true,
+ "failures": [],
+ "sha256sums": {
+  "listed": 29,
+  "assets": 30,
+  "bad": [],
+  "unlisted": []
+ },
+ "manifest": {
+  "assets": 28,
+  "bad": [],
+  "covers_all_other_assets": true,
+  "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+  "delivery_commit": "ebfa328b17103c32ae19c13f0a6408ebc55a6459"
+ },
+ "archives": {
+  "members_rehashed": 4947,
+  "n_problems": 0
+ },
+ "checkpoints": {
+  "entries": 457,
+  "unresolved_or_bad": [],
+  "formal_runs_per_family": {
+   "combined_clean_ff": 5,
+   "combined_robust_ff": 5,
+   "combined_robust_history": 5,
+   "residual_robust_history": 5,
+   "combined_robust_repeat": 3
+  },
+  "each_formal_run_has_step0_10_periodic_final_latest_and_selected": true,
+  "pilot_smoke_runs": 18
+ },
+ "raw_counts": {
+  "final_files": 50,
+  "final_all_2600": true,
+  "final_records": 130000,
+  "validation_files": 138,
+  "validation_all_240": true
+ },
+ "media": {
+  "pdf": {
+   "report.pdf": 19,
+   "slides.pdf": 15
+  },
+  "pptx": {
+   "slides.pptx": 15
+  }
+ },
+ "leak_scan": {
+  "n_hits": 0
+ }
+}
++ [16:14:25] $V3_WORK/analysis-env/bin/python $V3_WORK/delivery/scripts/v3_regen.py --runs $V3_WORK/extracted --work $V3_WORK/regenerated
+{"ok": true, "counts": {"identical": 34, "float_only": 1, "different": 0, "missing": 0}, "failed_steps": []}
++ [16:15:09] $V3_WORK/analysis-env/bin/python $V3_WORK/tooling/scripts/v3_rebuild_suites.py --experiment-repo $V3_WORK/experiment --check
+{
+  "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+  "frozen_inputs_verified": 60,
+  "suites": {
+    "development": {
+      "path": "configs/v3/suites/development.jsonl",
+      "cases": 312,
+      "sha256": "e8139f3b4c2a745c24493819e6a04d00edeeffc83f01071aab5c832512071521"
+    },
+    "validation": {
+      "path": "configs/v3/suites/validation.jsonl",
+      "cases": 240,
+      "sha256": "9051c414af4801e44ce13445be0077a2a78841f9a40a6700b04ad44a1199c024"
+    },
+    "final": {
+      "path": "configs/v3/suites/final.jsonl",
+      "cases": 2600,
+      "sha256": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+    }
+  },
+  "historical_manifest_exception": {
+    "path": "configs/v3/SUITES.json",
+    "source_commit": "415cf8348728ccedbc2314a28adf9aaf7deddedf",
+    "frozen_sha256": "f81ed8f32ba01e27dad65732e64e78c2a90f5ef92b81ab01d7e0f0e4002f3980",
+    "reason": "The final suite entry was appended after freeze; original Git bytes and every final entry field were checked."
+  },
+  "simulator_run": false,
+  "new_preregistration": false
+}
++ [16:15:09] for f in "$G"/figures/*.png
+++ [16:15:09] basename $V3_WORK/regenerated/figures/failure_breakdown.png
++ [16:15:09] cmp $V3_WORK/regenerated/figures/failure_breakdown.png $V3_WORK/delivery/results/v3/figures/failure_breakdown.png
++ [16:15:09] for f in "$G"/figures/*.png
+++ [16:15:09] basename $V3_WORK/regenerated/figures/learning_curves.png
++ [16:15:09] cmp $V3_WORK/regenerated/figures/learning_curves.png $V3_WORK/delivery/results/v3/figures/learning_curves.png
++ [16:15:09] for f in "$G"/figures/*.png
+++ [16:15:09] basename $V3_WORK/regenerated/figures/paired_effects.png
++ [16:15:09] cmp $V3_WORK/regenerated/figures/paired_effects.png $V3_WORK/delivery/results/v3/figures/paired_effects.png
++ [16:15:09] for f in "$G"/figures/*.png
+++ [16:15:09] basename $V3_WORK/regenerated/figures/pipeline.png
++ [16:15:09] cmp $V3_WORK/regenerated/figures/pipeline.png $V3_WORK/delivery/results/v3/figures/pipeline.png
++ [16:15:09] for f in "$G"/figures/*.png
+++ [16:15:09] basename $V3_WORK/regenerated/figures/severity_final.png
++ [16:15:09] cmp $V3_WORK/regenerated/figures/severity_final.png $V3_WORK/delivery/results/v3/figures/severity_final.png
++ [16:15:09] for f in "$G"/figures/*.png
+++ [16:15:09] basename $V3_WORK/regenerated/figures/severity_selected.png
++ [16:15:09] cmp $V3_WORK/regenerated/figures/severity_selected.png $V3_WORK/delivery/results/v3/figures/severity_selected.png
++ [16:15:09] ISAAC=$ISAAC
++ [16:15:09] mkdir -p $V3_WORK/replay/formal
++ [16:15:09] ln -s $V3_WORK/extracted/formal/train $V3_WORK/replay/formal/train
++ [16:15:09] ln -s $V3_WORK/extracted/final $V3_WORK/replay/final
++ [16:15:09] $V3_WORK/analysis-env/bin/python $V3_WORK/tooling/scripts/v3_jobs.py run --manifest $V3_WORK/tooling/results/v3/jobs/verification.json --repo $V3_WORK/experiment --runs-root $V3_WORK/replay --isaac-python $ISAAC --only replay65_geometry_common,reload_combined_robust_ff --task-timeout-s 3600
+[v3_jobs] run replay65_geometry_common: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/replay65_geometry_common__repeat_geometry_common.json --num-envs 23 --output $V3_WORK/replay/replay65/geometry_common --seed 6455501
+[v3_jobs] replay65_geometry_common rc=0
+[v3_jobs] run reload_combined_robust_ff: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/reload_combined_robust_ff__reload_combined_robust_ff.json --checkpoint-root $V3_WORK/replay/formal/train --output $V3_WORK/replay/reload/combined_robust_ff --seed 6455501
+[v3_jobs] reload_combined_robust_ff rc=0
+{"shard": "0/1", "tasks": 2, "failed": []}
++ [16:16:46] $V3_WORK/analysis-env/bin/python - $V3_WORK/replay $V3_WORK/extracted $V3_WORK/tooling
+{"replay65_geometry_common": 65, "reload_combined_robust_ff": 13, "all_equal": true}
++ [16:16:46] echo V3_WORK=$V3_WORK
+V3_WORK=$V3_WORK
++ [16:16:46] echo FRESH301_DONE
+FRESH301_DONE

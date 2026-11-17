@@ -1,0 +1,152 @@
+{
+ "bootstrap": {
+  "familywise": "Bonferroni 97.5% for the two primary contrasts",
+  "repeats": 10000,
+  "seed": 6455401
+ },
+ "files": {
+  "configs/v2/protocol.json": "096f3c00eaea4b20ef93e1253b49615cd06e3a10b841e137e22710abaf459db8",
+  "configs/v3/SUITES.json": "f81ed8f32ba01e27dad65732e64e78c2a90f5ef92b81ab01d7e0f0e4002f3980",
+  "configs/v3/baseline_selection.json": "270c0696ea5f68099b2784ac94edf1950a352027f04191dba8f31aa1b366ec04",
+  "configs/v3/frozen/matrices/validation/combined_clean_ff_s11.json": "05dd66f36444baf33821457e38c834e93f742f32d2c7474e3baab09b54f2781e",
+  "configs/v3/frozen/matrices/validation/combined_clean_ff_s22.json": "9f0727d414459f5eed266d33ab7a0dcbfb13e0bc3263fe862c9a2db207d3e58d",
+  "configs/v3/frozen/matrices/validation/combined_clean_ff_s33.json": "3dcc8f0f4281ed8d8d7275389f8b69fb36f82bfb8433f4901ffe75de0ebb6be4",
+  "configs/v3/frozen/matrices/validation/combined_clean_ff_s44.json": "31e8f2036a28036d02e5529af94dc1c021f8958eb4f494dcc23adef1e154d667",
+  "configs/v3/frozen/matrices/validation/combined_clean_ff_s55.json": "976575f05c06c998d6c0416815b1308600b0c964365e1296ed09c1145291741f",
+  "configs/v3/frozen/matrices/validation/combined_robust_ff_s11.json": "91fcb8dd3b17386ffcf6678f4a35302910deca0116ec9c2f52669fee82e54ac3",
+  "configs/v3/frozen/matrices/validation/combined_robust_ff_s22.json": "8d09c150038f1405cd106c145b455f81a8542f92ae2b7295d1228df1a856b06b",
+  "configs/v3/frozen/matrices/validation/combined_robust_ff_s33.json": "b0ec104c56d8400fab211ee5f0aee65b1c98952cfe7c1f12a73fc4399412a6e4",
+  "configs/v3/frozen/matrices/validation/combined_robust_ff_s44.json": "447e9a1c113a673c4b3ae50713d0d7d9a6cd40a97a841a29d05685a5678f93a4",
+  "configs/v3/frozen/matrices/validation/combined_robust_ff_s55.json": "5d4181a32099d12bf677242b0c0177b7dc7b45ceb1e341715c782221d4a0068f",
+  "configs/v3/frozen/matrices/validation/combined_robust_history_s11.json": "724a4b39a78d5b73163e5b921f6b3c1036b32466f59d5fdd6a4124a1b2cd3385",
+  "configs/v3/frozen/matrices/validation/combined_robust_history_s22.json": "987e0adca9c6165984e4f64b7fa859e32d1f29d75ec2d3f752deed47b7f818a0",
+  "configs/v3/frozen/matrices/validation/combined_robust_history_s33.json": "7925abd98de0d788a62a8ec35113b102cd3679c830b30ef39132c1f66ab435b2",
+  "configs/v3/frozen/matrices/validation/combined_robust_history_s44.json": "ac10cac41685bcbb237f9f28d8881cb9db315edfc48cf9b1f464e087f0a2d153",
+  "configs/v3/frozen/matrices/validation/combined_robust_history_s55.json": "376c08c162201e53d424ce1932ea642456bdb37143398b8bb70f4a99e49f5c23",
+  "configs/v3/frozen/matrices/validation/combined_robust_repeat_s11.json": "36c7c0c41043d2037191c0cf1905202a715f51bf721955496777c523c4780465",
+  "configs/v3/frozen/matrices/validation/combined_robust_repeat_s22.json": "69c69951113a54b91d02caaee1fab592a26e3807b5c6df83d3e8fa579c6afe89",
+  "configs/v3/frozen/matrices/validation/combined_robust_repeat_s33.json": "84b236a7afc1baf0dc6e5c745a15a121b8fc9511a007e81e135ae7e652720078",
+  "configs/v3/frozen/matrices/validation/residual_robust_history_s11.json": "64d11e94333a70729f0ab909884c80236dfd82882ed85bcf09ce0fae198191e9",
+  "configs/v3/frozen/matrices/validation/residual_robust_history_s22.json": "ffb7931557f88d3f79688ee472f5e788937ca2af9933c4c54ba8a1ca600faeae",
+  "configs/v3/frozen/matrices/validation/residual_robust_history_s33.json": "6c8549373600b4ecbb16382f93e94ce192a3b2cec0545233075f5a92d706c51b",
+  "configs/v3/frozen/matrices/validation/residual_robust_history_s44.json": "16146501d026b4feb9bb95f691055d34924ccaaeb78759f156e771deaf2abb23",
+  "configs/v3/frozen/matrices/validation/residual_robust_history_s55.json": "26cbbeb5893a5e921cd7c6867e0b87a57d7f59f01aa8ae7741a5f808014a3b1e",
+  "configs/v3/frozen/training/combined_clean_ff.json": "d96c7e41594f5b66e30854a68f2cc185d08fc9161c85a4a284b339b2a98ab3d9",
+  "configs/v3/frozen/training/combined_robust_ff.json": "0bf98e5fd200c60a0eee5e8f0483d33fe8d14540b9875651b3f73147e85d22c3",
+  "configs/v3/frozen/training/combined_robust_history.json": "65b779d99b493b4a3030d64ec1ee207ed24239fd8cb2059313d6919dc9e632ed",
+  "configs/v3/frozen/training/combined_robust_repeat.json": "69aae8bb42c9bd2789597aa79e732b8282e04c301eb427d53c15b0edda60d403",
+  "configs/v3/frozen/training/residual_robust_history.json": "320bfc4f2ca2b40a75d0bf871136b8c721d25d707a29943431a08c08c2d1b8c5",
+  "configs/v3/protocol.draft.json": "a201980823b7d760b5eebdf63c3d4da5ca54660f70ce4c752fb1c37757115ce7",
+  "configs/v3/suites/development.jsonl": "e8139f3b4c2a745c24493819e6a04d00edeeffc83f01071aab5c832512071521",
+  "configs/v3/suites/validation.jsonl": "9051c414af4801e44ce13445be0077a2a78841f9a40a6700b04ad44a1199c024",
+  "configs/v3/video_rule.json": "774c7d9eab22ea331a337599231cea976ac19f8e04a1eb0cc9da457e4fd03b03",
+  "results/v3/acceptance.json": "c8f34da80665464a271e92d31808c202f7b74c780dd25bf3c549f510f396f6a4",
+  "scripts/eval_matrix.py": "f447e57b03c42b19f20c5d2ba15ef492e634d4f48742da6bd3582cb18c18fe89",
+  "scripts/record_video.py": "3138280c0d3a2f1aac7ff64ca315be6d77044cb8e91cdb00172edbcf0dc488e2",
+  "scripts/run_scripted.py": "c3b761b245bb70bfe6838a4ed499e39034a3ff7d72412169ac08c4ab7f466fcd",
+  "scripts/train.py": "ed658b49d263aa3bdebae9418b3d5df6cc818d0f50c3b958cc777b62714c9499",
+  "scripts/v3_prepare.py": "ef13b15b3381df3c9f209cc657b635452b3b2e69b7162181355140e5b33c9000",
+  "src/csci645_handover/__init__.py": "cd9920d166b8d9b64f6ff23b484915ac5842d16a9b0e00dc8fdd7810210b266d",
+  "src/csci645_handover/agents/__init__.py": "15b3996901eca29e5e37bba7c9302b84de8041fcedf361e9c136129994f52f0e",
+  "src/csci645_handover/agents/ppo_cfg.py": "3c2301f70b07fc7c20a68129e0ceab73314ae5cb37ae295407e279c81868707f",
+  "src/csci645_handover/core/__init__.py": "aa420333386a7fe50370d0851b739df227c2ab4a4a7c76f08ba2b09fa0f3d44d",
+  "src/csci645_handover/core/case_suites.py": "2cb48693450e8766b337da67faf8fac723f0694a861ae1d4175c443383f82072",
+  "src/csci645_handover/core/geometry.py": "735303f6cb14f2b1be399ee695b52923a96a55f395f24f55f8aad3ffc6d212c4",
+  "src/csci645_handover/core/observation.py": "3fb80bd717c8502d65866bbdb14b94dee904bd582024d939f3c833c841fd3c8f",
+  "src/csci645_handover/core/outcomes.py": "6e2e01acb1d0e57988328b8575887e681b24dc21654a465df0f4476b3b5b22f0",
+  "src/csci645_handover/core/policy_io.py": "4801ae58443bc3db9a99ef9272dca90c605f837c5d07158fa7206889a50f13c3",
+  "src/csci645_handover/core/schedule.py": "23eb8e791745f97875bac8f0c9dc446d72f071a9ca088c706612d2549447f6ba",
+  "src/csci645_handover/core/stats.py": "cf167485e997d17a0cc18bf19d9ec6067938be7cba4b29a6415a4f6dec27c91c",
+  "src/csci645_handover/runtime.py": "99cde595e27ea5e28de90f039dbcf16f97af0b5709b4972ddffefb1a086f63c8",
+  "src/csci645_handover/selection.py": "70df2cd52fee4423169d9151c3f5b83616e7a66f413359128cc977896df2f4fa",
+  "src/csci645_handover/tasks/__init__.py": "40f8b67c12f230a99162a487f33b549cb67876d20e2a60a31e62d5db8e5df3da",
+  "src/csci645_handover/tasks/handover_env.py": "5c03fb206e4d8960111a24d801005834dace145cbbc5159c74391b8efa9041da",
+  "src/csci645_handover/tasks/handover_env_cfg.py": "1a56feb1fb541b627a5604d513f1a9760b45afb131b76a6a003d789a3447b8f5",
+  "src/csci645_handover/v2_analysis.py": "079d6dbe0ab7c05b72622e7d33837d59502a049ae45f226470d9b2abbe4b42b3",
+  "src/csci645_handover/v3_analysis.py": "2fe03aaa2c1d76681810d6a80207441a16b3d9b2c00fbd4ca04273d0bd31caed",
+  "src/csci645_handover/v3_protocol.py": "dcb17cac60381e2e4699939ebd608a97e97fca1d444c79f8ec4fadb41d9e6deb"
+ },
+ "final_design": "src/csci645_handover/v3_protocol.py: 13 conditions x 200 cases, split seed 6455301; main matrix 6 baselines + 23 runs x {selected, final} = 135,200 episodes, batch 256, one fresh process per entry",
+ "formal_runs": {
+  "combined_clean_ff": {
+   "method": "combined",
+   "num_envs": 1024,
+   "protocol_id": "v3-final-combined_clean_ff",
+   "realized_transitions": 10027008,
+   "requested_transitions": 10000000,
+   "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+   ]
+  },
+  "combined_robust_ff": {
+   "method": "combined",
+   "num_envs": 1024,
+   "protocol_id": "v3-final-combined_robust_ff",
+   "realized_transitions": 10027008,
+   "requested_transitions": 10000000,
+   "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+   ]
+  },
+  "combined_robust_history": {
+   "method": "combined",
+   "num_envs": 1024,
+   "protocol_id": "v3-final-combined_robust_history",
+   "realized_transitions": 10027008,
+   "requested_transitions": 10000000,
+   "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+   ]
+  },
+  "combined_robust_repeat": {
+   "method": "combined",
+   "num_envs": 1024,
+   "protocol_id": "v3-final-combined_robust_repeat",
+   "realized_transitions": 10027008,
+   "requested_transitions": 10000000,
+   "seeds": [
+    11,
+    22,
+    33
+   ]
+  },
+  "residual_robust_history": {
+   "method": "residual",
+   "num_envs": 1024,
+   "protocol_id": "v3-final-residual_robust_history",
+   "realized_transitions": 10027008,
+   "requested_transitions": 10000000,
+   "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+   ]
+  }
+ },
+ "frozen_utc": "2026-11-08T16:59:50Z",
+ "gpu_acceptance_evidence": {
+  "path": "results/v3/acceptance.json",
+  "sha256": "c8f34da80665464a271e92d31808c202f7b74c780dd25bf3c549f510f396f6a4"
+ },
+ "primary_contrasts": [
+  "combined_robust_history - combined_robust_ff (selected, mixed_id)",
+  "combined_robust_history - geometry_best_constant (selected, mixed_id)"
+ ],
+ "selection_rule": "src/csci645_handover/selection.py:select_v2 on 240 validation cases at the first saved step at/after 2,4,6,8,10M transitions; step 0 is an untrained control and never eligible",
+ "source_commit": "415cf8348728ccedbc2314a28adf9aaf7deddedf",
+ "status": "frozen"
+}

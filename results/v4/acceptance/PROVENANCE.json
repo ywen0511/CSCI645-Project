@@ -1,0 +1,8 @@
+{
+ "first_pass": {"source_commit": "f261da35623d2c14ef778c2402d1009845a51739", "judge": "acceptance_first_pass.json",
+                "result": "all checks passed except A3 table support (harness placed the table under the nominal bar position)"},
+ "rerun_after_fix": {"source_commit": "508937303e48190242269a39631312ed1d94acc2", "checks": ["A1", "A2", "A3"],
+                     "fix": "table_support negative control places the table under nominal + joint offset + in-grasp offset"},
+ "final_judgement": {"file": "acceptance.json", "A1-A3": "rerun at 5089373", "A4-A9 and smoke resume": "first pass at f261da3",
+                     "code_difference_between_the_two_commits": "only the table_support branch of HandoverEnv._begin_settle (and non-simulator tooling)"}
+}

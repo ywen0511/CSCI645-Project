@@ -1,0 +1,1367 @@
+[
+ {
+  "document": "report/v3/report.md",
+  "key": "succ.geometry_common.baseline.mixed_id",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "succ.geometry_common.baseline.mixed_ood",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.fw",
+  "text": "[+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.familywise_95_interval"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.fw",
+  "text": "[+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.familywise_95_interval"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "succ.geometry_raw.baseline.noise_2mm",
+  "text": "0.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/noise_2mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "succ.geometry_raw.baseline.mixed_id",
+  "text": "0.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "succ.geometry_filtered.baseline.bias_10mm",
+  "text": "67.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "val.combined_robust_history_s55.step_010027008",
+  "text": "19.2",
+  "source": "results/v3/selection/combined_robust_history_s55.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "eff.combined_robust_history-geometry_common.final.mixed_id",
+  "text": "\u221228.2 [\u221256.4, \u22125.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.mixed_id"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "eff.combined_robust_history-geometry_common.final.mixed_id.seeds",
+  "text": "\u221235.5 / +0.0 / \u221222.0 / \u22122.0 / \u221281.5",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.mixed_id.per_seed"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "succ.residual_robust_history.selected.mixed_id",
+  "text": "68.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "succ.nominal.baseline.mixed_id",
+  "text": "70.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "eff.residual_robust_history-nominal.selected.mixed_id",
+  "text": "\u22121.8 [\u221210.2, +4.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.mixed_id"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "eff.residual_robust_history-nominal.selected.mixed_id.seeds",
+  "text": "+0.0 / \u221217.0 / +6.5 / +1.5 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.mixed_id.per_seed"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.intercept_range",
+  "text": "-2.6 to -0.4",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined].intercept_mm min/max"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.max_abs_slope_bias",
+  "text": "0.008",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined] max |slope_on_sensor_bias|"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.max_abs_slope_true",
+  "text": "0.079",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined] max |slope_on_true_offset|"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "rep.terminal_equal",
+  "text": "2,730 of 2,730",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "sum(per_run.terminal_equal_original)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "acc.passed",
+  "text": "10 of 10",
+  "source": "results/v3/acceptance.json",
+  "field": "checks[*].pass"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "count.logical_episodes",
+  "text": "135,200",
+  "source": "configs/v3/final_matrix_index.json",
+  "field": "declared_counts.logical_episodes"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "count.executed_episodes",
+  "text": "130,000",
+  "source": "configs/v3/final_matrix_index.json",
+  "field": "declared_counts.executed_episodes"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "count.invalid",
+  "text": "0",
+  "source": "results/v3/summary/reconciliation.json",
+  "field": "sum(invalid_resets)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.acceptance",
+  "text": "(table)",
+  "source": "results/v3/acceptance.json",
+  "field": "checks"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.baselines",
+  "text": "(table)",
+  "source": "configs/v3/baseline_selection.json",
+  "field": "roles"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.development",
+  "text": "(table)",
+  "source": "configs/v3/baseline_selection.json",
+  "field": "candidates[*].per_condition (successes of 24)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.pilot",
+  "text": "(table)",
+  "source": "results/v3/pilot/pilot_tables.md",
+  "field": "pilot table (generated by scripts/v3_pilot_report.py)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.selection",
+  "text": "(table)",
+  "source": "results/v3/selection/selection.json",
+  "field": "per run"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "val.combined_robust_history_s11.step_008028160",
+  "text": "8.8",
+  "source": "results/v3/selection/combined_robust_history_s11.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "val.combined_robust_history_s55.step_006029312",
+  "text": "0.0",
+  "source": "results/v3/selection/combined_robust_history_s55.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "val.residual_robust_history_s55.step_010027008",
+  "text": "5.4",
+  "source": "results/v3/selection/residual_robust_history_s55.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.main",
+  "text": "(table)",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "success % per condition (mean over training seeds; 200 cases each)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.effects",
+  "text": "(table)",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "all paired effects"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.seeds",
+  "text": "(table)",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "per-seed success %"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.failures",
+  "text": "(table)",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "terminal_mean (exclusive terminal reasons, counts of 200, mean over seeds)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "zero.combined_robust_history",
+  "text": "65/65",
+  "source": "results/v3/zero_policy/zero_policy.json",
+  "field": "rows.combined_robust_history"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "zero.residual_robust_history",
+  "text": "29/65",
+  "source": "results/v3/zero_policy/zero_policy.json",
+  "field": "rows.residual_robust_history"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "int.combined_robust_history.unmodified",
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].unmodified"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "int.combined_robust_history.permuted",
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].permuted"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "int.combined_robust_history.current_only",
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].current_only"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "int.residual_robust_history.unmodified",
+  "text": "145",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[residual_robust_history].unmodified"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "int.residual_robust_history.permuted",
+  "text": "145",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[residual_robust_history].permuted"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "int.residual_robust_history.current_only",
+  "text": "145",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[residual_robust_history].current_only"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.interventions",
+  "text": "(table)",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "rows"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.mechanisms",
+  "text": "(table)",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed + fits(axis x)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.intercept_range",
+  "text": "-2.6 to -0.4",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined].intercept_mm min/max"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.max_abs_slope_bias",
+  "text": "0.008",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined] max |slope_on_sensor_bias|"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.abs_mean_range",
+  "text": "2.0\u20137.8",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].residual_abs_mean_mm min/max"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.abs_max",
+  "text": "17.2",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].residual_abs_max_mm max"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.clip_max",
+  "text": "0.002",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].workspace_clip_mean_mm max"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.saturation_range",
+  "text": "31.7\u201332.1%",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].align_saturation_frac"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.geometry_common.saturation",
+  "text": "31.8%",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "geometry_common_align_saturation_frac"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.paired.only_policy",
+  "text": "0",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[combined].paired_vs_geometry_common.only_policy"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.combined.paired.only_geometry",
+  "text": "0",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[combined].paired_vs_geometry_common.only_geometry"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.residual.paired.only_policy",
+  "text": "0",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[residual].paired_vs_geometry_common.only_policy"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "mech.residual.paired.only_geometry",
+  "text": "3,762",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "sum per_seed[residual].paired_vs_geometry_common.only_geometry"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "figures.traces",
+  "text": "![geometry_common (giver reference): small constant estimate error while the giver holds, noisy fallback after release](../../results/v3/figures/trace_geometry_common_v3-final-mixed_id-0000.png)\n\n*geometry_common (giver reference): small constant estimate error while the giver holds, noisy fallback after release (case v3-final-mixed_id-0000).*\n\n![geometry_raw: noisy raw estimate; the giver never opens (release-gate timeout)](../../results/v3/figures/trace_geometry_raw_v3-final-mixed_id-0000.png)\n\n*geometry_raw: noisy raw estimate; the giver never opens (release-gate timeout) (case v3-final-mixed_id-0000).*\n\n![combined_robust_history seed 11, selected checkpoint: success](../../results/v3/figures/trace_combined_robust_history_s11__selected_v3-final-mixed_id-0000.png)\n\n*combined_robust_history seed 11, selected checkpoint: success (case v3-final-mixed_id-0000).*\n\n![combined_robust_history seed 55, final checkpoint: residual saturates near the 20 mm bound (collapse)](../../results/v3/figures/trace_combined_robust_history_s55__final_v3-final-mixed_id-0000.png)\n\n*combined_robust_history seed 55, final checkpoint: residual saturates near the 20 mm bound (collapse) (case v3-final-mixed_id-0000).*\n\n![residual_robust_history seed 22, selected checkpoint (on the nominal script)](../../results/v3/figures/trace_residual_robust_history_s22__selected_v3-final-mixed_id-0000.png)\n\n*residual_robust_history seed 22, selected checkpoint (on the nominal script) (case v3-final-mixed_id-0000).*",
+  "source": "results/v3/figures",
+  "field": "trace_*.png (scripts/v3_figures.py --traces)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "rep.terminal_equal",
+  "text": "2,730 of 2,730",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "sum(per_run.terminal_equal_original)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "rep.eff.b1.mean_of_3",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=1,process=mean_of_3]"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "rep.eff.b23.mean_of_3",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=23,process=mean_of_3]"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "table.repeatability",
+  "text": "(table)",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "per_run"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "trace.agree",
+  "text": "298 of 300",
+  "source": "results/v3/traces6/summary.json",
+  "field": "agree_total/total"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "trace.disagreements",
+  "text": "combined_robust_history_s11__final on v3-final-mixed_id-0000 (success at batch 6 vs episode_timeout at batch 256); combined_robust_history_s11__final on v3-final-noise_4mm-0000 (success at batch 6 vs episode_timeout at batch 256)",
+  "source": "results/v3/traces6/summary.json",
+  "field": "rows[*].cases where outcomes differ"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "video.clips",
+  "text": "8",
+  "source": "results/v3/videos/video_index.json",
+  "field": "distinct_clips"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "video.cases",
+  "text": "5",
+  "source": "results/v3/videos/video_index.json",
+  "field": "distinct_cases"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "video.montage_s",
+  "text": "43",
+  "source": "results/v3/videos/video_index.json",
+  "field": "montage.seconds"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "video.replay_disagreements",
+  "text": "0",
+  "source": "results/v3/videos/video_index.json",
+  "field": "len(replay_disagreements)"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "compute.formal.runs",
+  "text": "23",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.runs"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "compute.formal.gpu_hours",
+  "text": "7.6",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.gpu_hours"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "compute.formal.realized_transitions",
+  "text": "230,621,184",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.realized_transitions"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "compute.formal.transitions_per_s_incl_startup",
+  "text": "8,415.0",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.transitions_per_s_incl_startup"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "compute.formal.mean_run_min",
+  "text": "19.9",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.mean_run_min"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "compute.total_gpu_hours",
+  "text": "18.1",
+  "source": "results/v3/compute.json",
+  "field": "total_gpu_hours"
+ },
+ {
+  "document": "report/v3/report.md",
+  "key": "compute.total_attempts",
+  "text": "493",
+  "source": "results/v3/compute.json",
+  "field": "total_attempts"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 1,
+  "key": "count.logical_episodes",
+  "text": "135,200",
+  "source": "configs/v3/final_matrix_index.json",
+  "field": "declared_counts.logical_episodes"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 1,
+  "key": "succ.geometry_common.baseline.mixed_id",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 5,
+  "key": "acc.passed",
+  "text": "10 of 10",
+  "source": "results/v3/acceptance.json",
+  "field": "checks[*].pass"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 5,
+  "key": "compute.formal.gpu_hours",
+  "text": "7.6",
+  "source": "results/v3/compute.json",
+  "field": "formal_training.gpu_hours"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 7,
+  "key": "val.combined_robust_history_s55.step_006029312",
+  "text": "0.0",
+  "source": "results/v3/selection/combined_robust_history_s55.json",
+  "field": "candidates[step_006029312].success_rate"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 7,
+  "key": "val.combined_robust_history_s11.step_008028160",
+  "text": "8.8",
+  "source": "results/v3/selection/combined_robust_history_s11.json",
+  "field": "candidates[step_008028160].success_rate"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 7,
+  "key": "val.residual_robust_history_s55.step_010027008",
+  "text": "5.4",
+  "source": "results/v3/selection/residual_robust_history_s55.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.nominal.baseline.clean",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.nominal.baseline.physical_only",
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/physical_only.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.nominal.baseline.bias_10mm",
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.nominal.baseline.noise_4mm",
+  "text": "70.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/noise_4mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.nominal.baseline.delay_4step",
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/delay_4step.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.nominal.baseline.mixed_id",
+  "text": "70.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.nominal.baseline.mixed_ood",
+  "text": "71.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "nominal/baseline/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_raw.baseline.clean",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_raw.baseline.physical_only",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/physical_only.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_raw.baseline.bias_10mm",
+  "text": "67.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_raw.baseline.noise_4mm",
+  "text": "0.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/noise_4mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_raw.baseline.delay_4step",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/delay_4step.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_raw.baseline.mixed_id",
+  "text": "0.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_raw.baseline.mixed_ood",
+  "text": "0.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_filtered.baseline.clean",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_filtered.baseline.physical_only",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/physical_only.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_filtered.baseline.bias_10mm",
+  "text": "67.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_filtered.baseline.noise_4mm",
+  "text": "99.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/noise_4mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_filtered.baseline.delay_4step",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/delay_4step.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_filtered.baseline.mixed_id",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_filtered.baseline.mixed_ood",
+  "text": "96.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_common.baseline.clean",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_common.baseline.physical_only",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/physical_only.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_common.baseline.bias_10mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_common.baseline.noise_4mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/noise_4mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_common.baseline.delay_4step",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/delay_4step.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_common.baseline.mixed_id",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.geometry_common.baseline.mixed_ood",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_common/baseline/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_clean_ff.selected.clean",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_clean_ff.selected.physical_only",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/physical_only.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_clean_ff.selected.bias_10mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_clean_ff.selected.noise_4mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/noise_4mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_clean_ff.selected.delay_4step",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/delay_4step.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_clean_ff.selected.mixed_id",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_clean_ff.selected.mixed_ood",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_clean_ff/selected/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_ff.selected.clean",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_ff.selected.physical_only",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/physical_only.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_ff.selected.bias_10mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_ff.selected.noise_4mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/noise_4mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_ff.selected.delay_4step",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/delay_4step.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_ff.selected.mixed_id",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_ff.selected.mixed_ood",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_ff/selected/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_history.selected.clean",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_history.selected.physical_only",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/physical_only.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_history.selected.bias_10mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_history.selected.noise_4mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/noise_4mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_history.selected.delay_4step",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/delay_4step.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_history.selected.mixed_id",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_history.selected.mixed_ood",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_history/selected/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_repeat.selected.clean",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_repeat.selected.physical_only",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/physical_only.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_repeat.selected.bias_10mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_repeat.selected.noise_4mm",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/noise_4mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_repeat.selected.delay_4step",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/delay_4step.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_repeat.selected.mixed_id",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.combined_robust_repeat.selected.mixed_ood",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "combined_robust_repeat/selected/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.residual_robust_history.selected.clean",
+  "text": "100.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/clean.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.residual_robust_history.selected.physical_only",
+  "text": "68.9",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/physical_only.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.residual_robust_history.selected.bias_10mm",
+  "text": "68.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.residual_robust_history.selected.noise_4mm",
+  "text": "68.4",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/noise_4mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.residual_robust_history.selected.delay_4step",
+  "text": "68.3",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/delay_4step.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.residual_robust_history.selected.mixed_id",
+  "text": "68.7",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/mixed_id.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 8,
+  "key": "succ.residual_robust_history.selected.mixed_ood",
+  "text": "68.8",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "residual_robust_history/selected/mixed_ood.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 9,
+  "key": "succ.geometry_raw.baseline.noise_1mm",
+  "text": "25.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/noise_1mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 9,
+  "key": "succ.geometry_raw.baseline.noise_2mm",
+  "text": "0.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/noise_2mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 9,
+  "key": "succ.geometry_raw.baseline.bias_10mm",
+  "text": "67.0",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_raw/baseline/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 9,
+  "key": "succ.geometry_filtered.baseline.bias_10mm",
+  "text": "67.5",
+  "source": "results/v3/summary/family_condition_summary.json",
+  "field": "geometry_filtered/baseline/bias_10mm.success_rate_mean"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.fw",
+  "text": "[+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.familywise_95_interval"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.seeds",
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_ff.selected.mixed_id.per_seed"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.fw",
+  "text": "[+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.familywise_95_interval"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.seeds",
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_best_constant.selected.mixed_id.per_seed"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_ff-combined_clean_ff.selected.mixed_id",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.selected.mixed_id"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_ff-combined_clean_ff.selected.mixed_id.seeds",
+  "text": "+0.0 / +0.0 / +0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_ff-combined_clean_ff.selected.mixed_id.per_seed"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_history-combined_robust_repeat.selected.mixed_id",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.selected.mixed_id"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.combined_robust_history-combined_robust_repeat.selected.mixed_id.seeds",
+  "text": "+0.0 / +0.0 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-combined_robust_repeat.selected.mixed_id.per_seed"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.residual_robust_history-nominal.selected.mixed_id",
+  "text": "\u22121.8 [\u221210.2, +4.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.mixed_id"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 10,
+  "key": "eff.residual_robust_history-nominal.selected.mixed_id.seeds",
+  "text": "+0.0 / \u221217.0 / +6.5 / +1.5 / +0.0",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.selected.mixed_id.per_seed"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 11,
+  "key": "eff.combined_robust_history-geometry_common.final.mixed_id",
+  "text": "\u221228.2 [\u221256.4, \u22125.4]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.mixed_id"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 11,
+  "key": "eff.combined_robust_history-geometry_common.final.mixed_id.seeds",
+  "text": "\u221235.5 / +0.0 / \u221222.0 / \u22122.0 / \u221281.5",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.combined_robust_history-geometry_common.final.mixed_id.per_seed"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 11,
+  "key": "val.combined_robust_history_s55.step_010027008",
+  "text": "19.2",
+  "source": "results/v3/selection/combined_robust_history_s55.json",
+  "field": "candidates[step_010027008].success_rate"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 11,
+  "key": "eff.residual_robust_history-nominal.final.mixed_id",
+  "text": "\u221212.1 [\u221238.4, +5.7]",
+  "source": "results/v3/summary/paired_effects.json",
+  "field": "eff.residual_robust_history-nominal.final.mixed_id"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined.intercept_range",
+  "text": "-2.6 to -0.4",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined].intercept_mm min/max"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined.max_abs_slope_bias",
+  "text": "0.008",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "fits[axis=x,combined] max |slope_on_sensor_bias|"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined.abs_mean_range",
+  "text": "2.0\u20137.8",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].residual_abs_mean_mm min/max"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 12,
+  "key": "mech.combined.abs_max",
+  "text": "17.2",
+  "source": "results/v3/mechanisms/mechanisms.json",
+  "field": "per_seed[combined].residual_abs_max_mm max"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 12,
+  "key": "int.combined_robust_history.permuted",
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].permuted"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 12,
+  "key": "int.combined_robust_history.current_only",
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].current_only"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 12,
+  "key": "int.combined_robust_history.episodes",
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "65 x 5 seeds"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 12,
+  "key": "int.combined_robust_history.unmodified",
+  "text": "325",
+  "source": "results/v3/interventions/interventions.json",
+  "field": "sum rows[combined_robust_history].unmodified"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 12,
+  "key": "zero.combined_robust_history",
+  "text": "65/65",
+  "source": "results/v3/zero_policy/zero_policy.json",
+  "field": "rows.combined_robust_history"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 13,
+  "key": "rep.terminal_equal",
+  "text": "2,730 of 2,730",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "sum(per_run.terminal_equal_original)"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 13,
+  "key": "rep.eff.b1.mean_of_3",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=1,process=mean_of_3]"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 13,
+  "key": "rep.eff.b23.mean_of_3",
+  "text": "+0.0 [+0.0, +0.0]",
+  "source": "results/v3/repeatability/repeatability.json",
+  "field": "paired_effects[batch=23,process=mean_of_3]"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 13,
+  "key": "video.clips",
+  "text": "8",
+  "source": "results/v3/videos/video_index.json",
+  "field": "distinct_clips"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 13,
+  "key": "video.montage_s",
+  "text": "43",
+  "source": "results/v3/videos/video_index.json",
+  "field": "montage.seconds"
+ },
+ {
+  "document": "report/v3/slides.pptx",
+  "slide": 13,
+  "key": "video.replay_disagreements",
+  "text": "0",
+  "source": "results/v3/videos/video_index.json",
+  "field": "len(replay_disagreements)"
+ }
+]

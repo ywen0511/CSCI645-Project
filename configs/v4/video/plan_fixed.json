@@ -1,0 +1,28 @@
+[
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.015
+  },
+  "checkpoint": null,
+  "case_id": "v4-final-grasp_15mm-0000",
+  "run_id": "geometry_fixed",
+  "category": "nominal_vs_geometry_vs_learned",
+  "order": 1,
+  "eval_records": "$RUNS/final/geometry_fixed/geometry_fixed.jsonl",
+  "output": "$RUNS/videos/nominal_vs_geometry_vs_learned__geometry_fixed__v4-final-grasp_15mm-0000.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.015
+  },
+  "checkpoint": null,
+  "case_id": "v4-final-grasp_15mm-0000",
+  "run_id": "geometry_fixed",
+  "category": "unknown_grasp_boundary",
+  "order": 0,
+  "eval_records": "$RUNS/final/geometry_fixed/geometry_fixed.jsonl",
+  "output": "$RUNS/videos/unknown_grasp_boundary__geometry_fixed__v4-final-grasp_15mm-0000.mp4"
+ }
+]

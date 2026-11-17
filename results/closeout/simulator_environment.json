@@ -1,0 +1,25 @@
+{
+ "gpu": [
+  "CUDA_VISIBLE_DEVICES=2",
+  "NVIDIA A100-SXM4-40GB, 580.159.03, 40960 MiB",
+  "NVIDIA A100-SXM4-40GB, 580.159.03, 40960 MiB",
+  "NVIDIA A100-SXM4-40GB, 580.159.03, 40960 MiB",
+  "NVIDIA A100-SXM4-40GB, 580.159.03, 40960 MiB",
+  "NVIDIA A100-SXM4-40GB, 580.159.03, 40960 MiB",
+  "NVIDIA A100-SXM4-40GB, 580.159.03, 40960 MiB",
+  "NVIDIA A100-SXM4-40GB, 580.159.03, 40960 MiB",
+  "NVIDIA A100-SXM4-40GB, 580.159.03, 40960 MiB"
+ ],
+ "python": "3.12.16",
+ "pins": {
+  "isaacsim": "6.2.0.0",
+  "isaacsim-core": "6.2.0.0",
+  "numpy": "2.5.4",
+  "rsl-rl-lib": "5.5.1",
+  "torch": "2.11.0+cu130",
+  "warp-lang": "1.17.0"
+ },
+ "pip_freeze_sha256": "125031006ea89f26aaee660f404cb3ea871be588977838051789ac5db92a35e4",
+ "matches_frozen_lock": true,
+ "note": "Isaac Lab environment of v1/v2 reused unchanged; pip freeze identical to configs/v2/frozen/pip-freeze.txt in every simulator job (env/*.json in closeout-repeatability.tar.gz). Isaac Lab v3.0.0 is installed from source (not in pip freeze pins)."
+}

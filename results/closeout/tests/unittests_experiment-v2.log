@@ -1,0 +1,38 @@
+test_curriculum (test_core_logic.CaseSuiteTest.test_curriculum) ... ok
+test_repeatable_disjoint_and_bounded (test_core_logic.CaseSuiteTest.test_repeatable_disjoint_and_bounded) ... ok
+test_roundtrip (test_core_logic.CaseSuiteTest.test_roundtrip) ... ok
+test_alignment_bounded_and_anchor (test_core_logic.GeometryTest.test_alignment_bounded_and_anchor) ... ok
+test_zero_residual_reproduces_controller (test_core_logic.GeometryTest.test_zero_residual_reproduces_controller) ... ok
+test_no_success_while_supported (test_core_logic.OutcomeTest.test_no_success_while_supported) ... ok
+test_partial_reset_isolated (test_core_logic.OutcomeTest.test_partial_reset_isolated) ... ok
+test_precedence (test_core_logic.OutcomeTest.test_precedence) ... ok
+test_success_needs_two_continuous_seconds (test_core_logic.OutcomeTest.test_success_needs_two_continuous_seconds) ... ok
+test_mask_only_phase_channels (test_core_logic.PhaseTest.test_mask_only_phase_channels) ... ok
+test_onehot_from_contacts (test_core_logic.PhaseTest.test_onehot_from_contacts) ... ok
+test_dwell_physical_time (test_core_logic.ReleaseGateTest.test_dwell_physical_time) ... ok
+test_geometry_gate_and_cap (test_core_logic.ReleaseGateTest.test_geometry_gate_and_cap) ... ok
+test_geometry_off_fixed_request (test_core_logic.ReleaseGateTest.test_geometry_off_fixed_request) ... ok
+test_bounds_and_zero (test_core_logic.ResidualTest.test_bounds_and_zero) ... ok
+test_no_accumulation (test_core_logic.ResidualTest.test_no_accumulation) ... ok
+test_finger_ramp_and_retreat_anchor (test_core_logic.ScheduleTest.test_finger_ramp_and_retreat_anchor) ... ok
+test_waypoints (test_core_logic.ScheduleTest.test_waypoints) ... ok
+test_task_registration (test_registration.RegistrationTest.test_task_registration) ... ok
+test_checksum_list_tampering_rejected (test_release_inventory.ReleaseInventoryTest.test_checksum_list_tampering_rejected) ... ok
+test_missing_seed_rejected (test_release_inventory.ReleaseInventoryTest.test_missing_seed_rejected) ... ok
+test_path_traversal_rejected (test_release_inventory.ReleaseInventoryTest.test_path_traversal_rejected) ... ok
+test_tampered_payload_rejected (test_release_inventory.ReleaseInventoryTest.test_tampered_payload_rejected) ... ok
+test_unfrozen_protocol_rejected (test_release_inventory.ReleaseInventoryTest.test_unfrozen_protocol_rejected) ... ok
+test_valid_inventory (test_release_inventory.ReleaseInventoryTest.test_valid_inventory) ... ok
+test_full_matches_definition (test_v2_logic.GeometryFlagsTest.test_full_matches_definition) ... ok
+test_gate_off_follows_schedule (test_v2_logic.GeometryFlagsTest.test_gate_off_follows_schedule) ... ok
+test_no_alignment_adds_zero (test_v2_logic.GeometryFlagsTest.test_no_alignment_adds_zero) ... ok
+test_no_anchor_keeps_candidate (test_v2_logic.GeometryFlagsTest.test_no_anchor_keeps_candidate) ... ok
+test_missing_metric_rejected (test_v2_logic.SelectionV2Test.test_missing_metric_rejected) ... ok
+test_step0_excluded (test_v2_logic.SelectionV2Test.test_step0_excluded) ... ok
+test_tie_breaks (test_v2_logic.SelectionV2Test.test_tie_breaks) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.784s
+
+OK
+rc=0

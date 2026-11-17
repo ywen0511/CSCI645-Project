@@ -1,0 +1,535 @@
+Sender: LSF System <<lsf>
+Subject: Job 8102005: <c645pv3_stageA> in cluster <<cluster>> Done
+
+Job <c645pv3_stageA> was submitted from host <<cluster>> by user <<user>> in cluster <<cluster>> at Mon Nov  9 15:32:48 2026
+Job was executed on host(s) <8*<cluster>>, in queue <gpu_large_shared>, as user <<user>> in cluster <<cluster>> at Mon Nov  9 15:33:17 2026
+<<home>> was used as the home directory.
+<<home>> was used as the working directory.
+Started at Mon Nov  9 15:33:17 2026
+Terminated at Mon Nov  9 15:44:22 2026
+Results reported at Mon Nov  9 15:44:22 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+bash <work-root>/runs/csci645-project/post_v3/stageA.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   881.05 sec.
+    Max Memory :                                 5132.00 MB
+    Average Memory :                             2872.55 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   184712 MB
+    Max Processes :                              6
+    Max Threads :                                85
+    Run time :                                   676 sec.
+    Turnaround time :                            694 sec.
+
+The output (if any) follows:
+
++ [15:33:18] echo '=== REPRODUCE section: 1. Create three distinct checkouts (CPU) ==='
+=== REPRODUCE section: 1. Create three distinct checkouts (CPU) ===
++ [15:33:18] set -eu
+++ [15:33:18] mktemp -d <work-root>/runs/csci645-project/post_v3/stageA/csci645-reproduce.XXXXXX
++ [15:33:18] V3_WORK=$V3_WORK
++ [15:33:18] T=$V3_WORK/tooling
++ [15:33:18] D=$V3_WORK/delivery
++ [15:33:18] E=$V3_WORK/experiment
++ [15:33:18] B=$V3_WORK/release
++ [15:33:18] X=$V3_WORK/extracted
++ [15:33:18] R=$V3_WORK/replay
++ [15:33:18] G=$V3_WORK/regenerated
++ [15:33:18] REPO_URL=https://github.com/ywen0511/CSCI645-Project.git
++ [15:33:18] git clone --branch study/v3-observation-robustness https://github.com/ywen0511/CSCI645-Project.git $V3_WORK/tooling
+Cloning into '$V3_WORK/tooling'...
+Updating files:  45% (318/706)
+Updating files:  46% (325/706)
+Updating files:  47% (332/706)
+Updating files:  48% (339/706)
+Updating files:  49% (346/706)
+Updating files:  50% (353/706)
+Updating files:  51% (361/706)
+Updating files:  52% (368/706)
+Updating files:  53% (375/706)
+Updating files:  54% (382/706)
+Updating files:  55% (389/706)
+Updating files:  56% (396/706)
+Updating files:  57% (403/706)
+Updating files:  58% (410/706)
+Updating files:  59% (417/706)
+Updating files:  60% (424/706)
+Updating files:  61% (431/706)
+Updating files:  62% (438/706)
+Updating files:  63% (445/706)
+Updating files:  64% (452/706)
+Updating files:  65% (459/706)
+Updating files:  66% (466/706)
+Updating files:  67% (474/706)
+Updating files:  68% (481/706)
+Updating files:  69% (488/706)
+Updating files:  70% (495/706)
+Updating files:  71% (502/706)
+Updating files:  72% (509/706)
+Updating files:  73% (516/706)
+Updating files:  74% (523/706)
+Updating files:  75% (530/706)
+Updating files:  76% (537/706)
+Updating files:  77% (544/706)
+Updating files:  78% (551/706)
+Updating files:  79% (558/706)
+Updating files:  80% (565/706)
+Updating files:  81% (572/706)
+Updating files:  82% (579/706)
+Updating files:  83% (586/706)
+Updating files:  84% (594/706)
+Updating files:  85% (601/706)
+Updating files:  86% (608/706)
+Updating files:  87% (615/706)
+Updating files:  88% (622/706)
+Updating files:  89% (629/706)
+Updating files:  89% (632/706)
+Updating files:  90% (636/706)
+Updating files:  91% (643/706)
+Updating files:  92% (650/706)
+Updating files:  93% (657/706)
+Updating files:  94% (664/706)
+Updating files:  95% (671/706)
+Updating files:  96% (678/706)
+Updating files:  97% (685/706)
+Updating files:  98% (692/706)
+Updating files:  99% (699/706)
+Updating files: 100% (706/706)
+Updating files: 100% (706/706), done.
++ [15:33:21] git -C $V3_WORK/tooling rev-parse HEAD
++ [15:33:21] git clone --branch v3.0.0 https://github.com/ywen0511/CSCI645-Project.git $V3_WORK/delivery
+Cloning into '$V3_WORK/delivery'...
+Note: switching to 'ebfa328b17103c32ae19c13f0a6408ebc55a6459'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  45% (317/690)
+Updating files:  46% (318/690)
+Updating files:  47% (325/690)
+Updating files:  48% (332/690)
+Updating files:  49% (339/690)
+Updating files:  50% (345/690)
+Updating files:  51% (352/690)
+Updating files:  52% (359/690)
+Updating files:  53% (366/690)
+Updating files:  54% (373/690)
+Updating files:  55% (380/690)
+Updating files:  56% (387/690)
+Updating files:  57% (394/690)
+Updating files:  58% (401/690)
+Updating files:  59% (408/690)
+Updating files:  60% (414/690)
+Updating files:  61% (421/690)
+Updating files:  62% (428/690)
+Updating files:  63% (435/690)
+Updating files:  64% (442/690)
+Updating files:  65% (449/690)
+Updating files:  66% (456/690)
+Updating files:  67% (463/690)
+Updating files:  68% (470/690)
+Updating files:  69% (477/690)
+Updating files:  70% (483/690)
+Updating files:  71% (490/690)
+Updating files:  72% (497/690)
+Updating files:  73% (504/690)
+Updating files:  74% (511/690)
+Updating files:  75% (518/690)
+Updating files:  76% (525/690)
+Updating files:  77% (532/690)
+Updating files:  78% (539/690)
+Updating files:  79% (546/690)
+Updating files:  80% (552/690)
+Updating files:  81% (559/690)
+Updating files:  82% (566/690)
+Updating files:  83% (573/690)
+Updating files:  84% (580/690)
+Updating files:  85% (587/690)
+Updating files:  86% (594/690)
+Updating files:  87% (601/690)
+Updating files:  88% (608/690)
+Updating files:  89% (615/690)
+Updating files:  90% (621/690)
+Updating files:  90% (627/690)
+Updating files:  91% (628/690)
+Updating files:  92% (635/690)
+Updating files:  93% (642/690)
+Updating files:  94% (649/690)
+Updating files:  95% (656/690)
+Updating files:  96% (663/690)
+Updating files:  97% (670/690)
+Updating files:  98% (677/690)
+Updating files:  99% (684/690)
+Updating files: 100% (690/690)
+Updating files: 100% (690/690), done.
++ [15:33:24] git clone --branch experiment-v3 https://github.com/ywen0511/CSCI645-Project.git $V3_WORK/experiment
+Cloning into '$V3_WORK/experiment'...
+Note: switching to '3811f5da5ef55638f95f7306e449609877f546df'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  63% (309/490)
+Updating files:  64% (314/490)
+Updating files:  65% (319/490)
+Updating files:  66% (324/490)
+Updating files:  67% (329/490)
+Updating files:  68% (334/490)
+Updating files:  69% (339/490)
+Updating files:  70% (343/490)
+Updating files:  71% (348/490)
+Updating files:  72% (353/490)
+Updating files:  73% (358/490)
+Updating files:  74% (363/490)
+Updating files:  75% (368/490)
+Updating files:  76% (373/490)
+Updating files:  77% (378/490)
+Updating files:  78% (383/490)
+Updating files:  79% (388/490)
+Updating files:  80% (392/490)
+Updating files:  81% (397/490)
+Updating files:  82% (402/490)
+Updating files:  83% (407/490)
+Updating files:  84% (412/490)
+Updating files:  85% (417/490)
+Updating files:  86% (422/490)
+Updating files:  87% (427/490)
+Updating files:  88% (432/490)
+Updating files:  89% (437/490)
+Updating files:  90% (441/490)
+Updating files:  91% (446/490)
+Updating files:  92% (451/490)
+Updating files:  93% (456/490)
+Updating files:  94% (461/490)
+Updating files:  95% (466/490)
+Updating files:  96% (471/490)
+Updating files:  97% (476/490)
+Updating files:  98% (481/490)
+Updating files:  99% (486/490)
+Updating files: 100% (490/490)
+Updating files: 100% (490/490), done.
+++ [15:33:27] git -C $V3_WORK/experiment rev-parse HEAD
++ [15:33:27] test 3811f5da5ef55638f95f7306e449609877f546df = 3811f5da5ef55638f95f7306e449609877f546df
+++ [15:33:27] git -C $V3_WORK/delivery rev-parse HEAD
++ [15:33:27] test ebfa328b17103c32ae19c13f0a6408ebc55a6459 = ebfa328b17103c32ae19c13f0a6408ebc55a6459
++ [15:33:27] echo '=== REPRODUCE section: 2. Download, verify and regenerate (CPU) ==='
+=== REPRODUCE section: 2. Download, verify and regenerate (CPU) ===
++ [15:33:27] python3.13 -m venv $V3_WORK/analysis-env
++ [15:33:33] PY=$V3_WORK/analysis-env/bin/python
++ [15:33:33] $V3_WORK/analysis-env/bin/python -m pip install -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt
+Collecting contourpy==1.4.0 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 5))
+  Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler==0.12.1 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 6))
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools==4.68.0 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 7))
+  Downloading fonttools-4.68.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+Collecting ImageIO==2.38.1 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 8))
+  Using cached imageio-2.38.1-py3-none-any.whl.metadata (9.7 kB)
+Collecting imageio-ffmpeg==0.8.1 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 9))
+  Using cached imageio_ffmpeg-0.8.1-py3-none-manylinux_2_28_x86_64.whl.metadata (1.5 kB)
+Collecting kiwisolver==1.5.1 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 10))
+  Downloading kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting lxml==6.1.3 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 11))
+  Downloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting Markdown==3.11.2 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 12))
+  Using cached markdown-3.11.2-py3-none-any.whl.metadata (5.1 kB)
+Collecting matplotlib==3.11.2 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 13))
+  Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting numpy==2.4.4 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 14))
+  Downloading numpy-2.4.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting packaging==26.3 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 15))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow==13.0.0 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 16))
+  Downloading pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing==3.3.3 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 17))
+  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting pypdf==6.21.4 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 18))
+  Using cached pypdf-6.21.4-py3-none-any.whl.metadata (7.6 kB)
+Collecting python-dateutil==4.0.0 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 19))
+  Using cached python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting python-pptx==1.0.2 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 20))
+  Downloading python_pptx-1.0.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting typing_extensions==4.16.0 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 21))
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting tzdata==2026.6 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 22))
+  Using cached tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting xlsxwriter==3.3.1 (from -r $V3_WORK/delivery/configs/closeout/requirements-analysis.txt (line 23))
+  Downloading xlsxwriter-3.3.1-py3-none-any.whl.metadata (2.9 kB)
+Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.68.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 86.7 MB/s  0:00:00
+Using cached imageio-2.38.1-py3-none-any.whl (328 kB)
+Using cached imageio_ffmpeg-0.8.1-py3-none-manylinux_2_28_x86_64.whl (68.0 MB)
+Downloading kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 57.8 MB/s  0:00:00
+Downloading lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 120.9 MB/s  0:00:00
+Using cached markdown-3.11.2-py3-none-any.whl (114 kB)
+Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 120.5 MB/s  0:00:00
+Downloading numpy-2.4.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 134.9 MB/s  0:00:00
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 123.4 MB/s  0:00:00
+Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Using cached pypdf-6.21.4-py3-none-any.whl (410 kB)
+Using cached python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading python_pptx-1.0.2-py3-none-any.whl (472 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Downloading xlsxwriter-3.3.1-py3-none-any.whl (180 kB)
+Installing collected packages: xlsxwriter, tzdata, typing_extensions, pypdf, pyparsing, pillow, packaging, numpy, Markdown, lxml, kiwisolver, imageio-ffmpeg, fonttools, cycler, python-pptx, python-dateutil, ImageIO, contourpy, matplotlib
+
+Successfully installed ImageIO-2.38.1 Markdown-3.11.2 contourpy-1.4.0 cycler-0.12.1 fonttools-4.68.0 imageio-ffmpeg-0.8.1 kiwisolver-1.5.1 lxml-6.1.3 matplotlib-3.11.2 numpy-2.4.4 packaging-26.3 pillow-13.0.0 pyparsing-3.3.3 pypdf-6.21.4 python-dateutil-4.0.0 python-pptx-1.0.2 typing_extensions-4.16.0 tzdata-2026.6 xlsxwriter-3.3.1
++ [15:33:57] $V3_WORK/analysis-env/bin/python -I $V3_WORK/tooling/scripts/v3_download.py --tag v3.0.0 --output $V3_WORK/release
+RELEASE_NOTES.md: 5,189 bytes
+REPRODUCE.md: 9,560 bytes
+SHA256SUMS: 2,574 bytes
+VERIFICATION.md: 3,098 bytes
+analysis.tar.gz: 6,356,487 bytes
+archive_inventories.json: 979,238 bytes
+checkpoints-formal-combined_clean_ff.tar.gz: 33,389,948 bytes
+checkpoints-formal-combined_robust_ff.tar.gz: 33,394,755 bytes
+checkpoints-formal-combined_robust_history.tar.gz: 65,790,047 bytes
+checkpoints-formal-combined_robust_repeat.tar.gz: 26,994,993 bytes
+checkpoints-formal-residual_robust_history.tar.gz: 65,740,802 bytes
+checkpoints-pilot-smoke.tar.gz: 110,690,476 bytes
+checkpoints.json: 184,656 bytes
+logs.tar.gz: 971,786 bytes
+raw-acceptance.tar.gz: 3,269,300 bytes
+raw-development.tar.gz: 6,906,780 bytes
+raw-extras.tar.gz: 20,706,045 bytes
+raw-final.tar.gz: 40,547,694 bytes
+raw-validation.tar.gz: 7,061,811 bytes
+release_manifest.json: 340,580 bytes
+report.md: 49,088 bytes
+report.pdf: 2,379,490 bytes
+run_index.json: 15,394 bytes
+slides.pdf: 985,757 bytes
+slides.pptx: 1,265,313 bytes
+source-experiment-v3.tar.gz: 9,010,340 bytes
+source-v3.0.0.tar.gz: 15,216,952 bytes
+speaker_notes.md: 3,559 bytes
+videos.json: 6,744 bytes
+videos.tar.gz: 8,700,639 bytes
+30 assets, 461.0 MB
++ [15:34:12] $V3_WORK/analysis-env/bin/python -I $V3_WORK/delivery/scripts/v3_verify.py --bundle $V3_WORK/release --extract $V3_WORK/extracted --output $V3_WORK/bundle_verify.json
+{
+ "ok": true,
+ "failures": [],
+ "sha256sums": {
+  "listed": 29,
+  "assets": 30,
+  "bad": [],
+  "unlisted": []
+ },
+ "manifest": {
+  "assets": 28,
+  "bad": [],
+  "covers_all_other_assets": true,
+  "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+  "delivery_commit": "ebfa328b17103c32ae19c13f0a6408ebc55a6459"
+ },
+ "archives": {
+  "members_rehashed": 4947,
+  "n_problems": 0
+ },
+ "checkpoints": {
+  "entries": 457,
+  "unresolved_or_bad": [],
+  "formal_runs_per_family": {
+   "combined_clean_ff": 5,
+   "combined_robust_ff": 5,
+   "combined_robust_history": 5,
+   "residual_robust_history": 5,
+   "combined_robust_repeat": 3
+  },
+  "each_formal_run_has_step0_10_periodic_final_latest_and_selected": true,
+  "pilot_smoke_runs": 18
+ },
+ "raw_counts": {
+  "final_files": 50,
+  "final_all_2600": true,
+  "final_records": 130000,
+  "validation_files": 138,
+  "validation_all_240": true
+ },
+ "media": {
+  "pdf": {
+   "report.pdf": 19,
+   "slides.pdf": 15
+  },
+  "pptx": {
+   "slides.pptx": 15
+  }
+ },
+ "leak_scan": {
+  "n_hits": 0
+ }
+}
++ [15:34:50] $V3_WORK/analysis-env/bin/python $V3_WORK/delivery/scripts/v3_regen.py --runs $V3_WORK/extracted --work $V3_WORK/regenerated
+{"ok": true, "counts": {"identical": 34, "float_only": 1, "different": 0, "missing": 0}, "failed_steps": []}
++ [15:35:35] $V3_WORK/analysis-env/bin/python $V3_WORK/tooling/scripts/v3_rebuild_suites.py --experiment-repo $V3_WORK/experiment --check
+{
+  "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+  "frozen_inputs_verified": 60,
+  "suites": {
+    "development": {
+      "path": "configs/v3/suites/development.jsonl",
+      "cases": 312,
+      "sha256": "e8139f3b4c2a745c24493819e6a04d00edeeffc83f01071aab5c832512071521"
+    },
+    "validation": {
+      "path": "configs/v3/suites/validation.jsonl",
+      "cases": 240,
+      "sha256": "9051c414af4801e44ce13445be0077a2a78841f9a40a6700b04ad44a1199c024"
+    },
+    "final": {
+      "path": "configs/v3/suites/final.jsonl",
+      "cases": 2600,
+      "sha256": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+    }
+  },
+  "historical_manifest_exception": {
+    "path": "configs/v3/SUITES.json",
+    "source_commit": "415cf8348728ccedbc2314a28adf9aaf7deddedf",
+    "frozen_sha256": "f81ed8f32ba01e27dad65732e64e78c2a90f5ef92b81ab01d7e0f0e4002f3980",
+    "reason": "The final suite entry was appended after freeze; original Git bytes and every final entry field were checked."
+  },
+  "simulator_run": false,
+  "new_preregistration": false
+}
++ [15:35:35] $V3_WORK/analysis-env/bin/python $V3_WORK/tooling/scripts/v3_rebuild_suites.py --experiment-repo $V3_WORK/experiment --output $V3_WORK/rebuilt-suites
+{
+  "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+  "frozen_inputs_verified": 60,
+  "suites": {
+    "development": {
+      "path": "configs/v3/suites/development.jsonl",
+      "cases": 312,
+      "sha256": "e8139f3b4c2a745c24493819e6a04d00edeeffc83f01071aab5c832512071521"
+    },
+    "validation": {
+      "path": "configs/v3/suites/validation.jsonl",
+      "cases": 240,
+      "sha256": "9051c414af4801e44ce13445be0077a2a78841f9a40a6700b04ad44a1199c024"
+    },
+    "final": {
+      "path": "configs/v3/suites/final.jsonl",
+      "cases": 2600,
+      "sha256": "98eeac0f05983ceb19e72e0225aeecb421573b464ea0fd4695b88ec2c37639c3"
+    }
+  },
+  "historical_manifest_exception": {
+    "path": "configs/v3/SUITES.json",
+    "source_commit": "415cf8348728ccedbc2314a28adf9aaf7deddedf",
+    "frozen_sha256": "f81ed8f32ba01e27dad65732e64e78c2a90f5ef92b81ab01d7e0f0e4002f3980",
+    "reason": "The final suite entry was appended after freeze; original Git bytes and every final entry field were checked."
+  },
+  "simulator_run": false,
+  "new_preregistration": false
+}
++ [15:35:35] echo '=== REPRODUCE section: 3. Small complete replay (remote GPU only) ==='
+=== REPRODUCE section: 3. Small complete replay (remote GPU only) ===
++ [15:35:35] ISAAC=$ISAAC
++ [15:35:35] test -x $ISAAC
++ [15:35:35] mkdir -p $V3_WORK/replay/formal
++ [15:35:35] ln -s $V3_WORK/extracted/formal/train $V3_WORK/replay/formal/train
++ [15:35:35] ln -s $V3_WORK/extracted/final $V3_WORK/replay/final
++ [15:35:35] $V3_WORK/analysis-env/bin/python $V3_WORK/tooling/scripts/v3_jobs.py run --manifest $V3_WORK/tooling/results/v3/jobs/verification.json --repo $V3_WORK/experiment --runs-root $V3_WORK/replay --isaac-python $ISAAC --only replay65_geometry_common --dry-run
+{"task": "replay65_geometry_common", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "$V3_WORK/replay/_resolved/replay65_geometry_common__repeat_geometry_common.json", "--num-envs", "23", "--output", "$V3_WORK/replay/replay65/geometry_common", "--seed", "6455501"], "inputs": {"$V3_WORK/tooling/configs/v3/final_matrices/extras/repeat_geometry_common.json": "07fe75a7366cc71b088011862f78ce0a04c6c17eccb12e7e479d0fc69094a628", "$V3_WORK/experiment/scripts/eval_matrix.py": "f447e57b03c42b19f20c5d2ba15ef492e634d4f48742da6bd3582cb18c18fe89", "$V3_WORK/replay/_resolved/replay65_geometry_common__repeat_geometry_common.json": "c1103b8fdac50ef991e3ed24c42f5f37acaabd7e8ab6d27658cf2f35701637b6", "$V3_WORK/experiment/configs/v2/protocol.json": "096f3c00eaea4b20ef93e1253b49615cd06e3a10b841e137e22710abaf459db8", "$V3_WORK/tooling/configs/v3/suites/final_subset65.jsonl": "ab420458f642f03cf2e5082f062ffde07ada5fc5e23b3c702776963676817e07"}, "outputs": ["$V3_WORK/replay/replay65/geometry_common/geometry_common.jsonl"], "execution_commit": "3811f5da5ef55638f95f7306e449609877f546df"}
+{"shard": "0/1", "tasks": 1, "failed": []}
++ [15:35:36] $V3_WORK/analysis-env/bin/python $V3_WORK/tooling/scripts/v3_jobs.py run --manifest $V3_WORK/tooling/results/v3/jobs/verification.json --repo $V3_WORK/experiment --runs-root $V3_WORK/replay --isaac-python $ISAAC --only replay65_geometry_common --task-timeout-s 3600
+[v3_jobs] run replay65_geometry_common: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/replay65_geometry_common__repeat_geometry_common.json --num-envs 23 --output $V3_WORK/replay/replay65/geometry_common --seed 6455501
+[v3_jobs] replay65_geometry_common rc=0
+{"shard": "0/1", "tasks": 1, "failed": []}
++ [15:36:48] echo '=== REPRODUCE section: 4. All replay, reload and resume checks (remote GPU) ==='
+=== REPRODUCE section: 4. All replay, reload and resume checks (remote GPU) ===
++ [15:36:48] $V3_WORK/analysis-env/bin/python - $V3_WORK/extracted/formal/train/combined_robust_history_s11/checkpoints/latest.pt
++ [15:36:48] $V3_WORK/analysis-env/bin/python $V3_WORK/tooling/scripts/v3_jobs.py run --manifest $V3_WORK/tooling/results/v3/jobs/verification.json --repo $V3_WORK/experiment --runs-root $V3_WORK/replay --isaac-python $ISAAC --task-timeout-s 3600
+[v3_jobs] run replay65_combined_robust_history_s11__selected: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/replay65_combined_robust_history_s11__selected__repeat_combined_robust_history_s11.json --num-envs 23 --output $V3_WORK/replay/replay65/combined_robust_history_s11__selected --seed 6455501 --checkpoint-root $V3_WORK/replay/formal/train
+[v3_jobs] replay65_combined_robust_history_s11__selected rc=0
+[v3_jobs] run replay65_combined_robust_history_s22__selected: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/replay65_combined_robust_history_s22__selected__repeat_combined_robust_history_s22.json --num-envs 23 --output $V3_WORK/replay/replay65/combined_robust_history_s22__selected --seed 6455501 --checkpoint-root $V3_WORK/replay/formal/train
+[v3_jobs] replay65_combined_robust_history_s22__selected rc=0
+[v3_jobs] run replay65_combined_robust_history_s33__selected: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/replay65_combined_robust_history_s33__selected__repeat_combined_robust_history_s33.json --num-envs 23 --output $V3_WORK/replay/replay65/combined_robust_history_s33__selected --seed 6455501 --checkpoint-root $V3_WORK/replay/formal/train
+[v3_jobs] replay65_combined_robust_history_s33__selected rc=0
+[v3_jobs] run replay65_combined_robust_history_s44__selected: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/replay65_combined_robust_history_s44__selected__repeat_combined_robust_history_s44.json --num-envs 23 --output $V3_WORK/replay/replay65/combined_robust_history_s44__selected --seed 6455501 --checkpoint-root $V3_WORK/replay/formal/train
+[v3_jobs] replay65_combined_robust_history_s44__selected rc=0
+[v3_jobs] run replay65_combined_robust_history_s55__selected: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/replay65_combined_robust_history_s55__selected__repeat_combined_robust_history_s55.json --num-envs 23 --output $V3_WORK/replay/replay65/combined_robust_history_s55__selected --seed 6455501 --checkpoint-root $V3_WORK/replay/formal/train
+[v3_jobs] replay65_combined_robust_history_s55__selected rc=0
+[v3_jobs] run replay65_geometry_best_constant: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/replay65_geometry_best_constant__repeat_geometry_best_constant.json --num-envs 23 --output $V3_WORK/replay/replay65/geometry_best_constant --seed 6455501
+[v3_jobs] replay65_geometry_best_constant rc=0
+[v3_jobs] skip replay65_geometry_common (inputs and output contents verified)
+[v3_jobs] run reload_combined_clean_ff: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/reload_combined_clean_ff__reload_combined_clean_ff.json --checkpoint-root $V3_WORK/replay/formal/train --output $V3_WORK/replay/reload/combined_clean_ff --seed 6455501
+[v3_jobs] reload_combined_clean_ff rc=0
+[v3_jobs] run reload_combined_robust_ff: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/reload_combined_robust_ff__reload_combined_robust_ff.json --checkpoint-root $V3_WORK/replay/formal/train --output $V3_WORK/replay/reload/combined_robust_ff --seed 6455501
+[v3_jobs] reload_combined_robust_ff rc=0
+[v3_jobs] run reload_residual_robust_history: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/reload_residual_robust_history__reload_residual_robust_history.json --checkpoint-root $V3_WORK/replay/formal/train --output $V3_WORK/replay/reload/residual_robust_history --seed 6455501
+[v3_jobs] reload_residual_robust_history rc=0
+[v3_jobs] run reload_combined_robust_repeat: scripts/eval_matrix.py --matrix $V3_WORK/replay/_resolved/reload_combined_robust_repeat__reload_combined_robust_repeat.json --checkpoint-root $V3_WORK/replay/formal/train --output $V3_WORK/replay/reload/combined_robust_repeat --seed 6455501
+[v3_jobs] reload_combined_robust_repeat rc=0
+[v3_jobs] run resume_check_train: scripts/train.py --method combined --seed 11 --protocol configs/v3/frozen/training/combined_robust_history.json --run-type smoke --resume $V3_WORK/replay/formal/train/combined_robust_history_s11/checkpoints/latest.pt --transitions 10092544 --output $V3_WORK/replay/resume_check/combined_robust_history_s11
+[v3_jobs] resume_check_train rc=0
+[v3_jobs] run resume_check_inspect: scripts/closeout_inspect_ckpt.py --before $V3_WORK/replay/formal/train/combined_robust_history_s11/checkpoints/latest.pt --after $V3_WORK/replay/resume_check/combined_robust_history_s11/checkpoints/final.pt --expect-iterations 308 --expect-transitions 10092544 --output $V3_WORK/replay/resume_check/inspect.json
+[v3_jobs] resume_check_inspect rc=0
+{"shard": "0/1", "tasks": 13, "failed": []}
++ [15:44:20] $V3_WORK/analysis-env/bin/python $V3_WORK/tooling/scripts/v3_fresh_compare.py --x $V3_WORK/replay --output $V3_WORK/fresh_gpu.json
+{
+ "replay65_episodes": 455,
+ "replay65_terminal_equal": 455,
+ "reload_episodes": 52,
+ "reload_terminal_equal": 52,
+ "mismatches": 0
+}
++ [15:44:21] $V3_WORK/analysis-env/bin/python - $V3_WORK/fresh_gpu.json $V3_WORK/extracted/formal/train/combined_robust_history_s11/checkpoints/latest.pt $V3_WORK/resume-input.sha256
++ [15:44:21] echo '=== REPRODUCE section 4 note: repeat the runner once ==='
+=== REPRODUCE section 4 note: repeat the runner once ===
++ [15:44:21] cp -r $V3_WORK/replay/ledger $V3_WORK/ledger_after_first
++ [15:44:21] rc=0
++ [15:44:21] $V3_WORK/analysis-env/bin/python $V3_WORK/tooling/scripts/v3_jobs.py run --manifest $V3_WORK/tooling/results/v3/jobs/verification.json --repo $V3_WORK/experiment --runs-root $V3_WORK/replay --isaac-python $ISAAC --task-timeout-s 3600
++ [15:44:22] echo repeat_rc=0
+repeat_rc=0
++ [15:44:22] $V3_WORK/analysis-env/bin/python -c 'import sys,json;print(json.dumps({"python":sys.version}))'
+{"python": "3.13.9 (main, Oct 14 2025, 21:29:44) [Clang 20.1.4 ]"}
++ [15:44:22] $ISAAC -c 'import sys;print(sys.version)'
+3.12.16 (main, Oct 26 2026, 11:37:43) [GCC 15.3.0]
++ [15:44:22] echo V3_WORK=$V3_WORK
+V3_WORK=$V3_WORK
++ [15:44:22] echo STAGEA_DONE
+STAGEA_DONE

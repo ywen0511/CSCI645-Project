@@ -1,0 +1,51 @@
+{
+ "name": "v4_pilot_residual_robust_history_s901",
+ "suite": "configs/v4/suites/development.jsonl",
+ "num_envs": 144,
+ "protocol": "configs/v4/pilot/residual_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "residual_robust_history_s901__step_002031616",
+   "method": "residual",
+   "training_seed": 901,
+   "conditions": [
+    "clean",
+    "grasp_10mm",
+    "grasp_15mm",
+    "bias_5mm",
+    "noise_2mm",
+    "mixed_id"
+   ],
+   "checkpoint": "residual_robust_history_s901/checkpoints/step_002031616.pt"
+  },
+  {
+   "id": "residual_robust_history_s901__step_004030464",
+   "method": "residual",
+   "training_seed": 901,
+   "conditions": [
+    "clean",
+    "grasp_10mm",
+    "grasp_15mm",
+    "bias_5mm",
+    "noise_2mm",
+    "mixed_id"
+   ],
+   "checkpoint": "residual_robust_history_s901/checkpoints/step_004030464.pt"
+  },
+  {
+   "id": "residual_robust_history_s901__final",
+   "method": "residual",
+   "training_seed": 901,
+   "conditions": [
+    "clean",
+    "grasp_10mm",
+    "grasp_15mm",
+    "bias_5mm",
+    "noise_2mm",
+    "mixed_id"
+   ],
+   "checkpoint": "residual_robust_history_s901/checkpoints/final.pt"
+  }
+ ]
+}

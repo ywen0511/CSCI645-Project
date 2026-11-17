@@ -1,0 +1,246 @@
+{
+ "name": "closeout_verification_replay",
+ "suite": "configs/closeout/suites/verification_replay.jsonl",
+ "num_envs": 60,
+ "protocol": "configs/v2/frozen/protocol.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "nominal",
+   "method": "nominal",
+   "overrides": {},
+   "group": ""
+  },
+  {
+   "id": "geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "group": "stronger comparator (matches combined)"
+  },
+  {
+   "id": "const_nominal",
+   "method": "nominal",
+   "overrides": {
+    "constant_residual_m": [
+     0.009,
+     0.0,
+     0.0
+    ]
+   },
+   "group": "constant control for residual"
+  },
+  {
+   "id": "const_geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "constant_residual_m": [
+     0.01,
+     0.0,
+     0.0
+    ]
+   },
+   "group": "primary constant control for combined"
+  },
+  {
+   "id": "residual_seed11__selected",
+   "method": "residual",
+   "overrides": {},
+   "training_seed": 11,
+   "run_id": "residual_seed11",
+   "role": "selected",
+   "checkpoint_tag": "step_010027008",
+   "checkpoint": "residual_seed11/checkpoints/step_010027008.pt",
+   "group": "selected"
+  },
+  {
+   "id": "residual_seed11__final",
+   "method": "residual",
+   "overrides": {},
+   "training_seed": 11,
+   "run_id": "residual_seed11",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "residual_seed11/checkpoints/final.pt",
+   "group": "final"
+  },
+  {
+   "id": "residual_seed22__selected",
+   "method": "residual",
+   "overrides": {},
+   "training_seed": 22,
+   "run_id": "residual_seed22",
+   "role": "selected",
+   "checkpoint_tag": "step_010027008",
+   "checkpoint": "residual_seed22/checkpoints/step_010027008.pt",
+   "group": "selected"
+  },
+  {
+   "id": "residual_seed22__final",
+   "method": "residual",
+   "overrides": {},
+   "training_seed": 22,
+   "run_id": "residual_seed22",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "residual_seed22/checkpoints/final.pt",
+   "group": "final"
+  },
+  {
+   "id": "residual_seed33__selected",
+   "method": "residual",
+   "overrides": {},
+   "training_seed": 33,
+   "run_id": "residual_seed33",
+   "role": "selected",
+   "checkpoint_tag": "step_008028160",
+   "checkpoint": "residual_seed33/checkpoints/step_008028160.pt",
+   "group": "selected"
+  },
+  {
+   "id": "residual_seed33__final",
+   "method": "residual",
+   "overrides": {},
+   "training_seed": 33,
+   "run_id": "residual_seed33",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "residual_seed33/checkpoints/final.pt",
+   "group": "final"
+  },
+  {
+   "id": "combined_seed11__selected",
+   "method": "combined",
+   "overrides": {},
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "role": "selected",
+   "checkpoint_tag": "step_008028160",
+   "checkpoint": "combined_seed11/checkpoints/step_008028160.pt",
+   "group": "selected"
+  },
+  {
+   "id": "combined_seed11__final",
+   "method": "combined",
+   "overrides": {},
+   "training_seed": 11,
+   "run_id": "combined_seed11",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "combined_seed11/checkpoints/final.pt",
+   "group": "final"
+  },
+  {
+   "id": "combined_seed22__selected",
+   "method": "combined",
+   "overrides": {},
+   "training_seed": 22,
+   "run_id": "combined_seed22",
+   "role": "selected",
+   "checkpoint_tag": "step_010027008",
+   "checkpoint": "combined_seed22/checkpoints/step_010027008.pt",
+   "group": "selected"
+  },
+  {
+   "id": "combined_seed22__final",
+   "method": "combined",
+   "overrides": {},
+   "training_seed": 22,
+   "run_id": "combined_seed22",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "combined_seed22/checkpoints/final.pt",
+   "group": "final"
+  },
+  {
+   "id": "combined_seed33__selected",
+   "method": "combined",
+   "overrides": {},
+   "training_seed": 33,
+   "run_id": "combined_seed33",
+   "role": "selected",
+   "checkpoint_tag": "step_010027008",
+   "checkpoint": "combined_seed33/checkpoints/step_010027008.pt",
+   "group": "selected"
+  },
+  {
+   "id": "combined_seed33__final",
+   "method": "combined",
+   "overrides": {},
+   "training_seed": 33,
+   "run_id": "combined_seed33",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "combined_seed33/checkpoints/final.pt",
+   "group": "final"
+  },
+  {
+   "id": "combined_no_phase_seed11__selected",
+   "method": "combined_no_phase",
+   "overrides": {},
+   "training_seed": 11,
+   "run_id": "combined_no_phase_seed11",
+   "role": "selected",
+   "checkpoint_tag": "step_008028160",
+   "checkpoint": "combined_no_phase_seed11/checkpoints/step_008028160.pt",
+   "group": "selected"
+  },
+  {
+   "id": "combined_no_phase_seed11__final",
+   "method": "combined_no_phase",
+   "overrides": {},
+   "training_seed": 11,
+   "run_id": "combined_no_phase_seed11",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "combined_no_phase_seed11/checkpoints/final.pt",
+   "group": "final"
+  },
+  {
+   "id": "combined_no_phase_seed22__selected",
+   "method": "combined_no_phase",
+   "overrides": {},
+   "training_seed": 22,
+   "run_id": "combined_no_phase_seed22",
+   "role": "selected",
+   "checkpoint_tag": "step_002031616",
+   "checkpoint": "combined_no_phase_seed22/checkpoints/step_002031616.pt",
+   "group": "selected"
+  },
+  {
+   "id": "combined_no_phase_seed22__final",
+   "method": "combined_no_phase",
+   "overrides": {},
+   "training_seed": 22,
+   "run_id": "combined_no_phase_seed22",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "combined_no_phase_seed22/checkpoints/final.pt",
+   "group": "final"
+  },
+  {
+   "id": "combined_no_phase_seed33__selected",
+   "method": "combined_no_phase",
+   "overrides": {},
+   "training_seed": 33,
+   "run_id": "combined_no_phase_seed33",
+   "role": "selected",
+   "checkpoint_tag": "step_002031616",
+   "checkpoint": "combined_no_phase_seed33/checkpoints/step_002031616.pt",
+   "group": "selected"
+  },
+  {
+   "id": "combined_no_phase_seed33__final",
+   "method": "combined_no_phase",
+   "overrides": {},
+   "training_seed": 33,
+   "run_id": "combined_no_phase_seed33",
+   "role": "final",
+   "checkpoint_tag": "final",
+   "checkpoint": "combined_no_phase_seed33/checkpoints/final.pt",
+   "group": "final"
+  }
+ ]
+}

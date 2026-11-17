@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "problems": [],
+ "assets_checked": 10,
+ "provenance": {
+  "experiment_v3_tag": "experiment-v3",
+  "experiment_v3_sha": "3811f5da5ef55638f95f7306e449609877f546df",
+  "original_delivery_tag": "v3.0.0",
+  "original_delivery_sha": "ebfa328b17103c32ae19c13f0a6408ebc55a6459",
+  "maintenance_source_tag": "maintenance-v3.0.1",
+  "maintenance_tooling_sha": "c85fded58f776c117368dc02be24405912593e38"
+ },
+ "archive_members_rehashed": 788,
+ "original_assets": 30,
+ "checkpoints_indexed": 457,
+ "checkpoints_resolved": 457
+}

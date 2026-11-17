@@ -1,0 +1,1967 @@
+{
+ "cases": [
+  "v3-final-clean-0000",
+  "v3-final-mixed_id-0000",
+  "v3-final-mixed_id-0001",
+  "v3-final-mixed_ood-0000",
+  "v3-final-mixed_ood-0001",
+  "v3-final-noise_4mm-0000"
+ ],
+ "entries": 50,
+ "agree_total": 298,
+ "total": 300,
+ "all_traced": true,
+ "rows": [
+  {
+   "entry": "nominal",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "geometry_common",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "geometry_raw",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "release_timeout",
+     "final_matrix": "release_timeout"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "release_timeout",
+     "final_matrix": "release_timeout"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "release_timeout",
+     "final_matrix": "release_timeout"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "release_timeout",
+     "final_matrix": "release_timeout"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "release_timeout",
+     "final_matrix": "release_timeout"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "geometry_filtered",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s11__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s11__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s22__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s22__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s33__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s33__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s44__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s44__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s55__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_clean_ff_s55__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s11__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s11__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s22__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s22__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s33__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s33__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s44__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s44__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s55__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_ff_s55__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_history_s11__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_history_s11__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "episode_timeout"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "episode_timeout",
+     "final_matrix": "episode_timeout"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "episode_timeout"
+    }
+   },
+   "agree": 4
+  },
+  {
+   "entry": "combined_robust_history_s22__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_history_s22__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_history_s33__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_history_s33__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_history_s44__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_history_s44__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_history_s55__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_history_s55__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_repeat_s11__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_repeat_s11__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_repeat_s22__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_repeat_s22__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_repeat_s33__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "combined_robust_repeat_s33__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s11__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s11__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s22__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s22__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s33__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s33__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s44__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s44__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s55__selected",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "success",
+     "final_matrix": "success"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  },
+  {
+   "entry": "residual_robust_history_s55__final",
+   "traced_cases": [
+    "v3-final-clean-0000",
+    "v3-final-mixed_id-0000",
+    "v3-final-mixed_id-0001",
+    "v3-final-mixed_ood-0000",
+    "v3-final-mixed_ood-0001",
+    "v3-final-noise_4mm-0000"
+   ],
+   "all_traced": true,
+   "cases": {
+    "v3-final-clean-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_id-0001": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-mixed_ood-0001": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    },
+    "v3-final-noise_4mm-0000": {
+     "trace_run": "prohibited_collision",
+     "final_matrix": "prohibited_collision"
+    }
+   },
+   "agree": 6
+  }
+ ],
+ "note": "supplementary trace runs at batch 6 (separate from the primary batch-256 matrix)"
+}

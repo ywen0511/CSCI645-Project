@@ -1,0 +1,38 @@
+{
+ "rule": "configs/v3/video_rule.json",
+ "main": [
+  {
+   "method": "combined_robust_history_s11_selected",
+   "condition": "mixed_id",
+   "first_success": "v3-final-mixed_id-0000",
+   "first_failure": null,
+   "note": "no failure in this condition; no substitute chosen"
+  },
+  {
+   "method": "combined_robust_history_s11_selected",
+   "condition": "mixed_ood",
+   "first_success": "v3-final-mixed_ood-0000",
+   "first_failure": null,
+   "note": "no failure in this condition; no substitute chosen"
+  },
+  {
+   "method": "geometry_best_constant",
+   "condition": "mixed_id",
+   "first_success": "v3-final-mixed_id-0000",
+   "first_failure": null,
+   "note": "no failure in this condition; no substitute chosen"
+  },
+  {
+   "method": "geometry_best_constant",
+   "condition": "mixed_ood",
+   "first_success": "v3-final-mixed_ood-0000",
+   "first_failure": null,
+   "note": "no failure in this condition; no substitute chosen"
+  }
+ ],
+ "giver_reference_case": "v3-final-mixed_ood-0002",
+ "giver_reference_case_reason": "first mixed_ood case where filtered and giver-reference outcomes differ",
+ "clean_case": "v3-final-clean-0000",
+ "noise_case": "v3-final-noise_4mm-0000",
+ "clips": 8
+}

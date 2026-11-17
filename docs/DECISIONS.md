@@ -168,3 +168,54 @@ those archives.
 - Declared now, before any final-suite result of a learned policy exists: a **secondary analysis** evaluates
   the preserved *final* checkpoint of all nine runs on the same 1,800 final cases. It is reported separately,
   labelled secondary, and is never used to choose among checkpoints. Records go to `eval_final_checkpoint/`.
+
+### 2026-11-10 — Final synthesis and independent CPU review of completed V4
+
+- Reviewed completed V4 branch commit `0cef74fc92007e6e86f4e378b4635f7b4185ec0b`.
+  The study remains complete; its frozen simulator source, data, reports, tags and releases
+  are unchanged. No GPU or simulator work was run for this review.
+- Independently downloaded and hashed the final-record archive, reconciled 129,600
+  executed records and every published success/reset summary, reproduced both primary
+  bootstrap comparisons, checked 78 frozen input blobs and 25 validation-summary selections.
+- Added an explicitly retrospective common-valid reset analysis. The same 189 boundary
+  cases are retained across all 54 executed entries. Selected history remains below
+  calibrated geometry by 30.79 pp (95% CI [-43.60, -18.20]); original primary denominators
+  and conclusions remain unchanged. See `results/final_review/audit.json`.
+- The final fixed-versus-calibrated contrast changes EMA and alignment bound as well as
+  reference. New prose treats it as a controller-configuration comparison and labels
+  matched development comparisons separately. Other corrections are in
+  `docs/final_review/REVIEW.md`; archived report/deck bytes are preserved.
+- Added a generated six-page project synthesis, plot, defense/demo notes and release
+  packaging/verification tooling. CPU regression: 105 passed, one Isaac-import skip.
+  New PDF pages were visually checked; the complete PDF and generation code are in Git.
+- README and AGENTS now point to `FINAL_DELIVERY_HANDOFF.md`, a finite CPU publication
+  assignment. `FINAL_REVIEW_STATUS.json` keeps supplement publication/verification pending
+  separately from the completed historical V4 study. Do not restart old training missions.
+
+### 2026-11-11 — Review supplement v4.0.2 published and publicly verified
+
+- Validated a fresh clone of branch commit `50037af` on a remote CPU node with CUDA hidden:
+  - CPU tests: 105 passed and 1 skipped (Isaac Lab import).
+  - Audit of a freshly downloaded `raw-final.tar.gz`: byte-identical to the committed `audit.json`.
+  - Overview Markdown regeneration: unchanged.
+  - Environment: Python 3.13.9 venv, because the system Python lacked `venv`.
+  - No analysis definition changed.
+- Tagged `v4.0.2` → `50037af` (v4.0.2 was unused) and built the 12-asset package from that clean checkout.
+- Created the draft release. The workstation upload of `source-review.tar.gz` failed with a TLS error,
+  leaving an incomplete draft asset. I deleted that incomplete entry and uploaded the same file from the
+  remote node.
+- Before publishing, verified the draft by authenticated download:
+  - all 12 assets byte-identical to the package;
+  - the package verifier passed;
+  - the tag resolves to `50037af`.
+- Published 2026-11-11T04:16:28Z.
+- Fresh public verification:
+  - anonymous v4.0.2 download passed the verifier;
+  - a fresh tag clone re-ran the audit, byte-identical to the released `audit.json`;
+  - the regenerated overview Markdown is byte-identical to the released one;
+  - the released PDF (6 pages) was inspected visually and all 18 of its links are public;
+  - all 36 inherited v4.0.0/v4.0.1 assets match `INHERITED_ASSETS.json`.
+- Added `scripts/final_review_inherited_check.py` for the inherited check, after the tag.
+- No GPU or simulator work.
+- Records: `results/final_review/public_verification.json`, `docs/final_review/PUBLIC_VERIFICATION.md`.
+- `FINAL_REVIEW_STATUS.json` set complete. `POST_V3_STATUS.json` is unchanged.

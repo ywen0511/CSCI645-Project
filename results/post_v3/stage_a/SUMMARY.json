@@ -1,0 +1,70 @@
+{
+ "stage": "A",
+ "utc": "2026-11-09T15:32Z..15:44Z",
+ "tooling_commit": "4d7beb30bda29ea0bedd83f6eb48fe63d5b9768d",
+ "experiment_commit": "3811f5da5ef55638f95f7306e449609877f546df",
+ "delivery_commit": "ebfa328b17103c32ae19c13f0a6408ebc55a6459",
+ "environment": {
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "driver": "580.159.03",
+  "os": "Ubuntu 24.04.5 LTS",
+  "isaacsim": "6.2.0.0",
+  "isaaclab": "28.0.0 (v3.0.0)",
+  "simulator_python": "3.12.16",
+  "torch": "2.11.0+cu130",
+  "rsl_rl": "5.5.1",
+  "analysis_python": "3.13.9 (python-build-standalone 20251014)",
+  "numpy": "2.4.4",
+  "matplotlib": "3.11.2"
+ },
+ "reproduce_sections": {
+  "1": 0,
+  "2": 0,
+  "3": 0,
+  "4": 0
+ },
+ "bundle_verify_ok": true,
+ "suites_rebuilt_identical": {
+  "development": 312,
+  "validation": 240,
+  "final": 2600
+ },
+ "tables": {
+  "identical": 34,
+  "float_only": 1,
+  "different": 0,
+  "float_only_files": [
+   "mechanisms/mechanisms.json"
+  ],
+  "max_abs_diff": 8.881784197001252e-16
+ },
+ "figures_identical": 6,
+ "replay65_episodes": 455,
+ "replay65_equal": 455,
+ "reload_episodes": 52,
+ "reload_equal": 52,
+ "resume": {
+  "iterations": [
+   306,
+   308
+  ],
+  "transitions": [
+   10027008,
+   10092544
+  ],
+  "source_checkpoint_unchanged": true
+ },
+ "repeat_run": {
+  "tasks": 13,
+  "skipped": 13,
+  "launched": 0,
+  "ledger_unchanged": true
+ },
+ "record_audit_discrepancies": 0,
+ "cpu_tests": {
+  "passed": 60,
+  "skipped": 1,
+  "skip": "tests/test_registration.py (Isaac Lab not installed in CPU venv)"
+ },
+ "cache_demonstration": "8/8 (results/post_v3/cache_demo.json)"
+}

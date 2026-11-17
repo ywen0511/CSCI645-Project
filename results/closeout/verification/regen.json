@@ -1,0 +1,403 @@
+{
+ "stage": "regen",
+ "utc": "2026-11-06T04:42:32Z",
+ "host": "USMCDLNCN228G2D",
+ "tools": {
+  "commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+  "dirty": false,
+  "tags": [
+   "v2.1.1"
+  ]
+ },
+ "experiment": {
+  "commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+  "dirty": false,
+  "tags": [
+   "experiment-v2"
+  ]
+ },
+ "inputs": {
+  "extract": "$WORK/inputs/v2.1.1/x"
+ },
+ "commands": [
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_select.py",
+    "--train-root",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x",
+    "--validation",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/final/validation",
+    "--suite",
+    "<FRESH>/CSCI645-Project/configs/v2/suites/validation.jsonl",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/final/selection"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:40:54.212541+00:00",
+   "wall_s": 0.3175,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_analyze_final.py",
+    "--final",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/final/eval",
+    "--manifest",
+    "<FRESH>/CSCI645-Project/configs/v2/matrices/final/final_manifest.json",
+    "--selection",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/final/selection",
+    "--train",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/summary"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:40:54.530222+00:00",
+   "wall_s": 78.811328,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_analyze_dev.py",
+    "--dev",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics",
+    "--n-boot",
+    "4000"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:13.341684+00:00",
+   "wall_s": 7.462918,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_select_constants.py",
+    "--dev",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/constants_v2.json"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:20.804720+00:00",
+   "wall_s": 1.02402,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_analyze_pilots.py",
+    "--pilot",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/pilot",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/pilot"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:21.828869+00:00",
+   "wall_s": 0.587005,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-position_stress-0000",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/geometry_zero.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_geometry_1cm_x+003mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_final_s11.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_init_s33.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_geometry_v2dev-position_stress-0000.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:22.416026+00:00",
+   "wall_s": 0.78923,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-position_stress-0000",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/nominal.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_nominal_x+004mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/residual_final_s22.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_nominal_v2dev-position_stress-0000.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:23.205383+00:00",
+   "wall_s": 0.750732,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-joint_early_stress-0000",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/geometry_zero.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_geometry_1cm_x+003mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_final_s11.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_init_s33.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_geometry_v2dev-joint_early_stress-0000.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:23.956176+00:00",
+   "wall_s": 0.790839,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-joint_early_stress-0000",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/nominal.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_nominal_x+004mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/residual_final_s22.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_nominal_v2dev-joint_early_stress-0000.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:24.747190+00:00",
+   "wall_s": 0.758039,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-joint_late_stress-0000",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/geometry_zero.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_geometry_1cm_x+003mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_final_s11.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_init_s33.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_geometry_v2dev-joint_late_stress-0000.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:25.505290+00:00",
+   "wall_s": 0.76569,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-joint_late_stress-0000",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/nominal.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_nominal_x+004mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/residual_final_s22.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_nominal_v2dev-joint_late_stress-0000.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:26.271152+00:00",
+   "wall_s": 0.741397,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-position_in-0000",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/geometry_zero.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_geometry_1cm_x+003mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_final_s11.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_init_s33.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_geometry_v2dev-position_in-0000.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:27.012678+00:00",
+   "wall_s": 0.762669,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-position_in-0000",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/nominal.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_nominal_x+004mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/residual_final_s22.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_nominal_v2dev-position_in-0000.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:27.775515+00:00",
+   "wall_s": 0.776835,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-joint_early_stress-0003",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/nominal.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/residual_final_s22.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/failtrace_residual_drop_v2dev-joint_early_stress-0003.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:28.552478+00:00",
+   "wall_s": 0.707945,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-joint_early_stress-0035",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/geometry_zero.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/const_geometry_1cm_x+003mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/combined_final_s11.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/failtrace_geometry_deep_insertion_v2dev-joint_early_stress-0035.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:29.260546+00:00",
+   "wall_s": 0.72259,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-joint_early_stress-0017",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/geometry_zero.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/const_geometry_1cm_x+003mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/combined_final_s11.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/failtrace_combined_bias_v2dev-joint_early_stress-0017.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:29.983263+00:00",
+   "wall_s": 0.723818,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/v2_plot_traces.py",
+    "--case",
+    "v2dev-joint_early_stress-0000",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/nominal.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/const_nominal_x+004mm.json",
+    "--trace",
+    "<FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/residual_final_s22.json",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/failtrace_nominal_timeout_v2dev-joint_early_stress-0000.png"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:30.707206+00:00",
+   "wall_s": 0.694572,
+   "log": "$WORK/logs/regen.log"
+  },
+  {
+   "cmd": [
+    "v2_nondeterminism.py",
+    "--final",
+    "$X/final/eval",
+    ">",
+    "$WORK/regen/summary/nondeterminism_untrained_vs_zero.json"
+   ],
+   "rc": 0
+  },
+  {
+   "cmd": [
+    "<FRESH>/CSCI645-Project/.venv-analysis/bin/python",
+    "<FRESH>/CSCI645-Project/scripts/closeout_regen_compare.py",
+    "--regen",
+    "<FRESH>/CSCI645-Project/closeout_work/regen",
+    "--archived",
+    "<FRESH>/CSCI645-Project/results/v2",
+    "--output",
+    "<FRESH>/CSCI645-Project/closeout_work/regen/comparison.json"
+   ],
+   "cwd": "$WORK/.",
+   "rc": 0,
+   "start": "2026-11-06T04:42:32.121797+00:00",
+   "wall_s": 0.038236,
+   "log": "$WORK/logs/regen.log"
+  }
+ ],
+ "python": "3.13.9",
+ "numpy": "2.4.4",
+ "comparison": "$WORK/regen/comparison.json",
+ "summary": {
+  "identical": 30,
+  "figure": 21
+ }
+}

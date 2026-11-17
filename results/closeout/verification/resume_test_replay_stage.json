@@ -1,0 +1,64 @@
+{
+ "stage": "replay",
+ "utc": "2026-11-06T04:45:02Z",
+ "host": "<cluster-node>",
+ "tools": {
+  "commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+  "dirty": false,
+  "tags": [
+   "v2.1.1"
+  ]
+ },
+ "experiment": {
+  "commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+  "dirty": false,
+  "tags": [
+   "experiment-v2"
+  ]
+ },
+ "status": {
+  "task": "replay",
+  "state": "complete",
+  "attempts": 2
+ },
+ "comparison_cmd": {
+  "cmd": [
+   "<WORK>/envs/csci645proj/bin/python",
+   "<VERIFY>/repo/scripts/closeout_repeatability.py",
+   "agreement",
+   "--archived",
+   "<VERIFY>/work_resume/inputs/v2.1.1/x/final/eval",
+   "--replay",
+   "<VERIFY>/work_resume/sim/replay",
+   "--output",
+   "<VERIFY>/work_resume/sim/replay_comparison.json"
+  ],
+  "cwd": "$WORK/.",
+  "rc": 0,
+  "start": "2026-11-06T04:44:56.966029+00:00",
+  "wall_s": 5.861777,
+  "log": "$WORK/logs/replay.log"
+ },
+ "comparison": "$WORK/sim/replay_comparison.json",
+ "summary": {
+  "compared": 1320,
+  "terminal_reason_equal": 1309,
+  "success_equal": 1312,
+  "terminal_reason_disagree": 11,
+  "success_archived_only": 6,
+  "success_replay_only": 2,
+  "entries": 22,
+  "deterministic": {
+   "compared": 240,
+   "terminal_reason_equal": 239,
+   "success_equal": 239
+  },
+  "learned": {
+   "compared": 1080,
+   "terminal_reason_equal": 1070,
+   "success_equal": 1073
+  },
+  "all_checkpoint_hashes_match": true,
+  "note": "observed agreement on the predeclared sample; not a population bound and not a bitwise reproducibility claim"
+ }
+}

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "assets": 12,
+  "source_commit": "568d4c6a48ac0d8d72bae903db646a8c2960a52e",
+  "archive_members": 1297,
+  "scope": "local bytes and source consistency; no network or GPU replay"
+}

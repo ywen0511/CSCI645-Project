@@ -1,0 +1,70 @@
+{
+  "scope": "CPU-only post-release maintenance; no new scientific results",
+  "utc": "2026-11-09T05:01:24.260979+00:00",
+  "base_commit": "c44ecc1f62b9dd2ec504f9811d6ae68d3df4e907",
+  "environment": {
+    "python": "3.11.16",
+    "torch": "2.15.0",
+    "numpy": "2.4.6",
+    "pytest": "9.2.0",
+    "platform": "Darwin"
+  },
+  "gpu_or_simulator_run": false,
+  "checks": [
+    {
+      "command": "CUDA_VISIBLE_DEVICES='' python -m pytest -q",
+      "passed": 60,
+      "skipped": 1,
+      "skip_reason": "Isaac Lab not installed",
+      "exit_code": 0
+    },
+    {
+      "command": "CUDA_VISIBLE_DEVICES='' python -m pytest -q tests/test_v3_maintenance.py",
+      "passed": 12,
+      "skipped": 0,
+      "exit_code": 0,
+      "note": "Rerun after preventing bytecode/copy writes inside experiment checkout"
+    },
+    {
+      "command": "python -m py_compile scripts/v3_jobs.py scripts/v3_rebuild_suites.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/v3_rebuild_suites.py --experiment-repo <clean experiment-v3 checkout> --check",
+      "exit_code": 0,
+      "frozen_inputs_verified": 60,
+      "suite_counts": {
+        "development": 312,
+        "validation": 240,
+        "final": 2600
+      },
+      "note": "Test also verifies repeated check, exact copies, overwrite refusal and unmodified checkout"
+    },
+    {
+      "command": "python scripts/v3_jobs.py run --manifest results/v3/jobs/verification.json --repo <clean experiment-v3 checkout> --runs-root <new temporary directory> --isaac-python /not-invoked/isaac-python --only replay65_geometry_common --dry-run",
+      "exit_code": 0,
+      "tasks_launched": 0,
+      "dependencies_resolved": 5
+    },
+    {
+      "check": "Markdown links in modified entry points and reproduction/maintenance documents resolve",
+      "passed": true
+    },
+    {
+      "check": "Changed tracked paths do not intersect FREEZE.json input paths",
+      "passed": true
+    }
+  ],
+  "code_sha256": {
+    "scripts/v3_jobs.py": "156b6166dcab100951c95a283bb88d697bbcf8271fcd08be85cb80c55b205139",
+    "scripts/v3_rebuild_suites.py": "5cf025250eaa329eda8f95b561717fa463a47a174c8e8c2efc0576a7f1a8850d",
+    "tests/test_v3_maintenance.py": "5b9607774cf5f494f08a61f19003d9308885722f2789a671a6841d389da250e0"
+  },
+  "not_executed": [
+    "Fresh release download and full table regeneration for repaired workflow",
+    "Remote GPU replay/reload/resume for repaired workflow",
+    "Maintenance release publication",
+    "V4 implementation and experiments"
+  ],
+  "remote_assignment": "POST_V3_EXECUTION.md"
+}

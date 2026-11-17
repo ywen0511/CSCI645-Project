@@ -1,0 +1,6362 @@
+[
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "bias_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.901750054359436,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.005017342310165987,
+  "achieved_grasp_offset_abs_mean_m": 0.0015898575633764267,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.965,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.965
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 6,
+  "unsafe_events_mean": 11.0,
+  "terminal_mean": {
+   "success": 193.0,
+   "prohibited_collision": 1.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889896496589937,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 2.2069302617965898e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0069537858680351495,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "boundary_z_15",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.671781323850155e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.01508786976337433,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "clean",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.4622472281189403e-06,
+  "achieved_grasp_offset_abs_mean_m": 5.807168083265424e-05,
+  "training_support": "in support (zero)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "delay_2step",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.371843152417569e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0015895289555191993,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "grasp_10mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.387082368135452e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010739265494048595,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "grasp_15mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.945,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.945
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 12.0,
+  "terminal_mean": {
+   "success": 189.0,
+   "prohibited_collision": 11.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892857266481592,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.941269795381231e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831684455275536,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "grasp_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.651760072098114e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.0027900798129849138,
+  "training_support": "interpolation",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "grasp_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.8164735520258548e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005813335850834846,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "mixed_id",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.985,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.985
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.0,
+  "terminal_mean": {
+   "success": 197.0,
+   "prohibited_collision": 3.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.896700583133601,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0038420247645262863,
+  "achieved_grasp_offset_abs_mean_m": 0.007918370952829719,
+  "training_support": "in support (same distribution family)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "mixed_ood",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.945,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.945
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 13.0,
+  "terminal_mean": {
+   "success": 189.0,
+   "prohibited_collision": 11.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.897354564969501,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.007684750069420261,
+  "achieved_grasp_offset_abs_mean_m": 0.008753319606184959,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "best_constant_geometry",
+  "role": "baseline",
+  "condition": "noise_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889750123023987,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0008863076869874931,
+  "achieved_grasp_offset_abs_mean_m": 0.0015898556262254715,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": "geometry_calibrated"
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9870000000000001,
+  "success_rate_sd": 0.02906888370749724,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   0.935,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.8,
+  "terminal_mean": {
+   "success": 197.4,
+   "prohibited_collision": 2.6,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.899092306965813,
+  "residual_abs_mean_m": 0.0038892700500713687,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.005017382264486514,
+  "achieved_grasp_offset_abs_mean_m": 0.001589776135981083,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.6940000000000001,
+  "success_rate_sd": 0.2257321421508244,
+  "success_rate_per_seed": [
+   0.625,
+   0.97,
+   0.885,
+   0.435,
+   0.555
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 34,
+  "unsafe_events_mean": 74.2,
+  "terminal_mean": {
+   "success": 138.8,
+   "prohibited_collision": 54.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.882789980893369,
+  "residual_abs_mean_m": 0.0040144463943781565,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 2.2042110133549958e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.006947437304539475,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.895150092124939,
+  "residual_abs_mean_m": 0.003934915157996976,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.6518011018633845e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.015087389618158342,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.0037141991395925737,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.2472111202441738e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.00010216440469957887,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.895550089836121,
+  "residual_abs_mean_m": 0.0038706744916466003,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.371958352836372e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0015896875113248824,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 1.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.895300091266632,
+  "residual_abs_mean_m": 0.0038963608105161396,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.376930952072144e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010739537723362447,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9219999999999999,
+  "success_rate_sd": 0.021095023109729005,
+  "success_rate_per_seed": [
+   0.925,
+   0.93,
+   0.935,
+   0.885,
+   0.935
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 17.4,
+  "terminal_mean": {
+   "success": 184.4,
+   "prohibited_collision": 15.6,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.8966389445144305,
+  "residual_abs_mean_m": 0.003922782882837308,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.8924969847575996e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831331498920918,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.895500090122224,
+  "residual_abs_mean_m": 0.00386663475614355,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.632959288661367e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.0027902057054452595,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.991,
+  "success_rate_sd": 0.015165750888103114,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   0.965,
+   0.99
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 9.2,
+  "terminal_mean": {
+   "success": 198.2,
+   "prohibited_collision": 1.8,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.895691297164797,
+  "residual_abs_mean_m": 0.0038973414845390715,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.81805354077369e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005812995426356793,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.983,
+  "success_rate_sd": 0.004472135954999583,
+  "success_rate_per_seed": [
+   0.985,
+   0.985,
+   0.985,
+   0.975,
+   0.985
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.4,
+  "terminal_mean": {
+   "success": 196.6,
+   "prohibited_collision": 3.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.896340567539031,
+  "residual_abs_mean_m": 0.003920774654687148,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.00384160776733188,
+  "achieved_grasp_offset_abs_mean_m": 0.007918321959674358,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.86,
+  "success_rate_sd": 0.03588175023601829,
+  "success_rate_per_seed": [
+   0.86,
+   0.875,
+   0.895,
+   0.8,
+   0.87
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 35.8,
+  "terminal_mean": {
+   "success": 172.0,
+   "prohibited_collision": 28.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.902645761796612,
+  "residual_abs_mean_m": 0.004121789128566139,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.007683939647278748,
+  "achieved_grasp_offset_abs_mean_m": 0.008752671420574188,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "final",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.895100092411041,
+  "residual_abs_mean_m": 0.0038712435693006387,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0008863217976559099,
+  "achieved_grasp_offset_abs_mean_m": 0.0015898323357105254,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9870000000000001,
+  "success_rate_sd": 0.02906888370749724,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   0.935,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.8,
+  "terminal_mean": {
+   "success": 197.4,
+   "prohibited_collision": 2.6,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.899342306488976,
+  "residual_abs_mean_m": 0.0042351857057856875,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.005017412217217498,
+  "achieved_grasp_offset_abs_mean_m": 0.0015898661017417909,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.68,
+  "success_rate_sd": 0.24492345743109212,
+  "success_rate_per_seed": [
+   0.53,
+   0.97,
+   0.915,
+   0.43,
+   0.555
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 36,
+  "unsafe_events_mean": 71.8,
+  "terminal_mean": {
+   "success": 136.0,
+   "prohibited_collision": 56.8,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.887089780878383,
+  "residual_abs_mean_m": 0.004305084828501769,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 2.199663738676704e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.006943889162007449,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.896750082969666,
+  "residual_abs_mean_m": 0.0042786800128409245,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.665696527808904e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.01508788812160492,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.004023454295912969,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.4622472281189403e-06,
+  "achieved_grasp_offset_abs_mean_m": 5.8071680832654245e-05,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.896900082111359,
+  "residual_abs_mean_m": 0.004207320292535952,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.375788082594227e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0015897327661514283,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.6,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.896750082969666,
+  "residual_abs_mean_m": 0.004224135618711776,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.3807949628680945e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010739353246986865,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9219999999999999,
+  "success_rate_sd": 0.02196588263648879,
+  "success_rate_per_seed": [
+   0.92,
+   0.93,
+   0.94,
+   0.885,
+   0.935
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 16.6,
+  "terminal_mean": {
+   "success": 184.4,
+   "prohibited_collision": 15.6,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.897762275555385,
+  "residual_abs_mean_m": 0.004255895495046787,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.850469097800669e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831320375204089,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.896750082969666,
+  "residual_abs_mean_m": 0.00420283514727156,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.623341462225654e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.0027896745684556665,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9879999999999999,
+  "success_rate_sd": 0.014404860290887946,
+  "success_rate_per_seed": [
+   0.985,
+   1.0,
+   1.0,
+   0.965,
+   0.99
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 8.2,
+  "terminal_mean": {
+   "success": 197.6,
+   "prohibited_collision": 2.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.896581391563644,
+  "residual_abs_mean_m": 0.004234991257375071,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.8168799811974167e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005812896646559238,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.983,
+  "success_rate_sd": 0.004472135954999583,
+  "success_rate_per_seed": [
+   0.985,
+   0.985,
+   0.985,
+   0.975,
+   0.985
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.4,
+  "terminal_mean": {
+   "success": 196.6,
+   "prohibited_collision": 3.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.89700046224022,
+  "residual_abs_mean_m": 0.0042731539810893894,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.003841453784523765,
+  "achieved_grasp_offset_abs_mean_m": 0.00791848774626851,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.865,
+  "success_rate_sd": 0.046904157598234304,
+  "success_rate_per_seed": [
+   0.85,
+   0.875,
+   0.93,
+   0.8,
+   0.87
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 32.4,
+  "terminal_mean": {
+   "success": 173.0,
+   "prohibited_collision": 27.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.902772049153385,
+  "residual_abs_mean_m": 0.004495882399638304,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.00768357411737452,
+  "achieved_grasp_offset_abs_mean_m": 0.008753015078604221,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_clean_ff",
+  "role": "selected",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.896550084114074,
+  "residual_abs_mean_m": 0.004207363336395197,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0008863364761837148,
+  "achieved_grasp_offset_abs_mean_m": 0.0015895927697420122,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.90100005865097,
+  "residual_abs_mean_m": 0.0035040301867359956,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.005017360118916259,
+  "achieved_grasp_offset_abs_mean_m": 0.0015898865461349489,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.8789999999999999,
+  "success_rate_sd": 0.18984862390862883,
+  "success_rate_per_seed": [
+   0.965,
+   0.54,
+   0.97,
+   0.945,
+   0.975
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 35,
+  "unsafe_events_mean": 28.4,
+  "terminal_mean": {
+   "success": 175.8,
+   "prohibited_collision": 17.2,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.88802556476757,
+  "residual_abs_mean_m": 0.0033856847992464363,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 2.2021174101080718e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.006943612549098662,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.893250102996826,
+  "residual_abs_mean_m": 0.0034804365184931095,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.652556404471398e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.01508825984597206,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.0033254810946503864,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.2331792331679025e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.00010246845189249143,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892000110149384,
+  "residual_abs_mean_m": 0.0034147794183569625,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.369319368284777e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.001589759849011898,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892400107860565,
+  "residual_abs_mean_m": 0.0034723092925913286,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.38864242658019e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010739650644361972,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.966,
+  "success_rate_sd": 0.009617692030835682,
+  "success_rate_per_seed": [
+   0.975,
+   0.97,
+   0.97,
+   0.95,
+   0.965
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 12.0,
+  "terminal_mean": {
+   "success": 193.2,
+   "prohibited_collision": 6.8,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.894820668569123,
+  "residual_abs_mean_m": 0.0035307538017423173,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.862011162185809e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.01483159061521292,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891950110435486,
+  "residual_abs_mean_m": 0.0034073022747047,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.654014163766987e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.002790080371778458,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.6,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892050109863281,
+  "residual_abs_mean_m": 0.003432898050486502,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.8171044532209635e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005812841311097145,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9949999999999999,
+  "success_rate_sd": 0.007071067811865481,
+  "success_rate_per_seed": [
+   0.99,
+   1.0,
+   1.0,
+   0.985,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.0,
+  "terminal_mean": {
+   "success": 199.0,
+   "prohibited_collision": 1.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.895617920029233,
+  "residual_abs_mean_m": 0.0035075900680588087,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0038415149800348444,
+  "achieved_grasp_offset_abs_mean_m": 0.007918291916139424,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9460000000000001,
+  "success_rate_sd": 0.01816590212458492,
+  "success_rate_per_seed": [
+   0.955,
+   0.945,
+   0.955,
+   0.915,
+   0.96
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 22.8,
+  "terminal_mean": {
+   "success": 189.2,
+   "prohibited_collision": 10.8,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.898058250105844,
+  "residual_abs_mean_m": 0.0037573113275847043,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.007683844730196144,
+  "achieved_grasp_offset_abs_mean_m": 0.008752506256103517,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "final",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892200109004975,
+  "residual_abs_mean_m": 0.0034178468420392933,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0008862685154090288,
+  "achieved_grasp_offset_abs_mean_m": 0.00158969646692276,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.90100005865097,
+  "residual_abs_mean_m": 0.003487935918592489,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.005017384832724929,
+  "achieved_grasp_offset_abs_mean_m": 0.001589895911514759,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.882,
+  "success_rate_sd": 0.19126552224590818,
+  "success_rate_per_seed": [
+   0.97,
+   0.54,
+   0.965,
+   0.96,
+   0.975
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 34,
+  "unsafe_events_mean": 27.2,
+  "terminal_mean": {
+   "success": 176.4,
+   "prohibited_collision": 16.8,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.888258387976943,
+  "residual_abs_mean_m": 0.0033919332719344873,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 2.200845831530862e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.006944896852804638,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.893100103855133,
+  "residual_abs_mean_m": 0.0034844491729585426,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.660022724419832e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.015088172525167465,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.003363294441214542,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.4622472281189403e-06,
+  "achieved_grasp_offset_abs_mean_m": 5.8071680832654245e-05,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891950110435486,
+  "residual_abs_mean_m": 0.0034370659873865124,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.372267234881292e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.001589694045484066,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892300108432769,
+  "residual_abs_mean_m": 0.0034963735301193856,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.387090191245079e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.01073959781229496,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9650000000000001,
+  "success_rate_sd": 0.0050000000000000044,
+  "success_rate_per_seed": [
+   0.96,
+   0.97,
+   0.97,
+   0.96,
+   0.965
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 12.4,
+  "terminal_mean": {
+   "success": 193.0,
+   "prohibited_collision": 7.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.894755300176513,
+  "residual_abs_mean_m": 0.0035460514949030965,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.861345791505301e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831692203879357,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891950110435486,
+  "residual_abs_mean_m": 0.003434857113878317,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.648362840176559e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.0027896927478723225,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.6,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891950110435486,
+  "residual_abs_mean_m": 0.0034559035875561936,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.8160523381084202e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005812856011092664,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.994,
+  "success_rate_sd": 0.008215838362577499,
+  "success_rate_per_seed": [
+   0.985,
+   1.0,
+   1.0,
+   0.985,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.0,
+  "terminal_mean": {
+   "success": 198.8,
+   "prohibited_collision": 1.2,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.895764298714962,
+  "residual_abs_mean_m": 0.00352290456181254,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0038414919747956446,
+  "achieved_grasp_offset_abs_mean_m": 0.007918543114326895,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.945,
+  "success_rate_sd": 0.01658312395177697,
+  "success_rate_per_seed": [
+   0.94,
+   0.945,
+   0.96,
+   0.92,
+   0.96
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 22.6,
+  "terminal_mean": {
+   "success": 189.0,
+   "prohibited_collision": 11.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.898160138262853,
+  "residual_abs_mean_m": 0.0037456268927143982,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.007684481686843356,
+  "achieved_grasp_offset_abs_mean_m": 0.008752502180635929,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_ff",
+  "role": "selected",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892300108432769,
+  "residual_abs_mean_m": 0.003440274039136542,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0008862837731958279,
+  "achieved_grasp_offset_abs_mean_m": 0.0015895323753356936,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.89,
+  "success_rate_sd": 0.17288001619620472,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   0.605,
+   0.845,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 17.8,
+  "terminal_mean": {
+   "success": 178.0,
+   "prohibited_collision": 15.2,
+   "drop": 0.4,
+   "release_timeout": 0.0,
+   "episode_timeout": 6.4
+  },
+  "completion_time_success_mean_s": 4.942929285872809,
+  "residual_abs_mean_m": 0.011015475955797847,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.005017432349850423,
+  "achieved_grasp_offset_abs_mean_m": 0.0015898983702063558,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.55,
+  "success_rate_sd": 0.26134268690743956,
+  "success_rate_per_seed": [
+   0.455,
+   0.615,
+   0.275,
+   0.965,
+   0.44
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 37,
+  "unsafe_events_mean": 122.6,
+  "terminal_mean": {
+   "success": 110.0,
+   "prohibited_collision": 82.6,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 5.02143278025571,
+  "residual_abs_mean_m": 0.01057829755386153,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 2.2012345011913307e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.006940177206702187,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.968,
+  "success_rate_sd": 0.02079663434308544,
+  "success_rate_per_seed": [
+   0.945,
+   0.96,
+   0.96,
+   0.975,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 1.0,
+  "terminal_mean": {
+   "success": 193.6,
+   "prohibited_collision": 0.0,
+   "drop": 0.6,
+   "release_timeout": 5.8,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.940947055643124,
+  "residual_abs_mean_m": 0.011249226046828976,
+  "residual_saturated_episode_frac": 0.003,
+  "calibration_error_max_axis_mean_m": 4.673137236386538e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.015088167786598206,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.969649923801422,
+  "residual_abs_mean_m": 0.010897455532655198,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.2437604591468699e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.00010224300745176151,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 5.017200075149536,
+  "residual_abs_mean_m": 0.010919429245471483,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.374408253803267e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0015897234678268432,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.999,
+  "success_rate_sd": 0.0022360679774997916,
+  "success_rate_per_seed": [
+   0.995,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 199.8,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.2,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.980200076541709,
+  "residual_abs_mean_m": 0.01120598156364104,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.383329094504006e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010738981768488884,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9719999999999999,
+  "success_rate_sd": 0.02361143790623521,
+  "success_rate_per_seed": [
+   0.95,
+   0.955,
+   0.96,
+   0.995,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 6.2,
+  "terminal_mean": {
+   "success": 194.4,
+   "prohibited_collision": 5.0,
+   "drop": 0.2,
+   "release_timeout": 0.4,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.9748651429303115,
+  "residual_abs_mean_m": 0.011226005236643764,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.839876478945371e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831640355288982,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.6,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 5.010750075340271,
+  "residual_abs_mean_m": 0.010845126527096738,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.621975543064762e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.002789981675334275,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9380000000000001,
+  "success_rate_sd": 0.06270964838045259,
+  "success_rate_per_seed": [
+   0.93,
+   1.0,
+   0.855,
+   1.0,
+   0.905
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 36.2,
+  "terminal_mean": {
+   "success": 187.6,
+   "prohibited_collision": 12.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 5.006867285782437,
+  "residual_abs_mean_m": 0.010992399466771738,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.818808857933618e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005812812142074108,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.97,
+  "success_rate_sd": 0.03952847075210473,
+  "success_rate_per_seed": [
+   0.99,
+   0.995,
+   0.905,
+   0.96,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 6.2,
+  "terminal_mean": {
+   "success": 194.0,
+   "prohibited_collision": 2.2,
+   "drop": 1.6,
+   "release_timeout": 0.0,
+   "episode_timeout": 2.2
+  },
+  "completion_time_success_mean_s": 4.982853320542334,
+  "residual_abs_mean_m": 0.010917118214875263,
+  "residual_saturated_episode_frac": 0.002,
+  "calibration_error_max_axis_mean_m": 0.003841486573102884,
+  "achieved_grasp_offset_abs_mean_m": 0.007918470112606883,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.818,
+  "success_rate_sd": 0.1784166472053547,
+  "success_rate_per_seed": [
+   0.87,
+   0.94,
+   0.505,
+   0.855,
+   0.92
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 29.8,
+  "terminal_mean": {
+   "success": 163.6,
+   "prohibited_collision": 20.6,
+   "drop": 3.8,
+   "release_timeout": 6.0,
+   "episode_timeout": 6.0
+  },
+  "completion_time_success_mean_s": 4.959758873284711,
+  "residual_abs_mean_m": 0.011220099444143788,
+  "residual_saturated_episode_frac": 0.004,
+  "calibration_error_max_axis_mean_m": 0.007683648640479078,
+  "achieved_grasp_offset_abs_mean_m": 0.00875287428498268,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "final",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 5.011200075149537,
+  "residual_abs_mean_m": 0.010884923463879734,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0008863276936208423,
+  "achieved_grasp_offset_abs_mean_m": 0.0015895217210054398,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.950800069332123,
+  "residual_abs_mean_m": 0.0076682056644487625,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.005017379347700626,
+  "achieved_grasp_offset_abs_mean_m": 0.001589812658727169,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.652,
+  "success_rate_sd": 0.14411800720243118,
+  "success_rate_per_seed": [
+   0.59,
+   0.615,
+   0.855,
+   0.725,
+   0.475
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 36,
+  "unsafe_events_mean": 99.6,
+  "terminal_mean": {
+   "success": 130.4,
+   "prohibited_collision": 62.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.8846984471003605,
+  "residual_abs_mean_m": 0.0073754817147139735,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.064478927607159e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.006942752618468583,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9879999999999999,
+  "success_rate_sd": 0.016807736313971627,
+  "success_rate_per_seed": [
+   0.985,
+   0.96,
+   1.0,
+   0.995,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 197.6,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 2.4,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.899771486099909,
+  "residual_abs_mean_m": 0.007809270583288371,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.665578715503216e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.015088140457868576,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.007574778209642035,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.4622472281189403e-06,
+  "achieved_grasp_offset_abs_mean_m": 5.8071680832654245e-05,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.900000064373016,
+  "residual_abs_mean_m": 0.007597515432699066,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.371280541723536e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.001589590184390545,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.8999500646591185,
+  "residual_abs_mean_m": 0.007631292871616839,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.38863986544311e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010739243075251578,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.991,
+  "success_rate_sd": 0.020124611797498124,
+  "success_rate_per_seed": [
+   1.0,
+   0.955,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 2.6,
+  "terminal_mean": {
+   "success": 198.2,
+   "prohibited_collision": 1.6,
+   "drop": 0.2,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.900238285608941,
+  "residual_abs_mean_m": 0.007614044753409753,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.876494693894528e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831565894186499,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.900200063228607,
+  "residual_abs_mean_m": 0.007575047584421504,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.604909715359098e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.0027898203614167873,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.985,
+  "success_rate_sd": 0.030822070014844858,
+  "success_rate_per_seed": [
+   0.995,
+   1.0,
+   1.0,
+   1.0,
+   0.93
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 16.6,
+  "terminal_mean": {
+   "success": 197.0,
+   "prohibited_collision": 3.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.899655403581065,
+  "residual_abs_mean_m": 0.0076366775158800875,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.8146031405194663e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005812683090567589,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.8,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.907700064659118,
+  "residual_abs_mean_m": 0.007543751711283404,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.003841643360050511,
+  "achieved_grasp_offset_abs_mean_m": 0.007918371520005168,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9700000000000001,
+  "success_rate_sd": 0.02645751311064593,
+  "success_rate_per_seed": [
+   0.975,
+   0.94,
+   0.995,
+   0.995,
+   0.945
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 9.8,
+  "terminal_mean": {
+   "success": 194.0,
+   "prohibited_collision": 5.6,
+   "drop": 0.2,
+   "release_timeout": 0.2,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.932101214764045,
+  "residual_abs_mean_m": 0.007697391299263059,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.007684304485548637,
+  "achieved_grasp_offset_abs_mean_m": 0.0087529631331563,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_history",
+  "role": "selected",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.900100063800812,
+  "residual_abs_mean_m": 0.0075689547221199,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0008863915069177893,
+  "achieved_grasp_offset_abs_mean_m": 0.0015897378027439116,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.89885007095337,
+  "residual_abs_mean_m": 0.0037610859565332055,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0050173720348393545,
+  "achieved_grasp_offset_abs_mean_m": 0.0015897562801837919,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9040000000000001,
+  "success_rate_sd": 0.11786644984897103,
+  "success_rate_per_seed": [
+   0.96,
+   0.93,
+   0.97,
+   0.965,
+   0.695
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 35,
+  "unsafe_events_mean": 29.8,
+  "terminal_mean": {
+   "success": 180.8,
+   "prohibited_collision": 12.2,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889341564986554,
+  "residual_abs_mean_m": 0.00350571711127001,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 2.2010333259432285e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.006942327304729068,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891600112438201,
+  "residual_abs_mean_m": 0.003734390687446025,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.6634374186396604e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.015087583005428316,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.0035978206389958092,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.2857361853093607e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.00010243832477135584,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891400113582611,
+  "residual_abs_mean_m": 0.0036304868835978165,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.374014512264694e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0015897287502884866,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 1.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891550112724304,
+  "residual_abs_mean_m": 0.003845982705704496,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.3844988793134695e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010739486441016197,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.968,
+  "success_rate_sd": 0.018907670401189052,
+  "success_rate_per_seed": [
+   0.985,
+   0.95,
+   0.945,
+   0.98,
+   0.98
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 18.2,
+  "terminal_mean": {
+   "success": 193.6,
+   "prohibited_collision": 6.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.893329777809914,
+  "residual_abs_mean_m": 0.0039956971814537655,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.91304423303518e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831463724374772,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891650112152099,
+  "residual_abs_mean_m": 0.0036380686464732677,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.635785328806378e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.002790000114124268,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.2,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891800111293792,
+  "residual_abs_mean_m": 0.00365165017547065,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.8160994164645673e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.00581289354711771,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9950000000000001,
+  "success_rate_sd": 0.0035355339059327407,
+  "success_rate_per_seed": [
+   1.0,
+   0.995,
+   0.995,
+   0.99,
+   0.995
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.0,
+  "terminal_mean": {
+   "success": 199.0,
+   "prohibited_collision": 1.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.893219637214166,
+  "residual_abs_mean_m": 0.003818588780401002,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.003841631886432879,
+  "achieved_grasp_offset_abs_mean_m": 0.007918586676940322,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.921,
+  "success_rate_sd": 0.027248853186877406,
+  "success_rate_per_seed": [
+   0.965,
+   0.915,
+   0.89,
+   0.92,
+   0.915
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 27.0,
+  "terminal_mean": {
+   "success": 184.2,
+   "prohibited_collision": 15.8,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.897380226765669,
+  "residual_abs_mean_m": 0.004097698972149594,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.007683218749452862,
+  "achieved_grasp_offset_abs_mean_m": 0.008752651311457155,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "final",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891550112724304,
+  "residual_abs_mean_m": 0.0036418040657210994,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.000886326274023304,
+  "achieved_grasp_offset_abs_mean_m": 0.00158974976837635,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.899750065803528,
+  "residual_abs_mean_m": 0.004171800063149038,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.005017368557862938,
+  "achieved_grasp_offset_abs_mean_m": 0.0015897462368011477,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9120000000000001,
+  "success_rate_sd": 0.10059821071967434,
+  "success_rate_per_seed": [
+   0.965,
+   0.925,
+   0.965,
+   0.97,
+   0.735
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 36,
+  "unsafe_events_mean": 26.2,
+  "terminal_mean": {
+   "success": 182.4,
+   "prohibited_collision": 10.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892320043135661,
+  "residual_abs_mean_m": 0.0038616258026688706,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 2.1995380698469912e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0069415598294523635,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.893400102138519,
+  "residual_abs_mean_m": 0.0042110681710115306,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.661827441304922e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.015087952077388764,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.003976560353003826,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.4622472281189403e-06,
+  "achieved_grasp_offset_abs_mean_m": 5.8071680832654245e-05,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892850105285645,
+  "residual_abs_mean_m": 0.004027355207392511,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.371096317932823e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0015897513180971145,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 1.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.893800099849701,
+  "residual_abs_mean_m": 0.00434928365582006,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.3828558400273315e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010739368580281733,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9620000000000001,
+  "success_rate_sd": 0.014832396974191338,
+  "success_rate_per_seed": [
+   0.955,
+   0.955,
+   0.945,
+   0.975,
+   0.98
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 16.8,
+  "terminal_mean": {
+   "success": 192.4,
+   "prohibited_collision": 7.6,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.897390664063434,
+  "residual_abs_mean_m": 0.004532204350030473,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.830215972833684e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831303574144842,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.893100103855133,
+  "residual_abs_mean_m": 0.004031198974240432,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.63184373883996e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.00278994396654889,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.998,
+  "success_rate_sd": 0.004472135954999584,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.99
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 2.0,
+  "terminal_mean": {
+   "success": 199.6,
+   "prohibited_collision": 0.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.89370363761921,
+  "residual_abs_mean_m": 0.00406056027254563,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.8148005474358796e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005812894724309445,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.9950000000000001,
+  "success_rate_sd": 0.0035355339059327407,
+  "success_rate_per_seed": [
+   0.995,
+   1.0,
+   0.995,
+   0.99,
+   0.995
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.0,
+  "terminal_mean": {
+   "success": 199.0,
+   "prohibited_collision": 1.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.894724150259817,
+  "residual_abs_mean_m": 0.004261195602863781,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.003841740122654301,
+  "achieved_grasp_offset_abs_mean_m": 0.0079184713633731,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.913,
+  "success_rate_sd": 0.018907670401189056,
+  "success_rate_per_seed": [
+   0.935,
+   0.91,
+   0.885,
+   0.91,
+   0.925
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 27.4,
+  "terminal_mean": {
+   "success": 182.6,
+   "prohibited_collision": 17.4,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.89941251537647,
+  "residual_abs_mean_m": 0.004573182852362489,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.007683871167417237,
+  "achieved_grasp_offset_abs_mean_m": 0.008752820886671541,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "combined_robust_repeat",
+  "role": "selected",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.893200103282928,
+  "residual_abs_mean_m": 0.004036446035299207,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0008863551297145023,
+  "achieved_grasp_offset_abs_mean_m": 0.001589670196175575,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "bias_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.901750054359436,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.005017342310165987,
+  "achieved_grasp_offset_abs_mean_m": 0.0015898575633764267,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.965,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.965
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 6,
+  "unsafe_events_mean": 11.0,
+  "terminal_mean": {
+   "success": 193.0,
+   "prohibited_collision": 1.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889896496589937,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 2.2069302617965898e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0069537858680351495,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "boundary_z_15",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.671781323850155e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.01508786976337433,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "clean",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.4622472281189403e-06,
+  "achieved_grasp_offset_abs_mean_m": 5.807168083265424e-05,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "delay_2step",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.371843152417569e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0015895289555191993,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "grasp_10mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 3.387082368135452e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010739265494048595,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "grasp_15mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.945,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.945
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 12.0,
+  "terminal_mean": {
+   "success": 189.0,
+   "prohibited_collision": 11.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892857266481592,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 4.941269795381231e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831684455275536,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "grasp_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 8.651760072098114e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.0027900798129849138,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "grasp_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.8164735520258548e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005813335850834846,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "mixed_id",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.985,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.985
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 3.0,
+  "terminal_mean": {
+   "success": 197.0,
+   "prohibited_collision": 3.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.896700583133601,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0038420247645262863,
+  "achieved_grasp_offset_abs_mean_m": 0.007918370952829719,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "mixed_ood",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.945,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.945
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 13.0,
+  "terminal_mean": {
+   "success": 189.0,
+   "prohibited_collision": 11.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.897354564969501,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.007684750069420261,
+  "achieved_grasp_offset_abs_mean_m": 0.008753319606184959,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_calibrated",
+  "role": "baseline",
+  "condition": "noise_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889750123023987,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 0.0008863076869874931,
+  "achieved_grasp_offset_abs_mean_m": 0.0015898556262254715,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "bias_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.901750054359436,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.001589246466755867,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.96,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.96
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 8,
+  "unsafe_events_mean": 10.0,
+  "terminal_mean": {
+   "success": 192.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891406372189522,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.006941333529539406,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "boundary_z_15",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.015088221579790116,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "clean",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 5.807168083265424e-05,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "delay_2step",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.0015897082164883613,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "grasp_10mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.010739014856517315,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "grasp_15mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.94,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.94
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 12.0,
+  "terminal_mean": {
+   "success": 188.0,
+   "prohibited_collision": 12.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892021399863223,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.014830901101231576,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "grasp_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.0027900798129849138,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "grasp_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.889500124454498,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.005813424363732338,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "mixed_id",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.99,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.99
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 2.0,
+  "terminal_mean": {
+   "success": 198.0,
+   "prohibited_collision": 2.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.891919309442693,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.007918343096971512,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "mixed_ood",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.905,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.905
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 14.0,
+  "terminal_mean": {
+   "success": 181.0,
+   "prohibited_collision": 9.0,
+   "drop": 0.0,
+   "release_timeout": 10.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 5.158563605988223,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.008753660693764686,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_ema",
+  "role": "baseline",
+  "condition": "noise_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.890500125885009,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.0015892038866877555,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "bias_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.890750117301941,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.0015896522998809814,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.96,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.96
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 6,
+  "unsafe_events_mean": 10.0,
+  "terminal_mean": {
+   "success": 192.0,
+   "prohibited_collision": 2.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.892448032895724,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.006947701432041286,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "boundary_z_15",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.99,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.99
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 2.0,
+  "terminal_mean": {
+   "success": 198.0,
+   "prohibited_collision": 0.0,
+   "drop": 2.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.8921718332502575,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.01508778214454651,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "clean",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 5.807168083265424e-05,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "delay_2step",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.890750117301941,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.001589793637394905,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "grasp_10mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.395,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.395
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 126.0,
+  "terminal_mean": {
+   "success": 79.0,
+   "prohibited_collision": 121.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.903164664401284,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.010739285498857498,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "grasp_15mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.055,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.055
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 190.0,
+  "terminal_mean": {
+   "success": 11.0,
+   "prohibited_collision": 189.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.927272839979692,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.014832220561802388,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "grasp_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.890750117301941,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.002790202486794442,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "grasp_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.955,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.955
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 9.0,
+  "terminal_mean": {
+   "success": 191.0,
+   "prohibited_collision": 9.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.8934556152183974,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.005812733471393585,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "mixed_id",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.695,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.695
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 65.0,
+  "terminal_mean": {
+   "success": 139.0,
+   "prohibited_collision": 61.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.894244718894684,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.00791827738750726,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "mixed_ood",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.735,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.735
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 54.0,
+  "terminal_mean": {
+   "success": 147.0,
+   "prohibited_collision": 53.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.8979592939623355,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.008752285018563271,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "geometry_fixed",
+  "role": "baseline",
+  "condition": "noise_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.890750117301941,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.0015899531915783882,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "bias_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.725,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.725
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 48.0,
+  "terminal_mean": {
+   "success": 145.0,
+   "prohibited_collision": 46.0,
+   "drop": 2.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 7.0
+  },
+  "completion_time_success_mean_s": 4.882758699614426,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.001589857079088688,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.48,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.48
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 7,
+  "unsafe_events_mean": 106.0,
+  "terminal_mean": {
+   "success": 96.0,
+   "prohibited_collision": 89.0,
+   "drop": 1.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 7.0
+  },
+  "completion_time_success_mean_s": 4.873958428700765,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.006945075959430457,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "boundary_z_15",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.525,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.525
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 89.0,
+  "terminal_mean": {
+   "success": 105.0,
+   "prohibited_collision": 47.0,
+   "drop": 42.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 6.0
+  },
+  "completion_time_success_mean_s": 4.888095324380057,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.015088488161563874,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "clean",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 5.807168083265424e-05,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "delay_2step",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.725,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.725
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 48.0,
+  "terminal_mean": {
+   "success": 145.0,
+   "prohibited_collision": 46.0,
+   "drop": 2.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 7.0
+  },
+  "completion_time_success_mean_s": 4.882758699614426,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.0015897568315267562,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "grasp_10mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.47,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.47
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 107.0,
+  "terminal_mean": {
+   "success": 94.0,
+   "prohibited_collision": 90.0,
+   "drop": 14.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 2.0
+  },
+  "completion_time_success_mean_s": 4.888829865354173,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.010738746151328088,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "grasp_15mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.385,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.385
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 122.0,
+  "terminal_mean": {
+   "success": 77.0,
+   "prohibited_collision": 115.0,
+   "drop": 7.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 1.0
+  },
+  "completion_time_success_mean_s": 4.906493577090177,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.014831429198384285,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "grasp_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.725,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.725
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 50.0,
+  "terminal_mean": {
+   "success": 145.0,
+   "prohibited_collision": 45.0,
+   "drop": 4.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 6.0
+  },
+  "completion_time_success_mean_s": 4.884827676312677,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.002789417097810656,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "grasp_5mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.64,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.64
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 68.0,
+  "terminal_mean": {
+   "success": 128.0,
+   "prohibited_collision": 51.0,
+   "drop": 12.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 9.0
+  },
+  "completion_time_success_mean_s": 4.878906339406967,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.005812814570963383,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "mixed_id",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.595,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.595
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 80.0,
+  "terminal_mean": {
+   "success": 119.0,
+   "prohibited_collision": 67.0,
+   "drop": 11.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 3.0
+  },
+  "completion_time_success_mean_s": 4.887395045336555,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.00791831802111119,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "mixed_ood",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.59,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.59
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 75.0,
+  "terminal_mean": {
+   "success": 118.0,
+   "prohibited_collision": 61.0,
+   "drop": 13.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 8.0
+  },
+  "completion_time_success_mean_s": 4.891101772502317,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.008753307349979877,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "nominal",
+  "role": "baseline",
+  "condition": "noise_2mm",
+  "seeds": [
+   null
+  ],
+  "success_rate_mean": 0.73,
+  "success_rate_sd": null,
+  "success_rate_per_seed": [
+   0.73
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 47.0,
+  "terminal_mean": {
+   "success": 146.0,
+   "prohibited_collision": 46.0,
+   "drop": 1.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 7.0
+  },
+  "completion_time_success_mean_s": 4.881506929658864,
+  "residual_abs_mean_m": 0.0,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": null,
+  "achieved_grasp_offset_abs_mean_m": 0.0015895910561084746,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.33399999999999996,
+  "success_rate_sd": 0.13835642377569607,
+  "success_rate_per_seed": [
+   0.36,
+   0.47,
+   0.135,
+   0.445,
+   0.26
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 123.8,
+  "terminal_mean": {
+   "success": 66.8,
+   "prohibited_collision": 46.0,
+   "drop": 77.2,
+   "release_timeout": 0.0,
+   "episode_timeout": 10.0
+  },
+  "completion_time_success_mean_s": 4.8976273280790945,
+  "residual_abs_mean_m": 0.017919991743179674,
+  "residual_saturated_episode_frac": 0.382,
+  "calibration_error_max_axis_mean_m": 0.005017484494484961,
+  "achieved_grasp_offset_abs_mean_m": 0.0015899085700511934,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.25199999999999995,
+  "success_rate_sd": 0.12412695114277156,
+  "success_rate_per_seed": [
+   0.28,
+   0.285,
+   0.1,
+   0.425,
+   0.17
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 35,
+  "unsafe_events_mean": 150.0,
+  "terminal_mean": {
+   "success": 50.4,
+   "prohibited_collision": 62.4,
+   "drop": 76.4,
+   "release_timeout": 0.0,
+   "episode_timeout": 3.8
+  },
+  "completion_time_success_mean_s": 4.886521731926314,
+  "residual_abs_mean_m": 0.017356754875818628,
+  "residual_saturated_episode_frac": 0.33999999999999997,
+  "calibration_error_max_axis_mean_m": 2.2019150881473985e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0069450790440717695,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.28300000000000003,
+  "success_rate_sd": 0.0811326075015465,
+  "success_rate_per_seed": [
+   0.245,
+   0.365,
+   0.2,
+   0.375,
+   0.23
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 134.2,
+  "terminal_mean": {
+   "success": 56.6,
+   "prohibited_collision": 38.8,
+   "drop": 95.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 9.6
+  },
+  "completion_time_success_mean_s": 4.8947987162384,
+  "residual_abs_mean_m": 0.01786952298888097,
+  "residual_saturated_episode_frac": 0.40099999999999997,
+  "calibration_error_max_axis_mean_m": 4.648974444717169e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.015087602436542513,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.558,
+  "success_rate_sd": 0.5165462225203085,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   0.0,
+   0.0,
+   0.79
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 40.0,
+  "terminal_mean": {
+   "success": 111.6,
+   "prohibited_collision": 40.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 48.4
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.017484385942597196,
+  "residual_saturated_episode_frac": 0.4,
+  "calibration_error_max_axis_mean_m": 1.2040933133903308e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.00010136678267735989,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.33599999999999997,
+  "success_rate_sd": 0.14531861546271352,
+  "success_rate_per_seed": [
+   0.37,
+   0.455,
+   0.13,
+   0.475,
+   0.25
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 121.8,
+  "terminal_mean": {
+   "success": 67.2,
+   "prohibited_collision": 45.2,
+   "drop": 76.4,
+   "release_timeout": 0.0,
+   "episode_timeout": 11.2
+  },
+  "completion_time_success_mean_s": 4.898850419399963,
+  "residual_abs_mean_m": 0.017961189458961968,
+  "residual_saturated_episode_frac": 0.36900000000000005,
+  "calibration_error_max_axis_mean_m": 8.374571066633508e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0015895762294530868,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.3,
+  "success_rate_sd": 0.07599342076785333,
+  "success_rate_per_seed": [
+   0.28,
+   0.405,
+   0.195,
+   0.325,
+   0.295
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 132.0,
+  "terminal_mean": {
+   "success": 60.0,
+   "prohibited_collision": 63.0,
+   "drop": 67.8,
+   "release_timeout": 0.0,
+   "episode_timeout": 9.2
+  },
+  "completion_time_success_mean_s": 4.9029029862373035,
+  "residual_abs_mean_m": 0.01795096817600251,
+  "residual_saturated_episode_frac": 0.392,
+  "calibration_error_max_axis_mean_m": 3.3742818515747785e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.010739067882299422,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.281,
+  "success_rate_sd": 0.0778941589594496,
+  "success_rate_per_seed": [
+   0.26,
+   0.385,
+   0.175,
+   0.265,
+   0.32
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 136.8,
+  "terminal_mean": {
+   "success": 56.2,
+   "prohibited_collision": 79.0,
+   "drop": 57.6,
+   "release_timeout": 0.0,
+   "episode_timeout": 7.2
+  },
+  "completion_time_success_mean_s": 4.895070701571143,
+  "residual_abs_mean_m": 0.017928785744857068,
+  "residual_saturated_episode_frac": 0.383,
+  "calibration_error_max_axis_mean_m": 4.874915839582172e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.014831961251795292,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.332,
+  "success_rate_sd": 0.1316054710108968,
+  "success_rate_per_seed": [
+   0.375,
+   0.445,
+   0.13,
+   0.435,
+   0.275
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 123.6,
+  "terminal_mean": {
+   "success": 66.4,
+   "prohibited_collision": 46.4,
+   "drop": 76.8,
+   "release_timeout": 0.0,
+   "episode_timeout": 10.4
+  },
+  "completion_time_success_mean_s": 4.9011073009874,
+  "residual_abs_mean_m": 0.01796571301189175,
+  "residual_saturated_episode_frac": 0.37700000000000006,
+  "calibration_error_max_axis_mean_m": 8.716771517924826e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.002789685463998467,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.30900000000000005,
+  "success_rate_sd": 0.09983736775376242,
+  "success_rate_per_seed": [
+   0.32,
+   0.395,
+   0.165,
+   0.405,
+   0.26
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 130.2,
+  "terminal_mean": {
+   "success": 61.8,
+   "prohibited_collision": 48.4,
+   "drop": 79.4,
+   "release_timeout": 0.0,
+   "episode_timeout": 10.4
+  },
+  "completion_time_success_mean_s": 4.897896966899376,
+  "residual_abs_mean_m": 0.017956497259071634,
+  "residual_saturated_episode_frac": 0.38100000000000006,
+  "calibration_error_max_axis_mean_m": 1.8205848755314945e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005813073202967644,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.3330000000000001,
+  "success_rate_sd": 0.11877499736897493,
+  "success_rate_per_seed": [
+   0.28,
+   0.475,
+   0.165,
+   0.405,
+   0.34
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 125.6,
+  "terminal_mean": {
+   "success": 66.6,
+   "prohibited_collision": 57.8,
+   "drop": 67.2,
+   "release_timeout": 0.0,
+   "episode_timeout": 8.4
+  },
+  "completion_time_success_mean_s": 4.886978239012104,
+  "residual_abs_mean_m": 0.017929305946171682,
+  "residual_saturated_episode_frac": 0.376,
+  "calibration_error_max_axis_mean_m": 0.0038415763080993206,
+  "achieved_grasp_offset_abs_mean_m": 0.007918349781073631,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.314,
+  "success_rate_sd": 0.12234173449808532,
+  "success_rate_per_seed": [
+   0.275,
+   0.41,
+   0.14,
+   0.45,
+   0.295
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 129.4,
+  "terminal_mean": {
+   "success": 62.8,
+   "prohibited_collision": 56.6,
+   "drop": 70.8,
+   "release_timeout": 0.0,
+   "episode_timeout": 9.8
+  },
+  "completion_time_success_mean_s": 4.908388702062583,
+  "residual_abs_mean_m": 0.017919964486461028,
+  "residual_saturated_episode_frac": 0.37700000000000006,
+  "calibration_error_max_axis_mean_m": 0.007684193357137702,
+  "achieved_grasp_offset_abs_mean_m": 0.008752613194286824,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "final",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.339,
+  "success_rate_sd": 0.14358795214083944,
+  "success_rate_per_seed": [
+   0.375,
+   0.455,
+   0.125,
+   0.47,
+   0.27
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 122.2,
+  "terminal_mean": {
+   "success": 67.8,
+   "prohibited_collision": 45.4,
+   "drop": 76.6,
+   "release_timeout": 0.0,
+   "episode_timeout": 10.2
+  },
+  "completion_time_success_mean_s": 4.903301830377965,
+  "residual_abs_mean_m": 0.017960938946429722,
+  "residual_saturated_episode_frac": 0.379,
+  "calibration_error_max_axis_mean_m": 0.000886392152557164,
+  "achieved_grasp_offset_abs_mean_m": 0.0015895978212356568,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "bias_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.65,
+  "success_rate_sd": 0.08923284148787372,
+  "success_rate_per_seed": [
+   0.63,
+   0.535,
+   0.605,
+   0.74,
+   0.74
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 62.0,
+  "terminal_mean": {
+   "success": 130.0,
+   "prohibited_collision": 39.6,
+   "drop": 19.4,
+   "release_timeout": 0.0,
+   "episode_timeout": 11.0
+  },
+  "completion_time_success_mean_s": 4.908035815679929,
+  "residual_abs_mean_m": 0.008184767760611066,
+  "residual_saturated_episode_frac": 0.016,
+  "calibration_error_max_axis_mean_m": 0.005017416513175703,
+  "achieved_grasp_offset_abs_mean_m": 0.0015896353274583816,
+  "training_support": "support edge (bias bound 5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "boundary_x_minus_7",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.42299999999999993,
+  "success_rate_sd": 0.19221082175569615,
+  "success_rate_per_seed": [
+   0.455,
+   0.42,
+   0.11,
+   0.5,
+   0.63
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 35,
+  "unsafe_events_mean": 132.8,
+  "terminal_mean": {
+   "success": 84.6,
+   "prohibited_collision": 86.2,
+   "drop": 13.2,
+   "release_timeout": 0.0,
+   "episode_timeout": 9.0
+  },
+  "completion_time_success_mean_s": 4.884850541483933,
+  "residual_abs_mean_m": 0.008205107798665855,
+  "residual_saturated_episode_frac": 0.016999999999999998,
+  "calibration_error_max_axis_mean_m": 2.2036967581150734e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.006944623525533794,
+  "training_support": "extrapolation toward the giver palm (beyond -5 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "boundary_z_15",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.4710000000000001,
+  "success_rate_sd": 0.03342902930089356,
+  "success_rate_per_seed": [
+   0.45,
+   0.445,
+   0.445,
+   0.505,
+   0.51
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 96.2,
+  "terminal_mean": {
+   "success": 94.2,
+   "prohibited_collision": 38.2,
+   "drop": 55.8,
+   "release_timeout": 0.0,
+   "episode_timeout": 11.8
+  },
+  "completion_time_success_mean_s": 4.905531600375778,
+  "residual_abs_mean_m": 0.008298401807443827,
+  "residual_saturated_episode_frac": 0.037,
+  "calibration_error_max_axis_mean_m": 4.666856490075589e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.01508785393834114,
+  "training_support": "extrapolation in z (beyond +-10 mm)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "clean",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 1.0,
+  "success_rate_sd": 0.0,
+  "success_rate_per_seed": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 0.0,
+  "terminal_mean": {
+   "success": 200.0,
+   "prohibited_collision": 0.0,
+   "drop": 0.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 0.0
+  },
+  "completion_time_success_mean_s": 4.849999904632568,
+  "residual_abs_mean_m": 0.007703717266622277,
+  "residual_saturated_episode_frac": 0.0,
+  "calibration_error_max_axis_mean_m": 1.4622472281189403e-06,
+  "achieved_grasp_offset_abs_mean_m": 5.8071680832654245e-05,
+  "training_support": "in support (zero)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "delay_2step",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.6449999999999999,
+  "success_rate_sd": 0.09082951062292473,
+  "success_rate_per_seed": [
+   0.62,
+   0.53,
+   0.6,
+   0.735,
+   0.74
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 62.4,
+  "terminal_mean": {
+   "success": 129.0,
+   "prohibited_collision": 40.2,
+   "drop": 18.6,
+   "release_timeout": 0.0,
+   "episode_timeout": 12.2
+  },
+  "completion_time_success_mean_s": 4.908660468076879,
+  "residual_abs_mean_m": 0.00817723147031878,
+  "residual_saturated_episode_frac": 0.014000000000000002,
+  "calibration_error_max_axis_mean_m": 8.372199199766327e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.0015899298638105395,
+  "training_support": "support edge (delay <= 2 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "grasp_10mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.466,
+  "success_rate_sd": 0.06097130472607583,
+  "success_rate_per_seed": [
+   0.4,
+   0.44,
+   0.565,
+   0.46,
+   0.465
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 104.0,
+  "terminal_mean": {
+   "success": 93.2,
+   "prohibited_collision": 77.2,
+   "drop": 24.6,
+   "release_timeout": 0.0,
+   "episode_timeout": 5.0
+  },
+  "completion_time_success_mean_s": 4.8963346406879085,
+  "residual_abs_mean_m": 0.008389428020795656,
+  "residual_saturated_episode_frac": 0.024,
+  "calibration_error_max_axis_mean_m": 3.367259779770393e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.01073898959159851,
+  "training_support": "interpolation in x; z = +-10 mm is the support edge",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "grasp_15mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.403,
+  "success_rate_sd": 0.08174655956063229,
+  "success_rate_per_seed": [
+   0.31,
+   0.4,
+   0.535,
+   0.385,
+   0.385
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 120.0,
+  "terminal_mean": {
+   "success": 80.6,
+   "prohibited_collision": 99.2,
+   "drop": 19.0,
+   "release_timeout": 0.0,
+   "episode_timeout": 1.2
+  },
+  "completion_time_success_mean_s": 4.9056955081686775,
+  "residual_abs_mean_m": 0.008562091363095124,
+  "residual_saturated_episode_frac": 0.022,
+  "calibration_error_max_axis_mean_m": 4.88979623216892e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.01483174353092909,
+  "training_support": "support corner (x = +15 mm and z = +-10 mm are the training maxima)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "grasp_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.6439999999999999,
+  "success_rate_sd": 0.08784930278607792,
+  "success_rate_per_seed": [
+   0.62,
+   0.545,
+   0.585,
+   0.72,
+   0.75
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 67.0,
+  "terminal_mean": {
+   "success": 128.8,
+   "prohibited_collision": 39.8,
+   "drop": 20.2,
+   "release_timeout": 0.0,
+   "episode_timeout": 11.2
+  },
+  "completion_time_success_mean_s": 4.905011091660117,
+  "residual_abs_mean_m": 0.008207141916519712,
+  "residual_saturated_episode_frac": 0.016,
+  "calibration_error_max_axis_mean_m": 8.666054364312004e-06,
+  "achieved_grasp_offset_abs_mean_m": 0.0027902681711129843,
+  "training_support": "interpolation",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "grasp_5mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.5660000000000001,
+  "success_rate_sd": 0.08605230967266364,
+  "success_rate_per_seed": [
+   0.615,
+   0.505,
+   0.445,
+   0.63,
+   0.635
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 87.4,
+  "terminal_mean": {
+   "success": 113.2,
+   "prohibited_collision": 52.6,
+   "drop": 22.6,
+   "release_timeout": 0.0,
+   "episode_timeout": 11.6
+  },
+  "completion_time_success_mean_s": 4.89984924214895,
+  "residual_abs_mean_m": 0.008307136690628542,
+  "residual_saturated_episode_frac": 0.027000000000000003,
+  "calibration_error_max_axis_mean_m": 1.8201888247858733e-05,
+  "achieved_grasp_offset_abs_mean_m": 0.005812708780169487,
+  "training_support": "interpolation (x = -5 mm is the support edge)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "mixed_id",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.563,
+  "success_rate_sd": 0.05953990258641678,
+  "success_rate_per_seed": [
+   0.52,
+   0.48,
+   0.595,
+   0.61,
+   0.61
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 83.2,
+  "terminal_mean": {
+   "success": 112.6,
+   "prohibited_collision": 59.2,
+   "drop": 18.8,
+   "release_timeout": 0.0,
+   "episode_timeout": 9.4
+  },
+  "completion_time_success_mean_s": 4.906894920358528,
+  "residual_abs_mean_m": 0.008271439794717433,
+  "residual_saturated_episode_frac": 0.014000000000000002,
+  "calibration_error_max_axis_mean_m": 0.003841535417581326,
+  "achieved_grasp_offset_abs_mean_m": 0.007918551428243516,
+  "training_support": "in support (same distribution family)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "mixed_ood",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.537,
+  "success_rate_sd": 0.048425200051212994,
+  "success_rate_per_seed": [
+   0.51,
+   0.47,
+   0.54,
+   0.58,
+   0.585
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 88.6,
+  "terminal_mean": {
+   "success": 107.4,
+   "prohibited_collision": 59.8,
+   "drop": 24.2,
+   "release_timeout": 0.0,
+   "episode_timeout": 8.6
+  },
+  "completion_time_success_mean_s": 4.905719345066759,
+  "residual_abs_mean_m": 0.008352491108843191,
+  "residual_saturated_episode_frac": 0.02,
+  "calibration_error_max_axis_mean_m": 0.007684264278326737,
+  "achieved_grasp_offset_abs_mean_m": 0.008752847574651241,
+  "training_support": "extrapolation (grasp x down to -7 mm, z to +-15 mm; bias 10 mm, noise 4 mm, delay 4 steps)",
+  "alias_of": null
+ },
+ {
+  "family": "residual_robust_history",
+  "role": "selected",
+  "condition": "noise_2mm",
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ],
+  "success_rate_mean": 0.65,
+  "success_rate_sd": 0.08710625695092171,
+  "success_rate_per_seed": [
+   0.625,
+   0.545,
+   0.6,
+   0.74,
+   0.74
+  ],
+  "scheduled_per_seed": 200,
+  "invalid_resets_total": 0,
+  "unsafe_events_mean": 62.2,
+  "terminal_mean": {
+   "success": 130.0,
+   "prohibited_collision": 39.8,
+   "drop": 18.8,
+   "release_timeout": 0.0,
+   "episode_timeout": 11.4
+  },
+  "completion_time_success_mean_s": 4.907495922510433,
+  "residual_abs_mean_m": 0.00816908437278014,
+  "residual_saturated_episode_frac": 0.016999999999999998,
+  "calibration_error_max_axis_mean_m": 0.0008863858888234972,
+  "achieved_grasp_offset_abs_mean_m": 0.001589642159640789,
+  "training_support": "support edge (noise std <= 2 mm)",
+  "alias_of": null
+ }
+]

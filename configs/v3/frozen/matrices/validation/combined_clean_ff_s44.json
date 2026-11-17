@@ -1,0 +1,51 @@
+{
+ "name": "v3_validation_combined_clean_ff_s44",
+ "suite": "configs/v3/suites/validation.jsonl",
+ "num_envs": 240,
+ "protocol": "configs/v3/frozen/training/combined_clean_ff.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "combined_clean_ff_s44__step0",
+   "method": "combined",
+   "training_seed": 44,
+   "role": "untrained_control",
+   "checkpoint": "combined_clean_ff_s44/checkpoints/step_000000000.pt"
+  },
+  {
+   "id": "combined_clean_ff_s44__step_002031616",
+   "method": "combined",
+   "training_seed": 44,
+   "role": "candidate",
+   "checkpoint": "combined_clean_ff_s44/checkpoints/step_002031616.pt"
+  },
+  {
+   "id": "combined_clean_ff_s44__step_004030464",
+   "method": "combined",
+   "training_seed": 44,
+   "role": "candidate",
+   "checkpoint": "combined_clean_ff_s44/checkpoints/step_004030464.pt"
+  },
+  {
+   "id": "combined_clean_ff_s44__step_006029312",
+   "method": "combined",
+   "training_seed": 44,
+   "role": "candidate",
+   "checkpoint": "combined_clean_ff_s44/checkpoints/step_006029312.pt"
+  },
+  {
+   "id": "combined_clean_ff_s44__step_008028160",
+   "method": "combined",
+   "training_seed": 44,
+   "role": "candidate",
+   "checkpoint": "combined_clean_ff_s44/checkpoints/step_008028160.pt"
+  },
+  {
+   "id": "combined_clean_ff_s44__step_010027008",
+   "method": "combined",
+   "training_seed": 44,
+   "role": "candidate",
+   "checkpoint": "combined_clean_ff_s44/checkpoints/step_010027008.pt"
+  }
+ ]
+}

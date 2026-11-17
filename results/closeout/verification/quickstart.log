@@ -1,0 +1,171 @@
+$ git clone https://github.com/ywen0511/CSCI645-Project.git CSCI645-Project
+Cloning into 'CSCI645-Project'...
+rc=0
+$ git checkout v2.1.1
+Note: switching to 'v2.1.1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at cfa33d7 Closeout: patch release v2.1.1 - hash every source-archive member, strict verifier, verify stage runs verify_archives; docs/report retargeted to v2.1.1; ERRATA C9
+rc=0
+$ python3.13 -m venv .venv-analysis
+rc=0
+$ .venv-analysis/bin/pip install -r configs/closeout/requirements-analysis.txt
+Collecting contourpy==1.4.0 (from -r configs/closeout/requirements-analysis.txt (line 5))
+  Using cached contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler==0.12.1 (from -r configs/closeout/requirements-analysis.txt (line 6))
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools==4.68.0 (from -r configs/closeout/requirements-analysis.txt (line 7))
+  Using cached fonttools-4.68.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+Collecting ImageIO==2.38.1 (from -r configs/closeout/requirements-analysis.txt (line 8))
+  Using cached imageio-2.38.1-py3-none-any.whl.metadata (9.7 kB)
+Collecting imageio-ffmpeg==0.8.1 (from -r configs/closeout/requirements-analysis.txt (line 9))
+  Using cached imageio_ffmpeg-0.8.1-py3-none-manylinux_2_28_x86_64.whl.metadata (1.5 kB)
+Collecting kiwisolver==1.5.1 (from -r configs/closeout/requirements-analysis.txt (line 10))
+  Using cached kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting lxml==6.1.3 (from -r configs/closeout/requirements-analysis.txt (line 11))
+  Using cached lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting Markdown==3.11.2 (from -r configs/closeout/requirements-analysis.txt (line 12))
+  Using cached markdown-3.11.2-py3-none-any.whl.metadata (5.1 kB)
+Collecting matplotlib==3.11.2 (from -r configs/closeout/requirements-analysis.txt (line 13))
+  Using cached matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting numpy==2.4.4 (from -r configs/closeout/requirements-analysis.txt (line 14))
+  Using cached numpy-2.4.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting packaging==26.3 (from -r configs/closeout/requirements-analysis.txt (line 15))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow==13.0.0 (from -r configs/closeout/requirements-analysis.txt (line 16))
+  Using cached pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing==3.3.3 (from -r configs/closeout/requirements-analysis.txt (line 17))
+  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting pypdf==6.21.4 (from -r configs/closeout/requirements-analysis.txt (line 18))
+  Using cached pypdf-6.21.4-py3-none-any.whl.metadata (7.6 kB)
+Collecting python-dateutil==4.0.0 (from -r configs/closeout/requirements-analysis.txt (line 19))
+  Using cached python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting python-pptx==1.0.2 (from -r configs/closeout/requirements-analysis.txt (line 20))
+  Using cached python_pptx-1.0.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting typing_extensions==4.16.0 (from -r configs/closeout/requirements-analysis.txt (line 21))
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting tzdata==2026.6 (from -r configs/closeout/requirements-analysis.txt (line 22))
+  Using cached tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting xlsxwriter==3.3.1 (from -r configs/closeout/requirements-analysis.txt (line 23))
+  Using cached xlsxwriter-3.3.1-py3-none-any.whl.metadata (2.9 kB)
+Using cached contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Using cached fonttools-4.68.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+Using cached imageio-2.38.1-py3-none-any.whl (328 kB)
+Using cached imageio_ffmpeg-0.8.1-py3-none-manylinux_2_28_x86_64.whl (68.0 MB)
+Using cached kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+Using cached lxml-6.1.3-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+Using cached markdown-3.11.2-py3-none-any.whl (114 kB)
+Using cached matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+Using cached numpy-2.4.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Using cached pillow-13.0.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Using cached pypdf-6.21.4-py3-none-any.whl (410 kB)
+Using cached python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Using cached python_pptx-1.0.2-py3-none-any.whl (472 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Using cached xlsxwriter-3.3.1-py3-none-any.whl (180 kB)
+Installing collected packages: xlsxwriter, tzdata, typing_extensions, pypdf, pyparsing, pillow, packaging, numpy, Markdown, lxml, kiwisolver, imageio-ffmpeg, fonttools, cycler, python-pptx, python-dateutil, ImageIO, contourpy, matplotlib
+
+Successfully installed ImageIO-2.38.1 Markdown-3.11.2 contourpy-1.4.0 cycler-0.12.1 fonttools-4.68.0 imageio-ffmpeg-0.8.1 kiwisolver-1.5.1 lxml-6.1.3 matplotlib-3.11.2 numpy-2.4.4 packaging-26.3 pillow-13.0.0 pyparsing-3.3.3 pypdf-6.21.4 python-dateutil-4.0.0 python-pptx-1.0.2 typing_extensions-4.16.0 tzdata-2026.6 xlsxwriter-3.3.1
+
+[notice] A new release of pip is available: 25.2 -> 26.3
+[notice] To update, run: <FRESH>/CSCI645-Project/.venv-analysis/bin/python3.13 -m pip install --upgrade pip
+rc=0
+$ env -u GH_TOKEN -u GITHUB_TOKEN $PY scripts/closeout.py --work "$W" download --tag v2.1.1
+archive_inventories.json: 329067 bytes
+checkpoints-combined-seed11.tar.gz: 6575751 bytes
+checkpoints-combined-seed22.tar.gz: 6566103 bytes
+checkpoints-combined-seed33.tar.gz: 6574753 bytes
+checkpoints-combined_no_phase-seed11.tar.gz: 6498804 bytes
+checkpoints-combined_no_phase-seed22.tar.gz: 6499428 bytes
+checkpoints-combined_no_phase-seed33.tar.gz: 6498571 bytes
+checkpoints-pilot.tar.gz: 14000786 bytes
+checkpoints-residual-seed11.tar.gz: 6571746 bytes
+checkpoints-residual-seed22.tar.gz: 6569989 bytes
+checkpoints-residual-seed33.tar.gz: 6570897 bytes
+checkpoints.json: 72807 bytes
+closeout-negative-controls.tar.gz: 426838 bytes
+closeout-repeatability.tar.gz: 23488043 bytes
+closeout-results.tar.gz: 3653486 bytes
+configs-and-docs.tar.gz: 1773441 bytes
+deck.pdf: 711258 bytes
+deck.pptx: 1035798 bytes
+ERRATA.md: 7256 bytes
+logs.tar.gz: 320157 bytes
+manifest.json: 11689 bytes
+raw-audit.tar.gz: 37243898 bytes
+raw-development.tar.gz: 37603020 bytes
+raw-final-eval.tar.gz: 18646755 bytes
+raw-pilot-eval.tar.gz: 5976670 bytes
+raw-validation.tar.gz: 4817877 bytes
+repeatability.md: 7333 bytes
+report-v1-corrected.pdf: 523591 bytes
+report.md: 31631 bytes
+report.pdf: 642430 bytes
+REPRODUCE.md: 7574 bytes
+runs.json: 31528 bytes
+SHA256SUMS: 3296 bytes
+source-v2.1.1.tar.gz: 8735089 bytes
+v2.0.0-originals.tar.gz: 5523032 bytes
+VERIFICATION.md: 4864 bytes
+videos.json: 27795 bytes
+videos.tar.gz: 5303222 bytes
+downloaded 38 assets to <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python -I <FRESH>/CSCI645-Project/scripts/verify_archives.py --bundle <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1 --extract <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x
+[closeout] download_v2.1.1: record <FRESH>/CSCI645-Project/closeout_work/records/download_v2.1.1.json
+rc=0
+$ $PY scripts/closeout.py --work "$W" checkout
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) git clone --quiet https://github.com/ywen0511/CSCI645-Project.git <FRESH>/CSCI645-Project/closeout_work/src/experiment-v2
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work/src/experiment-v2) git -c advice.detachedHead=false checkout --quiet experiment-v2
+[closeout] checkout: record <FRESH>/CSCI645-Project/closeout_work/records/checkout.json
+rc=0
+$ $PY scripts/closeout.py --work "$W" check
+[closeout] check: record <FRESH>/CSCI645-Project/closeout_work/records/check.json
+rc=0
+$ $PY scripts/closeout.py --work "$W" regen
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_select.py --train-root <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x --validation <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/final/validation --suite <FRESH>/CSCI645-Project/configs/v2/suites/validation.jsonl --output <FRESH>/CSCI645-Project/closeout_work/regen/final/selection
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_analyze_final.py --final <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/final/eval --manifest <FRESH>/CSCI645-Project/configs/v2/matrices/final/final_manifest.json --selection <FRESH>/CSCI645-Project/closeout_work/regen/final/selection --train <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x --output <FRESH>/CSCI645-Project/closeout_work/regen/summary
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_analyze_dev.py --dev <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics --n-boot 4000
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_select_constants.py --dev <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/constants_v2.json
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_analyze_pilots.py --pilot <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/pilot --output <FRESH>/CSCI645-Project/closeout_work/regen/pilot
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-position_stress-0000 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/geometry_zero.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_geometry_1cm_x+003mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_final_s11.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_init_s33.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_geometry_v2dev-position_stress-0000.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-position_stress-0000 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/nominal.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_nominal_x+004mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/residual_final_s22.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_nominal_v2dev-position_stress-0000.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-joint_early_stress-0000 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/geometry_zero.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_geometry_1cm_x+003mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_final_s11.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_init_s33.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_geometry_v2dev-joint_early_stress-0000.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-joint_early_stress-0000 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/nominal.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_nominal_x+004mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/residual_final_s22.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_nominal_v2dev-joint_early_stress-0000.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-joint_late_stress-0000 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/geometry_zero.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_geometry_1cm_x+003mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_final_s11.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_init_s33.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_geometry_v2dev-joint_late_stress-0000.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-joint_late_stress-0000 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/nominal.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_nominal_x+004mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/residual_final_s22.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_nominal_v2dev-joint_late_stress-0000.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-position_in-0000 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/geometry_zero.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_geometry_1cm_x+003mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_final_s11.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/combined_init_s33.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_geometry_v2dev-position_in-0000.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-position_in-0000 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/nominal.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/controls/traces/const_nominal_x+004mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/learned/traces/residual_final_s22.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/trace_nominal_v2dev-position_in-0000.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-joint_early_stress-0003 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/nominal.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/residual_final_s22.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/failtrace_residual_drop_v2dev-joint_early_stress-0003.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-joint_early_stress-0035 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/geometry_zero.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/const_geometry_1cm_x+003mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/combined_final_s11.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/failtrace_geometry_deep_insertion_v2dev-joint_early_stress-0035.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-joint_early_stress-0017 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/geometry_zero.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/const_geometry_1cm_x+003mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/combined_final_s11.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/failtrace_combined_bias_v2dev-joint_early_stress-0017.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/v2_plot_traces.py --case v2dev-joint_early_stress-0000 --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/nominal.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/const_nominal_x+004mm.json --trace <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/dev/failure_traces/traces/residual_final_s22.json --output <FRESH>/CSCI645-Project/closeout_work/regen/diagnostics/figures/failtrace_nominal_timeout_v2dev-joint_early_stress-0000.png
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/closeout_regen_compare.py --regen <FRESH>/CSCI645-Project/closeout_work/regen --archived <FRESH>/CSCI645-Project/results/v2 --output <FRESH>/CSCI645-Project/closeout_work/regen/comparison.json
+[closeout] regen: record <FRESH>/CSCI645-Project/closeout_work/records/regen.json
+rc=0
+$ $PY scripts/closeout.py --work "$W" analyze --from-release
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python <FRESH>/CSCI645-Project/scripts/closeout_repeatability.py analyze --sim <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/closeout/sim --archived <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/final/eval --ledger <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1/x/closeout/ledger --output <FRESH>/CSCI645-Project/closeout_work/analysis/repeatability
+[closeout] analyze: record <FRESH>/CSCI645-Project/closeout_work/records/analyze.json
+rc=0
+$ $PY scripts/closeout.py --work "$W" verify --tag v2.1.1
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python -I <FRESH>/CSCI645-Project/scripts/verify_archives.py --bundle <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1
+[closeout] $ (cd <FRESH>/CSCI645-Project/closeout_work) <FRESH>/CSCI645-Project/.venv-analysis/bin/python -I <FRESH>/CSCI645-Project/scripts/closeout_verify.py --bundle <FRESH>/CSCI645-Project/closeout_work/inputs/v2.1.1 --extract <FRESH>/CSCI645-Project/closeout_work/verify/v2.1.1/x --output <FRESH>/CSCI645-Project/closeout_work/verify/v2.1.1.json
+[closeout] verify_v2.1.1: record <FRESH>/CSCI645-Project/closeout_work/records/verify_v2.1.1.json
+rc=0

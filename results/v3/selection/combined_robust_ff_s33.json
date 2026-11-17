@@ -1,0 +1,140 @@
+{
+ "run": "combined_robust_ff_s33",
+ "rule": "select_v2: success desc, collision asc, residual sq norm asc, latest; step 0 excluded",
+ "selected": "step_010027008",
+ "selected_checkpoint_sha256": "3964331727e3d2323c8491fb9cf03b429a597d0b78331decda582b7b88744416",
+ "candidates": [
+  {
+   "checkpoint": "step_002031616",
+   "checkpoint_sha256": "201696281d4da1681bfc9e315af295d9dd6dcc55c392acbe74b64a97a3ddf657",
+   "transitions": 2031616,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 0.9791666666666666,
+   "collision_rate": 0.020833333333333332,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 7.798172518975973e-05,
+   "tag": "step_002031616",
+   "entry": "combined_robust_ff_s33__step_002031616",
+   "records": "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_002031616/combined_robust_ff_s33__step_002031616.jsonl",
+   "by_condition": {
+    "bias_5mm": 39,
+    "clean": 40,
+    "delay_2step": 39,
+    "mixed_id": 39,
+    "noise_2mm": 39,
+    "physical_only": 39
+   }
+  },
+  {
+   "checkpoint": "step_004030464",
+   "checkpoint_sha256": "9791e23b99edefde5a35ff723a1c8e3fcf0370eab4e6a9d419fd1b1e95314f96",
+   "transitions": 4030464,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.0,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 4.640698786949091e-05,
+   "tag": "step_004030464",
+   "entry": "combined_robust_ff_s33__step_004030464",
+   "records": "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_004030464/combined_robust_ff_s33__step_004030464.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  },
+  {
+   "checkpoint": "step_006029312",
+   "checkpoint_sha256": "bf59ac017f0c5513e9943df363a739302715f8df94d5edf057367da12364e86d",
+   "transitions": 6029312,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.0,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 3.555393830863058e-05,
+   "tag": "step_006029312",
+   "entry": "combined_robust_ff_s33__step_006029312",
+   "records": "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_006029312/combined_robust_ff_s33__step_006029312.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  },
+  {
+   "checkpoint": "step_008028160",
+   "checkpoint_sha256": "11bd86f155ddcce5510bf12c42c984e267a17e3624686b915b37ec8dc484dbb7",
+   "transitions": 8028160,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.0,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 3.421949974751921e-05,
+   "tag": "step_008028160",
+   "entry": "combined_robust_ff_s33__step_008028160",
+   "records": "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_008028160/combined_robust_ff_s33__step_008028160.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  },
+  {
+   "checkpoint": "step_010027008",
+   "checkpoint_sha256": "3964331727e3d2323c8491fb9cf03b429a597d0b78331decda582b7b88744416",
+   "transitions": 10027008,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.0,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 2.8527092428938035e-05,
+   "tag": "step_010027008",
+   "entry": "combined_robust_ff_s33__step_010027008",
+   "records": "validation/combined_robust_ff_s33/combined_robust_ff_s33__step_010027008/combined_robust_ff_s33__step_010027008.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  }
+ ],
+ "untrained_control": {
+  "checkpoint": "step_000000000",
+  "checkpoint_sha256": "a5aef73c4639fd09c8eaaed1c5c1f30057d11167f515c77860637339f48146df",
+  "transitions": 0,
+  "scheduled": 240,
+  "valid": 240,
+  "success_rate": 1.0,
+  "collision_rate": 0.0,
+  "drop_rate": 0.0,
+  "residual_sq_norm_mean_m2": 0.0,
+  "tag": "step_000000000",
+  "entry": "combined_robust_ff_s33__step0",
+  "records": "validation/combined_robust_ff_s33/combined_robust_ff_s33__step0/combined_robust_ff_s33__step0.jsonl",
+  "by_condition": {
+   "bias_5mm": 40,
+   "clean": 40,
+   "delay_2step": 40,
+   "mixed_id": 40,
+   "noise_2mm": 40,
+   "physical_only": 40
+  }
+ }
+}

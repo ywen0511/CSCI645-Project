@@ -1,0 +1,15 @@
+{
+ "status": "frozen with the v3 protocol, before any final outcome is opened",
+ "suite": "configs/v3/suites/final.jsonl",
+ "main_comparison": {
+  "methods": ["combined_robust_history seed 11 selected checkpoint", "geometry_best_constant (deterministic baseline)"],
+  "rule": "for each of the two methods and each of mixed_id and mixed_ood: the first success and the first failure by case ID (lexicographic) in that method's final records; every selected case is recorded for BOTH methods (side by side on the identical case). If a method has no failure in a condition, that is stated and no substitute failure is chosen."
+ },
+ "clean_baseline": {"method": "geometry_common", "rule": "first clean case by ID"},
+ "severe_noise": {"method": "geometry_raw", "rule": "first noise_4mm case by ID (shows the effect of unfiltered noise)"},
+ "giver_reference_comparison": {"methods": ["geometry_filtered", "geometry_giver"],
+  "rule": "first mixed_ood case by ID on which the two final outcomes differ; if none differ, the first mixed_ood case"},
+ "montage": "all clips in the order above, 20 Hz control, real-time playback, captions with run/case/method/seed/checkpoint",
+ "processes": "one recording process per estimator configuration and observation shape (protocol file); evaluation and replay outcomes are both kept, and a disagreement is disclosed",
+ "camera": {"eye_m": [0.10, -1.55, 1.05], "target_m": [0.0, 0.0, 0.42], "renderer": "Newton Warp, RGB, 960x540"}
+}

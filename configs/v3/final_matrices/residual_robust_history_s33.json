@@ -1,0 +1,32 @@
+{
+ "name": "v3_final_residual_robust_history_s33",
+ "suite": "configs/v3/suites/final.jsonl",
+ "num_envs": 256,
+ "protocol": "configs/v3/frozen/training/residual_robust_history.json",
+ "trace_cases": [
+  "v3-final-mixed_id-0000",
+  "v3-final-mixed_id-0001",
+  "v3-final-mixed_ood-0000",
+  "v3-final-mixed_ood-0001",
+  "v3-final-noise_4mm-0000",
+  "v3-final-clean-0000"
+ ],
+ "entries": [
+  {
+   "id": "residual_robust_history_s33__selected",
+   "method": "residual",
+   "training_seed": 33,
+   "role": "selected",
+   "trace": true,
+   "checkpoint": "residual_robust_history_s33/checkpoints/step_008028160.pt"
+  },
+  {
+   "id": "residual_robust_history_s33__final",
+   "method": "residual",
+   "training_seed": 33,
+   "role": "final",
+   "trace": true,
+   "checkpoint": "residual_robust_history_s33/checkpoints/final.pt"
+  }
+ ]
+}

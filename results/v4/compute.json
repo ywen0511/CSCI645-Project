@@ -1,0 +1,332 @@
+{
+ "rule": "python3 scripts/v4_compute.py --lsf-logs <dir> [--lsf-logs <dir> ...] --output results/v4/compute.json",
+ "hardware": "NVIDIA A100-SXM4-40GB (dgx047), driver 580.159.03",
+ "by_stage": {
+  "stage_a": {
+   "jobs": 3,
+   "gpu_hours": 0.259,
+   "failed_or_killed_jobs": 0
+  },
+  "v4_acceptance": {
+   "jobs": 3,
+   "gpu_hours": 0.877,
+   "failed_or_killed_jobs": 1
+  },
+  "v4_development": {
+   "jobs": 3,
+   "gpu_hours": 0.394,
+   "failed_or_killed_jobs": 1
+  },
+  "v4_final_evaluation": {
+   "jobs": 6,
+   "gpu_hours": 2.116,
+   "failed_or_killed_jobs": 0
+  },
+  "v4_formal_training": {
+   "jobs": 5,
+   "gpu_hours": 8.606,
+   "failed_or_killed_jobs": 0
+  },
+  "v4_mechanisms_repeatability": {
+   "jobs": 3,
+   "gpu_hours": 1.407,
+   "failed_or_killed_jobs": 0
+  },
+  "v4_pilots": {
+   "jobs": 2,
+   "gpu_hours": 1.003,
+   "failed_or_killed_jobs": 1
+  },
+  "v4_traces": {
+   "jobs": 3,
+   "gpu_hours": 0.472,
+   "failed_or_killed_jobs": 0
+  },
+  "v4_validation": {
+   "jobs": 5,
+   "gpu_hours": 0.754,
+   "failed_or_killed_jobs": 0
+  },
+  "v4_videos": {
+   "jobs": 1,
+   "gpu_hours": 0.096,
+   "failed_or_killed_jobs": 0
+  }
+ },
+ "total_gpu_hours": 15.98,
+ "cap_gpu_hours": 100,
+ "jobs": [
+  {
+   "job": "8102475",
+   "name": "c645pv3_fresh301",
+   "status": "Done",
+   "stage": "stage_a",
+   "started": "Mon Nov  9 16:12:50 2026",
+   "run_s": 242
+  },
+  {
+   "job": "8101270",
+   "name": "c645pv3_inv",
+   "status": "Done",
+   "stage": "stage_a",
+   "started": "Mon Nov  9 15:01:44 2026",
+   "run_s": 16
+  },
+  {
+   "job": "8102005",
+   "name": "c645pv3_stageA",
+   "status": "Done",
+   "stage": "stage_a",
+   "started": "Mon Nov  9 15:33:17 2026",
+   "run_s": 676
+  },
+  {
+   "job": "8102559",
+   "name": "c645v4_accA",
+   "status": "Exited",
+   "stage": "v4_acceptance",
+   "started": "Mon Nov  9 16:23:29 2026",
+   "run_s": 12
+  },
+  {
+   "job": "8102566",
+   "name": "c645v4_accA",
+   "status": "Done",
+   "stage": "v4_acceptance",
+   "started": "Mon Nov  9 16:24:31 2026",
+   "run_s": 1958
+  },
+  {
+   "job": "8102561",
+   "name": "c645v4_accS",
+   "status": "Done",
+   "stage": "v4_acceptance",
+   "started": "Mon Nov  9 16:23:29 2026",
+   "run_s": 1189
+  },
+  {
+   "job": "8102341",
+   "name": "c645v4_dev",
+   "status": "Done",
+   "stage": "v4_development",
+   "started": "Mon Nov  9 15:53:06 2026",
+   "run_s": 635
+  },
+  {
+   "job": "8102464",
+   "name": "c645v4_dev2",
+   "status": "Exited",
+   "stage": "v4_development",
+   "started": "Mon Nov  9 16:09:23 2026",
+   "run_s": 632
+  },
+  {
+   "job": "8108402",
+   "name": "c645v4_extras0",
+   "status": "Done",
+   "stage": "v4_mechanisms_repeatability",
+   "started": "Tue Nov 10 03:41:05 2026",
+   "run_s": 2941
+  },
+  {
+   "job": "8108403",
+   "name": "c645v4_extras1",
+   "status": "Done",
+   "stage": "v4_mechanisms_repeatability",
+   "started": "Tue Nov 10 03:41:06 2026",
+   "run_s": 1700
+  },
+  {
+   "job": "8108387",
+   "name": "c645v4_final0",
+   "status": "Done",
+   "stage": "v4_final_evaluation",
+   "started": "Tue Nov 10 03:32:34 2026",
+   "run_s": 1407
+  },
+  {
+   "job": "8108388",
+   "name": "c645v4_final1",
+   "status": "Done",
+   "stage": "v4_final_evaluation",
+   "started": "Tue Nov 10 03:32:34 2026",
+   "run_s": 1407
+  },
+  {
+   "job": "8108389",
+   "name": "c645v4_final2",
+   "status": "Done",
+   "stage": "v4_final_evaluation",
+   "started": "Tue Nov 10 03:32:34 2026",
+   "run_s": 1395
+  },
+  {
+   "job": "8108390",
+   "name": "c645v4_final3",
+   "status": "Done",
+   "stage": "v4_final_evaluation",
+   "started": "Tue Nov 10 03:32:34 2026",
+   "run_s": 1403
+  },
+  {
+   "job": "8108391",
+   "name": "c645v4_final4",
+   "status": "Done",
+   "stage": "v4_final_evaluation",
+   "started": "Tue Nov 10 03:32:34 2026",
+   "run_s": 1398
+  },
+  {
+   "job": "8107743",
+   "name": "c645v4_final_base",
+   "status": "Done",
+   "stage": "v4_final_evaluation",
+   "started": "Tue Nov 10 02:19:04 2026",
+   "run_s": 606
+  },
+  {
+   "job": "8108392",
+   "name": "c645v4_mechdev",
+   "status": "Done",
+   "stage": "v4_mechanisms_repeatability",
+   "started": "Tue Nov 10 03:32:34 2026",
+   "run_s": 425
+  },
+  {
+   "job": "8102787",
+   "name": "c645v4_pilot",
+   "status": "Exited",
+   "stage": "v4_pilots",
+   "started": "Mon Nov  9 16:59:51 2026",
+   "run_s": 197
+  },
+  {
+   "job": "8102799",
+   "name": "c645v4_pilot2",
+   "status": "Done",
+   "stage": "v4_pilots",
+   "started": "Mon Nov  9 17:03:36 2026",
+   "run_s": 3415
+  },
+  {
+   "job": "8102195",
+   "name": "c645v4_probe",
+   "status": "Done",
+   "stage": "v4_development",
+   "started": "Mon Nov  9 15:44:37 2026",
+   "run_s": 152
+  },
+  {
+   "job": "8108427",
+   "name": "c645v4_trace0",
+   "status": "Done",
+   "stage": "v4_traces",
+   "started": "Tue Nov 10 03:57:41 2026",
+   "run_s": 557
+  },
+  {
+   "job": "8108428",
+   "name": "c645v4_trace1",
+   "status": "Done",
+   "stage": "v4_traces",
+   "started": "Tue Nov 10 03:57:42 2026",
+   "run_s": 576
+  },
+  {
+   "job": "8108429",
+   "name": "c645v4_trace2",
+   "status": "Done",
+   "stage": "v4_traces",
+   "started": "Tue Nov 10 03:58:02 2026",
+   "run_s": 565
+  },
+  {
+   "job": "8107349",
+   "name": "c645v4_train0",
+   "status": "Done",
+   "stage": "v4_formal_training",
+   "started": "Tue Nov 10 01:35:21 2026",
+   "run_s": 6244
+  },
+  {
+   "job": "8107350",
+   "name": "c645v4_train1",
+   "status": "Done",
+   "stage": "v4_formal_training",
+   "started": "Tue Nov 10 01:35:21 2026",
+   "run_s": 6191
+  },
+  {
+   "job": "8107351",
+   "name": "c645v4_train2",
+   "status": "Done",
+   "stage": "v4_formal_training",
+   "started": "Tue Nov 10 01:35:21 2026",
+   "run_s": 6150
+  },
+  {
+   "job": "8107352",
+   "name": "c645v4_train3",
+   "status": "Done",
+   "stage": "v4_formal_training",
+   "started": "Tue Nov 10 01:35:21 2026",
+   "run_s": 6190
+  },
+  {
+   "job": "8107353",
+   "name": "c645v4_train4",
+   "status": "Done",
+   "stage": "v4_formal_training",
+   "started": "Tue Nov 10 01:35:21 2026",
+   "run_s": 6205
+  },
+  {
+   "job": "8107528",
+   "name": "c645v4_val_a",
+   "status": "Done",
+   "stage": "v4_validation",
+   "started": "Tue Nov 10 01:57:30 2026",
+   "run_s": 507
+  },
+  {
+   "job": "8107731",
+   "name": "c645v4_val_combined_robust_ff",
+   "status": "Done",
+   "stage": "v4_validation",
+   "started": "Tue Nov 10 02:18:33 2026",
+   "run_s": 500
+  },
+  {
+   "job": "8107860",
+   "name": "c645v4_val_combined_robust_history",
+   "status": "Done",
+   "stage": "v4_validation",
+   "started": "Tue Nov 10 02:38:35 2026",
+   "run_s": 518
+  },
+  {
+   "job": "8108081",
+   "name": "c645v4_val_combined_robust_repeat",
+   "status": "Done",
+   "stage": "v4_validation",
+   "started": "Tue Nov 10 02:58:35 2026",
+   "run_s": 503
+  },
+  {
+   "job": "8108305",
+   "name": "c645v4_val_residual_robust_history",
+   "status": "Done",
+   "stage": "v4_validation",
+   "started": "Tue Nov 10 03:20:00 2026",
+   "run_s": 686
+  },
+  {
+   "job": "8108435",
+   "name": "c645v4_video",
+   "status": "Done",
+   "stage": "v4_videos",
+   "started": "Tue Nov 10 04:00:55 2026",
+   "run_s": 345
+  }
+ ]
+}

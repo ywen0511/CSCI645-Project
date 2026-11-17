@@ -1,0 +1,60 @@
+{
+ "before": {
+  "file": "latest.pt",
+  "sha256": "fc452c3622a9455a34120d39957d0b4de17ce2466bccdcb947e2746d72e1512d",
+  "iterations_done": 306,
+  "transitions": 10027008,
+  "keys": [
+   "actor_state_dict",
+   "critic_state_dict",
+   "infos",
+   "iter",
+   "optimizer_state_dict"
+  ]
+ },
+ "after": {
+  "file": "final.pt",
+  "sha256": "a3ebffc2adb074dc105c55b5f318af1437b28e19f4b248b5ac423106d310aad6",
+  "iterations_done": 308,
+  "transitions": 10092544,
+  "keys": [
+   "actor_state_dict",
+   "critic_state_dict",
+   "infos",
+   "iter",
+   "optimizer_state_dict"
+  ]
+ },
+ "expected_after": {
+  "iterations_done": 308,
+  "transitions": 10092544
+ },
+ "optimizer_state_present": {
+  "before": true,
+  "after": true
+ },
+ "optimizer_step_counts": {
+  "before": 6120.0,
+  "after": 6160.0
+ },
+ "normalizer_tensors": {
+  "before": 8,
+  "after": 8,
+  "changed_by_2_iterations": 8
+ },
+ "model_tensors": 11,
+ "model_tensors_changed_by_2_iterations": 11,
+ "rng_state_present": {
+  "before": true,
+  "after": true
+ },
+ "reload_identical": true,
+ "checks": {
+  "counters_restored_and_advanced": true,
+  "optimizer_state_saved": true,
+  "normalizer_present": true,
+  "parameters_updated": true,
+  "reload_identical": true
+ },
+ "ok": true
+}

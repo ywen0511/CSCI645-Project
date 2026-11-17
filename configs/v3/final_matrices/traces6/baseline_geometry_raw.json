@@ -1,0 +1,35 @@
+{
+ "name": "v3_final_geometry_raw_traces6",
+ "suite": "$DELIVERY/configs/v3/suites/final_trace6.jsonl",
+ "num_envs": 6,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 1.0,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": false
+ },
+ "trace_cases": [
+  "v3-final-clean-0000",
+  "v3-final-mixed_id-0000",
+  "v3-final-mixed_id-0001",
+  "v3-final-mixed_ood-0000",
+  "v3-final-mixed_ood-0001",
+  "v3-final-noise_4mm-0000"
+ ],
+ "entries": [
+  {
+   "id": "geometry_raw",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "trace": true
+  }
+ ]
+}

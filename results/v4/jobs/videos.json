@@ -1,0 +1,130 @@
+{
+ "name": "videos",
+ "tasks": [
+  {
+   "id": "video_fixed",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v4/video/plan_fixed.json",
+    "--suite",
+    "$DELIVERY/configs/v4/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v4/video/protocol_fixed.json"
+   ],
+   "inputs": [
+    "configs/v4/video/plan_fixed.json",
+    "configs/v4/video/protocol_fixed.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/nominal_vs_geometry_vs_learned__geometry_fixed__v4-final-grasp_15mm-0000.mp4",
+    "$RUNS/videos/unknown_grasp_boundary__geometry_fixed__v4-final-grasp_15mm-0000.mp4"
+   ]
+  },
+  {
+   "id": "video_calibrated",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v4/video/plan_calibrated.json",
+    "--suite",
+    "$DELIVERY/configs/v4/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v4/video/protocol_calibrated.json"
+   ],
+   "inputs": [
+    "configs/v4/video/plan_calibrated.json",
+    "configs/v4/video/protocol_calibrated.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/nominal_vs_geometry_vs_learned__nominal__v4-final-grasp_15mm-0000.mp4",
+    "$RUNS/videos/nominal_vs_geometry_vs_learned__geometry_calibrated__v4-final-grasp_15mm-0000.mp4",
+    "$RUNS/videos/noisy_calibration__geometry_calibrated__v4-final-mixed_ood-0000.mp4",
+    "$RUNS/videos/clean__geometry_calibrated__v4-final-clean-0000.mp4"
+   ]
+  },
+  {
+   "id": "video_ema",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v4/video/plan_ema.json",
+    "--suite",
+    "$DELIVERY/configs/v4/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v4/video/protocol_ema.json"
+   ],
+   "inputs": [
+    "configs/v4/video/plan_ema.json",
+    "configs/v4/video/protocol_ema.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/ema_noise__geometry_ema__v4-final-noise_2mm-0000.mp4"
+   ]
+  },
+  {
+   "id": "video_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v4/video/plan_history.json",
+    "--suite",
+    "$DELIVERY/configs/v4/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v4/video/protocol_history.json"
+   ],
+   "inputs": [
+    "configs/v4/video/plan_history.json",
+    "configs/v4/video/protocol_history.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/nominal_vs_geometry_vs_learned__combined_robust_history_s111_selected__v4-final-grasp_15mm-0000.mp4",
+    "$RUNS/videos/learned_mixed_id__combined_robust_history_s111_selected__v4-final-mixed_id-0001.mp4"
+   ]
+  },
+  {
+   "id": "video_history_reversed",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v4/video/plan_history_reversed.json",
+    "--suite",
+    "$DELIVERY/configs/v4/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v4/video/protocol_history_reversed.json"
+   ],
+   "inputs": [
+    "configs/v4/video/plan_history_reversed.json",
+    "configs/v4/video/protocol_history_reversed.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/intervention__combined_robust_history_s111_reversed_history__v4-final-mixed_id-0000.mp4"
+   ]
+  },
+  {
+   "id": "video_index_montage",
+   "kind": "cpu",
+   "argv": [
+    "$DELIVERY/scripts/v4_video_index.py",
+    "--videos",
+    "$RUNS/videos",
+    "--plans",
+    "$DELIVERY/configs/v4/video",
+    "--output",
+    "$RUNS/videos"
+   ],
+   "inputs": [
+    "scripts/v4_video_index.py"
+   ],
+   "outputs": [
+    "$RUNS/videos/video_index.json",
+    "$RUNS/videos/montage.mp4"
+   ]
+  }
+ ]
+}

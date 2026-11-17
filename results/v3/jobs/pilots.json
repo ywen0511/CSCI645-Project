@@ -1,0 +1,229 @@
+{
+ "name": "pilots",
+ "tasks": [
+  {
+   "id": "pilot_combined_robust_ff_s101",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/pilot/combined_robust_ff.json",
+    "--run-type",
+    "pilot",
+    "--transitions",
+    "2752512",
+    "--checkpoint-every",
+    "1000000",
+    "--output",
+    "$RUNS/pilot/combined_robust_ff_s101"
+   ],
+   "inputs": [
+    "configs/v3/pilot/combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/pilot/combined_robust_ff_s101/checkpoints/final.pt",
+    "$RUNS/pilot/combined_robust_ff_s101/DONE.json"
+   ]
+  },
+  {
+   "id": "pilot_combined_robust_ff_s102",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "102",
+    "--protocol",
+    "configs/v3/pilot/combined_robust_ff.json",
+    "--run-type",
+    "pilot",
+    "--transitions",
+    "2752512",
+    "--checkpoint-every",
+    "1000000",
+    "--output",
+    "$RUNS/pilot/combined_robust_ff_s102"
+   ],
+   "inputs": [
+    "configs/v3/pilot/combined_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/pilot/combined_robust_ff_s102/checkpoints/final.pt",
+    "$RUNS/pilot/combined_robust_ff_s102/DONE.json"
+   ]
+  },
+  {
+   "id": "pilot_combined_robust_history_s101",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/pilot/combined_robust_history.json",
+    "--run-type",
+    "pilot",
+    "--transitions",
+    "2752512",
+    "--checkpoint-every",
+    "1000000",
+    "--output",
+    "$RUNS/pilot/combined_robust_history_s101"
+   ],
+   "inputs": [
+    "configs/v3/pilot/combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/pilot/combined_robust_history_s101/checkpoints/final.pt",
+    "$RUNS/pilot/combined_robust_history_s101/DONE.json"
+   ]
+  },
+  {
+   "id": "pilot_combined_robust_history_s102",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "102",
+    "--protocol",
+    "configs/v3/pilot/combined_robust_history.json",
+    "--run-type",
+    "pilot",
+    "--transitions",
+    "2752512",
+    "--checkpoint-every",
+    "1000000",
+    "--output",
+    "$RUNS/pilot/combined_robust_history_s102"
+   ],
+   "inputs": [
+    "configs/v3/pilot/combined_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/pilot/combined_robust_history_s102/checkpoints/final.pt",
+    "$RUNS/pilot/combined_robust_history_s102/DONE.json"
+   ]
+  },
+  {
+   "id": "pilot_residual_robust_history_s101",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/pilot/residual_robust_history.json",
+    "--run-type",
+    "pilot",
+    "--transitions",
+    "2752512",
+    "--checkpoint-every",
+    "1000000",
+    "--output",
+    "$RUNS/pilot/residual_robust_history_s101"
+   ],
+   "inputs": [
+    "configs/v3/pilot/residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/pilot/residual_robust_history_s101/checkpoints/final.pt",
+    "$RUNS/pilot/residual_robust_history_s101/DONE.json"
+   ]
+  },
+  {
+   "id": "pilot_residual_robust_history_s102",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "residual",
+    "--seed",
+    "102",
+    "--protocol",
+    "configs/v3/pilot/residual_robust_history.json",
+    "--run-type",
+    "pilot",
+    "--transitions",
+    "2752512",
+    "--checkpoint-every",
+    "1000000",
+    "--output",
+    "$RUNS/pilot/residual_robust_history_s102"
+   ],
+   "inputs": [
+    "configs/v3/pilot/residual_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/pilot/residual_robust_history_s102/checkpoints/final.pt",
+    "$RUNS/pilot/residual_robust_history_s102/DONE.json"
+   ]
+  },
+  {
+   "id": "pilot_combined_robust_repeat_s101",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/pilot/combined_robust_repeat.json",
+    "--run-type",
+    "pilot",
+    "--transitions",
+    "2752512",
+    "--checkpoint-every",
+    "1000000",
+    "--output",
+    "$RUNS/pilot/combined_robust_repeat_s101"
+   ],
+   "inputs": [
+    "configs/v3/pilot/combined_robust_repeat.json"
+   ],
+   "outputs": [
+    "$RUNS/pilot/combined_robust_repeat_s101/checkpoints/final.pt",
+    "$RUNS/pilot/combined_robust_repeat_s101/DONE.json"
+   ]
+  },
+  {
+   "id": "pilot_combined_clean_ff_s101",
+   "kind": "isaac",
+   "argv": [
+    "scripts/train.py",
+    "--method",
+    "combined",
+    "--seed",
+    "101",
+    "--protocol",
+    "configs/v3/pilot/combined_clean_ff.json",
+    "--run-type",
+    "pilot",
+    "--transitions",
+    "2752512",
+    "--checkpoint-every",
+    "1000000",
+    "--output",
+    "$RUNS/pilot/combined_clean_ff_s101"
+   ],
+   "inputs": [
+    "configs/v3/pilot/combined_clean_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/pilot/combined_clean_ff_s101/checkpoints/final.pt",
+    "$RUNS/pilot/combined_clean_ff_s101/DONE.json"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,278 @@
+{
+ "name": "acceptance_eval",
+ "tasks": [
+  {
+   "id": "acc_a1_v3path_geometry",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a1_v3path_geometry.json",
+    "--output",
+    "$RUNS/acceptance/a1_v3path_geometry",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a1_v3path_geometry.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a1_v3path_geometry/geometry_common.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a1_v3path_policy",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a1_v3path_policy.json",
+    "--output",
+    "$RUNS/acceptance/a1_v3path_policy",
+    "--seed",
+    "6456501",
+    "--checkpoint-root",
+    "$RUNS/v3x/formal/train"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a1_v3path_policy.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a1_v3path_policy/v3_combined_robust_history_s11__selected.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a2_v4zero_geometry",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a2_v4zero_geometry.json",
+    "--output",
+    "$RUNS/acceptance/a2_v4zero_geometry",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a2_v4zero_geometry.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_v4zero_geometry/geometry_common.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a2_v4zero_policy",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a2_v4zero_policy.json",
+    "--output",
+    "$RUNS/acceptance/a2_v4zero_policy",
+    "--seed",
+    "6456501",
+    "--checkpoint-root",
+    "$RUNS/v3x/formal/train"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a2_v4zero_policy.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a2_v4zero_policy/v3_combined_robust_history_s11__selected.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a3_neg_no_receiver",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a3_neg_no_receiver.json",
+    "--output",
+    "$RUNS/acceptance/a3_neg_no_receiver",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a3_neg_no_receiver.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a3_neg_no_receiver/nominal.jsonl",
+    "$RUNS/acceptance/a3_neg_no_receiver/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a3_neg_giver_holds",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a3_neg_giver_holds.json",
+    "--output",
+    "$RUNS/acceptance/a3_neg_giver_holds",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a3_neg_giver_holds.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a3_neg_giver_holds/nominal.jsonl",
+    "$RUNS/acceptance/a3_neg_giver_holds/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a3_neg_table_support",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a3_neg_table_support.json",
+    "--output",
+    "$RUNS/acceptance/a3_neg_table_support",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a3_neg_table_support.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a3_neg_table_support/nominal.jsonl",
+    "$RUNS/acceptance/a3_neg_table_support/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a4_layout_b1",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a4_layout_b1.json",
+    "--output",
+    "$RUNS/acceptance/a4_layout_b1",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a4_layout_b1.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a4_layout_b1/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a4_layout_b8",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a4_layout_b8.json",
+    "--output",
+    "$RUNS/acceptance/a4_layout_b8",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a4_layout_b8.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a4_layout_b8/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a4_layout_b72",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a4_layout_b72.json",
+    "--output",
+    "$RUNS/acceptance/a4_layout_b72",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a4_layout_b72.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a4_layout_b72/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a4_layout_b72rev",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a4_layout_b72rev.json",
+    "--output",
+    "$RUNS/acceptance/a4_layout_b72rev",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a4_layout_b72rev.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a4_layout_b72rev/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a5_leak_b16",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a5_leak_b16.json",
+    "--output",
+    "$RUNS/acceptance/a5_leak_b16",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a5_leak_b16.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a5_leak_b16/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a6_priv_off",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a6_priv_off.json",
+    "--output",
+    "$RUNS/acceptance/a6_priv_off",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a6_priv_off.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a6_priv_off/parent.jsonl"
+   ]
+  },
+  {
+   "id": "acc_a6_priv_on",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v4/acceptance/a6_priv_on.json",
+    "--output",
+    "$RUNS/acceptance/a6_priv_on",
+    "--seed",
+    "6456501"
+   ],
+   "inputs": [
+    "configs/v4/acceptance/a6_priv_on.json"
+   ],
+   "outputs": [
+    "$RUNS/acceptance/a6_priv_on/parent.jsonl"
+   ]
+  }
+ ]
+}

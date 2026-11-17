@@ -1,0 +1,160 @@
+{
+ "replay60": [
+  {
+   "entry": "combined_robust_history_s111__selected",
+   "cases": 60,
+   "unique": true,
+   "id_set_equal": true,
+   "invalid_resets": 0,
+   "terminal_equal": 60,
+   "success_equal": 60,
+   "specs_equal": true,
+   "checkpoint_sha256_equal": true,
+   "config_hash_equal": true
+  },
+  {
+   "entry": "geometry_calibrated",
+   "cases": 60,
+   "unique": true,
+   "id_set_equal": true,
+   "invalid_resets": 0,
+   "terminal_equal": 60,
+   "success_equal": 60,
+   "specs_equal": true,
+   "checkpoint_sha256_equal": true,
+   "config_hash_equal": true
+  }
+ ],
+ "reload": [
+  {
+   "entry": "combined_clean_ff_s111__selected",
+   "cases": 12,
+   "unique": true,
+   "id_set_equal": true,
+   "invalid_resets": 0,
+   "terminal_equal": 12,
+   "success_equal": 12,
+   "specs_equal": true,
+   "checkpoint_sha256_equal": true,
+   "config_hash_equal": true
+  },
+  {
+   "entry": "combined_robust_ff_s111__selected",
+   "cases": 12,
+   "unique": true,
+   "id_set_equal": true,
+   "invalid_resets": 0,
+   "terminal_equal": 12,
+   "success_equal": 12,
+   "specs_equal": true,
+   "checkpoint_sha256_equal": true,
+   "config_hash_equal": true
+  },
+  {
+   "entry": "combined_robust_history_s111__selected",
+   "cases": 12,
+   "unique": true,
+   "id_set_equal": true,
+   "invalid_resets": 0,
+   "terminal_equal": 12,
+   "success_equal": 12,
+   "specs_equal": true,
+   "checkpoint_sha256_equal": true,
+   "config_hash_equal": true
+  },
+  {
+   "entry": "combined_robust_repeat_s111__selected",
+   "cases": 12,
+   "unique": true,
+   "id_set_equal": true,
+   "invalid_resets": 0,
+   "terminal_equal": 12,
+   "success_equal": 12,
+   "specs_equal": true,
+   "checkpoint_sha256_equal": true,
+   "config_hash_equal": true
+  },
+  {
+   "entry": "residual_robust_history_s111__selected",
+   "cases": 12,
+   "unique": true,
+   "id_set_equal": true,
+   "invalid_resets": 0,
+   "terminal_equal": 12,
+   "success_equal": 12,
+   "specs_equal": true,
+   "checkpoint_sha256_equal": true,
+   "config_hash_equal": true
+  }
+ ],
+ "mismatches": [],
+ "resume": {
+  "before": {
+   "file": "latest.pt",
+   "sha256": "a7dade5ca6b0e99c5103d816888d5b55a3381d08928ca81ed16504646fb2d619",
+   "iterations_done": 306,
+   "transitions": 10027008,
+   "keys": [
+    "actor_state_dict",
+    "critic_state_dict",
+    "infos",
+    "iter",
+    "optimizer_state_dict"
+   ]
+  },
+  "after": {
+   "file": "final.pt",
+   "sha256": "257922a57179365f685520388e3ffa9a70724bec9164d9a68087bea6edb7e222",
+   "iterations_done": 308,
+   "transitions": 10092544,
+   "keys": [
+    "actor_state_dict",
+    "critic_state_dict",
+    "infos",
+    "iter",
+    "optimizer_state_dict"
+   ]
+  },
+  "expected_after": {
+   "iterations_done": 308,
+   "transitions": 10092544
+  },
+  "optimizer_state_present": {
+   "before": true,
+   "after": true
+  },
+  "optimizer_step_counts": {
+   "before": 6120.0,
+   "after": 6160.0
+  },
+  "normalizer_tensors": {
+   "before": 8,
+   "after": 8,
+   "changed_by_2_iterations": 8
+  },
+  "model_tensors": 11,
+  "model_tensors_changed_by_2_iterations": 11,
+  "rng_state_present": {
+   "before": true,
+   "after": true
+  },
+  "reload_identical": true,
+  "checks": {
+   "counters_restored_and_advanced": true,
+   "optimizer_state_saved": true,
+   "normalizer_present": true,
+   "parameters_updated": true,
+   "reload_identical": true
+  },
+  "ok": true
+ },
+ "summary": {
+  "replay60_episodes": 120,
+  "replay60_terminal_equal": 120,
+  "reload_episodes": 60,
+  "reload_terminal_equal": 60,
+  "mismatches": 0,
+  "resume_ok": true
+ },
+ "ok": true
+}

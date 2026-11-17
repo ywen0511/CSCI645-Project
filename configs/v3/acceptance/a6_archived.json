@@ -1,0 +1,26 @@
+{
+ "base_overrides": {},
+ "entries": [
+  {
+   "id": "nominal",
+   "method": "nominal",
+   "trace": true
+  },
+  {
+   "id": "geometry_1p5cm",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "trace": true
+  }
+ ],
+ "name": "v3acc_a6_archived",
+ "num_envs": 24,
+ "protocol": "configs/v2/protocol.json",
+ "suite": "configs/v3/acceptance/suite_physical_v2fmt.jsonl",
+ "trace_cases": [
+  "v3-development-physical_only-0000",
+  "v3-development-physical_only-0001"
+ ]
+}

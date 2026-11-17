@@ -1,0 +1,140 @@
+{
+ "run": "combined_robust_repeat_s22",
+ "rule": "select_v2: success desc, collision asc, residual sq norm asc, latest; step 0 excluded",
+ "selected": "step_008028160",
+ "selected_checkpoint_sha256": "2d4a3baad0beac733e318a7471c446828aecff355fbd32bb482d41b0b477d006",
+ "candidates": [
+  {
+   "checkpoint": "step_002031616",
+   "checkpoint_sha256": "621812fe0f2bee59d984b11b8f5d303044f656504d377bd6510d3f62e1838fb3",
+   "transitions": 2031616,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 0.9791666666666666,
+   "collision_rate": 0.020833333333333332,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 2.9676827470279954e-05,
+   "tag": "step_002031616",
+   "entry": "combined_robust_repeat_s22__step_002031616",
+   "records": "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_002031616/combined_robust_repeat_s22__step_002031616.jsonl",
+   "by_condition": {
+    "bias_5mm": 39,
+    "clean": 40,
+    "delay_2step": 39,
+    "mixed_id": 39,
+    "noise_2mm": 39,
+    "physical_only": 39
+   }
+  },
+  {
+   "checkpoint": "step_004030464",
+   "checkpoint_sha256": "faa616866cebb4ffa7c2d011f55606d4fe50b854ab229a8320afd3a27ddc9bbd",
+   "transitions": 4030464,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 0.9791666666666666,
+   "collision_rate": 0.058333333333333334,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 3.28664691192504e-05,
+   "tag": "step_004030464",
+   "entry": "combined_robust_repeat_s22__step_004030464",
+   "records": "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_004030464/combined_robust_repeat_s22__step_004030464.jsonl",
+   "by_condition": {
+    "bias_5mm": 39,
+    "clean": 40,
+    "delay_2step": 39,
+    "mixed_id": 39,
+    "noise_2mm": 39,
+    "physical_only": 39
+   }
+  },
+  {
+   "checkpoint": "step_006029312",
+   "checkpoint_sha256": "2aa170eeedbc6f49a8ec6610e38ec20ed4d269204cc03b2ba3fa6139b1d02f88",
+   "transitions": 6029312,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 0.9791666666666666,
+   "collision_rate": 0.020833333333333332,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 2.971538378899501e-05,
+   "tag": "step_006029312",
+   "entry": "combined_robust_repeat_s22__step_006029312",
+   "records": "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_006029312/combined_robust_repeat_s22__step_006029312.jsonl",
+   "by_condition": {
+    "bias_5mm": 39,
+    "clean": 40,
+    "delay_2step": 39,
+    "mixed_id": 39,
+    "noise_2mm": 39,
+    "physical_only": 39
+   }
+  },
+  {
+   "checkpoint": "step_008028160",
+   "checkpoint_sha256": "2d4a3baad0beac733e318a7471c446828aecff355fbd32bb482d41b0b477d006",
+   "transitions": 8028160,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.0,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 2.8794187606783003e-05,
+   "tag": "step_008028160",
+   "entry": "combined_robust_repeat_s22__step_008028160",
+   "records": "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_008028160/combined_robust_repeat_s22__step_008028160.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  },
+  {
+   "checkpoint": "step_010027008",
+   "checkpoint_sha256": "3a8295f9af66343a1c52170f9957e57cecfbabf9263f6192248579b518be1875",
+   "transitions": 10027008,
+   "scheduled": 240,
+   "valid": 240,
+   "success_rate": 1.0,
+   "collision_rate": 0.0,
+   "drop_rate": 0.0,
+   "residual_sq_norm_mean_m2": 3.000629758862879e-05,
+   "tag": "step_010027008",
+   "entry": "combined_robust_repeat_s22__step_010027008",
+   "records": "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step_010027008/combined_robust_repeat_s22__step_010027008.jsonl",
+   "by_condition": {
+    "bias_5mm": 40,
+    "clean": 40,
+    "delay_2step": 40,
+    "mixed_id": 40,
+    "noise_2mm": 40,
+    "physical_only": 40
+   }
+  }
+ ],
+ "untrained_control": {
+  "checkpoint": "step_000000000",
+  "checkpoint_sha256": "b6500cbd18fc783bcec28cd1c257d014760e11a9a023b840dba00d18a1688809",
+  "transitions": 0,
+  "scheduled": 240,
+  "valid": 240,
+  "success_rate": 1.0,
+  "collision_rate": 0.0,
+  "drop_rate": 0.0,
+  "residual_sq_norm_mean_m2": 0.0,
+  "tag": "step_000000000",
+  "entry": "combined_robust_repeat_s22__step0",
+  "records": "validation/combined_robust_repeat_s22/combined_robust_repeat_s22__step0/combined_robust_repeat_s22__step0.jsonl",
+  "by_condition": {
+   "bias_5mm": 40,
+   "clean": 40,
+   "delay_2step": 40,
+   "mixed_id": 40,
+   "noise_2mm": 40,
+   "physical_only": 40
+  }
+ }
+}

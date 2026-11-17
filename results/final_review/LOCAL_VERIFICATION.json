@@ -1,0 +1,47 @@
+{
+  "reviewed_commit": "0cef74fc92007e6e86f4e378b4635f7b4185ec0b",
+  "gpu_runs": 0,
+  "simulator_runs": 0,
+  "python": "3.11.16",
+  "cpu_dependencies": {
+    "numpy": "2.4.6",
+    "torch": "2.15.0",
+    "pytest": "9.2.0"
+  },
+  "pdf_build_dependencies": {
+    "reportlab": "4.4.9",
+    "matplotlib": "3.11.2"
+  },
+  "pytest": {
+    "passed": 105,
+    "skipped": 1,
+    "skip_reason": "Isaac Lab not installed",
+    "command": "CUDA_VISIBLE_DEVICES='' python -m pytest -q"
+  },
+  "audit_passed": true,
+  "audit_command": "python scripts/final_review_audit.py --archive downloads/v4-review/raw-final.tar.gz",
+  "inherited_api_metadata_matches_committed_v4_checksums": true,
+  "relative_links_checked": true,
+  "pdf_pages": 6,
+  "all_new_pdf_pages_visually_inspected": true,
+  "generated_and_tool_hashes": {
+    "report/final/overview.md": "b705b877e696a27d0e1e76ab4bbf74a570f24086376685c382468a9d0206870c",
+    "report/final/overview.pdf": "a220fda12d241c407e378eba26d803382271e0e6beeb36a003595bc9cc558052",
+    "report/final/boundary_sensitivity.png": "ba86484210ff268c179166458aa71e3809d9947a06233bd11eafb6731316fe63",
+    "results/final_review/audit.json": "4107fa66adaecd4f48146e62346cf16671e18bded79003325f24d29bb1911c5f",
+    "scripts/final_review_audit.py": "6165121bbf7ec2dbf4e7634d038cda1750773ba5c183b9415402273d3a8fedaf",
+    "scripts/final_review_build.py": "e497fe1ae6459fa4399b7292ba28e534aef6cbc95f9e3259a3fbe6f55b19b6e6",
+    "scripts/final_review_package.py": "fbbd483688839a0ea03dcaf0e2c7ea170d97e351cfb529375af72a46212eba27",
+    "tests/test_final_review.py": "5a75e4b19d51c9778464c502cdb0ffae9139c30a5135ddb85dc6e940e7cf79ef"
+  },
+  "preserved_science_hashes": {
+    "report/v4/report.md": "a864129be4d014ed3d0eb4c6b8ddbaacbe9f168e03e39cf304773c9a16ecd6fb",
+    "report/v4/report.pdf": "a7c549579fcec866bf05cd82e9372e41ab26da551f85be137c60035a272dbbfc",
+    "report/v4/slides.pdf": "f2a434ead7e3aebd53792208a4cd4e3c4d5884a9504e2ddf568ff805e7cfb809",
+    "report/v4/slides.pptx": "6753214b4574a72dd59fef3ba0fd80eccc48ef36fdd997ea340049aff3f61c5d",
+    "configs/v4/analysis_plan.json": "26a1b39c4882c9f97c36babd56a3e849a0c987fab509d3cbb4a72bfd29d9afd3",
+    "configs/v4/FREEZE.json": "34a3da573344a024af48ff973ae7f1296edca9741d8bebef6d60aff69a0325d7",
+    "POST_V3_STATUS.json": "3d314a6b6dafd7ef803ed31ea6dc6926540121591b0db23722b0e32ba9d40587"
+  },
+  "public_supplement_verification": "Pending; this is local verification, not a release publication claim."
+}

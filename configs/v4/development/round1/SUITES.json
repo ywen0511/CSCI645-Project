@@ -1,0 +1,178 @@
+{
+ "conditions": {
+  "bias_5mm": {
+   "grasp": {
+    "mode": "zero"
+   },
+   "sensor": {
+    "bias_m": 0.005
+   }
+  },
+  "boundary_x_minus_7": {
+   "grasp": {
+    "x": {
+     "fixed": -0.007
+    }
+   },
+   "sensor": {}
+  },
+  "boundary_x_plus_15": {
+   "grasp": {
+    "x": {
+     "fixed": 0.015
+    }
+   },
+   "sensor": {}
+  },
+  "boundary_z_15": {
+   "grasp": {
+    "z": {
+     "sign": 0.015
+    }
+   },
+   "sensor": {}
+  },
+  "clean": {
+   "grasp": {
+    "mode": "zero"
+   },
+   "physical": false,
+   "sensor": {}
+  },
+  "delay_2step": {
+   "grasp": {
+    "mode": "zero"
+   },
+   "sensor": {
+    "delay_steps": 2
+   }
+  },
+  "grasp_10mm": {
+   "grasp": {
+    "x": {
+     "fixed": 0.01
+    },
+    "z": {
+     "sign": 0.01
+    }
+   },
+   "sensor": {}
+  },
+  "grasp_2mm": {
+   "grasp": {
+    "x": {
+     "sign": 0.002
+    },
+    "z": {
+     "sign": 0.002
+    }
+   },
+   "sensor": {}
+  },
+  "grasp_5mm": {
+   "grasp": {
+    "x": {
+     "sign": 0.005
+    },
+    "z": {
+     "sign": 0.005
+    }
+   },
+   "sensor": {}
+  },
+  "mixed_id": {
+   "grasp": {
+    "x": {
+     "uniform": [
+      -0.005,
+      0.01
+     ]
+    },
+    "z": {
+     "uniform": [
+      -0.01,
+      0.01
+     ]
+    }
+   },
+   "sensor": {
+    "bias_m": 0.005,
+    "bias_mode": "uniform",
+    "delay_steps": 2,
+    "noise_std_m": 0.002
+   }
+  },
+  "mixed_ood": {
+   "grasp": {
+    "x": {
+     "uniform": [
+      -0.007,
+      0.015
+     ]
+    },
+    "z": {
+     "uniform": [
+      -0.015,
+      0.015
+     ]
+    }
+   },
+   "sensor": {
+    "bias_m": 0.01,
+    "bias_mode": "uniform",
+    "delay_steps": 4,
+    "noise_std_m": 0.004
+   }
+  },
+  "noise_2mm": {
+   "grasp": {
+    "mode": "zero"
+   },
+   "sensor": {
+    "noise_std_m": 0.002
+   }
+  }
+ },
+ "generator": "src/csci645_handover/v4_protocol.py:make_cases",
+ "order": [
+  "clean",
+  "grasp_2mm",
+  "grasp_5mm",
+  "grasp_10mm",
+  "bias_5mm",
+  "noise_2mm",
+  "delay_2step",
+  "mixed_id",
+  "mixed_ood",
+  "boundary_x_plus_15",
+  "boundary_x_minus_7",
+  "boundary_z_15"
+ ],
+ "split_seeds": {
+  "development": 6456101,
+  "final": 6456301,
+  "validation": 6456201
+ },
+ "suites": {
+  "development": {
+   "cases": 288,
+   "path": "configs/v4/suites/development.jsonl",
+   "per_condition": 24,
+   "sha256": "4319c2cd12371ae5ee212503eb39e3c8434cba2f1932b5dc1abace91c73b2cdf"
+  },
+  "validation": {
+   "cases": 240,
+   "path": "configs/v4/suites/validation.jsonl",
+   "per_condition": 40,
+   "sha256": "9e3005a54cb0ea25f42e2edbb31eebd1c036f63e8d90d84424759fff1ea70007"
+  }
+ },
+ "validation_conditions": [
+  "clean",
+  "grasp_5mm",
+  "grasp_10mm",
+  "bias_5mm",
+  "noise_2mm",
+  "mixed_id"
+ ]
+}

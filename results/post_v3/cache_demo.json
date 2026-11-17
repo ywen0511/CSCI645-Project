@@ -1,0 +1,123 @@
+{
+ "runner": "scripts/v3_jobs.py",
+ "runner_sha256": "156b6166dcab100951c95a283bb88d697bbcf8271fcd08be85cb80c55b205139",
+ "python": "3.13.9",
+ "fixtures": "disposable git repositories; no released artifact touched",
+ "scenarios": [
+  {
+   "scenario": "repeat_skip",
+   "first_run_rc": 0,
+   "first_run_launches": 1,
+   "mutation": null,
+   "second_run_rc": 0,
+   "second_run_new_launches": 0,
+   "decisive_output": [
+    "[v3_jobs] skip demo (inputs and output contents verified)",
+    "{\"shard\": \"0/1\", \"tasks\": 1, \"failed\": []}"
+   ],
+   "expected": "skip",
+   "passed": true
+  },
+  {
+   "scenario": "edited_output_bytes",
+   "first_run_rc": 0,
+   "first_run_launches": 1,
+   "mutation": "flipped one bit of out/result.json",
+   "second_run_rc": 1,
+   "second_run_new_launches": 0,
+   "decisive_output": [
+    "    raise ValueError(f\"Output integrity mismatch: {output}; preserve it and use a fresh runs directory\")",
+    "ValueError: Output integrity mismatch: <work>/edited_output_bytes/runs/out/result.json; preserve it and use a fresh runs directory"
+   ],
+   "expected": "refuse",
+   "passed": true
+  },
+  {
+   "scenario": "directory_add",
+   "first_run_rc": 0,
+   "first_run_launches": 1,
+   "mutation": "added out/records/extra.jsonl",
+   "second_run_rc": 1,
+   "second_run_new_launches": 0,
+   "decisive_output": [
+    "    raise ValueError(f\"Output integrity mismatch: {output}; preserve it and use a fresh runs directory\")",
+    "ValueError: Output integrity mismatch: <work>/directory_add/runs/out/records; preserve it and use a fresh runs directory"
+   ],
+   "expected": "refuse",
+   "passed": true
+  },
+  {
+   "scenario": "directory_remove",
+   "first_run_rc": 0,
+   "first_run_launches": 1,
+   "mutation": "removed out/records/b.jsonl",
+   "second_run_rc": 1,
+   "second_run_new_launches": 0,
+   "decisive_output": [
+    "    raise ValueError(f\"Output integrity mismatch: {output}; preserve it and use a fresh runs directory\")",
+    "ValueError: Output integrity mismatch: <work>/directory_remove/runs/out/records; preserve it and use a fresh runs directory"
+   ],
+   "expected": "refuse",
+   "passed": true
+  },
+  {
+   "scenario": "changed_checkpoint",
+   "first_run_rc": 0,
+   "first_run_launches": 1,
+   "mutation": "replaced checkpoint.pt (committed, clean tree)",
+   "second_run_rc": 1,
+   "second_run_new_launches": 0,
+   "decisive_output": [
+    "    raise ValueError(\"Completed outputs have changed or legacy provenance; preserve them and use a fresh runs directory\")",
+    "ValueError: Completed outputs have changed or legacy provenance; preserve them and use a fresh runs directory"
+   ],
+   "expected": "refuse",
+   "passed": true
+  },
+  {
+   "scenario": "legacy_ledger",
+   "first_run_rc": 0,
+   "first_run_launches": 1,
+   "mutation": "rewrote latest ledger row in the pre-repair format (file hashes only, no fingerprints/context)",
+   "second_run_rc": 1,
+   "second_run_new_launches": 0,
+   "decisive_output": [
+    "    raise ValueError(f\"Unverifiable completed output: {output}; use a fresh runs directory\")",
+    "ValueError: Unverifiable completed output: <work>/legacy_ledger/runs/out/records; use a fresh runs directory"
+   ],
+   "expected": "refuse",
+   "passed": true
+  },
+  {
+   "scenario": "missing_output",
+   "first_run_rc": 0,
+   "first_run_launches": 1,
+   "mutation": "deleted out/result.json",
+   "second_run_rc": 0,
+   "second_run_new_launches": 1,
+   "decisive_output": [
+    "[v3_jobs] run demo: task.py --out <work>/missing_output/runs/out/result.json --dir <work>/missing_output/runs/out/records --checkpoint checkpoint.pt --counter <work>/missing_output/runs/counter.txt --fail-flag <work>/missing_output/runs/FAIL",
+    "[v3_jobs] demo rc=0",
+    "{\"shard\": \"0/1\", \"tasks\": 1, \"failed\": []}"
+   ],
+   "expected": "rerun",
+   "passed": true
+  },
+  {
+   "scenario": "failed_latest_attempt",
+   "first_run_rc": 1,
+   "first_run_launches": 1,
+   "mutation": "attempt 1 wrote every output then exited rc 3 (outputs_exist=True); failure flag removed",
+   "second_run_rc": 0,
+   "second_run_new_launches": 1,
+   "decisive_output": [
+    "[v3_jobs] run demo: task.py --out <work>/failed_latest_attempt/runs/out/result.json --dir <work>/failed_latest_attempt/runs/out/records --checkpoint checkpoint.pt --counter <work>/failed_latest_attempt/runs/counter.txt --fail-flag <work>/failed_latest_attempt/runs/FAIL",
+    "[v3_jobs] demo rc=0",
+    "{\"shard\": \"0/1\", \"tasks\": 1, \"failed\": []}"
+   ],
+   "expected": "rerun_after_failure",
+   "passed": true
+  }
+ ],
+ "all_passed": true
+}

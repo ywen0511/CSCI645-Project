@@ -1,0 +1,152 @@
+# V3 decisions
+
+## Preparation: 2026-11-06 through 2026-11-07
+
+- Extend completed v2 at `4204da23b17f920d955a0bc90f94a8df271c524f`; do not replace it.
+- Retain Isaac Sim through Isaac Lab, PhysX, two Franka arms and parallel-jaw grippers.
+- Main question: controlled translation-estimation uncertainty and the incremental
+  value of residual learning/history above strong geometry and estimators.
+- Keep orientation, contact and proprioception accurate. Explicitly include a
+  giver-reference baseline because the policy already observes giver TCP position.
+- Pair exogenous errors by case seed and per-episode sensor frame, independent of
+  batch layout. Delay repeats the first value at startup; reset retries replay
+  the same stream. Include settling frames; verify integration remotely.
+- Preserve true-state reward and independent outcome evaluation. Policy/controller
+  translation and derived linear velocity use the same estimated sensor path.
+- Include a repeated-current 230-feature training control to isolate history
+  from the extra input-layer parameters.
+- Five seeds for four main families, three matched seeds for the memory control:
+  23 x 10M requested transitions. Pilot cap 24M. Budgets are bounded defaults to
+  validate against measured remote throughput; no GPU time has been spent here.
+- Development/validation suites prepared; final generation is gated by a remote
+  acceptance/freeze manifest. Draft configs are not a scientific freeze.
+- Physical parameter transfer is explicitly secondary and development-gated.
+- No claim of RL superiority or simulated perception realism is assumed.
+
+Append remote decisions with the evidence split, source SHA and affected runs.
+
+## Remote execution (dates/times from `date -u`)
+
+### 2026-11-08 16:07 UTC — runtime, compute and orchestration (split: none; engineering)
+
+- Runtime: the verified v2 stack is available unchanged on the cluster (Isaac Lab v3.0.0 at `e3f7d9ff…`,
+  Isaac Sim 6.2.0.0, RSL-RL 5.5.1, torch 2.11.0+cu130, Python 3.12.16, A100-SXM4-40GB, driver 580.159.03,
+  user-space Vulkan ICD). All v3 simulator work runs on one 8-GPU node of that type (queue `gpu_large_shared`,
+  1 GPU per job). Other nodes have a different driver (580.105.08) and are not used, so no stack mixing.
+- Preflight (`v3_prepare.py` reproduces the committed suites byte-identically; 49/49 CPU tests pass with the
+  locked Python, 0 skipped; `doctor.py` and `inspect_scene.py` pass): `runs/v3/preflight/`.
+- Step order of the installed `DirectRLEnv.step` read from source: pre-physics → physics × decimation →
+  `common_step_counter += 1` → `_get_dones` → `_get_rewards` → resets → observations. The sensor token is the
+  counter; one advance per control frame, including settling.
+- Orchestration: `scripts/v3_jobs.py` runs committed task manifests (`results/v3/jobs/`) with a per-attempt
+  ledger. Isaac Sim intermittently hangs in Kit shutdown after all outputs are written ("SimulationContext
+  cleared", process never exits); four first-attempt jobs lost their wall-time this way. The runner now kills a
+  task's process group 90 s after that marker if all declared outputs exist, and records the event; a per-task
+  timeout fails anything else. Records written before a kill are complete (the evaluation writes and validates
+  them before leaving the simulation context).
+- The first acceptance/development attempt ran at `913cda1`; after the runner fix, every output was moved to
+  `runs/v3/superseded/candidate_913cda1` and all tasks re-run at the new commit, because v3 evaluation caches are
+  keyed to the source commit and are (correctly) rejected otherwise.
+- Pilot budget: 8 pilots × 2,752,512 transitions (84 PPO iterations) + 1,966,080 smoke/resume transitions (two
+  attempts) = 23,986,176 ≤ 24M.
+
+### 2026-11-08 16:31 UTC — development baselines and selection (split: development only)
+
+- All 85 development entries (1 nominal + 6 estimators × 14 geometry settings, 312 cases each, fresh process
+  per entry) completed at `2d20fe4`; nominal ignores the estimator and is run once (aliased in the table).
+- Selection (`scripts/v3_select_baselines.py`, six validation-like strata, equal weight): `geometry_common` =
+  `geometry_best_constant` = `geometry_giver` = EMA 1.0 + giver reference, 1.5 cm, zero constant (144/144 on the
+  selection strata, 312/312 on all 13 development conditions); `geometry_filtered` = EMA 0.2, 1.5 cm (144/144);
+  `geometry_raw` = 96/144; nominal 117/144. The three aliased roles are evaluated once in the final matrix and
+  reported as aliases, not as independent evidence. Selections sit at grid edges (1.5 cm bound; EMA 1.0 for
+  the giver-reference estimator; EMA 0.2 for filtering), recorded in `at_grid_edge`; no further search.
+- Finding used for acceptance check 7: with the raw (unfiltered) estimate, finite-difference velocity noise
+  blocks the stability-gated release at noise ≥ 2 mm (24/24 release timeouts in noise_2mm, noise_4mm,
+  mixed_id, mixed_ood); EMA 0.2 and the giver reference do not. Delay up to 4 steps has no effect on any
+  estimator. Bias 10 mm causes collisions unless the giver reference is used.
+- Consequence fixed by the protocol (not chosen by us): every combined profile and the residual-only profile
+  inherit the giver-reference estimator. While the giver holds the bar (both contacts, release not commanded),
+  object translation is inferred from the measured giver TCP and the nominal grasp offset; the corrupted
+  sensor is used after release. Development data suggest little remaining headroom for learned residuals on
+  top of this controller; this is recorded as a pre-test expectation, not a result.
+- Simulator code (`src/`, train/eval/scripted/video scripts, v3 suites, development matrices, draft profiles) is
+  byte-identical between `913cda1`, `2d20fe4` and the current commit (git diff empty); acceptance evidence
+  produced at different commits of tooling therefore exercises the same simulator code.
+
+### 2026-11-08 16:35 UTC — giver-reference accuracy, physical transfer, video rule (split: development)
+
+- Giver-reference estimate vs true object position on traced development cases (EMA 1.0 + giver reference):
+  at most 3.0 mm while the giver holds (rigid-grasp model: nominal grasp offset vs the realized grasp), then
+  the corrupted sensor after release (up to 6.1 mm in noise_2mm, 10.7 mm in mixed_id). It is therefore not an
+  oracle; it removes most pre-release translation error by using accurate giver proprioception, which the
+  policy also observes (giver TCP − receiver TCP). This is the allowed information channel the assignment
+  requires to be disclosed.
+- Physical transfer (Section 10) is **not performed**. Evidence: the bar's spawn geometry, mass and friction
+  come from module constants in `handover_env_cfg.py` (`CuboidCfg(size=OBJECT_SIZE)`, `MassCfg(mass=OBJECT_MASS)`,
+  fixed `RigidBodyMaterialCfg`), so the task field `object_size` does not change the simulated object. A valid
+  transfer study needs spawn overrides plus consistent grasp transforms, reset poses and jaw clearance, each
+  validated on separate development starts before the freeze. The mandatory uncertainty study is prioritized;
+  nothing about transfer is claimed.
+- Video selection rule frozen in `configs/v3/video_rule.json` before any final outcome is opened.
+
+### 2026-11-08 16:59 UTC — pilots and protocol freeze (split: development)
+
+- Pilots (`results/v3/pilot/`): 8 × 2,752,512 transitions with the `geometry_common` estimator. All losses finite,
+  ~9.5k transitions/s on one A100-40GB, valid resets throughout. Combined profiles solve 144/144 development
+  strata cases; residual-only history 120/144 and 110/144 (nominal 117/144). Residual magnitudes 2–6 mm mean,
+  ≤ 13.7 mm max (bound 20 mm), no workspace clipping; geometry alignment saturates in ~30% of scored steps.
+  No concrete failure was found, so the inherited PPO settings, reward and action bounds are kept unchanged
+  (`ppo_overrides` empty) for every profile.
+- Freeze: `scripts/v3_make_protocols.py frozen` → `configs/v3/frozen/training/*.json` (protocol IDs
+  `v3-final-*`, geometry_common estimator: EMA 1.0 + giver reference, 1.5 cm; 1,024 envs × 32 steps; 10,000,000
+  requested → 10,027,008 realized transitions per run; seeds 11,22,33,44,55 and 11,22,33 for the repeated-current
+  control). Validation matrices for the five fixed candidate steps are committed with the freeze.
+
+### 2026-11-08 19:28 UTC — validation selection (split: validation) and ledger redaction
+
+- All 23 formal runs finished (rc 0, 10,027,008 transitions each, source `3811f5da`, clean). All 138 validation
+  evaluations (23 runs × {step 0, 2M, 4M, 6M, 8M, 10M}) recorded 240/240 valid cases; step 0 was evaluated as the
+  untrained control and never eligible. `scripts/v3_select_checkpoints.py` applied `select_v2`
+  (`results/v3/selection/`). Every combined profile (clean FF, robust FF, robust history, repeated-current)
+  reaches 240/240 at its selected step, so selection among tied candidates fell to the residual-norm and
+  latest-step tie-breaks. Residual-only history selects 77–85% validation success. Final/extras/verification
+  manifests were generated from this selection before any final outcome was opened.
+- The first merged `results/v3/task_ledger.jsonl` (commit `b73003d`) contained absolute cluster run paths
+  (no credentials). Shared history is not rewritten (no force-push); `v3_jobs.py merge` now redacts cluster
+  run/checkout paths to `$RUNS`/`$REPO`, merges the candidate and formal runs roots, and refuses to write if any
+  leak pattern remains. The corrected ledger replaces the file in the next commit.
+
+### 2026-11-08 22:24 UTC — final evaluation, extras, analysis and documents (split: final)
+
+- Final matrix (50 executed entries, one fresh process each, batch 256, seed 6455501): every file holds 2,600
+  records; 135,200 logical / 130,000 executed episodes; 0 invalid resets, 0 infrastructure errors. Extras: 5
+  zero-policy controls, 20 intervention runs and 42 repeatability runs (2,730 episodes), all rc 0.
+- Main finding recorded as observed: `geometry_common` succeeds on all 2,600 cases and every selected combined
+  policy does too, so both primary contrasts are exactly 0 pp with zero-width intervals (a ceiling). No condition,
+  checkpoint or metric was changed after seeing this; the final checkpoints are reported as the declared
+  secondary analysis (three of five history runs lose ≥ 22 pp; seed 55 collapses).
+- Traces: the frozen runtime only traces cases that occupy an environment slot at start-up, so the batch-256
+  matrix traced only `clean-0000`. A supplementary trace stage (`results/v3/jobs/traces6.json`) re-ran the six
+  predeclared trace cases for every executed entry in batches of six, with records kept separate (`traces6/`).
+  298 of 300 outcomes match the batch-256 records; the two differences (history seed 11 final checkpoint) are
+  reported.
+- Analysis correction before any write-up: the summary's `drop`/`collision` fields are per-episode flags that can
+  co-occur (a success can carry a collision flag), so the failure table and figure now use exclusive terminal
+  reasons (`terminal_mean`); the flags stay in the summary. Paired effects are unchanged.
+- Videos: the frozen rule yields 8 clips on 5 cases; neither main-comparison method fails in `mixed_id` or
+  `mixed_ood`, so no failure clip exists and none was substituted. All replays match their evaluation outcomes.
+  Two sidecars recorded the protocol file by its absolute cluster path; the repo copies replace that prefix with
+  `$DELIVERY/`, and the packager redacts the same prefix in the archived sidecars.
+- The simulator environment used for v3 is byte-identical (pip freeze) to `configs/v2/frozen/pip-freeze.txt`.
+- Compute (all attempts, `results/v3/compute.json`): 18.05 GPU-hours over 493 task attempts; formal training
+  7.6 GPU-hours.
+
+### 2026-11-08 22:49 UTC — publication and fresh verification
+
+- Release-candidate bundle verified (`v3_verify.py` ok; 35/35 regenerated tables identical). The leak scan caught
+  host names in TensorBoard member names; the packager now applies the host regex to member names. Tag `v3.0.0` =
+  `ebfa328` (annotated), pushed; release created with 30 assets (checked first that no `v3.0.0` release existed).
+- Fresh verification from new directories with anonymous downloads: CPU (verifier ok, 35/35 tables and 6/6
+  figures byte-identical) and GPU (65-case replay 455/455, reloads 52/52, two-iteration resume ok, original file
+  hash unchanged). The first two CPU environment attempts failed (`python3.13` not on PATH; `python3` was 3.10);
+  logged and retried with Python 3.13.9. `V3_STATUS.json` set complete.

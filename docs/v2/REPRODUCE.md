@@ -1,5 +1,14 @@
 # Reproducing the v2 follow-up study
 
+> **Superseded for execution (closeout, see [ERRATA C8](../closeout/ERRATA.md)).** Use
+> [`docs/closeout/REPRODUCE.md`](../closeout/REPRODUCE.md) and the driver `scripts/closeout.py`. This page is kept as
+> the historical command record of the v2 study, but it is not a runnable sequence from one checkout:
+> section 1 checks out `experiment-v2`, while `build_report_v2.py`, `build_deck_v2.py`, `package_v2.py` and
+> `verify_v2_release.py` (sections 8 and 10) exist only from `v2.0.0` on, and `v2_nondeterminism.py`
+> (section 7) only after `v2.0.0`. The corrected workflow separates an experiment checkout (`experiment-v2`,
+> simulator commands) from a delivery-tools checkout (analysis, rendering, packaging, verification). Some
+> commands below also contain placeholders (`<dev>`, `<final>`, `<all 23 IDs>`) that the driver fills in.
+
 All commands run from a clone of `https://github.com/ywen0511/CSCI645-Project`. Paths in angle brackets
 are yours to choose. Every command below was run in this study (cluster jobs used the wrappers described in
 §9, which only set environment variables and call these commands).

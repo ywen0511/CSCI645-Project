@@ -34,8 +34,10 @@ from isaaclab.utils.math import axis_angle_from_quat, quat_apply, quat_apply_inv
 
 from ..core import outcomes as oc
 from ..core.case_suites import curriculum_stage
+from ..core.grasp import GiverCalibrator, sample_train_offsets, window_frames
 from ..core.geometry import GeometryCfg, GeometryCoordinator, StabilityCfg, StabilityTracker, release_decision
 from ..core.policy_io import apply_phase_mask, contact_phase_onehot, residual_from_action
+from ..core.observation import ObservationHistory, PositionSensor
 from ..core.schedule import NominalSchedule, giver_target, receiver_finger_target, receiver_nominal_target
 from .handover_env_cfg import fixed_hand_quat
 
@@ -181,6 +183,23 @@ class HandoverEnv(DirectRLEnv):
         self.traces: dict[int, list[dict]] = {}
         self.stats = {k: 0 for k in ("episodes", "success", "drop", "collision", "release_timeout", "timeout",
                                      "invalid_reset", "infra_error")}
+        # Opt-in v3 state: never changes the archived default observation/evaluator path.
+        self.sensor = None
+        self.controller_m = {}
+        self.obs_history = ObservationHistory(n, 46, c.observation_history, dev)
+        self._sensor_rel_prev = z(n, 3)
+        self._sensor_rel_vel = z(n, 3)
+        self._sensor_fd_valid = zb()
+        if c.observation_sensor is not None:
+            s = c.observation_sensor
+            self.sensor = PositionSensor(n, dev, int(s.get("max_delay_steps", 8)), float(s.get("ema_alpha", 1.0)))
+        # Opt-in V4 state (unknown in-grasp object translation; calibrated giver reference).
+        self.grasp_offset = z(n, 3)  # true requested in-grasp offset: spawn + privileged records only
+        self.grasp_achieved = z(n, 3)  # privileged: measured true offset after settling
+        if (c.grasp_offset_train is not None) and not c.grasp_uncertainty:
+            raise ValueError("grasp_offset_train requires grasp_uncertainty")
+        self._perturb_rng = torch.Generator(device=dev)
+        self._perturb_rng.manual_seed(987654321)
 
     # ------------------------------------------------------------------ helpers
     def refresh_task_parameters(self) -> None:
@@ -201,6 +220,12 @@ class HandoverEnv(DirectRLEnv):
                         align_enabled=bool(c.geom_align), anchor_enabled=bool(c.geom_anchor)),
             n, dev,
         )
+        # V4 calibrated giver reference (runtime field: rebuilt here, state cleared by the next reset)
+        self.calib = None
+        if c.giver_calibration_window_s is not None:
+            if not (c.observation_giver_reference and c.observation_sensor is not None):
+                raise ValueError("giver_calibration_window_s requires observation_giver_reference and a sensor")
+            self.calib = GiverCalibrator(n, window_frames(c.giver_calibration_window_s, self.step_dt), dev)
         if c.constant_residual_m is not None:
             if c.residual_enabled:
                 raise ValueError("constant_residual_m replaces the policy residual; use a non-learned method")
@@ -248,18 +273,26 @@ class HandoverEnv(DirectRLEnv):
         if self.case_queue is not None:
             idle = torch.zeros(n, dtype=torch.bool, device=self.device)
             offs = torch.zeros(n, 3, device=self.device)
+            goffs = torch.zeros(n, 3, device=self.device)
             rel = torch.zeros(n, device=self.device)
             cidx = torch.full((n,), -1, dtype=torch.long, device=self.device)
             for k in range(n):
                 if self.case_ptr < len(self.case_queue):
                     case = self.case_queue[self.case_ptr]
                     offs[k] = torch.tensor(case["requested_offset_xyz_m"], device=self.device)
+                    if self.cfg.grasp_uncertainty:
+                        if "grasp_offset_xyz_m" not in case:
+                            raise ValueError("V4 evaluation requires grasp_offset_xyz_m on every case")
+                        goffs[k] = torch.tensor(case["grasp_offset_xyz_m"], device=self.device)
+                    elif any(float(v) != 0.0 for v in case.get("grasp_offset_xyz_m", (0, 0, 0))):
+                        raise ValueError("case carries a grasp offset but grasp_uncertainty is off")
                     rel[k] = float(case["release_offset_s"])
                     cidx[k] = self.case_ptr
                     self.case_ptr += 1
                 else:
                     idle[k] = True
             self.offset[env_ids] = offs
+            self.grasp_offset[env_ids] = goffs
             self.release_offset[env_ids] = rel
             self.case_index[env_ids] = cidx
             self.mode[env_ids] = torch.where(idle, IDLE, SETTLE)
@@ -271,10 +304,38 @@ class HandoverEnv(DirectRLEnv):
             ur = torch.rand(n, generator=self.rng, device=self.device) * 2 - 1
             self.offset[env_ids] = u * b
             self.release_offset[env_ids] = ur * rb
+            if self.cfg.grasp_uncertainty:
+                self.grasp_offset[env_ids] = sample_train_offsets(n, self.cfg.grasp_offset_train, self.rng, self.device)
             self.case_index[env_ids] = -1
             self.mode[env_ids] = SETTLE
         self.attempt[env_ids] = 0
         self.reset_fail_bits[env_ids] = 0
+        if self.sensor is not None:
+            s = self.cfg.observation_sensor
+            if self.case_queue is not None:
+                spec = []
+                for ci in self.case_index[env_ids].tolist():
+                    if ci < 0:
+                        spec.append({"seed": 0, "bias_xyz_m": [0, 0, 0], "noise_std_m": 0, "delay_steps": 0})
+                    else:
+                        case = self.case_queue[ci]
+                        if "observation_error" not in case:
+                            raise ValueError("V3 evaluation requires observation_error on every case")
+                        spec.append(case["observation_error"])
+                seeds = [v["seed"] for v in spec]
+                bias = [v["bias_xyz_m"] for v in spec]
+                sigma = [v["noise_std_m"] for v in spec]
+                delay = [v["delay_steps"] for v in spec]
+            else:
+                seeds = torch.randint(0, 2**31 - 1, (n,), generator=self.rng, device=self.device)
+                clean = torch.rand(n, generator=self.rng, device=self.device) < s.get("clean_probability", 0.25)
+                bias = (torch.rand(n, 3, generator=self.rng, device=self.device) * 2 - 1) * s.get("bias_bound_m", 0.0)
+                sigma = torch.rand(n, generator=self.rng, device=self.device) * s.get("noise_std_m", 0.0)
+                delay = torch.randint(0, int(s.get("delay_steps", 0)) + 1, (n,), generator=self.rng, device=self.device)
+                bias[clean] = 0
+                sigma[clean] = 0
+                delay[clean] = 0
+            self.sensor.reset(env_ids, seeds=seeds, bias=bias, sigma=sigma, delay=delay)
         self._begin_settle(env_ids)
         self.raw_action[env_ids] = 0.0
         self.residual[env_ids] = 0.0
@@ -296,7 +357,7 @@ class HandoverEnv(DirectRLEnv):
             robot.write_joint_velocity_to_sim_index(velocity=torch.zeros_like(q), env_ids=env_ids)
             robot.actuators.target_command.set_position_index(value=q, env_ids=env_ids)
         pose = torch.zeros(n, 7, device=dev)
-        pose[:, :3] = origins + self.obj_nominal_local + self.offset[env_ids]
+        pose[:, :3] = origins + self.obj_nominal_local + self.offset[env_ids] + self.grasp_offset[env_ids]
         pose[:, 6] = 1.0
         self.obj.write_root_pose_to_sim_index(root_pose=pose, env_ids=env_ids)
         self.obj.write_root_velocity_to_sim_index(root_velocity=torch.zeros(n, 6, device=dev), env_ids=env_ids)
@@ -319,8 +380,10 @@ class HandoverEnv(DirectRLEnv):
         tpose[:, 6] = 1.0
         if self.cfg.negative_control == "table_support":
             # (run with a narrow table, cfg.table_size_override, that fits between the two grippers' fingertips)
-            top = self.obj_nominal_local[2] + self.offset[env_ids, 2] - self.cfg.object_size[2] / 2
-            tpose[:, 0] = origins[:, 0] + self.obj_nominal_local[0] + self.offset[env_ids, 0]
+            # V4: the bar is spawned at nominal + joint offset + in-grasp offset; the table must sit under it
+            g = self.grasp_offset[env_ids]
+            top = self.obj_nominal_local[2] + self.offset[env_ids, 2] + g[:, 2] - self.cfg.object_size[2] / 2
+            tpose[:, 0] = origins[:, 0] + self.obj_nominal_local[0] + self.offset[env_ids, 0] + g[:, 0]
             tpose[:, 2] = origins[:, 2] + top - self.table_half_height
         self.table.write_root_pose_to_sim_index(root_pose=tpose, env_ids=env_ids)
         self.realized_offset[env_ids] = 0.0
@@ -328,9 +391,18 @@ class HandoverEnv(DirectRLEnv):
                      "residual_abs_max", "exec_minus_cand_sum", "residual_sq_sum", "residual_sum_xyz",
                      "workspace_clip_sum", "align_corr_sum_xyz"):
             getattr(self, name)[env_ids] = 0.0
+        self.grasp_achieved[env_ids] = 0.0
+        if self.calib is not None:
+            self.calib.reset(env_ids)
         self.stab.reset(env_ids)
         self.geom.reset(env_ids)
         self.evaluator.reset(env_ids)
+        self.obs_history.reset(env_ids)
+        if self.sensor is not None:
+            self.sensor.reset(env_ids)  # preserve case parameters on deterministic reset retries
+            self._sensor_fd_valid[env_ids] = False
+            self._sensor_rel_prev[env_ids] = 0
+            self._sensor_rel_vel[env_ids] = 0
 
     # ------------------------------------------------------------------ actions
     def _pre_physics_step(self, actions: torch.Tensor) -> None:
@@ -340,7 +412,15 @@ class HandoverEnv(DirectRLEnv):
         scored = self.mode == SCORED
         settle = self.mode == SETTLE
         t = self.t
+        if c.debug_perturb_privileged:
+            noise = (torch.rand(self.num_envs, 3, generator=self._perturb_rng, device=self.device) * 2 - 1) * 0.05
+            self.grasp_offset = torch.where(scored.unsqueeze(-1), self.grasp_offset + noise, self.grasp_offset)
+            self.grasp_achieved = torch.where(scored.unsqueeze(-1), self.grasp_achieved - noise, self.grasp_achieved)
         m = self.m if self.m else self._measure()
+
+        if self.sensor is not None:
+            self._measure()
+            m = self.controller_m
 
         # residual (bounded, relative to the current nominal target; never accumulated)
         self.prev_residual = self.residual.clone()
@@ -425,12 +505,14 @@ class HandoverEnv(DirectRLEnv):
             robot.actuators.target_command.set_position_index(value=q_des, joint_ids=self.arm_ids)
             robot.actuators.target_command.set_position_index(value=fingers.unsqueeze(-1), joint_ids=self.f1_id)
         # settling stages 1-2: hold the object at its start pose (before the scored episode only)
-        pin = (self.mode == SETTLE) & (self.settle_t < self.cfg.settle_pin_s + self.cfg.settle_close_s)
-        pin = pin | (self.mode == IDLE)
+        settle_pin = (self.mode == SETTLE) & (self.settle_t < self.cfg.settle_pin_s + self.cfg.settle_close_s)
+        pin = settle_pin | (self.mode == IDLE)
         ids = pin.nonzero(as_tuple=False).squeeze(-1)
         if len(ids) > 0:
             pose = torch.zeros(len(ids), 7, device=self.device)
-            pose[:, :3] = self.scene.env_origins[ids] + self.obj_nominal_local + self.offset[ids]
+            # the in-grasp offset applies to settling pins only; idle envs are not recorded
+            g = torch.where(settle_pin[ids].unsqueeze(-1), self.grasp_offset[ids], torch.zeros_like(self.grasp_offset[ids]))
+            pose[:, :3] = self.scene.env_origins[ids] + self.obj_nominal_local + self.offset[ids] + g
             pose[:, 6] = 1.0
             self.obj.write_root_pose_to_sim_index(root_pose=pose, env_ids=ids)
             self.obj.write_root_velocity_to_sim_index(root_velocity=torch.zeros(len(ids), 6, device=self.device), env_ids=ids)
@@ -506,6 +588,32 @@ class HandoverEnv(DirectRLEnv):
             finite &= torch.isfinite(m[k]).all(-1)
         m["finite"] = finite
         self.m = m
+        if self.sensor is not None:
+            fresh = self.sensor.token != int(self.common_step_counter)
+            estimated_pos = self.sensor.update(m["obj_pos"], int(self.common_step_counter))
+            if self.cfg.observation_giver_reference:
+                grasp_g = -self.recv_grasp_in_obj
+                kinematic = m["giver_tcp"] - quat_apply(m["obj_quat"], grasp_g.expand(self.num_envs, 3))
+                use_giver = (~self.released) & (m["giver_force_l"] > self.cfg.contact_force) & (m["giver_force_r"] > self.cfg.contact_force)
+                if self.calib is not None:
+                    frame = torch.where(self.mode == SCORED, self.k_scored, torch.full_like(self.k_scored, -1))
+                    self.calib.update(fresh, frame, use_giver, self.sensor.raw, kinematic, m["giver_hand_quat"])
+                    kinematic = kinematic + self.calib.correction(m["giver_hand_quat"])
+                estimated_pos = torch.where(use_giver[:, None], kinematic, estimated_pos)
+            cm = dict(m)
+            cm["obj_pos"] = estimated_pos
+            cm["grasp_from_obj"] = estimated_pos + quat_apply(m["obj_quat"], self.recv_grasp_in_obj.expand(self.num_envs, 3))
+            rel = quat_apply_inverse(m["recv_hand_quat"], estimated_pos - m["recv_hand_pos"])
+            velocity = quat_apply(m["recv_hand_quat"], (rel - self._sensor_rel_prev) / self.step_dt)
+            velocity = torch.where(self._sensor_fd_valid[:, None], velocity, torch.zeros_like(velocity))
+            self._sensor_rel_vel = torch.where(fresh[:, None], velocity, self._sensor_rel_vel)
+            self._sensor_rel_prev = torch.where(fresh[:, None], rel, self._sensor_rel_prev)
+            self._sensor_fd_valid |= fresh
+            cm["obj_rel_linvel"] = self._sensor_rel_vel
+            cm["obj_rel_speed"] = self._sensor_rel_vel.norm(dim=-1)
+            cm["obj_rel_in_recv"] = quat_apply_inverse(m["recv_hand_quat"], estimated_pos - m["recv_tcp"])
+            cm["grasp_error"] = (cm["grasp_from_obj"] - m["recv_tcp"]).norm(dim=-1)
+            self.controller_m = cm
         return m
 
     # ------------------------------------------------------------------ dones / rewards / obs
@@ -522,6 +630,11 @@ class HandoverEnv(DirectRLEnv):
         done_settle = settle & (self.settle_t >= self.settle_total - 1e-4)
         if done_settle.any():
             realized = m["obj_pos"] - self.obj_nominal_local
+            if self.cfg.grasp_uncertainty:
+                realized = realized - self.grasp_offset  # joint displacement; the in-grasp part is checked below
+                kin_nominal = m["giver_tcp"] + quat_apply(m["obj_quat"], self.recv_grasp_in_obj.expand(self.num_envs, 3))
+                achieved = m["obj_pos"] - kin_nominal
+                self.grasp_achieved = torch.where(done_settle.unsqueeze(-1), achieved, self.grasp_achieved)
             checks = torch.stack([
                 (m["giver_force_l"] > c.contact_force) & (m["giver_force_r"] > c.contact_force),
                 (m["table_force"] <= c.table_force) | (c.negative_control == "table_support"),
@@ -530,6 +643,7 @@ class HandoverEnv(DirectRLEnv):
                 m["collision_force"] <= c.collision_force,
                 (realized - self.offset).norm(dim=-1) < c.reset_offset_tol,
                 m["finite"],
+                ((self.grasp_achieved - self.grasp_offset).norm(dim=-1) < c.reset_offset_tol) | (not c.grasp_uncertainty),
             ], dim=-1)
             valid = checks.all(-1)
             fail_bits = ((~checks).long() * (2 ** torch.arange(checks.shape[-1], device=self.device))).sum(-1)
@@ -554,7 +668,8 @@ class HandoverEnv(DirectRLEnv):
         # exact episode clock from an integer step counter (float accumulation drifted by ~1e-6 s)
         self.k_scored = torch.where(scored, self.k_scored + 1, self.k_scored)
         self.t = torch.where(scored, self.k_scored.to(self.t.dtype) * dt, self.t)
-        raw = self.stab.raw(m["recv_force_l"], m["recv_force_r"], m["obj_rel_speed"], m["obj_rel_angspeed"])
+        ctrl = self.controller_m if self.sensor is not None else m
+        raw = self.stab.raw(ctrl["recv_force_l"], ctrl["recv_force_r"], ctrl["obj_rel_speed"], ctrl["obj_rel_angspeed"])
         self.stable = self.stab.update(raw & scored, self.t, dt)
         sig = dict(m)
         sig.update(t=self.t, released=self.released, release_timeout=self.release_timeout,
@@ -627,6 +742,9 @@ class HandoverEnv(DirectRLEnv):
     def _get_observations(self) -> dict[str, torch.Tensor]:
         c = self.cfg
         m = self.m if self.m else self._measure()
+        if self.sensor is not None:
+            self._measure()
+            m = self.controller_m
         q_rel = quat_mul(quat_conjugate(m["recv_hand_quat"]), m["obj_quat"])
         q_err = quat_mul(quat_conjugate(self.q_rel_nom.expand_as(q_rel)), q_rel)
         rel_lin = m["obj_rel_linvel"]
@@ -655,6 +773,13 @@ class HandoverEnv(DirectRLEnv):
         )
         obs = torch.nan_to_num(obs, nan=0.0, posinf=0.0, neginf=0.0).clamp(-10.0, 10.0)
         obs = apply_phase_mask(obs, PHASE_SLICE, c.phase_input)
+        if c.observation_history > 1:
+            if c.observation_history_mode == "repeat_current":
+                obs = obs.repeat(1, c.observation_history)
+            else:
+                obs = self.obs_history.update(obs, int(self.common_step_counter))
+                if c.observation_history_permutation is not None:
+                    obs = obs.reshape(self.num_envs, c.observation_history, 46)[:, c.observation_history_permutation].flatten(1)
         return {"policy": obs}
 
     # ------------------------------------------------------------------ logging / records
@@ -692,9 +817,13 @@ class HandoverEnv(DirectRLEnv):
             "res_sq": cpu(self.residual_sq_sum), "res_xyz": cpu(self.residual_sum_xyz),
             "clip_sum": cpu(self.workspace_clip_sum), "align_xyz": cpu(self.align_corr_sum_xyz),
             "rfail": cpu(self.reset_fail_bits), "roff": cpu(self.reset_offset_err),
+            "g_req": cpu(self.grasp_offset), "g_ach": cpu(self.grasp_achieved),
         }
+        if self.calib is not None:
+            fields.update(c_off=cpu(self.calib.offset_h), c_n=cpu(self.calib.count), c_closed=cpu(self.calib.closed),
+                          c_world=cpu(quat_apply(self.q_giver.expand(self.num_envs, 4), self.calib.offset_h)))
         check_names = ("giver_contact", "table_support", "height", "object_speed", "prohibited_contact",
-                       "offset_tolerance", "finite")
+                       "offset_tolerance", "finite", "grasp_offset_tolerance")
         f = lambda v: None if (v is None or not math.isfinite(float(v))) else float(v)  # noqa: E731
         for i in ids:
             ci = int(fields["case_index"][i])
@@ -746,6 +875,21 @@ class HandoverEnv(DirectRLEnv):
                 rec["release_delay_s"] = rec["release_command_time_s"] - rec["release_request_time_s"]
             else:
                 rec["release_delay_s"] = None
+            if self.sensor is not None:
+                rec["observation_error"] = self.case_queue[ci]["observation_error"]
+                rec["sensor_ema_alpha"] = self.sensor.alpha
+                rec["observation_history"] = self.cfg.observation_history
+            if self.cfg.grasp_uncertainty:
+                # privileged debug fields (evaluator/analysis only)
+                rec["grasp_offset_requested_xyz_m"] = [float(v) for v in self.case_queue[ci]["grasp_offset_xyz_m"]]
+                rec["grasp_offset_achieved_xyz_m"] = [float(v) for v in fields["g_ach"][i]] if valid else None
+                rec["giver_calibration_window_s"] = self.cfg.giver_calibration_window_s
+                if self.calib is not None:
+                    # calibration estimate in the giver-hand frame and its world-frame value (fixed orientation)
+                    rec["calibration_frames_used"] = int(fields["c_n"][i])
+                    rec["calibration_closed"] = bool(fields["c_closed"][i])
+                    rec["calibration_offset_hand_m"] = [float(v) for v in fields["c_off"][i]]
+                    rec["calibration_offset_world_m"] = [float(v) for v in fields["c_world"][i]]  # commanded hand frame
             self.completed_records.append(rec)
             self._pending_records.append((rec, int(i)))
 
@@ -783,3 +927,15 @@ class HandoverEnv(DirectRLEnv):
                 )[0].argmax().item(),
             }
             self.traces.setdefault(i, []).append(row)
+            if self.sensor is not None:
+                row.update(observed_obj_pos=self.sensor.raw[i].tolist(),
+                           estimated_obj_pos=self.sensor.estimate[i].tolist(),
+                           controller_obj_pos=self.controller_m["obj_pos"][i].tolist(),
+                           observed_rel_linvel=self._sensor_rel_vel[i].tolist(),
+                           sensor_seed=int(self.sensor.seeds[i]), sensor_frame=int(self.sensor.frames[i]) - 1)
+            if self.cfg.grasp_uncertainty:
+                row.update(grasp_offset_true=self.grasp_offset[i].tolist(), grasp_offset_achieved=self.grasp_achieved[i].tolist(),
+                           giver_hand_quat=m["giver_hand_quat"][i].tolist())
+                if self.calib is not None:
+                    row.update(calibration_offset_hand=self.calib.offset_h[i].tolist(),
+                               calibration_count=int(self.calib.count[i]), calibration_closed=bool(self.calib.closed[i]))

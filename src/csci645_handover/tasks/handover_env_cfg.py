@@ -236,6 +236,39 @@ class HandoverEnvCfg(DirectRLEnvCfg):
     constant_residual_m: list | None = None
     """Constant-offset control: a fixed Cartesian residual [m] used in place of a policy action, composed
     exactly like the learned residual (scored steps only, clipped to +-residual_bound_m per axis)."""
+    observation_sensor: dict | None = None
+    """V3 opt-in translation sensor. None keeps the archived v1/v2 observation path.
+    Keys: bias_bound_m, noise_std_m, delay_steps, max_delay_steps, ema_alpha,
+    clean_probability. Evaluation cases override bias/noise/delay/seed explicitly.
+    Position only is corrupted; orientation, proprioception and contacts stay measured.
+    """
+    observation_history: int = 1
+    observation_history_mode: str = "stack"
+    observation_history_permutation: list | None = None
+    observation_giver_reference: bool = False
+    """Strong baseline: infer object center from the known giver grasp transform
+    while the giver has both contacts and has not been commanded to release.
+    Uses measured TCP and nominal grasp geometry, never true object translation.
+    """
+    grasp_uncertainty: bool = False
+    """V4 opt-in: the object's initial physical translation inside the giver grasp is a per-episode unknown.
+    Evaluation cases must carry ``grasp_offset_xyz_m`` (env-local frame; x = bar axis, z = vertical). During
+    settling the object is pinned at nominal + joint offset + grasp offset while the giver closes on it at its
+    unshifted hold pose, so the giver grasps a different part of the bar; after pinning ends only contact holds
+    it. The true offset is used only for that spawn and for privileged records, never by a controller.
+    False keeps the archived V3 behaviour and records exactly."""
+    grasp_offset_train: dict | None = None
+    """V4 training distribution of the in-grasp offset: {"bound_xyz_m": [bx, by, bz], "clean_probability": p}.
+    Each axis is uniform in [-b, b]; with probability p the offset is zero. None = no grasp offset in training."""
+    giver_calibration_window_s: float | None = None
+    """V4 calibrated giver reference: during the first window of the scored episode (giver holding, both giver
+    contacts), average the corrupted translation measurement minus the fixed-transform kinematic estimate in
+    the giver-hand frame; afterwards the giver reference adds that estimate. Requires
+    ``observation_giver_reference``. Before the window closes the fixed transform is used. None = historical
+    fixed transform."""
+    debug_perturb_privileged: bool = False
+    """Acceptance check only: overwrite privileged-only tensors (true grasp offset after spawn, achieved
+    offset record) with garbage every step. Controller actions must be unchanged."""
     stab_min_finger_force: float = 0.2
     stab_max_rel_lin_speed: float = 0.03
     stab_max_rel_ang_speed: float = 0.5
@@ -296,6 +329,16 @@ class HandoverEnvCfg(DirectRLEnvCfg):
     scene: HandoverSceneCfg = HandoverSceneCfg(num_envs=64, env_spacing=2.5, replicate_physics=True)
 
     def __post_init__(self):
+        if self.observation_history < 1:
+            raise ValueError("observation_history must be >= 1")
+        if self.observation_history_mode not in ("stack", "repeat_current"):
+            raise ValueError("unknown observation_history_mode")
+        if self.observation_history_permutation is not None:
+            if sorted(self.observation_history_permutation) != list(range(self.observation_history)):
+                raise ValueError("history permutation must contain each frame index exactly once")
+            if self.observation_history_mode != "stack":
+                raise ValueError("permutation requires stack mode")
+        self.observation_space = 46 * self.observation_history
         self.sim.dt = 1.0 / self.physics_hz
         self.sim.render_interval = self.decimation
         settle = self.settle_pin_s + self.settle_close_s + self.settle_free_s

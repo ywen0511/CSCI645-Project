@@ -1,0 +1,121 @@
+{
+ "stage": "video_replay",
+ "utc": "2026-11-06T04:44:06Z",
+ "host": "<cluster-node>",
+ "tools": {
+  "commit": "cfa33d7559d631c49ece9e4b8a868c1f320edaf2",
+  "dirty": false,
+  "tags": [
+   "v2.1.1"
+  ]
+ },
+ "experiment": {
+  "commit": "1d9d0e23eec346c1b1cb3c0c245a1e772df7bedf",
+  "dirty": false,
+  "tags": [
+   "experiment-v2"
+  ]
+ },
+ "command": {
+  "cmd": [
+   "bash",
+   "<VERIFY>/repo/scripts/cluster/isaac_run.sh",
+   "<WORK>/envs/csci645proj/bin/python",
+   "scripts/record_video.py",
+   "--plan",
+   "<VERIFY>/work/sim/video_replay/resolved_video_plan.json",
+   "--suite",
+   "configs/v2/suites/final.jsonl",
+   "--protocol",
+   "configs/v2/frozen/protocol.json"
+  ],
+  "cwd": "$WORK/src/experiment-v2",
+  "rc": 0,
+  "start": "2026-11-06T04:42:07.215571+00:00",
+  "wall_s": 119.00781,
+  "log": "$WORK/logs/video_replay.log"
+ },
+ "videos": [
+  {
+   "video": "matched_comparison__nominal__v2final-joint_early_2cm_030-0000.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "episode_timeout",
+   "evaluation_terminal_reason": "episode_timeout",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "episode_timeout"
+  },
+  {
+   "video": "matched_comparison__geometry_1p5cm__v2final-joint_early_2cm_030-0000.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "success",
+   "evaluation_terminal_reason": "success",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "success"
+  },
+  {
+   "video": "matched_comparison__combined_seed11__selected__v2final-joint_early_2cm_030-0000.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "success",
+   "evaluation_terminal_reason": "success",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "success"
+  },
+  {
+   "video": "release_gate_rescue__ablation_1cm_A__v2final-joint_early_2cm_030-0006.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "episode_timeout",
+   "evaluation_terminal_reason": "episode_timeout",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "episode_timeout"
+  },
+  {
+   "video": "release_gate_rescue__ablation_1cm_AG__v2final-joint_early_2cm_030-0006.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "success",
+   "evaluation_terminal_reason": "success",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "success"
+  },
+  {
+   "video": "alignment_bound__geometry_1cm__v2final-joint_early_2cm_030-0018.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "prohibited_collision",
+   "evaluation_terminal_reason": "prohibited_collision",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "prohibited_collision"
+  },
+  {
+   "video": "alignment_bound__geometry_1p5cm__v2final-joint_early_2cm_030-0018.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "success",
+   "evaluation_terminal_reason": "success",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "success"
+  },
+  {
+   "video": "trained_success__combined_seed11__selected__v2final-joint_late_3cm_045-0029.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "success",
+   "evaluation_terminal_reason": "success",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "success"
+  },
+  {
+   "video": "trained_failure__combined_seed11__selected__v2final-joint_early_3cm_045-0001.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "prohibited_collision",
+   "evaluation_terminal_reason": "prohibited_collision",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "prohibited_collision"
+  },
+  {
+   "video": "residual_policy__residual_seed11__selected__v2final-joint_early_1cm_015-0006.mp4",
+   "rendered": true,
+   "replay_terminal_reason": "success",
+   "evaluation_terminal_reason": "success",
+   "replay_matches_evaluation": true,
+   "v2.0.0_replay_terminal_reason": "success"
+  }
+ ],
+ "all_match": true
+}

@@ -1,0 +1,85 @@
+{
+ "complete": true,
+ "all_attempts_accounted": true,
+ "runs": [
+  {
+   "profile": "combined_robust_ff",
+   "seed": 901,
+   "status": "completed",
+   "transitions": 5505024,
+   "source_commit": "508937303e48190242269a39631312ed1d94acc2",
+   "config_hash": "d7916e4179369dcfc5fe6410b5656910220b69df909cfbcee573739651e4482b",
+   "final_checkpoint_sha256": "f1bd52eb9388192cdd3be918161f8120b4318f7645ffe84f6afba5ba14a9fb43",
+   "evaluation": "results/v4/pilot/runs/pilot_combined_robust_ff_s901.json"
+  },
+  {
+   "profile": "combined_robust_history",
+   "seed": 901,
+   "status": "completed",
+   "transitions": 5505024,
+   "source_commit": "508937303e48190242269a39631312ed1d94acc2",
+   "config_hash": "fc973b1c358a760ec13f9604500ba256a2f017cc2d23e92cc99835837126a7b0",
+   "final_checkpoint_sha256": "9d3ac73d53765ccc3f0c645df2421004724e04fa7555388ee0eac6aeb6cfd035",
+   "evaluation": "results/v4/pilot/runs/pilot_combined_robust_history_s901.json"
+  },
+  {
+   "profile": "combined_robust_history",
+   "seed": 902,
+   "status": "completed",
+   "transitions": 5505024,
+   "source_commit": "508937303e48190242269a39631312ed1d94acc2",
+   "config_hash": "fc973b1c358a760ec13f9604500ba256a2f017cc2d23e92cc99835837126a7b0",
+   "final_checkpoint_sha256": "027305ed415ecd9365fdb0803625887e5e76d4ea257a3b5364cf3707e1d342d2",
+   "evaluation": "results/v4/pilot/runs/pilot_combined_robust_history_s902.json"
+  },
+  {
+   "profile": "residual_robust_history",
+   "seed": 901,
+   "status": "completed",
+   "transitions": 5505024,
+   "source_commit": "508937303e48190242269a39631312ed1d94acc2",
+   "config_hash": "fc973b1c358a760ec13f9604500ba256a2f017cc2d23e92cc99835837126a7b0",
+   "final_checkpoint_sha256": "8dfd3d1f1740ea5698963152197926405a2efbb395e4afa296bccf9642d9e499",
+   "evaluation": "results/v4/pilot/runs/pilot_residual_robust_history_s901.json"
+  }
+ ],
+ "other_training_transitions": 1638400,
+ "other_training_breakdown": {
+  "killed_packed_attempt_upper_bound": 655360,
+  "smoke": 655360,
+  "smoke_resume_increments": 327680
+ },
+ "total_training_transitions": 23658496,
+ "cap": 24000000,
+ "formal_configuration_decision": "Retain the V3 PPO, network, rollout (1,024 x 32), curriculum and 10M budget unchanged. The combined robust feed-forward and history pilots matched their calibrated parent (24/24 in every validation-like development stratum at 2M, 4M and final, one 23/24) with stable training (no collapse, finite losses); the residual-only history pilot (nominal parent) reached 12-24/24 (mixed_id 15/24). Limitation: development strata are at the parent's ceiling, so pilots cannot show whether learning adds anything; that is a question for the frozen study.",
+ "evidence": [
+  {
+   "path": "results/v4/pilot/runs/pilot_combined_robust_ff_s901.json",
+   "sha256": "349692b730839aea5314db1db62fe3557568782cb54cf7c0a3b0bad3f34d3885"
+  },
+  {
+   "path": "results/v4/pilot/runs/pilot_combined_robust_history_s901.json",
+   "sha256": "5c8c176bce395d64caf9d4f97c68285e7f6a28f07b839f66d327d21bfcbbdaea"
+  },
+  {
+   "path": "results/v4/pilot/runs/pilot_combined_robust_history_s902.json",
+   "sha256": "8fcbd545f28a005ec4b5437b223444648d7845979b928670f94b5eb08203697a"
+  },
+  {
+   "path": "results/v4/pilot/runs/pilot_residual_robust_history_s901.json",
+   "sha256": "6203700f9bb4d8d4b2039cd62809a7626dda04f3272b751ba2210a40c0b91339"
+  },
+  {
+   "path": "results/v4/pilot/runs/killed_packed_attempt.json",
+   "sha256": "1f4a23e0f6b0c236a67b148f14e8ff5502a0adcc3142cce5061c97237bdbab28"
+  },
+  {
+   "path": "results/v4/pilot/runs/smoke_runs.json",
+   "sha256": "200dd45404f334afd7b624c88fe1483e9f46e8efd56ccb1cedddef147307635a"
+  },
+  {
+   "path": "results/v4/pilots/pilot_eval_summary.json",
+   "sha256": "4af5faedd8af529854a827aa7492fa821f3c11aba5b87d727444071b3faa16cc"
+  }
+ ]
+}

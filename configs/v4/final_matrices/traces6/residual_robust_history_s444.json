@@ -1,0 +1,32 @@
+{
+ "name": "v4_final_residual_robust_history_s444_traces6",
+ "suite": "$DELIVERY/configs/v4/suites/final_trace6.jsonl",
+ "num_envs": 6,
+ "protocol": "configs/v4/frozen/training/residual_robust_history.json",
+ "trace_cases": [
+  "v4-final-clean-0000",
+  "v4-final-grasp_10mm-0000",
+  "v4-final-grasp_15mm-0000",
+  "v4-final-mixed_id-0000",
+  "v4-final-mixed_id-0001",
+  "v4-final-mixed_ood-0000"
+ ],
+ "entries": [
+  {
+   "id": "residual_robust_history_s444__selected",
+   "method": "residual",
+   "training_seed": 444,
+   "role": "selected",
+   "trace": true,
+   "checkpoint": "residual_robust_history_s444/checkpoints/step_002031616.pt"
+  },
+  {
+   "id": "residual_robust_history_s444__final",
+   "method": "residual",
+   "training_seed": 444,
+   "role": "final",
+   "trace": true,
+   "checkpoint": "residual_robust_history_s444/checkpoints/final.pt"
+  }
+ ]
+}
