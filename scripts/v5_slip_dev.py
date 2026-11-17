@@ -2,6 +2,9 @@
 """V5 Study B development inputs (CPU, deterministic). Development cases only; nothing here is a final result.
 
     python3 scripts/v5_slip_dev.py probe       # configs/v5/slip/development/probe/*  (feasibility probe, section 3.2)
+    python3 scripts/v5_slip_dev.py probe2      # probe round 2 (near-full squeeze)
+    python3 scripts/v5_slip_dev.py grid        # development suite + training-free candidate matrices (section 3.3)
+    python3 scripts/v5_slip_dev.py select --runs <dir>   # baseline_selection.json (V4 ranking, development only)
 
 The probe evaluates the training-free calibrated parent (V4 geometry_calibrated) under candidate slip-mechanism
 parameter sets (runtime entries in one process), checks that a no-slip case is unchanged by enabling the
@@ -98,5 +101,123 @@ def probe(mechs=None, tag=""):
     print(json.dumps({k: v for k, v in out["matrices"].items()}, indent=1), len(rows), "probe cases")
 
 
+# ------------------------------------------------------------------------------------------- development grid
+TRACKING = [(0.05, 0.025), (0.1, 0.025), (0.2, 0.025), (0.4, 0.025), (0.2, 0.035), (0.4, 0.035)]  # (alpha, bound)
+CONSTANTS_X = (-0.004, -0.002, 0.002, 0.004)  # on the calibrated parent; 0 is the parent itself
+SENSOR_FIXED = {**SENSOR, "ema_alpha": 1.0}
+RULE = ("development cases only; strata = the four V5 validation conditions (clean, static_mixed_id, slip_pos_10, "
+        "slip_mixed_id), equal weight, 24 cases each, all scheduled cases in the denominator: success rate desc, "
+        "unsafe-event rate asc (any prohibited collision or drop), correction magnitude asc (geometry: mean |alignment "
+        "correction|; constant offsets: |c|), mean completion time of successes asc, candidate ID asc (V4 rule).")
+
+
+def candidates():
+    c = [{"id": "nominal", "method": "nominal", "group": "a", "overrides": {}},
+         {"id": "geometry_calibrated", "method": "geometry", "group": "a", "overrides": dict(PARENT_ENTRY)},
+         {"id": "geometry_fixed", "method": "geometry", "group": "fixed", "overrides": {"align_max": 0.015}},
+         {"id": "geometry_ema", "method": "geometry", "group": "ema", "overrides": {"align_max": 0.025}}]
+    for a, b in TRACKING:
+        c.append({"id": f"tracking_a{int(round(a * 100)):03d}_b{int(round(b * 1000))}", "method": "geometry", "group": "a",
+                  "kind": "tracking", "overrides": {"align_max": b, "giver_calibration_window_s": 0.5, "giver_tracking_alpha": a}})
+    for x in CONSTANTS_X:
+        c.append({"id": f"calibrated_const_x{x * 1000:+.0f}", "method": "geometry", "group": "a", "kind": "constant",
+                  "overrides": {**PARENT_ENTRY, "constant_residual_m": [x, 0.0, 0.0]}})
+    return c
+
+
+def grid():
+    rows = v5.make_cases("development")
+    s = jl(DEV / "suites/development.jsonl", rows)
+    mech = v5.SLIP_MECHANISM
+    bases = {"a": {**PARENT_BASE, "slip_mechanism": mech},
+             "fixed": {**PARENT_BASE, "observation_sensor": SENSOR_FIXED, "slip_mechanism": mech},
+             "ema": {**PARENT_BASE, "observation_giver_reference": False, "slip_mechanism": mech}}
+    trace = [f"{v5.PREFIX}-development-{c}-0000" for c in ("slip_mixed_id", "slip_pos_10", "clean")]
+    cs = candidates()
+    out = {}
+    for g, base in bases.items():
+        ents = [{"id": c["id"], "method": c["method"], "overrides": c["overrides"], "trace": True} for c in cs if c["group"] == g]
+        p = DEV / "matrices" / f"dev_{g}.json"
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(json.dumps({"name": f"v5_slip_dev_{g}", "suite": s, "num_envs": len(rows),
+                                 "protocol": "configs/v2/protocol.json", "base_overrides": base, "trace_cases": trace,
+                                 "entries": ents}, indent=1) + "\n")
+        out[g] = str(p.relative_to(ROOT))
+    reg = {"rule": RULE, "suite": s, "suite_sha256": v5.v4.sha256(ROOT / s), "mechanism": mech,
+           "cumulative_x_m": list(v5.CUMULATIVE_X), "candidates": cs, "matrices": out}
+    (DEV / "baseline_grid.json").write_text(json.dumps(reg, indent=1) + "\n")
+    print(json.dumps(out, indent=1), len(rows), "development cases,", len(cs), "candidates")
+
+
+def _score(rows, magnitude):
+    by = {}
+    for r in rows:
+        if r["condition"] in v5.VALIDATION:
+            by.setdefault(r["condition"], []).append(r)
+    if sorted(by) != sorted(v5.VALIDATION) or any(len(v) != v5.SPLIT_COUNTS["development"] for v in by.values()):
+        raise SystemExit("incomplete development strata")
+    w = 1.0 / len(by)
+    succ = sum(w * sum(r["success"] for r in v) / len(v) for v in by.values())
+    unsafe = sum(w * sum(bool(r["collision"]) or r["terminal_reason"] == "drop" for r in v) / len(v) for v in by.values())
+    times = [r["completion_time_s"] for v in by.values() for r in v if r["success"]]
+    return {"success": succ, "unsafe": unsafe, "magnitude": magnitude(rows),
+            "completion_time": sum(times) / len(times) if times else float("inf"),
+            "invalid_resets": sum(not r["reset_valid"] for v in by.values() for r in v),
+            "invalid_slips": sum(r["terminal_reason"] == "invalid_slip" for v in by.values() for r in v),
+            "per_condition_success": {c: sum(r["success"] for r in v) / len(v) for c, v in sorted(by.items())}}
+
+
+def _key(s, cid):
+    return (-round(s["success"], 12), round(s["unsafe"], 12), round(s["magnitude"], 12), round(s["completion_time"], 12), cid)
+
+
+def _align_mag(rows):
+    vals = [sum(x * x for x in r["align_correction_mean_xyz_m"]) ** 0.5 for r in rows if r["condition"] in v5.VALIDATION]
+    return sum(vals) / len(vals)
+
+
+def select(runs: Path):
+    reg = json.loads((DEV / "baseline_grid.json").read_text())
+    cs = {c["id"]: c for c in reg["candidates"]}
+    scores, all_cond = {}, {}
+    for cid, c in cs.items():
+        hits = list(runs.glob(f"**/{cid}.jsonl"))
+        if len(hits) != 1:
+            raise SystemExit(f"{cid}: expected one record file, found {len(hits)}")
+        rows = [json.loads(x) for x in hits[0].read_text().splitlines() if x.strip()]
+        if {r["suite_hash"] for r in rows} != {reg["suite_sha256"]} or any(r["source_dirty"] for r in rows):
+            raise SystemExit(f"{cid}: stale suite or dirty source")
+        if c.get("kind") == "constant":
+            mag = lambda rows, v=c["overrides"]["constant_residual_m"]: sum(x * x for x in v) ** 0.5  # noqa: E731
+        else:
+            mag = _align_mag
+        scores[cid] = _score(rows, mag)
+        by = {}
+        for r in rows:
+            by.setdefault(r["condition"], []).append(r["success"])
+        all_cond[cid] = {k: sum(v) / len(v) for k, v in sorted(by.items())}
+    best = lambda ids: min(ids, key=lambda c: _key(scores[c], c))  # noqa: E731
+    tracking = best([c for c in cs if cs[c].get("kind") == "tracking"])
+    constant = best([c for c in cs if cs[c].get("kind") == "constant"] + ["geometry_calibrated"])
+    training_free = [c for c in cs]
+    roles = {"nominal": "nominal", "geometry_fixed": "geometry_fixed", "geometry_ema": "geometry_ema",
+             "geometry_calibrated": "geometry_calibrated", "geometry_tracking": tracking,
+             "best_constant_geometry": constant, "geometry_best": best(training_free)}
+    out = {"status": "selected on development data only", "rule": reg["rule"], "suite_sha256": reg["suite_sha256"],
+           "scores": scores, "success_by_condition_all_development": all_cond,
+           "ranking": sorted(cs, key=lambda c: _key(scores[c], c)),
+           "roles": {r: {"candidate_id": c, **cs[c], **{f"selection_{k}": v for k, v in scores[c].items()
+                                                        if k != "per_condition_success"}} for r, c in roles.items()}}
+    (DEV / "baseline_selection.json").write_text(json.dumps(out, indent=1) + "\n")
+    for c in out["ranking"]:
+        s = scores[c]
+        print(f"{c:28s} succ={s['success']:.4f} unsafe={s['unsafe']:.4f} mag={s['magnitude'] * 1000:.2f}mm "
+              f"inv_slip={s['invalid_slips']} {s['per_condition_success']}")
+    print({r: c for r, c in roles.items()})
+
+
 if __name__ == "__main__":
-    {"probe": probe, "probe2": lambda: probe(MECHANISMS_R2, "_r2")}[sys.argv[1]]()
+    if sys.argv[1] == "select":
+        select(Path(sys.argv[sys.argv.index("--runs") + 1]))
+    else:
+        {"probe": probe, "probe2": lambda: probe(MECHANISMS_R2, "_r2"), "grid": grid}[sys.argv[1]]()

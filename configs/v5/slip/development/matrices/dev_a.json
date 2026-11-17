@@ -1,0 +1,166 @@
+{
+ "name": "v5_slip_dev_a",
+ "suite": "configs/v5/slip/development/suites/development.jsonl",
+ "num_envs": 192,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 0.2,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": true,
+  "grasp_uncertainty": true,
+  "slip_mechanism": {
+   "finger_stiffness": 2000.0,
+   "kp": 6000.0,
+   "kd": 60.0,
+   "ki": 60000.0,
+   "regrip_s": 0.1,
+   "tolerance_m": 0.0015,
+   "grip_force_n": 35.0,
+   "force_max_n": 90.0
+  }
+ },
+ "trace_cases": [
+  "v5slip-development-slip_mixed_id-0000",
+  "v5slip-development-slip_pos_10-0000",
+  "v5slip-development-clean-0000"
+ ],
+ "entries": [
+  {
+   "id": "nominal",
+   "method": "nominal",
+   "overrides": {},
+   "trace": true
+  },
+  {
+   "id": "geometry_calibrated",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5
+   },
+   "trace": true
+  },
+  {
+   "id": "tracking_a005_b25",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.05
+   },
+   "trace": true
+  },
+  {
+   "id": "tracking_a010_b25",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.1
+   },
+   "trace": true
+  },
+  {
+   "id": "tracking_a020_b25",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.2
+   },
+   "trace": true
+  },
+  {
+   "id": "tracking_a040_b25",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.4
+   },
+   "trace": true
+  },
+  {
+   "id": "tracking_a020_b35",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.035,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.2
+   },
+   "trace": true
+  },
+  {
+   "id": "tracking_a040_b35",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.035,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.4
+   },
+   "trace": true
+  },
+  {
+   "id": "calibrated_const_x-4",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.004,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "calibrated_const_x-2",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "calibrated_const_x+2",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  },
+  {
+   "id": "calibrated_const_x+4",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.004,
+     0.0,
+     0.0
+    ]
+   },
+   "trace": true
+  }
+ ]
+}

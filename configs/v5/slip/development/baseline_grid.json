@@ -1,0 +1,183 @@
+{
+ "rule": "development cases only; strata = the four V5 validation conditions (clean, static_mixed_id, slip_pos_10, slip_mixed_id), equal weight, 24 cases each, all scheduled cases in the denominator: success rate desc, unsafe-event rate asc (any prohibited collision or drop), correction magnitude asc (geometry: mean |alignment correction|; constant offsets: |c|), mean completion time of successes asc, candidate ID asc (V4 rule).",
+ "suite": "configs/v5/slip/development/suites/development.jsonl",
+ "suite_sha256": "1d4a9fe372ba9b05a3feea787237af3c9b70cd7266eb41b16ea3cf26941c0db4",
+ "mechanism": {
+  "finger_stiffness": 2000.0,
+  "kp": 6000.0,
+  "kd": 60.0,
+  "ki": 60000.0,
+  "regrip_s": 0.1,
+  "tolerance_m": 0.0015,
+  "grip_force_n": 35.0,
+  "force_max_n": 90.0
+ },
+ "cumulative_x_m": [
+  -0.002,
+  0.01
+ ],
+ "candidates": [
+  {
+   "id": "nominal",
+   "method": "nominal",
+   "group": "a",
+   "overrides": {}
+  },
+  {
+   "id": "geometry_calibrated",
+   "method": "geometry",
+   "group": "a",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5
+   }
+  },
+  {
+   "id": "geometry_fixed",
+   "method": "geometry",
+   "group": "fixed",
+   "overrides": {
+    "align_max": 0.015
+   }
+  },
+  {
+   "id": "geometry_ema",
+   "method": "geometry",
+   "group": "ema",
+   "overrides": {
+    "align_max": 0.025
+   }
+  },
+  {
+   "id": "tracking_a005_b25",
+   "method": "geometry",
+   "group": "a",
+   "kind": "tracking",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.05
+   }
+  },
+  {
+   "id": "tracking_a010_b25",
+   "method": "geometry",
+   "group": "a",
+   "kind": "tracking",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.1
+   }
+  },
+  {
+   "id": "tracking_a020_b25",
+   "method": "geometry",
+   "group": "a",
+   "kind": "tracking",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.2
+   }
+  },
+  {
+   "id": "tracking_a040_b25",
+   "method": "geometry",
+   "group": "a",
+   "kind": "tracking",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.4
+   }
+  },
+  {
+   "id": "tracking_a020_b35",
+   "method": "geometry",
+   "group": "a",
+   "kind": "tracking",
+   "overrides": {
+    "align_max": 0.035,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.2
+   }
+  },
+  {
+   "id": "tracking_a040_b35",
+   "method": "geometry",
+   "group": "a",
+   "kind": "tracking",
+   "overrides": {
+    "align_max": 0.035,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.4
+   }
+  },
+  {
+   "id": "calibrated_const_x-4",
+   "method": "geometry",
+   "group": "a",
+   "kind": "constant",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.004,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "calibrated_const_x-2",
+   "method": "geometry",
+   "group": "a",
+   "kind": "constant",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     -0.002,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "calibrated_const_x+2",
+   "method": "geometry",
+   "group": "a",
+   "kind": "constant",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.002,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "id": "calibrated_const_x+4",
+   "method": "geometry",
+   "group": "a",
+   "kind": "constant",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "constant_residual_m": [
+     0.004,
+     0.0,
+     0.0
+    ]
+   }
+  }
+ ],
+ "matrices": {
+  "a": "configs/v5/slip/development/matrices/dev_a.json",
+  "fixed": "configs/v5/slip/development/matrices/dev_fixed.json",
+  "ema": "configs/v5/slip/development/matrices/dev_ema.json"
+ }
+}

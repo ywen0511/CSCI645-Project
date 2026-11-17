@@ -24,8 +24,15 @@ PREFIX = "v5slip"
 
 SLIP_DURATION_S = 0.25
 ONSET_RANGE_S = (0.7, 1.4)
-# Feasible cumulative in-grasp x range [m]; set from the development probe before any suite is frozen.
-CUMULATIVE_X = (-0.007, 0.015)
+# Feasible cumulative in-grasp x range [m], from the development probe (results/v5/slip/probe/summary.json,
+# docs/v5/SLIP_FEASIBILITY.md): mechanism M6 realized valid slips at -2, +2, +5 and +10 mm in 12/12 episodes each;
+# +15 mm (vertical sag) and -5 / -7 mm (toward the giver palm: tipping, palm contact) failed acceptance.
+CUMULATIVE_X = (-0.002, 0.010)
+# Selected slip mechanism (probe round 2, "M6"): the giver keeps its full closed squeeze (grip_force_n equals the
+# closed command, so the finger target is unchanged) and a PID-regulated bar-axis force (<= 90 N) at the bar's
+# centre of mass overcomes friction; the regulator holds the target for 0.1 s afterwards.
+SLIP_MECHANISM = {"finger_stiffness": 2000.0, "kp": 6000.0, "kd": 60.0, "ki": 60000.0, "regrip_s": 0.1,
+                  "tolerance_m": 0.0015, "grip_force_n": 35.0, "force_max_n": 90.0}
 
 S0: dict = {}
 MIXED_ID = v4.CONDITIONS["mixed_id"]
@@ -35,7 +42,8 @@ CONDITIONS = {
     "static_mixed_id": {"grasp": MIXED_ID["grasp"], "sensor": MIXED_ID["sensor"], "slip": None},
     "slip_pos_5": {"grasp": {"mode": "zero"}, "sensor": S0, "slip": {"fixed": 0.005}},
     "slip_pos_10": {"grasp": {"mode": "zero"}, "sensor": S0, "slip": {"fixed": 0.010}},
-    "slip_neg_5": {"grasp": {"mode": "zero"}, "sensor": S0, "slip": {"fixed": -0.005}},
+    # V5_EXECUTION.md lists slip_neg_5; -5 mm is outside the feasible range, so the bound is adjusted to -2 mm
+    "slip_neg_2": {"grasp": {"mode": "zero"}, "sensor": S0, "slip": {"fixed": -0.002}},
     "slip_after_offset": {"grasp": {"x": {"fixed": 0.010}}, "sensor": S0, "slip": {"fixed": -0.010}},
     "slip_mixed_id": {"grasp": MIXED_ID["grasp"], "sensor": MIXED_ID["sensor"], "slip": {"uniform": [-0.005, 0.010]}},
     "slip_mixed_ood": {"grasp": MIXED_OOD["grasp"], "sensor": MIXED_OOD["sensor"], "slip": {"uniform": [-0.007, 0.015]}},

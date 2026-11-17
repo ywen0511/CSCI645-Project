@@ -77,3 +77,30 @@ Append-only. Each entry: date, decision, reason, evidence.
   * Negative controls (no receiver, giver holds, table support) with slip: 0 successes.
 - Decision: round 2 keeps the squeeze near/at the closed command (M4 ~80%, M5/M6 full) with a larger force
   cap, because the sag is the expected Coulomb effect of sliding under a small normal force.
+
+## 2026-11-17 21:46Z — Study B probe round 2, mechanism and feasible range fixed
+
+- Round 2 (commit `b664646`, same 88 probe cases): M4 (squeeze command 28 N, gains kp 12000/kd 80/ki 150000,
+  cap 70 N), M5 (full squeeze, same gains, cap 90 N), M6 (full squeeze, round-1 gains kp 6000/kd 60/ki 60000,
+  cap 90 N). Per-target valid slips (x and z within 1.5 mm; 12 episodes per target):
+  M6: -7 mm 1/12, -5 mm 3/12, -2 mm 12/12, +2 mm 12/12, +5 mm 12/12, +10 mm 12/12, +15 mm 9/12.
+  M4 kept {-2, +2, +5}; M5 kept {+2, +5}. Summary: `results/v5/slip/probe/summary.json`
+  (`scripts/v5_probe_summary.py`).
+- **Mechanism M6 selected** (most accepted targets). With `grip_force_n` = 35 N the relaxed finger target equals
+  the closed command, so the giver's squeeze is unchanged: in effect option (b), a regulated bar-axis force
+  (peak 35-51 N at accepted targets) that overcomes finger friction. No receiver contact before t_grasp and no
+  drop at any accepted target; negative controls with slip: 0 successes in all three; no-slip control unchanged
+  (bitwise-identical trace positions for both rounds).
+- **Feasible cumulative in-grasp x range [-2, +10] mm.** Dropped: +15 mm (about 2 mm vertical sag while sliding;
+  9/12 valid) and -5 / -7 mm (toward the giver palm: tipping and palm contact), consistent with the V4 palm-side
+  limit. Probe GPU use about 0.2 GPU-hours (cap 6).
+- **Condition adjustments (only to the feasible range, before any suite was frozen):** `slip_neg_5` becomes
+  `slip_neg_2` (-2 mm); `slip_mixed_id` (raw slip uniform [-5, +10] mm) and `slip_mixed_ood` (raw [-7, +15] mm)
+  are clamped so that start x + slip x stays in [-2, +10] mm (clamp: slip = clip(start + raw, -2, +10) - start;
+  `slip_clamped` and `slip_requested_x_m` are recorded per case). Static start offsets are not clamped (no-slip
+  conditions keep the V4 rules). Slip duration 0.25 s, onset uniform [0.7, 1.4] s keyed per base case, so slips
+  end by 1.75 s (1.65 s plus the 0.1 s hold), before the 2.0 s receiver grasp.
+- Development grid (`scripts/v5_slip_dev.py grid`): 192 development cases (8 conditions x 24, seed 6458101);
+  14 training-free candidates: nominal, V4 fixed/EMA/calibrated geometry, six `geometry_tracking` settings
+  (EMA weight 0.05/0.1/0.2/0.4 at 25 mm bound, 0.2/0.4 at 35 mm) and four constant x offsets (+-2, +-4 mm) on the
+  calibrated parent. Ranking: V4 rule on the four V5 validation conditions (development cases only).

@@ -82,9 +82,10 @@ def test_train_slip_draw_clamps_cumulative():
     g = torch.Generator().manual_seed(0)
     gx = torch.full((5000,), 0.012)
     s, on, du = sl.sample_train_slip(5000, v5.TRAIN_SLIP, gx, g, "cpu")
+    assert float((gx + s[:, 0])[du > 0].min()) >= v5.CUMULATIVE_X[0] - 1e-7
     active = du > 0
     assert 0.4 < float(active.float().mean()) < 0.6
-    assert float((gx + s[:, 0]).max()) <= v5.CUMULATIVE_X[1] + 1e-7
+    assert float((gx + s[:, 0])[active].max()) <= v5.CUMULATIVE_X[1] + 1e-7
     assert float(s[~active].abs().max()) == 0.0
     assert float(on[active].min()) >= 0.7 and float(on[active].max()) <= 1.4
     assert float(s[:, 1:].abs().max()) == 0.0
@@ -123,7 +124,8 @@ def test_case_design_deterministic_paired_and_clamped():
     for r in a:
         by.setdefault(r["base_case_id"], {})[r["condition"]] = r
         x = r["grasp_offset_xyz_m"][0] + r["slip_xyz_m"][0]
-        assert v5.CUMULATIVE_X[0] - 1e-9 <= x <= v5.CUMULATIVE_X[1] + 1e-9
+        if r["slip_duration_s"] > 0:  # cumulative clamp applies to slipping cases (static starts may reach +15 mm)
+            assert v5.CUMULATIVE_X[0] - 1e-9 <= x <= v5.CUMULATIVE_X[1] + 1e-9
         if r["slip_duration_s"] > 0:
             assert 0.7 <= r["slip_onset_s"] <= 1.4
             assert r["slip_onset_s"] + r["slip_duration_s"] + 0.1 <= 1.8 + 1e-9
