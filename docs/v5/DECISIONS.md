@@ -131,3 +131,26 @@ Append-only. Each entry: date, decision, reason, evidence.
   family the V4 definitions are kept.
 - The three pilots launched at 21:48Z (seed 901) used the superseded slide distribution; they are kept and
   labelled `pilot_r1`; pilots are rerun (`pilot_r2`) with the final training distribution.
+
+## 2026-11-17 22:02Z — Development round 2, pilots, Study B freeze (`experiment-v5b`)
+
+- Development round 2 (commit `a88da75`, 168 cases, 7 conditions x 24): `geometry_tracking` =
+  `tracking_a005_b25` (EMA weight 0.05, bound 25 mm); best constant = calibrated parent + 4 mm in x;
+  `geometry_best` = `tracking_a005_b25` (tied on success 98.96% and unsafe 0% with the +4 mm constant, EMA geometry
+  and three other tracking settings; the smallest total correction decides). Strata success: calibrated parent
+  96.9%, fixed geometry 70.8%, nominal 56.3%. One invalid slip per controller in 96 strata cases.
+  `configs/v5/slip/development/baseline_selection.json`.
+- Pilots `pilot_r2` (seed 901, 2,031,616 transitions, final training distribution): training-episode success
+  0.96 -> 0.98 (feed-forward), 0.88 -> 0.97 (history), 0.95 -> 0.98 (repeat); 8,160-8,545 transitions/s, so a
+  formal run takes about 20 minutes. Learning curves move; no pilot is used for any claim
+  (`results/v5/slip/pilot/summary_r2.json`).
+- **Freeze** (`configs/v5/slip/FREEZE.json`, 68 inputs, before any Study B final evaluation): suites (validation
+  160, final 1,400, mechanism subset 60, V4 final suite with zero slip 2,400), training protocols, baseline
+  selection, analysis plan, pre-training matrices and runner manifests, the generator of the post-selection
+  matrices, the analysis script (tested on synthetic records only), the simulator source. Primary: B1 history - FF
+  and B2 history - geometry_best on `slip_mixed_id`, selected checkpoints, paired seed x case bootstrap
+  (10,000, seed 6458401), superiority only if the Bonferroni 97.5% lower bound > 0.
+- Checkpoint selection (frozen): ten candidates at the first checkpoints at/after each 1 M transitions; step 0
+  never eligible; V4 key on the four validation conditions. Unlike V4 (which aborted on invalid resets),
+  invalid resets and invalid slips count as failures in the all-scheduled denominator, because the slip
+  mechanism has a small, method-independent failure rate.

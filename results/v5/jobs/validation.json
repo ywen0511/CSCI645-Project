@@ -1,0 +1,485 @@
+{
+ "name": "validation",
+ "tasks": [
+  {
+   "id": "val_slip_robust_ff_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s111.json",
+    "--output",
+    "$RUNS/validation/slip_robust_ff_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s111.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_ff_s111/slip_robust_ff_s111__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_ff_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s222.json",
+    "--output",
+    "$RUNS/validation/slip_robust_ff_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s222.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_ff_s222/slip_robust_ff_s222__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_ff_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s333.json",
+    "--output",
+    "$RUNS/validation/slip_robust_ff_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s333.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_ff_s333/slip_robust_ff_s333__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_ff_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s444.json",
+    "--output",
+    "$RUNS/validation/slip_robust_ff_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s444.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_ff_s444/slip_robust_ff_s444__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_ff_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s555.json",
+    "--output",
+    "$RUNS/validation/slip_robust_ff_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_ff_s555.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_ff_s555/slip_robust_ff_s555__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_history_s111.json",
+    "--output",
+    "$RUNS/validation/slip_robust_history_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_history_s111.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_history_s111/slip_robust_history_s111__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_history_s222.json",
+    "--output",
+    "$RUNS/validation/slip_robust_history_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_history_s222.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_history_s222/slip_robust_history_s222__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_history_s333.json",
+    "--output",
+    "$RUNS/validation/slip_robust_history_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_history_s333.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_history_s333/slip_robust_history_s333__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_history_s444.json",
+    "--output",
+    "$RUNS/validation/slip_robust_history_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_history_s444.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_history_s444/slip_robust_history_s444__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_history_s555.json",
+    "--output",
+    "$RUNS/validation/slip_robust_history_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_history_s555.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_history_s555/slip_robust_history_s555__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_repeat_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s111.json",
+    "--output",
+    "$RUNS/validation/slip_robust_repeat_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s111.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s111/slip_robust_repeat_s111__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_repeat_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s222.json",
+    "--output",
+    "$RUNS/validation/slip_robust_repeat_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s222.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s222/slip_robust_repeat_s222__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_repeat_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s333.json",
+    "--output",
+    "$RUNS/validation/slip_robust_repeat_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s333.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s333/slip_robust_repeat_s333__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_repeat_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s444.json",
+    "--output",
+    "$RUNS/validation/slip_robust_repeat_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s444.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s444/slip_robust_repeat_s444__step_010027008.jsonl"
+   ]
+  },
+  {
+   "id": "val_slip_robust_repeat_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s555.json",
+    "--output",
+    "$RUNS/validation/slip_robust_repeat_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/validation/slip_robust_repeat_s555.json",
+    "configs/v5/slip/suites/validation.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_000000000.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_001015808.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_002031616.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_003014656.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_004030464.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_005013504.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_006029312.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_007012352.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_008028160.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_009011200.jsonl",
+    "$RUNS/validation/slip_robust_repeat_s555/slip_robust_repeat_s555__step_010027008.jsonl"
+   ]
+  }
+ ]
+}

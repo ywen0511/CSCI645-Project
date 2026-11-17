@@ -1,0 +1,102 @@
+{
+ "rule": "python3 scripts/v5_compute.py --lsf-logs runs/v5/lsf_logs --output results/v5/compute.json",
+ "hardware": "NVIDIA A100-SXM4 (80 GB, LSF gpu_large hosts), driver bundle 580.159.03",
+ "by_stage": {
+  "b_development": {
+   "jobs": 1,
+   "gpu_hours": 0.077,
+   "failed_or_killed_jobs": 0
+  },
+  "b_feasibility_probe": {
+   "jobs": 2,
+   "gpu_hours": 0.151,
+   "failed_or_killed_jobs": 0
+  },
+  "b_pilots": {
+   "jobs": 3,
+   "gpu_hours": 0.257,
+   "failed_or_killed_jobs": 0
+  },
+  "study_a": {
+   "jobs": 2,
+   "gpu_hours": 0.33,
+   "failed_or_killed_jobs": 0
+  }
+ },
+ "total_gpu_hours": 0.81,
+ "cap_gpu_hours": 60,
+ "jobs": [
+  {
+   "job": "8392064",
+   "name": "c645v5b_dev",
+   "status": "Done",
+   "stage": "b_development",
+   "started": "Tue Nov 17 21:45:58 2026",
+   "run_s": 278,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8392067",
+   "name": "c645v5b_pilot_slip_robust_ff",
+   "status": "Done",
+   "stage": "b_pilots",
+   "started": "Tue Nov 17 21:47:17 2026",
+   "run_s": 313,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8392068",
+   "name": "c645v5b_pilot_slip_robust_history",
+   "status": "Done",
+   "stage": "b_pilots",
+   "started": "Tue Nov 17 21:47:17 2026",
+   "run_s": 311,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8392069",
+   "name": "c645v5b_pilot_slip_robust_repeat",
+   "status": "Done",
+   "stage": "b_pilots",
+   "started": "Tue Nov 17 21:47:17 2026",
+   "run_s": 300,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8391748",
+   "name": "c645v5b_probe",
+   "status": "Done",
+   "stage": "b_feasibility_probe",
+   "started": "Tue Nov 17 21:28:28 2026",
+   "run_s": 280,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8391885",
+   "name": "c645v5b_probe2",
+   "status": "Done",
+   "stage": "b_feasibility_probe",
+   "started": "Tue Nov 17 21:38:23 2026",
+   "run_s": 264,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8391543",
+   "name": "c645v5a_primary",
+   "status": "Done",
+   "stage": "study_a",
+   "started": "Tue Nov 17 21:18:44 2026",
+   "run_s": 923,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8391544",
+   "name": "c645v5a_repeat",
+   "status": "Done",
+   "stage": "study_a",
+   "started": "Tue Nov 17 21:18:44 2026",
+   "run_s": 265,
+   "gpu": "A100-SXM4-80GB"
+  }
+ ]
+}

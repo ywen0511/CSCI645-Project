@@ -182,3 +182,12 @@ def test_runtime_fields_include_v5_controller_switches():
     assert {"giver_tracking_alpha", "slip_mechanism"} <= rt.RUNTIME_FIELDS
     assert "slip_train" not in rt.RUNTIME_FIELDS
     random.seed(0)
+
+
+def test_study_b_freeze_is_intact():
+    import subprocess
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[1]
+    out = subprocess.run([sys.executable, str(root / "scripts/v5_slip_study.py"), "check"], capture_output=True, text=True)
+    assert out.returncode == 0 and out.stdout.startswith("PASS"), out.stdout + out.stderr

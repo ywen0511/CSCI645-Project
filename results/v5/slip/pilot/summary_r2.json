@@ -1,0 +1,107 @@
+{
+ "status": "pilot runs: labelled, released, never used for claims",
+ "pilots": {
+  "slip_robust_ff_s901": {
+   "source_commit": "a88da750d256d04e57f9c1403becdd149bb57488",
+   "source_dirty": false,
+   "protocol": "configs/v5/slip/pilot/slip_robust_ff.json",
+   "config_hash": "c49fd1e7764d84ba1ab3e85f1a735bc4146cce7fafaa6892a1cc520907dd16cb",
+   "iterations": 62,
+   "transitions": 2031616,
+   "done": true,
+   "wall_s": 248.96108436584473,
+   "first10": {
+    "iterations": [
+     1,
+     10
+    ],
+    "train_success_rate": 0.9592314901593252,
+    "train_invalid_slip_rate": 0.01780693533270853,
+    "mean_step_reward": 0.07055024776310347,
+    "action_std_mean": 0.44337229728698724,
+    "episodes": 2134
+   },
+   "last10": {
+    "iterations": [
+     53,
+     62
+    ],
+    "train_success_rate": 0.9759322033898306,
+    "train_invalid_slip_rate": 0.02169491525423729,
+    "mean_step_reward": 0.12375097530311904,
+    "action_std_mean": 0.1745673840244611,
+    "episodes": 2950
+   },
+   "transitions_per_s": 8160.37576786326,
+   "projected_formal_run_minutes": 20.479056939771098
+  },
+  "slip_robust_history_s901": {
+   "source_commit": "a88da750d256d04e57f9c1403becdd149bb57488",
+   "source_dirty": false,
+   "protocol": "configs/v5/slip/pilot/slip_robust_history.json",
+   "config_hash": "7a2a9bc93087977e37075e8f0933a16aad65360592e177f30e7b22101611eba3",
+   "iterations": 62,
+   "transitions": 2031616,
+   "done": true,
+   "wall_s": 243.63623023033142,
+   "first10": {
+    "iterations": [
+     1,
+     10
+    ],
+    "train_success_rate": 0.878945092952875,
+    "train_invalid_slip_rate": 0.028102031993082578,
+    "mean_step_reward": 0.06524054127581622,
+    "action_std_mean": 0.4604568699995677,
+    "episodes": 2313
+   },
+   "last10": {
+    "iterations": [
+     53,
+     62
+    ],
+    "train_success_rate": 0.9666553249404559,
+    "train_invalid_slip_rate": 0.023137121469887716,
+    "mean_step_reward": 0.10513622788130306,
+    "action_std_mean": 0.3886528263489405,
+    "episodes": 2939
+   },
+   "transitions_per_s": 8338.726954030315,
+   "projected_formal_run_minutes": 20.04104474475307
+  },
+  "slip_robust_repeat_s901": {
+   "source_commit": "a88da750d256d04e57f9c1403becdd149bb57488",
+   "source_dirty": false,
+   "protocol": "configs/v5/slip/pilot/slip_robust_repeat.json",
+   "config_hash": "e8bf8ecc1288f2c74005b89d0fb4d2e7509dcb91095c82f84bba8c8f32d9f9be",
+   "iterations": 62,
+   "transitions": 2031616,
+   "done": true,
+   "wall_s": 237.74206852912903,
+   "first10": {
+    "iterations": [
+     1,
+     10
+    ],
+    "train_success_rate": 0.9529356943150047,
+    "train_invalid_slip_rate": 0.020037278657968314,
+    "mean_step_reward": 0.07115752801688359,
+    "action_std_mean": 0.4358818689982097,
+    "episodes": 2146
+   },
+   "last10": {
+    "iterations": [
+     53,
+     62
+    ],
+    "train_success_rate": 0.9769881556683587,
+    "train_invalid_slip_rate": 0.020642978003384094,
+    "mean_step_reward": 0.12407902467530221,
+    "action_std_mean": 0.18127174774805704,
+    "episodes": 2955
+   },
+   "transitions_per_s": 8545.462789018675,
+   "projected_formal_run_minutes": 19.556202411267066
+  }
+ }
+}

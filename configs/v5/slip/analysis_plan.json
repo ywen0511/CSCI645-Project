@@ -1,0 +1,272 @@
+{
+ "status": "PREREGISTERED before any Study B final evaluation; frozen in configs/v5/slip/FREEZE.json and tag experiment-v5b. Deviations are recorded in docs/v5/DECISIONS.md and labelled in the report.",
+ "study": "V5 Study B - dynamic in-grasp slip after the calibration window",
+ "research_question": "When the bar slides in the giver's grip after the 0.5 s calibration window has closed and before the receiver grasps, does a learned residual with observation history recover better than the same residual without history and than the strongest training-free controller?",
+ "mechanism": {
+  "source": "src/csci645_handover/core/slip.py",
+  "parameters": {
+   "finger_stiffness": 2000.0,
+   "kp": 6000.0,
+   "kd": 60.0,
+   "ki": 60000.0,
+   "regrip_s": 0.1,
+   "tolerance_m": 0.0015,
+   "grip_force_n": 35.0,
+   "force_max_n": 90.0
+  },
+  "feasible_cumulative_x_m": [
+   -0.007,
+   0.015
+  ],
+  "duration_s": 0.25,
+  "onset_s": [
+   0.7,
+   1.4
+  ],
+  "probe": "results/v5/slip/probe/summary.json"
+ },
+ "suites": {
+  "validation": {
+   "path": "configs/v5/slip/suites/validation.jsonl",
+   "sha256": "57b91dbe2efeaa08bbd7704a57059a42049558f58d607bb5557840dde144c9f5"
+  },
+  "final": {
+   "path": "configs/v5/slip/suites/final.jsonl",
+   "sha256": "9c1a5f8b92716e30b88707c1f192b5cecb394570ab03db8406a02e896ed7fdbe"
+  },
+  "final_subset60": {
+   "path": "configs/v5/slip/suites/final_subset60.jsonl",
+   "sha256": "958f279f45d4f37224c8d0fcd9cc007680d9e696be1af696e31cdf811ca74dd9"
+  },
+  "v4_final_noslip": {
+   "path": "configs/v5/slip/suites/v4_final_noslip.jsonl",
+   "sha256": "03235ba62518f57e7369f89333cdf0f71a5c1f7bee70966a5d807bb8abf1b765"
+  }
+ },
+ "seeds": {
+  "development": 6458101,
+  "validation": 6458201,
+  "final": 6458301,
+  "analysis": 6458401,
+  "evaluation_process": 6458501,
+  "repeatability_process": 6458601,
+  "training": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ]
+ },
+ "conditions": {
+  "clean": {
+   "physical": false,
+   "grasp": {
+    "mode": "zero"
+   },
+   "sensor": {},
+   "slip": null
+  },
+  "static_mixed_id": {
+   "grasp": {
+    "x": {
+     "uniform": [
+      -0.005,
+      0.015
+     ]
+    },
+    "z": {
+     "uniform": [
+      -0.01,
+      0.01
+     ]
+    }
+   },
+   "sensor": {
+    "bias_m": 0.005,
+    "bias_mode": "uniform",
+    "noise_std_m": 0.002,
+    "delay_steps": 2
+   },
+   "slip": null
+  },
+  "slip_pos_5": {
+   "grasp": {
+    "mode": "zero"
+   },
+   "sensor": {},
+   "slip": {
+    "fixed": 0.005
+   }
+  },
+  "slip_pos_8": {
+   "grasp": {
+    "mode": "zero"
+   },
+   "sensor": {},
+   "slip": {
+    "fixed": 0.008
+   }
+  },
+  "slip_after_offset": {
+   "grasp": {
+    "x": {
+     "fixed": -0.005
+    }
+   },
+   "sensor": {},
+   "slip": {
+    "fixed": 0.008
+   }
+  },
+  "slip_mixed_id": {
+   "grasp": {
+    "x": {
+     "uniform": [
+      -0.005,
+      0.015
+     ]
+    },
+    "z": {
+     "uniform": [
+      -0.01,
+      0.01
+     ]
+    }
+   },
+   "sensor": {
+    "bias_m": 0.005,
+    "bias_mode": "uniform",
+    "noise_std_m": 0.002,
+    "delay_steps": 2
+   },
+   "slip": {
+    "uniform": [
+     0.0,
+     0.008
+    ]
+   }
+  },
+  "slip_mixed_ood": {
+   "grasp": {
+    "x": {
+     "uniform": [
+      -0.007,
+      0.015
+     ]
+    },
+    "z": {
+     "uniform": [
+      -0.015,
+      0.015
+     ]
+    }
+   },
+   "sensor": {
+    "bias_m": 0.01,
+    "bias_mode": "uniform",
+    "noise_std_m": 0.004,
+    "delay_steps": 4
+   },
+   "slip": {
+    "uniform": [
+     0.0,
+     0.008
+    ]
+   }
+  }
+ },
+ "condition_note": "V5_EXECUTION.md lists slip_neg_5; -5 mm is infeasible (probe), so it is slip_neg_2 (-2 mm). Slip draws are clamped so start x + slip x stays in the feasible cumulative range.",
+ "outcome": "success = terminal_reason == 'success'; every scheduled case is in the denominator; invalid resets and invalid slips (realized slip outside 1.5 mm of target in x/z) are failures for every method.",
+ "training_free": {
+  "roles": {
+   "nominal": "nominal",
+   "geometry_fixed": "geometry_fixed",
+   "geometry_ema": "geometry_ema",
+   "geometry_calibrated": "geometry_calibrated",
+   "geometry_tracking": "tracking_a005_b25",
+   "best_constant_geometry": "calibrated_const_x+4",
+   "geometry_best": "tracking_a005_b25"
+  },
+  "selection": "configs/v5/slip/development/baseline_selection.json (development only)"
+ },
+ "learned": {
+  "profiles": [
+   "slip_robust_ff",
+   "slip_robust_history",
+   "slip_robust_repeat"
+  ],
+  "training_protocols": {
+   "slip_robust_ff": "configs/v5/slip/training/slip_robust_ff.json",
+   "slip_robust_history": "configs/v5/slip/training/slip_robust_history.json",
+   "slip_robust_repeat": "configs/v5/slip/training/slip_robust_repeat.json"
+  },
+  "parent": "geometry_calibrated (V4 one-shot 0.5 s calibration, EMA 0.2, bound 25 mm)",
+  "transitions_per_run": 10027008,
+  "seeds": [
+   111,
+   222,
+   333,
+   444,
+   555
+  ]
+ },
+ "selection": {
+  "candidates": [
+   "step_001015808",
+   "step_002031616",
+   "step_003014656",
+   "step_004030464",
+   "step_005013504",
+   "step_006029312",
+   "step_007012352",
+   "step_008028160",
+   "step_009011200",
+   "step_010027008"
+  ],
+  "rule": "validation suite (clean, static_mixed_id, slip_pos_10, slip_mixed_id; 40 cases each); key: 1. mean success with equal weight per condition (all scheduled cases; invalid resets/slips count as failures), desc; 2. unsafe-event rate (any prohibited collision or drop), asc; 3. residual magnitude (mean per-episode mean max-axis |residual|), asc; 4. later candidate (larger transition count). Values rounded to 12 decimals. Step 0 is an untrained control and never eligible. Final outcomes are never read.",
+  "reported": "selected and final (10,027,008 transitions) checkpoints separately"
+ },
+ "primary": {
+  "condition": "slip_mixed_id",
+  "checkpoints": "selected",
+  "contrasts": [
+   {
+    "id": "B1",
+    "left": "slip_robust_history",
+    "right": "slip_robust_ff"
+   },
+   {
+    "id": "B2",
+    "left": "slip_robust_history",
+    "right": "geometry_best"
+   }
+  ],
+  "interval": "paired hierarchical bootstrap over training seeds and base cases (deterministic controllers broadcast over seeds), 10,000 draws, seed 6458401; implementation scripts/final_review_audit.py::paired_bootstrap; 95% and Bonferroni 97.5% percentile intervals",
+  "decision": "superiority only if the 97.5% lower bound > 0; no equivalence claims"
+ },
+ "secondary_exploratory": [
+  "every method x every condition (selected and final checkpoints)",
+  "slip_robust_repeat - slip_robust_ff (temporal order vs input size), every condition",
+  "geometry_tracking - geometry_calibrated (does continuous re-estimation fix stale calibration), every condition",
+  "final vs selected checkpoints per learned profile",
+  "regression: selected Study B policies on static_mixed_id and on the V4 final suite (configs/v4/suites/final.jsonl with zero slip) against the published V4 selected policies of the same architecture",
+  "B1/B2 on every other condition",
+  "failure taxonomy incl. invalid_slip, receiver contact before grasp, misalignment at grasp"
+ ],
+ "mechanisms": {
+  "subset": "configs/v5/slip/suites/final_subset60.jsonl (first 60 slip_mixed_id final cases)",
+  "interventions": [
+   "selected",
+   "reversed history order",
+   "repeated current frame",
+   "development-fitted constant (mean residual of the selected history policy on the development suite) on the parent"
+  ],
+  "policies": "selected slip_robust_history, 5 seeds"
+ },
+ "repeatability": {
+  "process_seed": 6458601,
+  "entries": "all executed training-free baselines and the selected seed-111 checkpoint of each learned profile, full final suite",
+  "metric": "terminal-outcome agreement with the primary process"
+ }
+}

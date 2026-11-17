@@ -3,7 +3,7 @@
   "assignment": "V5_EXECUTION.md",
   "branch": "study/v5-calibration-slip",
   "complete": false,
-  "stage": "cpu_preparation_done_awaiting_gpu_agent",
+  "stage": "study_a_complete; study_b_frozen_training_next",
   "cpu_preparation": {
     "complete": true,
     "date": "2026-11-17",
@@ -17,20 +17,42 @@
     ]
   },
   "study_a": {
-    "status": "frozen_not_run",
+    "status": "complete",
     "freeze": "configs/v5/calibration/FREEZE.json",
-    "experiment_tag": null,
-    "anchor_hash_check": null,
-    "primary": null
+    "experiment_tag": "experiment-v5a",
+    "experiment_commit": "13cda3af2699f0ebfdd50affb4d27fb6dde877e8",
+    "anchor_hash_check": "passed (both anchors equal V4 config and controller hashes)",
+    "summary": "results/v5/calibration/summary.json",
+    "primary": {
+      "A1_mixed_id": {
+        "difference_pp": 29.5,
+        "ci97_5": [
+          22.5,
+          36.5
+        ],
+        "supported": true
+      },
+      "A2_grasp_15mm": {
+        "difference_pp": 93.0,
+        "ci97_5": [
+          88.5,
+          96.5
+        ],
+        "supported": true
+      }
+    },
+    "repeatability": "2400/2400 terminal outcomes for both repeated configurations"
   },
   "study_b": {
-    "status": "not_started",
-    "feasibility": null,
-    "freeze": null,
-    "experiment_tag": null,
+    "status": "frozen",
+    "feasibility": "feasible (restricted): slides toward the receiver <= 8 mm; docs/v5/SLIP_FEASIBILITY.md",
+    "freeze": "configs/v5/slip/FREEZE.json",
+    "experiment_tag": "experiment-v5b",
     "formal_runs_planned": 15,
     "formal_runs_completed": 0,
-    "primary": null
+    "primary": null,
+    "conditions": 7,
+    "geometry_best": "geometry_tracking (EMA 0.05, bound 25 mm)"
   },
   "delivery": {
     "report": null,
@@ -44,5 +66,7 @@
   "gpu_hours_cap": 60,
   "gpu_hours_used": 0,
   "blockers": [],
-  "next_actions": ["Remote GPU agent: read V5_EXECUTION.md and start with Study A (section 2)."]
+  "next_actions": [
+    "Formal training (15 runs) from experiment-v5b with results/v5/jobs/train.json"
+  ]
 }
