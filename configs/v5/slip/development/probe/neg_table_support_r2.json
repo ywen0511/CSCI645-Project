@@ -1,0 +1,91 @@
+{
+ "name": "v5_probe_neg_table_support_r2",
+ "suite": "configs/v5/slip/development/probe/negative_suite.jsonl",
+ "num_envs": 12,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 0.2,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": true,
+  "grasp_uncertainty": true,
+  "slip_mechanism": {
+   "finger_stiffness": 2000.0,
+   "kp": 12000.0,
+   "kd": 80.0,
+   "ki": 150000.0,
+   "regrip_s": 0.1,
+   "tolerance_m": 0.0015,
+   "grip_force_n": 28.0,
+   "force_max_n": 70.0
+  },
+  "negative_control": "table_support",
+  "table_size_override": [
+   0.06,
+   0.3,
+   0.2
+  ]
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "calibrated_M4",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "slip_mechanism": {
+     "finger_stiffness": 2000.0,
+     "kp": 12000.0,
+     "kd": 80.0,
+     "ki": 150000.0,
+     "regrip_s": 0.1,
+     "tolerance_m": 0.0015,
+     "grip_force_n": 28.0,
+     "force_max_n": 70.0
+    }
+   }
+  },
+  {
+   "id": "calibrated_M5",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "slip_mechanism": {
+     "finger_stiffness": 2000.0,
+     "kp": 12000.0,
+     "kd": 80.0,
+     "ki": 150000.0,
+     "regrip_s": 0.1,
+     "tolerance_m": 0.0015,
+     "grip_force_n": 35.0,
+     "force_max_n": 90.0
+    }
+   }
+  },
+  {
+   "id": "calibrated_M6",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "slip_mechanism": {
+     "finger_stiffness": 2000.0,
+     "kp": 6000.0,
+     "kd": 60.0,
+     "ki": 60000.0,
+     "regrip_s": 0.1,
+     "tolerance_m": 0.0015,
+     "grip_force_n": 35.0,
+     "force_max_n": 90.0
+    }
+   }
+  }
+ ]
+}

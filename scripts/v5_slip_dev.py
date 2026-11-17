@@ -30,6 +30,15 @@ MECHANISMS = {  # candidate parameter sets (relaxed squeeze, force cap); chosen 
     "M2": {**GAINS, "grip_force_n": 12.0, "force_max_n": 45.0},
     "M3": {**GAINS, "grip_force_n": 20.0, "force_max_n": 60.0},
 }
+# Round 2 (after round 1 showed vertical sag while sliding under a relaxed squeeze; docs/v5/DECISIONS.md):
+# near-full / full squeeze (the closed command gives ~17.3 N measured per finger, i.e. grip_force_n ~35) and a
+# larger force cap; two gain sets.
+GAINS2 = {**GAINS, "kp": 12000.0, "kd": 80.0, "ki": 150000.0}
+MECHANISMS_R2 = {
+    "M4": {**GAINS2, "grip_force_n": 28.0, "force_max_n": 70.0},
+    "M5": {**GAINS2, "grip_force_n": 35.0, "force_max_n": 90.0},
+    "M6": {**GAINS, "grip_force_n": 35.0, "force_max_n": 90.0},
+}
 
 
 def jl(path: Path, rows):
@@ -45,7 +54,8 @@ def put(name: str, mx: dict) -> str:
     return str(p.relative_to(ROOT))
 
 
-def probe():
+def probe(mechs=None, tag=""):
+    mechs = mechs or MECHANISMS
     rows = v5.probe_cases()
     s_all = jl(DEV / "probe/probe_suite.jsonl", rows)
     noslip = [r for r in rows if r["condition"] == "noslip"]
@@ -53,36 +63,40 @@ def probe():
     neg = [r for r in rows if r["condition"] in ("x+10_on105", "x+15_on105", "x-5_on105")]
     s_neg = jl(DEV / "probe/negative_suite.jsonl", neg)
     traced = [f"{v5.PREFIX}probe-development-{c}-0000" for c in ("noslip", "x+15_on140", "x-7_on070", "x+5_on105")]
-    base = {**PARENT_BASE, "slip_mechanism": MECHANISMS["M1"]}
+    first = next(iter(mechs))
+    base = {**PARENT_BASE, "slip_mechanism": mechs[first]}
     ents = []
-    for m, spec in MECHANISMS.items():
+    for m, spec in mechs.items():
         ents.append({"id": f"calibrated_{m}", "method": "geometry", "overrides": {**PARENT_ENTRY, "slip_mechanism": spec},
                      "trace": True})
-    ents.append({"id": "nominal_M2", "method": "nominal", "overrides": {"slip_mechanism": MECHANISMS["M2"]}, "trace": False})
-    out = {"mechanisms": MECHANISMS, "matrices": {}}
-    out["matrices"]["mechanisms"] = put("mechanisms", {
-        "name": "v5_probe_mechanisms", "suite": s_all, "num_envs": len(rows), "protocol": "configs/v2/protocol.json",
+    if not tag:
+        ents.append({"id": "nominal_M2", "method": "nominal", "overrides": {"slip_mechanism": MECHANISMS["M2"]}, "trace": False})
+    out = {"mechanisms": mechs, "matrices": {}}
+    out["matrices"]["mechanisms"] = put(f"mechanisms{tag}", {
+        "name": f"v5_probe_mechanisms{tag}", "suite": s_all, "num_envs": len(rows), "protocol": "configs/v2/protocol.json",
         "base_overrides": base, "trace_cases": traced, "entries": ents})
     # no-slip equivalence: identical suite and layout, mechanism off (V4 configuration) vs on
     noslip_ents = [{"id": "geometry_calibrated", "method": "geometry", "overrides": dict(PARENT_ENTRY), "trace": True},
                    {"id": "nominal", "method": "nominal", "overrides": {}, "trace": True}]
     tr = [r["case_id"] for r in noslip]
-    out["matrices"]["noslip_off"] = put("noslip_off", {
-        "name": "v5_probe_noslip_off", "suite": s_noslip, "num_envs": len(noslip), "protocol": "configs/v2/protocol.json",
-        "base_overrides": PARENT_BASE, "trace_cases": tr, "entries": noslip_ents})
-    out["matrices"]["noslip_on"] = put("noslip_on", {
-        "name": "v5_probe_noslip_on", "suite": s_noslip, "num_envs": len(noslip), "protocol": "configs/v2/protocol.json",
+    if not tag:
+        out["matrices"]["noslip_off"] = put("noslip_off", {
+            "name": "v5_probe_noslip_off", "suite": s_noslip, "num_envs": len(noslip),
+            "protocol": "configs/v2/protocol.json", "base_overrides": PARENT_BASE, "trace_cases": tr,
+            "entries": noslip_ents})
+    out["matrices"]["noslip_on"] = put(f"noslip_on{tag}", {
+        "name": f"v5_probe_noslip_on{tag}", "suite": s_noslip, "num_envs": len(noslip), "protocol": "configs/v2/protocol.json",
         "base_overrides": base, "trace_cases": tr,
-        "entries": [{**e, "overrides": {**e["overrides"], "slip_mechanism": MECHANISMS["M2"]}} for e in noslip_ents]})
+        "entries": [{**e, "overrides": {**e["overrides"], "slip_mechanism": mechs[first] if tag else MECHANISMS["M2"]}} for e in noslip_ents]})
     for ctl, extra in (("no_receiver", {}), ("giver_holds", {}), ("table_support", {"table_size_override": [0.06, 0.3, 0.2]})):
-        out["matrices"][f"neg_{ctl}"] = put(f"neg_{ctl}", {
-            "name": f"v5_probe_neg_{ctl}", "suite": s_neg, "num_envs": len(neg), "protocol": "configs/v2/protocol.json",
+        out["matrices"][f"neg_{ctl}"] = put(f"neg_{ctl}{tag}", {
+            "name": f"v5_probe_neg_{ctl}{tag}", "suite": s_neg, "num_envs": len(neg), "protocol": "configs/v2/protocol.json",
             "base_overrides": {**base, "negative_control": ctl, **extra}, "trace_cases": [],
             "entries": [{"id": f"calibrated_{m}", "method": "geometry", "overrides": {**PARENT_ENTRY, "slip_mechanism": spec}}
-                        for m, spec in MECHANISMS.items()]})
-    (DEV / "probe/probe_setup.json").write_text(json.dumps(out, indent=1) + "\n")
+                        for m, spec in mechs.items()]})
+    (DEV / f"probe/probe_setup{tag}.json").write_text(json.dumps(out, indent=1) + "\n")
     print(json.dumps({k: v for k, v in out["matrices"].items()}, indent=1), len(rows), "probe cases")
 
 
 if __name__ == "__main__":
-    {"probe": probe}[sys.argv[1]]()
+    {"probe": probe, "probe2": lambda: probe(MECHANISMS_R2, "_r2")}[sys.argv[1]]()

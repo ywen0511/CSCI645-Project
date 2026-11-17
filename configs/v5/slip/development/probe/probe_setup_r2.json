@@ -1,0 +1,41 @@
+{
+ "mechanisms": {
+  "M4": {
+   "finger_stiffness": 2000.0,
+   "kp": 12000.0,
+   "kd": 80.0,
+   "ki": 150000.0,
+   "regrip_s": 0.1,
+   "tolerance_m": 0.0015,
+   "grip_force_n": 28.0,
+   "force_max_n": 70.0
+  },
+  "M5": {
+   "finger_stiffness": 2000.0,
+   "kp": 12000.0,
+   "kd": 80.0,
+   "ki": 150000.0,
+   "regrip_s": 0.1,
+   "tolerance_m": 0.0015,
+   "grip_force_n": 35.0,
+   "force_max_n": 90.0
+  },
+  "M6": {
+   "finger_stiffness": 2000.0,
+   "kp": 6000.0,
+   "kd": 60.0,
+   "ki": 60000.0,
+   "regrip_s": 0.1,
+   "tolerance_m": 0.0015,
+   "grip_force_n": 35.0,
+   "force_max_n": 90.0
+  }
+ },
+ "matrices": {
+  "mechanisms": "configs/v5/slip/development/probe/mechanisms_r2.json",
+  "noslip_on": "configs/v5/slip/development/probe/noslip_on_r2.json",
+  "neg_no_receiver": "configs/v5/slip/development/probe/neg_no_receiver_r2.json",
+  "neg_giver_holds": "configs/v5/slip/development/probe/neg_giver_holds_r2.json",
+  "neg_table_support": "configs/v5/slip/development/probe/neg_table_support_r2.json"
+ }
+}
