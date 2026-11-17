@@ -35,6 +35,7 @@ from isaaclab.utils.math import axis_angle_from_quat, quat_apply, quat_apply_inv
 from ..core import outcomes as oc
 from ..core.case_suites import curriculum_stage
 from ..core.grasp import GiverCalibrator, sample_train_offsets, window_frames
+from ..core import slip as sl
 from ..core.geometry import GeometryCfg, GeometryCoordinator, StabilityCfg, StabilityTracker, release_decision
 from ..core.policy_io import apply_phase_mask, contact_phase_onehot, residual_from_action
 from ..core.observation import ObservationHistory, PositionSensor
@@ -182,7 +183,7 @@ class HandoverEnv(DirectRLEnv):
         self.trace_env_ids: list[int] = []
         self.traces: dict[int, list[dict]] = {}
         self.stats = {k: 0 for k in ("episodes", "success", "drop", "collision", "release_timeout", "timeout",
-                                     "invalid_reset", "infra_error")}
+                                     "invalid_reset", "infra_error", "invalid_slip")}
         # Opt-in v3 state: never changes the archived default observation/evaluator path.
         self.sensor = None
         self.controller_m = {}
@@ -200,6 +201,16 @@ class HandoverEnv(DirectRLEnv):
             raise ValueError("grasp_offset_train requires grasp_uncertainty")
         self._perturb_rng = torch.Generator(device=dev)
         self._perturb_rng.manual_seed(987654321)
+        # Opt-in V5 state (physical in-grasp slip after the calibration window).
+        if c.slip_train is not None and c.slip_mechanism is None:
+            raise ValueError("slip_train requires slip_mechanism")
+        self.slip_target = z(n, 3)
+        self.slip_onset = z(n)
+        self.slip_duration = z(n)
+        self.slip_grip_q = z(n)
+        self.slip_grip_set = zb()
+        self.recv_contact_pre_grasp = zb()
+        self._substep = 0
 
     # ------------------------------------------------------------------ helpers
     def refresh_task_parameters(self) -> None:
@@ -225,7 +236,18 @@ class HandoverEnv(DirectRLEnv):
         if c.giver_calibration_window_s is not None:
             if not (c.observation_giver_reference and c.observation_sensor is not None):
                 raise ValueError("giver_calibration_window_s requires observation_giver_reference and a sensor")
-            self.calib = GiverCalibrator(n, window_frames(c.giver_calibration_window_s, self.step_dt), dev)
+            frames = window_frames(c.giver_calibration_window_s, self.step_dt)
+            if c.giver_tracking_alpha is not None:
+                self.calib = sl.TrackingCalibrator(n, frames, dev, c.giver_tracking_alpha)
+            else:
+                self.calib = GiverCalibrator(n, frames, dev)
+        elif c.giver_tracking_alpha is not None:
+            raise ValueError("giver_tracking_alpha requires giver_calibration_window_s")
+        # V5 slip regulator (runtime field: rebuilt here; per-case targets are re-applied at the next reset)
+        self.slip = self._make_slip() if c.slip_mechanism is not None else None
+        if self.slip is None and getattr(self, "_slip_force_used", False):
+            self.obj.permanent_wrench_composer.reset()  # no external force may outlive a slip-enabled entry
+            self._slip_force_used = False
         if c.constant_residual_m is not None:
             if c.residual_enabled:
                 raise ValueError("constant_residual_m replaces the policy residual; use a non-learned method")
@@ -243,6 +265,12 @@ class HandoverEnv(DirectRLEnv):
             n, dev,
         )
 
+
+    def _make_slip(self):
+        s = self.cfg.slip_mechanism
+        return sl.SlipRegulator(self.num_envs, self.device, kp=float(s["kp"]), kd=float(s["kd"]), ki=float(s["ki"]),
+                                force_max_n=float(s["force_max_n"]), regrip_s=float(s["regrip_s"]),
+                                tolerance_m=float(s["tolerance_m"]))
 
     def _monitored_ids(self, sensor) -> list[int]:
         names = list(sensor.body_names)
@@ -276,6 +304,9 @@ class HandoverEnv(DirectRLEnv):
             goffs = torch.zeros(n, 3, device=self.device)
             rel = torch.zeros(n, device=self.device)
             cidx = torch.full((n,), -1, dtype=torch.long, device=self.device)
+            sx = torch.zeros(n, 3, device=self.device)
+            son = torch.zeros(n, device=self.device)
+            sdu = torch.zeros(n, device=self.device)
             for k in range(n):
                 if self.case_ptr < len(self.case_queue):
                     case = self.case_queue[self.case_ptr]
@@ -287,6 +318,14 @@ class HandoverEnv(DirectRLEnv):
                     elif any(float(v) != 0.0 for v in case.get("grasp_offset_xyz_m", (0, 0, 0))):
                         raise ValueError("case carries a grasp offset but grasp_uncertainty is off")
                     rel[k] = float(case["release_offset_s"])
+                    if self.cfg.slip_mechanism is not None:
+                        if "slip_xyz_m" not in case:
+                            raise ValueError("V5 slip evaluation requires slip_xyz_m on every case")
+                        sx[k] = torch.tensor(case["slip_xyz_m"], device=self.device)
+                        son[k] = float(case["slip_onset_s"])
+                        sdu[k] = float(case["slip_duration_s"])
+                    elif any(float(v) != 0.0 for v in case.get("slip_xyz_m", (0, 0, 0))):
+                        raise ValueError("case carries a slip but slip_mechanism is off")
                     cidx[k] = self.case_ptr
                     self.case_ptr += 1
                 else:
@@ -295,6 +334,7 @@ class HandoverEnv(DirectRLEnv):
             self.grasp_offset[env_ids] = goffs
             self.release_offset[env_ids] = rel
             self.case_index[env_ids] = cidx
+            self.slip_target[env_ids], self.slip_onset[env_ids], self.slip_duration[env_ids] = sx, son, sdu
             self.mode[env_ids] = torch.where(idle, IDLE, SETTLE)
         else:
             frac = min(1.0, self.transitions / max(1, self.cfg.total_transitions))
@@ -306,6 +346,9 @@ class HandoverEnv(DirectRLEnv):
             self.release_offset[env_ids] = ur * rb
             if self.cfg.grasp_uncertainty:
                 self.grasp_offset[env_ids] = sample_train_offsets(n, self.cfg.grasp_offset_train, self.rng, self.device)
+            if self.cfg.slip_train is not None:
+                sx, son, sdu = sl.sample_train_slip(n, self.cfg.slip_train, self.grasp_offset[env_ids, 0], self.rng, self.device)
+                self.slip_target[env_ids], self.slip_onset[env_ids], self.slip_duration[env_ids] = sx, son, sdu
             self.case_index[env_ids] = -1
             self.mode[env_ids] = SETTLE
         self.attempt[env_ids] = 0
@@ -394,6 +437,10 @@ class HandoverEnv(DirectRLEnv):
         self.grasp_achieved[env_ids] = 0.0
         if self.calib is not None:
             self.calib.reset(env_ids)
+        if self.slip is not None:
+            self.slip.reset(env_ids, self.slip_target[env_ids], self.slip_onset[env_ids], self.slip_duration[env_ids])
+            self.slip_grip_set[env_ids] = False
+        self.recv_contact_pre_grasp[env_ids] = False
         self.stab.reset(env_ids)
         self.geom.reset(env_ids)
         self.evaluator.reset(env_ids)
@@ -483,6 +530,18 @@ class HandoverEnv(DirectRLEnv):
         g_settle = torch.where(st < c.settle_pin_s - 1e-4, torch.full_like(st, c.finger_open), torch.full_like(st, c.finger_closed))
         g_scored = torch.where(self.released, torch.full_like(t, c.finger_open), torch.full_like(t, c.finger_closed))
         self.finger_target_g = torch.where(scored, g_scored, torch.where(settle, g_settle, torch.full_like(t, c.finger_closed)))
+        self._substep = 0
+        if self.slip is not None:
+            # V5 slip: relax the giver squeeze during the sliding phase (target captured once at slip onset)
+            sliding = scored & (self.slip.phase_at(t) == sl.SLIDING) & ~self.released
+            capture = sliding & ~self.slip_grip_set
+            if capture.any():
+                q1 = self.giver.data.joint_pos.torch[:, self.f1_id[0]]
+                s = c.slip_mechanism
+                self.slip_grip_q = torch.where(capture, q1 - float(s["grip_force_n"]) / float(s["finger_stiffness"]),
+                                               self.slip_grip_q)
+                self.slip_grip_set = self.slip_grip_set | capture
+            self.finger_target_g = torch.where(sliding, self.slip_grip_q, self.finger_target_g)
         r_sched = receiver_finger_target(t, c.finger_open, c.finger_closed, self.sched)
         self.finger_target_r = torch.where(scored, r_sched, torch.full_like(t, c.finger_open))
         if c.negative_control == "no_receiver":
@@ -504,6 +563,8 @@ class HandoverEnv(DirectRLEnv):
             q_des = torch.maximum(torch.minimum(q_des, self.joint_hi), self.joint_lo)
             robot.actuators.target_command.set_position_index(value=q_des, joint_ids=self.arm_ids)
             robot.actuators.target_command.set_position_index(value=fingers.unsqueeze(-1), joint_ids=self.f1_id)
+        if self.slip is not None:
+            self._apply_slip_force()
         # settling stages 1-2: hold the object at its start pose (before the scored episode only)
         settle_pin = (self.mode == SETTLE) & (self.settle_t < self.cfg.settle_pin_s + self.cfg.settle_close_s)
         pin = settle_pin | (self.mode == IDLE)
@@ -516,6 +577,24 @@ class HandoverEnv(DirectRLEnv):
             pose[:, 6] = 1.0
             self.obj.write_root_pose_to_sim_index(root_pose=pose, env_ids=ids)
             self.obj.write_root_velocity_to_sim_index(root_velocity=torch.zeros(len(ids), 6, device=self.device), env_ids=ids)
+
+    def _in_grasp_displacement(self) -> torch.Tensor:
+        """Environment-side (privileged) object displacement from the nominal giver grasp, env-local [m]."""
+        pose = self.giver.data.body_pose_w.torch[:, self.hand_idx]
+        tcp = pose[:, :3] + quat_apply(pose[:, 3:7], self.tcp_vec.expand(self.num_envs, 3))
+        obj_pos = self.obj.data.root_pos_w.torch
+        obj_quat = self.obj.data.root_quat_w.torch
+        return obj_pos - (tcp + quat_apply(obj_quat, self.recv_grasp_in_obj.expand(self.num_envs, 3)))
+
+    def _apply_slip_force(self) -> None:
+        dt = float(self.cfg.sim.dt)
+        scored = self.mode == SCORED
+        t_sub = self.t + self._substep * dt
+        force = self.slip.step(t_sub, self._in_grasp_displacement(), scored, dt)
+        self._substep += 1
+        self._slip_force_used = True
+        self.obj.permanent_wrench_composer.set_forces_and_torques_index(
+            forces=force.unsqueeze(1), torques=torch.zeros_like(force).unsqueeze(1), is_global=True)
 
     # ------------------------------------------------------------------ measurements
     @staticmethod
@@ -677,6 +756,15 @@ class HandoverEnv(DirectRLEnv):
         sig["giver_width"] = m["giver_width"]
         reason = self.evaluator.update(sig, scored, dt, c.misalign_check_time, c.horizon_s)
         new_reason = torch.where(scored & (reason != oc.RUNNING), reason, new_reason)
+        rc = (m["recv_force_l"] > c.contact_force) | (m["recv_force_r"] > c.contact_force)
+        self.recv_contact_pre_grasp |= scored & rc & (self.t < c.t_grasp)
+        if self.slip is not None:
+            sliding = scored & (self.slip.phase >= sl.SLIDING) & (self.slip.phase < sl.DONE)
+            gmin = torch.minimum(m["giver_force_l"], m["giver_force_r"])
+            self.slip.min_giver_force = torch.where(sliding, torch.minimum(self.slip.min_giver_force, gmin),
+                                                    self.slip.min_giver_force)
+            bad = self.slip.take_completed() & ~self.slip.valid & scored & (new_reason == oc.RUNNING)
+            new_reason = torch.where(bad, torch.full_like(new_reason, oc.INVALID_SLIP), new_reason)
         self.newly_ended = new_reason != oc.RUNNING
         self.ended_reason = torch.where(self.newly_ended, new_reason, self.ended_reason)
         if self.record_episodes and self.newly_ended.any():
@@ -792,7 +880,8 @@ class HandoverEnv(DirectRLEnv):
         self.stats["episodes"] += k
         for name, code in (("success", oc.SUCCESS), ("drop", oc.DROP), ("collision", oc.COLLISION),
                            ("release_timeout", oc.RELEASE_TIMEOUT), ("timeout", oc.EPISODE_TIMEOUT),
-                           ("invalid_reset", oc.INVALID_RESET), ("infra_error", oc.INFRA_ERROR)):
+                           ("invalid_reset", oc.INVALID_RESET), ("infra_error", oc.INFRA_ERROR),
+                           ("invalid_slip", oc.INVALID_SLIP)):
             self.stats[name] += int((r == code).sum())
         log = self.extras.setdefault("log", {})
         for name, code in (("success", oc.SUCCESS), ("drop", oc.DROP), ("release_timeout", oc.RELEASE_TIMEOUT),
@@ -819,6 +908,14 @@ class HandoverEnv(DirectRLEnv):
             "rfail": cpu(self.reset_fail_bits), "roff": cpu(self.reset_offset_err),
             "g_req": cpu(self.grasp_offset), "g_ach": cpu(self.grasp_achieved),
         }
+        if self.slip is not None:
+            sp = self.slip
+            fields.update(s_tgt=cpu(sp.target), s_on=cpu(sp.onset), s_du=cpu(sp.duration), s_real=cpu(sp.realized),
+                          s_err=cpu(sp.error), s_val=cpu(sp.valid), s_done=cpu(sp.completed), s_fmax=cpu(sp.force_abs_max),
+                          s_gmin=cpu(sp.min_giver_force), s_ph=cpu(sp.phase))
+        fields["rc_pre"] = cpu(self.recv_contact_pre_grasp)
+        if self.calib is not None and hasattr(self.calib, "updates"):
+            fields["c_upd"] = cpu(self.calib.updates)
         if self.calib is not None:
             fields.update(c_off=cpu(self.calib.offset_h), c_n=cpu(self.calib.count), c_closed=cpu(self.calib.closed),
                           c_world=cpu(quat_apply(self.q_giver.expand(self.num_envs, 4), self.calib.offset_h)))
@@ -890,6 +987,25 @@ class HandoverEnv(DirectRLEnv):
                     rec["calibration_closed"] = bool(fields["c_closed"][i])
                     rec["calibration_offset_hand_m"] = [float(v) for v in fields["c_off"][i]]
                     rec["calibration_offset_world_m"] = [float(v) for v in fields["c_world"][i]]  # commanded hand frame
+            if self.cfg.slip_mechanism is not None:
+                case = self.case_queue[ci]
+                active = float(fields["s_du"][i]) > 0
+                done = bool(fields["s_done"][i])
+                rec["slip_xyz_m"] = [float(v) for v in case["slip_xyz_m"]]
+                rec["slip_onset_s"] = float(case["slip_onset_s"])
+                rec["slip_duration_s"] = float(case["slip_duration_s"])
+                rec["slip_active"] = active
+                rec["slip_completed"] = done
+                rec["slip_realized_xyz_m"] = [float(v) for v in fields["s_real"][i]] if (active and done) else None
+                rec["slip_error_m"] = f(fields["s_err"][i]) if (active and done) else None
+                # no slip scheduled -> valid; scheduled but episode ended before completion -> None
+                rec["slip_valid"] = (bool(fields["s_val"][i]) if done else None) if active else True
+                rec["slip_force_abs_max_n"] = float(fields["s_fmax"][i])
+                rec["giver_force_min_during_slip_n"] = f(fields["s_gmin"][i])
+                rec["giver_tracking_alpha"] = self.cfg.giver_tracking_alpha
+                rec["receiver_contact_before_grasp"] = bool(fields["rc_pre"][i])
+            if "c_upd" in fields:
+                rec["tracking_updates"] = int(fields["c_upd"][i])
             self.completed_records.append(rec)
             self._pending_records.append((rec, int(i)))
 
@@ -933,6 +1049,10 @@ class HandoverEnv(DirectRLEnv):
                            controller_obj_pos=self.controller_m["obj_pos"][i].tolist(),
                            observed_rel_linvel=self._sensor_rel_vel[i].tolist(),
                            sensor_seed=int(self.sensor.seeds[i]), sensor_frame=int(self.sensor.frames[i]) - 1)
+            if self.slip is not None:
+                row.update(slip_phase=int(self.slip.phase[i]), slip_target=self.slip_target[i].tolist(),
+                           in_grasp_displacement=self._in_grasp_displacement()[i].tolist(),
+                           finger_cmd_giver_slip=float(self.finger_target_g[i]))
             if self.cfg.grasp_uncertainty:
                 row.update(grasp_offset_true=self.grasp_offset[i].tolist(), grasp_offset_achieved=self.grasp_achieved[i].tolist(),
                            giver_hand_quat=m["giver_hand_quat"][i].tolist())

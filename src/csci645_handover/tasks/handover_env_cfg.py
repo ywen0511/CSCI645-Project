@@ -269,6 +269,18 @@ class HandoverEnvCfg(DirectRLEnvCfg):
     debug_perturb_privileged: bool = False
     """Acceptance check only: overwrite privileged-only tensors (true grasp offset after spawn, achieved
     offset record) with garbage every step. Controller actions must be unchanged."""
+    slip_mechanism: dict | None = None
+    """V5 opt-in physical in-grasp slip (core/slip.py). None keeps V1-V4 behaviour exactly. Keys:
+    grip_force_n (relaxed squeeze during sliding), finger_stiffness (N/m, finger actuator gain), kp [N/m],
+    kd [N s/m], ki [N/(m s)], force_max_n, regrip_s, tolerance_m (|realized - target| in x/z for a valid slip).
+    Evaluation cases must carry slip_xyz_m, slip_onset_s, slip_duration_s; a slip outside tolerance ends the
+    episode as ``invalid_slip`` (a failure, like an invalid reset)."""
+    slip_train: dict | None = None
+    """V5 training slip draw (core/slip.sample_train_slip): {"probability", "x_uniform", "onset_uniform",
+    "duration_s", "cumulative_x"}. Requires slip_mechanism."""
+    giver_tracking_alpha: float | None = None
+    """V5 geometry_tracking: after the calibration window, keep re-estimating the giver-reference correction
+    with this EMA weight per fresh frame while both giver fingers hold. Requires giver_calibration_window_s."""
     stab_min_finger_force: float = 0.2
     stab_max_rel_lin_speed: float = 0.03
     stab_max_rel_ang_speed: float = 0.5
