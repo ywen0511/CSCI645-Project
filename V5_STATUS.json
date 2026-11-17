@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "assignment": "V5_EXECUTION.md",
+  "branch": "study/v5-calibration-slip",
+  "complete": false,
+  "stage": "cpu_preparation_done_awaiting_gpu_agent",
+  "cpu_preparation": {
+    "complete": true,
+    "date": "2026-11-17",
+    "local_gpu_or_simulator_runs": 0,
+    "items": [
+      "results/v5/cpu/failure_taxonomy.{json,md} and report/final/failure_modes.png from v4.0.0 raw-final.tar.gz",
+      "report/final/overview.{md,pdf} rebuilt: failure section, V3 counter-example, ManipTrans, unified AI disclosure, V5 pointers",
+      "AI disclosure corrected to Claude Code only in docs/final_review/REVIEW.md and DEFENSE_NOTES.md",
+      "Study A frozen inputs in configs/v5/calibration (FREEZE.json) before any outcome",
+      "Study A analysis script and synthetic-record tests"
+    ]
+  },
+  "study_a": {
+    "status": "frozen_not_run",
+    "freeze": "configs/v5/calibration/FREEZE.json",
+    "experiment_tag": null,
+    "anchor_hash_check": null,
+    "primary": null
+  },
+  "study_b": {
+    "status": "not_started",
+    "feasibility": null,
+    "freeze": null,
+    "experiment_tag": null,
+    "formal_runs_planned": 15,
+    "formal_runs_completed": 0,
+    "primary": null
+  },
+  "delivery": {
+    "report": null,
+    "slides": null,
+    "videos": null,
+    "release_tag": "v5.0.0",
+    "release_published": false,
+    "public_verification": null,
+    "main_updated": false
+  },
+  "gpu_hours_cap": 60,
+  "gpu_hours_used": 0,
+  "blockers": [],
+  "next_actions": ["Remote GPU agent: read V5_EXECUTION.md and start with Study A (section 2)."]
+}

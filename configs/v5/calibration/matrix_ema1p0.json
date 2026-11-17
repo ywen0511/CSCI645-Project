@@ -1,0 +1,61 @@
+{
+ "name": "v5_calibration_ema1p0_primary",
+ "suite": "configs/v5/calibration/suite_heldout.jsonl",
+ "num_envs": 240,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "clean_probability": 0.25,
+   "ema_alpha": 1.0
+  },
+  "observation_giver_reference": true,
+  "grasp_uncertainty": true
+ },
+ "trace_cases": [
+  "v5cal-heldout-mixed_id-0000",
+  "v5cal-heldout-grasp_15mm-0000",
+  "v5cal-heldout-grasp_10mm-0000",
+  "v5cal-heldout-mixed_ood-0000",
+  "v5cal-heldout-clean-0000"
+ ],
+ "entries": [
+  {
+   "id": "ema1p0_fixed_a15",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015
+   },
+   "trace": true
+  },
+  {
+   "id": "ema1p0_fixed_a25",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025
+   },
+   "trace": true
+  },
+  {
+   "id": "ema1p0_cal050_a15",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.015,
+    "giver_calibration_window_s": 0.5
+   },
+   "trace": true
+  },
+  {
+   "id": "ema1p0_cal050_a25",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5
+   },
+   "trace": true
+  }
+ ]
+}

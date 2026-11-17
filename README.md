@@ -11,13 +11,20 @@ Study data, checkpoints and videos remain in
 [v4.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.0), with tooling in
 [v4.0.1](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.1).
 
-**Start here:** [six-page project overview (PDF)](report/final/overview.pdf) ·
+**Start here:** [project overview (PDF, 7 pages)](report/final/overview.pdf) ·
 [overview (Markdown)](report/final/overview.md) ·
 [review and corrections](docs/final_review/REVIEW.md) ·
 [defense/demo notes](docs/final_review/DEFENSE_NOTES.md).
 
-There is no active execution assignment. [FINAL_DELIVERY_HANDOFF.md](FINAL_DELIVERY_HANDOFF.md)
-is complete. Do not restart training from the historical V3/V4 execution runbooks.
+**V5 in progress.** CPU preparation is done (November 17, 2026): a
+[failure taxonomy](results/v5/cpu/failure_taxonomy.md) of all V4 final episodes, an updated
+overview, a corrected AI-assistance disclosure, and a **preregistered matched calibration
+ablation** whose suite, matrices and analysis are frozen in
+[configs/v5/calibration](configs/v5/calibration/) before any simulation. The active
+remote-GPU assignment is [V5_EXECUTION.md](V5_EXECUTION.md) (Study A: matched calibration
+ablation; Study B: dynamic in-grasp slip; release v5.0.0); status in
+[V5_STATUS.json](V5_STATUS.json). Do not restart training from the historical V3/V4
+runbooks.
 
 ## What this project studies
 
@@ -45,6 +52,10 @@ their rates are not one shared leaderboard.
 - At the unseen palm-side boundary, selected history reaches 65.2% versus calibrated
   geometry's 96.5%. The new **post hoc** common-valid-reset analysis retains a deficit
   of 30.79 pp (95% interval [-43.60, -18.20]); invalid resets alone do not explain it.
+- Failure modes (derived on CPU from the V4 records): geometry and combined controllers
+  almost never drop the bar (37 drops in 103,200 episodes, no premature-release flags);
+  their failures are receiver collisions with the bar end, including the history policy's
+  palm-side deficit (31.2% collisions vs 0.5% for its calibrated parent).
 - V2 residual-only learning did improve over nominal control. The overall conclusion
   is scoped: the tested learned residuals do not consistently improve strong geometry,
   not that reinforcement learning can never help.
@@ -68,7 +79,8 @@ CPU checks do not establish contact physics or independently replay policy weigh
 | Reproduction and prior remote GPU verification | [REPRODUCE.md](docs/v4/REPRODUCE.md), [VERIFICATION.md](docs/v4/VERIFICATION.md) |
 | Frozen scientific protocol / experiment source | [analysis plan](configs/v4/analysis_plan.json), [experiment-v4](https://github.com/ywen0511/CSCI645-Project/tree/experiment-v4) |
 | Completed study status | [POST_V3_STATUS.json](POST_V3_STATUS.json) |
-| Current remaining publication assignment | [FINAL_DELIVERY_HANDOFF.md](FINAL_DELIVERY_HANDOFF.md) |
+| Active V5 assignment and status | [V5_EXECUTION.md](V5_EXECUTION.md), [V5_STATUS.json](V5_STATUS.json) |
+| Proposal failure metrics for V4 (CPU, derived) | [results/v5/cpu](results/v5/cpu/) |
 
 V4 has 25 formal training runs, 54 executed final entries x 2,400 cases = 129,600
 episodes, and 55 logical entries including an exact baseline alias. Published artifact

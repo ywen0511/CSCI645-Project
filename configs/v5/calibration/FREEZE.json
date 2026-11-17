@@ -1,0 +1,11 @@
+{
+ "frozen_before_outcomes": true,
+ "generator": "scripts/v5_make_calibration_study.py",
+ "files": {
+  "analysis_plan.json": "e1e37fbfdcf855f6f938e4bf7fa898b158928e34242d5ef1fb7af7fc28de592c",
+  "matrix_ema0p2.json": "46803de7d08fd2bae2392baf383f8625ca82fbe99bbfbfc8e95bbee332413459",
+  "matrix_ema1p0.json": "01b00b35c5874e5447200034e79036aea592c5297a127c93438e0eb3d9c0d229",
+  "matrix_repeat_ema0p2.json": "7fc5eacac0200bee20a973cacd85386abbf900e4a08d4ad57d80c8c9aa1611e5",
+  "suite_heldout.jsonl": "5b7d79a0d57a7932f7f6e01b9006cd5c130a716fb375c839b69049956f20145a"
+ }
+}

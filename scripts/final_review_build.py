@@ -13,7 +13,7 @@ from urllib.parse import urljoin
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "report/final"
-GITHUB = "https://github.com/ywen0511/CSCI645-Project/blob/study/v4-grasp-uncertainty/report/final/"
+GITHUB = "https://github.com/ywen0511/CSCI645-Project/blob/main/report/final/"
 
 
 def data(path):
@@ -51,12 +51,57 @@ def render_markdown(audit):
                                           f"{r['difference_pp']:+.2f}"] for label, r in zip(labels, common)])
     r = common[0]
     values["history_sensitivity"] = f"{r['difference_pp']:+.2f} pp, 95% CI [{r['ci_low_pp']:+.2f}, {r['ci_high_pp']:+.2f}]"
+    values.update(failure_values(families))
     template = (OUT / "overview_template.md").read_text()
     result = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m[1]], template)
     if "{{" in result:
         raise ValueError("unresolved placeholder")
     (OUT / "overview.md").write_text(result)
     return result
+
+
+def failure_values(families):
+    """Proposal failure metrics from the derived V5 CPU taxonomy (scripts/v5_failure_taxonomy.py)."""
+    tax = data("results/v5/cpu/failure_taxonomy.json")
+    cells = {(c["family"], c["role"], c["condition"]): c for c in tax["cells"]}
+    conditions = [("grasp_15mm", "Grasp-15"), ("mixed_id", "Mixed ID"), ("mixed_ood", "Mixed OOD"),
+                  ("boundary_x_minus_7", "x = -7 mm")]
+
+    def get(family, condition):
+        role = "baseline" if family.startswith(("geometry", "nominal")) else "selected"
+        return cells[(family, role, condition)]
+
+    rows = []
+    for family, label in families:
+        row = [label]
+        for condition, _ in conditions:
+            p = get(family, condition)["terminal_reason_pct"]
+            other = p["episode_timeout"] + p["release_timeout"] + p["invalid_reset"]
+            row.append(f"{p['prohibited_collision']:.1f} / {p['drop']:.1f} / {other:.1f}")
+        rows.append(row)
+    out = {"failure_table": table(["Collision / drop / other (%)", *[c[1] for c in conditions]], rows)}
+    geo = [c for c in tax["cells"] if c["family"].startswith(("geometry", "combined"))]
+    if sum(c["episodes"] for c in geo) != 103200:
+        raise ValueError("unexpected geometry/combined episode count")
+    if any(c["flags_among_failed_counts"]["premature_release"] for c in geo):
+        raise ValueError("text claims no premature-release flags for geometry/combined")
+    out["geometry_drops"] = str(sum(c["terminal_reason_counts"]["drop"] for c in geo))
+    h, b = get("combined_robust_history", "boundary_x_minus_7"), get("geometry_calibrated", "boundary_x_minus_7")
+    hp, bp = h["terminal_reason_pct"], b["terminal_reason_pct"]
+    out["history_boundary"] = (f"at x = -7 mm it has {hp['prohibited_collision']:.1f}% collisions and "
+                               f"{hp['invalid_reset']:.1f}% invalid resets, against {bp['prohibited_collision']:.1f}% "
+                               f"and {bp['invalid_reset']:.1f}% for its calibrated parent, and "
+                               f"{h['flags_among_failed_counts']['misaligned']} of its {h['failed_valid_episodes']} "
+                               "failed valid episodes were already misaligned by more than 10 mm at the grasp time")
+    conflict = [c for c in tax["cells"] if c["flags_among_failed_counts"]["conflicting_motion"]]
+    if any(c["role"] == "selected" or c["family"].startswith("geometry") for c in conflict):
+        raise ValueError("text claims no conflicting motion for selected policies or geometry baselines")
+    out["conflict_total"] = str(sum(c["flags_among_failed_counts"]["conflicting_motion"] for c in conflict))
+    shown = [get(f, c)["completion_time_s_successes"]["median"] for f, _ in families for c, _ in conditions]
+    if not all(4.85 <= round(m, 2) <= 4.90 or (f, c) == ("geometry_ema", "mixed_ood")
+               for m, (f, c) in zip(shown, [(f, c) for f, _ in families for c, _ in conditions])):
+        raise ValueError("completion-time sentence no longer matches the data")
+    return out
 
 
 def figure(audit):

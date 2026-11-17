@@ -97,5 +97,5 @@ matched-filter calibration ablation on new cases, or a physically validated dyna
 intervention. Neither should be relabeled as part of the already-frozen primary test.
 
 **How much did AI do?** Implementation, experiment orchestration, analysis and writing
-were AI-assisted, with local Codex maintenance/review and remote agent execution.
+were AI-assisted, all through Anthropic Claude via Claude Code (remote GPU runs and local review).
 Explain that honestly and be ready to trace the task, evaluator and result files.

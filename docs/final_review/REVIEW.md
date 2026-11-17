@@ -43,7 +43,7 @@ artifact verification are documented separately in [V4 verification](../v4/VERIF
 | Reproducibility counts | The 424 checkpoint count is index entries, including roles/aliases, not necessarily 424 unique weight files. The remote record reports 2,160/2,160 repeatability outcomes but 323/324 trace outcomes, with one discrepancy disclosed. | `docs/v4/VERIFICATION.md`, report section 8 |
 | Compute | The report's 16.0 A100 GPU-hours predates final verification; the later full-continuation record is 16.18. | `results/v4/compute_final.json` |
 | Related work | Prior work includes dexterous handover; the cited individual paper does not establish that the entire field mainly uses dexterous hands or learned perception. | [Frau-Alfaro et al.](https://arxiv.org/abs/2506.16822), report section 12 |
-| AI assistance | Remote implementation/experiments/delivery used an AI coding agent, as disclosed in V4. Local workflow maintenance, this independent audit and synthesis also used Codex. Do not attribute all local code authorship to the owner. | Archived disclosure and this review |
+| AI assistance | All AI assistance, remote and local, was Anthropic Claude via Claude Code: implementation, experiments, delivery, this independent audit and synthesis. No other AI coding assistant was used. (Corrected 2026-11-17: an earlier version of this row and of the overview named Codex in error.) Do not attribute all code authorship to the owner. | Archived disclosure, owner confirmation |
 
 ## Reset sensitivity: new, explicitly post hoc
 
