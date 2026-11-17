@@ -80,7 +80,7 @@ def test_minjerk():
 
 def test_train_slip_draw_clamps_cumulative():
     g = torch.Generator().manual_seed(0)
-    gx = torch.full((5000,), 0.012)
+    gx = torch.full((5000,), 0.012)  # start +12 mm: slides are capped at +3 mm by the cumulative +15 mm bound
     s, on, du = sl.sample_train_slip(5000, v5.TRAIN_SLIP, gx, g, "cpu")
     assert float((gx + s[:, 0])[du > 0].min()) >= v5.CUMULATIVE_X[0] - 1e-7
     active = du > 0
@@ -119,13 +119,14 @@ def test_tracking_ignores_frames_without_giver_contact():
 def test_case_design_deterministic_paired_and_clamped():
     a = v5.make_cases("final")
     b = v5.make_cases("final")
-    assert a == b and len(a) == 8 * 200
+    assert a == b and len(a) == len(v5.CONDITIONS) * 200
     by = {}
     for r in a:
         by.setdefault(r["base_case_id"], {})[r["condition"]] = r
         x = r["grasp_offset_xyz_m"][0] + r["slip_xyz_m"][0]
         if r["slip_duration_s"] > 0:  # cumulative clamp applies to slipping cases (static starts may reach +15 mm)
             assert v5.CUMULATIVE_X[0] - 1e-9 <= x <= v5.CUMULATIVE_X[1] + 1e-9
+            assert v5.SLIDE_X[0] - 1e-12 <= r["slip_xyz_m"][0] <= v5.SLIDE_X[1] + 1e-12
         if r["slip_duration_s"] > 0:
             assert 0.7 <= r["slip_onset_s"] <= 1.4
             assert r["slip_onset_s"] + r["slip_duration_s"] + 0.1 <= 1.8 + 1e-9
@@ -133,9 +134,9 @@ def test_case_design_deterministic_paired_and_clamped():
     for conds in by.values():
         onsets = {r["slip_onset_s"] for r in conds.values() if r["slip_duration_s"] > 0}
         assert len(onsets) == 1  # onset paired across conditions
-        assert conds["slip_pos_10"]["slip_xyz_m"][0] == pytest.approx(0.010)
-        assert conds["slip_after_offset"]["grasp_offset_xyz_m"][0] == pytest.approx(0.010)
-        assert conds["slip_after_offset"]["slip_xyz_m"][0] == pytest.approx(-0.010)
+        assert conds["slip_pos_8"]["slip_xyz_m"][0] == pytest.approx(0.008)
+        assert conds["slip_after_offset"]["grasp_offset_xyz_m"][0] == pytest.approx(-0.005)
+        assert conds["slip_after_offset"]["slip_xyz_m"][0] == pytest.approx(0.008)
         assert conds["clean"]["slip_duration_s"] == 0.0 and conds["static_mixed_id"]["slip_duration_s"] == 0.0
         # the in-grasp start and sensor of the slip_mixed_id case follow the V4 mixed_id rule family
         assert conds["slip_mixed_id"]["observation_error"]["noise_std_m"] == 0.002

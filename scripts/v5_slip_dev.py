@@ -136,10 +136,12 @@ def training():
 TRACKING = [(0.05, 0.025), (0.1, 0.025), (0.2, 0.025), (0.4, 0.025), (0.2, 0.035), (0.4, 0.035)]  # (alpha, bound)
 CONSTANTS_X = (-0.004, -0.002, 0.002, 0.004)  # on the calibrated parent; 0 is the parent itself
 SENSOR_FIXED = {**SENSOR, "ema_alpha": 1.0}
-RULE = ("development cases only; strata = the four V5 validation conditions (clean, static_mixed_id, slip_pos_10, "
+RULE = ("development cases only; strata = the four V5 validation conditions (clean, static_mixed_id, slip_pos_8, "
         "slip_mixed_id), equal weight, 24 cases each, all scheduled cases in the denominator: success rate desc, "
-        "unsafe-event rate asc (any prohibited collision or drop), correction magnitude asc (geometry: mean |alignment "
-        "correction|; constant offsets: |c|), mean completion time of successes asc, candidate ID asc (V4 rule).")
+        "unsafe-event rate asc (any prohibited collision or drop), correction magnitude asc, mean completion time of "
+        "successes asc, candidate ID asc (V4 rule). Correction magnitude as in V4 within a family (geometry and "
+        "tracking: mean |alignment correction|; constant offsets: |c|); across families (geometry_best) the common "
+        "total correction mean |alignment correction + c| is used, because the V4 family measures are not comparable.")
 
 
 def candidates():
@@ -163,7 +165,7 @@ def grid():
     bases = {"a": {**PARENT_BASE, "slip_mechanism": mech},
              "fixed": {**PARENT_BASE, "observation_sensor": SENSOR_FIXED, "slip_mechanism": mech},
              "ema": {**PARENT_BASE, "observation_giver_reference": False, "slip_mechanism": mech}}
-    trace = [f"{v5.PREFIX}-development-{c}-0000" for c in ("slip_mixed_id", "slip_pos_10", "clean")]
+    trace = [f"{v5.PREFIX}-development-{c}-0000" for c in ("slip_mixed_id", "slip_pos_8", "clean")]
     cs = candidates()
     out = {}
     for g, base in bases.items():
@@ -223,26 +225,34 @@ def select(runs: Path):
         else:
             mag = _align_mag
         scores[cid] = _score(rows, mag)
+        cvec = c["overrides"].get("constant_residual_m", [0.0, 0.0, 0.0])
+        strata = [r for r in rows if r["condition"] in v5.VALIDATION]
+        scores[cid]["total_correction"] = sum(
+            sum((a + b) ** 2 for a, b in zip(r["align_correction_mean_xyz_m"], cvec)) ** 0.5 for r in strata) / len(strata)
         by = {}
         for r in rows:
             by.setdefault(r["condition"], []).append(r["success"])
         all_cond[cid] = {k: sum(v) / len(v) for k, v in sorted(by.items())}
     best = lambda ids: min(ids, key=lambda c: _key(scores[c], c))  # noqa: E731
+    total = {c: {**scores[c], "magnitude": scores[c]["total_correction"]} for c in cs}
+    best_total = lambda ids: min(ids, key=lambda c: _key(total[c], c))  # noqa: E731
     tracking = best([c for c in cs if cs[c].get("kind") == "tracking"])
     constant = best([c for c in cs if cs[c].get("kind") == "constant"] + ["geometry_calibrated"])
     training_free = [c for c in cs]
     roles = {"nominal": "nominal", "geometry_fixed": "geometry_fixed", "geometry_ema": "geometry_ema",
              "geometry_calibrated": "geometry_calibrated", "geometry_tracking": tracking,
-             "best_constant_geometry": constant, "geometry_best": best(training_free)}
+             "best_constant_geometry": constant, "geometry_best": best_total(training_free)}
     out = {"status": "selected on development data only", "rule": reg["rule"], "suite_sha256": reg["suite_sha256"],
            "scores": scores, "success_by_condition_all_development": all_cond,
            "ranking": sorted(cs, key=lambda c: _key(scores[c], c)),
+           "ranking_total_correction": sorted(cs, key=lambda c: _key(total[c], c)),
            "roles": {r: {"candidate_id": c, **cs[c], **{f"selection_{k}": v for k, v in scores[c].items()
                                                         if k != "per_condition_success"}} for r, c in roles.items()}}
     (DEV / "baseline_selection.json").write_text(json.dumps(out, indent=1) + "\n")
     for c in out["ranking"]:
         s = scores[c]
         print(f"{c:28s} succ={s['success']:.4f} unsafe={s['unsafe']:.4f} mag={s['magnitude'] * 1000:.2f}mm "
+              f"total={s['total_correction'] * 1000:.2f}mm "
               f"inv_slip={s['invalid_slips']} {s['per_condition_success']}")
     print({r: c for r, c in roles.items()})
 

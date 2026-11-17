@@ -104,3 +104,30 @@ Append-only. Each entry: date, decision, reason, evidence.
   14 training-free candidates: nominal, V4 fixed/EMA/calibrated geometry, six `geometry_tracking` settings
   (EMA weight 0.05/0.1/0.2/0.4 at 25 mm bound, 0.2/0.4 at 35 mm) and four constant x offsets (+-2, +-4 mm) on the
   calibrated parent. Ranking: V4 rule on the four V5 validation conditions (development cases only).
+
+## 2026-11-17 21:54Z — Development round 1 revealed that slip feasibility depends on slide direction
+
+- Development round 1 (commit `678d641`, 192 cases, 14 candidates; records kept for the release) showed that
+  slip validity depends on the slide itself, not only on the final in-grasp position (the probe started every
+  slide at offset 0, so it could not separate the two). Pooled over all 14 controllers (slip validity is set
+  before the receiver touches the bar): slides toward the giver palm beyond -2.5 mm: 0 of 476 valid; -2.5..0 mm:
+  476 of 532 (89.5%); slides toward the receiver 0..2.5 mm: 84/84; 2.5..5 mm: 406/406; 5..8 mm: 112/112;
+  8..10 mm: 354/378 (93.7%). `slip_after_offset` (+10 mm start, -10 mm slide) failed 24/24 (the bar dropped
+  about 11 mm while sliding back).
+- **Feasible slip redefined before any freeze:** slides toward the receiver of 0..+8 mm (>= 95% valid in all
+  development evidence), with the cumulative offset start + slide inside the V4 static feasible range
+  [-7, +15] mm. Conditions adjusted only to this range: `slip_pos_10` -> `slip_pos_8`; `slip_neg_5` dropped
+  (slides toward the palm are infeasible; no feasible version exists); `slip_after_offset` = start -5 mm (palm-side
+  static offset), slide +8 mm; `slip_mixed_id` and `slip_mixed_ood` slides uniform [0, +8] mm (out-of-distribution
+  only in start offsets and sensor corruption, because larger slides are infeasible). Study B therefore has seven
+  final conditions. Training slip: probability 0.5, slide uniform [0, +8] mm, cumulative bound [-7, +15] mm.
+- Round-1 outcome on the four selection strata (informative only; not used for the final design beyond
+  feasibility): the V4 one-shot calibrated parent failed every +10 mm slide (0/24, receiver collision with the
+  slid bar); every `geometry_tracking` setting and the +4 mm constant offset solved it (24/24); the top settings
+  tied at 94.8% strata success.
+- **`geometry_best` tie-break:** the V4 rule measures correction magnitude differently for geometry (alignment
+  correction) and for constant offsets (|c|); V4 never ranked the two families against each other. For the
+  cross-family `geometry_best` the common total correction mean |alignment correction + c| is used; within a
+  family the V4 definitions are kept.
+- The three pilots launched at 21:48Z (seed 901) used the superseded slide distribution; they are kept and
+  labelled `pilot_r1`; pilots are rerun (`pilot_r2`) with the final training distribution.

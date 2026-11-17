@@ -45,8 +45,8 @@
   },
   "slip_train": {
    "cumulative_x": [
-    -0.002,
-    0.01
+    -0.007,
+    0.015
    ],
    "duration_s": 0.25,
    "onset_uniform": [
@@ -55,8 +55,8 @@
    ],
    "probability": 0.5,
    "x_uniform": [
-    -0.005,
-    0.01
+    0.0,
+    0.008
    ]
   }
  },

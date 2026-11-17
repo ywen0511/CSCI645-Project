@@ -1,7 +1,7 @@
 {
- "rule": "development cases only; strata = the four V5 validation conditions (clean, static_mixed_id, slip_pos_10, slip_mixed_id), equal weight, 24 cases each, all scheduled cases in the denominator: success rate desc, unsafe-event rate asc (any prohibited collision or drop), correction magnitude asc (geometry: mean |alignment correction|; constant offsets: |c|), mean completion time of successes asc, candidate ID asc (V4 rule).",
+ "rule": "development cases only; strata = the four V5 validation conditions (clean, static_mixed_id, slip_pos_8, slip_mixed_id), equal weight, 24 cases each, all scheduled cases in the denominator: success rate desc, unsafe-event rate asc (any prohibited collision or drop), correction magnitude asc, mean completion time of successes asc, candidate ID asc (V4 rule). Correction magnitude as in V4 within a family (geometry and tracking: mean |alignment correction|; constant offsets: |c|); across families (geometry_best) the common total correction mean |alignment correction + c| is used, because the V4 family measures are not comparable.",
  "suite": "configs/v5/slip/development/suites/development.jsonl",
- "suite_sha256": "1d4a9fe372ba9b05a3feea787237af3c9b70cd7266eb41b16ea3cf26941c0db4",
+ "suite_sha256": "647161aacbbd4f3c71bc1e268413c251dc1903ed30ed92b2da9107408b725592",
  "mechanism": {
   "finger_stiffness": 2000.0,
   "kp": 6000.0,
@@ -13,8 +13,8 @@
   "force_max_n": 90.0
  },
  "cumulative_x_m": [
-  -0.002,
-  0.01
+  -0.007,
+  0.015
  ],
  "candidates": [
   {
