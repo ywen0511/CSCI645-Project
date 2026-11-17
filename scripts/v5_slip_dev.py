@@ -101,6 +101,37 @@ def probe(mechs=None, tag=""):
     print(json.dumps({k: v for k, v in out["matrices"].items()}, indent=1), len(rows), "probe cases")
 
 
+# ------------------------------------------------------------------------------------------- training profiles
+PROFILES = {"slip_robust_ff": "combined_robust_ff", "slip_robust_history": "combined_robust_history",
+            "slip_robust_repeat": "combined_robust_repeat"}
+PILOT_SEED = 901
+PILOT_TRANSITIONS = 2031616  # 62 PPO iterations of 32,768 (<= 2 M per profile)
+
+
+def training():
+    """configs/v5/slip/training/<profile>.json = V4 frozen robust profile + slip mechanism + slip training draw;
+    configs/v5/slip/pilot/<profile>.json = the same, labelled pilot."""
+    for name, v4p in PROFILES.items():
+        src = json.loads((ROOT / f"configs/v4/frozen/training/{v4p}.json").read_text())
+        prot = json.loads(json.dumps(src))
+        prot["env_overrides"]["slip_mechanism"] = dict(v5.SLIP_MECHANISM)
+        prot["env_overrides"]["slip_train"] = dict(v5.TRAIN_SLIP)
+        prot["profile"] = {**src["profile"], "slip": "slip_mixed_id rule with probability 0.5", "v4_source": v4p}
+        prot["common_parent"] = src.get("common_parent")
+        for kind, d in (("training", "training"), ("pilot", "pilot")):
+            out = json.loads(json.dumps(prot))
+            out["protocol_id"] = f"v5-slip-{kind}-{name}"
+            out["status"] = ("draft; frozen at experiment-v5b" if kind == "training"
+                             else "pilot: labelled, released, never used for claims")
+            if kind == "pilot":
+                out["training"]["seeds"] = [PILOT_SEED]
+                out["training"]["pilot_transitions"] = PILOT_TRANSITIONS
+            p = ROOT / f"configs/v5/slip/{d}/{name}.json"
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_text(json.dumps(out, indent=1, sort_keys=True) + "\n")
+            print(p.relative_to(ROOT))
+
+
 # ------------------------------------------------------------------------------------------- development grid
 TRACKING = [(0.05, 0.025), (0.1, 0.025), (0.2, 0.025), (0.4, 0.025), (0.2, 0.035), (0.4, 0.035)]  # (alpha, bound)
 CONSTANTS_X = (-0.004, -0.002, 0.002, 0.004)  # on the calibrated parent; 0 is the parent itself
@@ -220,4 +251,4 @@ if __name__ == "__main__":
     if sys.argv[1] == "select":
         select(Path(sys.argv[sys.argv.index("--runs") + 1]))
     else:
-        {"probe": probe, "probe2": lambda: probe(MECHANISMS_R2, "_r2"), "grid": grid}[sys.argv[1]]()
+        {"probe": probe, "probe2": lambda: probe(MECHANISMS_R2, "_r2"), "grid": grid, "training": training}[sys.argv[1]]()
