@@ -168,3 +168,15 @@ Append-only. Each entry: date, decision, reason, evidence.
   paths with `$DELIVERY/` (the V4 convention, `scripts/v4_manifests.py`). Matrix contents, suites, protocols,
   checkpoints and seeds are unchanged; `v5_slip_study.py check` still passes. The failed attempts stay in the
   runner records (attempt 1 of each task).
+
+## 2026-11-18 05:50Z — Mechanism matrices: config-mismatch flag (V4 convention)
+
+- Final evaluation (30 learned entries), repeatability, V4-suite regression and videos completed with no failed task.
+  All nine video replays reproduced the evaluation terminal outcome; one completion time differs by one control step.
+- In the mechanisms manifest, the 10 reversed-history and current-frame-only tasks exited before simulating (rc 1,
+  about 14 s each; the 11 parent, selected and constant tasks succeeded). Both interventions change configuration-hash
+  fields (`observation_history_permutation`, `observation_history_mode`), and `eval_matrix.py` refuses a checkpoint
+  under a different configuration unless the entry sets `allow_config_mismatch`. V4 set this flag on exactly these
+  entries (`scripts/v4_manifests.py`); the frozen V5 generator omitted it. `scripts/v5_mechanism_matrices.py` adds only
+  that flag; the rerun records both hashes. No freeze input changed (`check` passes). The failed attempts remain in the
+  runner ledger.

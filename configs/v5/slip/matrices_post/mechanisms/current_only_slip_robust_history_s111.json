@@ -12,7 +12,8 @@
    "id": "slip_robust_history_s111__current_only",
    "method": "combined",
    "training_seed": 111,
-   "checkpoint": "slip_robust_history_s111/checkpoints/step_005013504.pt"
+   "checkpoint": "slip_robust_history_s111/checkpoints/step_005013504.pt",
+   "allow_config_mismatch": true
   }
  ]
 }

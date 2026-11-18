@@ -17,7 +17,8 @@
    "id": "slip_robust_history_s444__reversed",
    "method": "combined",
    "training_seed": 444,
-   "checkpoint": "slip_robust_history_s444/checkpoints/step_005013504.pt"
+   "checkpoint": "slip_robust_history_s444/checkpoints/step_005013504.pt",
+   "allow_config_mismatch": true
   }
  ]
 }
