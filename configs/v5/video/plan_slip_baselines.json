@@ -1,0 +1,46 @@
+[
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.025,
+   "giver_calibration_window_s": 0.5
+  },
+  "checkpoint": null,
+  "case_id": "v5slip-final-slip_mixed_id-0015",
+  "run_id": "geometry_calibrated",
+  "category": "slip_one_shot_vs_tracking_vs_history",
+  "order": 0,
+  "eval_records": "$RUNS/final/baselines/geometry_calibrated.jsonl",
+  "output": "$RUNS/videos/slip_one_shot_vs_tracking_vs_history__geometry_calibrated__v5slip-final-slip_mixed_id-0015.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.025,
+   "giver_calibration_window_s": 0.5,
+   "giver_tracking_alpha": 0.05
+  },
+  "checkpoint": null,
+  "case_id": "v5slip-final-slip_mixed_id-0015",
+  "run_id": "geometry_tracking",
+  "category": "slip_one_shot_vs_tracking_vs_history",
+  "order": 1,
+  "eval_records": "$RUNS/final/baselines/geometry_tracking.jsonl",
+  "output": "$RUNS/videos/slip_one_shot_vs_tracking_vs_history__geometry_tracking__v5slip-final-slip_mixed_id-0015.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.025,
+   "giver_calibration_window_s": 0.5,
+   "giver_tracking_alpha": 0.05
+  },
+  "checkpoint": null,
+  "case_id": "v5slip-final-slip_pos_8-0000",
+  "run_id": "geometry_tracking",
+  "category": "large_slip_tracking",
+  "order": 0,
+  "eval_records": "$RUNS/final/baselines/geometry_tracking.jsonl",
+  "output": "$RUNS/videos/large_slip_tracking__geometry_tracking__v5slip-final-slip_pos_8-0000.mp4"
+ }
+]

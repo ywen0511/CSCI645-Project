@@ -1,0 +1,12 @@
+[
+ {
+  "method": "combined",
+  "checkpoint": "$RUNS/train/slip_robust_ff_s111/checkpoints/step_005013504.pt",
+  "case_id": "v5slip-final-slip_mixed_id-0015",
+  "run_id": "slip_robust_ff_s111__selected",
+  "category": "slip_feed_forward",
+  "order": 0,
+  "eval_records": "$RUNS/final/slip_robust_ff_s111/slip_robust_ff_s111__selected.jsonl",
+  "output": "$RUNS/videos/slip_feed_forward__slip_robust_ff_s111_selected__v5slip-final-slip_mixed_id-0015.mp4"
+ }
+]

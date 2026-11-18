@@ -155,7 +155,7 @@ Append-only. Each entry: date, decision, reason, evidence.
   invalid resets and invalid slips count as failures in the all-scheduled denominator, because the slip
   mechanism has a small, method-independent failure rate.
 
-## 2026-11-18 05:50Z — Checkpoint selection; post-selection manifest path fix
+## 2026-11-18 05:15Z — Checkpoint selection; post-selection manifest path fix
 
 - **Validation** (15 runs x 11 checkpoints x 160 cases, `results/v5/jobs/validation.json`) completed with no failed
   task. `v5_slip_study.py select` (frozen V4 key) chose: feed-forward 5.0/7.0/10.0/8.0/9.0 M, history

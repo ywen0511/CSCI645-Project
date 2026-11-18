@@ -1,0 +1,39 @@
+{
+ "rule": "configs/v5/video_rule.json",
+ "clips": [
+  {
+   "clip": "study_a_matched_calibration",
+   "case": "v5cal-heldout-grasp_15mm-0000",
+   "rule": "fixed case"
+  },
+  {
+   "clip": "slip_one_shot_vs_tracking_vs_history",
+   "case": "v5slip-final-slip_mixed_id-0015",
+   "rule": "first slip_mixed_id failure (not invalid_slip) of geometry_calibrated"
+  },
+  {
+   "clip": "slip_feed_forward",
+   "case": "v5slip-final-slip_mixed_id-0015",
+   "rule": "same case as the comparison clip"
+  },
+  {
+   "clip": "study_b_failure",
+   "case": "v5slip-final-slip_mixed_id-0075",
+   "seed": 333,
+   "method": "history",
+   "rule": "first slip_mixed_id non-success (not invalid_slip) of slip_robust_history selected (seeds 111..555, then case id); else of geometry_best",
+   "note": null
+  },
+  {
+   "clip": "no_slip_control",
+   "case": "v5slip-final-static_mixed_id-0000",
+   "rule": "fixed case"
+  },
+  {
+   "clip": "large_slip_tracking",
+   "case": "v5slip-final-slip_pos_8-0000",
+   "rule": "fixed case"
+  }
+ ],
+ "recordings": 9
+}

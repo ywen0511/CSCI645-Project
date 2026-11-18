@@ -17,9 +17,9 @@ from pathlib import Path
 
 STAGE = [("v5a_", "study_a"), ("v5b_probe", "b_feasibility_probe"), ("v5b_dev", "b_development"),
          ("v5b_pilot", "b_pilots"), ("v5b_train", "b_formal_training"), ("v5b_val", "b_validation"),
-         ("v5b_final", "b_final_evaluation"), ("v5b_mech", "b_mechanisms"), ("v5b_repeat", "b_repeatability"),
-         ("v5b_regr", "b_v4_regression"), ("v5b_trace", "b_traces"), ("v5_video", "videos"),
-         ("v5_verify", "verification"), ("v5_fresh", "verification")]
+         ("v5b_final", "b_final_evaluation"), ("v5b_fl", "b_final_evaluation"), ("v5b_mdev", "b_mechanisms"),
+         ("v5b_mech", "b_mechanisms"), ("v5b_rep", "b_repeatability"), ("v5b_reg", "b_v4_regression"),
+         ("v5b_trace", "b_traces"), ("v5_video", "videos"), ("v5_verify", "verification"), ("v5_fresh", "verification")]
 
 
 def main():
