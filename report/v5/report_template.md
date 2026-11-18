@@ -1,6 +1,6 @@
 ---
 title: "Calibration and In-Grasp Slip in Bimanual Handover — V5 Study"
-subtitle: "A matched calibration ablation (Study A) and a physical dynamic-slip study (Study B) in Isaac Lab 3.0 / Isaac Sim 6.2 (PhysX) — release v5.0.0"
+subtitle: "A matched calibration ablation (Study A) and a physical dynamic-slip study (Study B) in Isaac Lab 3.0 / Isaac Sim 6.2 (PhysX) — release v5.0.1"
 author: "CSCI 645 Robot Manipulation, Fall 2026 · Yan Wen"
 date: "November 2026"
 ---
@@ -11,6 +11,10 @@ held-out results, mechanisms and failure modes. Sections 9–12 give compute, li
 references. Development and pilot numbers are labelled as such and are never used for claims. Every measured number
 below is generated from raw records by checked-in scripts; `results/v5/number_audit.json` maps each one to its source.
 
+**v5.0.1.** This revision adds two CPU-only items to v5.0.0, with no new simulation: why EMA α had no effect in
+Study A (Section 2), and a post hoc check of the Study B primary contrasts that excludes invalid slips (Section 6.1).
+No v5.0.0 result changed; the compute total now also counts the public-verification jobs (Section 9).
+
 ## Summary
 
 - **Study A — the calibrated giver reference is what fixed V4's grasp uncertainty.** V4's headline changed three
@@ -18,13 +22,17 @@ below is generated from raw records by checked-in scripts; `results/v5/number_au
   held-out cases, the 0.5 s calibrated reference minus the fixed nominal transform is {{a.A1}} on `mixed_id`
   (Bonferroni 97.5% CI {{a.A1.ci975}}) and {{a.A2}} at +15 mm (`grasp_15mm`, {{a.A2.ci975}}). Both lower bounds are
   above zero, so the frozen rule's verdict is **{{a.A1.decision}}** for both contrasts. EMA filtering had exactly zero
-  effect (identical outcomes in every cell); the wider bound added {{a.main.mixed_id.bound}} on `mixed_id`.
+  effect, by construction: with the giver reference on, the filtered estimate never reaches the receiver's command
+  while the giver holds the bar, so V4's comparison in effect changed two settings, not three (Section 2). The wider
+  bound added {{a.main.mixed_id.bound}} on `mixed_id`.
 - **Study B — a physical slip after calibration is feasible only in a narrow range.** A regulated bar-axis force
   slides the bar in the giver's fingers (no teleporting). Development showed reliable slides only toward the receiver,
   up to 8 mm; the condition table was narrowed to that range before the freeze (logged).
 - **Study B primary contrasts: no superiority established.** On `slip_mixed_id` with selected checkpoints, 4-frame
   history − feed-forward = {{b.B1}} (97.5% CI {{b.B1.ci975}}) and history − `geometry_best` (continuous tracking
-  geometry) = {{b.B2}} ({{b.B2.ci975}}). Both intervals include zero.
+  geometry) = {{b.B2}} ({{b.B2.ci975}}). Both intervals include zero. A post hoc check that drops every case with an
+  invalid slip in a primary arm ({{b.sens.slip_mixed_id.kept}} cases kept) gives {{b.sens.slip_mixed_id.B1}}
+  ({{b.sens.slip_mixed_id.B1.ci975}}) and {{b.sens.slip_mixed_id.B2}} ({{b.sens.slip_mixed_id.B2.ci975}}): the same verdict.
 - **What does help is modest and needs no memory.** Exploratory: continuous tracking beats the stale one-shot
   calibration by {{b.c.tracking_minus_calibrated.slip_mixed_ood}} on `slip_mixed_ood`; the feed-forward residual beats
   its one-shot parent by {{b.c.ff_minus_calibrated_parent.slip_mixed_id}} on `slip_mixed_id`; a +4 mm constant offset
@@ -88,10 +96,23 @@ exactly (`ema1p0_fixed_a15` = V4 `geometry_fixed`, `ema0p2_cal050_a25` = V4 `geo
 
 **Exploratory main effects** (averaged over the other two factors; 95% CI): reference {{a.main.mixed_id.reference}}
 on `mixed_id`, {{a.main.grasp_15mm.reference}} on `grasp_15mm`, {{a.main.mixed_ood.reference}} on `mixed_ood`; EMA α
-{{a.main.mixed_id.ema}} everywhere — the two EMA settings produced identical terminal outcomes in every cell (both
-references locate the bar from giver kinematics while the giver holds it; why the filter leaves no trace in the
-outcomes was not investigated further); bound
+{{a.main.mixed_id.ema}} everywhere (identical terminal outcomes in every cell); bound
 {{a.main.mixed_id.bound}} on `mixed_id` and {{a.main.grasp_15mm.bound}} on `grasp_15mm`.
+
+**Why EMA α has no effect (added in v5.0.1).** It is a property of the controller, not a finding about filtering.
+With the giver reference on (all eight configurations, as in V4's `geometry_fixed` and `geometry_calibrated`), the
+controller's bar position is replaced by the giver-kinematic estimate whenever both giver contacts are closed and the
+giver has not released, and the 0.5 s calibration averages the unfiltered measurement, not the EMA output
+(`src/csci645_handover/tasks/handover_env.py`, `_measure`). The EMA output reaches the controller only while
+settling, when the receiver command is pinned to its start pose, and after the giver releases. A field-by-field
+comparison of the executed runs confirms this: across {{a.ema.pairs}} paired episodes, every record field except run identifiers and configuration hashes is
+identical between α 1.0 and α 0.2, including completion times, alignment corrections and observation errors. In the
+traced episode of each configuration (`clean`, {{a.ema.trace.samples}} samples), the controller's estimate differs in
+{{a.ema.trace.settling}} settling samples and {{a.ema.trace.after_giver_release}} samples after release, and the
+executed receiver command differs in {{a.ema.trace.pexec}} samples (script `scripts/v5_ema_identity.py`, output
+`results/v5/calibration/ema_identity/`). V4's fixed → calibrated comparison therefore
+changed two effective settings (reference and bound), not three, and the EMA factor in Study A could not have shown
+an effect. This was not recognised when Study A was designed (`docs/v5/DECISIONS.md`).
 
 **Failures** (selected rows; `results/v5/calibration/taxonomy/`). The fixed transform fails by prohibited receiver
 collisions with the bar end, almost always with the receiver misaligned at grasp:
@@ -101,8 +122,8 @@ collisions with the bar end, almost always with the receiver misaligned at grasp
 **Repeatability.** A second process (seed 6457502) reran the two matched primary configurations: {{a.rep.ema0p2_fixed_a25}}
 and {{a.rep.ema0p2_cal050_a25}} identical terminal outcomes.
 
-**Conclusion.** V4's improvement from fixed to calibrated geometry is a calibration effect. EMA filtering contributes
-nothing measurable here, and the wider alignment bound contributes a few points.
+**Conclusion.** V4's improvement from fixed to calibrated geometry is a calibration effect. EMA filtering cannot
+contribute in this controller (see above), and the wider alignment bound contributes a few points.
 
 ## 3. Study B — a physical in-grasp slip
 
@@ -227,6 +248,16 @@ Both 97.5% intervals include zero. Under the frozen rule, **neither superiority 
 history does not measurably beat the same residual without history, nor the training-free tracking controller, on
 the primary condition. No equivalence is claimed.
 
+**Post hoc sensitivity: excluding invalid slips** (added in v5.0.1; not preregistered). About 5–7% of `slip_mixed_id` episodes end as `invalid_slip` (Section 8). Keeping only
+the base cases on which no episode of any primary arm had an invalid slip ({{b.sens.slip_mixed_id.kept}}), with the same
+bootstrap, B1 is {{b.sens.slip_mixed_id.B1}} (97.5% CI {{b.sens.slip_mixed_id.B1.ci975}}) and B2 is
+{{b.sens.slip_mixed_id.B2}} ({{b.sens.slip_mixed_id.B2.ci975}}). Both intervals still include zero, so the verdict
+does not depend on invalid slips. On the exploratory `slip_mixed_ood` ({{b.sens.slip_mixed_ood.kept}} kept), history −
+`geometry_best` becomes {{b.sens.slip_mixed_ood.B2}} (95% CI {{b.sens.slip_mixed_ood.B2.ci95}}), against
+{{b.c.B2.slip_mixed_ood}} on all cases. That is one post hoc look at a secondary condition, with a filter that
+conditions on episode outcomes, so it is a hypothesis for future work, not a finding (script
+`scripts/v5_slip_sensitivity.py`, output `results/v5/slip/sensitivity/`).
+
 ![Study B contrasts](../../results/v5/figures/study_b_contrasts.png)
 
 ### 6.2 All conditions
@@ -322,6 +353,9 @@ the 60 GPU-hour cap.
   +8 mm toward the receiver. Slides toward the giver's palm and longer slides were not physically reliable in this
   setup and are not tested. Rotational slip, multiple slips, slip during the receiver's grasp, other objects and
   friction values are out of scope.
+- **An inert factor in Study A.** EMA α cannot change the receiver's command when the giver reference is on
+  (Section 2), so its main effect is zero by construction; varying it was informative only where the filtered
+  measurement is used. The reference and bound results are unaffected.
 - **Near-ceiling baselines.** The tracking and constant-offset baselines already succeed on most slip cases, which
   limits how large any learned improvement could be on these suites.
 - **Simulation only.** No hardware, vision or dexterous hands; sensing is synthetic (V4 corruption model).
@@ -340,6 +374,9 @@ the 60 GPU-hour cap.
   slides, videos; source archives; `SHA256SUMS`, `release_manifest.json`, `REPRODUCE.md`, `VERIFICATION.md`.
 - **Regeneration:** `scripts/v5_regen.py` rebuilds every Study A and Study B table and figure from the downloaded raw
   records and compares them with the committed files; `docs/v5/REPRODUCE.md` lists the commands and expected output.
+- **v5.0.1 additions (CPU only):** `scripts/v5_ema_identity.py --archive raw-study-a.tar.gz` and
+  `scripts/v5_slip_sensitivity.py --runs <extracted raw-final.tar.gz>`; outputs under `results/v5/calibration/ema_identity/`
+  and `results/v5/slip/sensitivity/`.
 - **Decision log:** `docs/v5/DECISIONS.md` (append-only, UTC times).
 
 ## 12. Related work
@@ -384,4 +421,5 @@ transitions.
 The V5 implementation, probes, experiments, analysis code, figures, this report, the slides and the videos were
 produced by Claude Code working from `V5_EXECUTION.md` on the owner's behalf, on the owner's account and compute.
 Decisions are logged with UTC times in `docs/v5/DECISIONS.md`; every measured number comes from checked-in scripts
-applied to the released raw records (`results/v5/number_audit.json`).
+applied to the released raw records (`results/v5/number_audit.json`). The v5.0.1 additions were made by Claude Code
+on CPU from the v5.0.0 raw records.

@@ -6,11 +6,14 @@ table { border-collapse: collapse; font-size: 7.4pt; margin: 0.5em 0; page-break
 th, td { border: 1px solid #aaa; padding: 1px 3px; } th { background: #eee; }
 img { max-width: 100%; page-break-inside: avoid; } code { font-size: 8.5pt; } p, li { text-align: justify; }
 @page { size: letter; margin: 0.7in; }
-</style></head><body><h1>Calibration and In-Grasp Slip in Bimanual Handover — V5 Study</h1><div class='meta'>A matched calibration ablation (Study A) and a physical dynamic-slip study (Study B) in Isaac Lab 3.0 / Isaac Sim 6.2 (PhysX) — release v5.0.0<br>CSCI 645 Robot Manipulation, Fall 2026 · Yan Wen &middot; November 2026</div><p><strong>Reading guide.</strong> Section 1 places V5 in the V1–V4 sequence. Section 2 is Study A (a preregistered, training-free
+</style></head><body><h1>Calibration and In-Grasp Slip in Bimanual Handover — V5 Study</h1><div class='meta'>A matched calibration ablation (Study A) and a physical dynamic-slip study (Study B) in Isaac Lab 3.0 / Isaac Sim 6.2 (PhysX) — release v5.0.1<br>CSCI 645 Robot Manipulation, Fall 2026 · Yan Wen &middot; November 2026</div><p><strong>Reading guide.</strong> Section 1 places V5 in the V1–V4 sequence. Section 2 is Study A (a preregistered, training-free
 ablation). Sections 3–8 are Study B: the slip mechanism and its feasibility, the methods, the frozen protocol, the
 held-out results, mechanisms and failure modes. Sections 9–12 give compute, limitations, reproducibility and
 references. Development and pilot numbers are labelled as such and are never used for claims. Every measured number
 below is generated from raw records by checked-in scripts; <code>results/v5/number_audit.json</code> maps each one to its source.</p>
+<p><strong>v5.0.1.</strong> This revision adds two CPU-only items to v5.0.0, with no new simulation: why EMA α had no effect in
+Study A (Section 2), and a post hoc check of the Study B primary contrasts that excludes invalid slips (Section 6.1).
+No v5.0.0 result changed; the compute total now also counts the public-verification jobs (Section 9).</p>
 <h2>Summary</h2>
 <ul>
 <li><strong>Study A — the calibrated giver reference is what fixed V4's grasp uncertainty.</strong> V4's headline changed three
@@ -18,13 +21,17 @@ below is generated from raw records by checked-in scripts; <code>results/v5/numb
   held-out cases, the 0.5 s calibrated reference minus the fixed nominal transform is +29.5 pp on <code>mixed_id</code>
   (Bonferroni 97.5% CI [+22.5, +36.5]) and +93.0 pp at +15 mm (<code>grasp_15mm</code>, [+88.5, +96.5]). Both lower bounds are
   above zero, so the frozen rule's verdict is <strong>supported</strong> for both contrasts. EMA filtering had exactly zero
-  effect (identical outcomes in every cell); the wider bound added +3.2 pp [+1.3, +5.3] on <code>mixed_id</code>.</li>
+  effect, by construction: with the giver reference on, the filtered estimate never reaches the receiver's command
+  while the giver holds the bar, so V4's comparison in effect changed two settings, not three (Section 2). The wider
+  bound added +3.2 pp [+1.3, +5.3] on <code>mixed_id</code>.</li>
 <li><strong>Study B — a physical slip after calibration is feasible only in a narrow range.</strong> A regulated bar-axis force
   slides the bar in the giver's fingers (no teleporting). Development showed reliable slides only toward the receiver,
   up to 8 mm; the condition table was narrowed to that range before the freeze (logged).</li>
 <li><strong>Study B primary contrasts: no superiority established.</strong> On <code>slip_mixed_id</code> with selected checkpoints, 4-frame
   history − feed-forward = −1.0 pp (97.5% CI [−3.4, +1.3]) and history − <code>geometry_best</code> (continuous tracking
-  geometry) = +0.9 pp ([−2.6, +4.6]). Both intervals include zero.</li>
+  geometry) = +0.9 pp ([−2.6, +4.6]). Both intervals include zero. A post hoc check that drops every case with an
+  invalid slip in a primary arm (177/200 cases kept) gives +0.5 pp
+  ([−1.4, +2.3]) and +1.4 pp ([−0.8, +4.0]): the same verdict.</li>
 <li><strong>What does help is modest and needs no memory.</strong> Exploratory: continuous tracking beats the stale one-shot
   calibration by +7.0 pp [+3.0, +11.5] on <code>slip_mixed_ood</code>; the feed-forward residual beats
   its one-shot parent by +3.9 pp [+0.9, +7.3] on <code>slip_mixed_id</code>; a +4 mm constant offset
@@ -218,10 +225,22 @@ exactly (<code>ema1p0_fixed_a15</code> = V4 <code>geometry_fixed</code>, <code>e
 </table>
 <p><strong>Exploratory main effects</strong> (averaged over the other two factors; 95% CI): reference +24.8 pp [+19.2, +30.5]
 on <code>mixed_id</code>, +79.8 pp [+75.5, +83.8] on <code>grasp_15mm</code>, +17.8 pp [+12.0, +23.5] on <code>mixed_ood</code>; EMA α
-+0.0 pp [+0.0, +0.0] everywhere — the two EMA settings produced identical terminal outcomes in every cell (both
-references locate the bar from giver kinematics while the giver holds it; why the filter leaves no trace in the
-outcomes was not investigated further); bound
++0.0 pp [+0.0, +0.0] everywhere (identical terminal outcomes in every cell); bound
 +3.2 pp [+1.3, +5.3] on <code>mixed_id</code> and +5.8 pp [+2.3, +9.3] on <code>grasp_15mm</code>.</p>
+<p><strong>Why EMA α has no effect (added in v5.0.1).</strong> It is a property of the controller, not a finding about filtering.
+With the giver reference on (all eight configurations, as in V4's <code>geometry_fixed</code> and <code>geometry_calibrated</code>), the
+controller's bar position is replaced by the giver-kinematic estimate whenever both giver contacts are closed and the
+giver has not released, and the 0.5 s calibration averages the unfiltered measurement, not the EMA output
+(<code>src/csci645_handover/tasks/handover_env.py</code>, <code>_measure</code>). The EMA output reaches the controller only while
+settling, when the receiver command is pinned to its start pose, and after the giver releases. A field-by-field
+comparison of the executed runs confirms this: across 9,600 paired episodes, every record field except run identifiers and configuration hashes is
+identical between α 1.0 and α 0.2, including completion times, alignment corrections and observation errors. In the
+traced episode of each configuration (<code>clean</code>, 115 samples), the controller's estimate differs in
+8 settling samples and 41 samples after release, and the
+executed receiver command differs in 0 samples (script <code>scripts/v5_ema_identity.py</code>, output
+<code>results/v5/calibration/ema_identity/</code>). V4's fixed → calibrated comparison therefore
+changed two effective settings (reference and bound), not three, and the EMA factor in Study A could not have shown
+an effect. This was not recognised when Study A was designed (<code>docs/v5/DECISIONS.md</code>).</p>
 <p><strong>Failures</strong> (selected rows; <code>results/v5/calibration/taxonomy/</code>). The fixed transform fails by prohibited receiver
 collisions with the bar end, almost always with the receiver misaligned at grasp:</p>
 <table>
@@ -272,8 +291,8 @@ collisions with the bar end, almost always with the receiver misaligned at grasp
 </table>
 <p><strong>Repeatability.</strong> A second process (seed 6457502) reran the two matched primary configurations: 2,400/2,400
 and 2,400/2,400 identical terminal outcomes.</p>
-<p><strong>Conclusion.</strong> V4's improvement from fixed to calibrated geometry is a calibration effect. EMA filtering contributes
-nothing measurable here, and the wider alignment bound contributes a few points.</p>
+<p><strong>Conclusion.</strong> V4's improvement from fixed to calibrated geometry is a calibration effect. EMA filtering cannot
+contribute in this controller (see above), and the wider alignment bound contributes a few points.</p>
 <h2>3. Study B — a physical in-grasp slip</h2>
 <p><strong>Question.</strong> When the bar slides in the giver's fingers <em>after</em> the 0.5 s calibration window has closed and before
 the receiver grasps, does a learned residual with observation history recover better than (B1) the same residual
@@ -760,6 +779,15 @@ checkout, the V4 convention; no frozen input changed.</p>
 <p>Both 97.5% intervals include zero. Under the frozen rule, <strong>neither superiority claim is established</strong>: a 4-frame
 history does not measurably beat the same residual without history, nor the training-free tracking controller, on
 the primary condition. No equivalence is claimed.</p>
+<p><strong>Post hoc sensitivity: excluding invalid slips</strong> (added in v5.0.1; not preregistered). About 5–7% of <code>slip_mixed_id</code> episodes end as <code>invalid_slip</code> (Section 8). Keeping only
+the base cases on which no episode of any primary arm had an invalid slip (177/200), with the same
+bootstrap, B1 is +0.5 pp (97.5% CI [−1.4, +2.3]) and B2 is
++1.4 pp ([−0.8, +4.0]). Both intervals still include zero, so the verdict
+does not depend on invalid slips. On the exploratory <code>slip_mixed_ood</code> (181/200 kept), history −
+<code>geometry_best</code> becomes +6.1 pp (95% CI [+1.4, +10.7]), against
++3.9 pp [−0.9, +8.7] on all cases. That is one post hoc look at a secondary condition, with a filter that
+conditions on episode outcomes, so it is a hypothesis for future work, not a finding (script
+<code>scripts/v5_slip_sensitivity.py</code>, output <code>results/v5/slip/sensitivity/</code>).</p>
 <p><img alt="Study B contrasts" src="../../results/v5/figures/study_b_contrasts.png" /></p>
 <h3>6.2 All conditions</h3>
 <p>Success (%) per method and condition. Learned rows pool five seeds (1,000 episodes per cell); training-free rows are
@@ -1274,7 +1302,7 @@ history (and feed-forward) on the first <code>slip_mixed_id</code> case the one-
 control; tracking on a +8 mm slip; and a montage. All nine replays reproduced the evaluation's terminal outcome (<code>replay_disagreements</code> is empty); one completion time differs by one control step (feed-forward clip: 4.70 s in evaluation, 4.75 s in the single-environment replay). On the comparison case the one-shot parent and the tracking controller both collide with the slid bar while the history and feed-forward policies succeed; this is one case chosen by the frozen rule, not evidence of a rate. The montage is 44 s.</p>
 <h2>9. Compute</h2>
 <p>Every job requested one A100-SXM4-80GB GPU; GPU-hours are LSF run times (including simulator start-up), with failed
-and killed jobs counted (<code>results/v5/compute.json</code>, <code>scripts/v5_compute.py</code>). Total: <strong>9.33 GPU-hours</strong> of
+and killed jobs counted (<code>results/v5/compute.json</code>, <code>scripts/v5_compute.py</code>). Total: <strong>9.49 GPU-hours</strong> of
 the 60 GPU-hour cap.</p>
 <table>
 <thead>
@@ -1347,6 +1375,12 @@ the 60 GPU-hour cap.</p>
 <td>0</td>
 </tr>
 <tr>
+<td>verification</td>
+<td>2</td>
+<td>0.16</td>
+<td>0</td>
+</tr>
+<tr>
 <td>videos</td>
 <td>1</td>
 <td>0.05</td>
@@ -1360,6 +1394,9 @@ the 60 GPU-hour cap.</p>
   +8 mm toward the receiver. Slides toward the giver's palm and longer slides were not physically reliable in this
   setup and are not tested. Rotational slip, multiple slips, slip during the receiver's grasp, other objects and
   friction values are out of scope.</li>
+<li><strong>An inert factor in Study A.</strong> EMA α cannot change the receiver's command when the giver reference is on
+  (Section 2), so its main effect is zero by construction; varying it was informative only where the filtered
+  measurement is used. The reference and bound results are unaffected.</li>
 <li><strong>Near-ceiling baselines.</strong> The tracking and constant-offset baselines already succeed on most slip cases, which
   limits how large any learned improvement could be on these suites.</li>
 <li><strong>Simulation only.</strong> No hardware, vision or dexterous hands; sensing is synthetic (V4 corruption model).</li>
@@ -1378,6 +1415,9 @@ the 60 GPU-hour cap.</p>
   slides, videos; source archives; <code>SHA256SUMS</code>, <code>release_manifest.json</code>, <code>REPRODUCE.md</code>, <code>VERIFICATION.md</code>.</li>
 <li><strong>Regeneration:</strong> <code>scripts/v5_regen.py</code> rebuilds every Study A and Study B table and figure from the downloaded raw
   records and compares them with the committed files; <code>docs/v5/REPRODUCE.md</code> lists the commands and expected output.</li>
+<li><strong>v5.0.1 additions (CPU only):</strong> <code>scripts/v5_ema_identity.py --archive raw-study-a.tar.gz</code> and
+  <code>scripts/v5_slip_sensitivity.py --runs &lt;extracted raw-final.tar.gz&gt;</code>; outputs under <code>results/v5/calibration/ema_identity/</code>
+  and <code>results/v5/slip/sensitivity/</code>.</li>
 <li><strong>Decision log:</strong> <code>docs/v5/DECISIONS.md</code> (append-only, UTC times).</li>
 </ul>
 <h2>12. Related work</h2>
@@ -1409,4 +1449,5 @@ transitions.</p>
 The V5 implementation, probes, experiments, analysis code, figures, this report, the slides and the videos were
 produced by Claude Code working from <code>V5_EXECUTION.md</code> on the owner's behalf, on the owner's account and compute.
 Decisions are logged with UTC times in <code>docs/v5/DECISIONS.md</code>; every measured number comes from checked-in scripts
-applied to the released raw records (<code>results/v5/number_audit.json</code>).</p></body></html>
+applied to the released raw records (<code>results/v5/number_audit.json</code>). The v5.0.1 additions were made by Claude Code
+on CPU from the v5.0.0 raw records.</p></body></html>

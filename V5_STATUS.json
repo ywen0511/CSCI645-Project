@@ -3,7 +3,7 @@
   "assignment": "V5_EXECUTION.md",
   "branch": "study/v5-calibration-slip",
   "complete": true,
-  "stage": "complete: release v5.0.0 published and publicly verified; merged into main",
+  "stage": "complete: release v5.0.0 published and publicly verified; v5.0.1 CPU additions; merged into main",
   "cpu_preparation": {
     "complete": true,
     "date": "2026-11-17",
@@ -41,7 +41,13 @@
         "supported": true
       }
     },
-    "repeatability": "2400/2400 terminal outcomes for both repeated configurations"
+    "repeatability": "2400/2400 terminal outcomes for both repeated configurations",
+    "ema_inert": {
+      "finding": "EMA alpha cannot reach the receiver command while the giver holds the bar (giver reference on); 9,600 paired records identical except identifiers",
+      "output": "results/v5/calibration/ema_identity/summary.json",
+      "script": "scripts/v5_ema_identity.py",
+      "added_in": "v5.0.1"
+    }
   },
   "study_b": {
     "status": "complete",
@@ -83,10 +89,19 @@
       "post-selection matrices re-addressed via $DELIVERY (scripts/v5_manifest_paths.py)",
       "allow_config_mismatch added to reversed/current-only mechanism entries (scripts/v5_mechanism_matrices.py)"
     ],
-    "repeatability": "1400/1400 terminal outcomes for every rerun entry"
+    "repeatability": "1400/1400 terminal outcomes for every rerun entry",
+    "post_hoc_sensitivity": {
+      "rule": "exclude base cases with invalid_slip in any primary arm",
+      "slip_mixed_id_kept": "177/200",
+      "verdict": "unchanged: B1 and B2 97.5% intervals include zero",
+      "output": "results/v5/slip/sensitivity/summary.json",
+      "script": "scripts/v5_slip_sensitivity.py",
+      "added_in": "v5.0.1",
+      "preregistered": false
+    }
   },
   "delivery": {
-    "report": "report/v5/report.md (+ report.pdf, 13 pages)",
+    "report": "report/v5/report.md (+ report.pdf, 13 pages; v5.0.1)",
     "slides": "report/v5/slides.pptx / slides.pdf (13 slides, speaker notes)",
     "overview": "report/final/overview.pdf (V1-V5, 8 pages)",
     "videos": "results/v5/videos/videos.json (9 clips + montage; replays match evaluation outcomes)",
@@ -95,7 +110,12 @@
     "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.0",
     "release_published": true,
     "public_verification": "results/v5/public_verification.json (ok)",
-    "main_updated": true
+    "main_updated": true,
+    "patch_release": {
+      "tag": "v5.0.1",
+      "content": "CPU-only additions and rebuilt report, slides, notes and overview; data remain in v5.0.0",
+      "url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.1"
+    }
   },
   "gpu_hours_cap": 60,
   "gpu_hours_used": 9.49,

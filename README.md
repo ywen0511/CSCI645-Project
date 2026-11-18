@@ -1,7 +1,8 @@
 # CSCI 645 — Robust bimanual handover
 
 **V5 is complete and publicly released:** release
-[**v5.0.0**](https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.0) ·
+[**v5.0.0**](https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.0) (all data) and
+[**v5.0.1**](https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.1) (CPU additions and rebuilt documents) ·
 [V5 report](report/v5/report.md) ([PDF](report/v5/report.pdf)) ·
 [slides](report/v5/slides.pdf) ([PPTX](report/v5/slides.pptx), [notes](report/v5/speaker_notes.md)) ·
 public verification [docs/v5/VERIFICATION.md](docs/v5/VERIFICATION.md) ·
@@ -36,11 +37,16 @@ their rates are not one shared leaderboard.
 - **V5 Study A** (preregistered 2 x 2 x 2 ablation, 2,400 fresh cases): with EMA alpha and
   alignment bound held fixed, the calibrated giver reference minus the fixed transform is
   +29.5 pp on mixed ID (Bonferroni 97.5% CI [+22.5, +36.5]) and +93.0 pp at +15 mm
-  ([+88.5, +96.5]). V4's gain is a calibration effect; EMA filtering had no effect.
+  ([+88.5, +96.5]). V4's gain is a calibration effect. EMA filtering had no effect, by
+  construction: with the giver reference on, its output never reaches the receiver's
+  command while the giver holds the bar (all 9,600 paired records identical except
+  identifiers; [ema_identity](results/v5/calibration/ema_identity/summary.md), v5.0.1).
 - **V5 Study B** (physical slip after calibration; feasible only for slides toward the
   receiver of up to 8 mm): on the primary condition, 4-frame history minus feed-forward is
   -1.0 pp (97.5% CI [-3.4, +1.3]) and history minus continuous tracking geometry +0.9 pp
-  ([-2.6, +4.6]): neither superiority claim is established. Tracking geometry, a constant
+  ([-2.6, +4.6]): neither superiority claim is established. A post hoc check that drops
+  cases with invalid slips gives the same verdict
+  ([sensitivity](results/v5/slip/sensitivity/summary.md), v5.0.1). Tracking geometry, a constant
   offset and feed-forward residuals recover most of what the stale calibration loses; about
   6% of held-out slips are mechanism failures for every method; three of five history seeds
   degraded late in training. Memory is not shown to help in this project.
@@ -49,7 +55,8 @@ The V4 findings below are unchanged:
 
 - In V4's grasp-15 condition, historical fixed geometry succeeds in 5.5% of cases and
   calibrated geometry in 94.5%. **This compares controller configurations:** the
-  calibration configuration also changes EMA filtering and the alignment bound.
+  calibration configuration also changes EMA filtering and the alignment bound (V5 Study A
+  later showed the EMA change is inert in this controller and isolated the calibration effect).
   Matched development controls support a calibration mechanism but are not held-out
   causal confirmation. The discrete x/z grid does not establish an exact x-only threshold.
 - Selected robust history reaches 100% on mixed ID, but both prespecified primary

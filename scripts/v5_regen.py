@@ -80,6 +80,11 @@ def main():
                       str(X / "formal/train"), "--output", str(W / "results/v5/slip/selection")],
         "constants": [py, "-c", FIT.format(scripts=str(ROOT / "scripts"), work=str(W), devfit=str(X / "mechanisms/devfit"))],
         "analysis": analysis,
+        # v5.0.1 additions (CPU, after v5.0.0)
+        "ema_identity": [py, "scripts/v5_ema_identity.py", "--records", str(X / "study_a/primary"), "--out",
+                         str(W / "results/v5/calibration/ema_identity")],
+        "slip_sensitivity": [py, "scripts/v5_slip_sensitivity.py", "--runs", str(X), "--out",
+                             str(W / "results/v5/slip/sensitivity")],
     }
     rec = {"runs": "<extracted>", "steps": {}, "files": {}}
     fail = []

@@ -180,3 +180,33 @@ Append-only. Each entry: date, decision, reason, evidence.
   entries (`scripts/v4_manifests.py`); the frozen V5 generator omitted it. `scripts/v5_mechanism_matrices.py` adds only
   that flag; the rerun records both hashes. No freeze input changed (`check` passes). The failed attempts remain in the
   runner ledger.
+
+## 2026-11-18 17:50Z — v5.0.1: why EMA α is inert in Study A; post hoc invalid-slip sensitivity (CPU only)
+
+Added after v5.0.0 by Claude Code on CPU, from the published v5.0.0 raw records; no simulator run, no change to any
+frozen input or to any v5.0.0 result. Artifacts of v5.0.0 (checkpoints, raw records, videos) stay in that release.
+
+- **EMA α in Study A was inert by construction; this was missed when Study A was designed** (the CPU preparation of
+  2026-11-17). With `observation_giver_reference` on, `_measure` in `src/csci645_handover/tasks/handover_env.py`
+  replaces the controller's bar position by the giver-kinematic estimate whenever both giver contacts are closed and
+  the giver has not released, and `giver_calibration_window_s` averages `sensor.raw` (unfiltered), not the EMA output.
+  The EMA output reaches the controller only while settling (receiver command pinned to its start pose) and after the
+  giver releases. `scripts/v5_ema_identity.py` compares the executed α 1.0 and α 0.2 runs: across 9,600 paired episodes
+  every record field except run identifiers and configuration hashes is identical; in the traced `clean` episode of
+  each configuration the controller estimate differs only in settling and post-release samples and the executed
+  receiver command never differs (`results/v5/calibration/ema_identity/`). Consequence: V4's fixed → calibrated
+  comparison changed two effective settings (reference, bound), not three. Study A's primary contrasts and the
+  reference and bound effects are unaffected; the report now states the reason instead of "not investigated".
+- **Post hoc Study B sensitivity, not preregistered** (`scripts/v5_slip_sensitivity.py`,
+  `results/v5/slip/sensitivity/`). Rule fixed before running it: keep a base case only if no episode of any primary arm
+  (history and feed-forward selected checkpoints, five seeds each, and `geometry_best`) ended in `invalid_slip`; same
+  bootstrap as the preregistered analysis; report `slip_mixed_id` (primary) and `slip_mixed_ood` (exploratory) only.
+  Result on `slip_mixed_id` (177/200 kept): B1 +0.5 pp [-1.4, +2.3], B2 +1.4 pp [-0.8, +4.0] (97.5% CI) — same verdict.
+  On `slip_mixed_ood` (181/200 kept) history − `geometry_best` is +6.1 pp
+  (95% CI [+1.4, +10.7]); reported as a hypothesis only (post hoc, secondary condition,
+  filter conditions on outcomes). The preregistered analysis remains the result of record.
+- Report, slides, speaker notes and the V1–V5 overview were rebuilt (`scripts/v5_report_values.py`,
+  `v5_render_report.py`, `v5_build_report.py`, `v5_build_slides.py`, `final_review_build.py`). The compute total in
+  the report now also counts the public-verification jobs already listed in `results/v5/compute.json` (9.49 GPU-hours).
+  Slides were rendered with LibreOffice 26.8 on macOS instead of 7.3 on Linux, so the font differs; content and
+  layout are unchanged apart from the edited text. `scripts/v5_regen.py` now also runs both new scripts.

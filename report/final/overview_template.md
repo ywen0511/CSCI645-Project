@@ -118,7 +118,8 @@ variability.
 Calibrated minus EMA is -0.5 pp [-1.5, 0.0] on mixed ID and +4.0 pp [0.0, 8.5] on mixed
 OOD (exploratory 95% intervals). Name the subtraction direction explicitly. The
 fixed-to-calibrated mixed-ID contrast is +29.0 pp [23.0, 35.5], but includes the change
-in alignment bound and filtering. The practical result is a better controller package.
+in alignment bound and filtering (V5 Study A later showed the filtering change is inert in
+this controller). The practical result is a better controller package.
 
 Matched development evidence provides a narrower mechanism check. With alpha 0.2
 and a 25 mm alignment bound for both controllers, fixed versus calibrated geometry
@@ -243,14 +244,16 @@ can reduce boundary robustness. That scoped negative result, supported by contro
 and public evidence, answers the original research question more honestly than an
 unsupported claim of universal learning benefit.
 
-**V5 (release v5.0.0).** Study A, a 2 x 2 x 2 matched ablation of reference, EMA
+**V5 (releases v5.0.0 and v5.0.1).** Study A, a 2 x 2 x 2 matched ablation of reference, EMA
 alpha and bound on 2,400 fresh cases, frozen before any simulation, attributes V4's gain
 to calibration: calibrated minus fixed is {{v5:a.A1}} on mixed ID ({{v5:a.A1.ci975}}) and
-{{v5:a.A2}} at +15 mm ({{v5:a.A2.ci975}}); EMA filtering had no effect. Study B made the
+{{v5:a.A2}} at +15 mm ({{v5:a.A2.ci975}}); EMA filtering had no effect, because with the giver reference on its
+output never reaches the receiver's command while the giver holds the bar. Study B made the
 bar slide physically in the giver's fingers after the calibration window (a regulated
 bar-axis force; slides toward the receiver of up to 8 mm were the only reliable ones).
 Neither primary contrast is established: history minus feed-forward {{v5:b.B1}}
-({{v5:b.B1.ci975}}), history minus tracking geometry {{v5:b.B2}} ({{v5:b.B2.ci975}}).
+({{v5:b.B1.ci975}}), history minus tracking geometry {{v5:b.B2}} ({{v5:b.B2.ci975}}); a post hoc check without
+invalid slips gives the same verdict.
 Tracking geometry, a constant offset and feed-forward residuals all recover most of what
 the stale calibration loses; about 6% of held-out slips are mechanism failures that cap
 every method; and three of five history seeds degraded late in training. Within this slip

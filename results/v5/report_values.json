@@ -3449,15 +3449,153 @@
   "source": "results/v5/slip/pilot/summary_r2.json",
   "field": "pilots[slip_robust_repeat_s901].last10.train_success_rate"
  },
+ "a.ema.pairs": {
+  "value": 9600,
+  "text": "9,600",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "paired_episodes"
+ },
+ "a.ema.trace.samples": {
+  "value": 115,
+  "text": "115",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "pairs[*].traces[*].samples"
+ },
+ "a.ema.trace.settling": {
+  "value": 8,
+  "text": "8",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "pairs[*].traces[*].controller_estimate_differs_by_phase.settling"
+ },
+ "a.ema.trace.after_giver_release": {
+  "value": 41,
+  "text": "41",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "pairs[*].traces[*].controller_estimate_differs_by_phase.after_giver_release"
+ },
+ "a.ema.trace.pexec": {
+  "value": 0,
+  "text": "0",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "trace_executed_command_differences"
+ },
+ "b.sens.slip_mixed_id.kept": {
+  "value": 177,
+  "text": "177/200",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].kept_base_cases"
+ },
+ "b.sens.slip_mixed_id.B1": {
+  "value": 0.4519774011299435,
+  "text": "+0.5 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.difference_pp"
+ },
+ "b.sens.slip_mixed_id.B1.ci95": {
+  "value": [
+   -1.0169491525423728,
+   2.0338983050847457
+  ],
+  "text": "[−1.0, +2.0]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.ci95"
+ },
+ "b.sens.slip_mixed_id.B1.ci975": {
+  "value": [
+   -1.3559322033898304,
+   2.2598870056497176
+  ],
+  "text": "[−1.4, +2.3]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.ci97.5"
+ },
+ "b.sens.slip_mixed_id.B2": {
+  "value": 1.3559322033898304,
+  "text": "+1.4 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.difference_pp"
+ },
+ "b.sens.slip_mixed_id.B2.ci95": {
+  "value": [
+   -0.4519774011299435,
+   3.615819209039548
+  ],
+  "text": "[−0.5, +3.6]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.ci95"
+ },
+ "b.sens.slip_mixed_id.B2.ci975": {
+  "value": [
+   -0.7909604519774011,
+   3.954802259887006
+  ],
+  "text": "[−0.8, +4.0]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.ci97.5"
+ },
+ "b.sens.slip_mixed_ood.kept": {
+  "value": 181,
+  "text": "181/200",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].kept_base_cases"
+ },
+ "b.sens.slip_mixed_ood.B1": {
+  "value": 1.4364640883977902,
+  "text": "+1.4 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].B1.difference_pp"
+ },
+ "b.sens.slip_mixed_ood.B1.ci95": {
+  "value": [
+   -2.430939226519337,
+   5.082872928176796
+  ],
+  "text": "[−2.4, +5.1]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].B1.ci95"
+ },
+ "b.sens.slip_mixed_ood.B1.ci975": {
+  "value": [
+   -3.0939226519337018,
+   5.524861878453039
+  ],
+  "text": "[−3.1, +5.5]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].B1.ci97.5"
+ },
+ "b.sens.slip_mixed_ood.B2": {
+  "value": 6.077348066298343,
+  "text": "+6.1 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].B2.difference_pp"
+ },
+ "b.sens.slip_mixed_ood.B2.ci95": {
+  "value": [
+   1.4364640883977902,
+   10.718232044198896
+  ],
+  "text": "[+1.4, +10.7]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].B2.ci95"
+ },
+ "b.sens.slip_mixed_ood.B2.ci975": {
+  "value": [
+   0.7734806629834254,
+   11.38121546961326
+  ],
+  "text": "[+0.8, +11.4]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].B2.ci97.5"
+ },
  "comp.total": {
-  "value": 9.33,
-  "text": "9.33",
+  "value": 9.49,
+  "text": "9.49",
   "source": "results/v5/compute.json",
   "field": "total_gpu_hours"
  },
  "table.comp": {
   "value": null,
-  "text": "| Stage | Jobs | GPU-hours | Failed/killed jobs |\n|---|---|---|---|\n| b development | 2 | 0.15 | 0 |\n| b feasibility probe | 2 | 0.15 | 0 |\n| b final evaluation | 9 | 0.96 | 4 |\n| b formal training | 15 | 5.31 | 0 |\n| b mechanisms | 6 | 0.27 | 3 |\n| b pilots | 6 | 0.50 | 0 |\n| b repeatability | 3 | 0.22 | 1 |\n| b v4 regression | 8 | 0.62 | 4 |\n| b validation | 15 | 0.75 | 0 |\n| study a | 2 | 0.33 | 0 |\n| videos | 1 | 0.05 | 0 |",
+  "text": "| Stage | Jobs | GPU-hours | Failed/killed jobs |\n|---|---|---|---|\n| b development | 2 | 0.15 | 0 |\n| b feasibility probe | 2 | 0.15 | 0 |\n| b final evaluation | 9 | 0.96 | 4 |\n| b formal training | 15 | 5.31 | 0 |\n| b mechanisms | 6 | 0.27 | 3 |\n| b pilots | 6 | 0.50 | 0 |\n| b repeatability | 3 | 0.22 | 1 |\n| b v4 regression | 8 | 0.62 | 4 |\n| b validation | 15 | 0.75 | 0 |\n| study a | 2 | 0.33 | 0 |\n| verification | 2 | 0.16 | 0 |\n| videos | 1 | 0.05 | 0 |",
   "source": "results/v5/compute.json",
   "field": "by_stage"
  }
