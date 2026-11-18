@@ -9,7 +9,10 @@ def build(prs, new, notes, n, title, bullets, table, pic, foot, F):
               ["B2 history − geometry_best", n("b.B2"), n("b.B2.ci95"), n("b.B2.ci975"), n("b.B2.decision")]],
           0.5, 1.5, 12.3, 1.4, size=15, first_col_w=3.6)
     pic(s, F / "study_b_contrasts.png", 2.4, 3.1, h=3.9)
-    notes(s, "Both 97.5% intervals include zero, so under the frozen rule neither superiority claim holds. No equivalence is claimed.")
+    notes(s, "Both 97.5% intervals include zero, so under the frozen rule neither superiority claim holds. No equivalence is claimed. "
+             "Post hoc check (v5.0.1, not preregistered): dropping every case with an invalid slip in a primary arm "
+             f"({n('b.sens.slip_mixed_id.kept')} kept) gives B1 {n('b.sens.slip_mixed_id.B1')} {n('b.sens.slip_mixed_id.B1.ci975')} "
+             f"and B2 {n('b.sens.slip_mixed_id.B2')} {n('b.sens.slip_mixed_id.B2.ci975')}: the same verdict.")
 
     s = new("Study B all conditions")
     title(s, "Study B: success by condition", "learned: 5 seeds pooled (selected); training-free: one controller")
@@ -63,7 +66,7 @@ def build(prs, new, notes, n, title, bullets, table, pic, foot, F):
 
     s = new("Answer")
     title(s, "Answers to the V5 questions")
-    bullets(s, [f"A: V4's gain is calibration (A1 {n('a.A1')}, A2 {n('a.A2')}); EMA filtering adds nothing; bound a few points",
+    bullets(s, [f"A: V4's gain is calibration (A1 {n('a.A1')}, A2 {n('a.A2')}); EMA is inert here; bound a few points",
                 "B: a physical slip is feasible only for slides toward the receiver ≤ 8 mm in this setup",
                 f"B1/B2: history beats neither feed-forward nor tracking geometry ({n('b.B1')}, {n('b.B2')})",
                 "Continuous tracking or a constant offset recovers what the stale calibration loses",

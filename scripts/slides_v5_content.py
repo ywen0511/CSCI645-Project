@@ -42,12 +42,15 @@ def build(prs, new, notes, n, title, bullets, table, pic, foot, F):
               ["A2", "+15 mm", n("a.A2"), n("a.A2.ci975"), n("a.A2.decision")]],
           0.5, 1.4, 12.3, 1.3, size=15, first_col_w=1.4)
     pic(s, F / "study_a_factorial.png", 0.5, 2.9, w=7.5)
-    bullets(s, [f"EMA α: {n('a.main.mixed_id.ema')} — identical outcomes in every cell",
+    bullets(s, [f"EMA α: {n('a.main.mixed_id.ema')} — inert by construction: its output never reaches the command while the giver holds",
                 f"Bound 25 vs 15 mm: {n('a.main.mixed_id.bound')} on mixed ID",
                 f"Second process: {n('a.rep.ema0p2_cal050_a25')} identical outcomes"],
             x=8.3, y=3.0, w=4.8, h=3.5, size=15)
-    notes(s, "Both primary lower bounds are far above zero. V4's headline is a calibration effect; filtering contributes nothing "
-             "measurable and the wider bound a few points.")
+    notes(s, "Both primary lower bounds are far above zero. V4's headline is a calibration effect; the wider bound adds a few points. "
+             "EMA cannot matter in this controller: with the giver reference on, the controller uses giver kinematics while the giver "
+             "holds the bar, and the calibration averages the unfiltered measurement. Across "
+             f"{n('a.ema.pairs')} paired episodes every record field is identical between the two EMA settings "
+             "(v5.0.1, scripts/v5_ema_identity.py). So V4 really changed two settings, not three; this was missed when Study A was designed.")
 
     s = new("Making the grasp slide, physically")
     title(s, "Study B: a physical slip after the calibration window")
@@ -80,7 +83,7 @@ def build(prs, new, notes, n, title, bullets, table, pic, foot, F):
     slides_v5_results.build(prs, new, notes, n, title, bullets, table, pic, foot, F)
 
     s = new("Reproduce")
-    title(s, "Everything is released", "github.com/ywen0511/CSCI645-Project · release v5.0.0")
+    title(s, "Everything is released", "github.com/ywen0511/CSCI645-Project · release v5.0.0 (artifacts) · v5.0.1 (CPU additions)")
     bullets(s, ["Tags: experiment-v5a (Study A), experiment-v5b (Study B freeze and execution), v5.0.0 (delivery)",
                 "Every checkpoint (formal and pilot), raw record, trace, log and video; checkpoint index with SHA-256",
                 "docs/v5/REPRODUCE.md: anonymous download → verify → regenerate tables/figures → replay/reload/resume",

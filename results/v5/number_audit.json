@@ -71,6 +71,41 @@
  },
  {
   "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.kept",
+  "text": "177/200",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].kept_base_cases"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.B1",
+  "text": "+0.5 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.B1.ci975",
+  "text": "[\u22121.4, +2.3]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.B2",
+  "text": "+1.4 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.B2.ci975",
+  "text": "[\u22120.8, +4.0]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
   "key": "b.c.tracking_minus_calibrated.slip_mixed_ood",
   "text": "+7.0 pp [+3.0, +11.5]",
   "source": "results/v5/slip/analysis/summary.json",
@@ -201,6 +236,41 @@
   "text": "+5.8 pp [+2.3, +9.3]",
   "source": "results/v5/calibration/summary.json",
   "field": "main_effects[grasp_15mm,bound]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.ema.pairs",
+  "text": "9,600",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "paired_episodes"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.ema.trace.samples",
+  "text": "115",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "pairs[*].traces[*].samples"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.ema.trace.settling",
+  "text": "8",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "pairs[*].traces[*].controller_estimate_differs_by_phase.settling"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.ema.trace.after_giver_release",
+  "text": "41",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "pairs[*].traces[*].controller_estimate_differs_by_phase.after_giver_release"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.ema.trace.pexec",
+  "text": "0",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "trace_executed_command_differences"
  },
  {
   "document": "report/v5/report.md",
@@ -365,6 +435,69 @@
  },
  {
   "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.kept",
+  "text": "177/200",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].kept_base_cases"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.B1",
+  "text": "+0.5 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.B1.ci975",
+  "text": "[\u22121.4, +2.3]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.B2",
+  "text": "+1.4 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_id.B2.ci975",
+  "text": "[\u22120.8, +4.0]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_ood.kept",
+  "text": "181/200",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].kept_base_cases"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_ood.B2",
+  "text": "+6.1 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].B2.difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.sens.slip_mixed_ood.B2.ci95",
+  "text": "[+1.4, +10.7]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_ood].B2.ci95"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.B2.slip_mixed_ood",
+  "text": "+3.9 pp [\u22120.9, +8.7]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B2,slip_mixed_ood]"
+ },
+ {
+  "document": "report/v5/report.md",
   "key": "table.b.cells",
   "text": "(table)",
   "source": "results/v5/slip/analysis/summary.json",
@@ -520,7 +653,7 @@
  {
   "document": "report/v5/report.md",
   "key": "comp.total",
-  "text": "9.33",
+  "text": "9.49",
   "source": "results/v5/compute.json",
   "field": "total_gpu_hours"
  },
@@ -637,6 +770,14 @@
  },
  {
   "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.ema.pairs",
+  "text": "9,600",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "paired_episodes"
+ },
+ {
+  "document": "report/v5/slides.pptx",
   "slide": 7,
   "key": "b.B1",
   "text": "\u22121.0 pp",
@@ -698,6 +839,46 @@
   "text": "not established",
   "source": "results/v5/slip/analysis/summary.json",
   "field": "primary[B2].superiority_established"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.kept",
+  "text": "177/200",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].kept_base_cases"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.B1",
+  "text": "+0.5 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.B1.ci975",
+  "text": "[\u22121.4, +2.3]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.ci97.5"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.B2",
+  "text": "+1.4 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.B2.ci975",
+  "text": "[\u22120.8, +4.0]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.ci97.5"
  },
  {
   "document": "report/v5/slides.pptx",
@@ -1343,7 +1524,7 @@
   "document": "report/v5/slides.pptx",
   "slide": 13,
   "key": "comp.total",
-  "text": "9.33",
+  "text": "9.49",
   "source": "results/v5/compute.json",
   "field": "total_gpu_hours"
  }

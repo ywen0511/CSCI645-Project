@@ -13,6 +13,7 @@ by hand. Keys (selection):
   b.succ.<method>.<baseline|selected|final>.<condition>, b.seeds.<...>   Study B success % (per seed)
   b.c.<contrast id>.<condition>               exploratory contrasts (95% CI)
   b.sel.<run>, b.rep.<entry>, b.regr.*, b.mech.*, b.dev.*, b.probe.*, b.pilot.*, comp.*
+  a.ema.*, b.sens.<condition>.<B1|B2|kept>[.ci95|.ci975]   v5.0.1 additions (EMA identity; post hoc sensitivity)
 """
 from __future__ import annotations
 
@@ -208,6 +209,36 @@ def development():
                 f"results/v5/slip/pilot/{name}.json", f"pilots[{run}].last10.train_success_rate")
 
 
+def addenda():
+    """v5.0.1 additions (CPU, after v5.0.0): EMA field-by-field identity and the post hoc invalid-slip sensitivity."""
+    src = "results/v5/calibration/ema_identity/summary.json"
+    E = load(src)
+    if not E["all_record_fields_identical_except_identifiers"] or E["trace_fields_outside_estimator_differing"]:
+        raise SystemExit("EMA identity no longer holds; rewrite the report text")
+    put("a.ema.pairs", E["paired_episodes"], f"{E['paired_episodes']:,}", src, "paired_episodes")
+    tr = [t for p in E["pairs"] for t in p["traces"].values()]
+    if len({json.dumps(t, sort_keys=True) for t in tr}) != 1:
+        raise SystemExit("EMA trace comparison differs between pairs")
+    t = tr[0]
+    put("a.ema.trace.samples", t["samples"], str(t["samples"]), src, "pairs[*].traces[*].samples")
+    for k in ("settling", "after_giver_release"):
+        put(f"a.ema.trace.{k}", t["controller_estimate_differs_by_phase"][k], str(t["controller_estimate_differs_by_phase"][k]),
+            src, f"pairs[*].traces[*].controller_estimate_differs_by_phase.{k}")
+    put("a.ema.trace.pexec", E["trace_executed_command_differences"], str(E["trace_executed_command_differences"]), src,
+        "trace_executed_command_differences")
+    src = "results/v5/slip/sensitivity/summary.json"
+    S = load(src)
+    for r in S["conditions"]:
+        put(f"b.sens.{r['condition']}.kept", r["kept_base_cases"], f"{r['kept_base_cases']}/{r['base_cases']}", src,
+            f"conditions[{r['condition']}].kept_base_cases")
+        for c in r["contrasts"]:
+            s = c["valid_slip_cases"]
+            k = f"b.sens.{r['condition']}.{c['id']}"
+            put(k, s["difference_pp"], f"{pp(s['difference_pp'])} pp", src, f"conditions[{r['condition']}].{c['id']}.difference_pp")
+            put(k + ".ci95", s["ci95"], ci(s["ci95"]), src, f"conditions[{r['condition']}].{c['id']}.ci95")
+            put(k + ".ci975", s["ci97.5"], ci(s["ci97.5"]), src, f"conditions[{r['condition']}].{c['id']}.ci97.5")
+
+
 def compute():
     src = "results/v5/compute.json"
     if not (ROOT / src).exists():
@@ -222,6 +253,7 @@ def main():
     study_a()
     study_b()
     development()
+    addenda()
     compute()
     out = ROOT / "results/v5/report_values.json"
     out.write_text(json.dumps(V, indent=1, ensure_ascii=False) + "\n")

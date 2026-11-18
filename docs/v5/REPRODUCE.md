@@ -60,6 +60,24 @@ Expected:
 - `regen.json` reports every regenerated Study A and Study B table as identical, or numerically equal within
   1e-9 (listed as `float_only`), with zero `different`. Every figure is byte-identical.
 
+### 2a. v5.0.1 CPU additions
+
+v5.0.1 adds two CPU-only scripts that read the v5.0.0 raw records; the data stay in the v5.0.0 release. With the
+tooling checked out at `v5.0.1`, `v5_regen.py` above also runs both (steps `ema_identity` and `slip_sensitivity`).
+To run them alone, after the block above:
+
+```bash
+git clone --branch v5.0.1 "$REPO_URL" "$V5_WORK/delivery-501"
+T1="$V5_WORK/delivery-501"
+"$PY" "$T1/scripts/v5_ema_identity.py" --archive "$B/raw-study-a.tar.gz" --out "$V5_WORK/v501/ema_identity"
+"$PY" "$T1/scripts/v5_slip_sensitivity.py" --runs "$X" --out "$V5_WORK/v501/sensitivity"
+cmp "$V5_WORK/v501/ema_identity/summary.json" "$T1/results/v5/calibration/ema_identity/summary.json"
+cmp "$V5_WORK/v501/sensitivity/summary.json" "$T1/results/v5/slip/sensitivity/summary.json"
+```
+
+Expected: both `cmp` commands print nothing. `ema_identity` reports 9,600 paired episodes with every non-identifier
+record field identical; the sensitivity summary keeps 177/200 `slip_mixed_id` base cases.
+
 ## 3. Small replay, reload of every architecture, resume (remote GPU)
 
 `ISAAC` is the Python executable of the installed simulator environment. Set `CLOSEOUT_VK_ICD_DIR` only if the

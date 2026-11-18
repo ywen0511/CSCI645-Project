@@ -1,0 +1,155 @@
+{
+ "schema": 1,
+ "source": "study_a/primary of the v5.0.0 raw-study-a.tar.gz (sha256 631a89fb664d367f32b39b0f8dd695cc09ae80091cb19fca77b778b97df77048)",
+ "status": "Descriptive comparison of executed Study A runs, added after v5.0.0.",
+ "paired_episodes": 9600,
+ "all_record_fields_identical_except_identifiers": true,
+ "identifier_fields": [
+  "config_hash",
+  "controller_hash",
+  "entry_id",
+  "run_id",
+  "sensor_ema_alpha"
+ ],
+ "trace_samples_compared": 460,
+ "trace_estimate_differences_by_phase": {
+  "after_giver_release": 164,
+  "settling": 32
+ },
+ "trace_executed_command_differences": 0,
+ "trace_fields_outside_estimator_differing": [],
+ "pairs": [
+  {
+   "alpha_1p0": "ema1p0_fixed_a15",
+   "alpha_0p2": "ema0p2_fixed_a15",
+   "records": {
+    "cases": 2400,
+    "differing_fields": {
+     "config_hash": 2400,
+     "controller_hash": 2400,
+     "entry_id": 2400,
+     "run_id": 2400,
+     "sensor_ema_alpha": 2400
+    },
+    "non_identifier_fields_differing": [],
+    "identical_terminal_outcomes": 2400
+   },
+   "traces": {
+    "v5cal-heldout-clean-0000": {
+     "samples": 115,
+     "differing_fields": {
+      "align_corr": 8,
+      "controller_obj_pos": 49,
+      "estimated_obj_pos": 115,
+      "observed_rel_linvel": 50
+     },
+     "fields_outside_estimator": [],
+     "controller_estimate_differs_by_phase": {
+      "after_giver_release": 41,
+      "settling": 8
+     },
+     "executed_command_p_exec_differs": 0
+    }
+   }
+  },
+  {
+   "alpha_1p0": "ema1p0_fixed_a25",
+   "alpha_0p2": "ema0p2_fixed_a25",
+   "records": {
+    "cases": 2400,
+    "differing_fields": {
+     "config_hash": 2400,
+     "controller_hash": 2400,
+     "entry_id": 2400,
+     "run_id": 2400,
+     "sensor_ema_alpha": 2400
+    },
+    "non_identifier_fields_differing": [],
+    "identical_terminal_outcomes": 2400
+   },
+   "traces": {
+    "v5cal-heldout-clean-0000": {
+     "samples": 115,
+     "differing_fields": {
+      "align_corr": 8,
+      "controller_obj_pos": 49,
+      "estimated_obj_pos": 115,
+      "observed_rel_linvel": 50
+     },
+     "fields_outside_estimator": [],
+     "controller_estimate_differs_by_phase": {
+      "after_giver_release": 41,
+      "settling": 8
+     },
+     "executed_command_p_exec_differs": 0
+    }
+   }
+  },
+  {
+   "alpha_1p0": "ema1p0_cal050_a15",
+   "alpha_0p2": "ema0p2_cal050_a15",
+   "records": {
+    "cases": 2400,
+    "differing_fields": {
+     "config_hash": 2400,
+     "controller_hash": 2400,
+     "entry_id": 2400,
+     "run_id": 2400,
+     "sensor_ema_alpha": 2400
+    },
+    "non_identifier_fields_differing": [],
+    "identical_terminal_outcomes": 2400
+   },
+   "traces": {
+    "v5cal-heldout-clean-0000": {
+     "samples": 115,
+     "differing_fields": {
+      "align_corr": 8,
+      "controller_obj_pos": 49,
+      "estimated_obj_pos": 115,
+      "observed_rel_linvel": 50
+     },
+     "fields_outside_estimator": [],
+     "controller_estimate_differs_by_phase": {
+      "after_giver_release": 41,
+      "settling": 8
+     },
+     "executed_command_p_exec_differs": 0
+    }
+   }
+  },
+  {
+   "alpha_1p0": "ema1p0_cal050_a25",
+   "alpha_0p2": "ema0p2_cal050_a25",
+   "records": {
+    "cases": 2400,
+    "differing_fields": {
+     "config_hash": 2400,
+     "controller_hash": 2400,
+     "entry_id": 2400,
+     "run_id": 2400,
+     "sensor_ema_alpha": 2400
+    },
+    "non_identifier_fields_differing": [],
+    "identical_terminal_outcomes": 2400
+   },
+   "traces": {
+    "v5cal-heldout-clean-0000": {
+     "samples": 115,
+     "differing_fields": {
+      "align_corr": 8,
+      "controller_obj_pos": 49,
+      "estimated_obj_pos": 115,
+      "observed_rel_linvel": 50
+     },
+     "fields_outside_estimator": [],
+     "controller_estimate_differs_by_phase": {
+      "after_giver_release": 41,
+      "settling": 8
+     },
+     "executed_command_p_exec_differs": 0
+    }
+   }
+  }
+ ]
+}

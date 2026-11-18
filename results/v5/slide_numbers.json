@@ -105,6 +105,14 @@
  },
  {
   "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.ema.pairs",
+  "text": "9,600",
+  "source": "results/v5/calibration/ema_identity/summary.json",
+  "field": "paired_episodes"
+ },
+ {
+  "document": "report/v5/slides.pptx",
   "slide": 7,
   "key": "b.B1",
   "text": "\u22121.0 pp",
@@ -166,6 +174,46 @@
   "text": "not established",
   "source": "results/v5/slip/analysis/summary.json",
   "field": "primary[B2].superiority_established"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.kept",
+  "text": "177/200",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].kept_base_cases"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.B1",
+  "text": "+0.5 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.B1.ci975",
+  "text": "[\u22121.4, +2.3]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B1.ci97.5"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.B2",
+  "text": "+1.4 pp",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.sens.slip_mixed_id.B2.ci975",
+  "text": "[\u22120.8, +4.0]",
+  "source": "results/v5/slip/sensitivity/summary.json",
+  "field": "conditions[slip_mixed_id].B2.ci97.5"
  },
  {
   "document": "report/v5/slides.pptx",
@@ -811,7 +859,7 @@
   "document": "report/v5/slides.pptx",
   "slide": 13,
   "key": "comp.total",
-  "text": "9.33",
+  "text": "9.49",
   "source": "results/v5/compute.json",
   "field": "total_gpu_hours"
  }
