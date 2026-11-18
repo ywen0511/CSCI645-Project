@@ -56,7 +56,7 @@ def main():
     mb = [x["name"] for x in man["assets"] if not (B / x["name"]).exists() or sha(B / x["name"]) != x["sha256"]]
     cover = sorted(x["name"] for x in man["assets"]) == sorted(f for f in files if f not in ("release_manifest.json", "SHA256SUMS"))
     R["checks"]["manifest"] = {"assets": len(man["assets"]), "bad": mb, "covers_all_other_assets": cover,
-                               "experiment_commit": man["experiment_commit"], "delivery_commit": man["delivery_commit"]}
+                               "experiment_tags": man["experiment_tags"], "delivery_commit": man["delivery_commit"]}
     if mb or not cover:
         fail.append("manifest")
     inv = json.loads((B / "archive_inventories.json").read_text())
