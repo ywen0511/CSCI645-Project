@@ -7,7 +7,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s111.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s111.json",
     "--output",
     "$RUNS/final/slip_robust_ff_s111",
     "--seed",
@@ -16,7 +16,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s111.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s111.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -30,7 +30,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s222.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s222.json",
     "--output",
     "$RUNS/final/slip_robust_ff_s222",
     "--seed",
@@ -39,7 +39,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s222.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s222.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -53,7 +53,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s333.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s333.json",
     "--output",
     "$RUNS/final/slip_robust_ff_s333",
     "--seed",
@@ -62,7 +62,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s333.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s333.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -76,7 +76,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s444.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s444.json",
     "--output",
     "$RUNS/final/slip_robust_ff_s444",
     "--seed",
@@ -85,7 +85,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s444.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s444.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -99,7 +99,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s555.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s555.json",
     "--output",
     "$RUNS/final/slip_robust_ff_s555",
     "--seed",
@@ -108,7 +108,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_ff_s555.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s555.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -122,7 +122,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s111.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s111.json",
     "--output",
     "$RUNS/final/slip_robust_history_s111",
     "--seed",
@@ -131,7 +131,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s111.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s111.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -145,7 +145,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s222.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s222.json",
     "--output",
     "$RUNS/final/slip_robust_history_s222",
     "--seed",
@@ -154,7 +154,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s222.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s222.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -168,7 +168,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s333.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s333.json",
     "--output",
     "$RUNS/final/slip_robust_history_s333",
     "--seed",
@@ -177,7 +177,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s333.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s333.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -191,7 +191,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s444.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s444.json",
     "--output",
     "$RUNS/final/slip_robust_history_s444",
     "--seed",
@@ -200,7 +200,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s444.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s444.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -214,7 +214,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s555.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s555.json",
     "--output",
     "$RUNS/final/slip_robust_history_s555",
     "--seed",
@@ -223,7 +223,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_history_s555.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s555.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -237,7 +237,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s111.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s111.json",
     "--output",
     "$RUNS/final/slip_robust_repeat_s111",
     "--seed",
@@ -246,7 +246,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s111.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s111.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -260,7 +260,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s222.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s222.json",
     "--output",
     "$RUNS/final/slip_robust_repeat_s222",
     "--seed",
@@ -269,7 +269,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s222.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s222.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -283,7 +283,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s333.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s333.json",
     "--output",
     "$RUNS/final/slip_robust_repeat_s333",
     "--seed",
@@ -292,7 +292,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s333.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s333.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -306,7 +306,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s444.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s444.json",
     "--output",
     "$RUNS/final/slip_robust_repeat_s444",
     "--seed",
@@ -315,7 +315,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s444.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s444.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [
@@ -329,7 +329,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s555.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s555.json",
     "--output",
     "$RUNS/final/slip_robust_repeat_s555",
     "--seed",
@@ -338,7 +338,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/final/slip_robust_repeat_s555.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s555.json",
     "configs/v5/slip/suites/final.jsonl"
    ],
    "outputs": [

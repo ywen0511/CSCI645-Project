@@ -7,7 +7,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s111.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s111.json",
     "--output",
     "$RUNS/mechanisms/devfit/slip_robust_history_s111",
     "--seed",
@@ -16,7 +16,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s111.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s111.json",
     "configs/v5/slip/development/suites/development.jsonl"
    ],
    "outputs": [
@@ -29,7 +29,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s222.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s222.json",
     "--output",
     "$RUNS/mechanisms/devfit/slip_robust_history_s222",
     "--seed",
@@ -38,7 +38,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s222.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s222.json",
     "configs/v5/slip/development/suites/development.jsonl"
    ],
    "outputs": [
@@ -51,7 +51,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s333.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s333.json",
     "--output",
     "$RUNS/mechanisms/devfit/slip_robust_history_s333",
     "--seed",
@@ -60,7 +60,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s333.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s333.json",
     "configs/v5/slip/development/suites/development.jsonl"
    ],
    "outputs": [
@@ -73,7 +73,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s444.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s444.json",
     "--output",
     "$RUNS/mechanisms/devfit/slip_robust_history_s444",
     "--seed",
@@ -82,7 +82,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s444.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s444.json",
     "configs/v5/slip/development/suites/development.jsonl"
    ],
    "outputs": [
@@ -95,7 +95,7 @@
    "argv": [
     "scripts/eval_matrix.py",
     "--matrix",
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s555.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s555.json",
     "--output",
     "$RUNS/mechanisms/devfit/slip_robust_history_s555",
     "--seed",
@@ -104,7 +104,7 @@
     "$RUNS/train"
    ],
    "inputs": [
-    "configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s555.json",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s555.json",
     "configs/v5/slip/development/suites/development.jsonl"
    ],
    "outputs": [

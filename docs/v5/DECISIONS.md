@@ -154,3 +154,17 @@ Append-only. Each entry: date, decision, reason, evidence.
   never eligible; V4 key on the four validation conditions. Unlike V4 (which aborted on invalid resets),
   invalid resets and invalid slips count as failures in the all-scheduled denominator, because the slip
   mechanism has a small, method-independent failure rate.
+
+## 2026-11-18 05:50Z — Checkpoint selection; post-selection manifest path fix
+
+- **Validation** (15 runs x 11 checkpoints x 160 cases, `results/v5/jobs/validation.json`) completed with no failed
+  task. `v5_slip_study.py select` (frozen V4 key) chose: feed-forward 5.0/7.0/10.0/8.0/9.0 M, history
+  5.0/9.0/4.0/5.0/5.0 M, repeat 10.0/7.0/10.0/9.0/10.0 M transitions (seeds 111-555). Validation success of the
+  selected checkpoints is 95.6-96.3% for every run; `results/v5/slip/selection/`.
+- **First submission of the post-selection manifests failed before any simulation** (38 of 38 tasks,
+  `FileNotFoundError` reading the matrix). The frozen generator writes post-selection matrices into the delivery
+  checkout but addressed them relative to the execution checkout, which is the frozen `experiment-v5b` tag and
+  cannot contain them. Fix without touching any freeze input: `scripts/v5_manifest_paths.py` prefixes those matrix
+  paths with `$DELIVERY/` (the V4 convention, `scripts/v4_manifests.py`). Matrix contents, suites, protocols,
+  checkpoints and seeds are unchanged; `v5_slip_study.py check` still passes. The failed attempts stay in the
+  runner records (attempt 1 of each task).
