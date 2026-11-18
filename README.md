@@ -1,30 +1,21 @@
 # CSCI 645 — Robust bimanual handover
 
-**The V4 experimental study is complete and publicly released, and the final review
-supplement is published and publicly verified:** release
-[**v4.0.2**](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.2)
-([overview PDF](https://github.com/ywen0511/CSCI645-Project/releases/download/v4.0.2/overview.pdf)) ·
-verification record [docs/final_review/PUBLIC_VERIFICATION.md](docs/final_review/PUBLIC_VERIFICATION.md) ·
-status [FINAL_REVIEW_STATUS.json](FINAL_REVIEW_STATUS.json) (complete). The supplement adds
-corrections and retrospective CPU analysis only; it ran no new GPU experiment.
-Study data, checkpoints and videos remain in
-[v4.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.0), with tooling in
-[v4.0.1](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.1).
+**V5 is complete and publicly released:** release
+[**v5.0.0**](https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.0) ·
+[V5 report](report/v5/report.md) ([PDF](report/v5/report.pdf)) ·
+[slides](report/v5/slides.pdf) ([PPTX](report/v5/slides.pptx), [notes](report/v5/speaker_notes.md)) ·
+public verification [docs/v5/VERIFICATION.md](docs/v5/VERIFICATION.md) ·
+status [V5_STATUS.json](V5_STATUS.json) (complete). V1–V4 remain released and unchanged
+(V4 data [v4.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.0), final review
+[v4.0.2](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.2)).
 
-**Start here:** [project overview (PDF, 7 pages)](report/final/overview.pdf) ·
-[overview (Markdown)](report/final/overview.md) ·
+**Start here:** [project overview, V1–V5 (PDF, 8 pages)](report/final/overview.pdf) ·
+[overview (Markdown)](report/final/overview.md) · [V5 report](report/v5/report.md) ·
 [review and corrections](docs/final_review/REVIEW.md) ·
 [defense/demo notes](docs/final_review/DEFENSE_NOTES.md).
 
-**V5 in progress.** CPU preparation is done (November 17, 2026): a
-[failure taxonomy](results/v5/cpu/failure_taxonomy.md) of all V4 final episodes, an updated
-overview, a corrected AI-assistance disclosure, and a **preregistered matched calibration
-ablation** whose suite, matrices and analysis are frozen in
-[configs/v5/calibration](configs/v5/calibration/) before any simulation. The active
-remote-GPU assignment is [V5_EXECUTION.md](V5_EXECUTION.md) (Study A: matched calibration
-ablation; Study B: dynamic in-grasp slip; release v5.0.0); status in
-[V5_STATUS.json](V5_STATUS.json). Do not restart training from the historical V3/V4
-runbooks.
+There is no active assignment. Do not restart training from any historical runbook
+(V3_EXECUTION.md, POST_V3_EXECUTION.md, V4_REMAINING.md, V5_EXECUTION.md).
 
 ## What this project studies
 
@@ -36,10 +27,25 @@ fixed. No dexterous hand or real-hardware experiment is claimed.
 
 The project evolved from geometric-control and residual-learning tests (V1/V2), through
 synthetic observation uncertainty with a known giver grasp (V3), to physically varied,
-unknown initial in-grasp translation (V4). Different versions have different suites;
+unknown initial in-grasp translation (V4), to a matched calibration ablation and a
+physical in-grasp slip after calibration (V5). Different versions have different suites;
 their rates are not one shared leaderboard.
 
 ## Main findings, with their limits
+
+- **V5 Study A** (preregistered 2 x 2 x 2 ablation, 2,400 fresh cases): with EMA alpha and
+  alignment bound held fixed, the calibrated giver reference minus the fixed transform is
+  +29.5 pp on mixed ID (Bonferroni 97.5% CI [+22.5, +36.5]) and +93.0 pp at +15 mm
+  ([+88.5, +96.5]). V4's gain is a calibration effect; EMA filtering had no effect.
+- **V5 Study B** (physical slip after calibration; feasible only for slides toward the
+  receiver of up to 8 mm): on the primary condition, 4-frame history minus feed-forward is
+  -1.0 pp (97.5% CI [-3.4, +1.3]) and history minus continuous tracking geometry +0.9 pp
+  ([-2.6, +4.6]): neither superiority claim is established. Tracking geometry, a constant
+  offset and feed-forward residuals recover most of what the stale calibration loses; about
+  6% of held-out slips are mechanism failures for every method; three of five history seeds
+  degraded late in training. Memory is not shown to help in this project.
+
+The V4 findings below are unchanged:
 
 - In V4's grasp-15 condition, historical fixed geometry succeeds in 5.5% of cases and
   calibrated geometry in 94.5%. **This compares controller configurations:** the
@@ -79,7 +85,11 @@ CPU checks do not establish contact physics or independently replay policy weigh
 | Reproduction and prior remote GPU verification | [REPRODUCE.md](docs/v4/REPRODUCE.md), [VERIFICATION.md](docs/v4/VERIFICATION.md) |
 | Frozen scientific protocol / experiment source | [analysis plan](configs/v4/analysis_plan.json), [experiment-v4](https://github.com/ywen0511/CSCI645-Project/tree/experiment-v4) |
 | Completed study status | [POST_V3_STATUS.json](POST_V3_STATUS.json) |
-| Active V5 assignment and status | [V5_EXECUTION.md](V5_EXECUTION.md), [V5_STATUS.json](V5_STATUS.json) |
+| V5 report, deck, figures | [report/v5](report/v5/), [results/v5/figures](results/v5/figures/) |
+| V5 Study A / Study B metrics | [calibration summary](results/v5/calibration/summary.md), [slip summary](results/v5/slip/analysis/summary.md) |
+| V5 checkpoints, raw records, videos | [v5.0.0 release](https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.0) ([checkpoints.json](https://github.com/ywen0511/CSCI645-Project/releases/download/v5.0.0/checkpoints.json), [videos.json](https://github.com/ywen0511/CSCI645-Project/releases/download/v5.0.0/videos.json)) |
+| V5 reproduction, verification, decisions | [REPRODUCE.md](docs/v5/REPRODUCE.md), [VERIFICATION.md](docs/v5/VERIFICATION.md), [DECISIONS.md](docs/v5/DECISIONS.md) |
+| V5 status (complete) and historical assignment | [V5_STATUS.json](V5_STATUS.json), [V5_EXECUTION.md](V5_EXECUTION.md) |
 | Proposal failure metrics for V4 (CPU, derived) | [results/v5/cpu](results/v5/cpu/) |
 
 V4 has 25 formal training runs, 54 executed final entries x 2,400 cases = 129,600
@@ -87,8 +97,8 @@ episodes, and 55 logical entries including an exact baseline alias. Published ar
 verification resolves 424 checkpoint index entries; these are not 424 independent
 training runs or necessarily distinct weight files. Prior remote verification includes
 fresh downloads, table/figure regeneration, policy replay/reload and checkpoint resume.
-Static offsets, one object and simulated sensing limit generalization; dynamic slip
-and physical transfer were not performed.
+Static offsets, one object and simulated sensing limit V4's generalization; V5 Study B adds
+one physical slip model; physical transfer was not performed.
 
 ## Reproduce this CPU review
 
@@ -118,7 +128,8 @@ Matplotlib; exact setup and test commands are in the current handoff.
 - [Original submitted proposal](proposal/proposal.txt), preserved unchanged.
 - [V2 report](report/v2/report.md) and [v2.1.1 release](https://github.com/ywen0511/CSCI645-Project/releases/tag/v2.1.1).
 - [V3 report](report/v3/report.md), [v3.0.0 release](https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.0), and [v3.0.1 maintenance](https://github.com/ywen0511/CSCI645-Project/releases/tag/v3.0.1).
-- Historical contracts: [V3_EXECUTION.md](V3_EXECUTION.md), [POST_V3_EXECUTION.md](POST_V3_EXECUTION.md), [V4_REMAINING.md](V4_REMAINING.md).
+- [V4 report](report/v4/report.md) and [v4.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.0)–[v4.0.2](https://github.com/ywen0511/CSCI645-Project/releases/tag/v4.0.2) releases.
+- Historical contracts: [V3_EXECUTION.md](V3_EXECUTION.md), [POST_V3_EXECUTION.md](POST_V3_EXECUTION.md), [V4_REMAINING.md](V4_REMAINING.md), [V5_EXECUTION.md](V5_EXECUTION.md).
 
 All repository material is English. Preserve published releases, raw evidence and
 experiment tags. Use new tags for new delivery; never overwrite published assets.

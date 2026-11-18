@@ -41,3 +41,28 @@ verified with `scripts/v5_verify.py` and regenerated with `scripts/v5_regen.py` 
 
 The candidate's verifier failed once on a manifest-key mismatch between `v5_package.py` and `v5_verify.py` (fixed in
 `cb74e87`; the bundle itself was valid). The tagged release is rebuilt from the tag with the same procedure.
+
+## 3. Public-download verification of v5.0.0 (2026-11-18, after publication) — passed
+
+Release v5.0.0 was published at 06:04 UTC after all 29 uploaded assets were reconciled with the local bundle (name,
+size, SHA-256). Then `docs/v5/REPRODUCE.md` sections 1–3 were run verbatim in new empty directories, with anonymous
+clones of `v5.0.0`, `experiment-v5a` and `experiment-v5b` and an anonymous download, without access to the original run
+outputs. Machine-readable record: [results/v5/public_verification.json](../../results/v5/public_verification.json);
+transcripts, scripts and exit codes: [results/v5/verification/](../../results/v5/verification/) (private paths redacted).
+
+| check | result |
+|---|---|
+| clones | tag commit `3160c6c`; experiment tags at `13cda3a` and `db62bd1` |
+| download | 29 assets, 304.1 MB; `SHA256SUMS` 28/28 OK |
+| `v5_verify.py` | ok: 5,297 members re-hashed, safe paths; 225 checkpoint entries resolve; record counts as expected; videos decode; leak scan 0 hits |
+| regeneration (`v5_regen.py`, pinned environment) | 24/24 Study A and Study B tables byte-identical (0 float-only, 0 different); 6/6 figures byte-identical |
+| CPU tests in the fresh clone of the tag | 138 passed, 1 skipped (Isaac Lab not installed) |
+| GPU: Study A anchor replay (60 cases) | 60/60 terminal outcomes equal; specs and hashes equal |
+| GPU: Study B replay60 (`geometry_best`, history s111 selected) | 57/60 and 54/60 equal; specs, checkpoint SHA-256 and hashes equal |
+| GPU: reload of every architecture (7 cases each) | 21/21 equal |
+| GPU: two-iteration resume | 306 → 308 iterations; state checks pass; source `latest.pt` SHA-256 unchanged and equal to `checkpoints.json` |
+| exit codes | CPU script 0; GPU verification_a 0, dry run 0, verification 0, compare 0 |
+
+The 9 terminal-outcome differences are all slip-validity flips between the replay batch (20) and the published batch
+(240), exactly as in the pre-release rehearsal; no other outcome differs. GPU time of the rehearsal and the public check:
+0.16 GPU-hours; V5 total 9.49 GPU-hours (`results/v5/compute.json`).

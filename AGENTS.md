@@ -2,20 +2,20 @@
 
 ## Active continuation assignment
 
-**Active assignment: [V5_EXECUTION.md](V5_EXECUTION.md)** (remote GPU agent; branch
-`study/v5-calibration-slip`; status `V5_STATUS.json`; decisions `docs/v5/DECISIONS.md`).
-It adds Study A (a matched calibration ablation already frozen on CPU) and Study B (dynamic
-in-grasp slip), then a v5.0.0 release. V1–V4 are complete and released; the final review
-`FINAL_DELIVERY_HANDOFF.md` is complete (v4.0.2). `V4_REMAINING.md`, `POST_V3_EXECUTION.md`,
-`V3_EXECUTION.md` and `FINAL_DELIVERY_HANDOFF.md` are historical contracts. Preserve historical status files, frozen inputs, published evidence,
-tags and releases. Do not restart completed training or evaluation matrices. All public
-content is English.
+**There is no active assignment.** V1–V5 are complete and released (V5: release
+[v5.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.0), status
+`V5_STATUS.json` complete, verification `docs/v5/VERIFICATION.md`). `V5_EXECUTION.md`,
+`FINAL_DELIVERY_HANDOFF.md`, `V4_REMAINING.md`, `POST_V3_EXECUTION.md` and
+`V3_EXECUTION.md` are historical contracts; do not execute them again. A new study needs a
+new written assignment from the owner. Preserve historical status files, frozen inputs,
+published evidence, tags and releases. Do not restart completed training or evaluation
+matrices. All public content is English.
 
 ## Mission and authorization
 
 The owner, GitHub user `ywen0511`, explicitly requested a self-contained repository that a remote agent can read and use to complete the entire project, including implementation, training, evaluation, checkpoints, reports, videos, and GitHub Releases. All repository content and deliverables must be in English.
 
-Work in `ywen0511/CSCI645-Project`. Read `V5_EXECUTION.md` before implementing. Complete its study, publication and verification gates; do not stop at a local package or draft release. Where it is more specific than the general rules below, it takes precedence.
+Work in `ywen0511/CSCI645-Project`. When the owner adds a new assignment file, read it before implementing and complete its study, publication and verification gates; do not stop at a local package or draft release. Where it is more specific than the general rules below, it takes precedence.
 
 Authorized actions within available resources include implementing and fixing code, installing compatible project dependencies in an isolated environment, running simulations and experiments, resuming failed runs, committing and pushing project changes, creating project tags, and uploading/publishing project results in GitHub Releases. Routine engineering decisions and these uploads do not need repeated confirmation. Do not provision paid resources, change account/security settings, erase unrelated data, force-push shared history, or overwrite an existing published release. External compute must already be available or separately authorized.
 
@@ -44,4 +44,4 @@ The one-month planning horizon is not permission to launch unbounded jobs. Use t
 
 ## Completion
 
-Active completion means every gate in `V5_EXECUTION.md` passes. Historical V1–V4 study gates and GPU verification are already recorded; do not rerun them. Verify new release downloads and inherited artifact checksums/availability. Final communication must link the source commit/tag, release, report, summary metrics, checkpoints, videos and public verification, and identify any unfulfilled requirement.
+Completion of any new assignment means every gate in that assignment passes. Historical V1–V5 study gates and GPU verification are already recorded; do not rerun them. Verify new release downloads and inherited artifact checksums/availability. Final communication must link the source commit/tag, release, report, summary metrics, checkpoints, videos and public verification, and identify any unfulfilled requirement.

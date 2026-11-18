@@ -52,13 +52,18 @@
    "gpu_hours": 0.33,
    "failed_or_killed_jobs": 0
   },
+  "verification": {
+   "jobs": 2,
+   "gpu_hours": 0.161,
+   "failed_or_killed_jobs": 0
+  },
   "videos": {
    "jobs": 1,
    "gpu_hours": 0.05,
    "failed_or_killed_jobs": 0
   }
  },
- "total_gpu_hours": 9.33,
+ "total_gpu_hours": 9.49,
  "cap_gpu_hours": 60,
  "jobs": [
   {
@@ -158,6 +163,15 @@
    "stage": "b_final_evaluation",
    "started": "Wed Nov 18 05:17:16 2026",
    "run_s": 553,
+   "gpu": null
+  },
+  {
+   "job": "8398619",
+   "name": "c645v5_fresh_gpu",
+   "status": "Done",
+   "stage": "verification",
+   "started": "Wed Nov 18 06:07:30 2026",
+   "run_s": 299,
    "gpu": null
   },
   {
@@ -671,6 +685,15 @@
    "stage": "b_validation",
    "started": "Wed Nov 18 04:21:19 2026",
    "run_s": 170,
+   "gpu": null
+  },
+  {
+   "job": "8398477",
+   "name": "c645v5_verify_rehearsal",
+   "status": "Done",
+   "stage": "verification",
+   "started": "Wed Nov 18 05:54:43 2026",
+   "run_s": 282,
    "gpu": null
   },
   {

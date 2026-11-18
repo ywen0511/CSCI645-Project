@@ -1,0 +1,74 @@
+{
+ "runs": "<extracted>",
+ "steps": {
+  "study_a": {
+   "command": "scripts/v5_calibration_analysis.py --records <extracted>/study_a/primary --repeat <extracted>/study_a/repeat --out <work>/results/v5/calibration",
+   "exit_code": 0
+  },
+  "study_a_taxonomy": {
+   "command": "scripts/v5_taxonomy_records.py --records <extracted>/study_a/primary --entries ema1p0_fixed_a15,ema1p0_fixed_a25,ema1p0_cal050_a15,ema1p0_cal050_a25,ema0p2_fixed_a15,ema0p2_fixed_a25,ema0p2_cal050_a15,ema0p2_cal050_a25 --title V5 Study A --out <work>/results/v5/calibration/taxonomy",
+   "exit_code": 0
+  },
+  "probe": {
+   "command": "scripts/v5_probe_summary.py --runs <extracted>/development/probe --out <work>/results/v5/slip/probe/summary.json",
+   "exit_code": 0
+  },
+  "selection": {
+   "command": "scripts/v5_slip_study.py select --validation <extracted>/validation --checkpoint-root <extracted>/formal/train --output <work>/results/v5/slip/selection",
+   "exit_code": 0
+  },
+  "constants": {
+   "command": "fit_constants(<extracted>/mechanisms/devfit)",
+   "exit_code": 0
+  },
+  "analysis": {
+   "command": "scripts/v5_slip_analysis.py --runs <extracted> --out <work>/results/v5/slip/analysis --v4-raw-final <V5_WORK>/v4/raw-final.tar.gz",
+   "exit_code": 0
+  },
+  "figures": {
+   "exit_code": 0,
+   "figures_identical": {
+    "learning_curves.png": true,
+    "slip_mechanism.png": true,
+    "study_a_factorial.png": true,
+    "study_b_conditions.png": true,
+    "study_b_contrasts.png": true,
+    "validation_curves.png": true
+   }
+  }
+ },
+ "files": {
+  "results/v5/calibration/summary.json": "identical",
+  "results/v5/calibration/summary.md": "identical",
+  "results/v5/calibration/taxonomy/taxonomy.json": "identical",
+  "results/v5/calibration/taxonomy/taxonomy.md": "identical",
+  "results/v5/slip/analysis/summary.json": "identical",
+  "results/v5/slip/analysis/summary.md": "identical",
+  "results/v5/slip/mechanisms/constant_fits.json": "identical",
+  "results/v5/slip/probe/summary.json": "identical",
+  "results/v5/slip/selection/selection.json": "identical",
+  "results/v5/slip/selection/slip_robust_ff_s111.json": "identical",
+  "results/v5/slip/selection/slip_robust_ff_s222.json": "identical",
+  "results/v5/slip/selection/slip_robust_ff_s333.json": "identical",
+  "results/v5/slip/selection/slip_robust_ff_s444.json": "identical",
+  "results/v5/slip/selection/slip_robust_ff_s555.json": "identical",
+  "results/v5/slip/selection/slip_robust_history_s111.json": "identical",
+  "results/v5/slip/selection/slip_robust_history_s222.json": "identical",
+  "results/v5/slip/selection/slip_robust_history_s333.json": "identical",
+  "results/v5/slip/selection/slip_robust_history_s444.json": "identical",
+  "results/v5/slip/selection/slip_robust_history_s555.json": "identical",
+  "results/v5/slip/selection/slip_robust_repeat_s111.json": "identical",
+  "results/v5/slip/selection/slip_robust_repeat_s222.json": "identical",
+  "results/v5/slip/selection/slip_robust_repeat_s333.json": "identical",
+  "results/v5/slip/selection/slip_robust_repeat_s444.json": "identical",
+  "results/v5/slip/selection/slip_robust_repeat_s555.json": "identical"
+ },
+ "counts": {
+  "identical": 24,
+  "float_only": 0,
+  "different": 0,
+  "missing": 0
+ },
+ "ok": true,
+ "failed_steps": []
+}

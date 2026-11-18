@@ -1,0 +1,72 @@
+Sender: LSF System <lsfadmin@<cluster-node>>
+Subject: Job 8398619: <c645v5_fresh_gpu> in cluster <NAHPC_WRN> Done
+
+Job <c645v5_fresh_gpu> was submitted from host <<cluster-node>> by user <<user>> in cluster <NAHPC_WRN> at Wed Nov 18 06:07:22 2026
+Job was executed on host(s) <8*<cluster-node>>, in queue <gpu_large>, as user <<user>> in cluster <NAHPC_WRN> at Wed Nov 18 06:07:30 2026
+<<HOME>> was used as the home directory.
+<<HOME>> was used as the working directory.
+Started at Wed Nov 18 06:07:30 2026
+Terminated at Wed Nov 18 06:12:29 2026
+Results reported at Wed Nov 18 06:12:29 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+bash <WORK>/runs/csci645-project/post_v3/v5_fresh_gpu.sh
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   401.66 sec.
+    Max Memory :                                 5184.68 MB
+    Average Memory :                             3950.65 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   348592 MB
+    Max Processes :                              5
+    Max Threads :                                85
+    Run time :                                   299 sec.
+    Turnaround time :                            307 sec.
+
+The output (if any) follows:
+
+[gpu] utc=2026-11-18T06:07:30Z
+[v3_jobs] run replay_study_a: scripts/eval_matrix.py --matrix <V5_WORK>/extracted/_resolved/replay_study_a__replay_study_a.json --output <V5_WORK>/extracted/fresh/replay_study_a --seed 6457501
+[v3_jobs] replay_study_a rc=0
+{"shard": "0/1", "tasks": 1, "failed": []}
+[gpu] a rc=0
+{"task": "replay60_geometry_best", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "<V5_WORK>/extracted/_resolved/replay60_geometry_best__replay60_geometry_best.json", "--output", "<V5_WORK>/extracted/fresh/replay60/geometry_best", "--seed", "6458501"], "inputs": {"<V5_WORK>/delivery/configs/v5/verification/replay60_geometry_best.json": "34b83d8f67ee89060e85bb21a7187dd0de1161bfff9c35c233feabac2969b11b", "<V5_WORK>/exp-b/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "<V5_WORK>/extracted/_resolved/replay60_geometry_best__replay60_geometry_best.json": "6e3eb1995056f1f4621c176589cb356e2ce86e9c1a7c9cad949d6458ee7732d4", "<V5_WORK>/exp-b/configs/v2/protocol.json": "096f3c00eaea4b20ef93e1253b49615cd06e3a10b841e137e22710abaf459db8", "<V5_WORK>/delivery/configs/v5/slip/suites/final_subset60.jsonl": "958f279f45d4f37224c8d0fcd9cc007680d9e696be1af696e31cdf811ca74dd9"}, "outputs": ["<V5_WORK>/extracted/fresh/replay60/geometry_best/geometry_tracking.jsonl"], "execution_commit": "db62bd1dbb3bb077ad4b67f3b3cd934e677db522"}
+{"task": "replay60_slip_robust_history_s111", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "<V5_WORK>/extracted/_resolved/replay60_slip_robust_history_s111__replay60_slip_robust_history_s111.json", "--checkpoint-root", "<V5_WORK>/extracted/formal/train", "--output", "<V5_WORK>/extracted/fresh/replay60/slip_robust_history_s111", "--seed", "6458501"], "inputs": {"<V5_WORK>/delivery/configs/v5/verification/replay60_slip_robust_history_s111.json": "8e493aa3fcabe20f3cfb038c6bd55aaddb0e0b36c3f6ce85b50351a84156e24e", "<V5_WORK>/exp-b/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "<V5_WORK>/extracted/_resolved/replay60_slip_robust_history_s111__replay60_slip_robust_history_s111.json": "ec9d153d2cd5b96559c67697336125c89bf132f826c84890362adbec77214dde", "<V5_WORK>/exp-b/configs/v5/slip/training/slip_robust_history.json": "5389153a5a85c427f3c24dee6c9a8b137d4708e45340dab95bccc320e124454d", "<V5_WORK>/delivery/configs/v5/slip/suites/final_subset60.jsonl": "958f279f45d4f37224c8d0fcd9cc007680d9e696be1af696e31cdf811ca74dd9", "<V5_WORK>/extracted/formal/train/slip_robust_history_s111/checkpoints/step_005013504.pt": "ed2f9087cadd015127099f5fd2042da8035b7de6034952352e09f20a8d4b09d1"}, "outputs": ["<V5_WORK>/extracted/fresh/replay60/slip_robust_history_s111/slip_robust_history_s111__selected.jsonl"], "execution_commit": "db62bd1dbb3bb077ad4b67f3b3cd934e677db522"}
+{"task": "reload_slip_robust_ff", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "<V5_WORK>/extracted/_resolved/reload_slip_robust_ff__reload_slip_robust_ff.json", "--checkpoint-root", "<V5_WORK>/extracted/formal/train", "--output", "<V5_WORK>/extracted/fresh/reload/slip_robust_ff", "--seed", "6458501"], "inputs": {"<V5_WORK>/delivery/configs/v5/verification/reload_slip_robust_ff.json": "d7c5d4509a798a9e91be5c7782b89fa28c14d1401eeae2b8dd3b22acfee2d944", "<V5_WORK>/exp-b/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "<V5_WORK>/extracted/_resolved/reload_slip_robust_ff__reload_slip_robust_ff.json": "a77ebb09a354e97780299f6ae9dbc96f88cf478724f1faa0fe87796d5eaeac28", "<V5_WORK>/exp-b/configs/v5/slip/training/slip_robust_ff.json": "df32508d8fcb7b4462cbc26884c69aae835ff952fdb9db6c86a854e63662a0b7", "<V5_WORK>/delivery/configs/v5/verification/reload7.jsonl": "1cfc539eceee3e9dea9eb2c301a0796ad9ca515d3c4b312e9fdf2161fea14db6", "<V5_WORK>/extracted/formal/train/slip_robust_ff_s111/checkpoints/step_005013504.pt": "07aaa2b63a107169bf055e99335c3de097a49c5b607b71fb8539816238564eeb"}, "outputs": ["<V5_WORK>/extracted/fresh/reload/slip_robust_ff/slip_robust_ff_s111__selected.jsonl"], "execution_commit": "db62bd1dbb3bb077ad4b67f3b3cd934e677db522"}
+{"task": "reload_slip_robust_history", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "<V5_WORK>/extracted/_resolved/reload_slip_robust_history__reload_slip_robust_history.json", "--checkpoint-root", "<V5_WORK>/extracted/formal/train", "--output", "<V5_WORK>/extracted/fresh/reload/slip_robust_history", "--seed", "6458501"], "inputs": {"<V5_WORK>/delivery/configs/v5/verification/reload_slip_robust_history.json": "bb42c59370d3bb4f41db56df05d5038d821b410c4b6d78160bf9138be494cbd0", "<V5_WORK>/exp-b/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "<V5_WORK>/extracted/_resolved/reload_slip_robust_history__reload_slip_robust_history.json": "899b2b52e23d3034b9e9db3db5c16278a095d7c2da08f743f14ff3674a3bf57e", "<V5_WORK>/exp-b/configs/v5/slip/training/slip_robust_history.json": "5389153a5a85c427f3c24dee6c9a8b137d4708e45340dab95bccc320e124454d", "<V5_WORK>/delivery/configs/v5/verification/reload7.jsonl": "1cfc539eceee3e9dea9eb2c301a0796ad9ca515d3c4b312e9fdf2161fea14db6", "<V5_WORK>/extracted/formal/train/slip_robust_history_s111/checkpoints/step_005013504.pt": "ed2f9087cadd015127099f5fd2042da8035b7de6034952352e09f20a8d4b09d1"}, "outputs": ["<V5_WORK>/extracted/fresh/reload/slip_robust_history/slip_robust_history_s111__selected.jsonl"], "execution_commit": "db62bd1dbb3bb077ad4b67f3b3cd934e677db522"}
+{"task": "reload_slip_robust_repeat", "dry_run": true, "argv": ["scripts/eval_matrix.py", "--matrix", "<V5_WORK>/extracted/_resolved/reload_slip_robust_repeat__reload_slip_robust_repeat.json", "--checkpoint-root", "<V5_WORK>/extracted/formal/train", "--output", "<V5_WORK>/extracted/fresh/reload/slip_robust_repeat", "--seed", "6458501"], "inputs": {"<V5_WORK>/delivery/configs/v5/verification/reload_slip_robust_repeat.json": "405fa596666b3c9f249ef514ed603aa9905b62f7f138127892568f672ef8b76d", "<V5_WORK>/exp-b/scripts/eval_matrix.py": "977766f7ad42b79cd4c7c47ac4a51ea4b63d0c5c145544b83b4f0012d7881cef", "<V5_WORK>/extracted/_resolved/reload_slip_robust_repeat__reload_slip_robust_repeat.json": "a5542887b196381803272d732edfbff3f6543e010d232db535f829dc59c9cf2b", "<V5_WORK>/exp-b/configs/v5/slip/training/slip_robust_repeat.json": "4651b6ee7147e7e010b89bc3f21fec4b7d2c2e0874ba11d788c85b45cb110585", "<V5_WORK>/delivery/configs/v5/verification/reload7.jsonl": "1cfc539eceee3e9dea9eb2c301a0796ad9ca515d3c4b312e9fdf2161fea14db6", "<V5_WORK>/extracted/formal/train/slip_robust_repeat_s111/checkpoints/step_010027008.pt": "ea2b74cb91d6167fd7c1a83b42355ddfa8b7b1db9eeb7fcfa20b09ebeb96c4ce"}, "outputs": ["<V5_WORK>/extracted/fresh/reload/slip_robust_repeat/slip_robust_repeat_s111__selected.jsonl"], "execution_commit": "db62bd1dbb3bb077ad4b67f3b3cd934e677db522"}
+{"task": "resume_check_train", "dry_run": true, "argv": ["scripts/train.py", "--method", "combined", "--seed", "111", "--protocol", "configs/v5/slip/training/slip_robust_history.json", "--run-type", "smoke", "--resume", "<V5_WORK>/extracted/formal/train/slip_robust_history_s111/checkpoints/latest.pt", "--transitions", "10092544", "--output", "<V5_WORK>/extracted/fresh/resume_check/slip_robust_history_s111"], "inputs": {"<V5_WORK>/exp-b/scripts/train.py": "c8917f1f1a1e429a35e70e23bcccf5bb849e4085bd8b5596bbd0da5defca1d0d", "<V5_WORK>/exp-b/configs/v5/slip/training/slip_robust_history.json": "5389153a5a85c427f3c24dee6c9a8b137d4708e45340dab95bccc320e124454d", "<V5_WORK>/extracted/formal/train/slip_robust_history_s111/checkpoints/latest.pt": "bf4b387d51461b845242c5049c6e5206de6a2a53753d290aa853a35d4bdb0d25"}, "outputs": ["<V5_WORK>/extracted/fresh/resume_check/slip_robust_history_s111/checkpoints/final.pt"], "execution_commit": "db62bd1dbb3bb077ad4b67f3b3cd934e677db522"}
+{"shard": "0/1", "tasks": 6, "failed": []}
+[gpu] dry rc=0
+[v3_jobs] run replay60_geometry_best: scripts/eval_matrix.py --matrix <V5_WORK>/extracted/_resolved/replay60_geometry_best__replay60_geometry_best.json --output <V5_WORK>/extracted/fresh/replay60/geometry_best --seed 6458501
+[v3_jobs] replay60_geometry_best rc=0
+[v3_jobs] run replay60_slip_robust_history_s111: scripts/eval_matrix.py --matrix <V5_WORK>/extracted/_resolved/replay60_slip_robust_history_s111__replay60_slip_robust_history_s111.json --checkpoint-root <V5_WORK>/extracted/formal/train --output <V5_WORK>/extracted/fresh/replay60/slip_robust_history_s111 --seed 6458501
+[v3_jobs] replay60_slip_robust_history_s111 rc=0
+[v3_jobs] run reload_slip_robust_ff: scripts/eval_matrix.py --matrix <V5_WORK>/extracted/_resolved/reload_slip_robust_ff__reload_slip_robust_ff.json --checkpoint-root <V5_WORK>/extracted/formal/train --output <V5_WORK>/extracted/fresh/reload/slip_robust_ff --seed 6458501
+[v3_jobs] reload_slip_robust_ff rc=0
+[v3_jobs] run reload_slip_robust_history: scripts/eval_matrix.py --matrix <V5_WORK>/extracted/_resolved/reload_slip_robust_history__reload_slip_robust_history.json --checkpoint-root <V5_WORK>/extracted/formal/train --output <V5_WORK>/extracted/fresh/reload/slip_robust_history --seed 6458501
+[v3_jobs] reload_slip_robust_history rc=0
+[v3_jobs] run reload_slip_robust_repeat: scripts/eval_matrix.py --matrix <V5_WORK>/extracted/_resolved/reload_slip_robust_repeat__reload_slip_robust_repeat.json --checkpoint-root <V5_WORK>/extracted/formal/train --output <V5_WORK>/extracted/fresh/reload/slip_robust_repeat --seed 6458501
+[v3_jobs] reload_slip_robust_repeat rc=0
+[v3_jobs] run resume_check_train: scripts/train.py --method combined --seed 111 --protocol configs/v5/slip/training/slip_robust_history.json --run-type smoke --resume <V5_WORK>/extracted/formal/train/slip_robust_history_s111/checkpoints/latest.pt --transitions 10092544 --output <V5_WORK>/extracted/fresh/resume_check/slip_robust_history_s111
+[v3_jobs] resume_check_train rc=0
+[v3_jobs] run resume_check_inspect: scripts/closeout_inspect_ckpt.py --before <V5_WORK>/extracted/formal/train/slip_robust_history_s111/checkpoints/latest.pt --after <V5_WORK>/extracted/fresh/resume_check/slip_robust_history_s111/checkpoints/final.pt --expect-iterations 308 --expect-transitions 10092544 --output <V5_WORK>/extracted/fresh/resume_check/inspect.json
+[v3_jobs] resume_check_inspect rc=0
+{"shard": "0/1", "tasks": 7, "failed": []}
+[gpu] b rc=0
+{"episodes": 201, "terminal_equal": 192, "mismatches": 9, "resume_ok": true, "ok": true}
+[gpu] compare rc=0
+bf4b387d51461b845242c5049c6e5206de6a2a53753d290aa853a35d4bdb0d25  <V5_WORK>/extracted/formal/train/slip_robust_history_s111/checkpoints/latest.pt
+  "member": "formal/train/slip_robust_history_s111/checkpoints/latest.pt",
+  "sha256": "bf4b387d51461b845242c5049c6e5206de6a2a53753d290aa853a35d4bdb0d25",
+  "size_bytes": 1005921,
+  "profile": "slip_robust_history",
+[gpu] utc=2026-11-18T06:12:29Z done

@@ -1,0 +1,73 @@
+[fresh] utc=2026-11-18T06:05:43Z python3.13=Python 3.13.9
+[fresh] work=<V5_WORK>
+Note: switching to '3160c6cb86e98ee0aa5223f254b2ba4cb18e6702'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Note: switching to '13cda3af2699f0ebfdd50affb4d27fb6dde877e8'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Note: switching to 'db62bd1dbb3bb077ad4b67f3b3cd934e677db522'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+[fresh] EA ok
+[fresh] EB ok
+[fresh] T=3160c6cb86e98ee0aa5223f254b2ba4cb18e6702
+
+[notice] A new release of pip is available: 25.2 -> 26.3
+[notice] To update, run: <V5_WORK>/analysis-env/bin/python -m pip install --upgrade pip
+videos.tar.gz: 9,520,575 bytes
+29 assets, 304.1 MB
+     28 OK
+[fresh] v5_verify rc=0
+[fresh] bundle_verify ok True failures []
+{"ok": true, "counts": {"identical": 24, "float_only": 0, "different": 0, "missing": 0}, "failed_steps": []}
+[fresh] regen rc=0
+
+[notice] A new release of pip is available: 25.2 -> 26.3
+[notice] To update, run: <V5_WORK>/test-env/bin/python3.13 -m pip install --upgrade pip
+SKIPPED [1] tests/test_registration.py:18: Isaac Lab not installed
+138 passed, 1 skipped in 5.97s
+[fresh] utc=2026-11-18T06:14:48Z done
+exit=0

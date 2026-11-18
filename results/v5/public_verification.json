@@ -1,0 +1,211 @@
+{
+ "release": "v5.0.0",
+ "release_url": "https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.0",
+ "published_utc": "2026-11-18T06:04:39Z",
+ "tag_commit": "3160c6cb86e98ee0aa5223f254b2ba4cb18e6702",
+ "experiment_tags": {
+  "experiment-v5a": "13cda3af2699f0ebfdd50affb4d27fb6dde877e8",
+  "experiment-v5b": "db62bd1dbb3bb077ad4b67f3b3cd934e677db522"
+ },
+ "procedure": "docs/v5/REPRODUCE.md sections 1-3, run verbatim in new empty directories with anonymous clones and an anonymous download; no access to the original run outputs",
+ "cpu": {
+  "where": "owner workstation (CPU only)",
+  "utc_end": "2026-11-18T06:14:48Z",
+  "exit_code": 0,
+  "sha256sums": "28/28 OK",
+  "bundle_verify_ok": true,
+  "bundle_checks": {
+   "sha256sums": {
+    "listed": 28,
+    "assets": 29,
+    "bad": [],
+    "unlisted": []
+   },
+   "archives": {
+    "members_rehashed": 5297,
+    "problems": [],
+    "n_problems": 0
+   },
+   "checkpoints": {
+    "entries": 225,
+    "unresolved_or_bad": [],
+    "formal_runs_per_family": {
+     "slip_robust_ff": 5,
+     "slip_robust_history": 5,
+     "slip_robust_repeat": 5
+    },
+    "each_formal_run_has_step0_10_periodic_final_latest_and_selected": true,
+    "pilot_smoke_runs": 6
+   },
+   "raw_counts": {
+    "study_a_files": 10,
+    "study_a_all_2400": true,
+    "final_files": 36,
+    "final_all_1400": true,
+    "final_records": 50400,
+    "validation_files": 165,
+    "validation_all_160": true
+   },
+   "leak_scan": {
+    "hits": [],
+    "n_hits": 0
+   }
+  },
+  "regeneration": {
+   "ok": true,
+   "counts": {
+    "identical": 24,
+    "float_only": 0,
+    "different": 0,
+    "missing": 0
+   },
+   "figures_identical": {
+    "learning_curves.png": true,
+    "slip_mechanism.png": true,
+    "study_a_factorial.png": true,
+    "study_b_conditions.png": true,
+    "study_b_contrasts.png": true,
+    "validation_curves.png": true
+   }
+  },
+  "cpu_tests_fresh_clone_of_tag": "138 passed, 1 skipped (Isaac Lab not installed)"
+ },
+ "gpu": {
+  "where": "remote cluster, 1 x A100-SXM4-80GB, fresh download extracted on the login node",
+  "utc": "2026-11-18T06:07:30Z..06:12:29Z",
+  "exit_codes": {
+   "verification_a": 0,
+   "dry_run": 0,
+   "verification": 0,
+   "compare": 0
+  },
+  "bundle_verify_ok": true,
+  "ok": true,
+  "summary": {
+   "episodes": 201,
+   "terminal_equal": 192,
+   "mismatches": 9,
+   "resume_ok": true
+  },
+  "entries": [
+   {
+    "entry": "replay_study_a",
+    "cases": 60,
+    "terminal_equal": 60,
+    "specs_equal": true,
+    "checkpoint_sha256_equal": true,
+    "config_hash_equal": true,
+    "controller_hash_equal": true
+   },
+   {
+    "entry": "replay60_geometry_best",
+    "cases": 60,
+    "terminal_equal": 57,
+    "specs_equal": true,
+    "checkpoint_sha256_equal": true,
+    "config_hash_equal": true,
+    "controller_hash_equal": true
+   },
+   {
+    "entry": "replay60_slip_robust_history_s111",
+    "cases": 60,
+    "terminal_equal": 54,
+    "specs_equal": true,
+    "checkpoint_sha256_equal": true,
+    "config_hash_equal": true,
+    "controller_hash_equal": true
+   },
+   {
+    "entry": "reload_slip_robust_ff",
+    "cases": 7,
+    "terminal_equal": 7,
+    "specs_equal": true,
+    "checkpoint_sha256_equal": true,
+    "config_hash_equal": true,
+    "controller_hash_equal": true
+   },
+   {
+    "entry": "reload_slip_robust_history",
+    "cases": 7,
+    "terminal_equal": 7,
+    "specs_equal": true,
+    "checkpoint_sha256_equal": true,
+    "config_hash_equal": true,
+    "controller_hash_equal": true
+   },
+   {
+    "entry": "reload_slip_robust_repeat",
+    "cases": 7,
+    "terminal_equal": 7,
+    "specs_equal": true,
+    "checkpoint_sha256_equal": true,
+    "config_hash_equal": true,
+    "controller_hash_equal": true
+   }
+  ],
+  "mismatches": [
+   {
+    "entry": "replay60_geometry_best",
+    "case": "v5slip-final-slip_mixed_id-0010",
+    "fresh": "invalid_slip",
+    "published": "success"
+   },
+   {
+    "entry": "replay60_geometry_best",
+    "case": "v5slip-final-slip_mixed_id-0023",
+    "fresh": "invalid_slip",
+    "published": "success"
+   },
+   {
+    "entry": "replay60_geometry_best",
+    "case": "v5slip-final-slip_mixed_id-0057",
+    "fresh": "success",
+    "published": "invalid_slip"
+   },
+   {
+    "entry": "replay60_slip_robust_history_s111",
+    "case": "v5slip-final-slip_mixed_id-0008",
+    "fresh": "invalid_slip",
+    "published": "success"
+   },
+   {
+    "entry": "replay60_slip_robust_history_s111",
+    "case": "v5slip-final-slip_mixed_id-0018",
+    "fresh": "invalid_slip",
+    "published": "success"
+   },
+   {
+    "entry": "replay60_slip_robust_history_s111",
+    "case": "v5slip-final-slip_mixed_id-0023",
+    "fresh": "invalid_slip",
+    "published": "success"
+   },
+   {
+    "entry": "replay60_slip_robust_history_s111",
+    "case": "v5slip-final-slip_mixed_id-0024",
+    "fresh": "invalid_slip",
+    "published": "success"
+   },
+   {
+    "entry": "replay60_slip_robust_history_s111",
+    "case": "v5slip-final-slip_mixed_id-0035",
+    "fresh": "success",
+    "published": "invalid_slip"
+   },
+   {
+    "entry": "replay60_slip_robust_history_s111",
+    "case": "v5slip-final-slip_mixed_id-0057",
+    "fresh": "invalid_slip",
+    "published": "success"
+   }
+  ],
+  "mismatch_note": "all 9 differences are slip-validity flips between batch 20 (replay) and batch 240 (published); identical to the pre-release rehearsal; no other outcome differs",
+  "resume": {
+   "before_iterations": 306,
+   "after_iterations": 308,
+   "ok": true
+  },
+  "source_checkpoint_unchanged": "latest.pt sha256 bf4b387d... equals checkpoints.json"
+ },
+ "ok": true
+}
