@@ -1,0 +1,107 @@
+{
+ "slip_robust_ff_s111": {
+  "checkpoint_sha256": "07aaa2b63a107169bf055e99335c3de097a49c5b607b71fb8539816238564eeb",
+  "residual_magnitude_m": 0.003157636657562731,
+  "selected": "step_005013504",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_ff_s222": {
+  "checkpoint_sha256": "d1ecbc72078a179ffb705e83bb64f5664ca36a0ce7d8dd52d724754b61e69f65",
+  "residual_magnitude_m": 0.002926634322885901,
+  "selected": "step_007012352",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_ff_s333": {
+  "checkpoint_sha256": "1926597af0810603fa61c0d914d91256ebbb47343595de16e6f3e95529f3d84a",
+  "residual_magnitude_m": 0.003492669917263668,
+  "selected": "step_010027008",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_ff_s444": {
+  "checkpoint_sha256": "32a1428b10fe8f33514ba25fc1f63b6a4a69a336a01eb1b3e248dedabc776ba3",
+  "residual_magnitude_m": 0.0037715033295252207,
+  "selected": "step_008028160",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_ff_s555": {
+  "checkpoint_sha256": "a87614224f049ed7a82e1deb2bec98c7c68a16396d6c35cfe7c7b64e297348f6",
+  "residual_magnitude_m": 0.003357795715677875,
+  "selected": "step_009011200",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_history_s111": {
+  "checkpoint_sha256": "ed2f9087cadd015127099f5fd2042da8035b7de6034952352e09f20a8d4b09d1",
+  "residual_magnitude_m": 0.005307410809859468,
+  "selected": "step_005013504",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_history_s222": {
+  "checkpoint_sha256": "1a0da2e03ebbd28b8a1108a810a1c31bd0da23b7f32627dfd704dcd202eb8061",
+  "residual_magnitude_m": 0.008956645928407758,
+  "selected": "step_009011200",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_history_s333": {
+  "checkpoint_sha256": "d08472b86e1e7fe0578b14a17b687674881b1abdfdbc79fa4f11748703ad1470",
+  "residual_magnitude_m": 0.00888714839811572,
+  "selected": "step_004030464",
+  "success_rate": 0.95625,
+  "unsafe_rate": 0.01875
+ },
+ "slip_robust_history_s444": {
+  "checkpoint_sha256": "61bb97fec14747e2e3c8c18d8d6311ce7bb2cc6802548ec276d51ea673f5214a",
+  "residual_magnitude_m": 0.008379895095695804,
+  "selected": "step_005013504",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_history_s555": {
+  "checkpoint_sha256": "7a7b8691a50f0c6aef20f8791073d975430e9285e780dfdf43c2aff04d5988ac",
+  "residual_magnitude_m": 0.006691796320250261,
+  "selected": "step_005013504",
+  "success_rate": 0.95625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_repeat_s111": {
+  "checkpoint_sha256": "ea2b74cb91d6167fd7c1a83b42355ddfa8b7b1db9eeb7fcfa20b09ebeb96c4ce",
+  "residual_magnitude_m": 0.002754218655933701,
+  "selected": "step_010027008",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_repeat_s222": {
+  "checkpoint_sha256": "866f5e58854e00b18d59802485991666f1f56934bf4eae9d1a337a6474e20af1",
+  "residual_magnitude_m": 0.003136379277528918,
+  "selected": "step_007012352",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ },
+ "slip_robust_repeat_s333": {
+  "checkpoint_sha256": "9b0f9333d4b5f6d73384bc66c9c92e9eec7d3ff95d4c18082f86b4e97ae57dc5",
+  "residual_magnitude_m": 0.003497566155113367,
+  "selected": "step_010027008",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.00625
+ },
+ "slip_robust_repeat_s444": {
+  "checkpoint_sha256": "a64948f5a9b3fb1ba24525b93ab8713911e415738bfba179bac4689b0dc6002a",
+  "residual_magnitude_m": 0.003494143758550126,
+  "selected": "step_009011200",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.00625
+ },
+ "slip_robust_repeat_s555": {
+  "checkpoint_sha256": "0efed5ed2f52e715002a22df0b40f3ae4991264037dd2622898bffe60c9e887d",
+  "residual_magnitude_m": 0.003249095192955883,
+  "selected": "step_010027008",
+  "success_rate": 0.9625,
+  "unsafe_rate": 0.0
+ }
+}

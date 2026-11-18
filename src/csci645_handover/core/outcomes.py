@@ -23,6 +23,7 @@ DROP = 4
 RELEASE_TIMEOUT = 5
 EPISODE_TIMEOUT = 6
 INVALID_RESET = 7
+INVALID_SLIP = 8  # V5 opt-in slip mechanism: realized slip outside tolerance (counts as a failure)
 
 REASON_NAMES = {
     RUNNING: "running",
@@ -33,6 +34,7 @@ REASON_NAMES = {
     RELEASE_TIMEOUT: "release_timeout",
     EPISODE_TIMEOUT: "episode_timeout",
     INVALID_RESET: "invalid_reset",
+    INVALID_SLIP: "invalid_slip",
 }
 
 

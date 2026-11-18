@@ -1,0 +1,115 @@
+{
+ "name": "mech_dev",
+ "tasks": [
+  {
+   "id": "mechdev_slip_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s111.json",
+    "--output",
+    "$RUNS/mechanisms/devfit/slip_robust_history_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s111.json",
+    "configs/v5/slip/development/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/slip_robust_history_s111/slip_robust_history_s111__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "mechdev_slip_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s222.json",
+    "--output",
+    "$RUNS/mechanisms/devfit/slip_robust_history_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s222.json",
+    "configs/v5/slip/development/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/slip_robust_history_s222/slip_robust_history_s222__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "mechdev_slip_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s333.json",
+    "--output",
+    "$RUNS/mechanisms/devfit/slip_robust_history_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s333.json",
+    "configs/v5/slip/development/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/slip_robust_history_s333/slip_robust_history_s333__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "mechdev_slip_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s444.json",
+    "--output",
+    "$RUNS/mechanisms/devfit/slip_robust_history_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s444.json",
+    "configs/v5/slip/development/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/slip_robust_history_s444/slip_robust_history_s444__selected__dev.jsonl"
+   ]
+  },
+  {
+   "id": "mechdev_slip_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s555.json",
+    "--output",
+    "$RUNS/mechanisms/devfit/slip_robust_history_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mech_dev/slip_robust_history_s555.json",
+    "configs/v5/slip/development/suites/development.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/devfit/slip_robust_history_s555/slip_robust_history_s555__selected__dev.jsonl"
+   ]
+  }
+ ]
+}

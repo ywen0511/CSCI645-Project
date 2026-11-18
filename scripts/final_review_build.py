@@ -53,6 +53,8 @@ def render_markdown(audit):
     values["history_sensitivity"] = f"{r['difference_pp']:+.2f} pp, 95% CI [{r['ci_low_pp']:+.2f}, {r['ci_high_pp']:+.2f}]"
     values.update(failure_values(families))
     template = (OUT / "overview_template.md").read_text()
+    v5 = data("results/v5/report_values.json")  # V5 numbers: {{v5:<key>}} (scripts/v5_report_values.py)
+    template = re.sub(r"\{\{v5:([A-Za-z0-9_.\-]+)\}\}", lambda m: v5[m[1]]["text"], template)
     result = re.sub(r"\{\{(\w+)\}\}", lambda m: values[m[1]], template)
     if "{{" in result:
         raise ValueError("unresolved placeholder")

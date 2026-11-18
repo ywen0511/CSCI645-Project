@@ -1,0 +1,86 @@
+{
+ "name": "v5_slip_val_slip_robust_ff_s111",
+ "suite": "configs/v5/slip/suites/validation.jsonl",
+ "num_envs": 160,
+ "protocol": "configs/v5/slip/training/slip_robust_ff.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "slip_robust_ff_s111__step_000000000",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "untrained_control",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_000000000.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_001015808",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_001015808.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_002031616",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_002031616.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_003014656",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_003014656.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_004030464",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_004030464.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_005013504",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_005013504.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_006029312",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_006029312.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_007012352",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_007012352.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_008028160",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_008028160.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_009011200",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_009011200.pt"
+  },
+  {
+   "id": "slip_robust_ff_s111__step_010027008",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "candidate",
+   "checkpoint": "slip_robust_ff_s111/checkpoints/step_010027008.pt"
+  }
+ ]
+}

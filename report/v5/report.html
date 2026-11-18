@@ -1,0 +1,1412 @@
+<!doctype html><html><head><meta charset='utf-8'><title>Calibration and In-Grasp Slip in Bimanual Handover — V5 Study</title><style>
+body { font-family: 'DejaVu Serif', Georgia, serif; font-size: 10pt; line-height: 1.36; max-width: 7.0in; margin: 0 auto; color: #111; }
+h1 { font-size: 16pt; margin-bottom: 0.1em; } h2 { font-size: 12.5pt; margin-top: 1.1em; border-bottom: 1px solid #bbb; }
+h3 { font-size: 11pt; } .meta { color: #444; margin-bottom: 1.1em; }
+table { border-collapse: collapse; font-size: 7.4pt; margin: 0.5em 0; page-break-inside: auto; } tr { page-break-inside: avoid; }
+th, td { border: 1px solid #aaa; padding: 1px 3px; } th { background: #eee; }
+img { max-width: 100%; page-break-inside: avoid; } code { font-size: 8.5pt; } p, li { text-align: justify; }
+@page { size: letter; margin: 0.7in; }
+</style></head><body><h1>Calibration and In-Grasp Slip in Bimanual Handover — V5 Study</h1><div class='meta'>A matched calibration ablation (Study A) and a physical dynamic-slip study (Study B) in Isaac Lab 3.0 / Isaac Sim 6.2 (PhysX) — release v5.0.0<br>CSCI 645 Robot Manipulation, Fall 2026 · Yan Wen &middot; November 2026</div><p><strong>Reading guide.</strong> Section 1 places V5 in the V1–V4 sequence. Section 2 is Study A (a preregistered, training-free
+ablation). Sections 3–8 are Study B: the slip mechanism and its feasibility, the methods, the frozen protocol, the
+held-out results, mechanisms and failure modes. Sections 9–12 give compute, limitations, reproducibility and
+references. Development and pilot numbers are labelled as such and are never used for claims. Every measured number
+below is generated from raw records by checked-in scripts; <code>results/v5/number_audit.json</code> maps each one to its source.</p>
+<h2>Summary</h2>
+<ul>
+<li><strong>Study A — the calibrated giver reference is what fixed V4's grasp uncertainty.</strong> V4's headline changed three
+  settings at once (reference, EMA α, alignment bound). With α 0.2 and bound 25 mm held fixed, on 2,400 fresh
+  held-out cases, the 0.5 s calibrated reference minus the fixed nominal transform is +29.5 pp on <code>mixed_id</code>
+  (Bonferroni 97.5% CI [+22.5, +36.5]) and +93.0 pp at +15 mm (<code>grasp_15mm</code>, [+88.5, +96.5]). Both lower bounds are
+  above zero, so the frozen rule's verdict is <strong>supported</strong> for both contrasts. EMA filtering had exactly zero
+  effect (identical outcomes in every cell); the wider bound added +3.2 pp [+1.3, +5.3] on <code>mixed_id</code>.</li>
+<li><strong>Study B — a physical slip after calibration is feasible only in a narrow range.</strong> A regulated bar-axis force
+  slides the bar in the giver's fingers (no teleporting). Development showed reliable slides only toward the receiver,
+  up to 8 mm; the condition table was narrowed to that range before the freeze (logged).</li>
+<li><strong>Study B primary contrasts: no superiority established.</strong> On <code>slip_mixed_id</code> with selected checkpoints, 4-frame
+  history − feed-forward = −1.0 pp (97.5% CI [−3.4, +1.3]) and history − <code>geometry_best</code> (continuous tracking
+  geometry) = +0.9 pp ([−2.6, +4.6]). Both intervals include zero.</li>
+<li><strong>What does help is modest and needs no memory.</strong> Exploratory: continuous tracking beats the stale one-shot
+  calibration by +7.0 pp [+3.0, +11.5] on <code>slip_mixed_ood</code>; the feed-forward residual beats
+  its one-shot parent by +3.9 pp [+0.9, +7.3] on <code>slip_mixed_id</code>; a +4 mm constant offset
+  on the parent reaches 94.5%. About 6% of held-out slips are
+  invalid (missed the 1.5 mm tolerance) and count as failures for every method, which caps success at about 94–95%.</li>
+<li><strong>Late training instability again.</strong> Final (10M) history checkpoints degraded in three of five seeds, two of them completely
+  (0.0 / 100.0 / 100.0 / 100.0 / 0.0% on <code>clean</code>); validation-based selection avoided them.</li>
+<li><strong>Conclusion.</strong> In this slip model, continuous geometric estimation and simple offsets handle the slip about as well as
+  learning; there is still no held-out evidence in this project that memory helps.</li>
+</ul>
+<h2>1. Motivation and earlier studies</h2>
+<p>The project (CSCI 645, Robot Manipulation) studies a bimanual handover in Isaac Sim through Isaac Lab: a giver
+Franka Panda holds an 18 × 3.5 × 3.5 cm bar with a parallel-jaw gripper and a receiver Franka must grasp it and hold
+it alone. Controllers combine a nominal trajectory, a training-free geometric coordination module (target alignment,
+a shared holding anchor and a contact-gated release) and optionally a bounded XYZ residual learned with PPO
+(±2 cm per axis). The proposal asked whether residual learning on top of geometric coordination improves robustness.</p>
+<ul>
+<li><strong>V1/V2</strong> (v1.0.0, v2.0.0, v2.1.1): geometric coordination did almost all of the work; learned residuals were
+  near-constant offsets that a tuned constant matched.</li>
+<li><strong>V3</strong> (v3.0.0): with a corrupted bar measurement, geometry that locates the bar from the giver's grasp
+  (<code>giver TCP + fixed grasp transform</code>) succeeded on all held-out cases, as did every selected policy — a ceiling.</li>
+<li><strong>V4</strong> (v4.0.0–v4.0.2): made the bar's initial position inside the giver's grasp a physical unknown. The fixed
+  transform failed beyond about +10 mm; a 0.5 s calibration of the giver reference fixed most of it; history and
+  residual PPO gave no established improvement and were fragile outside their training support.</li>
+</ul>
+<p>V4 left two open questions, which V5 answers with two separate preregistered studies:</p>
+<ol>
+<li><strong>Study A.</strong> V4's fixed → calibrated comparison also changed the EMA weight (1.0 → 0.2) and the alignment
+   bound (15 → 25 mm). Which of the three settings carries the gain?</li>
+<li><strong>Study B.</strong> A one-shot calibration is correct only if the grasp stays put. When the bar slides in the giver's
+   fingers <em>after</em> the calibration window, does a learned residual with observation history recover better than
+   the same residual without history, and better than the strongest training-free controller that re-estimates the
+   offset continuously?</li>
+</ol>
+<h2>2. Study A — matched calibration ablation</h2>
+<p><strong>Design.</strong> A 2 × 2 × 2 factorial of training-free geometry controllers: reference (fixed nominal transform or
+0.5 s calibrated), EMA α (1.0 or 0.2) and alignment bound (15 or 25 mm). Each of the 8 configurations runs on 2,400
+new held-out cases (V4's 12 conditions × 200; split seed 6457301, disjoint from all V1–V4 seeds). The plan
+(<code>configs/v5/calibration/analysis_plan.json</code>) and every input were frozen in <code>configs/v5/calibration/FREEZE.json</code>
+before any simulation and executed from tag <code>experiment-v5a</code>, whose simulator code equals <code>experiment-v4</code>.</p>
+<p><strong>Primary contrasts</strong> (calibrated minus fixed at α 0.2 and bound 25 mm; case-level paired bootstrap, 10,000 draws;
+an improvement is supported only if the Bonferroni 97.5% lower bound is above zero):</p>
+<table>
+<thead>
+<tr>
+<th>Primary</th>
+<th>Condition</th>
+<th style="text-align: right;">Calibrated − fixed</th>
+<th>95% CI</th>
+<th>97.5% CI</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td><code>mixed_id</code></td>
+<td style="text-align: right;">+29.5 pp</td>
+<td>[+23.5, +36.0]</td>
+<td>[+22.5, +36.5]</td>
+<td>supported</td>
+</tr>
+<tr>
+<td>A2</td>
+<td><code>grasp_15mm</code></td>
+<td style="text-align: right;">+93.0 pp</td>
+<td>[+89.0, +96.0]</td>
+<td>[+88.5, +96.5]</td>
+<td>supported</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Acceptance gates.</strong> All 10 entries (8 configurations plus 2 repeat-process entries) have 2,400 records with no
+infrastructure error and a clean source tree. The two anchors reproduce V4's configuration and controller hashes
+exactly (<code>ema1p0_fixed_a15</code> = V4 <code>geometry_fixed</code>, <code>ema0p2_cal050_a25</code> = V4 <code>geometry_calibrated</code>).</p>
+<p><img alt="Study A factorial" src="../../results/v5/figures/study_a_factorial.png" /></p>
+<p><strong>Success by configuration (%, 200 cases per cell).</strong></p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Reference</th>
+<th>EMA α</th>
+<th>Bound</th>
+<th>clean</th>
+<th>grasp 10mm</th>
+<th>grasp 15mm</th>
+<th>mixed id</th>
+<th>mixed ood</th>
+<th>boundary x minus 7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ema1p0_fixed_a15</code></td>
+<td>fixed</td>
+<td>1.0</td>
+<td>15 mm</td>
+<td>100.0</td>
+<td>39.0</td>
+<td>7.5</td>
+<td>72.0</td>
+<td>74.5</td>
+<td>96.0</td>
+</tr>
+<tr>
+<td><code>ema1p0_fixed_a25</code></td>
+<td>fixed</td>
+<td>1.0</td>
+<td>25 mm</td>
+<td>100.0</td>
+<td>40.5</td>
+<td>0.0</td>
+<td>70.5</td>
+<td>74.5</td>
+<td>96.0</td>
+</tr>
+<tr>
+<td><code>ema1p0_cal050_a15</code></td>
+<td>calibrated 0.5 s</td>
+<td>1.0</td>
+<td>15 mm</td>
+<td>100.0</td>
+<td>85.5</td>
+<td>74.0</td>
+<td>92.0</td>
+<td>89.0</td>
+<td>96.0</td>
+</tr>
+<tr>
+<td><code>ema1p0_cal050_a25</code></td>
+<td>calibrated 0.5 s</td>
+<td>1.0</td>
+<td>25 mm</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>93.0</td>
+<td>100.0</td>
+<td>95.5</td>
+<td>97.5</td>
+</tr>
+<tr>
+<td><code>ema0p2_fixed_a15</code></td>
+<td>fixed</td>
+<td>0.2</td>
+<td>15 mm</td>
+<td>100.0</td>
+<td>39.0</td>
+<td>7.5</td>
+<td>72.0</td>
+<td>74.5</td>
+<td>96.0</td>
+</tr>
+<tr>
+<td><code>ema0p2_fixed_a25</code></td>
+<td>fixed</td>
+<td>0.2</td>
+<td>25 mm</td>
+<td>100.0</td>
+<td>40.5</td>
+<td>0.0</td>
+<td>70.5</td>
+<td>74.5</td>
+<td>96.0</td>
+</tr>
+<tr>
+<td><code>ema0p2_cal050_a15</code></td>
+<td>calibrated 0.5 s</td>
+<td>0.2</td>
+<td>15 mm</td>
+<td>100.0</td>
+<td>85.5</td>
+<td>74.0</td>
+<td>92.0</td>
+<td>89.0</td>
+<td>96.0</td>
+</tr>
+<tr>
+<td><code>ema0p2_cal050_a25</code></td>
+<td>calibrated 0.5 s</td>
+<td>0.2</td>
+<td>25 mm</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>93.0</td>
+<td>100.0</td>
+<td>95.5</td>
+<td>97.5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exploratory main effects</strong> (averaged over the other two factors; 95% CI): reference +24.8 pp [+19.2, +30.5]
+on <code>mixed_id</code>, +79.8 pp [+75.5, +83.8] on <code>grasp_15mm</code>, +17.8 pp [+12.0, +23.5] on <code>mixed_ood</code>; EMA α
++0.0 pp [+0.0, +0.0] everywhere — the two EMA settings produced identical terminal outcomes in every cell (both
+references locate the bar from giver kinematics while the giver holds it; why the filter leaves no trace in the
+outcomes was not investigated further); bound
++3.2 pp [+1.3, +5.3] on <code>mixed_id</code> and +5.8 pp [+2.3, +9.3] on <code>grasp_15mm</code>.</p>
+<p><strong>Failures</strong> (selected rows; <code>results/v5/calibration/taxonomy/</code>). The fixed transform fails by prohibited receiver
+collisions with the bar end, almost always with the receiver misaligned at grasp:</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Condition</th>
+<th>Success</th>
+<th>Collision</th>
+<th>Invalid reset</th>
+<th>Misaligned at grasp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ema0p2_fixed_a25</code></td>
+<td>mixed id</td>
+<td>70.5</td>
+<td>29.5</td>
+<td>0.0</td>
+<td>19.5</td>
+</tr>
+<tr>
+<td><code>ema0p2_fixed_a25</code></td>
+<td>grasp 15mm</td>
+<td>0.0</td>
+<td>99.5</td>
+<td>0.5</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td><code>ema0p2_cal050_a25</code></td>
+<td>mixed id</td>
+<td>100.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td><code>ema0p2_cal050_a25</code></td>
+<td>grasp 15mm</td>
+<td>93.0</td>
+<td>7.0</td>
+<td>0.0</td>
+<td>2.5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Repeatability.</strong> A second process (seed 6457502) reran the two matched primary configurations: 2,400/2,400
+and 2,400/2,400 identical terminal outcomes.</p>
+<p><strong>Conclusion.</strong> V4's improvement from fixed to calibrated geometry is a calibration effect. EMA filtering contributes
+nothing measurable here, and the wider alignment bound contributes a few points.</p>
+<h2>3. Study B — a physical in-grasp slip</h2>
+<p><strong>Question.</strong> When the bar slides in the giver's fingers <em>after</em> the 0.5 s calibration window has closed and before
+the receiver grasps, does a learned residual with observation history recover better than (B1) the same residual
+without history and (B2) the strongest training-free controller that re-estimates the offset continuously?</p>
+<p><strong>Mechanism</strong> (<code>src/csci645_handover/core/slip.py</code>; opt-in configuration fields, off by default, so every V1–V4
+configuration hash is unchanged — tested). During <code>[onset, onset + 0.25 s)</code> an external force along the bar axis
+acts at the bar's centre of mass. A PID regulator (kp 6000 N/m, kd 60 N s/m, ki 60,000 N/(m s), cap 90 N) makes
+the bar's in-grasp displacement follow a minimum-jerk profile to the case's target; it then holds the target for
+0.1 s, after which the force is zero. The giver keeps its normal closed squeeze; the bar is held only by finger
+friction, and the force has no vertical component, so the grip alone carries the bar's weight. Nothing writes a pose
+or velocity to the bar in scored time. The realized slip (in-grasp displacement change from onset to the end of the
+hold) and its error are measured from the simulator and recorded per episode. A slip that misses its target by more
+than 1.5 mm (x or z) ends the episode as <code>invalid_slip</code>, a failure for every method (like an invalid reset in V4).
+Onsets are uniform in [0.7, 1.4] s, so every slip has finished by 1.75 s, before the receiver's 2.0 s grasp.</p>
+<p><img alt="Slip mechanism" src="../../results/v5/figures/slip_mechanism.png" /></p>
+<p><strong>Feasibility probe (development only; <code>docs/v5/SLIP_FEASIBILITY.md</code>).</strong> Round 1 relaxed the giver's squeeze during
+the slip; the bar then sagged 1–10 mm vertically and most slips were invalid. Round 2 kept the full squeeze; with
+mechanism M6 (above) and slides starting at offset 0, the acceptance bar (≥ 95% of episodes within 1.5 mm) was met
+for −2 to +10 mm:</p>
+<table>
+<thead>
+<tr>
+<th>Slide target</th>
+<th>Valid slips</th>
+<th>Median error (mm)</th>
+<th>Median vertical drift (mm)</th>
+<th>Peak force (N)</th>
+<th>Probe acceptance (start 0)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-7 mm</td>
+<td>1/12</td>
+<td>10.20</td>
+<td>-9.86</td>
+<td>70</td>
+<td>no</td>
+</tr>
+<tr>
+<td>-5 mm</td>
+<td>3/12</td>
+<td>3.42</td>
+<td>-3.37</td>
+<td>49</td>
+<td>no</td>
+</tr>
+<tr>
+<td>-2 mm</td>
+<td>12/12</td>
+<td>1.07</td>
+<td>-0.19</td>
+<td>35</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>+2 mm</td>
+<td>12/12</td>
+<td>1.34</td>
+<td>+0.15</td>
+<td>35</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>+5 mm</td>
+<td>12/12</td>
+<td>0.73</td>
+<td>-0.50</td>
+<td>39</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>+10 mm</td>
+<td>12/12</td>
+<td>0.78</td>
+<td>-0.67</td>
+<td>43</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>+15 mm</td>
+<td>9/12</td>
+<td>1.08</td>
+<td>-1.00</td>
+<td>51</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>Development round 1 then separated the slide from the final position and showed that validity depends on the
+<em>direction</em> of the slide: slides toward the giver's palm beyond −2.5 mm were never valid (0 of 476 episodes), and
+8–10 mm slides toward the receiver reached only 93.7%. <strong>The accepted slip is therefore a slide toward the receiver of
+0 to +8 mm</strong>, with start offset plus slide inside V4's static feasible range [−7, +15] mm. At accepted targets the
+mechanism caused no receiver contact before the grasp and no drop; the negative controls (no receiver, giver keeps
+holding, table support) produced no success; and a no-slip case with the mechanism enabled was bitwise identical to
+the mechanism disabled. Probe and development used about 0.5 GPU-hours (cap 6).</p>
+<p><strong>Condition table, adjusted only to the feasible range before the freeze.</strong> <code>slip_pos_10</code> became <code>slip_pos_8</code>;
+<code>slip_neg_5</code> was dropped (no slide toward the palm is feasible); <code>slip_after_offset</code> starts at −5 mm and slides +8 mm;
+the mixed conditions draw slides uniformly from [0, +8] mm with onset uniform in [0.7, 1.4] s. <code>slip_mixed_ood</code> is
+therefore out of distribution only in its start offsets and sensor corruption. Study B has seven final conditions:
+<code>clean</code>, <code>static_mixed_id</code>, <code>slip_pos_5</code>, <code>slip_pos_8</code>, <code>slip_after_offset</code>, <code>slip_mixed_id</code> (primary) and
+<code>slip_mixed_ood</code>, 200 paired base cases each.</p>
+<h2>4. Study B methods</h2>
+<p>All methods receive the same deployable signals as in V4 (corrupted bar translation, proprioception, measured
+orientation, finger contacts, phase). None reads the true offset, the true slip or the case label.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nominal</code></td>
+<td>scripted trajectory</td>
+</tr>
+<tr>
+<td><code>geometry_fixed</code></td>
+<td>V4 fixed nominal grasp transform, bound 15 mm</td>
+</tr>
+<tr>
+<td><code>geometry_ema</code></td>
+<td>V4 EMA geometry (α 0.2) without a giver reference</td>
+</tr>
+<tr>
+<td><code>geometry_calibrated</code></td>
+<td>V4 one-shot 0.5 s calibration, α 0.2, bound 25 mm — the <strong>parent</strong> of every learned residual</td>
+</tr>
+<tr>
+<td><code>geometry_tracking</code></td>
+<td><strong>new</strong>: after the 0.5 s window, the giver-frame correction (measurement − kinematic estimate) keeps being re-estimated by an EMA on every fresh frame while the giver holds the bar</td>
+</tr>
+<tr>
+<td><code>best_constant_geometry</code></td>
+<td>calibrated parent plus a constant offset, tuned on development</td>
+</tr>
+<tr>
+<td><code>geometry_best</code></td>
+<td>the strongest training-free controller on development = <code>tracking_a005_b25</code></td>
+</tr>
+<tr>
+<td><code>slip_robust_ff</code></td>
+<td>PPO residual (±2 cm XYZ) on the parent, current frame only</td>
+</tr>
+<tr>
+<td><code>slip_robust_history</code></td>
+<td>same, 4-frame stacked history</td>
+</tr>
+<tr>
+<td><code>slip_robust_repeat</code></td>
+<td>same, current frame repeated 4 times (input-size control)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Development tuning</strong> (192 then 168 development cases; V4 ranking on the four validation conditions: success, then
+unsafe events, then correction magnitude, then completion time). Six tracking settings and four constant offsets were
+tried. <code>geometry_tracking</code> = <code>tracking_a005_b25</code> (EMA weight 0.05, bound 25 mm), best constant =
+<code>calibrated_const_x+4</code> (+4 mm along the bar). Five candidates tied on success and unsafe events; V4 never
+ranked tracking against constant offsets, so the cross-family tie-break used the common total correction (the
+smallest wins), which selected tracking as <code>geometry_best</code> (logged before the freeze):</p>
+<table>
+<thead>
+<tr>
+<th>Candidate (development)</th>
+<th>Strata success</th>
+<th>Unsafe</th>
+<th>Family magnitude (mm)</th>
+<th>Total correction (mm)</th>
+<th>clean</th>
+<th>slip mixed id</th>
+<th>slip pos 8</th>
+<th>static mixed id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>calibrated_const_x+4</code></td>
+<td>99.0</td>
+<td>0.0</td>
+<td>4.0</td>
+<td>11.5</td>
+<td>100.0</td>
+<td>95.8</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td><code>tracking_a005_b25</code></td>
+<td>99.0</td>
+<td>0.0</td>
+<td>9.8</td>
+<td>9.8</td>
+<td>100.0</td>
+<td>95.8</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td><code>tracking_a010_b25</code></td>
+<td>99.0</td>
+<td>0.0</td>
+<td>9.8</td>
+<td>9.8</td>
+<td>100.0</td>
+<td>95.8</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td><code>tracking_a020_b25</code></td>
+<td>99.0</td>
+<td>0.0</td>
+<td>9.9</td>
+<td>9.9</td>
+<td>100.0</td>
+<td>95.8</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td><code>geometry_ema</code></td>
+<td>99.0</td>
+<td>0.0</td>
+<td>10.2</td>
+<td>10.2</td>
+<td>100.0</td>
+<td>95.8</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td><code>tracking_a020_b35</code></td>
+<td>99.0</td>
+<td>0.0</td>
+<td>10.2</td>
+<td>10.2</td>
+<td>100.0</td>
+<td>95.8</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td><code>calibrated_const_x+2</code></td>
+<td>97.9</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>10.5</td>
+<td>100.0</td>
+<td>91.7</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td><code>tracking_a040_b25</code></td>
+<td>96.9</td>
+<td>0.0</td>
+<td>10.3</td>
+<td>10.3</td>
+<td>100.0</td>
+<td>91.7</td>
+<td>100.0</td>
+<td>95.8</td>
+</tr>
+<tr>
+<td><code>tracking_a040_b35</code></td>
+<td>96.9</td>
+<td>0.0</td>
+<td>10.7</td>
+<td>10.7</td>
+<td>100.0</td>
+<td>91.7</td>
+<td>100.0</td>
+<td>95.8</td>
+</tr>
+<tr>
+<td><code>geometry_calibrated</code></td>
+<td>96.9</td>
+<td>2.1</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>100.0</td>
+<td>87.5</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td><code>calibrated_const_x-2</code></td>
+<td>70.8</td>
+<td>28.1</td>
+<td>2.0</td>
+<td>12.4</td>
+<td>100.0</td>
+<td>83.3</td>
+<td>0.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td><code>geometry_fixed</code></td>
+<td>70.8</td>
+<td>29.2</td>
+<td>10.1</td>
+<td>10.1</td>
+<td>100.0</td>
+<td>62.5</td>
+<td>62.5</td>
+<td>58.3</td>
+</tr>
+<tr>
+<td><code>calibrated_const_x-4</code></td>
+<td>63.5</td>
+<td>37.5</td>
+<td>4.0</td>
+<td>13.2</td>
+<td>100.0</td>
+<td>66.7</td>
+<td>0.0</td>
+<td>87.5</td>
+</tr>
+<tr>
+<td><code>nominal</code></td>
+<td>56.2</td>
+<td>41.7</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>100.0</td>
+<td>45.8</td>
+<td>37.5</td>
+<td>41.7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Training.</strong> V4 robust profile (grasp offsets, sensor corruption) plus a slip with probability 0.5, slide uniform
+in [0, +8] mm; V4 PPO settings and curriculum; 10,027,008 transitions per run; seeds 111/222/333/444/555; 15 formal
+runs. Pilots (seed 901, about 2 M transitions per profile, never used for claims) showed moving learning curves:
+training-episode success from 95.9% to 97.6% (feed-forward),
+87.9% to 96.7% (history) and
+95.3% to 97.7% (repeat).</p>
+<p><img alt="Learning curves" src="../../results/v5/figures/learning_curves.png" /></p>
+<h2>5. Study B protocol and freeze</h2>
+<p>Seeds: development 6458101, validation 6458201, final 6458301, analysis 6458401, evaluation process 6458501,
+repeatability 6458601. Before any final evaluation, <code>configs/v5/slip/FREEZE.json</code> fixed 68 inputs — suites (validation
+160, final 1,400, mechanism subset 60, the V4 final suite with zero slip 2,400), training protocols, the baseline
+selection, the analysis plan (<code>configs/v5/slip/analysis_plan.json</code>), matrices and runner manifests, the generator of
+the post-selection matrices, the analysis script (unit-tested on synthetic records only) and the simulator source —
+at tag <code>experiment-v5b</code>. Every formal job ran from a clean clone of that tag.</p>
+<ul>
+<li><strong>Checkpoint selection.</strong> Ten candidates per run (the first checkpoint at or after each 1 M transitions; step 0 is
+  never eligible), ranked by V4's key on the 160 validation cases (<code>clean</code>, <code>static_mixed_id</code>, <code>slip_pos_8</code>,
+  <code>slip_mixed_id</code>): success, then unsafe rate, then residual magnitude, then later transitions. Invalid resets and
+  invalid slips count as failures.</li>
+<li><strong>Primary</strong> (selected checkpoints, <code>slip_mixed_id</code>): <strong>B1</strong> history − feed-forward and <strong>B2</strong> history −
+  <code>geometry_best</code>. Paired training-seed × base-case bootstrap (10,000 draws, seed 6458401), 95% and Bonferroni 97.5%
+  intervals. Superiority only if the 97.5% lower bound is above zero; no equivalence claims.</li>
+<li><strong>Secondary, exploratory:</strong> all conditions; repeat − feed-forward; tracking − one-shot calibrated; final versus
+  selected checkpoints; regression on the V4 final suite; mechanisms on a 60-case subset; repeatability in a second
+  process.</li>
+</ul>
+<p><img alt="Validation curves" src="../../results/v5/figures/validation_curves.png" /></p>
+<p><strong>Selected checkpoints.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Selected checkpoint (transitions)</th>
+<th>Validation success (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>slip_robust_ff_s111</code></td>
+<td>5,013,504</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_ff_s222</code></td>
+<td>7,012,352</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_ff_s333</code></td>
+<td>10,027,008</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_ff_s444</code></td>
+<td>8,028,160</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_ff_s555</code></td>
+<td>9,011,200</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s111</code></td>
+<td>5,013,504</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s222</code></td>
+<td>9,011,200</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s333</code></td>
+<td>4,030,464</td>
+<td>95.6</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s444</code></td>
+<td>5,013,504</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s555</code></td>
+<td>5,013,504</td>
+<td>95.6</td>
+</tr>
+<tr>
+<td><code>slip_robust_repeat_s111</code></td>
+<td>10,027,008</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_repeat_s222</code></td>
+<td>7,012,352</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_repeat_s333</code></td>
+<td>10,027,008</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_repeat_s444</code></td>
+<td>9,011,200</td>
+<td>96.2</td>
+</tr>
+<tr>
+<td><code>slip_robust_repeat_s555</code></td>
+<td>10,027,008</td>
+<td>96.2</td>
+</tr>
+</tbody>
+</table>
+<p>One deviation after the freeze, logged in <code>docs/v5/DECISIONS.md</code>: the first submission of the post-selection
+evaluations failed before any simulation, because the frozen generator addressed post-selection matrices relative
+to the execution checkout. A separate step (<code>scripts/v5_manifest_paths.py</code>) re-addressed them through the delivery
+checkout, the V4 convention; no frozen input changed.</p>
+<h2>6. Study B held-out results (final suite: 7 conditions × 200 paired base cases)</h2>
+<h3>6.1 Primary contrasts</h3>
+<p>Selected checkpoints, <code>slip_mixed_id</code>, paired training-seed × base-case bootstrap (10,000 draws, seed 6458401):</p>
+<table>
+<thead>
+<tr>
+<th>Primary</th>
+<th>Contrast</th>
+<th style="text-align: right;">Difference</th>
+<th>95% CI</th>
+<th>Bonferroni 97.5% CI</th>
+<th>Superiority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1</td>
+<td>history − feed-forward</td>
+<td style="text-align: right;">−1.0 pp</td>
+<td>[−3.1, +0.9]</td>
+<td>[−3.4, +1.3]</td>
+<td>not established</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>history − <code>geometry_best</code> (tracking)</td>
+<td style="text-align: right;">+0.9 pp</td>
+<td>[−2.2, +4.1]</td>
+<td>[−2.6, +4.6]</td>
+<td>not established</td>
+</tr>
+</tbody>
+</table>
+<p>Both 97.5% intervals include zero. Under the frozen rule, <strong>neither superiority claim is established</strong>: a 4-frame
+history does not measurably beat the same residual without history, nor the training-free tracking controller, on
+the primary condition. No equivalence is claimed.</p>
+<p><img alt="Study B contrasts" src="../../results/v5/figures/study_b_contrasts.png" /></p>
+<h3>6.2 All conditions</h3>
+<p>Success (%) per method and condition. Learned rows pool five seeds (1,000 episodes per cell); training-free rows are
+one deterministic controller (200 episodes per cell). <code>geometry_best</code> is the same controller as <code>geometry_tracking</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>clean</th>
+<th>static mixed id</th>
+<th>slip pos 5</th>
+<th>slip pos 8</th>
+<th>slip after offset</th>
+<th>slip mixed id</th>
+<th>slip mixed ood</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nominal</td>
+<td>100.0</td>
+<td>52.5</td>
+<td>60.0</td>
+<td>52.0</td>
+<td>62.0</td>
+<td>46.0</td>
+<td>48.5</td>
+</tr>
+<tr>
+<td>fixed-transform geometry</td>
+<td>100.0</td>
+<td>69.0</td>
+<td>94.0</td>
+<td>77.0</td>
+<td>98.5</td>
+<td>52.5</td>
+<td>59.5</td>
+</tr>
+<tr>
+<td>EMA geometry</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>95.5</td>
+<td>97.5</td>
+<td>92.0</td>
+<td>85.5</td>
+</tr>
+<tr>
+<td>one-shot calibrated geometry (parent)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>97.5</td>
+<td>99.5</td>
+<td>90.0</td>
+<td>80.5</td>
+</tr>
+<tr>
+<td>calibrated + constant</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>97.5</td>
+<td>99.0</td>
+<td>94.5</td>
+<td>92.5</td>
+</tr>
+<tr>
+<td>tracking geometry (= geometry_best)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>96.5</td>
+<td>99.5</td>
+<td>92.0</td>
+<td>87.5</td>
+</tr>
+<tr>
+<td>learned feed-forward (selected)</td>
+<td>100.0</td>
+<td>99.9</td>
+<td>100.0</td>
+<td>96.8</td>
+<td>98.9</td>
+<td>93.9</td>
+<td>90.7</td>
+</tr>
+<tr>
+<td>learned 4-frame history (selected)</td>
+<td>100.0</td>
+<td>99.0</td>
+<td>100.0</td>
+<td>96.9</td>
+<td>99.4</td>
+<td>92.9</td>
+<td>91.4</td>
+</tr>
+<tr>
+<td>learned repeated current frame (selected)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>97.0</td>
+<td>98.9</td>
+<td>94.2</td>
+<td>88.9</td>
+</tr>
+<tr>
+<td>learned feed-forward (final)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>97.0</td>
+<td>98.8</td>
+<td>93.8</td>
+<td>90.9</td>
+</tr>
+<tr>
+<td>learned 4-frame history (final)</td>
+<td>60.0</td>
+<td>63.0</td>
+<td>80.5</td>
+<td>78.0</td>
+<td>79.2</td>
+<td>63.7</td>
+<td>59.1</td>
+</tr>
+<tr>
+<td>learned repeated current frame (final)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>96.8</td>
+<td>99.0</td>
+<td>93.6</td>
+<td>88.8</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Study B by condition" src="../../results/v5/figures/study_b_conditions.png" /></p>
+<ul>
+<li><strong>The stale calibration is a real but small failure mode.</strong> The one-shot calibrated parent reaches
+  90.0% on <code>slip_mixed_id</code> and 80.5%
+  on <code>slip_mixed_ood</code>, versus 100.0% without slip (<code>static_mixed_id</code>). Continuous
+  tracking minus the one-shot parent (exploratory) is +2.0 pp [−2.0, +6.0] on <code>slip_mixed_id</code> and
+  +7.0 pp [+3.0, +11.5] on <code>slip_mixed_ood</code>.</li>
+<li><strong>Learned residuals beat their own one-shot parent, without history.</strong> Exploratory, selected checkpoints:
+  feed-forward − parent = +3.9 pp [+0.9, +7.3] on <code>slip_mixed_id</code> and
+  +10.2 pp [+5.9, +15.0] on <code>slip_mixed_ood</code>; history − parent =
+  +2.9 pp [−0.8, +6.8] and +10.9 pp [+5.4, +16.5]. The
+  input-size control (repeat − feed-forward) is +0.3 pp [−1.5, +2.0] on <code>slip_mixed_id</code>.</li>
+<li><strong>A constant offset is as good as anything.</strong> The calibrated parent plus a +4 mm constant along the bar reaches
+  94.5% on <code>slip_mixed_id</code> and 92.5%
+  on <code>slip_mixed_ood</code>: every one of its <code>slip_mixed_id</code> failures is an invalid slip (Section 8). Slides go only toward
+  the receiver, so a constant bias in that direction partly pre-compensates them (a post hoc reading).</li>
+<li><strong>Invalid slips bound every method.</strong> About 5–7% of the scheduled <code>slip_mixed_id</code> slips missed the 1.5 mm
+  tolerance (Section 8); they count as failures for every method, so no method can exceed about 94–95% there.</li>
+</ul>
+<h3>6.3 Final checkpoints and per-seed results</h3>
+<p>Selected and final (10,027,008-transition) checkpoints are reported separately. Feed-forward and repeat final
+checkpoints are close to their selected ones. <strong>History final checkpoints degraded in three of five seeds, and two collapsed completely</strong>:
+per-seed success on <code>clean</code> is 0.0 / 100.0 / 100.0 / 100.0 / 0.0% and on <code>slip_mixed_id</code>
+47.0 / 92.5 / 76.5 / 92.0 / 10.5% (selected: 93.5 / 94.0 / 92.5 / 92.0 / 92.5%).
+Final − selected for history on <code>slip_mixed_id</code> is −29.2 pp [−57.9, −3.9].
+Validation-based selection avoided the late damage, as in V3 and V4; without it, history would be clearly worse.</p>
+<h2>7. Mechanisms (60-case subset of <code>slip_mixed_id</code>; selected history checkpoints)</h2>
+<p>For each selected history run, the policy was re-evaluated with its 4-frame history reversed, with the current frame
+repeated four times, and replaced by a constant residual fitted on its own development records; the zero-residual
+parent ran once. Successes out of 60 (agreement of terminal outcomes with the unmodified policy in parentheses):</p>
+<table>
+<thead>
+<tr>
+<th>Selected history run</th>
+<th>Selected</th>
+<th>History reversed</th>
+<th>Current frame repeated</th>
+<th>Development-fitted constant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>slip_robust_history_s111</code></td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s222</code></td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s333</code></td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s444</code></td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s555</code></td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+<td>52/60 (60)</td>
+</tr>
+</tbody>
+</table>
+<p>The zero-residual parent: 48/60. Every intervention reproduced the unmodified policy's terminal outcome on all 60 cases for all five seeds, although the records confirm that each intervention ran (different configuration hashes and residual means). All failures in these rows are the same eight invalid slips. On this subset, the learned residuals' gain over the parent is fully reproduced by a constant fitted on development records, and the order or presence of past frames does not matter: there is no evidence that the history policies use memory.</p>
+<h2>8. Failures, repeatability, regression and videos</h2>
+<p><strong>Failure taxonomy on <code>slip_mixed_id</code></strong> (% of scheduled episodes; <code>results/v5/slip/analysis/summary.json</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Success</th>
+<th>Collision</th>
+<th>Drop</th>
+<th>Timeout</th>
+<th>Invalid reset</th>
+<th>Invalid slip</th>
+<th>Misaligned at grasp</th>
+<th>Receiver contact before grasp (episodes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nominal</td>
+<td>46.0</td>
+<td>43.0</td>
+<td>3.5</td>
+<td>0.5</td>
+<td>0.0</td>
+<td>7.0</td>
+<td>47.0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>fixed-transform geometry</td>
+<td>52.5</td>
+<td>40.5</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>7.0</td>
+<td>16.5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>EMA geometry</td>
+<td>92.0</td>
+<td>1.5</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>6.5</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>one-shot calibrated geometry (parent)</td>
+<td>90.0</td>
+<td>4.5</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5.5</td>
+<td>0.5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>calibrated + constant</td>
+<td>94.5</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5.5</td>
+<td>4.5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>tracking geometry (= geometry_best)</td>
+<td>92.0</td>
+<td>1.5</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>6.5</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>learned feed-forward</td>
+<td>93.9</td>
+<td>0.7</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5.4</td>
+<td>0.4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>learned 4-frame history</td>
+<td>92.9</td>
+<td>0.3</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>6.8</td>
+<td>65.6</td>
+<td>3</td>
+</tr>
+<tr>
+<td>learned repeated current frame</td>
+<td>94.2</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>5.8</td>
+<td>0.1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Nominal and fixed-transform geometry fail by prohibited collisions with the bar end, as in V4. For the calibrated,
+tracking, constant and learned controllers almost every remaining failure is an <code>invalid_slip</code>: the realized slide
+missed its target by more than 1.5 mm. These are mechanism failures, decided before the receiver grasps, and they
+count against every method. The held-out invalid-slip rate on <code>slip_mixed_id</code> (5–7%) is higher than in development
+(one in 96 strata cases per controller). The counts differ slightly between methods (11–14 of 200 for the
+training-free controllers, 54–68 of 1,000 for the learned ones). This is not explained by receiver contact before the
+grasp, which occurred in at most 3 of 1,000 episodes. It depends on the batch layout of the shared PhysX scene: in the
+pre-release verification rehearsal (<code>docs/v5/VERIFICATION.md</code>), replaying 60 <code>slip_mixed_id</code> cases at batch 20 instead
+of 240 changed slip validity in 9 of 120 episodes (two controllers), and these were the only outcome differences.</p>
+<p>The <code>misaligned at grasp</code> flag (receiver more than 10 mm from the nominal grasp point at the nominal grasp time) is high for the history policies although they rarely fail. Their residuals are larger (for seed 333 the median per-episode mean residual is about 4, 7 and −7 mm in x, y and z on <code>clean</code>, versus at most 2 mm for feed-forward), so the receiver grasps the 18 cm bar at a different point; the flag records that offset, not a failure.</p>
+<p><strong>Repeatability</strong> (second process, seed 6458601; all training-free baselines and one seed of each learned profile):</p>
+<table>
+<thead>
+<tr>
+<th>Entry</th>
+<th>Matching terminal outcomes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nominal</code></td>
+<td>1,400/1,400</td>
+</tr>
+<tr>
+<td><code>geometry_fixed</code></td>
+<td>1,400/1,400</td>
+</tr>
+<tr>
+<td><code>geometry_ema</code></td>
+<td>1,400/1,400</td>
+</tr>
+<tr>
+<td><code>geometry_calibrated</code></td>
+<td>1,400/1,400</td>
+</tr>
+<tr>
+<td><code>geometry_tracking</code></td>
+<td>1,400/1,400</td>
+</tr>
+<tr>
+<td><code>best_constant_geometry</code></td>
+<td>1,400/1,400</td>
+</tr>
+<tr>
+<td><code>slip_robust_ff_s111__selected</code></td>
+<td>1,400/1,400</td>
+</tr>
+<tr>
+<td><code>slip_robust_history_s111__selected</code></td>
+<td>1,400/1,400</td>
+</tr>
+<tr>
+<td><code>slip_robust_repeat_s111__selected</code></td>
+<td>1,400/1,400</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regression on the V4 final suite</strong> (exploratory; 2,400 cases, 12 V4 conditions, zero slip; selected checkpoints of
+the slip-trained policies, compared with the published V4 policies of the same architecture):</p>
+<table>
+<thead>
+<tr>
+<th>Policy (selected)</th>
+<th>clean</th>
+<th>grasp 2mm</th>
+<th>grasp 5mm</th>
+<th>grasp 10mm</th>
+<th>grasp 15mm</th>
+<th>bias 5mm</th>
+<th>noise 2mm</th>
+<th>delay 2step</th>
+<th>mixed id</th>
+<th>mixed ood</th>
+<th>boundary x minus 7</th>
+<th>boundary z 15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>learned feed-forward (V5, slip-trained)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>96.6</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.7</td>
+<td>98.0</td>
+<td>95.3</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>V4 feed-forward (V4 published)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>96.5</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.4</td>
+<td>94.5</td>
+<td>88.2</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>learned 4-frame history (V5, slip-trained)</td>
+<td>100.0</td>
+<td>99.9</td>
+<td>97.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.8</td>
+<td>97.4</td>
+<td>81.9</td>
+<td>99.2</td>
+</tr>
+<tr>
+<td>V4 4-frame history (V4 published)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>98.5</td>
+<td>100.0</td>
+<td>99.1</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>97.0</td>
+<td>65.2</td>
+<td>98.8</td>
+</tr>
+<tr>
+<td>learned repeated current frame (V5, slip-trained)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>96.9</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.8</td>
+<td>97.1</td>
+<td>94.8</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>V4 repeated current frame (V4 published)</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.8</td>
+<td>100.0</td>
+<td>96.2</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.5</td>
+<td>91.3</td>
+<td>91.2</td>
+<td>100.0</td>
+</tr>
+</tbody>
+</table>
+<p>Training with slip changed performance on the V4 conditions little: most cells are within about 1.5 pp of the V4 policies (history is 1.5 pp lower on <code>grasp_5mm</code>), and the slip-trained policies are higher on the harder conditions, notably at the palm-side boundary <code>boundary_x_minus_7</code> (outside both training ranges), where V4's history policies were weakest. These are exploratory comparisons across two separately trained policy sets.</p>
+<p><strong>Videos</strong> (<code>results/v5/videos/videos.json</code>; chosen by the rule frozen in <code>configs/v5/video_rule.json</code> before any
+final evaluation): Study A matched fixed vs calibrated on a +15 mm case; Study B one-shot calibrated vs tracking vs
+history (and feed-forward) on the first <code>slip_mixed_id</code> case the one-shot parent failed; a history failure; a no-slip
+control; tracking on a +8 mm slip; and a montage. All nine replays reproduced the evaluation's terminal outcome (<code>replay_disagreements</code> is empty); one completion time differs by one control step (feed-forward clip: 4.70 s in evaluation, 4.75 s in the single-environment replay). On the comparison case the one-shot parent and the tracking controller both collide with the slid bar while the history and feed-forward policies succeed; this is one case chosen by the frozen rule, not evidence of a rate. The montage is 44 s.</p>
+<h2>9. Compute</h2>
+<p>Every job requested one A100-SXM4-80GB GPU; GPU-hours are LSF run times (including simulator start-up), with failed
+and killed jobs counted (<code>results/v5/compute.json</code>, <code>scripts/v5_compute.py</code>). Total: <strong>9.33 GPU-hours</strong> of
+the 60 GPU-hour cap.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Jobs</th>
+<th>GPU-hours</th>
+<th>Failed/killed jobs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b development</td>
+<td>2</td>
+<td>0.15</td>
+<td>0</td>
+</tr>
+<tr>
+<td>b feasibility probe</td>
+<td>2</td>
+<td>0.15</td>
+<td>0</td>
+</tr>
+<tr>
+<td>b final evaluation</td>
+<td>9</td>
+<td>0.96</td>
+<td>4</td>
+</tr>
+<tr>
+<td>b formal training</td>
+<td>15</td>
+<td>5.31</td>
+<td>0</td>
+</tr>
+<tr>
+<td>b mechanisms</td>
+<td>6</td>
+<td>0.27</td>
+<td>3</td>
+</tr>
+<tr>
+<td>b pilots</td>
+<td>6</td>
+<td>0.50</td>
+<td>0</td>
+</tr>
+<tr>
+<td>b repeatability</td>
+<td>3</td>
+<td>0.22</td>
+<td>1</td>
+</tr>
+<tr>
+<td>b v4 regression</td>
+<td>8</td>
+<td>0.62</td>
+<td>4</td>
+</tr>
+<tr>
+<td>b validation</td>
+<td>15</td>
+<td>0.75</td>
+<td>0</td>
+</tr>
+<tr>
+<td>study a</td>
+<td>2</td>
+<td>0.33</td>
+<td>0</td>
+</tr>
+<tr>
+<td>videos</td>
+<td>1</td>
+<td>0.05</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2>10. Limitations</h2>
+<ul>
+<li><strong>One slip model.</strong> The slip is a regulated bar-axis force on a 0.15 kg bar held by friction, with slides of 0 to
+  +8 mm toward the receiver. Slides toward the giver's palm and longer slides were not physically reliable in this
+  setup and are not tested. Rotational slip, multiple slips, slip during the receiver's grasp, other objects and
+  friction values are out of scope.</li>
+<li><strong>Near-ceiling baselines.</strong> The tracking and constant-offset baselines already succeed on most slip cases, which
+  limits how large any learned improvement could be on these suites.</li>
+<li><strong>Simulation only.</strong> No hardware, vision or dexterous hands; sensing is synthetic (V4 corruption model).</li>
+<li><strong>Selection noise.</strong> Validation used 160 cases per checkpoint; several candidates tied, and ties were broken by
+  the frozen key, not by held-out evidence.</li>
+<li><strong>Batch layout.</strong> PhysX trajectories can depend on batch layout; repeatability is measured with the same batch
+  size, and replays in a single environment (videos, public verification) may differ on a few cases. Every mismatch
+  is listed.</li>
+</ul>
+<h2>11. Reproducibility and artifacts</h2>
+<ul>
+<li><strong>Source:</strong> branch <code>study/v5-calibration-slip</code>; tags <code>experiment-v5a</code> (Study A execution), <code>experiment-v5b</code>
+  (Study B freeze and execution) and <code>v5.0.0</code> (delivery).</li>
+<li><strong>Release v5.0.0:</strong> every checkpoint of every formal, pilot and probe run with <code>checkpoints.json</code>; raw records for
+  probe, development, validation, final, mechanisms, repeatability, regression and Study A; traces; logs; report,
+  slides, videos; source archives; <code>SHA256SUMS</code>, <code>release_manifest.json</code>, <code>REPRODUCE.md</code>, <code>VERIFICATION.md</code>.</li>
+<li><strong>Regeneration:</strong> <code>scripts/v5_regen.py</code> rebuilds every Study A and Study B table and figure from the downloaded raw
+  records and compares them with the committed files; <code>docs/v5/REPRODUCE.md</code> lists the commands and expected output.</li>
+<li><strong>Decision log:</strong> <code>docs/v5/DECISIONS.md</code> (append-only, UTC times).</li>
+</ul>
+<h2>12. Related work</h2>
+<p>Learned bimanual handover has been studied mainly with dexterous hands and learned perception [1]; residual learning
+also transfers bimanual dexterous skills [2]. Residual reinforcement learning adds a learned correction to a
+hand-designed controller [3, 4]. Here the grippers are parallel-jaw and the question is geometric. The simulator is
+Isaac Lab on Isaac Sim (PhysX) [5]; PPO [7] is from RSL-RL [6]. Earlier stages of this project are documented in their
+own releases [8].</p>
+<h2>References</h2>
+<p>[1] D. Frau-Alfaro, J. Castaño-Amorós, S. Puente, P. Gil, R. Calandra. "Learning Dexterous Object Handover."
+IEEE RO-MAN 2025. arXiv:2506.16822.</p>
+<p>[2] K. Li, P. Li, T. Liu, Y. Li, S. Huang. "ManipTrans: Efficient Dexterous Bimanual Manipulation Transfer via
+Residual Learning." CVPR 2025.</p>
+<p>[3] T. Johannink, S. Bahl, A. Nair, J. Luo, A. Kumar, M. Loskyll, J. A. Ojea, E. Solowjow, S. Levine.
+"Residual Reinforcement Learning for Robot Control." IEEE ICRA 2019. arXiv:1812.03201.</p>
+<p>[4] T. Silver, K. Allen, J. Tenenbaum, L. Kaelbling. "Residual Policy Learning." arXiv:1812.06298, 2018.</p>
+<p>[5] M. Mittal et al. "Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning."
+arXiv:2511.04831, 2025. Software: Isaac Lab v3.0.0.</p>
+<p>[6] C. Schwarke, M. Mittal, N. Rudin, D. Hoeller, M. Hutter. "RSL-RL: A Learning Library for Robotics Research."
+arXiv:2509.10771, 2025. Software: rsl-rl-lib 5.5.1.</p>
+<p>[7] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, O. Klimov. "Proximal Policy Optimization Algorithms."
+arXiv:1707.06347, 2017.</p>
+<p>[8] CSCI645-Project releases v1.0.0–v4.0.2, https://github.com/ywen0511/CSCI645-Project/releases.</p>
+<h2>Software and AI-assistance disclosure</h2>
+<p><strong>Software.</strong> NVIDIA Isaac Sim 6.2.0.0 (PhysX), Isaac Lab v3.0.0, RSL-RL 5.5.1 (PPO), PyTorch 2.11, NumPy,
+Matplotlib, imageio/FFmpeg, python-pptx. No external datasets or demonstrations; all training data are simulator
+transitions.</p>
+<p><strong>AI assistance.</strong> All AI assistance was Anthropic Claude via Claude Code; no other AI coding assistant was used.
+The V5 implementation, probes, experiments, analysis code, figures, this report, the slides and the videos were
+produced by Claude Code working from <code>V5_EXECUTION.md</code> on the owner's behalf, on the owner's account and compute.
+Decisions are logged with UTC times in <code>docs/v5/DECISIONS.md</code>; every measured number comes from checked-in scripts
+applied to the released raw records (<code>results/v5/number_audit.json</code>).</p></body></html>

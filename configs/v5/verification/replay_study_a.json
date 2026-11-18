@@ -1,0 +1,30 @@
+{
+ "name": "v5_replay_study_a",
+ "suite": "$DELIVERY/configs/v5/verification/study_a_replay60.jsonl",
+ "num_envs": 20,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "clean_probability": 0.25,
+   "ema_alpha": 0.2
+  },
+  "observation_giver_reference": true,
+  "grasp_uncertainty": true
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "ema0p2_cal050_a25",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5
+   },
+   "trace": true
+  }
+ ]
+}

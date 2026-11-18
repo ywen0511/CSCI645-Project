@@ -1,0 +1,49 @@
+{
+ "name": "v5_slip_final_baselines_ema",
+ "suite": "configs/v5/slip/suites/final.jsonl",
+ "num_envs": 240,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 0.2,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": false,
+  "grasp_uncertainty": true,
+  "slip_mechanism": {
+   "finger_stiffness": 2000.0,
+   "kp": 6000.0,
+   "kd": 60.0,
+   "ki": 60000.0,
+   "regrip_s": 0.1,
+   "tolerance_m": 0.0015,
+   "grip_force_n": 35.0,
+   "force_max_n": 90.0
+  }
+ },
+ "trace_cases": [
+  "v5slip-final-clean-0000",
+  "v5slip-final-static_mixed_id-0000",
+  "v5slip-final-slip_pos_5-0000",
+  "v5slip-final-slip_pos_8-0000",
+  "v5slip-final-slip_after_offset-0000",
+  "v5slip-final-slip_mixed_id-0000",
+  "v5slip-final-slip_mixed_ood-0000"
+ ],
+ "entries": [
+  {
+   "id": "geometry_ema",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025
+   },
+   "trace": true,
+   "role": "baseline",
+   "candidate_id": "geometry_ema"
+  }
+ ]
+}

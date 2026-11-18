@@ -1,0 +1,455 @@
+{
+ "name": "mechanisms",
+ "tasks": [
+  {
+   "id": "mech_parent",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/parent.json",
+    "--output",
+    "$RUNS/mechanisms/parent",
+    "--seed",
+    "6458501"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/parent.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/parent/parent_zero_residual.jsonl"
+   ]
+  },
+  {
+   "id": "mech_selected_slip_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s111.json",
+    "--output",
+    "$RUNS/mechanisms/selected/slip_robust_history_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s111.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/selected/slip_robust_history_s111/slip_robust_history_s111__selected.jsonl"
+   ]
+  },
+  {
+   "id": "mech_reversed_slip_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s111.json",
+    "--output",
+    "$RUNS/mechanisms/reversed/slip_robust_history_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s111.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/reversed/slip_robust_history_s111/slip_robust_history_s111__reversed.jsonl"
+   ]
+  },
+  {
+   "id": "mech_current_only_slip_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s111.json",
+    "--output",
+    "$RUNS/mechanisms/current_only/slip_robust_history_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s111.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/current_only/slip_robust_history_s111/slip_robust_history_s111__current_only.jsonl"
+   ]
+  },
+  {
+   "id": "mech_constant_slip_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s111.json",
+    "--output",
+    "$RUNS/mechanisms/constant/slip_robust_history_s111",
+    "--seed",
+    "6458501"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s111.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/constant/slip_robust_history_s111/slip_robust_history_s111__constant.jsonl"
+   ]
+  },
+  {
+   "id": "mech_selected_slip_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s222.json",
+    "--output",
+    "$RUNS/mechanisms/selected/slip_robust_history_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s222.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/selected/slip_robust_history_s222/slip_robust_history_s222__selected.jsonl"
+   ]
+  },
+  {
+   "id": "mech_reversed_slip_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s222.json",
+    "--output",
+    "$RUNS/mechanisms/reversed/slip_robust_history_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s222.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/reversed/slip_robust_history_s222/slip_robust_history_s222__reversed.jsonl"
+   ]
+  },
+  {
+   "id": "mech_current_only_slip_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s222.json",
+    "--output",
+    "$RUNS/mechanisms/current_only/slip_robust_history_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s222.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/current_only/slip_robust_history_s222/slip_robust_history_s222__current_only.jsonl"
+   ]
+  },
+  {
+   "id": "mech_constant_slip_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s222.json",
+    "--output",
+    "$RUNS/mechanisms/constant/slip_robust_history_s222",
+    "--seed",
+    "6458501"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s222.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/constant/slip_robust_history_s222/slip_robust_history_s222__constant.jsonl"
+   ]
+  },
+  {
+   "id": "mech_selected_slip_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s333.json",
+    "--output",
+    "$RUNS/mechanisms/selected/slip_robust_history_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s333.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/selected/slip_robust_history_s333/slip_robust_history_s333__selected.jsonl"
+   ]
+  },
+  {
+   "id": "mech_reversed_slip_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s333.json",
+    "--output",
+    "$RUNS/mechanisms/reversed/slip_robust_history_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s333.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/reversed/slip_robust_history_s333/slip_robust_history_s333__reversed.jsonl"
+   ]
+  },
+  {
+   "id": "mech_current_only_slip_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s333.json",
+    "--output",
+    "$RUNS/mechanisms/current_only/slip_robust_history_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s333.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/current_only/slip_robust_history_s333/slip_robust_history_s333__current_only.jsonl"
+   ]
+  },
+  {
+   "id": "mech_constant_slip_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s333.json",
+    "--output",
+    "$RUNS/mechanisms/constant/slip_robust_history_s333",
+    "--seed",
+    "6458501"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s333.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/constant/slip_robust_history_s333/slip_robust_history_s333__constant.jsonl"
+   ]
+  },
+  {
+   "id": "mech_selected_slip_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s444.json",
+    "--output",
+    "$RUNS/mechanisms/selected/slip_robust_history_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s444.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/selected/slip_robust_history_s444/slip_robust_history_s444__selected.jsonl"
+   ]
+  },
+  {
+   "id": "mech_reversed_slip_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s444.json",
+    "--output",
+    "$RUNS/mechanisms/reversed/slip_robust_history_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s444.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/reversed/slip_robust_history_s444/slip_robust_history_s444__reversed.jsonl"
+   ]
+  },
+  {
+   "id": "mech_current_only_slip_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s444.json",
+    "--output",
+    "$RUNS/mechanisms/current_only/slip_robust_history_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s444.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/current_only/slip_robust_history_s444/slip_robust_history_s444__current_only.jsonl"
+   ]
+  },
+  {
+   "id": "mech_constant_slip_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s444.json",
+    "--output",
+    "$RUNS/mechanisms/constant/slip_robust_history_s444",
+    "--seed",
+    "6458501"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s444.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/constant/slip_robust_history_s444/slip_robust_history_s444__constant.jsonl"
+   ]
+  },
+  {
+   "id": "mech_selected_slip_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s555.json",
+    "--output",
+    "$RUNS/mechanisms/selected/slip_robust_history_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/selected_slip_robust_history_s555.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/selected/slip_robust_history_s555/slip_robust_history_s555__selected.jsonl"
+   ]
+  },
+  {
+   "id": "mech_reversed_slip_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s555.json",
+    "--output",
+    "$RUNS/mechanisms/reversed/slip_robust_history_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/reversed_slip_robust_history_s555.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/reversed/slip_robust_history_s555/slip_robust_history_s555__reversed.jsonl"
+   ]
+  },
+  {
+   "id": "mech_current_only_slip_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s555.json",
+    "--output",
+    "$RUNS/mechanisms/current_only/slip_robust_history_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/current_only_slip_robust_history_s555.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/current_only/slip_robust_history_s555/slip_robust_history_s555__current_only.jsonl"
+   ]
+  },
+  {
+   "id": "mech_constant_slip_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s555.json",
+    "--output",
+    "$RUNS/mechanisms/constant/slip_robust_history_s555",
+    "--seed",
+    "6458501"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/mechanisms/constant_slip_robust_history_s555.json",
+    "configs/v5/slip/suites/final_subset60.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/mechanisms/constant/slip_robust_history_s555/slip_robust_history_s555__constant.jsonl"
+   ]
+  }
+ ]
+}

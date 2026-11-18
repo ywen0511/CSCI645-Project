@@ -1,0 +1,112 @@
+{
+ "checks": {
+  "sha256sums": {
+   "listed": 28,
+   "assets": 29,
+   "bad": [],
+   "unlisted": []
+  },
+  "manifest": {
+   "assets": 27,
+   "bad": [],
+   "covers_all_other_assets": true,
+   "experiment_tags": {
+    "experiment-v5a": "13cda3af2699f0ebfdd50affb4d27fb6dde877e8",
+    "experiment-v5b": "db62bd1dbb3bb077ad4b67f3b3cd934e677db522"
+   },
+   "delivery_commit": "3160c6cb86e98ee0aa5223f254b2ba4cb18e6702"
+  },
+  "archives": {
+   "members_rehashed": 5297,
+   "problems": [],
+   "n_problems": 0
+  },
+  "checkpoints": {
+   "entries": 225,
+   "unresolved_or_bad": [],
+   "formal_runs_per_family": {
+    "slip_robust_ff": 5,
+    "slip_robust_history": 5,
+    "slip_robust_repeat": 5
+   },
+   "each_formal_run_has_step0_10_periodic_final_latest_and_selected": true,
+   "pilot_smoke_runs": 6
+  },
+  "raw_counts": {
+   "study_a_files": 10,
+   "study_a_all_2400": true,
+   "final_files": 36,
+   "final_all_1400": true,
+   "final_records": 50400,
+   "validation_files": 165,
+   "validation_all_160": true
+  },
+  "media": {
+   "mp4": [
+    {
+     "video": "study_a_matched_calibration__ema0p2_fixed_a25__v5cal-heldout-grasp_15mm-0000.mp4",
+     "frames": 46,
+     "ok": true
+    },
+    {
+     "video": "study_a_matched_calibration__ema0p2_cal050_a25__v5cal-heldout-grasp_15mm-0000.mp4",
+     "frames": 101,
+     "ok": true
+    },
+    {
+     "video": "slip_one_shot_vs_tracking_vs_history__geometry_calibrated__v5slip-final-slip_mixed_id-0015.mp4",
+     "frames": 51,
+     "ok": true
+    },
+    {
+     "video": "slip_one_shot_vs_tracking_vs_history__geometry_tracking__v5slip-final-slip_mixed_id-0015.mp4",
+     "frames": 51,
+     "ok": true
+    },
+    {
+     "video": "slip_one_shot_vs_tracking_vs_history__slip_robust_history_s111_selected__v5slip-final-slip_mixed_id-0015.mp4",
+     "frames": 95,
+     "ok": true
+    },
+    {
+     "video": "slip_feed_forward__slip_robust_ff_s111_selected__v5slip-final-slip_mixed_id-0015.mp4",
+     "frames": 95,
+     "ok": true
+    },
+    {
+     "video": "study_b_failure__slip_robust_history_s333_selected__v5slip-final-slip_mixed_id-0075.mp4",
+     "frames": 58,
+     "ok": true
+    },
+    {
+     "video": "no_slip_control__slip_robust_history_s111_selected__v5slip-final-static_mixed_id-0000.mp4",
+     "frames": 102,
+     "ok": true
+    },
+    {
+     "video": "large_slip_tracking__geometry_tracking__v5slip-final-slip_pos_8-0000.mp4",
+     "frames": 102,
+     "ok": true
+    },
+    {
+     "video": "montage.mp4",
+     "frames": 881,
+     "ok": true
+    }
+   ],
+   "pdf": {
+    "report.pdf": 13,
+    "slides.pdf": 13
+   },
+   "pptx": {
+    "slides.pptx": 13
+   }
+  },
+  "leak_scan": {
+   "hits": [],
+   "n_hits": 0
+  }
+ },
+ "failures": [],
+ "ok": true
+}

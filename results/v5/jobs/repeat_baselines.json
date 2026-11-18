@@ -1,0 +1,68 @@
+{
+ "name": "repeat_baselines",
+ "tasks": [
+  {
+   "id": "repeat_baselines_a",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/repeat_baselines/a.json",
+    "--output",
+    "$RUNS/repeat/baselines",
+    "--seed",
+    "6458601"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/repeat_baselines/a.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/repeat/baselines/nominal.jsonl",
+    "$RUNS/repeat/baselines/geometry_calibrated.jsonl",
+    "$RUNS/repeat/baselines/geometry_tracking.jsonl",
+    "$RUNS/repeat/baselines/best_constant_geometry.jsonl"
+   ]
+  },
+  {
+   "id": "repeat_baselines_ema",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/repeat_baselines/ema.json",
+    "--output",
+    "$RUNS/repeat/baselines",
+    "--seed",
+    "6458601"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/repeat_baselines/ema.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/repeat/baselines/geometry_ema.jsonl"
+   ]
+  },
+  {
+   "id": "repeat_baselines_fixed",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/repeat_baselines/fixed.json",
+    "--output",
+    "$RUNS/repeat/baselines",
+    "--seed",
+    "6458601"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/repeat_baselines/fixed.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/repeat/baselines/geometry_fixed.jsonl"
+   ]
+  }
+ ]
+}

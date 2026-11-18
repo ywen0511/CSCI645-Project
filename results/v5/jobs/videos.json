@@ -1,0 +1,110 @@
+{
+ "name": "videos",
+ "tasks": [
+  {
+   "id": "video_study_a",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v5/video/plan_study_a.json",
+    "--suite",
+    "$DELIVERY/configs/v5/calibration/suite_heldout.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v5/video/protocol_study_a.json"
+   ],
+   "inputs": [
+    "configs/v5/video/plan_study_a.json",
+    "configs/v5/video/protocol_study_a.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/study_a_matched_calibration__ema0p2_fixed_a25__v5cal-heldout-grasp_15mm-0000.mp4",
+    "$RUNS/videos/study_a_matched_calibration__ema0p2_cal050_a25__v5cal-heldout-grasp_15mm-0000.mp4"
+   ]
+  },
+  {
+   "id": "video_slip_baselines",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v5/video/plan_slip_baselines.json",
+    "--suite",
+    "$DELIVERY/configs/v5/slip/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v5/video/protocol_slip_baselines.json"
+   ],
+   "inputs": [
+    "configs/v5/video/plan_slip_baselines.json",
+    "configs/v5/video/protocol_slip_baselines.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/slip_one_shot_vs_tracking_vs_history__geometry_calibrated__v5slip-final-slip_mixed_id-0015.mp4",
+    "$RUNS/videos/slip_one_shot_vs_tracking_vs_history__geometry_tracking__v5slip-final-slip_mixed_id-0015.mp4",
+    "$RUNS/videos/large_slip_tracking__geometry_tracking__v5slip-final-slip_pos_8-0000.mp4"
+   ]
+  },
+  {
+   "id": "video_slip_robust_history",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v5/video/plan_slip_robust_history.json",
+    "--suite",
+    "$DELIVERY/configs/v5/slip/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v5/video/protocol_slip_robust_history.json"
+   ],
+   "inputs": [
+    "configs/v5/video/plan_slip_robust_history.json",
+    "configs/v5/video/protocol_slip_robust_history.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/slip_one_shot_vs_tracking_vs_history__slip_robust_history_s111_selected__v5slip-final-slip_mixed_id-0015.mp4",
+    "$RUNS/videos/study_b_failure__slip_robust_history_s333_selected__v5slip-final-slip_mixed_id-0075.mp4",
+    "$RUNS/videos/no_slip_control__slip_robust_history_s111_selected__v5slip-final-static_mixed_id-0000.mp4"
+   ]
+  },
+  {
+   "id": "video_slip_robust_ff",
+   "kind": "isaac",
+   "argv": [
+    "scripts/record_video.py",
+    "--plan",
+    "$DELIVERY/configs/v5/video/plan_slip_robust_ff.json",
+    "--suite",
+    "$DELIVERY/configs/v5/slip/suites/final.jsonl",
+    "--protocol",
+    "$DELIVERY/configs/v5/video/protocol_slip_robust_ff.json"
+   ],
+   "inputs": [
+    "configs/v5/video/plan_slip_robust_ff.json",
+    "configs/v5/video/protocol_slip_robust_ff.json"
+   ],
+   "outputs": [
+    "$RUNS/videos/slip_feed_forward__slip_robust_ff_s111_selected__v5slip-final-slip_mixed_id-0015.mp4"
+   ]
+  },
+  {
+   "id": "video_index_montage",
+   "kind": "cpu",
+   "argv": [
+    "$DELIVERY/scripts/v5_video_index.py",
+    "--videos",
+    "$RUNS/videos",
+    "--plans",
+    "$DELIVERY/configs/v5/video",
+    "--output",
+    "$RUNS/videos"
+   ],
+   "inputs": [
+    "scripts/v5_video_index.py"
+   ],
+   "outputs": [
+    "$RUNS/videos/videos.json",
+    "$RUNS/videos/montage.mp4"
+   ]
+  }
+ ]
+}

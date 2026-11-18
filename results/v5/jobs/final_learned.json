@@ -1,0 +1,350 @@
+{
+ "name": "final_learned",
+ "tasks": [
+  {
+   "id": "final_slip_robust_ff_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s111.json",
+    "--output",
+    "$RUNS/final/slip_robust_ff_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s111.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_ff_s111/slip_robust_ff_s111__selected.jsonl",
+    "$RUNS/final/slip_robust_ff_s111/slip_robust_ff_s111__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_ff_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s222.json",
+    "--output",
+    "$RUNS/final/slip_robust_ff_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s222.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_ff_s222/slip_robust_ff_s222__selected.jsonl",
+    "$RUNS/final/slip_robust_ff_s222/slip_robust_ff_s222__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_ff_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s333.json",
+    "--output",
+    "$RUNS/final/slip_robust_ff_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s333.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_ff_s333/slip_robust_ff_s333__selected.jsonl",
+    "$RUNS/final/slip_robust_ff_s333/slip_robust_ff_s333__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_ff_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s444.json",
+    "--output",
+    "$RUNS/final/slip_robust_ff_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s444.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_ff_s444/slip_robust_ff_s444__selected.jsonl",
+    "$RUNS/final/slip_robust_ff_s444/slip_robust_ff_s444__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_ff_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s555.json",
+    "--output",
+    "$RUNS/final/slip_robust_ff_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_ff_s555.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_ff_s555/slip_robust_ff_s555__selected.jsonl",
+    "$RUNS/final/slip_robust_ff_s555/slip_robust_ff_s555__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_history_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s111.json",
+    "--output",
+    "$RUNS/final/slip_robust_history_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s111.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_history_s111/slip_robust_history_s111__selected.jsonl",
+    "$RUNS/final/slip_robust_history_s111/slip_robust_history_s111__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_history_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s222.json",
+    "--output",
+    "$RUNS/final/slip_robust_history_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s222.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_history_s222/slip_robust_history_s222__selected.jsonl",
+    "$RUNS/final/slip_robust_history_s222/slip_robust_history_s222__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_history_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s333.json",
+    "--output",
+    "$RUNS/final/slip_robust_history_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s333.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_history_s333/slip_robust_history_s333__selected.jsonl",
+    "$RUNS/final/slip_robust_history_s333/slip_robust_history_s333__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_history_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s444.json",
+    "--output",
+    "$RUNS/final/slip_robust_history_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s444.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_history_s444/slip_robust_history_s444__selected.jsonl",
+    "$RUNS/final/slip_robust_history_s444/slip_robust_history_s444__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_history_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s555.json",
+    "--output",
+    "$RUNS/final/slip_robust_history_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_history_s555.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_history_s555/slip_robust_history_s555__selected.jsonl",
+    "$RUNS/final/slip_robust_history_s555/slip_robust_history_s555__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_repeat_s111",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s111.json",
+    "--output",
+    "$RUNS/final/slip_robust_repeat_s111",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s111.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_repeat_s111/slip_robust_repeat_s111__selected.jsonl",
+    "$RUNS/final/slip_robust_repeat_s111/slip_robust_repeat_s111__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_repeat_s222",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s222.json",
+    "--output",
+    "$RUNS/final/slip_robust_repeat_s222",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s222.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_repeat_s222/slip_robust_repeat_s222__selected.jsonl",
+    "$RUNS/final/slip_robust_repeat_s222/slip_robust_repeat_s222__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_repeat_s333",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s333.json",
+    "--output",
+    "$RUNS/final/slip_robust_repeat_s333",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s333.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_repeat_s333/slip_robust_repeat_s333__selected.jsonl",
+    "$RUNS/final/slip_robust_repeat_s333/slip_robust_repeat_s333__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_repeat_s444",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s444.json",
+    "--output",
+    "$RUNS/final/slip_robust_repeat_s444",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s444.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_repeat_s444/slip_robust_repeat_s444__selected.jsonl",
+    "$RUNS/final/slip_robust_repeat_s444/slip_robust_repeat_s444__final.jsonl"
+   ]
+  },
+  {
+   "id": "final_slip_robust_repeat_s555",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s555.json",
+    "--output",
+    "$RUNS/final/slip_robust_repeat_s555",
+    "--seed",
+    "6458501",
+    "--checkpoint-root",
+    "$RUNS/train"
+   ],
+   "inputs": [
+    "$DELIVERY/configs/v5/slip/matrices_post/final/slip_robust_repeat_s555.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/slip_robust_repeat_s555/slip_robust_repeat_s555__selected.jsonl",
+    "$RUNS/final/slip_robust_repeat_s555/slip_robust_repeat_s555__final.jsonl"
+   ]
+  }
+ ]
+}

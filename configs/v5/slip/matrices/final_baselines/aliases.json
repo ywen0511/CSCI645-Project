@@ -1,0 +1,6 @@
+{
+ "declared_aliases": {
+  "geometry_best": "geometry_tracking"
+ },
+ "note": "an alias role is the same configuration as the role it points to and is evaluated once"
+}

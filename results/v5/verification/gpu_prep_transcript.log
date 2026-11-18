@@ -1,0 +1,60 @@
+[prep] utc=2026-11-18T06:05:37Z
+Note: switching to '3160c6cb86e98ee0aa5223f254b2ba4cb18e6702'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Note: switching to '13cda3af2699f0ebfdd50affb4d27fb6dde877e8'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Note: switching to 'db62bd1dbb3bb077ad4b67f3b3cd934e677db522'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+[prep] T=3160c6cb86e98ee0aa5223f254b2ba4cb18e6702 clones ok
+
+[notice] A new release of pip is available: 25.2 -> 26.3
+[notice] To update, run: <V5_WORK>/analysis-env/bin/python -m pip install --upgrade pip
+29 assets, 304.1 MB
+     28 OK
+[prep] verify rc=0
+[prep] utc=2026-11-18T06:07:04Z done

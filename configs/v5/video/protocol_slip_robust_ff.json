@@ -1,0 +1,59 @@
+{
+ "protocol_id": "v5-video-slip_robust_ff",
+ "env_overrides": {
+  "align_max": 0.025,
+  "giver_calibration_window_s": 0.5,
+  "grasp_offset_train": {
+   "clean_probability": 0.25,
+   "high_xyz_m": [
+    0.015,
+    0.0,
+    0.01
+   ],
+   "low_xyz_m": [
+    -0.005,
+    0.0,
+    -0.01
+   ]
+  },
+  "grasp_uncertainty": true,
+  "observation_giver_reference": true,
+  "observation_history": 1,
+  "observation_history_mode": "stack",
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "clean_probability": 0.25,
+   "delay_steps": 2,
+   "ema_alpha": 0.2,
+   "max_delay_steps": 8,
+   "noise_std_m": 0.002
+  },
+  "slip_mechanism": {
+   "finger_stiffness": 2000.0,
+   "force_max_n": 90.0,
+   "grip_force_n": 35.0,
+   "kd": 60.0,
+   "ki": 60000.0,
+   "kp": 6000.0,
+   "regrip_s": 0.1,
+   "tolerance_m": 0.0015
+  },
+  "slip_train": {
+   "cumulative_x": [
+    -0.007,
+    0.015
+   ],
+   "duration_s": 0.25,
+   "onset_uniform": [
+    0.7,
+    1.4
+   ],
+   "probability": 0.5,
+   "x_uniform": [
+    0.0,
+    0.008
+   ]
+  }
+ },
+ "ppo_overrides": {}
+}

@@ -1,6 +1,11 @@
 # V5 execution assignment — matched calibration ablation and dynamic in-grasp slip
 
-**Active assignment for the remote GPU agent.** Read this whole file before acting. It is
+> **Historical (completed 2026-11-18).** This assignment is done: release
+> [v5.0.0](https://github.com/ywen0511/CSCI645-Project/releases/tag/v5.0.0), report
+> [report/v5/report.md](report/v5/report.md), status [V5_STATUS.json](V5_STATUS.json) (complete),
+> verification [docs/v5/VERIFICATION.md](docs/v5/VERIFICATION.md). Do not execute it again.
+
+**(Historical) Assignment for the remote GPU agent.** Read this whole file before acting. It is
 the complete instruction: no chat history, owner-local file or further approval is needed.
 Every input is in this repository (branch `study/v5-calibration-slip`) or its public
 releases. All public output must be English. Track progress in [V5_STATUS.json](V5_STATUS.json)

@@ -1,0 +1,3851 @@
+{
+ "schema": 1,
+ "definitions": {
+  "terminal_reason": "exclusive, % of all scheduled episodes",
+  "flags": "non-exclusive diagnostics among failed valid-reset episodes",
+  "misalign_tol_m": 0.01,
+  "conflict_tol_m": 0.01
+ },
+ "cells": [
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "__all__",
+   "episodes": 2400,
+   "terminal_reason_counts": {
+    "success": 1970,
+    "prohibited_collision": 424,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 82.08333333333333,
+    "prohibited_collision": 17.666666666666668,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.25,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 424,
+   "flags_among_failed_counts": {
+    "misaligned": 146,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 18.625,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 26.833333333333332,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.901624462205142,
+    "n": 1970
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "grasp_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 7.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "clean",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.849999904632568,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "grasp_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 8,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 4.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 8,
+   "flags_among_failed_counts": {
+    "misaligned": 4,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 4.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 23.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.90911469856898,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "grasp_10mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 78,
+    "prohibited_collision": 122,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 39.0,
+    "prohibited_collision": 61.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 122,
+   "flags_among_failed_counts": {
+    "misaligned": 94,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 65.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 80.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.885897569167308,
+    "n": 78
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "grasp_15mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 15,
+    "prohibited_collision": 185,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 7.5,
+    "prohibited_collision": 92.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 185,
+   "flags_among_failed_counts": {
+    "misaligned": 17,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 93.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 14.5,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.890000184377034,
+    "n": 15
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "bias_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "noise_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "delay_2step",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "mixed_id",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 144,
+    "prohibited_collision": 56,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 72.0,
+    "prohibited_collision": 28.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 56,
+   "flags_among_failed_counts": {
+    "misaligned": 12,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 28.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 27.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.912500116560194,
+    "n": 144
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "mixed_ood",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 149,
+    "prohibited_collision": 51,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 74.5,
+    "prohibited_collision": 25.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 51,
+   "flags_among_failed_counts": {
+    "misaligned": 17,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 27.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 40.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.906375952215003,
+    "n": 149
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "boundary_x_minus_7",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 2,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 1.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 3.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 2,
+   "flags_among_failed_counts": {
+    "misaligned": 2,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 5.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 27.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907552200059096,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a15",
+   "condition": "boundary_z_15",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 93.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "__all__",
+   "episodes": 2400,
+   "terminal_reason_counts": {
+    "success": 1963,
+    "prohibited_collision": 429,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 8,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 81.79166666666667,
+    "prohibited_collision": 17.875,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.3333333333333333,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 429,
+   "flags_among_failed_counts": {
+    "misaligned": 142,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 18.666666666666668,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 21.625,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.900993480041084,
+    "n": 1963
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "grasp_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "clean",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.849999904632568,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "grasp_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 6.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "grasp_10mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 81,
+    "prohibited_collision": 119,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 40.5,
+    "prohibited_collision": 59.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 119,
+   "flags_among_failed_counts": {
+    "misaligned": 112,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 64.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 96.5,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.888889024287094,
+    "n": 81
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "grasp_15mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 0,
+    "prohibited_collision": 199,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 1,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 0.0,
+    "prohibited_collision": 99.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.5,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 199,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 99.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": null
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "bias_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "noise_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "delay_2step",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "mixed_id",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 141,
+    "prohibited_collision": 59,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 70.5,
+    "prohibited_collision": 29.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 59,
+   "flags_among_failed_counts": {
+    "misaligned": 15,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 29.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 19.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.909929197730747,
+    "n": 141
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "mixed_ood",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 149,
+    "prohibited_collision": 51,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 74.5,
+    "prohibited_collision": 25.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 51,
+   "flags_among_failed_counts": {
+    "misaligned": 15,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 26.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 37.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907047098915049,
+    "n": 149
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "boundary_x_minus_7",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 1,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 7,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 0.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 3.5,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 1,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 4.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908854293326537,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema1p0_fixed_a25",
+   "condition": "boundary_z_15",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 100.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "__all__",
+   "episodes": 2400,
+   "terminal_reason_counts": {
+    "success": 2265,
+    "prohibited_collision": 129,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 94.375,
+    "prohibited_collision": 5.375,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.25,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 129,
+   "flags_among_failed_counts": {
+    "misaligned": 23,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 6.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 15.458333333333334,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.904326798900073,
+    "n": 2265
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "grasp_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 6.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "clean",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.849999904632568,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "grasp_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 8,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 4.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 8,
+   "flags_among_failed_counts": {
+    "misaligned": 2,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 4.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 16.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.90911469856898,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "grasp_10mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 171,
+    "prohibited_collision": 29,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 85.5,
+    "prohibited_collision": 14.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 29,
+   "flags_among_failed_counts": {
+    "misaligned": 3,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 15.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 16.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.906432862867389,
+    "n": 171
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "grasp_15mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 148,
+    "prohibited_collision": 52,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 74.0,
+    "prohibited_collision": 26.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 52,
+   "flags_among_failed_counts": {
+    "misaligned": 7,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 26.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 17.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.900000114698668,
+    "n": 148
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "bias_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 10.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.917500066757202,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "noise_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908750116825104,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "delay_2step",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "mixed_id",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 184,
+    "prohibited_collision": 16,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 92.0,
+    "prohibited_collision": 8.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 16,
+   "flags_among_failed_counts": {
+    "misaligned": 2,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 8.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 18.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.9154892175093945,
+    "n": 184
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "mixed_ood",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 178,
+    "prohibited_collision": 22,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 89.0,
+    "prohibited_collision": 11.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 22,
+   "flags_among_failed_counts": {
+    "misaligned": 8,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 13.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 42.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.912359626105662,
+    "n": 178
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "boundary_x_minus_7",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 2,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 1.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 3.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 2,
+   "flags_among_failed_counts": {
+    "misaligned": 1,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 5.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 17.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.9080730353792505,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a15",
+   "condition": "boundary_z_15",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 35.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "__all__",
+   "episodes": 2400,
+   "terminal_reason_counts": {
+    "success": 2372,
+    "prohibited_collision": 23,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 5,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 98.83333333333333,
+    "prohibited_collision": 0.9583333333333334,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.20833333333333334,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 23,
+   "flags_among_failed_counts": {
+    "misaligned": 9,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 1.625,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.9166666666666665,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.904511056099131,
+    "n": 2372
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "grasp_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "clean",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.849999904632568,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "grasp_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "grasp_10mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 1.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "grasp_15mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 186,
+    "prohibited_collision": 14,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 93.0,
+    "prohibited_collision": 7.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 14,
+   "flags_among_failed_counts": {
+    "misaligned": 1,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 8.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 2.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.906720553675005,
+    "n": 186
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "bias_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.918250062465668,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "noise_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907500123977661,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "delay_2step",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "mixed_id",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.913250091075898,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "mixed_ood",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 191,
+    "prohibited_collision": 9,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 95.5,
+    "prohibited_collision": 4.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 9,
+   "flags_among_failed_counts": {
+    "misaligned": 8,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 6.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 37.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.9136126478305036,
+    "n": 191
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "boundary_x_minus_7",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 195,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 5,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 97.5,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 2.5,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 5.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.909230894920153,
+    "n": 195
+   }
+  },
+  {
+   "entry": "ema1p0_cal050_a25",
+   "condition": "boundary_z_15",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 6.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "__all__",
+   "episodes": 2400,
+   "terminal_reason_counts": {
+    "success": 1970,
+    "prohibited_collision": 424,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 82.08333333333333,
+    "prohibited_collision": 17.666666666666668,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.25,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 424,
+   "flags_among_failed_counts": {
+    "misaligned": 146,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 18.625,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 26.833333333333332,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.901624462205142,
+    "n": 1970
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "grasp_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 7.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "clean",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.849999904632568,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "grasp_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 8,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 4.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 8,
+   "flags_among_failed_counts": {
+    "misaligned": 4,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 4.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 23.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.90911469856898,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "grasp_10mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 78,
+    "prohibited_collision": 122,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 39.0,
+    "prohibited_collision": 61.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 122,
+   "flags_among_failed_counts": {
+    "misaligned": 94,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 65.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 80.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.885897569167308,
+    "n": 78
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "grasp_15mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 15,
+    "prohibited_collision": 185,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 7.5,
+    "prohibited_collision": 92.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 185,
+   "flags_among_failed_counts": {
+    "misaligned": 17,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 93.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 14.5,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.890000184377034,
+    "n": 15
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "bias_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "noise_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "delay_2step",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "mixed_id",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 144,
+    "prohibited_collision": 56,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 72.0,
+    "prohibited_collision": 28.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 56,
+   "flags_among_failed_counts": {
+    "misaligned": 12,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 28.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 27.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.912500116560194,
+    "n": 144
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "mixed_ood",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 149,
+    "prohibited_collision": 51,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 74.5,
+    "prohibited_collision": 25.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 51,
+   "flags_among_failed_counts": {
+    "misaligned": 17,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 27.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 40.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.906375952215003,
+    "n": 149
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "boundary_x_minus_7",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 2,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 1.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 3.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 2,
+   "flags_among_failed_counts": {
+    "misaligned": 2,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 5.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 27.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907552200059096,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a15",
+   "condition": "boundary_z_15",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 93.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "__all__",
+   "episodes": 2400,
+   "terminal_reason_counts": {
+    "success": 1963,
+    "prohibited_collision": 429,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 8,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 81.79166666666667,
+    "prohibited_collision": 17.875,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.3333333333333333,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 429,
+   "flags_among_failed_counts": {
+    "misaligned": 142,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 18.666666666666668,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 21.625,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.900993480041084,
+    "n": 1963
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "grasp_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "clean",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.849999904632568,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "grasp_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 6.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "grasp_10mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 81,
+    "prohibited_collision": 119,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 40.5,
+    "prohibited_collision": 59.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 119,
+   "flags_among_failed_counts": {
+    "misaligned": 112,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 64.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 96.5,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.888889024287094,
+    "n": 81
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "grasp_15mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 0,
+    "prohibited_collision": 199,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 1,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 0.0,
+    "prohibited_collision": 99.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.5,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 199,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 99.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": null
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "bias_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "noise_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "delay_2step",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "mixed_id",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 141,
+    "prohibited_collision": 59,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 70.5,
+    "prohibited_collision": 29.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 59,
+   "flags_among_failed_counts": {
+    "misaligned": 15,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 29.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 19.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.909929197730747,
+    "n": 141
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "mixed_ood",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 149,
+    "prohibited_collision": 51,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 74.5,
+    "prohibited_collision": 25.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 51,
+   "flags_among_failed_counts": {
+    "misaligned": 15,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 26.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 37.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907047098915049,
+    "n": 149
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "boundary_x_minus_7",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 1,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 7,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 0.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 3.5,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 1,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 4.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908854293326537,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema0p2_fixed_a25",
+   "condition": "boundary_z_15",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 100.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "__all__",
+   "episodes": 2400,
+   "terminal_reason_counts": {
+    "success": 2265,
+    "prohibited_collision": 129,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 94.375,
+    "prohibited_collision": 5.375,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.25,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 129,
+   "flags_among_failed_counts": {
+    "misaligned": 23,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 6.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 15.458333333333334,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.904326798900073,
+    "n": 2265
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "grasp_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 6.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "clean",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.849999904632568,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "grasp_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 8,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 4.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 8,
+   "flags_among_failed_counts": {
+    "misaligned": 2,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 4.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 16.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.90911469856898,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "grasp_10mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 171,
+    "prohibited_collision": 29,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 85.5,
+    "prohibited_collision": 14.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 29,
+   "flags_among_failed_counts": {
+    "misaligned": 3,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 15.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 16.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.906432862867389,
+    "n": 171
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "grasp_15mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 148,
+    "prohibited_collision": 52,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 74.0,
+    "prohibited_collision": 26.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 52,
+   "flags_among_failed_counts": {
+    "misaligned": 7,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 26.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 17.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.900000114698668,
+    "n": 148
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "bias_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 10.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.917500066757202,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "noise_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908750116825104,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "delay_2step",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "mixed_id",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 184,
+    "prohibited_collision": 16,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 92.0,
+    "prohibited_collision": 8.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 16,
+   "flags_among_failed_counts": {
+    "misaligned": 2,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 8.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 18.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.9154892175093945,
+    "n": 184
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "mixed_ood",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 178,
+    "prohibited_collision": 22,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 89.0,
+    "prohibited_collision": 11.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 22,
+   "flags_among_failed_counts": {
+    "misaligned": 8,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 13.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 42.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.912359626105662,
+    "n": 178
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "boundary_x_minus_7",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 192,
+    "prohibited_collision": 2,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 96.0,
+    "prohibited_collision": 1.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 3.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 2,
+   "flags_among_failed_counts": {
+    "misaligned": 1,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 5.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 17.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.9080730353792505,
+    "n": 192
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a15",
+   "condition": "boundary_z_15",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 35.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.908500118255615,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "__all__",
+   "episodes": 2400,
+   "terminal_reason_counts": {
+    "success": 2372,
+    "prohibited_collision": 23,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 5,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 98.83333333333333,
+    "prohibited_collision": 0.9583333333333334,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.20833333333333334,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 23,
+   "flags_among_failed_counts": {
+    "misaligned": 9,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 1.625,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 3.9166666666666665,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.904511056099131,
+    "n": 2372
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "grasp_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "clean",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.849999904632568,
+    "mean": 4.849999904632568,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "grasp_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "grasp_10mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 1.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "grasp_15mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 186,
+    "prohibited_collision": 14,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 93.0,
+    "prohibited_collision": 7.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 14,
+   "flags_among_failed_counts": {
+    "misaligned": 1,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 8.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 2.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.906720553675005,
+    "n": 186
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "bias_5mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.918250062465668,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "noise_2mm",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907500123977661,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "delay_2step",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "mixed_id",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.913250091075898,
+    "n": 200
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "mixed_ood",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 191,
+    "prohibited_collision": 9,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 95.5,
+    "prohibited_collision": 4.5,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 9,
+   "flags_among_failed_counts": {
+    "misaligned": 8,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 6.5,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 37.5,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.9136126478305036,
+    "n": 191
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "boundary_x_minus_7",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 195,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 5,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 97.5,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 2.5,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 5.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 0.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.909230894920153,
+    "n": 195
+   }
+  },
+  {
+   "entry": "ema0p2_cal050_a25",
+   "condition": "boundary_z_15",
+   "episodes": 200,
+   "terminal_reason_counts": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0,
+    "invalid_slip": 0
+   },
+   "terminal_reason_pct": {
+    "success": 100.0,
+    "prohibited_collision": 0.0,
+    "drop": 0.0,
+    "episode_timeout": 0.0,
+    "release_timeout": 0.0,
+    "invalid_reset": 0.0,
+    "invalid_slip": 0.0
+   },
+   "failed_valid_episodes": 0,
+   "flags_among_failed_counts": {
+    "misaligned": 0,
+    "premature_release": 0,
+    "conflicting_motion": 0
+   },
+   "any_collision_pct": 0.0,
+   "any_drop_pct": 0.0,
+   "misaligned_at_grasp_pct": 6.0,
+   "completion_time_s_successes": {
+    "median": 4.900000095367432,
+    "mean": 4.907250125408172,
+    "n": 200
+   }
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "name": "v5_reload_slip_robust_history",
+ "suite": "$DELIVERY/configs/v5/verification/reload7.jsonl",
+ "num_envs": 7,
+ "protocol": "configs/v5/slip/training/slip_robust_history.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "slip_robust_history_s111__selected",
+   "method": "combined",
+   "training_seed": 111,
+   "role": "selected",
+   "checkpoint": "slip_robust_history_s111/checkpoints/step_005013504.pt"
+  }
+ ]
+}

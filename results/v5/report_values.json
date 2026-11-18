@@ -1,0 +1,3464 @@
+{
+ "a.A1": {
+  "value": 29.500000000000004,
+  "text": "+29.5 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].difference_pp"
+ },
+ "a.A1.ci95": {
+  "value": [
+   23.5,
+   36.0
+  ],
+  "text": "[+23.5, +36.0]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].ci95"
+ },
+ "a.A1.ci975": {
+  "value": [
+   22.499999999999996,
+   36.5
+  ],
+  "text": "[+22.5, +36.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].ci97.5"
+ },
+ "a.A1.decision": {
+  "value": true,
+  "text": "supported",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].supports_calibration_only_improvement"
+ },
+ "a.A2": {
+  "value": 93.0,
+  "text": "+93.0 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].difference_pp"
+ },
+ "a.A2.ci95": {
+  "value": [
+   89.0,
+   96.0
+  ],
+  "text": "[+89.0, +96.0]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].ci95"
+ },
+ "a.A2.ci975": {
+  "value": [
+   88.5,
+   96.5
+  ],
+  "text": "[+88.5, +96.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].ci97.5"
+ },
+ "a.A2.decision": {
+  "value": true,
+  "text": "supported",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].supports_calibration_only_improvement"
+ },
+ "a.succ.ema1p0_fixed_a15.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,clean].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.grasp_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,grasp_2mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.grasp_5mm": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,grasp_5mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.grasp_10mm": {
+  "value": 39.0,
+  "text": "39.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,grasp_10mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.grasp_15mm": {
+  "value": 7.5,
+  "text": "7.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,grasp_15mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.bias_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,bias_5mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.noise_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,noise_2mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.delay_2step": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,delay_2step].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.mixed_id": {
+  "value": 72.0,
+  "text": "72.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,mixed_id].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.mixed_ood": {
+  "value": 74.5,
+  "text": "74.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,mixed_ood].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.boundary_x_minus_7": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,boundary_x_minus_7].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a15.boundary_z_15": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a15,boundary_z_15].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,clean].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.grasp_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,grasp_2mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.grasp_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,grasp_5mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.grasp_10mm": {
+  "value": 40.5,
+  "text": "40.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,grasp_10mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.grasp_15mm": {
+  "value": 0.0,
+  "text": "0.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,grasp_15mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.bias_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,bias_5mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.noise_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,noise_2mm].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.delay_2step": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,delay_2step].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.mixed_id": {
+  "value": 70.5,
+  "text": "70.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,mixed_id].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.mixed_ood": {
+  "value": 74.5,
+  "text": "74.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,mixed_ood].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.boundary_x_minus_7": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,boundary_x_minus_7].success_pct"
+ },
+ "a.succ.ema1p0_fixed_a25.boundary_z_15": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_fixed_a25,boundary_z_15].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,clean].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.grasp_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,grasp_2mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.grasp_5mm": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,grasp_5mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.grasp_10mm": {
+  "value": 85.5,
+  "text": "85.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,grasp_10mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.grasp_15mm": {
+  "value": 74.0,
+  "text": "74.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,grasp_15mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.bias_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,bias_5mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.noise_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,noise_2mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.delay_2step": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,delay_2step].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.mixed_id": {
+  "value": 92.0,
+  "text": "92.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,mixed_id].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.mixed_ood": {
+  "value": 89.0,
+  "text": "89.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,mixed_ood].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.boundary_x_minus_7": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,boundary_x_minus_7].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a15.boundary_z_15": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a15,boundary_z_15].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,clean].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.grasp_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,grasp_2mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.grasp_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,grasp_5mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.grasp_10mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,grasp_10mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.grasp_15mm": {
+  "value": 93.0,
+  "text": "93.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,grasp_15mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.bias_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,bias_5mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.noise_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,noise_2mm].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.delay_2step": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,delay_2step].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,mixed_id].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.mixed_ood": {
+  "value": 95.5,
+  "text": "95.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,mixed_ood].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.boundary_x_minus_7": {
+  "value": 97.5,
+  "text": "97.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,boundary_x_minus_7].success_pct"
+ },
+ "a.succ.ema1p0_cal050_a25.boundary_z_15": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema1p0_cal050_a25,boundary_z_15].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,clean].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.grasp_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,grasp_2mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.grasp_5mm": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,grasp_5mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.grasp_10mm": {
+  "value": 39.0,
+  "text": "39.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,grasp_10mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.grasp_15mm": {
+  "value": 7.5,
+  "text": "7.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,grasp_15mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.bias_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,bias_5mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.noise_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,noise_2mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.delay_2step": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,delay_2step].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.mixed_id": {
+  "value": 72.0,
+  "text": "72.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,mixed_id].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.mixed_ood": {
+  "value": 74.5,
+  "text": "74.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,mixed_ood].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.boundary_x_minus_7": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,boundary_x_minus_7].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a15.boundary_z_15": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a15,boundary_z_15].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,clean].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.grasp_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,grasp_2mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.grasp_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,grasp_5mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.grasp_10mm": {
+  "value": 40.5,
+  "text": "40.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,grasp_10mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.grasp_15mm": {
+  "value": 0.0,
+  "text": "0.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,grasp_15mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.bias_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,bias_5mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.noise_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,noise_2mm].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.delay_2step": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,delay_2step].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.mixed_id": {
+  "value": 70.5,
+  "text": "70.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,mixed_id].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.mixed_ood": {
+  "value": 74.5,
+  "text": "74.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,mixed_ood].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.boundary_x_minus_7": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,boundary_x_minus_7].success_pct"
+ },
+ "a.succ.ema0p2_fixed_a25.boundary_z_15": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_fixed_a25,boundary_z_15].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,clean].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.grasp_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,grasp_2mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.grasp_5mm": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,grasp_5mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.grasp_10mm": {
+  "value": 85.5,
+  "text": "85.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,grasp_10mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.grasp_15mm": {
+  "value": 74.0,
+  "text": "74.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,grasp_15mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.bias_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,bias_5mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.noise_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,noise_2mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.delay_2step": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,delay_2step].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.mixed_id": {
+  "value": 92.0,
+  "text": "92.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,mixed_id].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.mixed_ood": {
+  "value": 89.0,
+  "text": "89.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,mixed_ood].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.boundary_x_minus_7": {
+  "value": 96.0,
+  "text": "96.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,boundary_x_minus_7].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a15.boundary_z_15": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a15,boundary_z_15].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,clean].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.grasp_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,grasp_2mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.grasp_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,grasp_5mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.grasp_10mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,grasp_10mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.grasp_15mm": {
+  "value": 93.0,
+  "text": "93.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,grasp_15mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.bias_5mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,bias_5mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.noise_2mm": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,noise_2mm].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.delay_2step": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,delay_2step].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,mixed_id].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.mixed_ood": {
+  "value": 95.5,
+  "text": "95.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,mixed_ood].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.boundary_x_minus_7": {
+  "value": 97.5,
+  "text": "97.5",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,boundary_x_minus_7].success_pct"
+ },
+ "a.succ.ema0p2_cal050_a25.boundary_z_15": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells[ema0p2_cal050_a25,boundary_z_15].success_pct"
+ },
+ "a.main.mixed_id.reference": {
+  "value": [
+   24.750000000000007,
+   19.25,
+   30.499999999999993
+  ],
+  "text": "+24.8 pp [+19.2, +30.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_id,reference]"
+ },
+ "a.main.mixed_id.ema": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_id,ema]"
+ },
+ "a.main.mixed_id.bound": {
+  "value": [
+   3.2499999999999947,
+   1.250000000000001,
+   5.250000000000002
+  ],
+  "text": "+3.2 pp [+1.3, +5.3]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_id,bound]"
+ },
+ "a.main.grasp_15mm.reference": {
+  "value": [
+   79.75,
+   75.49999999999999,
+   83.75
+  ],
+  "text": "+79.8 pp [+75.5, +83.8]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[grasp_15mm,reference]"
+ },
+ "a.main.grasp_15mm.ema": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[grasp_15mm,ema]"
+ },
+ "a.main.grasp_15mm.bound": {
+  "value": [
+   5.750000000000005,
+   2.2500000000000018,
+   9.250000000000004
+  ],
+  "text": "+5.8 pp [+2.3, +9.3]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[grasp_15mm,bound]"
+ },
+ "a.main.mixed_ood.reference": {
+  "value": [
+   17.750000000000004,
+   12.0,
+   23.500000000000007
+  ],
+  "text": "+17.8 pp [+12.0, +23.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_ood,reference]"
+ },
+ "a.main.mixed_ood.ema": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_ood,ema]"
+ },
+ "a.main.mixed_ood.bound": {
+  "value": [
+   3.25,
+   1.0000000000000009,
+   5.7499999999999964
+  ],
+  "text": "+3.2 pp [+1.0, +5.7]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_ood,bound]"
+ },
+ "a.rep.ema0p2_fixed_a25": {
+  "value": 2400,
+  "text": "2,400/2,400",
+  "source": "results/v5/calibration/summary.json",
+  "field": "repeatability[ema0p2_fixed_a25]"
+ },
+ "a.rep.ema0p2_cal050_a25": {
+  "value": 2400,
+  "text": "2,400/2,400",
+  "source": "results/v5/calibration/summary.json",
+  "field": "repeatability[ema0p2_cal050_a25]"
+ },
+ "table.a.cells": {
+  "value": null,
+  "text": "| Configuration | Reference | EMA α | Bound | clean | grasp 10mm | grasp 15mm | mixed id | mixed ood | boundary x minus 7 |\n|---|---|---|---|---|---|---|---|---|---|\n| `ema1p0_fixed_a15` | fixed | 1.0 | 15 mm | 100.0 | 39.0 | 7.5 | 72.0 | 74.5 | 96.0 |\n| `ema1p0_fixed_a25` | fixed | 1.0 | 25 mm | 100.0 | 40.5 | 0.0 | 70.5 | 74.5 | 96.0 |\n| `ema1p0_cal050_a15` | calibrated 0.5 s | 1.0 | 15 mm | 100.0 | 85.5 | 74.0 | 92.0 | 89.0 | 96.0 |\n| `ema1p0_cal050_a25` | calibrated 0.5 s | 1.0 | 25 mm | 100.0 | 100.0 | 93.0 | 100.0 | 95.5 | 97.5 |\n| `ema0p2_fixed_a15` | fixed | 0.2 | 15 mm | 100.0 | 39.0 | 7.5 | 72.0 | 74.5 | 96.0 |\n| `ema0p2_fixed_a25` | fixed | 0.2 | 25 mm | 100.0 | 40.5 | 0.0 | 70.5 | 74.5 | 96.0 |\n| `ema0p2_cal050_a15` | calibrated 0.5 s | 0.2 | 15 mm | 100.0 | 85.5 | 74.0 | 92.0 | 89.0 | 96.0 |\n| `ema0p2_cal050_a25` | calibrated 0.5 s | 0.2 | 25 mm | 100.0 | 100.0 | 93.0 | 100.0 | 95.5 | 97.5 |",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells"
+ },
+ "table.a.taxonomy": {
+  "value": null,
+  "text": "| Configuration | Condition | Success | Collision | Invalid reset | Misaligned at grasp |\n|---|---|---|---|---|---|\n| `ema0p2_fixed_a25` | mixed id | 70.5 | 29.5 | 0.0 | 19.5 |\n| `ema0p2_fixed_a25` | grasp 15mm | 0.0 | 99.5 | 0.5 | 0.0 |\n| `ema0p2_cal050_a25` | mixed id | 100.0 | 0.0 | 0.0 | 0.0 |\n| `ema0p2_cal050_a25` | grasp 15mm | 93.0 | 7.0 | 0.0 | 2.5 |",
+  "source": "results/v5/calibration/taxonomy/taxonomy.json",
+  "field": "cells"
+ },
+ "b.B1": {
+  "value": -1.0,
+  "text": "−1.0 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].difference_pp"
+ },
+ "b.B1.ci95": {
+  "value": [
+   -3.1,
+   0.8999999999999999
+  ],
+  "text": "[−3.1, +0.9]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].ci95"
+ },
+ "b.B1.ci975": {
+  "value": [
+   -3.4000000000000004,
+   1.3
+  ],
+  "text": "[−3.4, +1.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].ci97.5"
+ },
+ "b.B1.decision": {
+  "value": false,
+  "text": "not established",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].superiority_established"
+ },
+ "b.B2": {
+  "value": 0.8999999999999999,
+  "text": "+0.9 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].difference_pp"
+ },
+ "b.B2.ci95": {
+  "value": [
+   -2.1999999999999997,
+   4.1000000000000005
+  ],
+  "text": "[−2.2, +4.1]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].ci95"
+ },
+ "b.B2.ci975": {
+  "value": [
+   -2.6,
+   4.601250000000072
+  ],
+  "text": "[−2.6, +4.6]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].ci97.5"
+ },
+ "b.B2.decision": {
+  "value": false,
+  "text": "not established",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].superiority_established"
+ },
+ "b.succ.nominal.baseline.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,clean].success_pct"
+ },
+ "b.succ.nominal.baseline.static_mixed_id": {
+  "value": 52.5,
+  "text": "52.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,static_mixed_id].success_pct"
+ },
+ "b.succ.nominal.baseline.slip_pos_5": {
+  "value": 60.0,
+  "text": "60.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_pos_5].success_pct"
+ },
+ "b.succ.nominal.baseline.slip_pos_8": {
+  "value": 52.0,
+  "text": "52.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_pos_8].success_pct"
+ },
+ "b.succ.nominal.baseline.slip_after_offset": {
+  "value": 62.0,
+  "text": "62.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_after_offset].success_pct"
+ },
+ "b.succ.nominal.baseline.slip_mixed_id": {
+  "value": 46.0,
+  "text": "46.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_mixed_id].success_pct"
+ },
+ "b.succ.nominal.baseline.slip_mixed_ood": {
+  "value": 48.5,
+  "text": "48.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_mixed_ood].success_pct"
+ },
+ "b.succ.geometry_fixed.baseline.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,clean].success_pct"
+ },
+ "b.succ.geometry_fixed.baseline.static_mixed_id": {
+  "value": 69.0,
+  "text": "69.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,static_mixed_id].success_pct"
+ },
+ "b.succ.geometry_fixed.baseline.slip_pos_5": {
+  "value": 94.0,
+  "text": "94.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_pos_5].success_pct"
+ },
+ "b.succ.geometry_fixed.baseline.slip_pos_8": {
+  "value": 77.0,
+  "text": "77.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_pos_8].success_pct"
+ },
+ "b.succ.geometry_fixed.baseline.slip_after_offset": {
+  "value": 98.5,
+  "text": "98.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_after_offset].success_pct"
+ },
+ "b.succ.geometry_fixed.baseline.slip_mixed_id": {
+  "value": 52.5,
+  "text": "52.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_mixed_id].success_pct"
+ },
+ "b.succ.geometry_fixed.baseline.slip_mixed_ood": {
+  "value": 59.5,
+  "text": "59.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_mixed_ood].success_pct"
+ },
+ "b.succ.geometry_ema.baseline.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_ema,baseline,clean].success_pct"
+ },
+ "b.succ.geometry_ema.baseline.static_mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_ema,baseline,static_mixed_id].success_pct"
+ },
+ "b.succ.geometry_ema.baseline.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_ema,baseline,slip_pos_5].success_pct"
+ },
+ "b.succ.geometry_ema.baseline.slip_pos_8": {
+  "value": 95.5,
+  "text": "95.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_ema,baseline,slip_pos_8].success_pct"
+ },
+ "b.succ.geometry_ema.baseline.slip_after_offset": {
+  "value": 97.5,
+  "text": "97.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_ema,baseline,slip_after_offset].success_pct"
+ },
+ "b.succ.geometry_ema.baseline.slip_mixed_id": {
+  "value": 92.0,
+  "text": "92.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_ema,baseline,slip_mixed_id].success_pct"
+ },
+ "b.succ.geometry_ema.baseline.slip_mixed_ood": {
+  "value": 85.5,
+  "text": "85.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_ema,baseline,slip_mixed_ood].success_pct"
+ },
+ "b.succ.geometry_calibrated.baseline.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,clean].success_pct"
+ },
+ "b.succ.geometry_calibrated.baseline.static_mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,static_mixed_id].success_pct"
+ },
+ "b.succ.geometry_calibrated.baseline.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_pos_5].success_pct"
+ },
+ "b.succ.geometry_calibrated.baseline.slip_pos_8": {
+  "value": 97.5,
+  "text": "97.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_pos_8].success_pct"
+ },
+ "b.succ.geometry_calibrated.baseline.slip_after_offset": {
+  "value": 99.5,
+  "text": "99.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_after_offset].success_pct"
+ },
+ "b.succ.geometry_calibrated.baseline.slip_mixed_id": {
+  "value": 90.0,
+  "text": "90.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_mixed_id].success_pct"
+ },
+ "b.succ.geometry_calibrated.baseline.slip_mixed_ood": {
+  "value": 80.5,
+  "text": "80.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_mixed_ood].success_pct"
+ },
+ "b.succ.geometry_tracking.baseline.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,clean].success_pct"
+ },
+ "b.succ.geometry_tracking.baseline.static_mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,static_mixed_id].success_pct"
+ },
+ "b.succ.geometry_tracking.baseline.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_pos_5].success_pct"
+ },
+ "b.succ.geometry_tracking.baseline.slip_pos_8": {
+  "value": 96.5,
+  "text": "96.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_pos_8].success_pct"
+ },
+ "b.succ.geometry_tracking.baseline.slip_after_offset": {
+  "value": 99.5,
+  "text": "99.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_after_offset].success_pct"
+ },
+ "b.succ.geometry_tracking.baseline.slip_mixed_id": {
+  "value": 92.0,
+  "text": "92.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_mixed_id].success_pct"
+ },
+ "b.succ.geometry_tracking.baseline.slip_mixed_ood": {
+  "value": 87.5,
+  "text": "87.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_mixed_ood].success_pct"
+ },
+ "b.succ.best_constant_geometry.baseline.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,clean].success_pct"
+ },
+ "b.succ.best_constant_geometry.baseline.static_mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,static_mixed_id].success_pct"
+ },
+ "b.succ.best_constant_geometry.baseline.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_pos_5].success_pct"
+ },
+ "b.succ.best_constant_geometry.baseline.slip_pos_8": {
+  "value": 97.5,
+  "text": "97.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_pos_8].success_pct"
+ },
+ "b.succ.best_constant_geometry.baseline.slip_after_offset": {
+  "value": 99.0,
+  "text": "99.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_after_offset].success_pct"
+ },
+ "b.succ.best_constant_geometry.baseline.slip_mixed_id": {
+  "value": 94.5,
+  "text": "94.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_mixed_id].success_pct"
+ },
+ "b.succ.best_constant_geometry.baseline.slip_mixed_ood": {
+  "value": 92.5,
+  "text": "92.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_mixed_ood].success_pct"
+ },
+ "b.succ.geometry_best.baseline.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_best,baseline,clean].success_pct"
+ },
+ "b.succ.geometry_best.baseline.static_mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_best,baseline,static_mixed_id].success_pct"
+ },
+ "b.succ.geometry_best.baseline.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_best,baseline,slip_pos_5].success_pct"
+ },
+ "b.succ.geometry_best.baseline.slip_pos_8": {
+  "value": 96.5,
+  "text": "96.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_best,baseline,slip_pos_8].success_pct"
+ },
+ "b.succ.geometry_best.baseline.slip_after_offset": {
+  "value": 99.5,
+  "text": "99.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_best,baseline,slip_after_offset].success_pct"
+ },
+ "b.succ.geometry_best.baseline.slip_mixed_id": {
+  "value": 92.0,
+  "text": "92.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_best,baseline,slip_mixed_id].success_pct"
+ },
+ "b.succ.geometry_best.baseline.slip_mixed_ood": {
+  "value": 87.5,
+  "text": "87.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_best,baseline,slip_mixed_ood].success_pct"
+ },
+ "b.succ.slip_robust_ff.selected.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,clean].success_pct"
+ },
+ "b.seeds.slip_robust_ff.selected.clean": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.selected.static_mixed_id": {
+  "value": 99.9,
+  "text": "99.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,static_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_ff.selected.static_mixed_id": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   99.5,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 99.5 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.selected.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_pos_5].success_pct"
+ },
+ "b.seeds.slip_robust_ff.selected.slip_pos_5": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.selected.slip_pos_8": {
+  "value": 96.8,
+  "text": "96.8",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_pos_8].success_pct"
+ },
+ "b.seeds.slip_robust_ff.selected.slip_pos_8": {
+  "value": [
+   97.5,
+   97.0,
+   97.0,
+   96.5,
+   96.0
+  ],
+  "text": "97.5 / 97.0 / 97.0 / 96.5 / 96.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.selected.slip_after_offset": {
+  "value": 98.9,
+  "text": "98.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_after_offset].success_pct"
+ },
+ "b.seeds.slip_robust_ff.selected.slip_after_offset": {
+  "value": [
+   99.0,
+   99.5,
+   99.0,
+   98.5,
+   98.5
+  ],
+  "text": "99.0 / 99.5 / 99.0 / 98.5 / 98.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.selected.slip_mixed_id": {
+  "value": 93.89999999999999,
+  "text": "93.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_ff.selected.slip_mixed_id": {
+  "value": [
+   95.0,
+   94.0,
+   93.5,
+   93.0,
+   94.0
+  ],
+  "text": "95.0 / 94.0 / 93.5 / 93.0 / 94.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.selected.slip_mixed_ood": {
+  "value": 90.7,
+  "text": "90.7",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_mixed_ood].success_pct"
+ },
+ "b.seeds.slip_robust_ff.selected.slip_mixed_ood": {
+  "value": [
+   90.0,
+   89.0,
+   92.5,
+   92.5,
+   89.5
+  ],
+  "text": "90.0 / 89.0 / 92.5 / 92.5 / 89.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.final.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,final,clean].success_pct"
+ },
+ "b.seeds.slip_robust_ff.final.clean": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.final.static_mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,final,static_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_ff.final.static_mixed_id": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.final.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,final,slip_pos_5].success_pct"
+ },
+ "b.seeds.slip_robust_ff.final.slip_pos_5": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.final.slip_pos_8": {
+  "value": 97.0,
+  "text": "97.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,final,slip_pos_8].success_pct"
+ },
+ "b.seeds.slip_robust_ff.final.slip_pos_8": {
+  "value": [
+   97.0,
+   97.5,
+   97.0,
+   97.0,
+   96.5
+  ],
+  "text": "97.0 / 97.5 / 97.0 / 97.0 / 96.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.final.slip_after_offset": {
+  "value": 98.8,
+  "text": "98.8",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,final,slip_after_offset].success_pct"
+ },
+ "b.seeds.slip_robust_ff.final.slip_after_offset": {
+  "value": [
+   98.5,
+   99.0,
+   98.5,
+   98.5,
+   99.5
+  ],
+  "text": "98.5 / 99.0 / 98.5 / 98.5 / 99.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.final.slip_mixed_id": {
+  "value": 93.8,
+  "text": "93.8",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,final,slip_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_ff.final.slip_mixed_id": {
+  "value": [
+   95.0,
+   93.5,
+   94.0,
+   95.0,
+   91.5
+  ],
+  "text": "95.0 / 93.5 / 94.0 / 95.0 / 91.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_ff.final.slip_mixed_ood": {
+  "value": 90.9,
+  "text": "90.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,final,slip_mixed_ood].success_pct"
+ },
+ "b.seeds.slip_robust_ff.final.slip_mixed_ood": {
+  "value": [
+   90.5,
+   90.0,
+   93.5,
+   91.5,
+   89.0
+  ],
+  "text": "90.5 / 90.0 / 93.5 / 91.5 / 89.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.selected.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,clean].success_pct"
+ },
+ "b.seeds.slip_robust_history.selected.clean": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.selected.static_mixed_id": {
+  "value": 99.0,
+  "text": "99.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,static_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_history.selected.static_mixed_id": {
+  "value": [
+   100.0,
+   100.0,
+   95.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 95.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.selected.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_pos_5].success_pct"
+ },
+ "b.seeds.slip_robust_history.selected.slip_pos_5": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.selected.slip_pos_8": {
+  "value": 96.89999999999999,
+  "text": "96.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_pos_8].success_pct"
+ },
+ "b.seeds.slip_robust_history.selected.slip_pos_8": {
+  "value": [
+   97.5,
+   97.0,
+   95.0,
+   97.5,
+   97.5
+  ],
+  "text": "97.5 / 97.0 / 95.0 / 97.5 / 97.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.selected.slip_after_offset": {
+  "value": 99.4,
+  "text": "99.4",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_after_offset].success_pct"
+ },
+ "b.seeds.slip_robust_history.selected.slip_after_offset": {
+  "value": [
+   99.0,
+   99.5,
+   99.5,
+   99.5,
+   99.5
+  ],
+  "text": "99.0 / 99.5 / 99.5 / 99.5 / 99.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.selected.slip_mixed_id": {
+  "value": 92.9,
+  "text": "92.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_history.selected.slip_mixed_id": {
+  "value": [
+   93.5,
+   94.0,
+   92.5,
+   92.0,
+   92.5
+  ],
+  "text": "93.5 / 94.0 / 92.5 / 92.0 / 92.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.selected.slip_mixed_ood": {
+  "value": 91.4,
+  "text": "91.4",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_mixed_ood].success_pct"
+ },
+ "b.seeds.slip_robust_history.selected.slip_mixed_ood": {
+  "value": [
+   94.0,
+   91.5,
+   87.5,
+   90.0,
+   94.0
+  ],
+  "text": "94.0 / 91.5 / 87.5 / 90.0 / 94.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.final.clean": {
+  "value": 60.0,
+  "text": "60.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,final,clean].success_pct"
+ },
+ "b.seeds.slip_robust_history.final.clean": {
+  "value": [
+   0.0,
+   100.0,
+   100.0,
+   100.0,
+   0.0
+  ],
+  "text": "0.0 / 100.0 / 100.0 / 100.0 / 0.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.final.static_mixed_id": {
+  "value": 63.0,
+  "text": "63.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,final,static_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_history.final.static_mixed_id": {
+  "value": [
+   31.5,
+   100.0,
+   69.5,
+   98.5,
+   15.5
+  ],
+  "text": "31.5 / 100.0 / 69.5 / 98.5 / 15.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.final.slip_pos_5": {
+  "value": 80.5,
+  "text": "80.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,final,slip_pos_5].success_pct"
+ },
+ "b.seeds.slip_robust_history.final.slip_pos_5": {
+  "value": [
+   100.0,
+   100.0,
+   95.5,
+   100.0,
+   7.000000000000001
+  ],
+  "text": "100.0 / 100.0 / 95.5 / 100.0 / 7.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.final.slip_pos_8": {
+  "value": 78.0,
+  "text": "78.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,final,slip_pos_8].success_pct"
+ },
+ "b.seeds.slip_robust_history.final.slip_pos_8": {
+  "value": [
+   96.0,
+   97.5,
+   92.5,
+   97.0,
+   7.000000000000001
+  ],
+  "text": "96.0 / 97.5 / 92.5 / 97.0 / 7.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.final.slip_after_offset": {
+  "value": 79.2,
+  "text": "79.2",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,final,slip_after_offset].success_pct"
+ },
+ "b.seeds.slip_robust_history.final.slip_after_offset": {
+  "value": [
+   99.0,
+   98.5,
+   93.5,
+   98.0,
+   7.000000000000001
+  ],
+  "text": "99.0 / 98.5 / 93.5 / 98.0 / 7.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.final.slip_mixed_id": {
+  "value": 63.7,
+  "text": "63.7",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,final,slip_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_history.final.slip_mixed_id": {
+  "value": [
+   47.0,
+   92.5,
+   76.5,
+   92.0,
+   10.5
+  ],
+  "text": "47.0 / 92.5 / 76.5 / 92.0 / 10.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_history.final.slip_mixed_ood": {
+  "value": 59.099999999999994,
+  "text": "59.1",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,final,slip_mixed_ood].success_pct"
+ },
+ "b.seeds.slip_robust_history.final.slip_mixed_ood": {
+  "value": [
+   43.0,
+   92.0,
+   67.0,
+   79.5,
+   14.000000000000002
+  ],
+  "text": "43.0 / 92.0 / 67.0 / 79.5 / 14.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.selected.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,clean].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.selected.clean": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.selected.static_mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,static_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.selected.static_mixed_id": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.selected.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_pos_5].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.selected.slip_pos_5": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.selected.slip_pos_8": {
+  "value": 97.0,
+  "text": "97.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_pos_8].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.selected.slip_pos_8": {
+  "value": [
+   97.5,
+   96.5,
+   96.5,
+   97.0,
+   97.5
+  ],
+  "text": "97.5 / 96.5 / 96.5 / 97.0 / 97.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.selected.slip_after_offset": {
+  "value": 98.9,
+  "text": "98.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_after_offset].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.selected.slip_after_offset": {
+  "value": [
+   98.5,
+   99.0,
+   99.0,
+   99.0,
+   99.0
+  ],
+  "text": "98.5 / 99.0 / 99.0 / 99.0 / 99.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.selected.slip_mixed_id": {
+  "value": 94.19999999999999,
+  "text": "94.2",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.selected.slip_mixed_id": {
+  "value": [
+   94.5,
+   93.0,
+   93.5,
+   94.5,
+   95.5
+  ],
+  "text": "94.5 / 93.0 / 93.5 / 94.5 / 95.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.selected.slip_mixed_ood": {
+  "value": 88.9,
+  "text": "88.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_mixed_ood].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.selected.slip_mixed_ood": {
+  "value": [
+   86.0,
+   91.0,
+   91.0,
+   87.0,
+   89.5
+  ],
+  "text": "86.0 / 91.0 / 91.0 / 87.0 / 89.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.final.clean": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,final,clean].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.final.clean": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.final.static_mixed_id": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,final,static_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.final.static_mixed_id": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.final.slip_pos_5": {
+  "value": 100.0,
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,final,slip_pos_5].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.final.slip_pos_5": {
+  "value": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "text": "100.0 / 100.0 / 100.0 / 100.0 / 100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.final.slip_pos_8": {
+  "value": 96.8,
+  "text": "96.8",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,final,slip_pos_8].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.final.slip_pos_8": {
+  "value": [
+   97.5,
+   96.5,
+   96.5,
+   97.0,
+   96.5
+  ],
+  "text": "97.5 / 96.5 / 96.5 / 97.0 / 96.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.final.slip_after_offset": {
+  "value": 99.0,
+  "text": "99.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,final,slip_after_offset].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.final.slip_after_offset": {
+  "value": [
+   98.5,
+   99.0,
+   99.5,
+   99.0,
+   99.0
+  ],
+  "text": "98.5 / 99.0 / 99.5 / 99.0 / 99.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.final.slip_mixed_id": {
+  "value": 93.60000000000001,
+  "text": "93.6",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,final,slip_mixed_id].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.final.slip_mixed_id": {
+  "value": [
+   94.5,
+   94.5,
+   93.5,
+   93.0,
+   92.5
+  ],
+  "text": "94.5 / 94.5 / 93.5 / 93.0 / 92.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.succ.slip_robust_repeat.final.slip_mixed_ood": {
+  "value": 88.8,
+  "text": "88.8",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,final,slip_mixed_ood].success_pct"
+ },
+ "b.seeds.slip_robust_repeat.final.slip_mixed_ood": {
+  "value": [
+   86.5,
+   90.0,
+   92.0,
+   88.0,
+   87.5
+  ],
+  "text": "86.5 / 90.0 / 92.0 / 88.0 / 87.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ "b.c.B1.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B1,clean]"
+ },
+ "b.c.B1.static_mixed_id": {
+  "value": [
+   -0.8999999999999999,
+   -3.3000000000000003,
+   0.4
+  ],
+  "text": "−0.9 pp [−3.3, +0.4]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B1,static_mixed_id]"
+ },
+ "b.c.B1.slip_pos_5": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B1,slip_pos_5]"
+ },
+ "b.c.B1.slip_pos_8": {
+  "value": [
+   0.1,
+   -1.7000000000000002,
+   1.7999999999999998
+  ],
+  "text": "+0.1 pp [−1.7, +1.8]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B1,slip_pos_8]"
+ },
+ "b.c.B1.slip_after_offset": {
+  "value": [
+   0.5,
+   0.0,
+   1.4000000000000001
+  ],
+  "text": "+0.5 pp [+0.0, +1.4]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B1,slip_after_offset]"
+ },
+ "b.c.B1.slip_mixed_ood": {
+  "value": [
+   0.7000000000000001,
+   -3.8,
+   5.0
+  ],
+  "text": "+0.7 pp [−3.8, +5.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B1,slip_mixed_ood]"
+ },
+ "b.c.B2.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B2,clean]"
+ },
+ "b.c.B2.static_mixed_id": {
+  "value": [
+   -1.0,
+   -3.4000000000000004,
+   0.0
+  ],
+  "text": "−1.0 pp [−3.4, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B2,static_mixed_id]"
+ },
+ "b.c.B2.slip_pos_5": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B2,slip_pos_5]"
+ },
+ "b.c.B2.slip_pos_8": {
+  "value": [
+   0.4,
+   -1.6,
+   2.3
+  ],
+  "text": "+0.4 pp [−1.6, +2.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B2,slip_pos_8]"
+ },
+ "b.c.B2.slip_after_offset": {
+  "value": [
+   -0.1,
+   -0.6,
+   0.0
+  ],
+  "text": "−0.1 pp [−0.6, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B2,slip_after_offset]"
+ },
+ "b.c.B2.slip_mixed_ood": {
+  "value": [
+   3.9,
+   -0.8999999999999999,
+   8.7
+  ],
+  "text": "+3.9 pp [−0.9, +8.7]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[B2,slip_mixed_ood]"
+ },
+ "b.c.repeat_minus_ff.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[repeat_minus_ff,clean]"
+ },
+ "b.c.repeat_minus_ff.static_mixed_id": {
+  "value": [
+   0.1,
+   0.0,
+   0.6
+  ],
+  "text": "+0.1 pp [+0.0, +0.6]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[repeat_minus_ff,static_mixed_id]"
+ },
+ "b.c.repeat_minus_ff.slip_pos_5": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[repeat_minus_ff,slip_pos_5]"
+ },
+ "b.c.repeat_minus_ff.slip_pos_8": {
+  "value": [
+   0.2,
+   -1.0999999999999999,
+   1.4000000000000001
+  ],
+  "text": "+0.2 pp [−1.1, +1.4]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[repeat_minus_ff,slip_pos_8]"
+ },
+ "b.c.repeat_minus_ff.slip_after_offset": {
+  "value": [
+   0.0,
+   -0.8,
+   0.8
+  ],
+  "text": "+0.0 pp [−0.8, +0.8]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[repeat_minus_ff,slip_after_offset]"
+ },
+ "b.c.repeat_minus_ff.slip_mixed_id": {
+  "value": [
+   0.3,
+   -1.5,
+   2.0
+  ],
+  "text": "+0.3 pp [−1.5, +2.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[repeat_minus_ff,slip_mixed_id]"
+ },
+ "b.c.repeat_minus_ff.slip_mixed_ood": {
+  "value": [
+   -1.7999999999999998,
+   -5.1,
+   1.4000000000000001
+  ],
+  "text": "−1.8 pp [−5.1, +1.4]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[repeat_minus_ff,slip_mixed_ood]"
+ },
+ "b.c.history_minus_repeat.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_repeat,clean]"
+ },
+ "b.c.history_minus_repeat.static_mixed_id": {
+  "value": [
+   -1.0,
+   -3.4000000000000004,
+   0.0
+  ],
+  "text": "−1.0 pp [−3.4, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_repeat,static_mixed_id]"
+ },
+ "b.c.history_minus_repeat.slip_pos_5": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_repeat,slip_pos_5]"
+ },
+ "b.c.history_minus_repeat.slip_pos_8": {
+  "value": [
+   -0.1,
+   -1.6,
+   1.3
+  ],
+  "text": "−0.1 pp [−1.6, +1.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_repeat,slip_pos_8]"
+ },
+ "b.c.history_minus_repeat.slip_after_offset": {
+  "value": [
+   0.5,
+   0.0,
+   1.3
+  ],
+  "text": "+0.5 pp [+0.0, +1.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_repeat,slip_after_offset]"
+ },
+ "b.c.history_minus_repeat.slip_mixed_id": {
+  "value": [
+   -1.3,
+   -3.5999999999999996,
+   0.8999999999999999
+  ],
+  "text": "−1.3 pp [−3.6, +0.9]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_repeat,slip_mixed_id]"
+ },
+ "b.c.history_minus_repeat.slip_mixed_ood": {
+  "value": [
+   2.5,
+   -2.2024999999999775,
+   7.199999999999999
+  ],
+  "text": "+2.5 pp [−2.2, +7.2]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_repeat,slip_mixed_ood]"
+ },
+ "b.c.tracking_minus_calibrated.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,clean]"
+ },
+ "b.c.tracking_minus_calibrated.static_mixed_id": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,static_mixed_id]"
+ },
+ "b.c.tracking_minus_calibrated.slip_pos_5": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,slip_pos_5]"
+ },
+ "b.c.tracking_minus_calibrated.slip_pos_8": {
+  "value": [
+   -1.0,
+   -2.5,
+   0.0
+  ],
+  "text": "−1.0 pp [−2.5, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,slip_pos_8]"
+ },
+ "b.c.tracking_minus_calibrated.slip_after_offset": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,slip_after_offset]"
+ },
+ "b.c.tracking_minus_calibrated.slip_mixed_id": {
+  "value": [
+   2.0,
+   -2.0,
+   6.0
+  ],
+  "text": "+2.0 pp [−2.0, +6.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,slip_mixed_id]"
+ },
+ "b.c.tracking_minus_calibrated.slip_mixed_ood": {
+  "value": [
+   7.000000000000001,
+   3.0,
+   11.5
+  ],
+  "text": "+7.0 pp [+3.0, +11.5]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,slip_mixed_ood]"
+ },
+ "b.c.history_minus_tracking.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_tracking,clean]"
+ },
+ "b.c.history_minus_tracking.static_mixed_id": {
+  "value": [
+   -1.0,
+   -3.4000000000000004,
+   0.0
+  ],
+  "text": "−1.0 pp [−3.4, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_tracking,static_mixed_id]"
+ },
+ "b.c.history_minus_tracking.slip_pos_5": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_tracking,slip_pos_5]"
+ },
+ "b.c.history_minus_tracking.slip_pos_8": {
+  "value": [
+   0.4,
+   -1.6,
+   2.3
+  ],
+  "text": "+0.4 pp [−1.6, +2.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_tracking,slip_pos_8]"
+ },
+ "b.c.history_minus_tracking.slip_after_offset": {
+  "value": [
+   -0.1,
+   -0.6,
+   0.0
+  ],
+  "text": "−0.1 pp [−0.6, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_tracking,slip_after_offset]"
+ },
+ "b.c.history_minus_tracking.slip_mixed_id": {
+  "value": [
+   0.8999999999999999,
+   -2.1999999999999997,
+   4.1000000000000005
+  ],
+  "text": "+0.9 pp [−2.2, +4.1]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_tracking,slip_mixed_id]"
+ },
+ "b.c.history_minus_tracking.slip_mixed_ood": {
+  "value": [
+   3.9,
+   -0.8999999999999999,
+   8.7
+  ],
+  "text": "+3.9 pp [−0.9, +8.7]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_tracking,slip_mixed_ood]"
+ },
+ "b.c.ff_minus_calibrated_parent.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,clean]"
+ },
+ "b.c.ff_minus_calibrated_parent.static_mixed_id": {
+  "value": [
+   -0.1,
+   -0.6,
+   0.0
+  ],
+  "text": "−0.1 pp [−0.6, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,static_mixed_id]"
+ },
+ "b.c.ff_minus_calibrated_parent.slip_pos_5": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,slip_pos_5]"
+ },
+ "b.c.ff_minus_calibrated_parent.slip_pos_8": {
+  "value": [
+   -0.7000000000000001,
+   -2.0,
+   0.2
+  ],
+  "text": "−0.7 pp [−2.0, +0.2]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,slip_pos_8]"
+ },
+ "b.c.ff_minus_calibrated_parent.slip_after_offset": {
+  "value": [
+   -0.6,
+   -1.6,
+   0.0
+  ],
+  "text": "−0.6 pp [−1.6, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,slip_after_offset]"
+ },
+ "b.c.ff_minus_calibrated_parent.slip_mixed_id": {
+  "value": [
+   3.9,
+   0.8999999999999999,
+   7.3
+  ],
+  "text": "+3.9 pp [+0.9, +7.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,slip_mixed_id]"
+ },
+ "b.c.ff_minus_calibrated_parent.slip_mixed_ood": {
+  "value": [
+   10.2,
+   5.8999999999999995,
+   15.0
+  ],
+  "text": "+10.2 pp [+5.9, +15.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,slip_mixed_ood]"
+ },
+ "b.c.history_minus_calibrated_parent.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_calibrated_parent,clean]"
+ },
+ "b.c.history_minus_calibrated_parent.static_mixed_id": {
+  "value": [
+   -1.0,
+   -3.4000000000000004,
+   0.0
+  ],
+  "text": "−1.0 pp [−3.4, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_calibrated_parent,static_mixed_id]"
+ },
+ "b.c.history_minus_calibrated_parent.slip_pos_5": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_calibrated_parent,slip_pos_5]"
+ },
+ "b.c.history_minus_calibrated_parent.slip_pos_8": {
+  "value": [
+   -0.6,
+   -2.5,
+   0.8999999999999999
+  ],
+  "text": "−0.6 pp [−2.5, +0.9]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_calibrated_parent,slip_pos_8]"
+ },
+ "b.c.history_minus_calibrated_parent.slip_after_offset": {
+  "value": [
+   -0.1,
+   -0.6,
+   0.0
+  ],
+  "text": "−0.1 pp [−0.6, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_calibrated_parent,slip_after_offset]"
+ },
+ "b.c.history_minus_calibrated_parent.slip_mixed_id": {
+  "value": [
+   2.9000000000000004,
+   -0.8,
+   6.800000000000001
+  ],
+  "text": "+2.9 pp [−0.8, +6.8]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_calibrated_parent,slip_mixed_id]"
+ },
+ "b.c.history_minus_calibrated_parent.slip_mixed_ood": {
+  "value": [
+   10.9,
+   5.4,
+   16.5
+  ],
+  "text": "+10.9 pp [+5.4, +16.5]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_calibrated_parent,slip_mixed_ood]"
+ },
+ "b.c.final_minus_selected.clean.slip_robust_ff": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,clean]"
+ },
+ "b.c.final_minus_selected.static_mixed_id.slip_robust_ff": {
+  "value": [
+   0.1,
+   0.0,
+   0.6
+  ],
+  "text": "+0.1 pp [+0.0, +0.6]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,static_mixed_id]"
+ },
+ "b.c.final_minus_selected.slip_pos_5.slip_robust_ff": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_pos_5]"
+ },
+ "b.c.final_minus_selected.slip_pos_8.slip_robust_ff": {
+  "value": [
+   0.2,
+   -0.8999999999999999,
+   1.4000000000000001
+  ],
+  "text": "+0.2 pp [−0.9, +1.4]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_pos_8]"
+ },
+ "b.c.final_minus_selected.slip_after_offset.slip_robust_ff": {
+  "value": [
+   -0.1,
+   -1.0999999999999999,
+   0.8
+  ],
+  "text": "−0.1 pp [−1.1, +0.8]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_after_offset]"
+ },
+ "b.c.final_minus_selected.slip_mixed_id.slip_robust_ff": {
+  "value": [
+   -0.1,
+   -2.0,
+   1.7999999999999998
+  ],
+  "text": "−0.1 pp [−2.0, +1.8]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_mixed_id]"
+ },
+ "b.c.final_minus_selected.slip_mixed_ood.slip_robust_ff": {
+  "value": [
+   0.2,
+   -1.7999999999999998,
+   2.1999999999999997
+  ],
+  "text": "+0.2 pp [−1.8, +2.2]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_mixed_ood]"
+ },
+ "b.c.final_minus_selected.clean.slip_robust_history": {
+  "value": [
+   -40.0,
+   -80.0,
+   0.0
+  ],
+  "text": "−40.0 pp [−80.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,clean]"
+ },
+ "b.c.final_minus_selected.static_mixed_id.slip_robust_history": {
+  "value": [
+   -36.0,
+   -66.10000000000001,
+   -5.800000000000001
+  ],
+  "text": "−36.0 pp [−66.1, −5.8]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,static_mixed_id]"
+ },
+ "b.c.final_minus_selected.slip_pos_5.slip_robust_history": {
+  "value": [
+   -19.5,
+   -56.599999999999994,
+   0.0
+  ],
+  "text": "−19.5 pp [−56.6, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_pos_5]"
+ },
+ "b.c.final_minus_selected.slip_pos_8.slip_robust_history": {
+  "value": [
+   -18.9,
+   -55.1,
+   0.6
+  ],
+  "text": "−18.9 pp [−55.1, +0.6]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_pos_8]"
+ },
+ "b.c.final_minus_selected.slip_after_offset.slip_robust_history": {
+  "value": [
+   -20.200000000000003,
+   -56.699999999999996,
+   -0.6
+  ],
+  "text": "−20.2 pp [−56.7, −0.6]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_after_offset]"
+ },
+ "b.c.final_minus_selected.slip_mixed_id.slip_robust_history": {
+  "value": [
+   -29.2,
+   -57.902499999999975,
+   -3.9
+  ],
+  "text": "−29.2 pp [−57.9, −3.9]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_mixed_id]"
+ },
+ "b.c.final_minus_selected.slip_mixed_ood.slip_robust_history": {
+  "value": [
+   -32.300000000000004,
+   -58.8,
+   -8.200000000000001
+  ],
+  "text": "−32.3 pp [−58.8, −8.2]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_mixed_ood]"
+ },
+ "b.c.final_minus_selected.clean.slip_robust_repeat": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,clean]"
+ },
+ "b.c.final_minus_selected.static_mixed_id.slip_robust_repeat": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,static_mixed_id]"
+ },
+ "b.c.final_minus_selected.slip_pos_5.slip_robust_repeat": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_pos_5]"
+ },
+ "b.c.final_minus_selected.slip_pos_8.slip_robust_repeat": {
+  "value": [
+   -0.2,
+   -0.8999999999999999,
+   0.4
+  ],
+  "text": "−0.2 pp [−0.9, +0.4]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_pos_8]"
+ },
+ "b.c.final_minus_selected.slip_after_offset.slip_robust_repeat": {
+  "value": [
+   0.1,
+   -0.6,
+   0.8
+  ],
+  "text": "+0.1 pp [−0.6, +0.8]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_after_offset]"
+ },
+ "b.c.final_minus_selected.slip_mixed_id.slip_robust_repeat": {
+  "value": [
+   -0.6,
+   -2.6,
+   1.3
+  ],
+  "text": "−0.6 pp [−2.6, +1.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_mixed_id]"
+ },
+ "b.c.final_minus_selected.slip_mixed_ood.slip_robust_repeat": {
+  "value": [
+   -0.1,
+   -2.4,
+   2.0024999999999635
+  ],
+  "text": "−0.1 pp [−2.4, +2.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_mixed_ood]"
+ },
+ "b.rep.nominal": {
+  "value": 1400,
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[nominal]"
+ },
+ "b.rep.geometry_fixed": {
+  "value": 1400,
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[geometry_fixed]"
+ },
+ "b.rep.geometry_ema": {
+  "value": 1400,
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[geometry_ema]"
+ },
+ "b.rep.geometry_calibrated": {
+  "value": 1400,
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[geometry_calibrated]"
+ },
+ "b.rep.geometry_tracking": {
+  "value": 1400,
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[geometry_tracking]"
+ },
+ "b.rep.best_constant_geometry": {
+  "value": 1400,
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[best_constant_geometry]"
+ },
+ "b.rep.slip_robust_ff_s111__selected": {
+  "value": 1400,
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[slip_robust_ff_s111__selected]"
+ },
+ "b.rep.slip_robust_history_s111__selected": {
+  "value": 1400,
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[slip_robust_history_s111__selected]"
+ },
+ "b.rep.slip_robust_repeat_s111__selected": {
+  "value": 1400,
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[slip_robust_repeat_s111__selected]"
+ },
+ "table.b.cells": {
+  "value": null,
+  "text": "| Method | clean | static mixed id | slip pos 5 | slip pos 8 | slip after offset | slip mixed id | slip mixed ood |\n|---|---|---|---|---|---|---|---|\n| nominal | 100.0 | 52.5 | 60.0 | 52.0 | 62.0 | 46.0 | 48.5 |\n| fixed-transform geometry | 100.0 | 69.0 | 94.0 | 77.0 | 98.5 | 52.5 | 59.5 |\n| EMA geometry | 100.0 | 100.0 | 100.0 | 95.5 | 97.5 | 92.0 | 85.5 |\n| one-shot calibrated geometry (parent) | 100.0 | 100.0 | 100.0 | 97.5 | 99.5 | 90.0 | 80.5 |\n| calibrated + constant | 100.0 | 100.0 | 100.0 | 97.5 | 99.0 | 94.5 | 92.5 |\n| tracking geometry (= geometry_best) | 100.0 | 100.0 | 100.0 | 96.5 | 99.5 | 92.0 | 87.5 |\n| learned feed-forward (selected) | 100.0 | 99.9 | 100.0 | 96.8 | 98.9 | 93.9 | 90.7 |\n| learned 4-frame history (selected) | 100.0 | 99.0 | 100.0 | 96.9 | 99.4 | 92.9 | 91.4 |\n| learned repeated current frame (selected) | 100.0 | 100.0 | 100.0 | 97.0 | 98.9 | 94.2 | 88.9 |\n| learned feed-forward (final) | 100.0 | 100.0 | 100.0 | 97.0 | 98.8 | 93.8 | 90.9 |\n| learned 4-frame history (final) | 60.0 | 63.0 | 80.5 | 78.0 | 79.2 | 63.7 | 59.1 |\n| learned repeated current frame (final) | 100.0 | 100.0 | 100.0 | 96.8 | 99.0 | 93.6 | 88.8 |",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells"
+ },
+ "table.b.taxonomy": {
+  "value": null,
+  "text": "| Method | Success | Collision | Drop | Timeout | Invalid reset | Invalid slip | Misaligned at grasp | Receiver contact before grasp (episodes) |\n|---|---|---|---|---|---|---|---|---|\n| nominal | 46.0 | 43.0 | 3.5 | 0.5 | 0.0 | 7.0 | 47.0 | 1 |\n| fixed-transform geometry | 52.5 | 40.5 | 0.0 | 0.0 | 0.0 | 7.0 | 16.5 | 0 |\n| EMA geometry | 92.0 | 1.5 | 0.0 | 0.0 | 0.0 | 6.5 | 1.0 | 0 |\n| one-shot calibrated geometry (parent) | 90.0 | 4.5 | 0.0 | 0.0 | 0.0 | 5.5 | 0.5 | 0 |\n| calibrated + constant | 94.5 | 0.0 | 0.0 | 0.0 | 0.0 | 5.5 | 4.5 | 0 |\n| tracking geometry (= geometry_best) | 92.0 | 1.5 | 0.0 | 0.0 | 0.0 | 6.5 | 1.0 | 0 |\n| learned feed-forward | 93.9 | 0.7 | 0.0 | 0.0 | 0.0 | 5.4 | 0.4 | 0 |\n| learned 4-frame history | 92.9 | 0.3 | 0.0 | 0.0 | 0.0 | 6.8 | 65.6 | 3 |\n| learned repeated current frame | 94.2 | 0.0 | 0.0 | 0.0 | 0.0 | 5.8 | 0.1 | 0 |",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "taxonomy[*,slip_mixed_id]"
+ },
+ "table.b.repeat": {
+  "value": null,
+  "text": "| Entry | Matching terminal outcomes |\n|---|---|\n| `nominal` | 1,400/1,400 |\n| `geometry_fixed` | 1,400/1,400 |\n| `geometry_ema` | 1,400/1,400 |\n| `geometry_calibrated` | 1,400/1,400 |\n| `geometry_tracking` | 1,400/1,400 |\n| `best_constant_geometry` | 1,400/1,400 |\n| `slip_robust_ff_s111__selected` | 1,400/1,400 |\n| `slip_robust_history_s111__selected` | 1,400/1,400 |\n| `slip_robust_repeat_s111__selected` | 1,400/1,400 |",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability"
+ },
+ "table.b.regression": {
+  "value": null,
+  "text": "| Policy (selected) | clean | grasp 2mm | grasp 5mm | grasp 10mm | grasp 15mm | bias 5mm | noise 2mm | delay 2step | mixed id | mixed ood | boundary x minus 7 | boundary z 15 |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n| learned feed-forward (V5, slip-trained) | 100.0 | 100.0 | 100.0 | 100.0 | 96.6 | 100.0 | 100.0 | 100.0 | 99.7 | 98.0 | 95.3 | 100.0 |\n| V4 feed-forward (V4 published) | 100.0 | 100.0 | 100.0 | 100.0 | 96.5 | 100.0 | 100.0 | 100.0 | 99.4 | 94.5 | 88.2 | 100.0 |\n| learned 4-frame history (V5, slip-trained) | 100.0 | 99.9 | 97.0 | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 | 99.8 | 97.4 | 81.9 | 99.2 |\n| V4 4-frame history (V4 published) | 100.0 | 100.0 | 98.5 | 100.0 | 99.1 | 100.0 | 100.0 | 100.0 | 100.0 | 97.0 | 65.2 | 98.8 |\n| learned repeated current frame (V5, slip-trained) | 100.0 | 100.0 | 100.0 | 100.0 | 96.9 | 100.0 | 100.0 | 100.0 | 99.8 | 97.1 | 94.8 | 100.0 |\n| V4 repeated current frame (V4 published) | 100.0 | 100.0 | 99.8 | 100.0 | 96.2 | 100.0 | 100.0 | 100.0 | 99.5 | 91.3 | 91.2 | 100.0 |",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression_exploratory"
+ },
+ "b.regr.slip_robust_ff.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,clean]"
+ },
+ "b.regr.slip_robust_ff.grasp_2mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,grasp_2mm]"
+ },
+ "b.regr.slip_robust_ff.grasp_5mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,grasp_5mm]"
+ },
+ "b.regr.slip_robust_ff.grasp_10mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,grasp_10mm]"
+ },
+ "b.regr.slip_robust_ff.grasp_15mm": {
+  "value": [
+   0.1,
+   -1.5,
+   1.6
+  ],
+  "text": "+0.1 pp [−1.5, +1.6]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,grasp_15mm]"
+ },
+ "b.regr.slip_robust_ff.bias_5mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,bias_5mm]"
+ },
+ "b.regr.slip_robust_ff.noise_2mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,noise_2mm]"
+ },
+ "b.regr.slip_robust_ff.delay_2step": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,delay_2step]"
+ },
+ "b.regr.slip_robust_ff.mixed_id": {
+  "value": [
+   0.3,
+   -0.4,
+   1.3
+  ],
+  "text": "+0.3 pp [−0.4, +1.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,mixed_id]"
+ },
+ "b.regr.slip_robust_ff.mixed_ood": {
+  "value": [
+   3.5000000000000004,
+   1.3,
+   6.1
+  ],
+  "text": "+3.5 pp [+1.3, +6.1]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,mixed_ood]"
+ },
+ "b.regr.slip_robust_ff.boundary_x_minus_7": {
+  "value": [
+   7.1,
+   -3.2,
+   25.4
+  ],
+  "text": "+7.1 pp [−3.2, +25.4]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,boundary_x_minus_7]"
+ },
+ "b.regr.slip_robust_ff.boundary_z_15": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_ff,boundary_z_15]"
+ },
+ "b.regr.slip_robust_history.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,clean]"
+ },
+ "b.regr.slip_robust_history.grasp_2mm": {
+  "value": [
+   -0.1,
+   -0.6,
+   0.0
+  ],
+  "text": "−0.1 pp [−0.6, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,grasp_2mm]"
+ },
+ "b.regr.slip_robust_history.grasp_5mm": {
+  "value": [
+   -1.5,
+   -9.0,
+   4.1000000000000005
+  ],
+  "text": "−1.5 pp [−9.0, +4.1]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,grasp_5mm]"
+ },
+ "b.regr.slip_robust_history.grasp_10mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,grasp_10mm]"
+ },
+ "b.regr.slip_robust_history.grasp_15mm": {
+  "value": [
+   0.8999999999999999,
+   0.0,
+   3.0
+  ],
+  "text": "+0.9 pp [+0.0, +3.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,grasp_15mm]"
+ },
+ "b.regr.slip_robust_history.bias_5mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,bias_5mm]"
+ },
+ "b.regr.slip_robust_history.noise_2mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,noise_2mm]"
+ },
+ "b.regr.slip_robust_history.delay_2step": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,delay_2step]"
+ },
+ "b.regr.slip_robust_history.mixed_id": {
+  "value": [
+   -0.2,
+   -0.8999999999999999,
+   0.0
+  ],
+  "text": "−0.2 pp [−0.9, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,mixed_id]"
+ },
+ "b.regr.slip_robust_history.mixed_ood": {
+  "value": [
+   0.4,
+   -5.3,
+   4.9
+  ],
+  "text": "+0.4 pp [−5.3, +4.9]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,mixed_ood]"
+ },
+ "b.regr.slip_robust_history.boundary_x_minus_7": {
+  "value": [
+   16.7,
+   -20.1,
+   41.8
+  ],
+  "text": "+16.7 pp [−20.1, +41.8]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,boundary_x_minus_7]"
+ },
+ "b.regr.slip_robust_history.boundary_z_15": {
+  "value": [
+   0.4,
+   -1.6,
+   2.7
+  ],
+  "text": "+0.4 pp [−1.6, +2.7]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_history,boundary_z_15]"
+ },
+ "b.regr.slip_robust_repeat.clean": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,clean]"
+ },
+ "b.regr.slip_robust_repeat.grasp_2mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,grasp_2mm]"
+ },
+ "b.regr.slip_robust_repeat.grasp_5mm": {
+  "value": [
+   0.2,
+   0.0,
+   0.8999999999999999
+  ],
+  "text": "+0.2 pp [+0.0, +0.9]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,grasp_5mm]"
+ },
+ "b.regr.slip_robust_repeat.grasp_10mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,grasp_10mm]"
+ },
+ "b.regr.slip_robust_repeat.grasp_15mm": {
+  "value": [
+   0.7000000000000001,
+   -1.3,
+   3.0
+  ],
+  "text": "+0.7 pp [−1.3, +3.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,grasp_15mm]"
+ },
+ "b.regr.slip_robust_repeat.bias_5mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,bias_5mm]"
+ },
+ "b.regr.slip_robust_repeat.noise_2mm": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,noise_2mm]"
+ },
+ "b.regr.slip_robust_repeat.delay_2step": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,delay_2step]"
+ },
+ "b.regr.slip_robust_repeat.mixed_id": {
+  "value": [
+   0.3,
+   0.0,
+   1.2
+  ],
+  "text": "+0.3 pp [+0.0, +1.2]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,mixed_id]"
+ },
+ "b.regr.slip_robust_repeat.mixed_ood": {
+  "value": [
+   5.800000000000001,
+   2.9000000000000004,
+   9.3
+  ],
+  "text": "+5.8 pp [+2.9, +9.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,mixed_ood]"
+ },
+ "b.regr.slip_robust_repeat.boundary_x_minus_7": {
+  "value": [
+   3.5999999999999996,
+   -5.2,
+   14.399999999999999
+  ],
+  "text": "+3.6 pp [−5.2, +14.4]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,boundary_x_minus_7]"
+ },
+ "b.regr.slip_robust_repeat.boundary_z_15": {
+  "value": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression[slip_robust_repeat,boundary_z_15]"
+ },
+ "b.mech.parent": {
+  "value": 48,
+  "text": "48/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.parent_zero_residual_successes"
+ },
+ "b.mech.slip_robust_history_s111.selected": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s111].selected"
+ },
+ "b.mech.slip_robust_history_s111.reversed": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s111].reversed"
+ },
+ "b.mech.slip_robust_history_s111.current_only": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s111].current_only"
+ },
+ "b.mech.slip_robust_history_s111.constant": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s111].constant"
+ },
+ "b.mech.slip_robust_history_s222.selected": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s222].selected"
+ },
+ "b.mech.slip_robust_history_s222.reversed": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s222].reversed"
+ },
+ "b.mech.slip_robust_history_s222.current_only": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s222].current_only"
+ },
+ "b.mech.slip_robust_history_s222.constant": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s222].constant"
+ },
+ "b.mech.slip_robust_history_s333.selected": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s333].selected"
+ },
+ "b.mech.slip_robust_history_s333.reversed": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s333].reversed"
+ },
+ "b.mech.slip_robust_history_s333.current_only": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s333].current_only"
+ },
+ "b.mech.slip_robust_history_s333.constant": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s333].constant"
+ },
+ "b.mech.slip_robust_history_s444.selected": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s444].selected"
+ },
+ "b.mech.slip_robust_history_s444.reversed": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s444].reversed"
+ },
+ "b.mech.slip_robust_history_s444.current_only": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s444].current_only"
+ },
+ "b.mech.slip_robust_history_s444.constant": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s444].constant"
+ },
+ "b.mech.slip_robust_history_s555.selected": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s555].selected"
+ },
+ "b.mech.slip_robust_history_s555.reversed": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s555].reversed"
+ },
+ "b.mech.slip_robust_history_s555.current_only": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s555].current_only"
+ },
+ "b.mech.slip_robust_history_s555.constant": {
+  "value": 52,
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s555].constant"
+ },
+ "table.b.mech": {
+  "value": null,
+  "text": "| Selected history run | Selected | History reversed | Current frame repeated | Development-fitted constant |\n|---|---|---|---|---|\n| `slip_robust_history_s111` | 52/60 (60) | 52/60 (60) | 52/60 (60) | 52/60 (60) |\n| `slip_robust_history_s222` | 52/60 (60) | 52/60 (60) | 52/60 (60) | 52/60 (60) |\n| `slip_robust_history_s333` | 52/60 (60) | 52/60 (60) | 52/60 (60) | 52/60 (60) |\n| `slip_robust_history_s444` | 52/60 (60) | 52/60 (60) | 52/60 (60) | 52/60 (60) |\n| `slip_robust_history_s555` | 52/60 (60) | 52/60 (60) | 52/60 (60) | 52/60 (60) |",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms"
+ },
+ "b.sel.slip_robust_ff_s111": {
+  "value": "step_005013504",
+  "text": "5013504 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_ff_s111"
+ },
+ "b.sel.slip_robust_ff_s222": {
+  "value": "step_007012352",
+  "text": "7012352 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_ff_s222"
+ },
+ "b.sel.slip_robust_ff_s333": {
+  "value": "step_010027008",
+  "text": "10027008 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_ff_s333"
+ },
+ "b.sel.slip_robust_ff_s444": {
+  "value": "step_008028160",
+  "text": "8028160 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_ff_s444"
+ },
+ "b.sel.slip_robust_ff_s555": {
+  "value": "step_009011200",
+  "text": "9011200 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_ff_s555"
+ },
+ "b.sel.slip_robust_history_s111": {
+  "value": "step_005013504",
+  "text": "5013504 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_history_s111"
+ },
+ "b.sel.slip_robust_history_s222": {
+  "value": "step_009011200",
+  "text": "9011200 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_history_s222"
+ },
+ "b.sel.slip_robust_history_s333": {
+  "value": "step_004030464",
+  "text": "4030464 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_history_s333"
+ },
+ "b.sel.slip_robust_history_s444": {
+  "value": "step_005013504",
+  "text": "5013504 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_history_s444"
+ },
+ "b.sel.slip_robust_history_s555": {
+  "value": "step_005013504",
+  "text": "5013504 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_history_s555"
+ },
+ "b.sel.slip_robust_repeat_s111": {
+  "value": "step_010027008",
+  "text": "10027008 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_repeat_s111"
+ },
+ "b.sel.slip_robust_repeat_s222": {
+  "value": "step_007012352",
+  "text": "7012352 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_repeat_s222"
+ },
+ "b.sel.slip_robust_repeat_s333": {
+  "value": "step_010027008",
+  "text": "10027008 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_repeat_s333"
+ },
+ "b.sel.slip_robust_repeat_s444": {
+  "value": "step_009011200",
+  "text": "9011200 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_repeat_s444"
+ },
+ "b.sel.slip_robust_repeat_s555": {
+  "value": "step_010027008",
+  "text": "10027008 transitions",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "slip_robust_repeat_s555"
+ },
+ "table.b.selection": {
+  "value": null,
+  "text": "| Run | Selected checkpoint (transitions) | Validation success (%) |\n|---|---|---|\n| `slip_robust_ff_s111` | 5,013,504 | 96.2 |\n| `slip_robust_ff_s222` | 7,012,352 | 96.2 |\n| `slip_robust_ff_s333` | 10,027,008 | 96.2 |\n| `slip_robust_ff_s444` | 8,028,160 | 96.2 |\n| `slip_robust_ff_s555` | 9,011,200 | 96.2 |\n| `slip_robust_history_s111` | 5,013,504 | 96.2 |\n| `slip_robust_history_s222` | 9,011,200 | 96.2 |\n| `slip_robust_history_s333` | 4,030,464 | 95.6 |\n| `slip_robust_history_s444` | 5,013,504 | 96.2 |\n| `slip_robust_history_s555` | 5,013,504 | 95.6 |\n| `slip_robust_repeat_s111` | 10,027,008 | 96.2 |\n| `slip_robust_repeat_s222` | 7,012,352 | 96.2 |\n| `slip_robust_repeat_s333` | 10,027,008 | 96.2 |\n| `slip_robust_repeat_s444` | 9,011,200 | 96.2 |\n| `slip_robust_repeat_s555` | 10,027,008 | 96.2 |",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "*"
+ },
+ "b.dev.calibrated_const_x+4": {
+  "value": 0.9895833333333334,
+  "text": "99.0",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[calibrated_const_x+4].success"
+ },
+ "b.dev.tracking_a005_b25": {
+  "value": 0.9895833333333334,
+  "text": "99.0",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[tracking_a005_b25].success"
+ },
+ "b.dev.tracking_a010_b25": {
+  "value": 0.9895833333333334,
+  "text": "99.0",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[tracking_a010_b25].success"
+ },
+ "b.dev.tracking_a020_b25": {
+  "value": 0.9895833333333334,
+  "text": "99.0",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[tracking_a020_b25].success"
+ },
+ "b.dev.geometry_ema": {
+  "value": 0.9895833333333334,
+  "text": "99.0",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[geometry_ema].success"
+ },
+ "b.dev.tracking_a020_b35": {
+  "value": 0.9895833333333334,
+  "text": "99.0",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[tracking_a020_b35].success"
+ },
+ "b.dev.calibrated_const_x+2": {
+  "value": 0.9791666666666666,
+  "text": "97.9",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[calibrated_const_x+2].success"
+ },
+ "b.dev.tracking_a040_b25": {
+  "value": 0.96875,
+  "text": "96.9",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[tracking_a040_b25].success"
+ },
+ "b.dev.tracking_a040_b35": {
+  "value": 0.96875,
+  "text": "96.9",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[tracking_a040_b35].success"
+ },
+ "b.dev.geometry_calibrated": {
+  "value": 0.96875,
+  "text": "96.9",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[geometry_calibrated].success"
+ },
+ "b.dev.calibrated_const_x-2": {
+  "value": 0.7083333333333334,
+  "text": "70.8",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[calibrated_const_x-2].success"
+ },
+ "b.dev.geometry_fixed": {
+  "value": 0.7083333333333334,
+  "text": "70.8",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[geometry_fixed].success"
+ },
+ "b.dev.calibrated_const_x-4": {
+  "value": 0.6354166666666666,
+  "text": "63.5",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[calibrated_const_x-4].success"
+ },
+ "b.dev.nominal": {
+  "value": 0.5625,
+  "text": "56.2",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "scores[nominal].success"
+ },
+ "table.b.dev": {
+  "value": null,
+  "text": "| Candidate (development) | Strata success | Unsafe | Family magnitude (mm) | Total correction (mm) | clean | slip mixed id | slip pos 8 | static mixed id |\n|---|---|---|---|---|---|---|---|---|\n| `calibrated_const_x+4` | 99.0 | 0.0 | 4.0 | 11.5 | 100.0 | 95.8 | 100.0 | 100.0 |\n| `tracking_a005_b25` | 99.0 | 0.0 | 9.8 | 9.8 | 100.0 | 95.8 | 100.0 | 100.0 |\n| `tracking_a010_b25` | 99.0 | 0.0 | 9.8 | 9.8 | 100.0 | 95.8 | 100.0 | 100.0 |\n| `tracking_a020_b25` | 99.0 | 0.0 | 9.9 | 9.9 | 100.0 | 95.8 | 100.0 | 100.0 |\n| `geometry_ema` | 99.0 | 0.0 | 10.2 | 10.2 | 100.0 | 95.8 | 100.0 | 100.0 |\n| `tracking_a020_b35` | 99.0 | 0.0 | 10.2 | 10.2 | 100.0 | 95.8 | 100.0 | 100.0 |\n| `calibrated_const_x+2` | 97.9 | 1.0 | 2.0 | 10.5 | 100.0 | 91.7 | 100.0 | 100.0 |\n| `tracking_a040_b25` | 96.9 | 0.0 | 10.3 | 10.3 | 100.0 | 91.7 | 100.0 | 95.8 |\n| `tracking_a040_b35` | 96.9 | 0.0 | 10.7 | 10.7 | 100.0 | 91.7 | 100.0 | 95.8 |\n| `geometry_calibrated` | 96.9 | 2.1 | 10.0 | 10.0 | 100.0 | 87.5 | 100.0 | 100.0 |\n| `calibrated_const_x-2` | 70.8 | 28.1 | 2.0 | 12.4 | 100.0 | 83.3 | 0.0 | 100.0 |\n| `geometry_fixed` | 70.8 | 29.2 | 10.1 | 10.1 | 100.0 | 62.5 | 62.5 | 58.3 |\n| `calibrated_const_x-4` | 63.5 | 37.5 | 4.0 | 13.2 | 100.0 | 66.7 | 0.0 | 87.5 |\n| `nominal` | 56.2 | 41.7 | 0.0 | 0.0 | 100.0 | 45.8 | 37.5 | 41.7 |",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "ranking/scores"
+ },
+ "b.role.nominal": {
+  "value": "nominal",
+  "text": "`nominal`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[nominal].candidate_id"
+ },
+ "b.role.geometry_fixed": {
+  "value": "geometry_fixed",
+  "text": "`geometry_fixed`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[geometry_fixed].candidate_id"
+ },
+ "b.role.geometry_ema": {
+  "value": "geometry_ema",
+  "text": "`geometry_ema`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[geometry_ema].candidate_id"
+ },
+ "b.role.geometry_calibrated": {
+  "value": "geometry_calibrated",
+  "text": "`geometry_calibrated`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[geometry_calibrated].candidate_id"
+ },
+ "b.role.geometry_tracking": {
+  "value": "tracking_a005_b25",
+  "text": "`tracking_a005_b25`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[geometry_tracking].candidate_id"
+ },
+ "b.role.best_constant_geometry": {
+  "value": "calibrated_const_x+4",
+  "text": "`calibrated_const_x+4`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[best_constant_geometry].candidate_id"
+ },
+ "b.role.geometry_best": {
+  "value": "tracking_a005_b25",
+  "text": "`tracking_a005_b25`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[geometry_best].candidate_id"
+ },
+ "table.b.probe": {
+  "value": null,
+  "text": "| Slide target | Valid slips | Median error (mm) | Median vertical drift (mm) | Peak force (N) | Probe acceptance (start 0) |\n|---|---|---|---|---|---|\n| -7 mm | 1/12 | 10.20 | -9.86 | 70 | no |\n| -5 mm | 3/12 | 3.42 | -3.37 | 49 | no |\n| -2 mm | 12/12 | 1.07 | -0.19 | 35 | yes |\n| +2 mm | 12/12 | 1.34 | +0.15 | 35 | yes |\n| +5 mm | 12/12 | 0.73 | -0.50 | 39 | yes |\n| +10 mm | 12/12 | 0.78 | -0.67 | 43 | yes |\n| +15 mm | 9/12 | 1.08 | -1.00 | 51 | no |",
+  "source": "results/v5/slip/probe/summary.json",
+  "field": "rounds.r2.M6"
+ },
+ "b.pilot.slip_robust_ff_s901.first": {
+  "value": 0.9592314901593252,
+  "text": "95.9",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_ff_s901].first10.train_success_rate"
+ },
+ "b.pilot.slip_robust_ff_s901.last": {
+  "value": 0.9759322033898306,
+  "text": "97.6",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_ff_s901].last10.train_success_rate"
+ },
+ "b.pilot.slip_robust_history_s901.first": {
+  "value": 0.878945092952875,
+  "text": "87.9",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_history_s901].first10.train_success_rate"
+ },
+ "b.pilot.slip_robust_history_s901.last": {
+  "value": 0.9666553249404559,
+  "text": "96.7",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_history_s901].last10.train_success_rate"
+ },
+ "b.pilot.slip_robust_repeat_s901.first": {
+  "value": 0.9529356943150047,
+  "text": "95.3",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_repeat_s901].first10.train_success_rate"
+ },
+ "b.pilot.slip_robust_repeat_s901.last": {
+  "value": 0.9769881556683587,
+  "text": "97.7",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_repeat_s901].last10.train_success_rate"
+ },
+ "comp.total": {
+  "value": 9.33,
+  "text": "9.33",
+  "source": "results/v5/compute.json",
+  "field": "total_gpu_hours"
+ },
+ "table.comp": {
+  "value": null,
+  "text": "| Stage | Jobs | GPU-hours | Failed/killed jobs |\n|---|---|---|---|\n| b development | 2 | 0.15 | 0 |\n| b feasibility probe | 2 | 0.15 | 0 |\n| b final evaluation | 9 | 0.96 | 4 |\n| b formal training | 15 | 5.31 | 0 |\n| b mechanisms | 6 | 0.27 | 3 |\n| b pilots | 6 | 0.50 | 0 |\n| b repeatability | 3 | 0.22 | 1 |\n| b v4 regression | 8 | 0.62 | 4 |\n| b validation | 15 | 0.75 | 0 |\n| study a | 2 | 0.33 | 0 |\n| videos | 1 | 0.05 | 0 |",
+  "source": "results/v5/compute.json",
+  "field": "by_stage"
+ }
+}

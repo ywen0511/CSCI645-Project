@@ -1,0 +1,42 @@
+{
+ "slip_robust_history_s111": {
+  "constant_m": [
+   0.002936683,
+   0.001285712,
+   -0.00122349
+  ],
+  "episodes": 168
+ },
+ "slip_robust_history_s222": {
+  "constant_m": [
+   0.006485538,
+   -0.003740174,
+   0.001232682
+  ],
+  "episodes": 168
+ },
+ "slip_robust_history_s333": {
+  "constant_m": [
+   0.00474689,
+   0.007384516,
+   -0.007431427
+  ],
+  "episodes": 168
+ },
+ "slip_robust_history_s444": {
+  "constant_m": [
+   0.001933235,
+   -0.00063776,
+   0.00305821
+  ],
+  "episodes": 168
+ },
+ "slip_robust_history_s555": {
+  "constant_m": [
+   0.003198909,
+   0.00171131,
+   0.002547206
+  ],
+  "episodes": 168
+ }
+}

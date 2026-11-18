@@ -1,0 +1,29 @@
+[
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.025
+  },
+  "checkpoint": null,
+  "case_id": "v5cal-heldout-grasp_15mm-0000",
+  "run_id": "ema0p2_fixed_a25",
+  "category": "study_a_matched_calibration",
+  "order": 0,
+  "eval_records": "$RUNS/../calibration/primary/ema0p2_fixed_a25.jsonl",
+  "output": "$RUNS/videos/study_a_matched_calibration__ema0p2_fixed_a25__v5cal-heldout-grasp_15mm-0000.mp4"
+ },
+ {
+  "method": "geometry",
+  "overrides": {
+   "align_max": 0.025,
+   "giver_calibration_window_s": 0.5
+  },
+  "checkpoint": null,
+  "case_id": "v5cal-heldout-grasp_15mm-0000",
+  "run_id": "ema0p2_cal050_a25",
+  "category": "study_a_matched_calibration",
+  "order": 1,
+  "eval_records": "$RUNS/../calibration/primary/ema0p2_cal050_a25.jsonl",
+  "output": "$RUNS/videos/study_a_matched_calibration__ema0p2_cal050_a25__v5cal-heldout-grasp_15mm-0000.mp4"
+ }
+]

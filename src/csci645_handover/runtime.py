@@ -75,12 +75,13 @@ V2_CONTROLLER_DEFAULTS = {"geom_align": True, "geom_anchor": True, "geom_gate": 
                           "observation_giver_reference": False, "observation_history_mode": "stack",
                           "observation_history_permutation": None, "grasp_uncertainty": False,
                           "grasp_offset_train": None, "giver_calibration_window_s": None,
-                          "debug_perturb_privileged": False}
+                          "debug_perturb_privileged": False, "slip_mechanism": None,
+                          "slip_train": None, "giver_tracking_alpha": None}
 # Task fields that can be changed on a live environment (read every step or rebuilt by
 # HandoverEnv.refresh_task_parameters). Everything else needs a new process.
 RUNTIME_FIELDS = {"method", "geometry_enabled", "residual_enabled", "phase_input", "geom_align", "geom_anchor",
                   "geom_gate", "constant_residual_m", "align_max", "align_gain", "sep_tol", "release_max_wait_s",
-                  "giver_calibration_window_s"}
+                  "giver_calibration_window_s", "giver_tracking_alpha", "slip_mechanism"}
 
 
 def controller_hash(cfg) -> str:

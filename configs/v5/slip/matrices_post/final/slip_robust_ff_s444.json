@@ -1,0 +1,33 @@
+{
+ "name": "v5_slip_final_slip_robust_ff_s444",
+ "suite": "configs/v5/slip/suites/final.jsonl",
+ "num_envs": 240,
+ "protocol": "configs/v5/slip/training/slip_robust_ff.json",
+ "trace_cases": [
+  "v5slip-final-clean-0000",
+  "v5slip-final-static_mixed_id-0000",
+  "v5slip-final-slip_pos_5-0000",
+  "v5slip-final-slip_pos_8-0000",
+  "v5slip-final-slip_after_offset-0000",
+  "v5slip-final-slip_mixed_id-0000",
+  "v5slip-final-slip_mixed_ood-0000"
+ ],
+ "entries": [
+  {
+   "id": "slip_robust_ff_s444__selected",
+   "method": "combined",
+   "training_seed": 444,
+   "role": "selected",
+   "trace": true,
+   "checkpoint": "slip_robust_ff_s444/checkpoints/step_008028160.pt"
+  },
+  {
+   "id": "slip_robust_ff_s444__final",
+   "method": "combined",
+   "training_seed": 444,
+   "role": "final",
+   "trace": true,
+   "checkpoint": "slip_robust_ff_s444/checkpoints/final.pt"
+  }
+ ]
+}

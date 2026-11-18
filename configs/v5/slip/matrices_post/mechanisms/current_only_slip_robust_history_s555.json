@@ -1,0 +1,19 @@
+{
+ "name": "v5_slip_mech_current_only_slip_robust_history_s555",
+ "suite": "configs/v5/slip/suites/final_subset60.jsonl",
+ "num_envs": 60,
+ "protocol": "configs/v5/slip/training/slip_robust_history.json",
+ "base_overrides": {
+  "observation_history_mode": "repeat_current"
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "slip_robust_history_s555__current_only",
+   "method": "combined",
+   "training_seed": 555,
+   "checkpoint": "slip_robust_history_s555/checkpoints/step_005013504.pt",
+   "allow_config_mismatch": true
+  }
+ ]
+}

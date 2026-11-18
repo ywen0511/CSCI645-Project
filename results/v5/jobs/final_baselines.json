@@ -1,0 +1,68 @@
+{
+ "name": "final_baselines",
+ "tasks": [
+  {
+   "id": "final_baselines_a",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/final_baselines/a.json",
+    "--output",
+    "$RUNS/final/baselines",
+    "--seed",
+    "6458501"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/final_baselines/a.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/baselines/nominal.jsonl",
+    "$RUNS/final/baselines/geometry_calibrated.jsonl",
+    "$RUNS/final/baselines/geometry_tracking.jsonl",
+    "$RUNS/final/baselines/best_constant_geometry.jsonl"
+   ]
+  },
+  {
+   "id": "final_baselines_ema",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/final_baselines/ema.json",
+    "--output",
+    "$RUNS/final/baselines",
+    "--seed",
+    "6458501"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/final_baselines/ema.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/baselines/geometry_ema.jsonl"
+   ]
+  },
+  {
+   "id": "final_baselines_fixed",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "configs/v5/slip/matrices/final_baselines/fixed.json",
+    "--output",
+    "$RUNS/final/baselines",
+    "--seed",
+    "6458501"
+   ],
+   "inputs": [
+    "configs/v5/slip/matrices/final_baselines/fixed.json",
+    "configs/v5/slip/suites/final.jsonl"
+   ],
+   "outputs": [
+    "$RUNS/final/baselines/geometry_fixed.jsonl"
+   ]
+  }
+ ]
+}

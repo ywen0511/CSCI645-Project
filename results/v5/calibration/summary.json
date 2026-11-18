@@ -1,0 +1,1654 @@
+{
+ "schema": 1,
+ "study": "V5 Study A - matched calibration ablation on fresh held-out cases",
+ "suite_sha256": "5b7d79a0d57a7932f7f6e01b9006cd5c130a716fb375c839b69049956f20145a",
+ "preregistered_plan": "configs/v5/calibration/analysis_plan.json",
+ "bootstrap_repeats": 10000,
+ "bootstrap_seed": 6457401,
+ "primary": [
+  {
+   "id": "A1",
+   "condition": "mixed_id",
+   "left": "ema0p2_cal050_a25",
+   "right": "ema0p2_fixed_a25",
+   "difference_pp": 29.500000000000004,
+   "ci95": [
+    23.5,
+    36.0
+   ],
+   "ci97.5": [
+    22.499999999999996,
+    36.5
+   ],
+   "supports_calibration_only_improvement": true
+  },
+  {
+   "id": "A2",
+   "condition": "grasp_15mm",
+   "left": "ema0p2_cal050_a25",
+   "right": "ema0p2_fixed_a25",
+   "difference_pp": 93.0,
+   "ci95": [
+    89.0,
+    96.0
+   ],
+   "ci97.5": [
+    88.5,
+    96.5
+   ],
+   "supports_calibration_only_improvement": true
+  }
+ ],
+ "secondary_exploratory": {
+  "main_effects": [
+   {
+    "condition": "mixed_id",
+    "factor": "reference",
+    "effect": "cal050 minus fixed",
+    "difference_pp": 24.750000000000007,
+    "ci95": [
+     19.25,
+     30.499999999999993
+    ],
+    "ci97.5": [
+     18.500000000000004,
+     31.249999999999993
+    ]
+   },
+   {
+    "condition": "mixed_id",
+    "factor": "ema",
+    "effect": "ema0p2 minus ema1p0",
+    "difference_pp": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "ci97.5": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "condition": "mixed_id",
+    "factor": "bound",
+    "effect": "a25 minus a15",
+    "difference_pp": 3.2499999999999947,
+    "ci95": [
+     1.250000000000001,
+     5.250000000000002
+    ],
+    "ci97.5": [
+     1.0000000000000009,
+     5.7499999999999964
+    ]
+   },
+   {
+    "condition": "grasp_15mm",
+    "factor": "reference",
+    "effect": "cal050 minus fixed",
+    "difference_pp": 79.75,
+    "ci95": [
+     75.49999999999999,
+     83.75
+    ],
+    "ci97.5": [
+     74.75,
+     84.5
+    ]
+   },
+   {
+    "condition": "grasp_15mm",
+    "factor": "ema",
+    "effect": "ema0p2 minus ema1p0",
+    "difference_pp": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "ci97.5": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "condition": "grasp_15mm",
+    "factor": "bound",
+    "effect": "a25 minus a15",
+    "difference_pp": 5.750000000000005,
+    "ci95": [
+     2.2500000000000018,
+     9.250000000000004
+    ],
+    "ci97.5": [
+     1.9999999999999962,
+     9.75
+    ]
+   },
+   {
+    "condition": "mixed_ood",
+    "factor": "reference",
+    "effect": "cal050 minus fixed",
+    "difference_pp": 17.750000000000004,
+    "ci95": [
+     12.0,
+     23.500000000000007
+    ],
+    "ci97.5": [
+     11.249999999999996,
+     24.499999999999993
+    ]
+   },
+   {
+    "condition": "mixed_ood",
+    "factor": "ema",
+    "effect": "ema0p2 minus ema1p0",
+    "difference_pp": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "ci97.5": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "condition": "mixed_ood",
+    "factor": "bound",
+    "effect": "a25 minus a15",
+    "difference_pp": 3.25,
+    "ci95": [
+     1.0000000000000009,
+     5.7499999999999964
+    ],
+    "ci97.5": [
+     0.7500000000000007,
+     6.0
+    ]
+   }
+  ],
+  "interactions": [
+   {
+    "condition": "mixed_id",
+    "factors": [
+     "reference",
+     "ema"
+    ],
+    "difference_pp": -2.220446049250313e-14,
+    "ci95": [
+     -1.1102230246251565e-14,
+     1.1102230246251565e-14
+    ],
+    "ci97.5": [
+     -1.124100812432848e-14,
+     1.6653345369377348e-14
+    ]
+   },
+   {
+    "condition": "mixed_id",
+    "factors": [
+     "reference",
+     "bound"
+    ],
+    "difference_pp": 9.499999999999996,
+    "ci95": [
+     5.500000000000005,
+     13.5
+    ],
+    "ci97.5": [
+     5.000000000000004,
+     14.499999999999991
+    ]
+   },
+   {
+    "condition": "grasp_15mm",
+    "factors": [
+     "reference",
+     "ema"
+    ],
+    "difference_pp": -5.551115123125783e-15,
+    "ci95": [
+     -1.1102230246251565e-14,
+     1.1102230246251565e-14
+    ],
+    "ci97.5": [
+     -1.1102230246251565e-14,
+     1.1102230246251565e-14
+    ]
+   },
+   {
+    "condition": "grasp_15mm",
+    "factors": [
+     "reference",
+     "bound"
+    ],
+    "difference_pp": 26.5,
+    "ci95": [
+     20.500000000000004,
+     32.50000000000001
+    ],
+    "ci97.5": [
+     19.999999999999996,
+     33.999999999999986
+    ]
+   },
+   {
+    "condition": "mixed_ood",
+    "factors": [
+     "reference",
+     "ema"
+    ],
+    "difference_pp": -1.1102230246251565e-14,
+    "ci95": [
+     -1.1102230246251565e-14,
+     1.1102230246251565e-14
+    ],
+    "ci97.5": [
+     -1.6653345369377348e-14,
+     1.6653345369377348e-14
+    ]
+   },
+   {
+    "condition": "mixed_ood",
+    "factors": [
+     "reference",
+     "bound"
+    ],
+    "difference_pp": 6.499999999999995,
+    "ci95": [
+     2.9999999999999916,
+     10.499999999999998
+    ],
+    "ci97.5": [
+     2.499999999999991,
+     10.999999999999998
+    ]
+   }
+  ],
+  "v4_replication": [
+   {
+    "condition": "mixed_id",
+    "difference_pp": 28.000000000000004,
+    "ci95": [
+     21.999999999999996,
+     34.0
+    ],
+    "ci97.5": [
+     20.999999999999996,
+     35.0
+    ]
+   },
+   {
+    "condition": "grasp_15mm",
+    "difference_pp": 85.50000000000001,
+    "ci95": [
+     80.5,
+     89.99999999999999
+    ],
+    "ci97.5": [
+     79.5,
+     90.5
+    ]
+   }
+  ]
+ },
+ "repeatability": [
+  {
+   "config": "ema0p2_fixed_a25",
+   "matching_terminal_outcomes": 2400,
+   "cases": 2400
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "matching_terminal_outcomes": 2400,
+   "cases": 2400
+  }
+ ],
+ "cells": [
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "clean",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "grasp_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "grasp_5mm",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 8,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "grasp_10mm",
+   "n": 200,
+   "success_pct": 39.0,
+   "terminal_reasons": {
+    "success": 78,
+    "prohibited_collision": 122,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "grasp_15mm",
+   "n": 200,
+   "success_pct": 7.5,
+   "terminal_reasons": {
+    "success": 15,
+    "prohibited_collision": 185,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "bias_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "noise_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "delay_2step",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "mixed_id",
+   "n": 200,
+   "success_pct": 72.0,
+   "terminal_reasons": {
+    "success": 144,
+    "prohibited_collision": 56,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "mixed_ood",
+   "n": 200,
+   "success_pct": 74.5,
+   "terminal_reasons": {
+    "success": 149,
+    "prohibited_collision": 51,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "boundary_x_minus_7",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 2,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a15",
+   "condition": "boundary_z_15",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "clean",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "grasp_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "grasp_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "grasp_10mm",
+   "n": 200,
+   "success_pct": 40.5,
+   "terminal_reasons": {
+    "success": 81,
+    "prohibited_collision": 119,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "grasp_15mm",
+   "n": 200,
+   "success_pct": 0.0,
+   "terminal_reasons": {
+    "success": 0,
+    "prohibited_collision": 199,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 1
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "bias_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "noise_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "delay_2step",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "mixed_id",
+   "n": 200,
+   "success_pct": 70.5,
+   "terminal_reasons": {
+    "success": 141,
+    "prohibited_collision": 59,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "mixed_ood",
+   "n": 200,
+   "success_pct": 74.5,
+   "terminal_reasons": {
+    "success": 149,
+    "prohibited_collision": 51,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "boundary_x_minus_7",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 1,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 7
+   }
+  },
+  {
+   "config": "ema1p0_fixed_a25",
+   "condition": "boundary_z_15",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "clean",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "grasp_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "grasp_5mm",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 8,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "grasp_10mm",
+   "n": 200,
+   "success_pct": 85.5,
+   "terminal_reasons": {
+    "success": 171,
+    "prohibited_collision": 29,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "grasp_15mm",
+   "n": 200,
+   "success_pct": 74.0,
+   "terminal_reasons": {
+    "success": 148,
+    "prohibited_collision": 52,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "bias_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "noise_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "delay_2step",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "mixed_id",
+   "n": 200,
+   "success_pct": 92.0,
+   "terminal_reasons": {
+    "success": 184,
+    "prohibited_collision": 16,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "mixed_ood",
+   "n": 200,
+   "success_pct": 89.0,
+   "terminal_reasons": {
+    "success": 178,
+    "prohibited_collision": 22,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "boundary_x_minus_7",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 2,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a15",
+   "condition": "boundary_z_15",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "clean",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "grasp_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "grasp_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "grasp_10mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "grasp_15mm",
+   "n": 200,
+   "success_pct": 93.0,
+   "terminal_reasons": {
+    "success": 186,
+    "prohibited_collision": 14,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "bias_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "noise_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "delay_2step",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "mixed_id",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "mixed_ood",
+   "n": 200,
+   "success_pct": 95.5,
+   "terminal_reasons": {
+    "success": 191,
+    "prohibited_collision": 9,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "boundary_x_minus_7",
+   "n": 200,
+   "success_pct": 97.5,
+   "terminal_reasons": {
+    "success": 195,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 5
+   }
+  },
+  {
+   "config": "ema1p0_cal050_a25",
+   "condition": "boundary_z_15",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "clean",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "grasp_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "grasp_5mm",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 8,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "grasp_10mm",
+   "n": 200,
+   "success_pct": 39.0,
+   "terminal_reasons": {
+    "success": 78,
+    "prohibited_collision": 122,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "grasp_15mm",
+   "n": 200,
+   "success_pct": 7.5,
+   "terminal_reasons": {
+    "success": 15,
+    "prohibited_collision": 185,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "bias_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "noise_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "delay_2step",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "mixed_id",
+   "n": 200,
+   "success_pct": 72.0,
+   "terminal_reasons": {
+    "success": 144,
+    "prohibited_collision": 56,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "mixed_ood",
+   "n": 200,
+   "success_pct": 74.5,
+   "terminal_reasons": {
+    "success": 149,
+    "prohibited_collision": 51,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "boundary_x_minus_7",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 2,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a15",
+   "condition": "boundary_z_15",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "clean",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "grasp_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "grasp_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "grasp_10mm",
+   "n": 200,
+   "success_pct": 40.5,
+   "terminal_reasons": {
+    "success": 81,
+    "prohibited_collision": 119,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "grasp_15mm",
+   "n": 200,
+   "success_pct": 0.0,
+   "terminal_reasons": {
+    "success": 0,
+    "prohibited_collision": 199,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 1
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "bias_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "noise_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "delay_2step",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "mixed_id",
+   "n": 200,
+   "success_pct": 70.5,
+   "terminal_reasons": {
+    "success": 141,
+    "prohibited_collision": 59,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "mixed_ood",
+   "n": 200,
+   "success_pct": 74.5,
+   "terminal_reasons": {
+    "success": 149,
+    "prohibited_collision": 51,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "boundary_x_minus_7",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 1,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 7
+   }
+  },
+  {
+   "config": "ema0p2_fixed_a25",
+   "condition": "boundary_z_15",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "clean",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "grasp_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "grasp_5mm",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 8,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "grasp_10mm",
+   "n": 200,
+   "success_pct": 85.5,
+   "terminal_reasons": {
+    "success": 171,
+    "prohibited_collision": 29,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "grasp_15mm",
+   "n": 200,
+   "success_pct": 74.0,
+   "terminal_reasons": {
+    "success": 148,
+    "prohibited_collision": 52,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "bias_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "noise_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "delay_2step",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "mixed_id",
+   "n": 200,
+   "success_pct": 92.0,
+   "terminal_reasons": {
+    "success": 184,
+    "prohibited_collision": 16,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "mixed_ood",
+   "n": 200,
+   "success_pct": 89.0,
+   "terminal_reasons": {
+    "success": 178,
+    "prohibited_collision": 22,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "boundary_x_minus_7",
+   "n": 200,
+   "success_pct": 96.0,
+   "terminal_reasons": {
+    "success": 192,
+    "prohibited_collision": 2,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 6
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a15",
+   "condition": "boundary_z_15",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "clean",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "grasp_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "grasp_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "grasp_10mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "grasp_15mm",
+   "n": 200,
+   "success_pct": 93.0,
+   "terminal_reasons": {
+    "success": 186,
+    "prohibited_collision": 14,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "bias_5mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "noise_2mm",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "delay_2step",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "mixed_id",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "mixed_ood",
+   "n": 200,
+   "success_pct": 95.5,
+   "terminal_reasons": {
+    "success": 191,
+    "prohibited_collision": 9,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "boundary_x_minus_7",
+   "n": 200,
+   "success_pct": 97.5,
+   "terminal_reasons": {
+    "success": 195,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 5
+   }
+  },
+  {
+   "config": "ema0p2_cal050_a25",
+   "condition": "boundary_z_15",
+   "n": 200,
+   "success_pct": 100.0,
+   "terminal_reasons": {
+    "success": 200,
+    "prohibited_collision": 0,
+    "drop": 0,
+    "episode_timeout": 0,
+    "release_timeout": 0,
+    "invalid_reset": 0
+   }
+  }
+ ]
+}
