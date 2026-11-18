@@ -1,0 +1,25 @@
+{
+ "name": "verification_a",
+ "execution_tag": "experiment-v5a",
+ "tasks": [
+  {
+   "id": "replay_study_a",
+   "kind": "isaac",
+   "argv": [
+    "scripts/eval_matrix.py",
+    "--matrix",
+    "$DELIVERY/configs/v5/verification/replay_study_a.json",
+    "--output",
+    "$RUNS/fresh/replay_study_a",
+    "--seed",
+    "6457501"
+   ],
+   "inputs": [
+    "configs/v5/verification/replay_study_a.json"
+   ],
+   "outputs": [
+    "$RUNS/fresh/replay_study_a/ema0p2_cal050_a25.jsonl"
+   ]
+  }
+ ]
+}

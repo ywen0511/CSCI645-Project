@@ -1,0 +1,40 @@
+{
+ "name": "v5_replay60_geometry_best",
+ "suite": "$DELIVERY/configs/v5/slip/suites/final_subset60.jsonl",
+ "num_envs": 20,
+ "protocol": "configs/v2/protocol.json",
+ "base_overrides": {
+  "observation_sensor": {
+   "bias_bound_m": 0.005,
+   "noise_std_m": 0.002,
+   "delay_steps": 2,
+   "max_delay_steps": 8,
+   "ema_alpha": 0.2,
+   "clean_probability": 0.25
+  },
+  "observation_giver_reference": true,
+  "grasp_uncertainty": true,
+  "slip_mechanism": {
+   "finger_stiffness": 2000.0,
+   "kp": 6000.0,
+   "kd": 60.0,
+   "ki": 60000.0,
+   "regrip_s": 0.1,
+   "tolerance_m": 0.0015,
+   "grip_force_n": 35.0,
+   "force_max_n": 90.0
+  }
+ },
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "geometry_tracking",
+   "method": "geometry",
+   "overrides": {
+    "align_max": 0.025,
+    "giver_calibration_window_s": 0.5,
+    "giver_tracking_alpha": 0.05
+   }
+  }
+ ]
+}
