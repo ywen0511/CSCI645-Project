@@ -368,8 +368,9 @@ missed its target by more than 1.5 mm. These are mechanism failures, decided bef
 count against every method. The held-out invalid-slip rate on `slip_mixed_id` (5–7%) is higher than in development
 (one in 96 strata cases per controller). The counts differ slightly between methods (11–14 of 200 for the
 training-free controllers, 54–68 of 1,000 for the learned ones). This is not explained by receiver contact before the
-grasp, which occurred in at most 3 of 1,000 episodes; the cause was not isolated. Like V4's invalid resets, it may
-depend on the batch context of the shared PhysX scene.
+grasp, which occurred in at most 3 of 1,000 episodes. It depends on the batch layout of the shared PhysX scene: in the
+pre-release verification rehearsal (`docs/v5/VERIFICATION.md`), replaying 60 `slip_mixed_id` cases at batch 20 instead
+of 240 changed slip validity in 9 of 120 episodes (two controllers), and these were the only outcome differences.
 
 The `misaligned at grasp` flag (receiver more than 10 mm from the nominal grasp point at the nominal grasp time) is high for the history policies although they rarely fail. Their residuals are larger (for seed 333 the median per-episode mean residual is about 4, 7 and −7 mm in x, y and z on `clean`, versus at most 2 mm for feed-forward), so the receiver grasps the 18 cm bar at a different point; the flag records that offset, not a failure.
 
