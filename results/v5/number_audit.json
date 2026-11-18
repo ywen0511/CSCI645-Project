@@ -1,0 +1,1350 @@
+[
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A1",
+  "text": "+29.5 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A1.ci975",
+  "text": "[+22.5, +36.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A2",
+  "text": "+93.0 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A2.ci975",
+  "text": "[+88.5, +96.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A1.decision",
+  "text": "supported",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].supports_calibration_only_improvement"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.main.mixed_id.bound",
+  "text": "+3.2 pp [+1.3, +5.3]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_id,bound]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B1",
+  "text": "\u22121.0 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B1.ci975",
+  "text": "[\u22123.4, +1.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B2",
+  "text": "+0.9 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B2.ci975",
+  "text": "[\u22122.6, +4.6]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.tracking_minus_calibrated.slip_mixed_ood",
+  "text": "+7.0 pp [+3.0, +11.5]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,slip_mixed_ood]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.ff_minus_calibrated_parent.slip_mixed_id",
+  "text": "+3.9 pp [+0.9, +7.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,slip_mixed_id]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.succ.best_constant_geometry.baseline.slip_mixed_id",
+  "text": "94.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.seeds.slip_robust_history.final.clean",
+  "text": "0.0 / 100.0 / 100.0 / 100.0 / 0.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A1",
+  "text": "+29.5 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A1.ci95",
+  "text": "[+23.5, +36.0]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].ci95"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A1.ci975",
+  "text": "[+22.5, +36.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A1.decision",
+  "text": "supported",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].supports_calibration_only_improvement"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A2",
+  "text": "+93.0 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A2.ci95",
+  "text": "[+89.0, +96.0]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].ci95"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A2.ci975",
+  "text": "[+88.5, +96.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.A2.decision",
+  "text": "supported",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].supports_calibration_only_improvement"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.a.cells",
+  "text": "(table)",
+  "source": "results/v5/calibration/summary.json",
+  "field": "cells"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.main.mixed_id.reference",
+  "text": "+24.8 pp [+19.2, +30.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_id,reference]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.main.grasp_15mm.reference",
+  "text": "+79.8 pp [+75.5, +83.8]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[grasp_15mm,reference]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.main.mixed_ood.reference",
+  "text": "+17.8 pp [+12.0, +23.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_ood,reference]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.main.mixed_id.ema",
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_id,ema]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.main.mixed_id.bound",
+  "text": "+3.2 pp [+1.3, +5.3]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_id,bound]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.main.grasp_15mm.bound",
+  "text": "+5.8 pp [+2.3, +9.3]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[grasp_15mm,bound]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.a.taxonomy",
+  "text": "(table)",
+  "source": "results/v5/calibration/taxonomy/taxonomy.json",
+  "field": "cells"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.rep.ema0p2_fixed_a25",
+  "text": "2,400/2,400",
+  "source": "results/v5/calibration/summary.json",
+  "field": "repeatability[ema0p2_fixed_a25]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "a.rep.ema0p2_cal050_a25",
+  "text": "2,400/2,400",
+  "source": "results/v5/calibration/summary.json",
+  "field": "repeatability[ema0p2_cal050_a25]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.b.probe",
+  "text": "(table)",
+  "source": "results/v5/slip/probe/summary.json",
+  "field": "rounds.r2.M6"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.role.geometry_best",
+  "text": "`tracking_a005_b25`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[geometry_best].candidate_id"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.role.geometry_tracking",
+  "text": "`tracking_a005_b25`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[geometry_tracking].candidate_id"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.role.best_constant_geometry",
+  "text": "`calibrated_const_x+4`",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "roles[best_constant_geometry].candidate_id"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.b.dev",
+  "text": "(table)",
+  "source": "configs/v5/slip/development/baseline_selection.json",
+  "field": "ranking/scores"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.pilot.slip_robust_ff_s901.first",
+  "text": "95.9",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_ff_s901].first10.train_success_rate"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.pilot.slip_robust_ff_s901.last",
+  "text": "97.6",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_ff_s901].last10.train_success_rate"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.pilot.slip_robust_history_s901.first",
+  "text": "87.9",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_history_s901].first10.train_success_rate"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.pilot.slip_robust_history_s901.last",
+  "text": "96.7",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_history_s901].last10.train_success_rate"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.pilot.slip_robust_repeat_s901.first",
+  "text": "95.3",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_repeat_s901].first10.train_success_rate"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.pilot.slip_robust_repeat_s901.last",
+  "text": "97.7",
+  "source": "results/v5/slip/pilot/summary_r2.json",
+  "field": "pilots[slip_robust_repeat_s901].last10.train_success_rate"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.b.selection",
+  "text": "(table)",
+  "source": "results/v5/slip/selection/selection.json",
+  "field": "*"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B1",
+  "text": "\u22121.0 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B1.ci95",
+  "text": "[\u22123.1, +0.9]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].ci95"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B1.ci975",
+  "text": "[\u22123.4, +1.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B1.decision",
+  "text": "not established",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].superiority_established"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B2",
+  "text": "+0.9 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].difference_pp"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B2.ci95",
+  "text": "[\u22122.2, +4.1]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].ci95"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B2.ci975",
+  "text": "[\u22122.6, +4.6]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].ci97.5"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.B2.decision",
+  "text": "not established",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].superiority_established"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.b.cells",
+  "text": "(table)",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.succ.geometry_calibrated.baseline.slip_mixed_id",
+  "text": "90.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.succ.geometry_calibrated.baseline.slip_mixed_ood",
+  "text": "80.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.succ.geometry_calibrated.baseline.static_mixed_id",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,static_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.tracking_minus_calibrated.slip_mixed_id",
+  "text": "+2.0 pp [\u22122.0, +6.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,slip_mixed_id]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.tracking_minus_calibrated.slip_mixed_ood",
+  "text": "+7.0 pp [+3.0, +11.5]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,slip_mixed_ood]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.ff_minus_calibrated_parent.slip_mixed_id",
+  "text": "+3.9 pp [+0.9, +7.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,slip_mixed_id]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.ff_minus_calibrated_parent.slip_mixed_ood",
+  "text": "+10.2 pp [+5.9, +15.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,slip_mixed_ood]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.history_minus_calibrated_parent.slip_mixed_id",
+  "text": "+2.9 pp [\u22120.8, +6.8]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_calibrated_parent,slip_mixed_id]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.history_minus_calibrated_parent.slip_mixed_ood",
+  "text": "+10.9 pp [+5.4, +16.5]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[history_minus_calibrated_parent,slip_mixed_ood]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.repeat_minus_ff.slip_mixed_id",
+  "text": "+0.3 pp [\u22121.5, +2.0]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[repeat_minus_ff,slip_mixed_id]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.succ.best_constant_geometry.baseline.slip_mixed_id",
+  "text": "94.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.succ.best_constant_geometry.baseline.slip_mixed_ood",
+  "text": "92.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.seeds.slip_robust_history.final.clean",
+  "text": "0.0 / 100.0 / 100.0 / 100.0 / 0.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.seeds.slip_robust_history.final.slip_mixed_id",
+  "text": "47.0 / 92.5 / 76.5 / 92.0 / 10.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.seeds.slip_robust_history.selected.slip_mixed_id",
+  "text": "93.5 / 94.0 / 92.5 / 92.0 / 92.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.c.final_minus_selected.slip_mixed_id.slip_robust_history",
+  "text": "\u221229.2 pp [\u221257.9, \u22123.9]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[final_minus_selected,slip_mixed_id]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.b.mech",
+  "text": "(table)",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "b.mech.parent",
+  "text": "48/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.parent_zero_residual_successes"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.b.taxonomy",
+  "text": "(table)",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "taxonomy[*,slip_mixed_id]"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.b.repeat",
+  "text": "(table)",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.b.regression",
+  "text": "(table)",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "regression_exploratory"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "comp.total",
+  "text": "9.33",
+  "source": "results/v5/compute.json",
+  "field": "total_gpu_hours"
+ },
+ {
+  "document": "report/v5/report.md",
+  "key": "table.comp",
+  "text": "(table)",
+  "source": "results/v5/compute.json",
+  "field": "by_stage"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 1,
+  "key": "a.A1.decision",
+  "text": "supported",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].supports_calibration_only_improvement"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 1,
+  "key": "a.A1",
+  "text": "+29.5 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 1,
+  "key": "b.B1.decision",
+  "text": "not established",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].superiority_established"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 1,
+  "key": "b.B2.decision",
+  "text": "not established",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].superiority_established"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.A1",
+  "text": "+29.5 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.A1.ci975",
+  "text": "[+22.5, +36.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].ci97.5"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.A1.decision",
+  "text": "supported",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].supports_calibration_only_improvement"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.A2",
+  "text": "+93.0 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.A2.ci975",
+  "text": "[+88.5, +96.5]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].ci97.5"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.A2.decision",
+  "text": "supported",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].supports_calibration_only_improvement"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.main.mixed_id.ema",
+  "text": "+0.0 pp [+0.0, +0.0]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_id,ema]"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.main.mixed_id.bound",
+  "text": "+3.2 pp [+1.3, +5.3]",
+  "source": "results/v5/calibration/summary.json",
+  "field": "main_effects[mixed_id,bound]"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 4,
+  "key": "a.rep.ema0p2_cal050_a25",
+  "text": "2,400/2,400",
+  "source": "results/v5/calibration/summary.json",
+  "field": "repeatability[ema0p2_cal050_a25]"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.B1",
+  "text": "\u22121.0 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.B1.ci95",
+  "text": "[\u22123.1, +0.9]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].ci95"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.B1.ci975",
+  "text": "[\u22123.4, +1.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].ci97.5"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.B1.decision",
+  "text": "not established",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].superiority_established"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.B2",
+  "text": "+0.9 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.B2.ci95",
+  "text": "[\u22122.2, +4.1]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].ci95"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.B2.ci975",
+  "text": "[\u22122.6, +4.6]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].ci97.5"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 7,
+  "key": "b.B2.decision",
+  "text": "not established",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].superiority_established"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.nominal.baseline.static_mixed_id",
+  "text": "52.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,static_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.nominal.baseline.slip_pos_5",
+  "text": "60.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_pos_5].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.nominal.baseline.slip_pos_8",
+  "text": "52.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_pos_8].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.nominal.baseline.slip_after_offset",
+  "text": "62.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_after_offset].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.nominal.baseline.slip_mixed_id",
+  "text": "46.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.nominal.baseline.slip_mixed_ood",
+  "text": "48.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[nominal,baseline,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_fixed.baseline.static_mixed_id",
+  "text": "69.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,static_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_fixed.baseline.slip_pos_5",
+  "text": "94.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_pos_5].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_fixed.baseline.slip_pos_8",
+  "text": "77.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_pos_8].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_fixed.baseline.slip_after_offset",
+  "text": "98.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_after_offset].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_fixed.baseline.slip_mixed_id",
+  "text": "52.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_fixed.baseline.slip_mixed_ood",
+  "text": "59.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_fixed,baseline,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_calibrated.baseline.static_mixed_id",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,static_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_calibrated.baseline.slip_pos_5",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_pos_5].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_calibrated.baseline.slip_pos_8",
+  "text": "97.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_pos_8].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_calibrated.baseline.slip_after_offset",
+  "text": "99.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_after_offset].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_calibrated.baseline.slip_mixed_id",
+  "text": "90.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_calibrated.baseline.slip_mixed_ood",
+  "text": "80.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_calibrated,baseline,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_tracking.baseline.static_mixed_id",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,static_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_tracking.baseline.slip_pos_5",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_pos_5].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_tracking.baseline.slip_pos_8",
+  "text": "96.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_pos_8].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_tracking.baseline.slip_after_offset",
+  "text": "99.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_after_offset].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_tracking.baseline.slip_mixed_id",
+  "text": "92.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.geometry_tracking.baseline.slip_mixed_ood",
+  "text": "87.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[geometry_tracking,baseline,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.best_constant_geometry.baseline.static_mixed_id",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,static_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.best_constant_geometry.baseline.slip_pos_5",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_pos_5].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.best_constant_geometry.baseline.slip_pos_8",
+  "text": "97.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_pos_8].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.best_constant_geometry.baseline.slip_after_offset",
+  "text": "99.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_after_offset].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.best_constant_geometry.baseline.slip_mixed_id",
+  "text": "94.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.best_constant_geometry.baseline.slip_mixed_ood",
+  "text": "92.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[best_constant_geometry,baseline,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_ff.selected.static_mixed_id",
+  "text": "99.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,static_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_ff.selected.slip_pos_5",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_pos_5].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_ff.selected.slip_pos_8",
+  "text": "96.8",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_pos_8].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_ff.selected.slip_after_offset",
+  "text": "98.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_after_offset].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_ff.selected.slip_mixed_id",
+  "text": "93.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_ff.selected.slip_mixed_ood",
+  "text": "90.7",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_ff,selected,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_history.selected.static_mixed_id",
+  "text": "99.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,static_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_history.selected.slip_pos_5",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_pos_5].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_history.selected.slip_pos_8",
+  "text": "96.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_pos_8].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_history.selected.slip_after_offset",
+  "text": "99.4",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_after_offset].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_history.selected.slip_mixed_id",
+  "text": "92.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_history.selected.slip_mixed_ood",
+  "text": "91.4",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_history,selected,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_repeat.selected.static_mixed_id",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,static_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_repeat.selected.slip_pos_5",
+  "text": "100.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_pos_5].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_repeat.selected.slip_pos_8",
+  "text": "97.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_pos_8].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_repeat.selected.slip_after_offset",
+  "text": "98.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_after_offset].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_repeat.selected.slip_mixed_id",
+  "text": "94.2",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_mixed_id].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.succ.slip_robust_repeat.selected.slip_mixed_ood",
+  "text": "88.9",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[slip_robust_repeat,selected,slip_mixed_ood].success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.c.tracking_minus_calibrated.slip_mixed_ood",
+  "text": "+7.0 pp [+3.0, +11.5]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[tracking_minus_calibrated,slip_mixed_ood]"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 8,
+  "key": "b.c.ff_minus_calibrated_parent.slip_mixed_id",
+  "text": "+3.9 pp [+0.9, +7.3]",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "contrasts[ff_minus_calibrated_parent,slip_mixed_id]"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 9,
+  "key": "b.seeds.slip_robust_history.final.clean",
+  "text": "0.0 / 100.0 / 100.0 / 100.0 / 0.0",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 9,
+  "key": "b.seeds.slip_robust_history.final.slip_mixed_id",
+  "text": "47.0 / 92.5 / 76.5 / 92.0 / 10.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 9,
+  "key": "b.seeds.slip_robust_history.selected.slip_mixed_id",
+  "text": "93.5 / 94.0 / 92.5 / 92.0 / 92.5",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "cells[...].per_seed_success_pct"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s111.selected",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s111].selected"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s111.reversed",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s111].reversed"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s111.current_only",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s111].current_only"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s111.constant",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s111].constant"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s222.selected",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s222].selected"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s222.reversed",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s222].reversed"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s222.current_only",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s222].current_only"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s222.constant",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s222].constant"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s333.selected",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s333].selected"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s333.reversed",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s333].reversed"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s333.current_only",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s333].current_only"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s333.constant",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s333].constant"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s444.selected",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s444].selected"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s444.reversed",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s444].reversed"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s444.current_only",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s444].current_only"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s444.constant",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s444].constant"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s555.selected",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s555].selected"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s555.reversed",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s555].reversed"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s555.current_only",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s555].current_only"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.slip_robust_history_s555.constant",
+  "text": "52/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.runs[slip_robust_history_s555].constant"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 10,
+  "key": "b.mech.parent",
+  "text": "48/60",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "mechanisms.parent_zero_residual_successes"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 11,
+  "key": "b.rep.geometry_calibrated",
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[geometry_calibrated]"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 11,
+  "key": "b.rep.slip_robust_history_s111__selected",
+  "text": "1,400/1,400",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "repeatability[slip_robust_history_s111__selected]"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 12,
+  "key": "a.A1",
+  "text": "+29.5 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A1].difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 12,
+  "key": "a.A2",
+  "text": "+93.0 pp",
+  "source": "results/v5/calibration/summary.json",
+  "field": "primary[A2].difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 12,
+  "key": "b.B1",
+  "text": "\u22121.0 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B1].difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 12,
+  "key": "b.B2",
+  "text": "+0.9 pp",
+  "source": "results/v5/slip/analysis/summary.json",
+  "field": "primary[B2].difference_pp"
+ },
+ {
+  "document": "report/v5/slides.pptx",
+  "slide": 13,
+  "key": "comp.total",
+  "text": "9.33",
+  "source": "results/v5/compute.json",
+  "field": "total_gpu_hours"
+ }
+]

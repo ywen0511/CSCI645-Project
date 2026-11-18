@@ -41,7 +41,7 @@ def build(prs, new, notes, n, title, bullets, table, pic, foot, F):
               ["A1", "mixed ID", n("a.A1"), n("a.A1.ci975"), n("a.A1.decision")],
               ["A2", "+15 mm", n("a.A2"), n("a.A2.ci975"), n("a.A2.decision")]],
           0.5, 1.4, 12.3, 1.3, size=15, first_col_w=1.4)
-    pic(s, F / "study_a_factorial.png", 0.6, 2.9, h=3.6)
+    pic(s, F / "study_a_factorial.png", 0.5, 2.9, w=7.5)
     bullets(s, [f"EMA α: {n('a.main.mixed_id.ema')} — identical outcomes in every cell",
                 f"Bound 25 vs 15 mm: {n('a.main.mixed_id.bound')} on mixed ID",
                 f"Second process: {n('a.rep.ema0p2_cal050_a25')} identical outcomes"],

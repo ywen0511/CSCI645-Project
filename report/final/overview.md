@@ -2,7 +2,7 @@
 
 CSCI 645 Robot Manipulation, Fall 2026 | Yan Wen
 
-Final project synthesis and CPU review supplement | November 10, 2026; V5 CPU additions November 17, 2026
+Final project synthesis | November 10, 2026; updated with V5 (Study A and Study B), November 18, 2026
 
 ## 1. Research question and contribution
 
@@ -18,14 +18,17 @@ where learning helps or fails. A positive PPO result was a hypothesis, not a com
 criterion. The main V4 finding is that a calibrated geometric controller configuration
 handles unknown initial grasp translation well, while the tested learned residuals do
 not establish an improvement on the primary mixed-ID comparison and can degrade
-outside the training support.
+outside the training support. V5 confirms with a matched, preregistered ablation that
+the calibration itself carries that gain, and shows that when the bar slides in the
+giver's grasp after calibration, observation history still does not beat a
+feed-forward residual or a continuously re-estimating geometric controller.
 
 This supplement is the current concise interpretation. Full methods, all-condition
 tables and original figures remain in the [archived V4 report](../v4/report.md).
 Read that report and its deck with the [review corrections](../../docs/final_review/REVIEW.md).
 All frozen experiments and published releases remain unchanged.
 
-## 2. One project, four stages
+## 2. One project, five stages
 
 | Stage | Question added | What the evidence supports |
 |---|---|---|
@@ -33,6 +36,7 @@ All frozen experiments and published releases remain unchanged.
 | V2 | Did learning help after stronger controls and harder cases? | Residual-only learning beat nominal control, but learned residuals on geometry did not beat strong geometric/constant baselines. |
 | V3 | Do translation bias, noise and delay make learning useful? | The known giver-grasp reference produced a ceiling: the strongest baseline and selected combined policies reached 100% on the frozen suite. |
 | V4 | What if that grasp transform is initially unknown? | Fixed-transform geometry degrades; calibrated geometry is strong; primary learning gains are not established, and boundary fragility remains. |
+| V5 | Which setting carries V4's gain, and does memory help when the grasp slips after calibration? | Calibration alone carries the gain (A1 +29.5 pp, 97.5% CI [+22.5, +36.5]). Under a physical slip, history beats neither feed-forward (−1.0 pp, [−3.4, +1.3]) nor tracking geometry (+0.9 pp, [−2.6, +4.6]). |
 
 These stages have different suites and assumptions. Their percentages must not be
 pooled or treated as a single cross-version leaderboard. In V2, residual-only success
@@ -62,7 +66,7 @@ interaction, using RSL-RL PPO; this is not offline learning from a downloaded da
 V4 physically changes the initial in-grasp translation. Training uses x in [-5, +15]
 mm and z in [-10, +10] mm, plus synthetic translation-measurement corruption for robust
 profiles. Boundary tests include x = -7 mm and z = +/-15 mm; mixed OOD also increases
-sensor corruption. The offset is static within an episode: dynamic slip is not tested.
+sensor corruption. The offset is static within an episode in V4; V5 Study B adds a physical slip (Section 9).
 Controllers receive the configured sensor/proprioceptive channels; hidden sampled
 offsets are reserved for initialization and evaluation. This is controlled simulated
 sensing, not a learned vision system or a complete real-world sensing model.
@@ -252,8 +256,8 @@ entry point; historical execution runbooks must not trigger duplicate training.
 ## 9. Scope, conclusion and future work
 
 The project tests one rigid object, fixed physical parameters and commanded orientations,
-static initial translation error and synthetic sensing in simulation. It does not test
-dynamic slip, arbitrary objects, vision, dexterous hands or transfer to hardware. The
+static initial translation error and synthetic sensing in simulation. It tests only one
+synthetic slip model (V5), not arbitrary objects, vision, dexterous hands or transfer to hardware. The
 calibration window occurs before receiver contact and assumes the grasp offset stays
 usefully stable. Sensor bias can contaminate that calibration.
 
@@ -264,16 +268,19 @@ can reduce boundary robustness. That scoped negative result, supported by contro
 and public evidence, answers the original research question more honestly than an
 unsupported claim of universal learning benefit.
 
-A causal calibration study must hold alignment bound and filtering fixed on new cases,
-with a protocol declared before inspecting their outcomes. That study (V5 Study A) is now
-preregistered on CPU: a 2 x 2 x 2 factorial of reference, EMA alpha and bound on 2,400
-fresh cases, with its suite hash, matrices, decision rule and analysis code committed
-before any simulation ([plan](../../configs/v5/calibration/analysis_plan.json)). Dynamic
-in-grasp slip (V5 Study B), where a one-shot calibration goes stale, is the one setting
-in this project where temporal memory has a clear reason to help; it requires a new
-physical intervention, a strong continuously re-estimating geometric baseline and
-acceptance checks. Both GPU studies are specified in [V5_EXECUTION.md](../../V5_EXECUTION.md);
-neither changes the frozen V4 results reported here.
+**V5 (release v5.0.0).** Study A, a 2 x 2 x 2 matched ablation of reference, EMA
+alpha and bound on 2,400 fresh cases, frozen before any simulation, attributes V4's gain
+to calibration: calibrated minus fixed is +29.5 pp on mixed ID ([+22.5, +36.5]) and
++93.0 pp at +15 mm ([+88.5, +96.5]); EMA filtering had no effect. Study B made the
+bar slide physically in the giver's fingers after the calibration window (a regulated
+bar-axis force; slides toward the receiver of up to 8 mm were the only reliable ones).
+Neither primary contrast is established: history minus feed-forward −1.0 pp
+([−3.4, +1.3]), history minus tracking geometry +0.9 pp ([−2.6, +4.6]).
+Tracking geometry, a constant offset and feed-forward residuals all recover most of what
+the stale calibration loses; about 6% of held-out slips are mechanism failures that cap
+every method; and three of five history seeds degraded late in training. Within this slip
+model, continuous geometric estimation, not memory, handles the slip. Full details:
+[V5 report](../v5/report.md).
 
 ## 10. Related work and assistance disclosure
 
@@ -311,7 +318,8 @@ assistance when presenting the project.
 - [Full V4 report](../v4/report.md): detailed methods and all-condition results.
 - [Review and corrections](../../docs/final_review/REVIEW.md): interpretation changes and exact audit scope.
 - [Defense notes](../../docs/final_review/DEFENSE_NOTES.md): five-minute narrative, questions and demo order.
-- [V5 execution assignment](../../V5_EXECUTION.md): the two preregistered GPU studies and their release gates.
+- [V5 report](../v5/report.md): matched calibration ablation and dynamic in-grasp slip (release v5.0.0).
+- [V5 execution assignment](../../V5_EXECUTION.md) (historical): the two preregistered GPU studies and their release gates.
 - [V5 failure taxonomy](../../results/v5/cpu/failure_taxonomy.md): all proposal failure metrics by condition.
 
 The concise supplement and full archived report should travel together. The supplement

@@ -3,8 +3,8 @@
  "hardware": "NVIDIA A100-SXM4 (80 GB, LSF gpu_large hosts), driver bundle 580.159.03",
  "by_stage": {
   "b_development": {
-   "jobs": 1,
-   "gpu_hours": 0.077,
+   "jobs": 2,
+   "gpu_hours": 0.151,
    "failed_or_killed_jobs": 0
   },
   "b_feasibility_probe": {
@@ -12,18 +12,53 @@
    "gpu_hours": 0.151,
    "failed_or_killed_jobs": 0
   },
+  "b_final_evaluation": {
+   "jobs": 9,
+   "gpu_hours": 0.961,
+   "failed_or_killed_jobs": 4
+  },
+  "b_formal_training": {
+   "jobs": 15,
+   "gpu_hours": 5.309,
+   "failed_or_killed_jobs": 0
+  },
+  "b_mechanisms": {
+   "jobs": 6,
+   "gpu_hours": 0.27,
+   "failed_or_killed_jobs": 3
+  },
   "b_pilots": {
+   "jobs": 6,
+   "gpu_hours": 0.504,
+   "failed_or_killed_jobs": 0
+  },
+  "b_repeatability": {
    "jobs": 3,
-   "gpu_hours": 0.257,
+   "gpu_hours": 0.223,
+   "failed_or_killed_jobs": 1
+  },
+  "b_v4_regression": {
+   "jobs": 8,
+   "gpu_hours": 0.625,
+   "failed_or_killed_jobs": 4
+  },
+  "b_validation": {
+   "jobs": 15,
+   "gpu_hours": 0.751,
    "failed_or_killed_jobs": 0
   },
   "study_a": {
    "jobs": 2,
    "gpu_hours": 0.33,
    "failed_or_killed_jobs": 0
+  },
+  "videos": {
+   "jobs": 1,
+   "gpu_hours": 0.05,
+   "failed_or_killed_jobs": 0
   }
  },
- "total_gpu_hours": 0.81,
+ "total_gpu_hours": 9.33,
  "cap_gpu_hours": 60,
  "jobs": [
   {
@@ -33,6 +68,177 @@
    "stage": "b_development",
    "started": "Tue Nov 17 21:45:58 2026",
    "run_s": 278,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8392360",
+   "name": "c645v5b_dev2",
+   "status": "Done",
+   "stage": "b_development",
+   "started": "Tue Nov 17 21:54:42 2026",
+   "run_s": 267,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8392409",
+   "name": "c645v5b_final_base",
+   "status": "Done",
+   "stage": "b_final_evaluation",
+   "started": "Tue Nov 17 23:08:07 2026",
+   "run_s": 519,
+   "gpu": null
+  },
+  {
+   "job": "8398002",
+   "name": "c645v5b_fl0",
+   "status": "Exited",
+   "stage": "b_final_evaluation",
+   "started": "Wed Nov 18 05:14:10 2026",
+   "run_s": 57,
+   "gpu": null
+  },
+  {
+   "job": "8398031",
+   "name": "c645v5b_fl0",
+   "status": "Done",
+   "stage": "b_final_evaluation",
+   "started": "Wed Nov 18 05:17:16 2026",
+   "run_s": 723,
+   "gpu": null
+  },
+  {
+   "job": "8398004",
+   "name": "c645v5b_fl1",
+   "status": "Exited",
+   "stage": "b_final_evaluation",
+   "started": "Wed Nov 18 05:14:10 2026",
+   "run_s": 57,
+   "gpu": null
+  },
+  {
+   "job": "8398032",
+   "name": "c645v5b_fl1",
+   "status": "Done",
+   "stage": "b_final_evaluation",
+   "started": "Wed Nov 18 05:17:16 2026",
+   "run_s": 723,
+   "gpu": null
+  },
+  {
+   "job": "8398005",
+   "name": "c645v5b_fl2",
+   "status": "Exited",
+   "stage": "b_final_evaluation",
+   "started": "Wed Nov 18 05:14:10 2026",
+   "run_s": 57,
+   "gpu": null
+  },
+  {
+   "job": "8398033",
+   "name": "c645v5b_fl2",
+   "status": "Done",
+   "stage": "b_final_evaluation",
+   "started": "Wed Nov 18 05:17:16 2026",
+   "run_s": 713,
+   "gpu": null
+  },
+  {
+   "job": "8398006",
+   "name": "c645v5b_fl3",
+   "status": "Exited",
+   "stage": "b_final_evaluation",
+   "started": "Wed Nov 18 05:14:10 2026",
+   "run_s": 57,
+   "gpu": null
+  },
+  {
+   "job": "8398034",
+   "name": "c645v5b_fl3",
+   "status": "Done",
+   "stage": "b_final_evaluation",
+   "started": "Wed Nov 18 05:17:16 2026",
+   "run_s": 553,
+   "gpu": null
+  },
+  {
+   "job": "8398007",
+   "name": "c645v5b_mdev",
+   "status": "Exited",
+   "stage": "b_mechanisms",
+   "started": "Wed Nov 18 05:15:16 2026",
+   "run_s": 14,
+   "gpu": null
+  },
+  {
+   "job": "8398035",
+   "name": "c645v5b_mdev",
+   "status": "Done",
+   "stage": "b_mechanisms",
+   "started": "Wed Nov 18 05:26:48 2026",
+   "run_s": 172,
+   "gpu": null
+  },
+  {
+   "job": "8398192",
+   "name": "c645v5b_mech0",
+   "status": "Exited",
+   "stage": "b_mechanisms",
+   "started": "Wed Nov 18 05:39:56 2026",
+   "run_s": 249,
+   "gpu": null
+  },
+  {
+   "job": "8398193",
+   "name": "c645v5b_mech1",
+   "status": "Exited",
+   "stage": "b_mechanisms",
+   "started": "Wed Nov 18 05:41:33 2026",
+   "run_s": 224,
+   "gpu": null
+  },
+  {
+   "job": "8398348",
+   "name": "c645v5b_mech_r1",
+   "status": "Done",
+   "stage": "b_mechanisms",
+   "started": "Wed Nov 18 05:45:43 2026",
+   "run_s": 158,
+   "gpu": null
+  },
+  {
+   "job": "8398349",
+   "name": "c645v5b_mech_r2",
+   "status": "Done",
+   "stage": "b_mechanisms",
+   "started": "Wed Nov 18 05:45:43 2026",
+   "run_s": 156,
+   "gpu": null
+  },
+  {
+   "job": "8392361",
+   "name": "c645v5b_pilot2_slip_robust_ff",
+   "status": "Done",
+   "stage": "b_pilots",
+   "started": "Tue Nov 17 21:54:48 2026",
+   "run_s": 309,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8392362",
+   "name": "c645v5b_pilot2_slip_robust_history",
+   "status": "Done",
+   "stage": "b_pilots",
+   "started": "Tue Nov 17 21:54:48 2026",
+   "run_s": 295,
+   "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8392363",
+   "name": "c645v5b_pilot2_slip_robust_repeat",
+   "status": "Done",
+   "stage": "b_pilots",
+   "started": "Tue Nov 17 21:54:48 2026",
+   "run_s": 288,
    "gpu": "A100-SXM4-80GB"
   },
   {
@@ -81,6 +287,105 @@
    "gpu": "A100-SXM4-80GB"
   },
   {
+   "job": "8398009",
+   "name": "c645v5b_reg0",
+   "status": "Exited",
+   "stage": "b_v4_regression",
+   "started": "Wed Nov 18 05:15:16 2026",
+   "run_s": 11,
+   "gpu": null
+  },
+  {
+   "job": "8398037",
+   "name": "c645v5b_reg0",
+   "status": "Done",
+   "stage": "b_v4_regression",
+   "started": "Wed Nov 18 05:29:57 2026",
+   "run_s": 586,
+   "gpu": null
+  },
+  {
+   "job": "8398010",
+   "name": "c645v5b_reg1",
+   "status": "Exited",
+   "stage": "b_v4_regression",
+   "started": "Wed Nov 18 05:15:16 2026",
+   "run_s": 11,
+   "gpu": null
+  },
+  {
+   "job": "8398038",
+   "name": "c645v5b_reg1",
+   "status": "Done",
+   "stage": "b_v4_regression",
+   "started": "Wed Nov 18 05:29:57 2026",
+   "run_s": 591,
+   "gpu": null
+  },
+  {
+   "job": "8398011",
+   "name": "c645v5b_reg2",
+   "status": "Exited",
+   "stage": "b_v4_regression",
+   "started": "Wed Nov 18 05:15:30 2026",
+   "run_s": 11,
+   "gpu": null
+  },
+  {
+   "job": "8398039",
+   "name": "c645v5b_reg2",
+   "status": "Done",
+   "stage": "b_v4_regression",
+   "started": "Wed Nov 18 05:30:55 2026",
+   "run_s": 585,
+   "gpu": null
+  },
+  {
+   "job": "8398012",
+   "name": "c645v5b_reg3",
+   "status": "Exited",
+   "stage": "b_v4_regression",
+   "started": "Wed Nov 18 05:15:54 2026",
+   "run_s": 8,
+   "gpu": null
+  },
+  {
+   "job": "8398040",
+   "name": "c645v5b_reg3",
+   "status": "Done",
+   "stage": "b_v4_regression",
+   "started": "Wed Nov 18 05:35:19 2026",
+   "run_s": 447,
+   "gpu": null
+  },
+  {
+   "job": "8398008",
+   "name": "c645v5b_rep",
+   "status": "Exited",
+   "stage": "b_repeatability",
+   "started": "Wed Nov 18 05:15:16 2026",
+   "run_s": 9,
+   "gpu": null
+  },
+  {
+   "job": "8398036",
+   "name": "c645v5b_rep",
+   "status": "Done",
+   "stage": "b_repeatability",
+   "started": "Wed Nov 18 05:29:57 2026",
+   "run_s": 292,
+   "gpu": null
+  },
+  {
+   "job": "8392416",
+   "name": "c645v5b_repeat_base",
+   "status": "Done",
+   "stage": "b_repeatability",
+   "started": "Tue Nov 17 23:17:36 2026",
+   "run_s": 503,
+   "gpu": null
+  },
+  {
    "job": "8391543",
    "name": "c645v5a_primary",
    "status": "Done",
@@ -97,6 +402,285 @@
    "started": "Tue Nov 17 21:18:44 2026",
    "run_s": 265,
    "gpu": "A100-SXM4-80GB"
+  },
+  {
+   "job": "8392387",
+   "name": "c645v5b_train_111",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:24:17 2026",
+   "run_s": 1261,
+   "gpu": null
+  },
+  {
+   "job": "8392388",
+   "name": "c645v5b_train_222",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:25:07 2026",
+   "run_s": 1273,
+   "gpu": null
+  },
+  {
+   "job": "8392389",
+   "name": "c645v5b_train_333",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:25:07 2026",
+   "run_s": 1287,
+   "gpu": null
+  },
+  {
+   "job": "8392399",
+   "name": "c645v5b_train_slip_robust_ff_s444",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:45:50 2026",
+   "run_s": 1287,
+   "gpu": null
+  },
+  {
+   "job": "8392401",
+   "name": "c645v5b_train_slip_robust_ff_s555",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:45:50 2026",
+   "run_s": 1260,
+   "gpu": null
+  },
+  {
+   "job": "8392382",
+   "name": "c645v5b_train_111",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:02:23 2026",
+   "run_s": 1290,
+   "gpu": null
+  },
+  {
+   "job": "8392383",
+   "name": "c645v5b_train_222",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:02:23 2026",
+   "run_s": 1329,
+   "gpu": null
+  },
+  {
+   "job": "8392384",
+   "name": "c645v5b_train_333",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:02:23 2026",
+   "run_s": 1295,
+   "gpu": null
+  },
+  {
+   "job": "8392385",
+   "name": "c645v5b_train_444",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:02:23 2026",
+   "run_s": 1277,
+   "gpu": null
+  },
+  {
+   "job": "8392386",
+   "name": "c645v5b_train_555",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:24:17 2026",
+   "run_s": 1263,
+   "gpu": null
+  },
+  {
+   "job": "8392402",
+   "name": "c645v5b_train_slip_robust_repeat_s111",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:46:35 2026",
+   "run_s": 1270,
+   "gpu": null
+  },
+  {
+   "job": "8392403",
+   "name": "c645v5b_train_slip_robust_repeat_s222",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 22:47:02 2026",
+   "run_s": 1238,
+   "gpu": null
+  },
+  {
+   "job": "8392404",
+   "name": "c645v5b_train_slip_robust_repeat_s333",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 23:07:03 2026",
+   "run_s": 1250,
+   "gpu": null
+  },
+  {
+   "job": "8392405",
+   "name": "c645v5b_train_slip_robust_repeat_s444",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 23:08:02 2026",
+   "run_s": 1295,
+   "gpu": null
+  },
+  {
+   "job": "8392406",
+   "name": "c645v5b_train_slip_robust_repeat_s555",
+   "status": "Done",
+   "stage": "b_formal_training",
+   "started": "Tue Nov 17 23:08:07 2026",
+   "run_s": 1238,
+   "gpu": null
+  },
+  {
+   "job": "8397005",
+   "name": "c645v5b_val_slip_robust_ff_s111",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:14:02 2026",
+   "run_s": 188,
+   "gpu": null
+  },
+  {
+   "job": "8397006",
+   "name": "c645v5b_val_slip_robust_ff_s222",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:14:02 2026",
+   "run_s": 183,
+   "gpu": null
+  },
+  {
+   "job": "8397007",
+   "name": "c645v5b_val_slip_robust_ff_s333",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:14:02 2026",
+   "run_s": 186,
+   "gpu": null
+  },
+  {
+   "job": "8397008",
+   "name": "c645v5b_val_slip_robust_ff_s444",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:17:31 2026",
+   "run_s": 166,
+   "gpu": null
+  },
+  {
+   "job": "8397009",
+   "name": "c645v5b_val_slip_robust_ff_s555",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:17:35 2026",
+   "run_s": 175,
+   "gpu": null
+  },
+  {
+   "job": "8392588",
+   "name": "c645v5b_val_slip_robust_history_s111",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Tue Nov 17 23:26:49 2026",
+   "run_s": 193,
+   "gpu": null
+  },
+  {
+   "job": "8392589",
+   "name": "c645v5b_val_slip_robust_history_s222",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Tue Nov 17 23:28:22 2026",
+   "run_s": 182,
+   "gpu": null
+  },
+  {
+   "job": "8392590",
+   "name": "c645v5b_val_slip_robust_history_s333",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Tue Nov 17 23:29:10 2026",
+   "run_s": 204,
+   "gpu": null
+  },
+  {
+   "job": "8392591",
+   "name": "c645v5b_val_slip_robust_history_s444",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Tue Nov 17 23:30:26 2026",
+   "run_s": 179,
+   "gpu": null
+  },
+  {
+   "job": "8397004",
+   "name": "c645v5b_val_slip_robust_history_s555",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:14:02 2026",
+   "run_s": 197,
+   "gpu": null
+  },
+  {
+   "job": "8397010",
+   "name": "c645v5b_val_slip_robust_repeat_s111",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:17:35 2026",
+   "run_s": 169,
+   "gpu": null
+  },
+  {
+   "job": "8397011",
+   "name": "c645v5b_val_slip_robust_repeat_s222",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:17:35 2026",
+   "run_s": 168,
+   "gpu": null
+  },
+  {
+   "job": "8397012",
+   "name": "c645v5b_val_slip_robust_repeat_s333",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:21:19 2026",
+   "run_s": 173,
+   "gpu": null
+  },
+  {
+   "job": "8397013",
+   "name": "c645v5b_val_slip_robust_repeat_s444",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:21:19 2026",
+   "run_s": 172,
+   "gpu": null
+  },
+  {
+   "job": "8397014",
+   "name": "c645v5b_val_slip_robust_repeat_s555",
+   "status": "Done",
+   "stage": "b_validation",
+   "started": "Wed Nov 18 04:21:19 2026",
+   "run_s": 170,
+   "gpu": null
+  },
+  {
+   "job": "8398189",
+   "name": "c645v5_video",
+   "status": "Done",
+   "stage": "videos",
+   "started": "Wed Nov 18 05:39:56 2026",
+   "run_s": 180,
+   "gpu": null
   }
  ]
 }
