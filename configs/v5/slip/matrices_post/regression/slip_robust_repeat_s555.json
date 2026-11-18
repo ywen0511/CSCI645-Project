@@ -1,0 +1,17 @@
+{
+ "name": "v5_slip_regression_slip_robust_repeat_s555",
+ "suite": "configs/v5/slip/suites/v4_final_noslip.jsonl",
+ "num_envs": 240,
+ "protocol": "configs/v5/slip/training/slip_robust_repeat.json",
+ "trace_cases": [],
+ "entries": [
+  {
+   "id": "slip_robust_repeat_s555__selected",
+   "method": "combined",
+   "training_seed": 555,
+   "role": "selected",
+   "trace": true,
+   "checkpoint": "slip_robust_repeat_s555/checkpoints/step_010027008.pt"
+  }
+ ]
+}
